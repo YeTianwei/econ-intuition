@@ -7,220 +7,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
-<style>
-/* Layout concept: 单栏阅读(约 40em)加全宽图表面板。供需图沿用教科书惯例,需求蓝、供给橙,细网格模仿坐标纸。 */
-:root{
-  --bg:#F3F6FA;
-  --surface:#FFFFFF;
-  --ink:#14202B;
-  --muted:#52646F;
-  --line:#D3DBE4;
-  --grid:#E4EAF1;
-  --demand:#1B5DC1;
-  --demand-soft:rgba(27,93,193,.16);
-  --supply:#C8440F;
-  --supply-soft:rgba(200,68,15,.16);
-  --good:#1B7A4B;
-  --bad:#B42318;
-  --font-display:"Noto Serif SC","Songti SC","STSong","Source Han Serif SC",serif;
-  --font-body:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
-  --font-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0D141C;
-    --surface:#141E29;
-    --ink:#E6EDF4;
-    --muted:#9DAEBE;
-    --line:#293746;
-    --grid:#1B2631;
-    --demand:#6EA6FF;
-    --demand-soft:rgba(110,166,255,.2);
-    --supply:#FF8F63;
-    --supply-soft:rgba(255,143,99,.2);
-    --good:#5FCB8F;
-    --bad:#FF8F86;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0D141C;
-  --surface:#141E29;
-  --ink:#E6EDF4;
-  --muted:#9DAEBE;
-  --line:#293746;
-  --grid:#1B2631;
-  --demand:#6EA6FF;
-  --demand-soft:rgba(110,166,255,.2);
-  --supply:#FF8F63;
-  --supply-soft:rgba(255,143,99,.2);
-  --good:#5FCB8F;
-  --bad:#FF8F86;
-  color-scheme:dark;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
-.page{max-width:880px;margin-inline:auto;padding-inline:16px;padding-block:20px 72px}
-.prose{max-width:40em}
-p{margin:0 0 1em}
-b,strong{font-weight:700}
-.en{color:var(--muted);font-size:.92em}
-.mono{font-family:var(--font-mono)}
-
-/* module nav */
-.modules{overflow-x:auto;margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line)}
-.modules ol{display:flex;gap:2px;list-style:none;margin:0;padding:0 0 10px;min-width:max-content}
-.modules .m{display:flex;align-items:baseline;gap:6px;padding:5px 10px;border-radius:4px;font-size:13px;line-height:1.6;white-space:nowrap;color:var(--muted)}
-.modules .m i{font-family:var(--font-mono);font-style:normal;font-size:12px}
-.modules .m.current{background:var(--ink);color:var(--bg)}
-
-/* title block */
-h1{font-family:var(--font-display);font-weight:700;font-size:clamp(32px,6.4vw,48px);line-height:1.2;margin:36px 0 6px;text-wrap:balance}
-.sub{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}
-.lede{font-size:18px;max-width:36em}
-.meta{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:.02em}
-
-h2{font-family:var(--font-display);font-weight:600;font-size:clamp(23px,4.2vw,28px);line-height:1.35;margin:0 0 14px;text-wrap:balance}
-h3{font-size:17px;font-weight:700;line-height:1.5;margin:28px 0 8px}
-section{margin-top:64px}
-
-/* headline sample */
-.headline{margin:18px 0 22px;padding:16px 20px;border:1px solid var(--line);background:var(--surface);border-radius:6px;max-width:40em}
-.headline figcaption{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:.03em}
-.headline blockquote{margin:8px 0 0;font-family:var(--font-display);font-weight:600;font-size:clamp(19px,3.6vw,23px);line-height:1.55}
-.qs{padding-left:1.4em;max-width:40em}
-.qs li{margin-bottom:.3em}
-
-.analogy{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0 4px;margin:24px 0;max-width:40em}
-.analogy .lab,.lab{display:block;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--muted);margin-bottom:2px}
-
-/* widgets */
-.widget{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;margin:24px 0}
-.widget h3{margin:0 0 12px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.chip{font:inherit;font-size:14px;line-height:1.5;padding:5px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
-.chip:hover{background:var(--grid)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-button:focus-visible,input:focus-visible{outline:2px solid var(--demand);outline-offset:2px}
-.chart{min-height:250px}
-.plot{display:block;max-width:100%}
-.plotbg{fill:var(--surface)}
-.plotframe{fill:none;stroke:var(--line);stroke-width:1}
-.gridline{stroke:var(--grid);stroke-width:1}
-.tick{font-family:var(--font-mono);font-size:11px;fill:var(--muted)}
-.axtitle{font-family:var(--font-body);font-size:12px;fill:var(--muted)}
-.curve{fill:none;stroke-width:2.75;stroke-linecap:round}
-.curve.d{stroke:var(--demand)}
-.curve.s{stroke:var(--supply)}
-.curve.ghost{stroke-width:1.75;stroke-dasharray:6 5;opacity:.6}
-.guide{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 4}
-.cs{fill:var(--demand-soft)}
-.ps{fill:var(--supply-soft)}
-.pt{fill:var(--ink);stroke:var(--surface);stroke-width:2}
-.pt.base{fill:var(--surface);stroke:var(--ink);stroke-width:2}
-.shift{stroke:var(--ink);stroke-width:1.5}
-.arrowhead{fill:var(--ink)}
-.halo{paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
-.curvelab{font-family:var(--font-mono);font-size:13px;font-weight:500}
-.curvelab.d{fill:var(--demand)}
-.curvelab.s{fill:var(--supply)}
-.ptlab{font-family:var(--font-mono);font-size:12px;fill:var(--ink)}
-.vallab{font-family:var(--font-mono);font-size:11px;fill:var(--ink)}
-
-.legend{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:8px 0 0;padding:0;font-size:13px;color:var(--muted)}
-.legend .sw{display:inline-block;width:22px;height:0;border-top:3px solid var(--ink);vertical-align:middle;margin-right:6px}
-.legend .sw.d{border-color:var(--demand)}
-.legend .sw.s{border-color:var(--supply)}
-.legend .sw.g{border-top-style:dashed;border-top-width:2px;opacity:.7}
-
-.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:16px}
-@media (max-width:620px){.controls{grid-template-columns:1fr}}
-.ctl{display:grid;grid-template-columns:1fr auto;gap:2px 12px;min-width:0;align-items:baseline}
-.ctl label{font-size:15px;font-weight:500}
-.ctl output{font-family:var(--font-mono);font-size:14px;font-variant-numeric:tabular-nums}
-.ctl input[type=range]{grid-column:1/-1;width:100%;margin:6px 0 0}
-.ctl .hint{grid-column:1/-1;font-size:13px;color:var(--muted);line-height:1.6}
-#sD,#sS,#E{accent-color:var(--ink)}
-#sD{accent-color:var(--demand)}
-#sS{accent-color:var(--supply)}
-.check{display:flex;gap:8px;align-items:flex-start;font-size:14px;margin-top:14px;line-height:1.6}
-.check input{margin-top:5px}
-
-.read{margin:16px 0 0}
-.read>div{display:grid;grid-template-columns:1fr auto auto;gap:4px 14px;padding:8px 0;border-top:1px solid var(--line);align-items:baseline}
-.read dt{font-size:15px}
-.read dd{margin:0;font-variant-numeric:tabular-nums}
-.read dd b{font-family:var(--font-mono);font-weight:500;font-size:17px}
-.read .delta{font-family:var(--font-mono);font-size:13px;color:var(--muted);min-width:4.5em;text-align:right}
-.verdict{margin:12px 0 0;padding:10px 12px;background:var(--bg);border-radius:4px;font-size:15px;line-height:1.7}
-.note{font-size:13px;color:var(--muted);line-height:1.7;margin:10px 0 0}
-
-.tablewrap{overflow-x:auto;margin:14px 0}
-.tbl{width:100%;border-collapse:collapse;font-size:15px}
-.tbl th,.tbl td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:baseline}
-.tbl th{font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
-.tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--font-mono)}
-.tbl td{min-width:5em}
-
-/* misconceptions */
-.mis{display:grid;grid-template-columns:1fr 2fr;gap:6px 28px;padding:16px 0;border-top:1px solid var(--line)}
-.mis:last-of-type{border-bottom:1px solid var(--line)}
-.mis p{margin:0}
-.mis .said{color:var(--muted);font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.6}
-@media (max-width:620px){.mis{grid-template-columns:1fr}}
-
-/* quiz */
-.q{padding:16px 0;border-top:1px solid var(--line);max-width:40em}
-.qtext{font-weight:500;margin-bottom:8px}
-.qn{font-family:var(--font-mono);color:var(--muted);margin-right:.7em}
-.opt{display:block;width:100%;text-align:left;font:inherit;font-size:15px;line-height:1.6;padding:9px 12px;margin-top:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
-.opt:hover:not(:disabled){background:var(--grid)}
-.opt:disabled{color:var(--ink);cursor:default}
-.opt.right{border-color:var(--good);border-width:2px;padding:8px 11px}
-.opt.wrong{border-color:var(--bad);border-width:2px;padding:8px 11px}
-.opt .tag{font-family:var(--font-mono);font-size:12px;margin-right:8px;font-weight:500}
-.opt.right .tag{color:var(--good)}
-.opt.wrong .tag{color:var(--bad)}
-.why{margin:10px 0 0;font-size:15px;color:var(--muted);line-height:1.7}
-.scorebar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
-.scorebar p{margin:0;font-family:var(--font-mono);font-size:13px}
-
-/* flashcards */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;align-items:start}
-.card{text-align:left;font:inherit;padding:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;cursor:pointer;min-width:0}
-.card:hover{background:var(--grid)}
-.card .t{display:block;font-weight:700;line-height:1.5}
-.card .en{display:block;font-family:var(--font-mono);font-size:12px;margin-top:2px}
-.card .hint{display:block;margin-top:10px;font-size:12px;color:var(--muted)}
-.card .def{display:block;margin-top:10px;font-size:14.5px;line-height:1.7}
-
-/* steps */
-.steps{list-style:none;padding:0;margin:14px 0 18px;counter-reset:s;max-width:40em}
-.steps li{counter-increment:s;display:grid;grid-template-columns:2em 1fr;gap:4px;padding:10px 0;border-top:1px solid var(--line)}
-.steps li::before{content:counter(s);font-family:var(--font-mono);color:var(--muted);padding-top:2px}
-.steps li div{min-width:0}
-
-.next{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;max-width:40em}
-</style>
+<link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-lesson="m02-01">
 
 <main class="page">
-<nav class="modules" aria-label="课程模块">
-  <ol>
-    <li><span class="m" title="待生成"><i>1</i>稀缺与权衡</span></li>
-    <li><span class="m current" aria-current="page"><i>2</i>供需与弹性</span></li>
-    <li><span class="m" title="待生成"><i>3</i>市场失灵</span></li>
-    <li><span class="m" title="待生成"><i>4</i>博弈论</span></li>
-    <li><span class="m" title="待生成"><i>5</i>信息经济学</span></li>
-    <li><span class="m" title="待生成"><i>6</i>宏观基础</span></li>
-    <li><span class="m" title="待生成"><i>7</i>货币与金融</span></li>
-    <li><span class="m" title="待生成"><i>8</i>增长与国际</span></li>
-  </ol>
-</nav>
+<nav class="modules" aria-label="课程模块"></nav>
 
 <header>
   <h1>供需、价格与弹性</h1>
@@ -418,95 +210,19 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--demand);outline
   <button type="button" class="chip" id="goChart">在图 1 里重放这个情景</button>
 </section>
 
-<p class="next"><span class="lab">下一模块</span>3　市场失灵与政府干预。外部性、公共品、税收与补贴，以及为什么价格上限常常带来短缺。</p>
+<nav class="next" aria-label="课程上下课"></nav>
 </main>
 
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
 <script>
 (function(){
 'use strict';
-var NS='http://www.w3.org/2000/svg', MINUS='−';
+var C=window.Charts;
+var el=C.el,clip=C.clip,seg=C.seg,frame=C.frame,pathOf=C.pathOf,label=C.label,
+    guides=C.guides,arrow=C.arrow,watch=C.watch,fmt=C.fmt,fmtS=C.fmtS,sgnInt=C.sgnInt;
 function $(s,r){return (r||document).querySelector(s);}
 function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
-function el(tag,attrs,text){var e=document.createElementNS(NS,tag);for(var k in attrs){e.setAttribute(k,attrs[k]);}if(text!=null){e.textContent=text;}return e;}
-function fmt(n,d){var s=Math.abs(n).toFixed(d);return (n<0&&+s!==0?MINUS:'')+s;}
-function fmtS(n,d){var s=Math.abs(n).toFixed(d);if(+s===0){return s;}return (n<0?MINUS:'+')+s;}
-function sgnInt(n){return (n>0?'+':n<0?MINUS:'')+Math.abs(n);}
-
-/* Liang-Barsky 线段裁剪,点为 [Q,P] */
-function clip(a,b,r){
-  var t0=0,t1=1,dq=b[0]-a[0],dp=b[1]-a[1];
-  var tests=[[-dq,a[0]-r.q0],[dq,r.q1-a[0]],[-dp,a[1]-r.p0],[dp,r.p1-a[1]]];
-  for(var i=0;i<4;i++){
-    var p=tests[i][0],q=tests[i][1];
-    if(p===0){if(q<0){return null;}}
-    else{
-      var t=q/p;
-      if(p<0){if(t>t1){return null;}if(t>t0){t0=t;}}
-      else{if(t<t0){return null;}if(t<t1){t1=t;}}
-    }
-  }
-  return [[a[0]+t0*dq,a[1]+t0*dp],[a[0]+t1*dq,a[1]+t1*dp]];
-}
-/* fn: 价格 -> 数量(直线) */
-function seg(fn,r){return clip([fn(-80),-80],[fn(80),80],r);}
-
-function frame(box,c){
-  var w=Math.max(280,Math.floor(box.clientWidth));
-  var h=Math.round(Math.min(400,Math.max(250,w*0.62)));
-  var m={l:w<440?44:52,r:14,t:12,b:44};
-  var iw=w-m.l-m.r,ih=h-m.t-m.b;
-  var f={
-    m:m,iw:iw,ih:ih,w:w,h:h,mid:'ah'+c.id,
-    x:function(q){return m.l+(q-c.q0)/(c.q1-c.q0)*iw;},
-    y:function(p){return m.t+ih-(p-c.p0)/(c.p1-c.p0)*ih;}
-  };
-  var svg=el('svg',{viewBox:'0 0 '+w+' '+h,width:w,height:h,'class':'plot',role:'img','aria-label':c.label});
-  var defs=el('defs',{});
-  var mk=el('marker',{id:f.mid,viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto'});
-  mk.appendChild(el('path',{d:'M0 0L10 5L0 10z','class':'arrowhead'}));
-  defs.appendChild(mk);svg.appendChild(defs);
-  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ih,'class':'plotbg'}));
-  var q,p,X,Y;
-  for(q=c.q0;q<=c.q1+1e-9;q+=c.qs){
-    X=f.x(q);
-    svg.appendChild(el('line',{x1:X,x2:X,y1:m.t,y2:m.t+ih,'class':'gridline'}));
-    svg.appendChild(el('text',{x:X,y:m.t+ih+16,'text-anchor':'middle','class':'tick'},String(q)));
-  }
-  for(p=c.p0;p<=c.p1+1e-9;p+=c.ps){
-    Y=f.y(p);
-    svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:Y,y2:Y,'class':'gridline'}));
-    svg.appendChild(el('text',{x:m.l-8,y:Y+4,'text-anchor':'end','class':'tick'},String(p)));
-  }
-  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ih,'class':'plotframe'}));
-  svg.appendChild(el('text',{x:m.l+iw/2,y:h-6,'text-anchor':'middle','class':'axtitle'},c.xt));
-  svg.appendChild(el('text',{transform:'translate(12 '+(m.t+ih/2)+') rotate(-90)','text-anchor':'middle','class':'axtitle'},c.yt));
-  f.svg=svg;
-  return f;
-}
-function pathOf(f,s,cls){
-  return el('path',{d:'M'+f.x(s[0][0]).toFixed(1)+' '+f.y(s[0][1]).toFixed(1)+'L'+f.x(s[1][0]).toFixed(1)+' '+f.y(s[1][1]).toFixed(1),'class':cls});
-}
-function label(f,text,cls,x,y,anchor){
-  f.svg.appendChild(el('text',{x:x,y:y,'text-anchor':anchor,'class':'curvelab '+cls+' halo'},text));
-}
-function guides(f,x,y,faint){
-  var a=el('line',{x1:x,x2:x,y1:y,y2:f.m.t+f.ih,'class':'guide'});
-  var b=el('line',{x1:f.m.l,x2:x,y1:y,y2:y,'class':'guide'});
-  if(faint){a.style.opacity='.5';b.style.opacity='.5';}
-  f.svg.appendChild(a);f.svg.appendChild(b);
-}
-function arrow(f,x0,y0,x1,y1){
-  var dx=x1-x0,dy=y1-y0,L=Math.sqrt(dx*dx+dy*dy);
-  if(L<20){return;}
-  var ux=dx/L,uy=dy/L;
-  f.svg.appendChild(el('line',{x1:x0+ux*8,y1:y0+uy*8,x2:x1-ux*9,y2:y1-uy*9,'class':'shift','marker-end':'url(#'+f.mid+')'}));
-}
-function watch(box,fn){
-  var w=0;
-  if(window.ResizeObserver){
-    new ResizeObserver(function(){var n=Math.round(box.clientWidth);if(n&&n!==w){w=n;fn();}}).observe(box);
-  }else{window.addEventListener('resize',fn);}
-}
 
 /* ---------- 图 1:供需均衡 ---------- */
 var box1=$('#chart1');
