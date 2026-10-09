@@ -154,6 +154,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--demand);outline
 .tbl th{font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
 .tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--font-mono)}
 .tbl td{min-width:5em}
+.tbl.comparison td{min-width:10em}
 
 /* misconceptions */
 .mis{display:grid;grid-template-columns:1fr 2fr;gap:6px 28px;padding:16px 0;border-top:1px solid var(--line)}

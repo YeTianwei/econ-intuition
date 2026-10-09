@@ -89,7 +89,7 @@
         {
           id: 'm04-03', title: '寡头、价格歧视与反垄断',
           en: 'Oligopoly, price discrimination and antitrust',
-          path: 'm04/03-oligopoly-price-discrimination.html', status: 'todo'
+          path: 'm04/03-oligopoly-price-discrimination.html', status: 'done'
         },
         {
           id: 'm04-04', title: '平台、网络效应与零边际成本',
