@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>供需、价格与弹性</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>
+/* Layout concept: 单栏阅读(约 40em)加全宽图表面板。供需图沿用教科书惯例,需求蓝、供给橙,细网格模仿坐标纸。 */
+:root{
+  --bg:#F3F6FA;
+  --surface:#FFFFFF;
+  --ink:#14202B;
+  --muted:#52646F;
+  --line:#D3DBE4;
+  --grid:#E4EAF1;
+  --demand:#1B5DC1;
+  --demand-soft:rgba(27,93,193,.16);
+  --supply:#C8440F;
+  --supply-soft:rgba(200,68,15,.16);
+  --good:#1B7A4B;
+  --bad:#B42318;
+  --font-display:"Noto Serif SC","Songti SC","STSong","Source Han Serif SC",serif;
+  --font-body:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D141C;
+    --surface:#141E29;
+    --ink:#E6EDF4;
+    --muted:#9DAEBE;
+    --line:#293746;
+    --grid:#1B2631;
+    --demand:#6EA6FF;
+    --demand-soft:rgba(110,166,255,.2);
+    --supply:#FF8F63;
+    --supply-soft:rgba(255,143,99,.2);
+    --good:#5FCB8F;
+    --bad:#FF8F86;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D141C;
+  --surface:#141E29;
+  --ink:#E6EDF4;
+  --muted:#9DAEBE;
+  --line:#293746;
+  --grid:#1B2631;
+  --demand:#6EA6FF;
+  --demand-soft:rgba(110,166,255,.2);
+  --supply:#FF8F63;
+  --supply-soft:rgba(255,143,99,.2);
+  --good:#5FCB8F;
+  --bad:#FF8F86;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.page{max-width:880px;margin-inline:auto;padding-inline:16px;padding-block:20px 72px}
+.prose{max-width:40em}
+p{margin:0 0 1em}
+b,strong{font-weight:700}
+.en{color:var(--muted);font-size:.92em}
+.mono{font-family:var(--font-mono)}
+
+/* module nav */
+.modules{overflow-x:auto;margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line)}
+.modules ol{display:flex;gap:2px;list-style:none;margin:0;padding:0 0 10px;min-width:max-content}
+.modules .m{display:flex;align-items:baseline;gap:6px;padding:5px 10px;border-radius:4px;font-size:13px;line-height:1.6;white-space:nowrap;color:var(--muted)}
+.modules .m i{font-family:var(--font-mono);font-style:normal;font-size:12px}
+.modules .m.current{background:var(--ink);color:var(--bg)}
+
+/* title block */
+h1{font-family:var(--font-display);font-weight:700;font-size:clamp(32px,6.4vw,48px);line-height:1.2;margin:36px 0 6px;text-wrap:balance}
+.sub{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}
+.lede{font-size:18px;max-width:36em}
+.meta{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:.02em}
+
+h2{font-family:var(--font-display);font-weight:600;font-size:clamp(23px,4.2vw,28px);line-height:1.35;margin:0 0 14px;text-wrap:balance}
+h3{font-size:17px;font-weight:700;line-height:1.5;margin:28px 0 8px}
+section{margin-top:64px}
+
+/* headline sample */
+.headline{margin:18px 0 22px;padding:16px 20px;border:1px solid var(--line);background:var(--surface);border-radius:6px;max-width:40em}
+.headline figcaption{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:.03em}
+.headline blockquote{margin:8px 0 0;font-family:var(--font-display);font-weight:600;font-size:clamp(19px,3.6vw,23px);line-height:1.55}
+.qs{padding-left:1.4em;max-width:40em}
+.qs li{margin-bottom:.3em}
+
+.analogy{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0 4px;margin:24px 0;max-width:40em}
+.analogy .lab,.lab{display:block;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--muted);margin-bottom:2px}
+
+/* widgets */
+.widget{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;margin:24px 0}
+.widget h3{margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{font:inherit;font-size:14px;line-height:1.5;padding:5px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
+.chip:hover{background:var(--grid)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--demand);outline-offset:2px}
+.chart{min-height:250px}
+.plot{display:block;max-width:100%}
+.plotbg{fill:var(--surface)}
+.plotframe{fill:none;stroke:var(--line);stroke-width:1}
+.gridline{stroke:var(--grid);stroke-width:1}
+.tick{font-family:var(--font-mono);font-size:11px;fill:var(--muted)}
+.axtitle{font-family:var(--font-body);font-size:12px;fill:var(--muted)}
+.curve{fill:none;stroke-width:2.75;stroke-linecap:round}
+.curve.d{stroke:var(--demand)}
+.curve.s{stroke:var(--supply)}
+.curve.ghost{stroke-width:1.75;stroke-dasharray:6 5;opacity:.6}
+.guide{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 4}
+.cs{fill:var(--demand-soft)}
+.ps{fill:var(--supply-soft)}
+.pt{fill:var(--ink);stroke:var(--surface);stroke-width:2}
+.pt.base{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.shift{stroke:var(--ink);stroke-width:1.5}
+.arrowhead{fill:var(--ink)}
+.halo{paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.curvelab{font-family:var(--font-mono);font-size:13px;font-weight:500}
+.curvelab.d{fill:var(--demand)}
+.curvelab.s{fill:var(--supply)}
+.ptlab{font-family:var(--font-mono);font-size:12px;fill:var(--ink)}
+.vallab{font-family:var(--font-mono);font-size:11px;fill:var(--ink)}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:8px 0 0;padding:0;font-size:13px;color:var(--muted)}
+.legend .sw{display:inline-block;width:22px;height:0;border-top:3px solid var(--ink);vertical-align:middle;margin-right:6px}
+.legend .sw.d{border-color:var(--demand)}
+.legend .sw.s{border-color:var(--supply)}
+.legend .sw.g{border-top-style:dashed;border-top-width:2px;opacity:.7}
+
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:16px}
+@media (max-width:620px){.controls{grid-template-columns:1fr}}
+.ctl{display:grid;grid-template-columns:1fr auto;gap:2px 12px;min-width:0;align-items:baseline}
+.ctl label{font-size:15px;font-weight:500}
+.ctl output{font-family:var(--font-mono);font-size:14px;font-variant-numeric:tabular-nums}
+.ctl input[type=range]{grid-column:1/-1;width:100%;margin:6px 0 0}
+.ctl .hint{grid-column:1/-1;font-size:13px;color:var(--muted);line-height:1.6}
+#sD,#sS,#E{accent-color:var(--ink)}
+#sD{accent-color:var(--demand)}
+#sS{accent-color:var(--supply)}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:14px;margin-top:14px;line-height:1.6}
+.check input{margin-top:5px}
+
+.read{margin:16px 0 0}
+.read>div{display:grid;grid-template-columns:1fr auto auto;gap:4px 14px;padding:8px 0;border-top:1px solid var(--line);align-items:baseline}
+.read dt{font-size:15px}
+.read dd{margin:0;font-variant-numeric:tabular-nums}
+.read dd b{font-family:var(--font-mono);font-weight:500;font-size:17px}
+.read .delta{font-family:var(--font-mono);font-size:13px;color:var(--muted);min-width:4.5em;text-align:right}
+.verdict{margin:12px 0 0;padding:10px 12px;background:var(--bg);border-radius:4px;font-size:15px;line-height:1.7}
+.note{font-size:13px;color:var(--muted);line-height:1.7;margin:10px 0 0}
+
+.tablewrap{overflow-x:auto;margin:14px 0}
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th,.tbl td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:baseline}
+.tbl th{font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+.tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--font-mono)}
+.tbl td{min-width:5em}
+
+/* misconceptions */
+.mis{display:grid;grid-template-columns:1fr 2fr;gap:6px 28px;padding:16px 0;border-top:1px solid var(--line)}
+.mis:last-of-type{border-bottom:1px solid var(--line)}
+.mis p{margin:0}
+.mis .said{color:var(--muted);font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.6}
+@media (max-width:620px){.mis{grid-template-columns:1fr}}
+
+/* quiz */
+.q{padding:16px 0;border-top:1px solid var(--line);max-width:40em}
+.qtext{font-weight:500;margin-bottom:8px}
+.qn{font-family:var(--font-mono);color:var(--muted);margin-right:.7em}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:15px;line-height:1.6;padding:9px 12px;margin-top:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
+.opt:hover:not(:disabled){background:var(--grid)}
+.opt:disabled{color:var(--ink);cursor:default}
+.opt.right{border-color:var(--good);border-width:2px;padding:8px 11px}
+.opt.wrong{border-color:var(--bad);border-width:2px;padding:8px 11px}
+.opt .tag{font-family:var(--font-mono);font-size:12px;margin-right:8px;font-weight:500}
+.opt.right .tag{color:var(--good)}
+.opt.wrong .tag{color:var(--bad)}
+.why{margin:10px 0 0;font-size:15px;color:var(--muted);line-height:1.7}
+.scorebar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.scorebar p{margin:0;font-family:var(--font-mono);font-size:13px}
+
+/* flashcards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;align-items:start}
+.card{text-align:left;font:inherit;padding:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;cursor:pointer;min-width:0}
+.card:hover{background:var(--grid)}
+.card .t{display:block;font-weight:700;line-height:1.5}
+.card .en{display:block;font-family:var(--font-mono);font-size:12px;margin-top:2px}
+.card .hint{display:block;margin-top:10px;font-size:12px;color:var(--muted)}
+.card .def{display:block;margin-top:10px;font-size:14.5px;line-height:1.7}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:14px 0 18px;counter-reset:s;max-width:40em}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2em 1fr;gap:4px;padding:10px 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--font-mono);color:var(--muted);padding-top:2px}
+.steps li div{min-width:0}
+
+.next{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;max-width:40em}
+</style>
+</head>
+<body>
+
+<main class="page">
+<nav class="modules" aria-label="课程模块">
+  <ol>
+    <li><span class="m" title="待生成"><i>1</i>稀缺与权衡</span></li>
+    <li><span class="m current" aria-current="page"><i>2</i>供需与弹性</span></li>
+    <li><span class="m" title="待生成"><i>3</i>市场失灵</span></li>
+    <li><span class="m" title="待生成"><i>4</i>博弈论</span></li>
+    <li><span class="m" title="待生成"><i>5</i>信息经济学</span></li>
+    <li><span class="m" title="待生成"><i>6</i>宏观基础</span></li>
+    <li><span class="m" title="待生成"><i>7</i>货币与金融</span></li>
+    <li><span class="m" title="待生成"><i>8</i>增长与国际</span></li>
+  </ol>
+</nav>
+
+<header>
+  <h1>供需、价格与弹性</h1>
+  <p class="sub">Supply, demand &amp; elasticity</p>
+  <p class="lede">新闻里凡是写着“因为……所以涨价”或“因为……所以降价”的报道，背后几乎都是这一章的内容。读完之后，你能自己判断：是买家变了还是卖家变了，价格和销量会往哪走，涨价之后卖家到底是赚了还是亏了。</p>
+  <p class="meta">约 20 分钟 · 2 个可调节的图 · 5 道自测题 · 8 张闪卡</p>
+</header>
+
+<section id="news">
+  <h2>从一条新闻开始</h2>
+  <figure class="headline">
+    <figcaption>示例标题（为教学拟写，不是真实报道）</figcaption>
+    <blockquote>鸡蛋价格连涨三周，商家称养殖户淘汰了不少产蛋鸡</blockquote>
+  </figure>
+  <p class="prose">读这样的标题时，先问自己三个问题。本模块末尾会回到这里逐个回答。</p>
+  <ol class="qs">
+    <li>哪一方变了：是买家想买的变了，还是卖家愿意卖的变了？</li>
+    <li>价格和销量分别会往哪个方向走？</li>
+    <li>卖家靠涨价，能不能如愿多赚钱？</li>
+  </ol>
+</section>
+
+<section id="model">
+  <h2>价格是怎么形成的</h2>
+  <p class="prose">先看两个群体。买家的行为用<b>需求</b><span class="en"> (demand)</span> 描述：价格越高，愿意买的越少，所以需求曲线向右下方倾斜。卖家的行为用<b>供给</b><span class="en"> (supply)</span> 描述：价格越高，愿意卖的越多，所以供给曲线向右上方倾斜。</p>
+  <p class="prose">两条线的交点叫<b>均衡</b><span class="en"> (equilibrium)</span>。在这个价格上，想买的数量刚好等于想卖的数量，没有人被迫多买，也没有货卖不出去。</p>
+
+  <div class="analogy">
+    <span class="lab">类比</span>
+    <p>收摊前的最后半小时，摊主发现菜卖不完，就会降价；如果货被抢光了，他下次会涨价。没有谁“决定”了均衡价格，它是无数次这样的小调整留下的结果。</p>
+  </div>
+
+  <h3>沿曲线移动，还是曲线移动</h3>
+  <p class="prose">价格自己变动，只会让我们沿着同一条曲线移动，这叫需求量或供给量的变化。收入、偏好、相关商品的价格、成本、技术、买卖双方的人数、预期，这些价格以外的因素变了，整条曲线才会平移，这叫需求或供给的变化。新闻里的“因为……所以涨价”，几乎都在描述后一种。</p>
+
+  <div class="widget" id="w-sd" aria-labelledby="w1t">
+    <h3 id="w1t">图 1　供需均衡：拖动滑块移动曲线</h3>
+    <div class="chips" id="presets1" role="group" aria-label="选择一个情景">
+      <button type="button" class="chip" data-sd="0" data-ss="0" aria-pressed="false">基准</button>
+      <button type="button" class="chip" data-sd="0" data-ss="-20" aria-pressed="false">减产（供给减少）</button>
+      <button type="button" class="chip" data-sd="20" data-ss="0" aria-pressed="false">需求热潮（需求增加）</button>
+      <button type="button" class="chip" data-sd="0" data-ss="20" aria-pressed="false">技术进步（供给增加）</button>
+      <button type="button" class="chip" data-sd="-20" data-ss="0" aria-pressed="false">收入下降（需求减少）</button>
+      <button type="button" class="chip" data-sd="20" data-ss="-20" aria-pressed="false">需求增加＋供给减少</button>
+    </div>
+    <div class="chart" id="chart1"></div>
+    <ul class="legend">
+      <li><span class="sw d"></span>需求 D</li>
+      <li><span class="sw s"></span>供给 S</li>
+      <li><span class="sw g"></span>移动前的原曲线（下标 0）</li>
+      <li>E₀ 是原均衡，E₁ 是新均衡</li>
+    </ul>
+    <div class="controls">
+      <div class="ctl">
+        <label for="sD">需求变化 <span class="en">(demand shift)</span></label>
+        <output id="sDv" for="sD">0</output>
+        <input id="sD" type="range" min="-30" max="30" step="2" value="0">
+        <span class="hint">每个价格下，买家多买（正）或少买（负）的数量，单位万盒/周</span>
+      </div>
+      <div class="ctl">
+        <label for="sS">供给变化 <span class="en">(supply shift)</span></label>
+        <output id="sSv" for="sS">−20</output>
+        <input id="sS" type="range" min="-30" max="30" step="2" value="-20">
+        <span class="hint">每个价格下，卖家多供应（正）或少供应（负）的数量，单位万盒/周</span>
+      </div>
+    </div>
+    <label class="check" for="surplus"><input type="checkbox" id="surplus"><span>显示消费者剩余<span class="en"> (consumer surplus)</span> 与生产者剩余<span class="en"> (producer surplus)</span></span></label>
+    <dl class="read">
+      <div><dt>均衡价格 P*</dt><dd><b id="r1P">8.00</b> 元/盒</dd><dd class="delta" id="r1Pd">0.00</dd></div>
+      <div><dt>均衡数量 Q*</dt><dd><b id="r1Q">40</b> 万盒/周</dd><dd class="delta" id="r1Qd">0</dd></div>
+      <div id="rowCS" hidden><dt>消费者剩余</dt><dd><b id="r1CS">80.0</b> 万元/周</dd><dd class="delta" id="r1CSd">0.0</dd></div>
+      <div id="rowPS" hidden><dt>生产者剩余</dt><dd><b id="r1PS">80.0</b> 万元/周</dd><dd class="delta" id="r1PSd">0.0</dd></div>
+    </dl>
+    <p class="verdict" id="v1" aria-live="polite"></p>
+    <p class="note">消费者剩余是买家愿意付的价格与实际付的价格之差，生产者剩余是卖家实际收到的价格与其最低可接受价格之差。图中数字为教学用的示意值，右侧是相对基准状态的变化。</p>
+  </div>
+
+  <h3>四种单独变化的结果</h3>
+  <div class="tablewrap">
+    <table class="tbl">
+      <thead><tr><th>变化</th><th>曲线</th><th>均衡价格</th><th>均衡数量</th></tr></thead>
+      <tbody>
+        <tr><td>需求增加</td><td>D 右移</td><td>上升 ↑</td><td>增加 ↑</td></tr>
+        <tr><td>需求减少</td><td>D 左移</td><td>下降 ↓</td><td>减少 ↓</td></tr>
+        <tr><td>供给增加</td><td>S 右移</td><td>下降 ↓</td><td>增加 ↑</td></tr>
+        <tr><td>供给减少</td><td>S 左移</td><td>上升 ↑</td><td>减少 ↓</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="prose">两条曲线同时移动时，规律是：同向移动（同时增加或同时减少），数量的方向确定，价格要看谁移动得更多；反向移动，价格的方向确定，数量要看谁移动得更多。在图 1 里试一试“需求增加＋供给减少”。</p>
+</section>
+
+<section id="elasticity">
+  <h2>弹性：价格变了，数量有多敏感</h2>
+  <p class="prose">需求曲线只告诉我们涨价会让销量下降，没说下降多少。<b>弹性</b><span class="en"> (elasticity)</span> 回答的就是这个问题：价格变化 1%，数量变化百分之几。</p>
+  <div class="analogy">
+    <span class="lab">类比</span>
+    <p>松紧带轻轻一拉就变长很多，钢丝用力拉也几乎不动。弹性大的商品像松紧带，价格稍有变化，买的人数就大幅变动；弹性小的商品像钢丝，价格怎么变，大家照买不误。</p>
+  </div>
+  <p class="mono" style="font-size:15px;margin:0 0 6px">需求价格弹性 E = 需求量变化的百分比 ÷ 价格变化的百分比</p>
+  <p class="prose" style="font-size:15px;color:var(--muted)">需求量和价格反方向变动，E 通常为负，习惯上取绝对值 |E| 来比较大小。</p>
+  <div class="tablewrap">
+    <table class="tbl">
+      <thead><tr><th class="num">|E|</th><th>名称</th><th>买家的反应</th><th>涨价后卖家总收入</th></tr></thead>
+      <tbody>
+        <tr><td class="num">&lt; 1</td><td>缺乏弹性 <span class="en">inelastic</span></td><td>不敏感，销量降幅小于涨幅</td><td>上升</td></tr>
+        <tr><td class="num">≈ 1</td><td>单位弹性 <span class="en">unit elastic</span></td><td>销量降幅约等于涨幅</td><td>基本不变</td></tr>
+        <tr><td class="num">&gt; 1</td><td>富有弹性 <span class="en">elastic</span></td><td>很敏感，销量降幅大于涨幅</td><td>下降</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="prose">弹性的大小取决于几个因素：替代品多不多、是必需品还是奢侈品、这笔支出占收入的比重大不大，以及时间长短。时间越长，人们越有机会找到替代办法，弹性就越大。同一条直线型需求曲线上，不同位置的弹性也不同：价格越高的位置，弹性越大。</p>
+
+  <div class="widget" id="w-el" aria-labelledby="w2t">
+    <h3 id="w2t">图 2　同样的供给冲击，不同的需求弹性</h3>
+    <p class="prose" style="font-size:15px;margin-bottom:12px">起点相同：价格 8 元/盒，销量 40 万盒/周。现在让供给减少 12 万盒/周（S 左移，大小固定），只改变买家对价格的敏感程度，看结果有什么不同。供给弹性固定为 2.0。</p>
+    <div class="chips" id="presets2" role="group" aria-label="选择一类商品（数值仅为示意）">
+      <button type="button" class="chip" data-e="0.3" aria-pressed="false">必需品 |E|=0.3</button>
+      <button type="button" class="chip" data-e="1" aria-pressed="false">一般商品 |E|=1.0</button>
+      <button type="button" class="chip" data-e="3" aria-pressed="false">替代品很多 |E|=3.0</button>
+    </div>
+    <div class="chart" id="chart2"></div>
+    <ul class="legend">
+      <li><span class="sw d"></span>需求 D</li>
+      <li><span class="sw s"></span>供给 S₁（冲击后）</li>
+      <li><span class="sw g"></span>S₀（冲击前）</li>
+    </ul>
+    <p class="note" style="margin-top:6px">为了看清差异，坐标轴只显示局部（销量 20 到 60，价格 6 到 11）。</p>
+    <div class="controls">
+      <div class="ctl" style="grid-column:1/-1">
+        <label for="E">需求价格弹性 |E| <span class="en">(price elasticity of demand)</span></label>
+        <output id="Ev" for="E">0.5</output>
+        <input id="E" type="range" min="0.2" max="4" step="0.1" value="0.5">
+        <span class="hint">向左拖，买家越不敏感，需求曲线越陡；向右拖，买家越敏感，需求曲线越平</span>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table class="tbl" aria-label="冲击前后的价格、销量和总收入">
+        <thead><tr><th></th><th class="num">冲击前</th><th class="num">冲击后</th><th class="num">变化</th></tr></thead>
+        <tbody>
+          <tr><td>价格 P（元/盒）</td><td class="num" id="t2P0">8.00</td><td class="num" id="t2P1"></td><td class="num" id="t2Pd"></td></tr>
+          <tr><td>销量 Q（万盒/周）</td><td class="num" id="t2Q0">40.0</td><td class="num" id="t2Q1"></td><td class="num" id="t2Qd"></td></tr>
+          <tr><td>卖家总收入 P×Q（万元/周）</td><td class="num" id="t2R0">320.0</td><td class="num" id="t2R1"></td><td class="num" id="t2Rd"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="verdict" id="v2" aria-live="polite"></p>
+    <p class="note">|E| 为各类商品给出的数值只是示意，真实商品的弹性因时间、地区和统计方法不同而相差很大。</p>
+  </div>
+  <p class="prose">注意规律：同样大小的供给冲击，买家越不敏感，价格涨得越多，销量掉得越少。所以必需品供应一出问题，价格波动往往特别剧烈。</p>
+</section>
+
+<section id="mistakes">
+  <h2>三个常见误解</h2>
+  <div class="mis">
+    <p class="said">“价格涨了，说明需求增加了。”</p>
+    <p>涨价既可能来自需求增加，也可能来自供给减少。区分办法是看数量：价格和数量一起上升，更像需求增加；价格上升而数量下降，更像供给减少。</p>
+  </div>
+  <div class="mis">
+    <p class="said">“涨价一定会让销量下降。”</p>
+    <p>沿着需求曲线涨价，销量确实会降。但如果涨价是因为需求曲线右移，价格和销量会同时上升。另外，缺乏弹性的商品涨价后销量降幅很小。</p>
+  </div>
+  <div class="mis">
+    <p class="said">“价格是由成本决定的。”</p>
+    <p>成本影响的是供给曲线的位置，价格由供求共同决定。成本上升时，卖家能转嫁给买家多少，取决于需求的弹性：买家越敏感，越难转嫁。</p>
+  </div>
+</section>
+
+<section id="quiz-sec">
+  <h2>自测</h2>
+  <p class="prose">五道题，点选项即可看到解析。</p>
+  <div id="quiz"></div>
+  <div class="scorebar">
+    <p id="score" aria-live="polite">已完成 0/5，答对 0 题</p>
+    <button type="button" class="chip" id="redo">重做</button>
+  </div>
+</section>
+
+<section id="cards-sec">
+  <h2>闪卡</h2>
+  <p class="prose">先看术语，自己回忆一遍，再点开核对。</p>
+  <div class="cards" id="cards"></div>
+</section>
+
+<section id="back">
+  <h2>回到新闻</h2>
+  <p class="prose">再读一遍开头的标题：“鸡蛋价格连涨三周，商家称养殖户淘汰了不少产蛋鸡”。</p>
+  <ol class="steps">
+    <li><div><b>找出哪一方变了。</b>“淘汰产蛋鸡”改变的是卖家的生产能力，所以动的是供给，不是需求。</div></li>
+    <li><div><b>判断曲线往哪边移。</b>产蛋鸡变少，在每个价格下能供应的鸡蛋都变少，S 向左移。</div></li>
+    <li><div><b>推出价格和数量。</b>S 左移，沿着需求曲线，均衡价格上升，均衡数量下降。标题只提到了价格，数量下降是推理得出的结论。</div></li>
+    <li><div><b>用弹性判断卖家的得失。</b>如果买家对鸡蛋不敏感（需求缺乏弹性），价格涨幅会更大、销量降幅更小，养殖户的总收入可能反而上升；如果买家很容易换成别的食物（富有弹性），涨价就难以持续，总收入可能下降。</div></li>
+  </ol>
+  <p class="prose">要验证推理，最好找销量数据。如果价格涨的同时销量也在上升，更可能是需求增加，而不是供给减少。</p>
+  <button type="button" class="chip" id="goChart">在图 1 里重放这个情景</button>
+</section>
+
+<p class="next"><span class="lab">下一模块</span>3　市场失灵与政府干预。外部性、公共品、税收与补贴，以及为什么价格上限常常带来短缺。</p>
+</main>
+
+<script>
+(function(){
+'use strict';
+var NS='http://www.w3.org/2000/svg', MINUS='−';
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function el(tag,attrs,text){var e=document.createElementNS(NS,tag);for(var k in attrs){e.setAttribute(k,attrs[k]);}if(text!=null){e.textContent=text;}return e;}
+function fmt(n,d){var s=Math.abs(n).toFixed(d);return (n<0&&+s!==0?MINUS:'')+s;}
+function fmtS(n,d){var s=Math.abs(n).toFixed(d);if(+s===0){return s;}return (n<0?MINUS:'+')+s;}
+function sgnInt(n){return (n>0?'+':n<0?MINUS:'')+Math.abs(n);}
+
+/* Liang-Barsky 线段裁剪,点为 [Q,P] */
+function clip(a,b,r){
+  var t0=0,t1=1,dq=b[0]-a[0],dp=b[1]-a[1];
+  var tests=[[-dq,a[0]-r.q0],[dq,r.q1-a[0]],[-dp,a[1]-r.p0],[dp,r.p1-a[1]]];
+  for(var i=0;i<4;i++){
+    var p=tests[i][0],q=tests[i][1];
+    if(p===0){if(q<0){return null;}}
+    else{
+      var t=q/p;
+      if(p<0){if(t>t1){return null;}if(t>t0){t0=t;}}
+      else{if(t<t0){return null;}if(t<t1){t1=t;}}
+    }
+  }
+  return [[a[0]+t0*dq,a[1]+t0*dp],[a[0]+t1*dq,a[1]+t1*dp]];
+}
+/* fn: 价格 -> 数量(直线) */
+function seg(fn,r){return clip([fn(-80),-80],[fn(80),80],r);}
+
+function frame(box,c){
+  var w=Math.max(280,Math.floor(box.clientWidth));
+  var h=Math.round(Math.min(400,Math.max(250,w*0.62)));
+  var m={l:w<440?44:52,r:14,t:12,b:44};
+  var iw=w-m.l-m.r,ih=h-m.t-m.b;
+  var f={
+    m:m,iw:iw,ih:ih,w:w,h:h,mid:'ah'+c.id,
+    x:function(q){return m.l+(q-c.q0)/(c.q1-c.q0)*iw;},
+    y:function(p){return m.t+ih-(p-c.p0)/(c.p1-c.p0)*ih;}
+  };
+  var svg=el('svg',{viewBox:'0 0 '+w+' '+h,width:w,height:h,'class':'plot',role:'img','aria-label':c.label});
+  var defs=el('defs',{});
+  var mk=el('marker',{id:f.mid,viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto'});
+  mk.appendChild(el('path',{d:'M0 0L10 5L0 10z','class':'arrowhead'}));
+  defs.appendChild(mk);svg.appendChild(defs);
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ih,'class':'plotbg'}));
+  var q,p,X,Y;
+  for(q=c.q0;q<=c.q1+1e-9;q+=c.qs){
+    X=f.x(q);
+    svg.appendChild(el('line',{x1:X,x2:X,y1:m.t,y2:m.t+ih,'class':'gridline'}));
+    svg.appendChild(el('text',{x:X,y:m.t+ih+16,'text-anchor':'middle','class':'tick'},String(q)));
+  }
+  for(p=c.p0;p<=c.p1+1e-9;p+=c.ps){
+    Y=f.y(p);
+    svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:Y,y2:Y,'class':'gridline'}));
+    svg.appendChild(el('text',{x:m.l-8,y:Y+4,'text-anchor':'end','class':'tick'},String(p)));
+  }
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ih,'class':'plotframe'}));
+  svg.appendChild(el('text',{x:m.l+iw/2,y:h-6,'text-anchor':'middle','class':'axtitle'},c.xt));
+  svg.appendChild(el('text',{transform:'translate(12 '+(m.t+ih/2)+') rotate(-90)','text-anchor':'middle','class':'axtitle'},c.yt));
+  f.svg=svg;
+  return f;
+}
+function pathOf(f,s,cls){
+  return el('path',{d:'M'+f.x(s[0][0]).toFixed(1)+' '+f.y(s[0][1]).toFixed(1)+'L'+f.x(s[1][0]).toFixed(1)+' '+f.y(s[1][1]).toFixed(1),'class':cls});
+}
+function label(f,text,cls,x,y,anchor){
+  f.svg.appendChild(el('text',{x:x,y:y,'text-anchor':anchor,'class':'curvelab '+cls+' halo'},text));
+}
+function guides(f,x,y,faint){
+  var a=el('line',{x1:x,x2:x,y1:y,y2:f.m.t+f.ih,'class':'guide'});
+  var b=el('line',{x1:f.m.l,x2:x,y1:y,y2:y,'class':'guide'});
+  if(faint){a.style.opacity='.5';b.style.opacity='.5';}
+  f.svg.appendChild(a);f.svg.appendChild(b);
+}
+function arrow(f,x0,y0,x1,y1){
+  var dx=x1-x0,dy=y1-y0,L=Math.sqrt(dx*dx+dy*dy);
+  if(L<20){return;}
+  var ux=dx/L,uy=dy/L;
+  f.svg.appendChild(el('line',{x1:x0+ux*8,y1:y0+uy*8,x2:x1-ux*9,y2:y1-uy*9,'class':'shift','marker-end':'url(#'+f.mid+')'}));
+}
+function watch(box,fn){
+  var w=0;
+  if(window.ResizeObserver){
+    new ResizeObserver(function(){var n=Math.round(box.clientWidth);if(n&&n!==w){w=n;fn();}}).observe(box);
+  }else{window.addEventListener('resize',fn);}
+}
+
+/* ---------- 图 1:供需均衡 ---------- */
+var box1=$('#chart1');
+function state1(){
+  var sD=+$('#sD').value,sS=+$('#sS').value;
+  return {sD:sD,sS:sS,P:8+(sD-sS)/20,Q:40+(sD+sS)/2,pd0:(120+sD)/10,ps0:(40-sS)/10};
+}
+function draw1(){
+  var s=state1(),sD=s.sD,sS=s.sS,P=s.P,Q=s.Q;
+  if(!box1.clientWidth){return;}
+  var c={id:1,q0:0,q1:120,p0:0,p1:16,qs:20,ps:2,xt:'销量 Q（万盒/周）',yt:'价格 P（元/盒）',
+    label:'图 1：均衡价格 '+P.toFixed(2)+' 元/盒，均衡数量 '+Q.toFixed(0)+' 万盒/周'};
+  var f=frame(box1,c),b={q0:0,q1:120,p0:0,p1:16};
+  var shifted=(sD!==0||sS!==0);
+  var D0=seg(function(p){return 120-10*p;},b),S0=seg(function(p){return -40+10*p;},b);
+  var D1=seg(function(p){return 120+sD-10*p;},b),S1=seg(function(p){return -40+sS+10*p;},b);
+  var x1=f.x(Q),y1=f.y(P),x0=f.x(40),y0=f.y(8);
+  if($('#surplus').checked){
+    f.svg.appendChild(el('polygon',{points:f.x(0)+','+f.y(s.pd0)+' '+f.x(0)+','+y1+' '+x1+','+y1,'class':'cs'}));
+    f.svg.appendChild(el('polygon',{points:f.x(0)+','+y1+' '+x1+','+y1+' '+f.x(0)+','+f.y(s.ps0),'class':'ps'}));
+  }
+  if(sD!==0&&D0){f.svg.appendChild(pathOf(f,D0,'curve d ghost'));}
+  if(sS!==0&&S0){f.svg.appendChild(pathOf(f,S0,'curve s ghost'));}
+  guides(f,x1,y1,false);
+  if(S1){f.svg.appendChild(pathOf(f,S1,'curve s'));}
+  if(D1){f.svg.appendChild(pathOf(f,D1,'curve d'));}
+  /* 曲线标签 */
+  label(f,sD!==0?'D₁':'D','d',f.x(10)+6,f.y((120+sD-10)/10)-8,'start');
+  label(f,sS!==0?'S₁':'S','s',f.x(85)+8,f.y((125-sS)/10)+15,'start');
+  if(sD!==0){label(f,'D₀','d',f.x(100)+6,f.y(2)-8,'start');}
+  if(sS!==0){label(f,'S₀','s',f.x(10)+8,f.y(5)+15,'start');}
+  /* 均衡点 */
+  if(shifted){
+    arrow(f,x0,y0,x1,y1);
+    f.svg.appendChild(el('circle',{cx:x0,cy:y0,r:5,'class':'pt base'}));
+    f.svg.appendChild(el('text',{x:x0-9,y:y0+17,'text-anchor':'end','class':'ptlab halo'},'E₀'));
+  }
+  f.svg.appendChild(el('circle',{cx:x1,cy:y1,r:6,'class':'pt'}));
+  f.svg.appendChild(el('text',{x:x1+9,y:y1-9,'text-anchor':'start','class':'ptlab halo'},shifted?'E₁':'E'));
+  f.svg.appendChild(el('text',{x:f.m.l+6,y:y1-6,'text-anchor':'start','class':'vallab halo'},'P* = '+P.toFixed(2)));
+  f.svg.appendChild(el('text',{x:x1+6,y:f.m.t+f.ih-6,'text-anchor':'start','class':'vallab halo'},'Q* = '+Q.toFixed(0)));
+  box1.replaceChildren(f.svg);
+}
+function describe1(sD,sS){
+  var parts=[];
+  if(sD){parts.push('需求'+(sD>0?'增加':'减少')+'（D 向'+(sD>0?'右':'左')+'移 '+Math.abs(sD)+' 万盒/周）');}
+  if(sS){parts.push('供给'+(sS>0?'增加':'减少')+'（S 向'+(sS>0?'右':'左')+'移 '+Math.abs(sS)+' 万盒/周）');}
+  if(!parts.length){return '基准状态：两条曲线都没动，均衡在价格 8 元/盒、销量 40 万盒/周。拖动滑块，或点上方的情景。';}
+  var dp=sD-sS,dq=sD+sS;
+  var pw=dp>0?'上升':dp<0?'下降':'不变',qw=dq>0?'增加':dq<0?'减少':'不变';
+  var txt=parts.join('，')+'，结果是均衡价格'+pw+'，均衡数量'+qw+'。';
+  if(sD&&sS){
+    if(dp===0){txt+='两个变化对价格的影响恰好抵消。';}
+    else if(dq===0){txt+='两个变化对数量的影响恰好抵消。';}
+    else if(sD*sS>0){txt+='两条曲线同向移动，数量的方向确定，价格取决于谁移动得更多。';}
+    else{txt+='两条曲线反向移动，价格的方向确定，数量取决于谁移动得更多。';}
+  }
+  return txt;
+}
+function update1(){
+  var s=state1();
+  $('#sDv').textContent=sgnInt(s.sD);
+  $('#sSv').textContent=sgnInt(s.sS);
+  $('#r1P').textContent=s.P.toFixed(2);
+  $('#r1Pd').textContent=fmtS(s.P-8,2);
+  $('#r1Q').textContent=s.Q.toFixed(0);
+  $('#r1Qd').textContent=fmtS(s.Q-40,0);
+  var cs=0.5*s.Q*(s.pd0-s.P),ps=0.5*s.Q*(s.P-s.ps0);
+  $('#r1CS').textContent=cs.toFixed(1);
+  $('#r1CSd').textContent=fmtS(cs-80,1);
+  $('#r1PS').textContent=ps.toFixed(1);
+  $('#r1PSd').textContent=fmtS(ps-80,1);
+  var on=$('#surplus').checked;
+  $('#rowCS').hidden=!on;$('#rowPS').hidden=!on;
+  $('#v1').textContent=describe1(s.sD,s.sS);
+  draw1();
+}
+function mark1(active){
+  $$('#presets1 .chip').forEach(function(x){x.setAttribute('aria-pressed',String(x===active));});
+}
+$$('#presets1 .chip').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    $('#sD').value=btn.getAttribute('data-sd');
+    $('#sS').value=btn.getAttribute('data-ss');
+    mark1(btn);update1();
+  });
+});
+['sD','sS'].forEach(function(id){$('#'+id).addEventListener('input',function(){mark1(null);update1();});});
+$('#surplus').addEventListener('change',update1);
+watch(box1,draw1);
+
+/* ---------- 图 2:弹性 ---------- */
+var box2=$('#chart2');
+function state2(){
+  var E=+$('#E').value,kD=5*E,kS=10,shock=12,P0=8,Q0=40;
+  var dP=shock/(kD+kS),P1=P0+dP,Q1=Q0-kD*dP;
+  return {E:E,kD:kD,kS:kS,shock:shock,P0:P0,Q0:Q0,P1:P1,Q1:Q1,R0:P0*Q0,R1:P1*Q1};
+}
+function draw2(){
+  var s=state2();
+  if(!box2.clientWidth){return;}
+  var b={q0:20,q1:60,p0:6,p1:11};
+  var c={id:2,q0:20,q1:60,p0:6,p1:11,qs:10,ps:1,xt:'销量 Q（万盒/周）',yt:'价格 P（元/盒）',
+    label:'图 2：|E|='+s.E.toFixed(1)+'，冲击后价格 '+s.P1.toFixed(2)+' 元/盒，销量 '+s.Q1.toFixed(1)+' 万盒/周'};
+  var f=frame(box2,c);
+  var S0=seg(function(p){return s.Q0+s.kS*(p-s.P0);},b);
+  var S1=seg(function(p){return s.Q0+s.kS*(p-s.P0)-s.shock;},b);
+  var D=seg(function(p){return s.Q0-s.kD*(p-s.P0);},b);
+  var x0=f.x(s.Q0),y0=f.y(s.P0),x1=f.x(s.Q1),y1=f.y(s.P1);
+  guides(f,x0,y0,true);
+  guides(f,x1,y1,false);
+  if(S0){f.svg.appendChild(pathOf(f,S0,'curve s ghost'));}
+  if(S1){f.svg.appendChild(pathOf(f,S1,'curve s'));}
+  if(D){f.svg.appendChild(pathOf(f,D,'curve d'));}
+  label(f,'S₀','s',f.x(54)+8,f.y(s.P0+(54-s.Q0)/s.kS)+15,'start');
+  label(f,'S₁','s',f.x(48)-8,f.y(s.P0+(48+s.shock-s.Q0)/s.kS)-7,'end');
+  if(D){
+    var up=D[0][1]>D[1][1]?D[0]:D[1];
+    var ux=f.x(up[0]),uy=f.y(up[1]);
+    if(up[1]>=b.p1-1e-6){label(f,'D','d',ux+8,uy+15,'start');}
+    else{label(f,'D','d',ux+8,Math.max(uy-7,f.m.t+14),'start');}
+  }
+  arrow(f,x0,y0,x1,y1);
+  f.svg.appendChild(el('circle',{cx:x0,cy:y0,r:5,'class':'pt base'}));
+  f.svg.appendChild(el('circle',{cx:x1,cy:y1,r:6,'class':'pt'}));
+  f.svg.appendChild(el('text',{x:x0+10,y:y0+18,'text-anchor':'start','class':'ptlab halo'},'E₀'));
+  f.svg.appendChild(el('text',{x:x1-10,y:y1-10,'text-anchor':'end','class':'ptlab halo'},'E₁'));
+  box2.replaceChildren(f.svg);
+}
+function update2(){
+  var s=state2();
+  $('#Ev').textContent=s.E.toFixed(1);
+  var dPp=(s.P1/s.P0-1)*100,dQp=(s.Q1/s.Q0-1)*100,dRp=(s.R1/s.R0-1)*100;
+  $('#t2P1').textContent=s.P1.toFixed(2);
+  $('#t2Pd').textContent=fmtS(dPp,1)+'%';
+  $('#t2Q1').textContent=s.Q1.toFixed(1);
+  $('#t2Qd').textContent=fmtS(dQp,1)+'%';
+  $('#t2R1').textContent=s.R1.toFixed(1);
+  $('#t2Rd').textContent=fmtS(dRp,1)+'%';
+  var name=s.E<0.9?'缺乏弹性 (inelastic)':s.E<=1.1?'接近单位弹性 (unit elastic)':'富有弹性 (elastic)';
+  var msg='|E| = '+s.E.toFixed(1)+'，'+name+'。价格上涨 '+fmt(dPp,1)+'%，销量下降 '+fmt(-dQp,1)+'%。';
+  if(Math.abs(dRp)<2.1){msg+='两者几乎抵消，卖家总收入基本不变。';}
+  else if(dRp>0){msg+='价格涨幅大于销量降幅，卖家总收入反而上升 '+fmt(dRp,1)+'%。';}
+  else{msg+='销量降幅大于价格涨幅，卖家总收入下降 '+fmt(-dRp,1)+'%。';}
+  $('#v2').textContent=msg;
+  $$('#presets2 .chip').forEach(function(x){x.setAttribute('aria-pressed',String(+x.getAttribute('data-e')===s.E));});
+  draw2();
+}
+$('#E').addEventListener('input',update2);
+$$('#presets2 .chip').forEach(function(btn){
+  btn.addEventListener('click',function(){$('#E').value=btn.getAttribute('data-e');update2();});
+});
+watch(box2,draw2);
+
+/* ---------- 自测 ---------- */
+var QUIZ=[
+  {q:'疫情期间口罩需求激增，其他条件不变。均衡价格和均衡数量会怎样？',
+   o:['价格下降，数量增加','价格上升，数量减少','价格上升，数量增加','价格下降，数量减少'],a:2,
+   why:'需求增加使 D 右移。沿着不变的供给曲线，价格上升，数量也增加。'},
+  {q:'下列哪一项属于“供给”（整条曲线）的变化，而不是“供给量”的变化？',
+   o:['咖啡涨价后，咖啡馆多供应了咖啡','咖啡豆成本下降，咖啡馆在每个价格下都愿意多供应','咖啡涨价后，顾客少买了咖啡','咖啡价格从 20 元涨到 25 元，成交杯数下降'],a:1,
+   why:'只有价格以外的因素（成本、技术、卖家数量、预期等）改变，整条供给曲线才会平移。价格自身的变动只会引起沿曲线移动，也就是供给量或需求量的变化。'},
+  {q:'某商品需求缺乏弹性（|E| < 1）。卖家把价格提高 10%，总收入大致会怎样？',
+   o:['下降，因为销量下降超过 10%','不变，涨价和降量刚好抵消','上升，因为销量下降不到 10%','无法判断，必须知道成本'],a:2,
+   why:'|E| < 1 说明销量下降的百分比小于价格上升的百分比，所以 P×Q 增加。总收入与成本无关。'},
+  {q:'需求增加的同时供给也增加，均衡数量和均衡价格会怎样？',
+   o:['数量一定增加，价格一定上升','数量一定增加，价格一定下降','数量不确定，价格一定上升','数量一定增加，价格不确定'],a:3,
+   why:'两条曲线都右移，数量一定增加。需求右移推高价格，供给右移压低价格，净效果取决于哪条移动得更多。'},
+  {q:'为什么汽油涨价后，短期内人们的汽油消费量下降不多？',
+   o:['汽油的需求曲线向右移动了','短期内缺少替代品，需求缺乏弹性','汽油的供给曲线是垂直的','价格上涨使买家的收入增加了'],a:1,
+   why:'短期内人们很难换车或改变通勤方式，价格变动对购买量的影响小，也就是需求缺乏弹性。时间拉长后，弹性会变大。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){
+    var q=document.createElement('div');q.className='q';
+    var t=document.createElement('p');t.className='qtext';
+    var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);
+    t.appendChild(n);t.appendChild(document.createTextNode(it.q));
+    var opts=document.createElement('div');
+    var why=document.createElement('p');why.className='why';why.hidden=true;
+    var btns=[];
+    it.o.forEach(function(text,j){
+      var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;
+      b.addEventListener('click',function(){
+        if(q.getAttribute('data-done')){return;}
+        q.setAttribute('data-done','1');
+        var ok=(j===it.a);answered++;if(ok){correct++;}
+        btns.forEach(function(x,k){
+          x.disabled=true;
+          var tag=document.createElement('span');tag.className='tag';
+          if(k===it.a){x.classList.add('right');tag.textContent='正确';x.insertBefore(tag,x.firstChild);}
+          else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.insertBefore(tag,x.firstChild);}
+        });
+        why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;
+        score();
+      });
+      btns.push(b);opts.appendChild(b);
+    });
+    q.appendChild(t);q.appendChild(opts);q.appendChild(why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);
+buildQuiz();
+
+/* ---------- 闪卡 ---------- */
+var CARDS=[
+  {t:'需求',en:'demand',d:'其他条件不变时，买家在每个价格上愿意并且有能力购买的数量。曲线向右下方倾斜。'},
+  {t:'供给',en:'supply',d:'其他条件不变时，卖家在每个价格上愿意提供的数量。曲线向右上方倾斜。'},
+  {t:'均衡价格',en:'equilibrium price',d:'使需求量等于供给量的价格。高于它会出现过剩，低于它会出现短缺，市场会自发向它靠拢。'},
+  {t:'沿曲线移动 vs 曲线移动',en:'movement vs shift',d:'价格自身变动，引起沿曲线移动（需求量、供给量变化）。价格以外的因素变动，引起整条曲线平移（需求、供给变化）。'},
+  {t:'替代品与互补品',en:'substitutes & complements',d:'替代品涨价，本商品需求增加（红茶涨价，咖啡需求上升）。互补品涨价，本商品需求减少（汽油涨价，大排量汽车需求下降）。'},
+  {t:'需求价格弹性',en:'price elasticity of demand',d:'E = 需求量变化的百分比 ÷ 价格变化的百分比，常取绝对值。|E| > 1 富有弹性，|E| < 1 缺乏弹性。'},
+  {t:'影响弹性的因素',en:'determinants of elasticity',d:'替代品越多越有弹性；奢侈品比必需品有弹性；支出占收入比重越大越有弹性；观察的时间越长越有弹性。'},
+  {t:'总收入检验',en:'total revenue test',d:'需求缺乏弹性时，涨价会使卖家总收入上升；富有弹性时，涨价会使总收入下降；单位弹性时，总收入基本不变。'}
+];
+var grid=$('#cards');
+CARDS.forEach(function(c){
+  var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');
+  var t=document.createElement('span');t.className='t';t.textContent=c.t;
+  var en=document.createElement('span');en.className='en';en.textContent=c.en;
+  var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';
+  var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;
+  b.appendChild(t);b.appendChild(en);b.appendChild(hint);b.appendChild(def);
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;
+  });
+  grid.appendChild(b);
+});
+
+/* ---------- 回到新闻 ---------- */
+$('#goChart').addEventListener('click',function(){
+  var btn=$('#presets1 .chip[data-ss="-20"][data-sd="0"]');
+  $('#sD').value=0;$('#sS').value=-20;mark1(btn);update1();
+  $('#w-sd').scrollIntoView({block:'start'});
+});
+
+/* 初始状态:减产情景,与开头的新闻对应 */
+(function init(){
+  var btn=$('#presets1 .chip[data-ss="-20"][data-sd="0"]');
+  $('#sD').value=0;$('#sS').value=-20;mark1(btn);update1();update2();
+})();
+})();
+</script>
+</body>
+</html>
