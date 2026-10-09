@@ -84,7 +84,7 @@
         {
           id: 'm04-02', title: '完全竞争与垄断',
           en: 'Perfect competition and monopoly',
-          path: 'm04/02-competition-monopoly.html', status: 'todo'
+          path: 'm04/02-competition-monopoly.html', status: 'done'
         },
         {
           id: 'm04-03', title: '寡头、价格歧视与反垄断',
