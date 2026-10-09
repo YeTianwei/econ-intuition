@@ -21,7 +21,7 @@
         {
           id: 'm01-02', title: '边际思维与激励',
           en: 'Marginal thinking and incentives',
-          path: 'm01/02-marginal-thinking.html', status: 'todo'
+          path: 'm01/02-marginal-thinking.html', status: 'done'
         },
         {
           id: 'm01-03', title: '比较优势与交易',

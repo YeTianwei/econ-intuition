@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>边际思维与激励</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m01-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+  <h1>边际思维与激励</h1>
+  <p class="sub">Marginal thinking &amp; incentives</p>
+  <p class="lede">“平均每个座位要花多少钱”和“再坐一个人要多花多少钱”，是两个问题。许多看起来反常的决定，只是把问题问在了正确的位置。</p>
+  <p class="meta">约 20 分钟 · 1 个可调节的图 · 5 道自测题 · 8 张闪卡</p>
+</header>
+<section id="news">
+  <h2>从一条新闻开始</h2>
+  <figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>航班临近起飞，最后几个空座打折出售：票价低于平均成本，航空公司为什么还愿意卖？</blockquote></figure>
+  <ol class="qs"><li>低于平均成本出售一个座位，一定让航空公司亏得更多吗？</li><li>如果再增加一个乘客有好处，为什么不一直降价卖？</li><li>如果乘客知道总会有临时折扣，他们会改变购票时间吗？</li></ol>
+</section>
+<section id="margin">
+  <h2>不是“要不要做”，而是“还要不要多做一点”</h2>
+  <p class="prose">上一课用<a href="01-scarcity-opportunity-cost.html#scarcity">机会成本</a>比较不同去向。这一课把镜头拉近：已经做了一些之后，下一步该不该继续？<b>边际</b><span class="en"> (marginal)</span> 指的就是相对于当前状态，多一点或少一点带来的变化。</p>
+  <p class="prose"><b>边际收益</b><span class="en"> (marginal benefit, MB)</span> 是多做一点带来的新增收益。<b>边际成本</b><span class="en"> (marginal cost, MC)</span> 是为这一步付出的新增代价，包括相关的机会成本。不一定只算金钱：学习中的理解、休息中的舒适，也可以是收益。</p>
+  <p class="formula">多做一点：比较 MB 与 MC</p>
+  <p class="prose">新增收益大于新增成本，增加这一点会改善结果；小于新增成本，继续增加会让结果变差。把收益与成本放在同一套可比较的尺度上，才能作这个判断。</p>
+  <div class="analogy"><span class="lab">类比</span><p>备考时，第一小时解决了最不懂的一章，第四小时只是反复读熟悉的笔记，而睡眠越来越少。“今天学习总体有用”不能说明还应该熬下一小时。下一小时的收获，要和放弃睡眠的代价比较。</p></div>
+  <h3>为什么平均数会误导</h3>
+  <p class="prose">下面是一个教学假设，不是某家航空公司的数据：一趟确定会起飞的航班，有一笔无论是否增加这个乘客都不变的成本。将全部成本分摊到座位上，平均每座是 600 元；现在有一个空座可卖 300 元，增加乘客带来的餐食、服务等成本合计 80 元。</p>
+  <p class="formula">本次新增净收益 = 300 − 80 = 220 元</p>
+  <p class="prose">若没有其他影响，卖出空座比空着多得 220 元。它可能只是减少整趟航班的亏损，并不保证航班总体盈利。把 600 元的平均数再当作这一个乘客的新增成本，会把不随这一步改变的成本也算进来。</p>
+  <p class="prose">但若这个座位有希望卖给愿意付更高票价的人，提前卖掉会放弃那次机会；若低价票让原本愿意付高价的乘客改买便宜票，也要算入影响。“多一个乘客只花 80 元”的判断，依赖我们排除了这些影响。</p>
+  <p class="prose">决定是否开通航线、租用飞机，是另一个决策。那时许多成本还可以避免，就必须纳入比较。不能把一次临时空座决策中的成本判断，直接搬到长期经营上。</p>
+</section>
+<section id="decision">
+  <h2>找到总净收益最大的数量</h2>
+  <p class="prose"><b>总净收益</b><span class="en"> (total net benefit)</span> 是总收益减去总成本。考虑一项可以逐渐增加的活动，数量记作 Q。先做最有价值的部分，后做价值较低的部分，所以边际收益下降；资源越用越紧，边际成本上升。下面只用一个简单模型观察这个过程。</p>
+  <p class="formula">MB = 20 − 2Q；MC = 2 + Q</p>
+  <p class="prose">每增加一单位活动，新增收益逐渐减少，新增成本逐渐增加。数值都是教学示意，用“元”作为统一的价值尺度，Q 可以按半单位调整。</p>
+  <div class="widget" id="w-marginal" aria-labelledby="w1t">
+    <h3 id="w1t">图 1　边际决策器：多做一点，净收益还会增加吗？</h3>
+    <div class="chips" role="group" aria-label="选择活动数量"><button type="button" class="chip" data-q="2" aria-pressed="false">做得较少 Q = 2</button><button type="button" class="chip" data-q="6" aria-pressed="false">比较最优点 Q = 6</button><button type="button" class="chip" data-q="9" aria-pressed="false">做得过多 Q = 9</button></div>
+    <div class="chart" id="chart1"></div>
+    <ul class="legend"><li><span class="sw model"></span>边际收益 MB</li><li><span class="sw alternative"></span>边际成本 MC</li><li>E：MB = MC</li><li>实心点：当前数量的边际量</li></ul>
+    <div class="controls"><div class="ctl full"><label for="quantity">活动数量 Q</label><output id="quantityV" for="quantity">4.0 单位</output><input id="quantity" type="range" min="0" max="10" step="0.5" value="4"><span class="hint">单位：活动量；从 4 往 6 拖，再继续往右，看总净收益何时开始下降。</span></div></div>
+    <dl class="read pairs"><div><dt>当前边际收益 MB</dt><dd><b id="mb"></b> 元/单位</dd></div><div><dt>当前边际成本 MC</dt><dd><b id="mc"></b> 元/单位</dd></div><div><dt>总收益 B</dt><dd><b id="benefit"></b> 元</dd></div><div><dt>总成本 C</dt><dd><b id="cost"></b> 元</dd></div><div><dt>总净收益 B − C</dt><dd><b id="net"></b> 元</dd></div><div><dt>与最大净收益 54 元之差</dt><dd><b id="gap"></b> 元</dd></div></dl>
+    <p class="verdict" id="verdict" aria-live="polite"></p>
+    <h3>逐单位账表</h3>
+    <div class="tablewrap"><table class="tbl"><caption>从上一整单位增加到本单位的变化（元）</caption><thead><tr><th class="num">第 n 单位</th><th class="num">新增收益</th><th class="num">新增成本</th><th class="num">新增净收益</th><th class="num">到此累计净收益</th></tr></thead><tbody id="unitRows"></tbody></table></div>
+    <p class="note">全部数字为教学示意值，不是行业数据。总收益 B = 20Q − Q²，总成本 C = 2Q + 0.5Q²；没有计入与本次数量选择无关的沉没支出。图上是某一点的边际量，表格是每一整单位内的新增金额，两者不是同一个读数。滑到半单位时，以当前读数表为准。</p>
+  </div>
+  <h3>边际相等，不是总收益等于总成本</h3>
+  <p class="prose">在 Q = 6 处，两条线相交，MB 和 MC 都是 8 元/单位。此时总收益为 84 元，总成本为 30 元，总净收益为 54 元，远不是零。相等的是“下一点”的收益与代价，不是之前所有活动的总账。</p>
+  <p class="prose">为什么总净收益在这里最大？从左侧接近时，每增加一点，收益都比成本多；走到右侧后，每增加一点，成本都比收益多。此前累积的好处仍在，但再往右会开始侵蚀它。</p>
+  <p class="prose">看逐单位表：第 6 单位增加 9 元收益和 7.5 元成本，所以还值得做；第 7 单位只增加 7 元收益，却增加 8.5 元成本，所以不值得做。整数决策也会停在 6，但不是因为第 6 单位的两笔新增金额恰好相等。</p>
+  <h3>等式有条件，边际比较更通用</h3>
+  <p class="prose">本例的活动可细分，MB 持续下降、MC 持续上升，而且交点在允许的数量范围内。正是这些条件，让 MB = MC 给出唯一最优点。仅看到两条曲线相交，并不能对所有模型作同样保证。</p>
+  <p class="prose">如果最多只能做 4 单位，就算此时 MB 仍大于 MC，也只能停在容量上限。如果活动只能整件增加，就比较下一整件的新增收益与新增成本。如果每一件的新增成本都更大，不做也可能是最佳选择。</p>
+  <p class="prose">这些例外不推翻边际思维。它们提醒我们：决策先受可行范围约束，再在可行的调整中比较增量。图里的等式是一种结果，不是命令。</p>
+</section>
+<section id="incentives">
+  <h2>激励一变，行为也可能变</h2>
+  <p class="prose"><b>激励</b><span class="en"> (incentive)</span> 是改变某种行为预期收益或成本的因素。奖金、收费、时间限制、声誉和规则，都可能改变人们下一步的选择。</p>
+  <p class="prose">在图里的其他条件不变时，如果每新增一单位活动都获得奖励，边际收益会提高，愿意做的数量可能增加。但一个不取决于活动数量的固定奖励，不一定改变“再做一点”的比较。要看奖励究竟挂钩什么。</p>
+  <div class="analogy"><span class="lab">类比</span><p>团队只按“关闭工单数量”发奖金，就像考试只按答题页数给分。人们可能把一个问题拆成很多小工单，或优先做容易关掉的工单。数字变好，不代表真正解决的问题更多。</p></div>
+  <p class="prose">这类没有达到设计者本来目标、甚至产生反向影响的结果，叫<b>意外后果</b><span class="en"> (unintended consequences)</span>。上面的工单情景是假设，用来提醒我们区分“被奖励的指标”和“真正想要的结果”，不是一项真实研究的结论。</p>
+  <h3>分析政策时，把行为反应也算进去</h3>
+  <p class="prose">假设一座城市想减少路边停车占用，考虑提高停车费。支持者的依据是：占用车位的边际成本提高后，一些人会缩短停车时间或改乘其他交通方式。反对者可能关注：缺少替代交通的人负担更重，车辆也可能转移到邻近街道。</p>
+  <p class="prose">这不是说收费一定有效，或一定有害。净效果取决于替代交通、执法、收费覆盖范围与负担分配。要验证，就需要观察停车时长、周边交通和不同群体的变化，不能只看收费收入有没有增加。</p>
+  <p class="prose">激励分析不是断言人都自私，也不是说行为一定立刻变化。人会受到习惯、信息和价值观影响。它给出一个检查问题：新规则让谁多得到什么、又多付出什么？有没有未被设计者计入的调整方式？</p>
+</section>
+<section id="sunk-cost">
+  <h2>沉没成本谬误：让过去替未来作决定</h2>
+  <p class="prose">上一课定义了<a href="01-scarcity-opportunity-cost.html#sunk-cost">沉没成本</a>：无法收回的过去支出。<b>沉没成本谬误</b><span class="en"> (sunk cost fallacy)</span> 是因为已经付出很多，就继续做未来代价大于未来收益的事。</p>
+  <p class="prose">假设你买了不可退的课程，学到一半发现不再适合自己。继续学的收益，是之后能学到的内容；成本，是之后的时间和精力。已付费用无论继续或停止都不会回来，不该再次算成“停止的损失”。</p>
+  <p class="prose">停止项目可能确实有新的代价，比如合同违约金、遣散费用或失去后续机会。这些不是沉没成本，应当纳入未来比较。边际思维要求忽略的不是“所有过去相关的事”，而是此刻选择已无法改变的那部分。</p>
+</section>
+<section id="mistakes">
+  <h2>三个常见误解</h2>
+  <div class="mis"><p class="said">“低于平均成本出售，亏损一定扩大。”</p><p>要比较这次出售带来的新增收入与全部相关新增成本。它可能减少亏损，但不能据此保证整个项目盈利。</p></div>
+  <div class="mis"><p class="said">“MB = MC，说明做这件事没赚头。”</p><p>相等的是当前这一点的边际量。之前单位的收益可能远高于成本，所以总净收益仍可为正，并恰好达到最大。</p></div>
+  <div class="mis"><p class="said">“只要奖励一个好指标，结果就一定变好。”</p><p>人会适应考核规则。如果指标没有覆盖质量与其他代价，奖励可能引出绕过目标的行为。应检查实际结果，不只检查指标。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">五道情景题，数字和政策场景均为教学假设。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite">已完成 0/5，答对 0 题</p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">回忆术语时，也想一个适用条件。</p><div class="cards" id="cards"></div></section>
+<section id="back">
+  <h2>回到新闻</h2>
+  <ol class="steps"><li><div><b>先限定正在作的决定。</b>航班确定起飞、座位否则会空着时，临时售出一个座位，不等于重新决定是否经营整条航线。</div></li><li><div><b>比较真正新增的两笔账。</b>本例票价 300 元、新增成本 80 元，且没有其他机会损失，售出能增加 220 元净收益。低于平均成本并不意味着亏损扩大。</div></li><li><div><b>说明为什么不能无限降价。</b>价格越低，新增收入越少；还可能挤掉更高价的销售机会。只有全部新增收益仍大于全部相关新增成本，才值得继续。</div></li><li><div><b>把乘客的反应放回分析。</b>若预期临时必打折，一些人可能推迟购票，改变原本的收入。临时折扣的长期收益不能只靠一个空座的账来判断；现实中临近起飞的票价也不保证更低。</div></li></ol>
+  <p class="prose">下一次听到“已经做了这么多”“平均看还不错”，试着把问题换成：从现在起，下一步新增的好处和代价分别是什么？</p>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts;
+function $(s){return document.querySelector(s);}
+function marginalState(q){
+  var benefit=20*q-q*q,cost=2*q+0.5*q*q;
+  return {q:q,mb:20-2*q,mc:2+q,benefit:benefit,cost:cost,net:benefit-cost,gap:54-(benefit-cost)};
+}
+var box=$('#chart1');
+function draw(){
+  var s=marginalState(+$('#quantity').value);
+  var f=C.frame(box,{id:'marginal',q0:0,q1:10,p0:0,p1:24,qs:2,ps:4,xt:'活动数量 Q（单位）',yt:'边际价值（元/单位）',label:'图 1：Q 为 '+s.q.toFixed(1)+'，MB 为 '+s.mb.toFixed(1)+'，MC 为 '+s.mc.toFixed(1)+'，总净收益 '+s.net.toFixed(2)+' 元；最优数量 6'});
+  f.svg.appendChild(C.pathOf(f,[[0,20],[10,0]],'curve model'));
+  f.svg.appendChild(C.pathOf(f,[[0,2],[10,12]],'curve alternative'));
+  C.label(f,'MB','model',f.x(0.5),f.y(19)-10,'start');C.label(f,'MC','alternative',f.x(9.5),f.y(11.5)-10,'end');
+  C.guides(f,f.x(6),f.y(8),true);
+  f.svg.appendChild(C.el('circle',{cx:f.x(6),cy:f.y(8),r:5,'class':'pt base'}));
+  f.svg.appendChild(C.el('text',{x:f.x(6)+9,y:f.y(8)+19,'class':'ptlab halo'},'E'));
+  f.svg.appendChild(C.el('line',{x1:f.x(s.q),x2:f.x(s.q),y1:f.y(0),y2:f.y(Math.max(s.mb,s.mc)),'class':'guide'}));
+  [s.mb,s.mc].forEach(function(v,i){if(i===0||s.mb!==s.mc){f.svg.appendChild(C.el('circle',{cx:f.x(s.q),cy:f.y(v),r:5,'class':'pt'}));}});
+  f.svg.appendChild(C.el('text',{x:f.x(s.q)+(s.q>8?-7:7),y:f.y(0)-7,'text-anchor':s.q>8?'end':'start','class':'vallab halo'},'Q = '+s.q.toFixed(1)));
+  box.replaceChildren(f.svg);
+}
+function update(){
+  var s=marginalState(+$('#quantity').value);
+  $('#quantityV').textContent=s.q.toFixed(1)+' 单位';
+  ['mb','mc','benefit','cost'].forEach(function(id){$('#'+id).textContent=s[id].toFixed(1);});
+  $('#net').textContent=s.net.toFixed(2);$('#gap').textContent=s.gap.toFixed(2);
+  var text='Q = '+s.q.toFixed(1)+'，MB = '+s.mb.toFixed(1)+'，MC = '+s.mc.toFixed(1)+'。';
+  text+=s.q<6?'新增收益大于新增成本，还可以增加活动量。':s.q>6?'新增成本大于新增收益，减少活动量会提高总净收益。':'边际收益等于边际成本，总净收益在这里达到最大。';
+  text+='当前总净收益 '+s.net.toFixed(2)+' 元'+(s.q===6?'，正好是最大值 54 元。':'，比最大值少 '+s.gap.toFixed(2)+' 元。');
+  $('#verdict').textContent=text;
+  document.querySelectorAll('[data-q]').forEach(function(btn){btn.setAttribute('aria-pressed',String(+btn.dataset.q===s.q));});draw();
+}
+for(var i=1;i<=10;i++){
+  var now=marginalState(i),before=marginalState(i-1),row=document.createElement('tr');
+  [String(i),(now.benefit-before.benefit).toFixed(1),(now.cost-before.cost).toFixed(1),C.fmtS(now.net-before.net,1),now.net.toFixed(1)].forEach(function(value){var td=document.createElement('td');td.className='num';td.textContent=value;row.appendChild(td);});$('#unitRows').appendChild(row);
+}
+$('#quantity').addEventListener('input',update);
+document.querySelectorAll('[data-q]').forEach(function(btn){btn.addEventListener('click',function(){$('#quantity').value=btn.dataset.q;update();});});
+C.watch(box,draw);update();
+var QUIZ=[
+ {q:'航班确定起飞，空座否则不会售出。新增乘客收入 300 元，所有相关新增成本 80 元，没有影响其他销售。卖出后会怎样？',o:['新增净收益 220 元，但不保证航班总体盈利','因为低于平均成本，亏损必扩大','航班一定盈利 220 元','平均成本变成 80 元'],a:0,why:'新增净收益为 220 元。决定这一次是否出售，看新增账；总账还包括其他收入与成本。'},
+ {q:'在图中 Q = 8 时，MB = 4，MC = 10。允许略微减少活动量时，应该如何调整？',o:['增加数量，因为总净收益仍为正','不调整，因为已经投入了很多','减少数量，因为最后一点的代价高于收益','把总收益和总成本都清零'],a:2,why:'应减少数量。最后一点活动带来的成本比收益高，减少它能提高总净收益，即使目前总净收益仍为正。'},
+ {q:'一个项目未来继续可得 5 万元收益，还需投入 7 万元；已花的 10 万元完全无法收回。停止没有其他代价。应怎样决定？',o:['继续，因为停止会失去全部 10 万元','继续，因为总收益为正','只比较 10 万元和 7 万元','停止，因为未来新增收益低于新增成本'],a:3,why:'应停止。未来继续净损失 2 万元，已花的 10 万元在继续与停止两种选择下都无法收回。'},
+ {q:'客服奖金只按结单数量发放。结单数增加，但用户同一问题反复来问。最合理的检查方向是什么？',o:['结单增加就证明问题解决更多','考核是否奖励了快速结单，却忽略解决质量','取消一切激励，因为人不会响应规则','只看客服的平均年龄'],a:1,why:'应检查指标与真正目标是否错位。规则可能提高结单收益，却没有让解决质量得到同样重视。'},
+ {q:'按图中模型，受容量限制最多只能做 Q = 4，此时 MB 仍大于 MC。应该怎么办？',o:['必须突破容量，一直做到 MB = MC','所有模型都失效了','在可行范围内选 Q = 4，不强求边际相等','因为边际不相等，所以选 Q = 0'],a:2,why:'最优可行数量是 4。允许范围内净收益一直增加，容量上限可以成为最优点，不要求 MB = MC。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){
+    var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';
+    var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));
+    var opts=document.createElement('div'),why=document.createElement('p');why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');var btns=[];
+    it.o.forEach(function(text,j){
+      var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;
+      b.addEventListener('click',function(){
+        if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}
+        btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});
+        why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();
+      });btns.push(b);opts.appendChild(b);
+    });q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+ {t:'边际',en:'marginal',d:'相对于当前状态，多一点或少一点带来的变化。它问下一步，不问过去的平均表现。'},
+ {t:'边际收益',en:'marginal benefit',d:'多做一点带来的新增收益。可以是金钱，也可以是在统一尺度下评估的其他价值。'},
+ {t:'边际成本',en:'marginal cost',d:'多做一点带来的新增代价，包括与这一步相关的机会成本，不是把全部成本重新分摊一遍。'},
+ {t:'激励',en:'incentive',d:'改变某种行为预期收益或成本的因素。要看奖励或惩罚究竟与什么行为挂钩。'},
+ {t:'意外后果',en:'unintended consequences',d:'规则引发行为调整后，出现设计者未预期的结果。指标变好不等于真实目标已实现。'},
+ {t:'沉没成本谬误',en:'sunk cost fallacy',d:'因为已经付出无法收回的成本，仍继续一项未来新增成本高于新增收益的行动。'},
+ {t:'总净收益',en:'total net benefit',d:'总收益减去总成本。本课的边际相等点对应总净收益最大，不意味着总净收益为零。'},
+ {t:'边际决策规则',en:'marginal decision rule',d:'在可行范围内比较新增收益与新增成本。平滑、内点且满足形状条件时，最优点可由 MB = MC 找到；整数或容量约束下要直接比较可行调整。'}
+];
+CARDS.forEach(function(c){
+  var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');
+  var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;
+  var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);
+  b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);
+});
+})();
+</script>
+</body>
+</html>
