@@ -213,3 +213,18 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .lesson-state.done{color:var(--good)}
 .lesson-nav{display:grid;gap:14px}
 .course-home{display:inline-block;margin-top:18px}
+
+:root{--model:#6946A0;--alternative:#08786D}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--model:#C2A6FF;--alternative:#68D2BF}}
+:root[data-theme="dark"]{--model:#C2A6FF;--alternative:#68D2BF}
+.curve.model{stroke:var(--model)}
+.curve.alternative{stroke:var(--alternative)}
+.curvelab.model{fill:var(--model)}
+.curvelab.alternative{fill:var(--alternative)}
+.legend .sw.model{border-color:var(--model)}
+.legend .sw.alternative{border-color:var(--alternative)}
+.formula{font-family:var(--font-mono);font-size:15px;overflow-wrap:anywhere;max-width:40em}
+.ctl.full{grid-column:1/-1}
+.ctl input[type=range]{accent-color:var(--ink)}
+.read.pairs>div{grid-template-columns:1fr auto}
+.read.pairs dd{text-align:right;max-width:16em}

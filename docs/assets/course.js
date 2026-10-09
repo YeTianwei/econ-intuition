@@ -16,7 +16,7 @@
         {
           id: 'm01-01', title: '稀缺、机会成本与生产可能性边界',
           en: 'Scarcity, opportunity cost and the production possibilities frontier',
-          path: 'm01/01-scarcity-opportunity-cost.html', status: 'todo'
+          path: 'm01/01-scarcity-opportunity-cost.html', status: 'done'
         },
         {
           id: 'm01-02', title: '边际思维与激励',
