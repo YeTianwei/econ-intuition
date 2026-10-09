@@ -53,7 +53,7 @@
         {
           id: 'm03-01', title: '剩余与市场效率',
           en: 'Surplus and market efficiency',
-          path: 'm03/01-surplus-efficiency.html', status: 'todo'
+          path: 'm03/01-surplus-efficiency.html', status: 'done'
         },
         {
           id: 'm03-02', title: '价格管制：上限与下限',
