@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>成本：固定、可变、边际与规模经济</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m04-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>成本：固定、可变、边际与规模经济</h1>
+<p class="sub">Fixed, variable and marginal costs, and economies of scale</p>
+<p class="lede">建厂很贵，不代表多做一件也很贵；多做一件便宜，也不保证整座工厂能赚钱。把成本拆成不同的问题，才能判断扩产、接单和建厂究竟是在改善哪一本账。</p>
+<p class="meta">约 22 分钟 · 1 个可调节的图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m01/02-marginal-thinking.html">边际思维与激励</a>、<a href="../m03/01-surplus-efficiency.html">剩余与市场效率</a>。本课把“下一步的代价”放进企业的完整成本表。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>某芯片企业拟投入数百亿美元建设新厂，负责人称：订单足够多，单片成本才降得下来</blockquote></figure>
+<p class="prose">企业、金额与说法都是虚构设定，不是对任何芯片项目的报道。先假设新厂能生产质量相同的产品，也暂不考虑需求预测是否可信。把“总支出很大”与“每件平均支出很低”同时成立的原因找出来。</p>
+<ol class="qs"><li>建厂花费巨大，为什么仍可能让每片产品更便宜？</li><li>厂房已建好后，是否应该接下一笔低于平均成本的订单？</li><li>是否只要不断扩大工厂，成本就会一直下降？</li></ol>
+</section>
+<section id="costs">
+<h2>同一笔支出，先问时间与决策</h2>
+<p class="prose"><b>固定成本</b><span class="en"> (fixed cost, F)</span> 是在给定时期和产能范围内，不随产量变化的成本。假设本周租金已经确定，生产零件或少生产几件都要付这笔钱，这周的租金就是固定成本。“固定”不是说金额永远不变，而是说它不随本次比较的产量变。</p>
+<p class="prose"><b>可变成本</b><span class="en"> (variable cost, VC)</span> 随产量而变，例如假设中的材料、生产用电与额外工时。每件都需要材料，不代表每件材料加服务的成本相同；加班、拥挤和设备磨损可以使后面的单位更贵。</p>
+<p class="formula">总成本 TC = F + VC</p>
+<p class="prose">总成本包含为生产动用的全部相关资源。这是经济成本账，原则上也包括自有厂房和资金放弃其他用途的机会成本，不只包括向外付款的发票。下面模型将这些成本都折为同一货币单位，避免把“没有付款”误读为“没有代价”。</p>
+<h3>固定不等于沉没</h3>
+<p class="prose"><b>沉没成本</b><span class="en"> (sunk cost)</span> 是此刻已经无法收回的支出。固定看的是“是否随产量变化”，沉没看的是“现在能否收回”，两条分类轴不同。一台本周不随产量收费、但可以转售的机器，有固定成本性质，却不代表其全部价值都已经沉没。</p>
+<p class="prose">反过来，昨天为一笔订单买了无法退换、也无法转用的专用材料，那笔支出当时随订单而变，今天却可能已经沉没。讨论是否继续时，要数未来可避免的支出和放弃的转售价值，而不是只看账簿把它记在哪一栏。</p>
+<p class="prose">建设前，厂房方案可以取消，预期收入必须覆盖建厂、运营与资金占用等全部相关成本。建设后，短期是否接单则要看订单新增的收入与可避免成本。不能用“钱已经花了”替新项目辩护，也不能把全部建厂费再重复算进每一次临时订单。</p>
+<div class="analogy"><span class="lab">类比</span><p>几个人合租一辆车出游。租车费确定后，多坐一个人不再增加租金，油费与其他服务却可能增加。把租金分给更多乘客，会降低每人的平均账单；但这不表示车能无限塞人。超出容量要再租一辆车，原来的固定条件就变了。</p></div>
+</section>
+<section id="averages">
+<h2>平均问整本账，边际问下一步</h2>
+<p class="prose"><b>平均成本</b><span class="en"> (average cost, AC)</span> 是总成本除以产量，也称平均总成本。它回答“已经生产的这些单位，平均分担多少成本”。<b>平均可变成本</b><span class="en"> (average variable cost, AVC)</span> 只把可变成本分给产量；<b>平均固定成本</b><span class="en"> (average fixed cost, AFC)</span> 则是 F/Q。</p>
+<p class="formula">Q &gt; 0 时：AC = TC/Q = F/Q + AVC</p>
+<p class="prose">同样一笔固定成本，产量越多，每件分到的越少。AC 与 AVC 的竖直距离就是 F/Q，不是额外的一种成本。Q = 0 时没有任何件可供平均，三个平均数都未定义；不能为了画出一条完整线，偷偷把它们设成零。</p>
+<p class="prose"><b>边际成本</b><span class="en"> (marginal cost, MC)</span> 是产量增加一点带来的新增总成本。在可细分的光滑模型里，它是总成本曲线的斜率。固定成本不随这一步改变，因此增加 F 会抬高 AC，却不会改变 MC 或 AVC。</p>
+<p class="prose">若货物只能整件增加，应直接比较 TC(Q+1) − TC(Q)。图中 MC 是某一点的瞬时增量，不是整件差额。它与平均数在单位上都是“元/件”，含义却不同：一个回顾全部产量，一个询问下一点。</p>
+<h3>为何 MC 穿过 AC 的最低点</h3>
+<p class="prose">想象当前平均每件花 50 元。下一小批单位的成本低于 50，加入后会拉低平均；高于 50，就会抬高平均。只要曲线连续、可微，且最低点在正产量的内部，平均数从下降转为上升的位置就满足 MC = AC。</p>
+<p class="prose">这不是要求每家工厂必有漂亮的 U 形。若平均成本一直下降，或可行产量有边界，最低值可能在边界；若要整座新建产线，成本也可能跳跃。相交于内点最低值，是有形状与可细分条件的结论。本图选择一个能明确看到这种关系的模型。</p>
+<div class="widget" id="w-costs" aria-labelledby="w1t">
+<h3 id="w1t">图 1　成本曲线：摊薄固定成本，还是改变新增成本？</h3>
+<p class="prose">默认固定成本 100 元/周、基础可变成本参数 a = 12 元/件，观察 10 件/周。先只改 F，再只改 a，最后拖动产量。曲线属于同一家假想工厂，不是芯片行业估计。</p>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw model"></span>AC 平均总成本</li><li><span class="sw alternative"></span>AVC 平均可变成本</li><li><span class="sw s"></span>MC 边际成本</li><li>E 空心点：AC 最低点，MC = AC；实心点：观察产量</li></ul>
+<div class="controls">
+<div class="ctl"><label for="fixed">固定成本 F（元/周）</label><output id="fixed-value" for="fixed"></output><input id="fixed" type="range" min="40" max="360" step="10" value="100" aria-describedby="fixed-hint"><span class="hint" id="fixed-hint">只改变不随产量变化的支出；不改变 MC、AVC。</span></div>
+<div class="ctl"><label for="variable">基础可变成本 a（元/件）</label><output id="variable-value" for="variable"></output><input id="variable" type="range" min="8" max="24" step="1" value="12" aria-describedby="variable-hint"><span class="hint" id="variable-hint">每增加一件都要承担的基础部分；三条曲线一起上移。</span></div>
+<div class="ctl full"><label for="quantity">观察产量 Q（件/周）</label><output id="quantity-value" for="quantity"></output><input id="quantity" type="range" min="0" max="40" step="1" value="10" aria-describedby="quantity-hint"><span class="hint" id="quantity-hint">只是沿曲线移动，不自动决定利润最大产量。零产量时不计算平均数。</span></div>
+</div>
+<dl class="read pairs">
+<div><dt>总成本 TC（元/周）</dt><dd id="r-tc"></dd></div>
+<div><dt>可变成本 VC（元/周）</dt><dd id="r-vc"></dd></div>
+<div><dt>平均成本 AC（元/件）</dt><dd id="r-ac"></dd></div>
+<div><dt>平均可变成本 AVC（元/件）</dt><dd id="r-avc"></dd></div>
+<div><dt>边际成本 MC（元/件）</dt><dd id="r-mc"></dd></div>
+<div><dt>最低 AC 对应产量（件/周）</dt><dd id="r-minq"></dd></div>
+<div><dt>最低 AC = 该点 MC（元/件）</dt><dd id="r-minac"></dd></div>
+</dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">全部数字为教学示意，TC = F + aQ + Q²，VC = aQ + Q²，MC = a + 2Q；Q 的单位为件/周，系数的单位与之配套。对 Q &gt; 0，AVC = a + Q，AC = F/Q + a + Q。纵轴随参数与观察点调整；AC 在接近零产量时超出图框的部分裁去，平均曲线不连接到 Q = 0。零产量的 MC 表示从右侧开始增加产量的边际代价。未建模需求、产能阶跃或长期换厂。</p>
+</div>
+<h3>用三步实验读懂三条线</h3>
+<ol class="qs"><li>保持 F = 100、a = 12，Q = 10 时：VC = 220，TC = 320，AVC = 22，AC = MC = 32。AC 与 AVC 相差 10，正是每件分担的固定成本。</li><li>只把 F 提到 360，仍看 Q = 10。TC 变成 580，AC 变成 58，MC 仍为 32，AVC 仍为 22。新增固定支出没有让“下一件”更贵；最低 AC 的产量却右移，因为要更多产量才能摊薄它。</li><li>把 F 改回 100，再把 a 从 12 提到 24。每件的基础支出增加 12，AC、AVC、MC 都上移 12；最低点的产量不变。先预测，再拖动核对，而不是只看线的颜色。</li></ol>
+<p class="prose">本模型的最低 AC 产量是 √F。若 F = 100，它为 10；若 F = 360，约为 18.97。允许连续产量时才能精确达到后者。这里 AVC 一直上升，而 AC 先降后升：前半段摊薄固定成本的效果更强，后半段可变成本上升的效果更强。</p>
+<p class="prose">AC 最低不是“企业应该生产这里”的完整答案。若顾客只愿买很少，最低平均成本也不能替它创造订单；若售价很高，超过这个数量仍可能有利可图。产量决策还要把新增收入与 MC 比较，下一课再把需求与成本接起来。</p>
+</section>
+<section id="scale">
+<h2>短期多开机器，不等于长期扩大规模</h2>
+<p class="prose"><b>短期</b><span class="en"> (short run)</span> 指至少某些生产投入还来不及调整的时期；<b>长期</b><span class="en"> (long run)</span> 指相关投入都可以选择的时期。它们不是统一的几个月或几年，而取决于要调整的是排班、设备还是整座工厂。</p>
+<p class="prose"><b>规模经济</b><span class="en"> (economies of scale)</span> 指长期选择合适投入与厂型时，扩大产出规模使每单位成本下降。例如在一个假想加工项目中，更大的需求允许采用专门化设备与分工；原来小规模无法合理采用的工艺，现在可能降低单位资源消耗。</p>
+<p class="prose">这与图上“同一厂房里提高 Q、摊薄 F”有联系，却不是同一个判断。图中的 F 固定，只有同一短期成本曲线；要证明长期规模经济，应比较多个可行厂型在不同规模下的最低单位成本。只看到旧厂利用率上升，证据还不够。</p>
+<p class="prose"><b>规模不经济</b><span class="en"> (diseconomies of scale)</span> 则是长期扩大规模反而提高平均成本。例如假想团队扩大后，多层审批、跨厂协调和信息传递消耗更多资源。如果产出扩大多少，总成本就恰好同比扩大，长期平均成本不变，也不属于这两种情况。</p>
+<h3>便宜的来源，要逐项拆开</h3>
+<p class="prose">大公司的采购单价更低，可能是更高效率，也可能只是向供应商重新分配了收益；“付的钱少”不必然说明社会动用的资源少。累计经验带来的熟练，也不等于当前规模本身的效果。技术改进、投入品降价和产品质量变化，都能让平均成本下降。</p>
+<p class="prose">因此，读到“产量翻倍、单位成本下降”，至少追问：是否同一质量？是否同一时期与投入价格？是否换了设备？是否把研发、维护与资金成本漏了？这不是否定规模优势，而是要求把机制与证据一一对应。</p>
+<h3>接单与退出，是不同范围的比较</h3>
+<p class="prose">假设厂房成本本周无法避免，售价低于 AC，但新增订单收入高于全部新增可避免成本，接单可能减少亏损。若整周是否开工也是可选的，还要比较整周收入能否覆盖全部可避免运营成本，不能只看最后一个单位。</p>
+<p class="prose">长期则不能永远靠“至少补贴了一点固定成本”维持一个不值得重建的项目。到租约续签、机器更新时，那些原先固定的承诺重新成为可以避免的选择。这里沿用<a href="../m01/02-marginal-thinking.html#sunk-cost">沉没成本分析</a>：换一个决策时点，就重画一次相关成本边界。</p>
+</section>
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“固定成本涨了，MC 就一定涨。”</p><p>在相同技术与产能范围内，纯粹改变 F 不改变新增一件所需资源。AC 上升，但 MC 与 AVC 不变。若同时换设备，则已不只是 F 的变化。</p></div>
+<div class="mis"><p class="said">“已经花在厂房上的钱，肯定全部沉没。”</p><p>看能否退租、转售或转用。可回收价值是当前选择的机会成本；固定与沉没不能互换。未来的新厂建设费更不能因旧厂已建而被忽略。</p></div>
+<div class="mis"><p class="said">“AC 下降证明规模经济，所以越大越好。”</p><p>同一短期工厂摊薄 F，不足以证明长期规模经济。规模扩大可能带来协调成本；AC 最低也不是需求约束下必然最赚钱的产量。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每道题先说清正在改变哪个成本、比较哪个决策。所有数值为教学假设。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆定义，再加一句它与相近术语的区别。</p><div class="cards" id="cards"></div></section>
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>为什么昂贵的新厂仍可能降低每片成本？</b>订单量足够大，可以分摊固定投入；若允许选择新工艺，也可能产生长期规模经济。但建设前必须用预期销量、全部成本和替代方案比较，不能仅凭单片制造成本低就宣布项目值得建。</div></li><li><div><b>低于平均成本的订单能不能接？</b>厂已建且本期固定支出不可避免时，比较这笔订单的新增收入与全部新增成本，包括放弃高价订单、加班和交付风险。收入超过这些代价可能减少亏损，不保证整厂盈利，也不保证该低价适合长期维持。</div></li><li><div><b>是不是越扩越便宜？</b>同一产能内，拥挤与加班可能使 MC 上升；换成更大组织后，也可能出现规模不经济。需要不同厂型、利用率和质量一致的成本证据，不能把 AC 的下降段无限外推。</div></li></ol>
+<p class="prose">能解释“为什么可能”，不等于已经判断新闻中的投资会成功。真正的项目还要核查订单是否稳定、技术是否兑现、资金是否够用。本课提供的是分账方式，不是投资建议。</p>
+<button type="button" class="chip" id="goChart">重放 F = 100、Q = 10 的成本账</button>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts;
+function $(s){return document.querySelector(s);}
+function model(F,a,q){
+  var vc=a*q+q*q,minq=Math.sqrt(F);
+  return {F:F,a:a,q:q,vc:vc,tc:F+vc,ac:q>0?F/q+a+q:null,avc:q>0?a+q:null,mc:a+2*q,minq:minq,minac:a+2*minq};
+}
+var box=$('#chart1');
+function state(){return model(+$('#fixed').value,+$('#variable').value,+$('#quantity').value);}
+function draw(){
+  if(!box.clientWidth){return;}
+  var s=state(),top=Math.ceil((Math.max(s.a+80,s.ac||0)+10)/20)*20;
+  var bounds={q0:0,q1:40,p0:0,p1:top};
+  var f=C.frame(box,{id:'costs',q0:0,q1:40,p0:0,p1:top,qs:10,ps:top/5,xt:'产量 Q（件/周）',yt:'成本（元/件）',label:'产量 '+s.q+' 件/周；'+(s.q?'AC '+s.ac.toFixed(2)+'，AVC '+s.avc.toFixed(2)+' 元/件；':'AC 与 AVC 未定义；')+'MC '+s.mc.toFixed(2)+' 元/件；最低 AC '+s.minac.toFixed(2)+'，对应产量 '+s.minq.toFixed(2)+' 件/周。'});
+  function curve(fn,cls,start){
+    var d='',previous=[start,fn(start)];
+    for(var q=start+0.05;q<=40.00001;q+=0.05){var current=[Math.min(q,40),fn(Math.min(q,40))],seg=C.clip(previous,current,bounds);if(seg){d+='M'+f.x(seg[0][0]).toFixed(2)+' '+f.y(seg[0][1]).toFixed(2)+'L'+f.x(seg[1][0]).toFixed(2)+' '+f.y(seg[1][1]).toFixed(2);}previous=current;}
+    f.svg.appendChild(C.el('path',{d:d,'class':'curve '+cls}));
+  }
+  curve(function(q){return s.F/q+s.a+q;},'model',0.05);
+  curve(function(q){return s.a+q;},'alternative',0.05);
+  curve(function(q){return s.a+2*q;},'s',0);
+  C.guides(f,f.x(s.q),f.y(s.mc),true);
+  [['mc-point',s.mc],['ac-point',s.ac],['avc-point',s.avc]].forEach(function(p){if(p[1]!==null){f.svg.appendChild(C.el('circle',{id:p[0],cx:f.x(s.q),cy:f.y(p[1]),r:4,'class':'pt'}));}});
+  f.svg.appendChild(C.el('circle',{id:'minimum-point',cx:f.x(s.minq),cy:f.y(s.minac),r:6,'class':'pt base'}));
+  C.label(f,'E','ptlab',f.x(s.minq)+10,f.y(s.minac)-12,'start');
+  box.replaceChildren(f.svg);
+}
+function update(){
+  var s=state();
+  [['fixed',s.F,'元/周'],['variable',s.a,'元/件'],['quantity',s.q,'件/周']].forEach(function(v){$('#'+v[0]+'-value').textContent=v[1]+' '+v[2];$('#'+v[0]).setAttribute('aria-valuetext',v[1]+' '+v[2]);});
+  ['tc','vc','ac','avc','mc','minq','minac'].forEach(function(k){$('#r-'+k).textContent=s[k]===null?'未定义（Q = 0）':s[k].toFixed(2);});
+  var msg='Q = '+s.q+' 件/周，总成本 '+s.tc.toFixed(2)+' 元/周。';
+  if(!s.q){msg+='没有产出，AC 与 AVC 未定义；总成本仍等于固定成本 '+s.F+'。MC 是从零开始增加产量的边际代价。';}
+  else{msg+='AC = '+s.ac.toFixed(2)+'，MC = '+s.mc.toFixed(2)+' 元/件。';msg+=Math.abs(s.q-s.minq)<1e-8?'处于 AC 最低点，MC = AC。':s.q<s.minq?'MC 低于 AC，增加一点产量会拉低平均成本。':'MC 高于 AC，增加一点产量会抬高平均成本。';}
+  msg+='最低 AC 对应 '+s.minq.toFixed(2)+' 件/周；这里只比较成本，不是利润最优决策。';
+  $('#verdict').textContent=msg;draw();
+}
+['fixed','variable','quantity'].forEach(function(id){$('#'+id).addEventListener('input',update);});C.watch(box,draw);
+var QUIZ=[
+{q:'只把本周不可避免的固定租金提高，技术、产能和材料价格不变。在同一正产量处怎样变化？',o:['AC、AVC、MC 一起上升','MC 上升，AC 不变','AC 上升，AVC 与 MC 不变','只有 AVC 上升'],a:2,why:'只有 AC 上升。新增租金进入 F/Q，却不改变再多生产一点所需的可变成本。'},
+{q:'当前 AC 为 50，MC 为 30，成本平滑且可略微扩产。增加一点产量会怎样？',o:['拉低 AC，因为新增部分比原平均便宜','提高 AC，因为总成本增加','AC 不变，因为固定成本没变','保证利润达到最大'],a:0,why:'AC 会下降。总成本增加与平均成本下降可以同时发生；盈利还要看新增收入。'},
+{q:'本周机器租金不随产量变，但现在可退租收回部分费用。哪项判断正确？',o:['固定成本必然全部沉没','可退部分不用考虑，因为已付款','所有可变成本都能收回','固定与沉没是不同分类，可回收部分应纳入决策'],a:3,why:'可回收部分是当前选择能改变的金额。不能因一笔钱具有固定成本性质，就认定它全部沉没。'},
+{q:'同一厂房增产后 F/Q 下降，设备与厂型都没改变。这足以证明长期规模经济吗？',o:['足以，所有平均成本下降都叫规模经济','不足，还要比较长期可调整投入时的最低单位成本','不足，因为固定成本永远不能摊薄','足以，所以应无限扩产'],a:1,why:'不足。这只是同一短期工厂摊薄固定成本。长期规模经济涉及可调整厂型与全部投入的比较。'},
+{q:'本图 F = 100、a = 12，但本周 Q = 0。AC 和总成本分别是什么？',o:['AC = 0，TC = 0','AC = 12，TC = 100','AC 未定义，TC = 100','AC = 100，TC = 12'],a:2,why:'没有产量可供平均，AC 未定义；停产没有消除模型中的固定成本，所以 TC 仍为 100。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){
+    var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';
+    var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));
+    var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;
+      b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}
+        btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});
+        why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);
+    });q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'固定成本',en:'fixed cost',d:'在给定时期与产能范围内，不随产量变化的成本。不等于永久不变，也不必全部沉没。'},
+{t:'可变成本',en:'variable cost',d:'随产量变化的总支出。每单位可变成本可以随产量改变，并非必然恒定。'},
+{t:'平均成本',en:'average cost',d:'AC = TC/Q = F/Q + AVC，仅在 Q > 0 时定义。问整本账如何分摊，不直接回答下一件要花多少。'},
+{t:'平均可变成本',en:'average variable cost',d:'AVC = VC/Q。AC 与它的差为平均固定成本 F/Q，纯粹改变 F 不改变 AVC。'},
+{t:'边际成本',en:'marginal cost',d:'增加一点产量的新增成本。在本课光滑模型中为 a + 2Q；不包含对产量不变的 F。'},
+{t:'规模经济',en:'economies of scale',d:'长期可选择全部投入时，产出规模扩大使最低平均成本下降。不能仅靠同一旧厂摊薄固定支出来证明。'},
+{t:'规模不经济',en:'diseconomies of scale',d:'长期规模扩大反而提高平均成本，例如协调成本超过专业化收益。不是所有大企业必然遇到的同一阈值。'},
+{t:'固定与沉没',en:'fixed versus sunk cost',d:'固定问是否随产量变，沉没问现在能否收回。可转售资产的回收价值仍影响当前选择。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+$('#goChart').addEventListener('click',function(){$('#fixed').value=100;$('#variable').value=12;$('#quantity').value=10;update();$('#w-costs').scrollIntoView({block:'start'});$('#fixed').focus({preventScroll:true});});
+update();
+})();
+</script>
+</body>
+</html>

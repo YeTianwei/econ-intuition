@@ -79,7 +79,7 @@
         {
           id: 'm04-01', title: '成本：固定、可变、边际与规模经济',
           en: 'Fixed, variable and marginal costs, and economies of scale',
-          path: 'm04/01-costs-economies-of-scale.html', status: 'todo'
+          path: 'm04/01-costs-economies-of-scale.html', status: 'done'
         },
         {
           id: 'm04-02', title: '完全竞争与垄断',
