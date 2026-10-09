@@ -228,3 +228,8 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .ctl input[type=range]{accent-color:var(--ink)}
 .read.pairs>div{grid-template-columns:1fr auto}
 .read.pairs dd{text-align:right;max-width:16em}
+.ctl input[type=number]{width:6em;max-width:100%;font:inherit;font-family:var(--font-mono);padding:5px 8px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink)}
+.ctl input[aria-invalid="true"]{border-color:var(--bad)}
+.input-error{color:var(--bad)}
+.bar.model{fill:var(--model)}
+.bar.alternative{fill:var(--alternative)}

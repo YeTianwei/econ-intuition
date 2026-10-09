@@ -26,7 +26,7 @@
         {
           id: 'm01-03', title: '比较优势与交易',
           en: 'Comparative advantage and trade',
-          path: 'm01/03-comparative-advantage.html', status: 'todo'
+          path: 'm01/03-comparative-advantage.html', status: 'done'
         }
       ]
     },
