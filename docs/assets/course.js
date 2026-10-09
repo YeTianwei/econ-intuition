@@ -42,7 +42,7 @@
         {
           id: 'm02-02', title: '弹性的更多面孔',
           en: 'More faces of elasticity',
-          path: 'm02/02-more-elasticities.html', status: 'todo'
+          path: 'm02/02-more-elasticities.html', status: 'done'
         }
       ]
     },
