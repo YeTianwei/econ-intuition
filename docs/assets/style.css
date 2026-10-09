@@ -241,3 +241,11 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .legend .sw.loss{border-color:var(--loss);border-top-style:dashed}
 .tablewrap:focus-visible{outline:2px solid var(--demand);outline-offset:2px}
 .transfer-area{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-dasharray:6 4}
+
+:root{--government:#7142A0;--government-soft:rgba(113,66,160,.18)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--government:#C5A1FF;--government-soft:rgba(197,161,255,.22)}}
+:root[data-theme="dark"]{--government:#C5A1FF;--government-soft:rgba(197,161,255,.22)}
+.tax-area{fill:var(--government-soft)}
+.curve.government{stroke:var(--government)}
+.curvelab.government{fill:var(--government)}
+.legend .sw.government{border-color:var(--government)}
