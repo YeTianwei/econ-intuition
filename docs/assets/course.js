@@ -58,7 +58,7 @@
         {
           id: 'm03-02', title: '价格管制：上限与下限',
           en: 'Price controls: ceilings and floors',
-          path: 'm03/02-price-controls.html', status: 'todo'
+          path: 'm03/02-price-controls.html', status: 'done'
         },
         {
           id: 'm03-03', title: '税收归宿与无谓损失',
