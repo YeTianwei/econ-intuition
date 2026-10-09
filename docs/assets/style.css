@@ -249,3 +249,12 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .curve.government{stroke:var(--government)}
 .curvelab.government{fill:var(--government)}
 .legend .sw.government{border-color:var(--government)}
+
+:root{--external:#08786D;--external-soft:rgba(8,120,109,.18)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--external:#68D2BF;--external-soft:rgba(104,210,191,.2)}}
+:root[data-theme="dark"]{--external:#68D2BF;--external-soft:rgba(104,210,191,.2)}
+.external-area{fill:var(--external-soft)}
+.curve.external{stroke:var(--external);stroke-dasharray:8 4}
+.curvelab.external{fill:var(--external)}
+.legend .sw.external{border-color:var(--external);border-top-style:dashed}
+.optimum-point{fill:var(--surface);stroke:var(--external);stroke-width:3}

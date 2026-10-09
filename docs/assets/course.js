@@ -68,7 +68,7 @@
         {
           id: 'm03-04', title: '外部性与公共品',
           en: 'Externalities and public goods',
-          path: 'm03/04-externalities-public-goods.html', status: 'todo'
+          path: 'm03/04-externalities-public-goods.html', status: 'done'
         }
       ]
     },
