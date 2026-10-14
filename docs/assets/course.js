@@ -298,7 +298,7 @@
         {
           id: 'm13-02', title: '汇率由什么决定',
           en: 'What determines exchange rates?',
-          path: 'm13/02-exchange-rates.html', status: 'todo'
+          path: 'm13/02-exchange-rates.html', status: 'done'
         },
         {
           id: 'm13-03', title: '国际收支与资本流动',

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>汇率由什么决定</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m13-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>汇率由什么决定</h1>
+<p class="sub">What determines exchange rates?</p>
+<p class="lede">汇率是一种货币用另一种货币标出的价格。它和其他价格一样由买卖双方决定，只是买卖的理由很多：进口要付款，出口要结汇，投资者要追逐更高的利息，恐慌时大家要躲进安全的资产。这一课分开短期和长期：短期主要看利差和风险情绪，长期看两国物价。</p>
+<p class="meta">约 22 分钟 · 1 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m02/01-supply-demand.html#model">供给与需求</a>、<a href="../m11/03-monetary-policy.html#channels">货币政策的汇率渠道</a>、<a href="../m12/01-interest-present-value.html#fisher">名义利率与实际利率</a>、<a href="../m08/01-gdp.html#per-capita">人均 GDP 与购买力平价</a>。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>综合路透社报道（2024 年 8 月 6 日，<a href="https://www.investing.com/news/economy-news/japans-april-yenbuying-intervention-sets-new-daily-record-3558243">原文转载</a>）与日本财务省外汇干预统计（<a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/2024_2Qe.html">2024 年 4~6 月</a>）</figcaption><blockquote>日元兑美元一度跌至 160.245，为 34 年来最弱；日本当局 4 月 29 日单日动用 5.92 万亿日元入市买入日元</blockquote></figure>
+<p class="prose">日本财务省决定外汇干预，由日本银行代为操作，干预金额按季度公开。它的统计显示，2024 年 4 月 29 日卖出美元、买入日元 5.92 万亿日元，5 月 1 日又买入 3.87 万亿日元。路透社报道，这两次干预让日元从 160.245 的 34 年低点回升了约 5%。</p>
+<p class="prose">这不是孤立的一次。下表把几次干预和美联储 H.10 统计的纽约中午汇率放在一起。数字越大，表示 1 美元能换的日元越多，也就是日元越弱。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="2022 年以来美元兑日元与日本买入日元干预，可横向滚动"><table class="tbl"><caption>汇率：美联储 H.10 纽约中午买入价，经 FRED 获取（序列 DEXJPUS），2026 年 10 月 14 日下载。干预金额：日本财务省外汇干预统计。</caption><thead><tr><th scope="col">日期</th><th scope="col" class="num">日元/美元</th><th scope="col">日本当局的操作</th></tr></thead><tbody>
+<tr><td>2022 年 1 月 3 日</td><td class="num">115.27</td><td>无</td></tr>
+<tr><td>2022 年 9 月 22 日</td><td class="num">142.16</td><td>买入日元 2.84 万亿，1998 年 6 月以来首次</td></tr>
+<tr><td>2022 年 10 月 21 日</td><td class="num">146.35</td><td>买入日元 5.62 万亿（前一天中午为 149.82）</td></tr>
+<tr class="hl"><td>2024 年 4 月 29 日</td><td class="num">156.71</td><td>买入日元 5.92 万亿（盘中一度 160.245）</td></tr>
+<tr><td>2024 年 7 月 10 日</td><td class="num">161.73</td><td>次日、再次日共买入日元 5.53 万亿</td></tr>
+<tr><td>2024 年 8 月 5 日</td><td class="num">143.95</td><td>无；日本银行 7 月 31 日加息</td></tr>
+<tr><td>2026 年 4 月 29 日</td><td class="num">160.23</td><td>4 月 30 日至 5 月 6 日分三天共买入日元 11.73 万亿</td></tr>
+</tbody></table></div>
+<p class="prose">从 2022 年初到 2024 年 7 月，美元兑日元从约 115 升到约 162。2026 年 4 月 30 日那一次单日买入日元 6.28 万亿，超过 2024 年 4 月 29 日，是财务省 1991 年以来公开数据中最大的单日买入日元操作。方向相反的干预也有过：日元很强的 2011 年，10 月 28 日汇率是 75.72，财务省在 10 月 31 日卖出日元、买入美元 8.07 万亿日元。</p>
+<ol class="qs"><li>“1 美元兑 160 日元”比“1 美元兑 115 日元”，日元贬值了多少？为什么不是 39%？</li><li>2024 年春，美国政策利率在 5.25%~5.5%，日本在 0~0.1%。这个利差和日元走弱有什么关系？</li><li>一天动用近 6 万亿日元，为什么两个多月后美元兑日元又升破 160？日元贬值对谁有利，对谁不利？</li></ol>
+</section>
+
+<section id="price">
+<h2>汇率是一个价格</h2>
+<p class="prose"><b>汇率</b><span class="en"> (exchange rate)</span> 是用一种货币表示的另一种货币的价格。“160 日元/美元”的意思是 1 美元卖 160 日元。市场上两种写法都有：日元/美元是“1 美元值多少日元”，美元/日元是它的倒数。读数字之前先看单位。</p>
+<p class="prose">按照“日元/美元”的写法，数字变大是美元变贵、日元变便宜。日元能换到的美元变少，叫日元<b>贬值</b><span class="en"> (depreciation)</span>；反过来，一单位日元能换到更多美元，叫日元<b>升值</b><span class="en"> (appreciation)</span>。在固定汇率制度下由政府调整官方汇率，另有“法定贬值”的说法，本模块讲汇率制度时再谈。</p>
+<p class="formula">日元贬值幅度 = 1 − 旧汇率 / 新汇率</p>
+<p class="prose">从 115 到 160，美元升值 160/115 − 1 ≈ 39%；但 1 日元能换的美元从 1/115 降到 1/160，只少了 1 − 115/160 ≈ 28%。同一次变动，两种货币的百分比不对称，因为它们的基数不同。新闻里的“日元跌了多少”要用后一个公式。</p>
+<div class="analogy"><span class="lab">类比</span><p>汇率像两家商场购物卡的兑换比例。甲商场的卡里有打折活动、利息返现更多，想拿到它的人就多，乙商场的卡就要多给几张才能换一张甲卡。一张卡“贵了”，就是另一张卡“贱了”，说的是同一件事。</p></div>
+<h3>汇率变动对谁有利</h3>
+<div class="tablewrap" tabindex="0" role="region" aria-label="日元贬值对不同群体的影响，可横向滚动"><table class="tbl comparison"><thead><tr><th scope="col">谁</th><th scope="col">日元贬值时</th><th scope="col">日元升值时</th></tr></thead><tbody>
+<tr><td>日本出口商（美元收入）</td><td>同样的美元收入换回更多日元，或者可以降低美元售价抢市场</td><td>日元收入缩水，海外价格竞争力下降</td></tr>
+<tr><td>日本进口商（美元付款）</td><td>能源、食品等进口成本以日元计上升，可能转嫁给消费者</td><td>进口成本下降</td></tr>
+<tr><td>赴日外国游客</td><td>同样的美元在日本能买更多东西</td><td>在日本花费变贵</td></tr>
+<tr><td>出国的日本家庭</td><td>海外旅行和留学变贵</td><td>海外花费变便宜</td></tr>
+</tbody></table></div>
+<p class="prose">所以贬值没有统一的“好”或“坏”，它在本国内部重新分配收益。它也会影响物价：进口价格上升会推高通胀，这正是<a href="../m11/03-monetary-policy.html#channels">货币政策汇率渠道</a>反方向的版本。</p>
+</section>
+
+<section id="market">
+<h2>外汇市场：谁在买美元，谁在卖美元</h2>
+<p class="prose">把“美元”当作商品，它在东京的价格就是日元/美元汇率。需要美元的一方是需求：要付进口货款的企业，要买美国债券和股票的日本投资者，出国旅行的日本人。手里有美元、要换成日元的一方是供给：把海外收入换回日元的出口商，来日本消费的外国游客，要买日本资产的外国投资者。</p>
+<p class="prose">供求曲线的形状和普通商品一样：美元越贵，日本人想买的越少，手里有美元的人越愿意卖。汇率的大变动主要来自曲线移动，而不是沿着曲线滑动。短期最重要的推动力是资本流动，因为跨国买卖金融资产的规模远大于商品贸易，投资者可以在几秒内改变主意。</p>
+
+<h3 id="parity">利率平价：利差为什么能推动汇率</h3>
+<p class="prose">一位日本投资者有 1 亿日元，可以存一年日元，也可以换成美元存一年再换回来。如果美元利率比日元高 5 个百分点，后者每年多赚 5%，前提是一年后汇率不变。只要这个前提成立，资金就会持续流向美元，美元需求曲线右移，美元变贵、日元变便宜。</p>
+<p class="prose"><b>利率平价</b><span class="en"> (interest rate parity)</span> 说的是，资金自由流动时，两种存法的预期收益应当大致相等，差额要由汇率的预期变动补上：</p>
+<p class="formula">美元利率 ≈ 日元利率 + 预期的日元年升值率</p>
+<p class="prose">5 个点的利差要用“预期日元每年升值约 5%”来抵消。日元怎样才能被预期升值？答案是它先跌到足够低的位置，低到人们相信它以后会慢慢回升。这就是一国加息后货币常常<em>立刻</em>升值的原因：加息那一刻本币资产吸引力上升，本币跳涨，涨到预期的回落正好抵消新的利差为止。</p>
+<p class="prose">两点限定。第一，市场交易的是<em>预期</em>：如果加息早已在预料之中，宣布当天汇率可能不动，甚至因为“加得比预期少”而下跌。第二，这个关系在短期内常常对不上。大量研究发现，高息货币在短期里往往并没有按公式贬值，持有高息货币平均还有超额收益，这被称为远期溢价之谜（Fama，1984）。于是投资者会借入低息货币、换成高息货币投资，这叫<b>套息交易</b><span class="en"> (carry trade)</span>。日元利率长期接近零，常被当作借入的一方。</p>
+<p class="prose">套息交易怕的是汇率突然反转。全球恐慌时，投资者急着平仓，要买回日元还债，日元反而走强。所以对日元来说，风险偏好上升往往伴随日元走弱，避险情绪上升往往伴随日元走强。很多新兴市场货币正好相反：恐慌时资金撤回美元，它们会贬值。</p>
+
+<div class="widget" id="w-fx" aria-labelledby="w1t">
+<h3 id="w1t">图 1　东京的美元市场：利差、风险情绪和通胀差</h3>
+<div class="chips" role="group" aria-label="选择情景">
+<button type="button" class="chip" data-preset="wide" aria-pressed="true" aria-controls="chart1">利差大（类似 2024 年春）</button>
+<button type="button" class="chip" data-preset="narrow" aria-pressed="false" aria-controls="chart1">利差收窄</button>
+<button type="button" class="chip" data-preset="riskoff" aria-pressed="false" aria-controls="chart1">避险情绪急升</button>
+<button type="button" class="chip" data-preset="base" aria-pressed="false" aria-controls="chart1">基准：没有利差</button>
+</div>
+<p class="prose">纵轴是 1 美元的日元价格，越往上日元越弱。空心点 E₀ 是没有利差、情绪中性时的基准；实心点 E 是当前的短期均衡。紫色虚线是 10 年后的长期购买力平价锚，只随通胀差移动。</p>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw d"></span>D：美元需求（日本人买美元）</li><li><span class="sw d" style="border-top-style:dashed;opacity:.6"></span>D₀：基准需求</li><li><span class="sw s"></span>S：美元供给（换成日元）</li><li><span class="sw model" style="border-top-style:dashed"></span>PPP₁₀：10 年后的长期锚</li></ul>
+<div class="controls">
+<div class="ctl full"><label for="di">美日利差 i美 − i日（百分点）</label><output id="di-value" for="di">5.25</output><input id="di" type="range" min="-1" max="6" step="0.25" value="5.25" aria-describedby="di-hint"><span class="hint" id="di-hint">美元利率比日元高多少。每多 1 个点，美元需求右移，均衡汇率上升 9 日元。</span></div>
+<div class="ctl"><label for="risk">全球风险情绪</label><output id="risk-value" for="risk">中性</output><input id="risk" type="range" min="-2" max="2" step="1" value="0" aria-describedby="risk-hint"><span class="hint" id="risk-hint">左端强烈避险，右端强烈追逐风险。每一档移动 5 日元；追逐风险时套息交易增多，日元走弱。</span></div>
+<div class="ctl"><label for="dpi">通胀差 π美 − π日（百分点/年）</label><output id="dpi-value" for="dpi">1.0</output><input id="dpi" type="range" min="-2" max="4" step="0.5" value="1" aria-describedby="dpi-hint"><span class="hint" id="dpi-hint">美国通胀比日本高多少。只移动长期锚：美国通胀更高，长期看日元应升值。</span></div>
+</div>
+<dl class="read pairs">
+<div><dt>短期均衡汇率 E（日元/美元）</dt><dd id="r-e"></dd></div>
+<div><dt>相对基准 E₀ = 105</dt><dd id="r-chg"></dd></div>
+<div><dt>其中：利差贡献 / 情绪贡献（日元）</dt><dd id="r-parts"></dd></div>
+<div><dt>1 万日元可换（美元）</dt><dd id="r-usd"></dd></div>
+<div><dt>按今天的 PPP = 100 看日元</dt><dd id="r-val"></dd></div>
+<div><dt>10 年后的 PPP 锚 PPP₁₀</dt><dd id="r-ppp"></dd></div>
+</dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">教学示意模型，不是日元汇率的预测。外汇供求都画成直线：美元供给 Q = (E − 40)/2，美元需求 Q = (170 + 2s − E)/2，其中需求移动量 s = 9 × 利差 + 5 × 情绪档位，因此 E = 105 + s。现实中利差也会让供给左移（外国人少买日本资产），这里合并成需求一侧的移动。PPP₁₀ = 100 × (1 − 通胀差/100)¹⁰，用“汇率每年变动约等于通胀差”的相对购买力平价近似；今天的 PPP 设为 100 也是示意值。日本当局的干预相当于向市场额外供给美元（S 右移），本图没有画出。数量单位为示意的十亿美元/天。</p>
+</div>
+<h3>先试三件事</h3>
+<ol class="qs"><li>默认利差 5.25、情绪中性：E = 152.25，比基准 105 高 47.25 日元。美元升值 45%，日元贬值 31%，1 万日元只能换约 65.7 美元。</li><li>点“利差收窄”：利差降到 2.5，E 回到 127.5。日元并没有回到 105，只要还有利差，美元资产就更有吸引力。</li><li>点“避险情绪急升”：利差不变，情绪拨到最左，E 降到 142.25。利差没变，日元却升值了约 6.6%，这就是套息交易平仓的直觉。</li></ol>
+</section>
+
+<section id="ppp">
+<h2>长期的锚：购买力平价</h2>
+<p class="prose">短期的推力来自金融市场，长期的拉力来自商品。<a href="../m08/01-gdp.html#per-capita">人均 GDP 一课</a>用过<b>购买力平价</b><span class="en"> (purchasing power parity, PPP)</span> 来换算生活水平，这里把它当作汇率理论：如果同一件商品能自由跨国运输，它在两国的价格换成同一种货币后应当相同，否则就有人低买高卖。</p>
+<p class="formula">PPP 汇率 = 日本价格（日元）/ 美国价格（美元）</p>
+<h3>巨无霸指数</h3>
+<p class="prose">《经济学人》用麦当劳巨无霸做了一个简单版本，叫巨无霸指数。按它公开数据库中标注为 2026 年 7 月的一期（数据仓库于 2026 年 8 月 4 日更新），日本一个巨无霸 500 日元，美国 6.22 美元，取数时的市场汇率为 162.135 日元/美元。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="巨无霸指数计算步骤，可横向滚动"><table class="tbl"><caption>数据：《经济学人》巨无霸指数公开数据（big-mac-data，2026 年 7 月一期）；计算为本课所做。</caption><thead><tr><th scope="col">步骤</th><th scope="col" class="num">结果</th></tr></thead><tbody>
+<tr><td>隐含的 PPP 汇率：500 / 6.22</td><td class="num">80.4 日元/美元</td></tr>
+<tr><td>日本巨无霸按市场汇率折美元：500 / 162.135</td><td class="num">3.08 美元</td></tr>
+<tr><td>相对美国价格：3.08 / 6.22 − 1</td><td class="num">−50.4%</td></tr>
+<tr><td>同期中国：26.5 元，汇率 6.7708 元/美元</td><td class="num">3.91 美元，−37.1%</td></tr>
+</tbody></table></div>
+<p class="prose">读法：按巨无霸比较，日元被低估了一半左右。在美国买一个巨无霸的钱，换成日元后能在东京买两个。这个比较说明了“日元很弱”的直观感受，但它不能说明汇率很快会回到 80。巨无霸的价格里大部分是房租、人工这些不能跨国运输的成本，没有人能把东京的巨无霸运到纽约去卖。《经济学人》因此还发布按人均 GDP 调整的版本，收入较低的国家服务便宜是正常的。</p>
+<h3>实际汇率</h3>
+<p class="prose">名义汇率只说一种货币换多少另一种货币。<b>实际汇率</b><span class="en"> (real exchange rate)</span> 问的是一篮子外国商品能换多少篮子本国商品：</p>
+<p class="formula">实际汇率 = 名义汇率 × 美国物价 / 日本物价</p>
+<p class="prose">用巨无霸算：162.135 × 6.22 / 500 ≈ 2.0，也就是一个美国巨无霸能换两个日本巨无霸。实际汇率高，日本的商品对外国人便宜，出口和入境旅游更有竞争力。严格的购买力平价意味着实际汇率等于 1。决定贸易竞争力的是实际汇率，不是名义数字。</p>
+<h3>相对购买力平价：通胀差决定长期方向</h3>
+<p class="prose">绝对水平常常对不上，变化方向却比较可靠。如果美国物价每年涨 3%、日本涨 1%，为了让实际汇率不变，日元/美元每年要下降约 2%，也就是日元每年升值约 2%。这叫相对购买力平价：长期看，通胀高的国家货币贬值。图 1 的紫色虚线就是按这个关系画出的 10 年后的锚。</p>
+<p class="prose">短期和长期的结论可能方向相反。一国通胀上升时，央行可能加息，短期内本币反而走强；但如果通胀长期居高不下，本币终究会贬值。<a href="../m10/03-causes-of-inflation.html#quantity">货币增长过快导致通胀</a>的国家，汇率也会持续走弱。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“美元兑日元从 115 涨到 160，所以日元跌了 39%。”</p><p>39% 是美元升值的幅度。日元能换的美元只少了 1 − 115/160 ≈ 28%。同一次变动，两种货币的百分比不同，要先确定说的是哪种货币。</p></div>
+<div class="mis"><p class="said">“加息一定会让本币升值。”</p><p>汇率对<em>意外</em>反应最大，已经被预期的加息可能早已反映在价格里。如果加息是因为通胀失控、或者伴随违约风险上升，资金可能照样流出。利差只是推力之一，风险情绪、增长前景和政策可信度同样重要。</p></div>
+<div class="mis"><p class="said">“巨无霸指数说日元低估 50%，日元很快会涨回去。”</p><p>购买力平价是长期的引力，不是短期的预测。非贸易品、运输成本、关税和利差都能让汇率偏离多年。巨无霸指数衡量的是偏离有多大，不说明何时、以何种方式回归。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先确认汇率是哪种写法，再判断方向。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">每张卡都想一想：它在短期起作用，还是在长期起作用？</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps">
+<li><div><b>日元贬值了多少？</b>从 2022 年初的 115.27 到 2024 年 7 月 10 日的 161.73（H.10 中午价），美元升值约 40%，日元贬值 1 − 115.27/161.73 ≈ 29%。新闻里的“160”是 1 美元的日元价格，数字越大日元越弱。</div></li>
+<li><div><b>利差是主要推力。</b>2024 年 3 月 19 日日本银行结束负利率，把政策利率引导到 0~0.1%；同期美联储维持 5.25%~5.5%。5 个多百分点的利差让美元资产明显更有吸引力，也让借日元做套息交易有利可图。在图 1 里，这相当于美元需求大幅右移。</div></li>
+<li><div><b>干预能换来时间，改变不了基本面。</b>卖美元买日元，相当于向市场额外供给美元，能让汇率一时回落：2024 年 5 月 1 日的 157.65 两天后降到 152.85。但利差没有变，需求还在右边，到 7 月 10 日又到了 161.73。财务省能卖的美元也受外汇储备限制。</div></li>
+<li><div><b>真正的转折来自利差和情绪一起变化。</b>日本银行 7 月 31 日加息到 0.25% 左右，市场预期美联储降息（9 月 18 日降到 4.75%~5%），路透社报道交易者在平仓套息交易。8 月 5 日美元兑日元降到 143.95。利差收窄加避险情绪，正是图 1 中两个滑块同时向左。但 2026 年 4 月汇率又回到 160 附近，日本当局再次大规模干预，说明这些力量还在反复拉锯。</div></li>
+<li><div><b>谁受益，谁受损？</b>弱日元让出口企业换回更多日元、让日本对外国游客更便宜，却让进口能源和食品更贵，日本家庭出国更贵。是否应当干预、应当用多大的利差去换汇率稳定，涉及出口商、进口商、储户和借款人之间的取舍，不同立场的人会有不同判断。</div></li>
+</ol>
+<button type="button" class="chip" id="goChart">回到图 1：利差 5.25、情绪中性</button>
+</section>
+
+<section id="sources"><h2>资料来源</h2><ol class="qs">
+<li>日本财务省，<a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/2024_2Qe.html">Foreign Exchange Intervention Operations (April – June 2024)</a>，2024 年；4 月 29 日买入日元 5.92 万亿日元、5 月 1 日 3.87 万亿日元，合计 9.79 万亿日元。</li>
+<li>日本财务省，<a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/2024_3Qe.html">Foreign Exchange Intervention Operations (July – September 2024)</a>，2024 年；7 月 11 日 3.17 万亿、7 月 12 日 2.37 万亿日元。</li>
+<li>日本财务省，<a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/foreign_exchange_intervention_operations.csv">外国為替平衡操作の実施状況（1991 年 4 月以来全部数据，CSV）</a>，2026 年 10 月 14 日下载；2022 年 9 月 22 日、10 月 21 日和 24 日的干预额，1998 年 6 月 17 日以来无买入日元操作，2011 年 10 月 31 日卖出日元 8.07 万亿，2026 年 4 月 30 日 6.28 万亿、5 月 4 日 0.78 万亿、5 月 6 日 4.68 万亿。</li>
+<li>Makiko Yamazaki（Reuters），<a href="https://www.investing.com/news/economy-news/japans-april-yenbuying-intervention-sets-new-daily-record-3558243">Japan's April yen-buying intervention sets new daily record</a>，2024 年 8 月 6 日（Investing.com 转载）；日元的 34 年低点 160.245，干预后回升约 5%，7 月的反弹与美联储降息预期和套息交易平仓有关。</li>
+<li>Board of Governors of the Federal Reserve System，H.10 外汇汇率，经 Federal Reserve Bank of St. Louis FRED 获取：<a href="https://fred.stlouisfed.org/series/DEXJPUS">Japanese Yen to U.S. Dollar Spot Exchange Rate (DEXJPUS)</a>，2026 年 10 月 14 日下载；表中和正文的每日汇率，以及 2011 年 10 月 28 日的 75.72。</li>
+<li>Bank of Japan，<a href="https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2024/k240319a.pdf">Changes in the Monetary Policy Framework</a>，2024 年 3 月 19 日；无担保隔夜拆借利率引导至 0~0.1% 左右。</li>
+<li>Bank of Japan，<a href="https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2024/k240731a.pdf">Change in the Guideline for Money Market Operations</a>，2024 年 7 月 31 日；隔夜拆借利率引导至 0.25% 左右。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20240501a.htm">Federal Reserve issues FOMC statement</a>，2024 年 5 月 1 日；联邦基金利率目标区间维持 5.25%~5.5%。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20240918a.htm">Federal Reserve issues FOMC statement</a>，2024 年 9 月 18 日；目标区间下调 0.5 个百分点至 4.75%~5%。</li>
+<li>The Economist，<a href="https://github.com/TheEconomist/big-mac-data">big-mac-data（巨无霸指数数据与方法）</a>，2026 年 7 月一期数据，仓库 2026 年 8 月 4 日更新；日本 500 日元、美国 6.22 美元、汇率 162.135，中国 26.5 元、汇率 6.7708，以及按人均 GDP 调整的版本。</li>
+<li>Eugene F. Fama，<a href="https://doi.org/10.1016/0304-3932(84)90046-1">Forward and spot exchange rates</a>，Journal of Monetary Economics 14(3)，1984 年；远期溢价之谜的经典实证研究。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts;
+function $(s,r){return (r||document).querySelector(s);}
+var box=$('#chart1'),E0=105,PPP0=100;
+var RISK=['强烈避险','避险','中性','偏好风险','强烈追逐风险'];
+var PRESETS={wide:[5.25,0,1],narrow:[2.5,0,1],riskoff:[5.25,-2,1],base:[0,0,0]};
+function model(di,r,dpi){
+  var s=9*di+5*r,e=E0+s,q=(e-40)/2,ppp10=PPP0*Math.pow(1-dpi/100,10);
+  return {di:di,r:r,dpi:dpi,s:s,e:e,q:q,ppp10:ppp10,yenChg:1-E0/e,usdChg:e/E0-1,usd:10000/e,val:PPP0/e-1,partI:9*di,partR:5*r};
+}
+function state(){return model(+$('#di').value,+$('#risk').value,+$('#dpi').value);}
+function pct(x){return C.fmt(Math.abs(x)*100,1)+'%';}
+function draw(){
+  if(!box.clientWidth){return;}
+  var m=state(),R={q0:0,q1:100,p0:40,p1:180};
+  var f=C.frame(box,{id:'fx',q0:0,q1:100,p0:40,p1:180,qs:20,ps:20,xt:'美元成交量 Q（示意，十亿美元/天）',yt:'汇率 E（日元/美元）',label:''});
+  f.svg.setAttribute('aria-label','东京美元市场示意图。利差 '+C.fmt(m.di,2)+' 个百分点，风险情绪'+RISK[m.r+2]+'，短期均衡汇率 '+C.fmt(m.e,2)+' 日元/美元，相对基准 105 日元'+(m.e>=E0?'贬值 ':'升值 ')+pct(m.yenChg)+'；10 年后购买力平价锚 '+C.fmt(m.ppp10,1)+'。');
+  var ppp=C.el('line',{x1:f.x(0),x2:f.x(100),y1:f.y(m.ppp10),y2:f.y(m.ppp10),'class':'curve model','stroke-dasharray':'7 5'});f.svg.appendChild(ppp);
+  f.svg.appendChild(C.pathOf(f,C.clip([0,170],[100,-30],R),'curve d ghost'));
+  f.svg.appendChild(C.pathOf(f,C.clip([0,40],[100,240],R),'curve s'));
+  f.svg.appendChild(C.pathOf(f,C.clip([0,170+2*m.s],[100,-30+2*m.s],R),'curve d'));
+  C.guides(f,f.x(m.q),f.y(m.e),false);
+  C.arrow(f,f.x(32.5),f.y(E0),f.x(m.q),f.y(m.e));
+  f.svg.appendChild(C.el('circle',{id:'base-point',cx:f.x(32.5),cy:f.y(E0),r:5,'class':'pt base'}));
+  f.svg.appendChild(C.el('circle',{id:'eq-point',cx:f.x(m.q),cy:f.y(m.e),r:5,'class':'pt'}));
+  C.label(f,'S','s',f.x(66)+8,f.y(172)+4,'start');
+  C.label(f,'D₀','d',f.x(8)+8,f.y(154)+2,'start');
+  C.label(f,'D','d',f.x(m.q+20)+6,f.y(m.e-40)+4,'start');
+  C.label(f,'E₀','ptlab',f.x(32.5)+10,f.y(E0)+18,'start');
+  var ey=f.y(m.e)-8;if(ey-12<f.m.t){ey=f.y(m.e)+18;}C.label(f,'E','ptlab',f.x(m.q)-9,ey,'end');
+  C.label(f,'PPP₁₀','model',f.x(0)+6,f.y(m.ppp10)-6,'start');
+  box.replaceChildren(f.svg);
+}
+function update(){
+  var m=state();
+  $('#di-value').textContent=C.fmt(m.di,2);$('#di').setAttribute('aria-valuetext',C.fmt(m.di,2)+' 个百分点');
+  $('#risk-value').textContent=RISK[m.r+2];$('#risk').setAttribute('aria-valuetext',RISK[m.r+2]);
+  $('#dpi-value').textContent=C.fmt(m.dpi,1);$('#dpi').setAttribute('aria-valuetext',C.fmt(m.dpi,1)+' 个百分点每年');
+  $('#r-e').textContent=C.fmt(m.e,2);
+  $('#r-chg').textContent=Math.abs(m.e-E0)<1e-9?'持平':(m.e>E0?'美元升值 '+pct(m.usdChg)+'，日元贬值 '+pct(m.yenChg):'美元贬值 '+pct(m.usdChg)+'，日元升值 '+pct(m.yenChg));
+  $('#r-parts').textContent=C.fmtS(m.partI,2)+' / '+C.fmtS(m.partR,0);
+  $('#r-usd').textContent=C.fmt(m.usd,1);
+  $('#r-val').textContent=(m.val<0?'低估 ':'高估 ')+pct(m.val);
+  $('#r-ppp').textContent=C.fmt(m.ppp10,1)+(m.dpi>0?'，日元长期升值':m.dpi<0?'，日元长期贬值':'，长期不变');
+  var k=null;Object.keys(PRESETS).forEach(function(n){var p=PRESETS[n];if(p[0]===m.di&&p[1]===m.r&&p[2]===m.dpi){k=n;}});
+  document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.preset===k));});
+  var msg='短期：';
+  if(Math.abs(m.s)<1e-9){msg+='利差和情绪的推力为零，汇率停在基准 105。';}
+  else{msg+='利差'+(m.partI>0?'把美元需求向右推 '+C.fmt(m.partI,2)+' 日元':m.partI<0?'把美元需求向左拉 '+C.fmt(-m.partI,2)+' 日元':'没有推力')+'，风险情绪'+(m.r>0?'因套息交易再推 '+m.partR+' 日元':m.r<0?'因套息平仓回拉 '+(-m.partR)+' 日元':'中性')+'。均衡汇率 '+C.fmt(m.e,2)+'，日元相对基准'+(m.e>E0?'贬值 ':'升值 ')+pct(m.yenChg)+'。';}
+  msg+='长期：'+(m.dpi>0?'美国通胀每年高 '+C.fmt(m.dpi,1)+' 个点，购买力平价锚 10 年后降到 '+C.fmt(m.ppp10,1)+'，物价把日元往升值方向拉。':m.dpi<0?'日本通胀每年高 '+C.fmt(-m.dpi,1)+' 个点，锚 10 年后升到 '+C.fmt(m.ppp10,1)+'，物价把日元往贬值方向拉。':'两国通胀相同，长期锚停在 100。');
+  msg+=(m.e>m.ppp10+1?'短期汇率高于长期锚，日元按购买力平价偏弱。':m.e<m.ppp10-1?'短期汇率低于长期锚，日元按购买力平价偏强。':'短期汇率接近长期锚。');
+  $('#verdict').textContent=msg;
+  draw();
+}
+['di','risk','dpi'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+document.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){var p=PRESETS[b.dataset.preset];$('#di').value=p[0];$('#risk').value=p[1];$('#dpi').value=p[2];update();});});
+C.watch(box,draw);
+var QUIZ=[
+{q:'美联储意外加息，日本银行不动，其他条件不变。短期内日元/美元汇率最可能怎样？',o:['下降，因为美国借钱变贵，没人想要美元','上升，因为美元资产回报相对提高，买美元的人增多，日元走弱','不变，因为利率只影响国内的借贷','下降，因为美国加息会压低美国通胀，长期美元要贬值'],a:1,why:'上升，日元走弱。利差扩大让美元资产更有吸引力，美元需求右移。长期通胀的影响是另一回事，不会在宣布当天主导汇率。'},
+{q:'美元兑日元从 100 升到 125。日元对美元贬值了多少？',o:['25%，与美元升值幅度相同','125%','80%','20%'],a:3,why:'20%。1 日元能换的美元从 1/100 降到 1/125，减少 1 − 100/125 = 20%。25% 是美元升值的幅度，两者的基数不同。'},
+{q:'巨无霸在日本卖 500 日元、在美国卖 6.22 美元，市场汇率约 162 日元/美元。最合理的解读是？',o:['按巨无霸比较日元低估约一半，但这不意味着汇率很快回到约 80','日元被高估，因为日本的巨无霸标价数字更大','套利者会立刻把日本的巨无霸运到美国，汇率几天内就会回到 80','这说明美国的通胀率大约是日本的两倍'],a:0,why:'隐含 PPP 约为 80，市场汇率 162，日元按巨无霸低估约 50%。巨无霸含大量不可贸易的房租和人工，套利做不到，偏离可以持续多年。'},
+{q:'日元大幅贬值后，下面哪组判断最准确？',o:['出口商、进口商和游客都受损','只有日本政府受益，因为税收增加','出口商日元收入增加，进口商成本上升，赴日外国游客觉得更便宜','进口商受益，因为进口商品以日元计更便宜'],a:2,why:'贬值重新分配收益。美元收入换回更多日元，出口商受益；以美元付款的进口商成本上升；外国游客的钱在日本更经花。'},
+{q:'A 国每年通胀 8%，B 国 2%，其他条件稳定。按相对购买力平价，长期看 A 国货币对 B 国货币会怎样？',o:['每年升值约 6%，因为高通胀国家的利率更高','每年贬值约 6%','不变，因为名义汇率与物价无关','每年贬值约 8%'],a:1,why:'每年贬值约 6%，即两国通胀之差。高通胀会侵蚀货币购买力，汇率要变动才能让实际汇率大致稳定。高利率带来的升值是短期效应，不改变长期方向。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.appendChild(n);t.appendChild(document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.getAttribute('data-done')){return;}q.setAttribute('data-done','1');var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.insertBefore(tag,x.firstChild);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.insertBefore(tag,x.firstChild);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.appendChild(t);q.appendChild(opts);q.appendChild(why);quizEl.appendChild(q);});
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'汇率',en:'exchange rate',d:'用一种货币表示的另一种货币的价格。先看单位：日元/美元数字变大，是美元变贵、日元变弱。'},
+{t:'升值',en:'appreciation',d:'一单位本币能换到更多外币。浮动汇率下由市场决定；幅度要以该货币自己为基数计算。'},
+{t:'贬值',en:'depreciation',d:'一单位本币能换到的外币变少。利好出口商和入境旅游，加重进口成本和出国花费。'},
+{t:'实际汇率',en:'real exchange rate',d:'名义汇率 × 外国物价 / 本国物价，即一篮子外国商品能换多少篮子本国商品。决定贸易竞争力。'},
+{t:'利率平价',en:'interest rate parity',d:'资金自由流动时，两国存款的预期收益应大致相等，利差由预期汇率变动补上。解释加息时本币常立刻跳升。'},
+{t:'购买力平价',en:'purchasing power parity, PPP',d:'同样的商品换成同一货币后价格相同。绝对水平常偏离，长期方向较可靠：通胀高的货币贬值。'},
+{t:'巨无霸指数',en:'Big Mac index',d:'《经济学人》用巨无霸价格计算的简易 PPP。衡量偏离多大，不预测何时回归。'},
+{t:'套息交易',en:'carry trade',d:'借入低息货币、投资高息货币赚利差。恐慌时集中平仓，会让低息货币（如日元）突然走强。'},
+{t:'外汇干预',en:'foreign exchange intervention',d:'政府或央行在外汇市场买卖货币以影响汇率。卖美元买日元相当于增加美元供给，效果受储备和基本面限制。'}
+];
+var grid=$('#cards');
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.appendChild(t);b.appendChild(en);b.appendChild(hint);b.appendChild(def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});grid.appendChild(b);});
+$('#goChart').addEventListener('click',function(){var p=PRESETS.wide;$('#di').value=p[0];$('#risk').value=p[1];$('#dpi').value=p[2];update();$('#w-fx').scrollIntoView({block:'start'});document.querySelector('[data-preset=wide]').focus({preventScroll:true});});
+update();
+})();
+</script>
+</body>
+</html>
