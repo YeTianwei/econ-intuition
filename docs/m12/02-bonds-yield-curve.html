@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>债券与收益率曲线</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m12-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>债券与收益率曲线</h1>
+<p class="sub">Bonds and the yield curve</p>
+<p class="lede">央行一加息，债券价格就跌，持有长期国债的人账面上亏得最多。把不同期限的国债利率连成一条线，这条线偶尔会“倒过来”，新闻里称之为衰退信号。这一课先讲债券怎样定价、为什么价格和收益率反着走、期限越长为什么越敏感，再看收益率曲线的几种形状，以及倒挂到底能告诉我们什么、不能告诉我们什么。</p>
+<p class="meta">约 22 分钟 · 2 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m09/01-compounding-growth.html#compounding">复利</a>（钱按利率一年年滚动），<a href="../m10/03-causes-of-inflation.html#costs">通胀的成本</a>（意外通胀让固定利率的放贷人受损）。本模块上一课讲的现值思路，这里会直接用到。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>路透社 2024-03-21 报道标题的中文翻译（经 Kitco 转载，原题 US Treasury key yield curve inversion becomes the longest on record）</figcaption><blockquote>美国国债关键收益率曲线倒挂，持续时间创纪录</blockquote></figure>
+<p class="prose">报道说，10 年期与 2 年期美国国债的收益率之差自 2022 年 7 月初起一直为负，持续时间已超过德意志银行统计的 1978 年那次 624 天的纪录。报道也提到，这个被视为衰退预兆的信号出现了很久，衰退却没有到来。</p>
+<p class="prose">下表用美联储公布的每日数据（圣路易斯联储 FRED 数据库整理）概括这一轮倒挂。利差是长期收益率减短期收益率，单位是百分点，负数就是倒挂。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="2022 至 2024 年美债利差倒挂概况，可横向滚动"><table class="tbl"><caption>两个常用利差的这一轮倒挂（日数据，FRED 序列 T10Y2Y、T10Y3M）</caption><thead><tr><th scope="col"></th><th scope="col">10 年减 2 年</th><th scope="col">10 年减 3 个月</th></tr></thead><tbody>
+<tr><th scope="row">持续倒挂起点</th><td><span class="mono">2022-07-06</span></td><td><span class="mono">2022-10-25</span></td></tr>
+<tr><th scope="row">最深（百分点）</th><td><span class="mono">−1.08</span><br><span class="mono">2023-07-03</span></td><td><span class="mono">−1.89</span><br><span class="mono">2023-05-04</span></td></tr>
+<tr><th scope="row">结束</th><td>2024 年 8 月底回到 0，<span class="mono">2024-09-06</span> 起保持为正</td><td><span class="mono">2024-12-13</span> 转正；2025 年 2 月至 10 月多次短暂转负</td></tr>
+</tbody></table></div>
+<p class="prose">同一时期，美联储把联邦基金利率目标区间的上限从 2022 年 3 月前的 0.25% 一路提高到 2023 年 7 月的 5.50%，到 2024 年 9 月才开始降息。截至本课写作时（2026 年 10 月），美国国家经济研究局（NBER）公布的经济周期表里，2020 年 4 月的谷底之后没有新的衰退。</p>
+<ol class="qs"><li>美联储加息时，为什么已经发行的国债会跌价？期限长的为什么跌得更多？</li><li>收益率曲线“倒挂”是什么意思？为什么这次倒挂会出现？</li><li>倒挂一向被当作衰退预警，这次为什么持续两年多却没等来衰退？这个信号还可信吗？</li></ol>
+</section>
+
+<section id="pricing">
+<h2>债券价格：未来现金流的现值</h2>
+<p class="prose"><b>债券</b><span class="en"> (bond)</span> 是一张借据。发行人（政府或公司）今天借钱，承诺按期付利息，到期归还本金。到期归还的金额叫<b>面值</b><span class="en"> (face value)</span>，下文都设为 100 元。每期付的固定利息叫<b>票息</b><span class="en"> (coupon)</span>，票息除以面值是票面利率。一张 10 年期、票面利率 2% 的债券，就是每年付 2 元，第 10 年末再还 100 元。</p>
+<p class="prose">票息在发行时就写死了。可市场上的利率每天在变，于是这张债券在二级市场上的价格会变。它的价格等于未来每一笔现金流按当前市场利率折回今天的价值之和：</p>
+<p class="formula">价格 P = C/(1+y) + C/(1+y)² + … + (C + 100)/(1+y)ᵀ</p>
+<p class="prose">C 是每年票息，T 是剩余年数，y 是让这个等式成立的那个利率，叫<b>到期收益率</b><span class="en"> (yield to maturity)</span>：今天按价格 P 买入、一直持有到期、票息按同样利率再投资，平均每年能得到的回报率。新闻里说的“国债收益率”，一般就是它。</p>
+<p class="prose">从公式直接看出：y 变大，每一项的分母都变大，价格 P 就变小。价格和收益率是同一件事的两种说法，一个涨另一个必然跌。还有一个特例：当 y 正好等于票面利率时，P 正好等于面值 100。</p>
+<h3>一年期的例子</h3>
+<p class="prose">一张还剩一年到期的债券，票面利率 4%，明年此时付 104 元。市场利率也是 4% 时，104 ÷ 1.04 = 100，按面值成交。如果央行加息，同类新债的利率升到 5%，谁还愿意花 100 元买一张只给 4% 的旧债？只有降价才卖得出去：104 ÷ 1.05 ≈ 99.05 元。买家花 99.05 元，一年后拿回 104 元，回报率正好是 5%，和新债一样。</p>
+<div class="analogy"><span class="lab">类比</span><p>你去年按每月 3000 元签了一份五年期的房屋租约，现在同样的房子市场租金涨到 3500 元。你想把这份租约转给别人：房东那边对你来说是“好合同”，有人愿意出钱接手。反过来，债券持有人手里是一份“每年固定收 2 元”的合同，市场上新合同都给 4.5 元，这份旧合同就只能打折转让。合同还剩的年头越长，打折越多。</p></div>
+</section>
+
+<section id="duration">
+<h2>久期：期限越长，对利率越敏感</h2>
+<p class="prose">收益率同样上升 1 个百分点，2 年期债券只跌两三个百分点，30 年期可能跌两成。原因是 30 年期的大部分现金流在很远的未来，而越远的钱被利率折得越厉害：利率的变化在 30 年里一层层复利放大。</p>
+<p class="prose">衡量这种敏感度的指标叫<b>久期</b><span class="en"> (duration)</span>。直观上，它是你收回这张债券全部现金的“平均等待时间”，每笔现金按它的现值加权。不付票息、到期一次还本的债券，久期就等于剩余期限；付票息的债券，部分钱提前收回，久期比期限短。久期除以 (1 + y) 得到<b>修正久期</b><span class="en"> (modified duration)</span>，它给出一个很好用的近似：</p>
+<p class="formula">价格变化（%）≈ − 修正久期 × 收益率变化（百分点）</p>
+<p class="prose">修正久期为 9 的债券，收益率上升 1 个百分点，价格约跌 9%。这是用切线代替曲线的近似，收益率变动越大越不准：真实价格总是比切线估计的高一些，涨的时候多涨、跌的时候少跌。价格曲线这种向下弯、凸向原点的性质叫<b>凸性</b><span class="en"> (convexity)</span>。</p>
+
+<div class="widget" id="w-price" aria-labelledby="w1t">
+<h3 id="w1t">图 1　收益率变了，三只期限不同的债券价格各变多少</h3>
+<div class="chips" role="group" aria-label="选择情景（教学示意）"><button type="button" class="chip" data-s="2,4.5" aria-pressed="true">低息时买入，再遇加息</button><button type="button" class="chip" data-s="4,4.5" aria-pressed="false">小幅上升 0.5 个百分点</button><button type="button" class="chip" data-s="5,3" aria-pressed="false">降息：5% 降到 3%</button><button type="button" class="chip" data-s="3,3" aria-pressed="false">收益率不变</button></div>
+<div class="chips" role="group" aria-label="虚线显示哪只债券的久期近似"><button type="button" class="chip" data-t="2" aria-pressed="false">切线：2 年</button><button type="button" class="chip" data-t="10" aria-pressed="false">切线：10 年</button><button type="button" class="chip" data-t="30" aria-pressed="true">切线：30 年</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw alternative"></span>2 年期</li><li><span class="sw d"></span>10 年期</li><li><span class="sw model"></span>30 年期</li><li><span class="sw g"></span>所选债券的久期近似（切线）</li><li>空心点：起点，收益率 = 票面利率，价格 = 100；实心点：新收益率下的价格</li></ul>
+<div class="controls">
+<div class="ctl"><label for="cp">票面利率（买入时的收益率，%）</label><output id="cp-value" for="cp"></output><input id="cp" type="range" min="1" max="6" step="0.5" value="2" aria-describedby="cp-hint"><span class="hint" id="cp-hint">三只债券每年付的票息占面值的比例，1%~6%。假设都按面值买入，所以这也是起点的收益率。</span></div>
+<div class="ctl"><label for="yy">现在的市场收益率（%）</label><output id="yy-value" for="yy"></output><input id="yy" type="range" min="0" max="10" step="0.1" value="4.5" aria-describedby="yy-hint"><span class="hint" id="yy-hint">同类债券现在的到期收益率，0%~10%。比票面利率高，旧债就要打折。</span></div>
+</div>
+<div class="tablewrap" tabindex="0" role="region" aria-label="三只债券的价格读数，可横向滚动"><table class="tbl"><caption id="r-cap"></caption><thead><tr><th scope="col">期限（修正久期）</th><th scope="col" class="num">新价格</th><th scope="col" class="num">涨跌 / 估算（%）</th></tr></thead><tbody id="r-body"></tbody></table></div>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">所有数字都是教学示意：面值 100 元，每年付一次票息，三只债券票面利率相同、都按面值买入。修正久期按起点收益率计算。真实国债多为半年付息，价格还要考虑应计利息，但方向和量级相同。</p>
+</div>
+<h3>三个实验</h3>
+<ol class="qs"><li>默认情景：票面利率 2% 的债券遇到收益率升到 4.5%。30 年期跌约 41%，10 年期跌约 20%，2 年期只跌约 5%。收益率变化相同，期限越长损失越大。</li><li>选“小幅上升 0.5 个百分点”：久期估算和实际变化几乎一样。变动小时，“修正久期 × 收益率变化”就是心算利器。</li><li>选“降息”：三只债券都涨价，30 年期涨得最多；实际涨幅高于久期估算，这就是凸性的好处。把收益率拖到和票面利率相同，三个点都回到 100。</li></ol>
+<p class="prose">这也解释了开头的第一个问题。2022 年起美联储快速加息，市场收益率随之上升，此前在低利率时期买入的长期债券价格大幅下跌。只要发行人不违约，持有到期仍能按约拿回票息和面值，亏损是“账面”的；但如果中途不得不卖出，亏损就变成了真的。本模块讲银行挤兑的一课还会回到这一点。</p>
+</section>
+
+<section id="curve">
+<h2>收益率曲线：把不同期限连成一条线</h2>
+<p class="prose">同一个发行人（例如美国财政部）同时有 3 个月、2 年、10 年、30 年等各种期限的债券在交易。把它们的收益率按期限从短到长画在一张图上，连成的线叫<b>收益率曲线</b><span class="en"> (yield curve)</span>。用国债来画，是因为它们违约风险极低，不同期限之间的差别主要来自期限本身。</p>
+<p class="prose">长期利率大致由两部分组成：</p>
+<p class="formula">长期利率 ≈ 未来各年短期利率的预期平均 + 期限溢价</p>
+<p class="prose">第一部分是预期。借 10 年，和连续借十次 1 年相比，两种做法的总成本应该差不多，否则人们会都选便宜的那种。所以如果市场预期央行未来会降息，今天的长期利率就会低于短期利率。第二部分叫<b>期限溢价</b><span class="en"> (term premium)</span>：钱锁得越久，承担的利率和通胀不确定性越大，投资者通常要求额外补偿。期限溢价不能直接观测，只能用模型估计，有时很小，甚至可能为负。</p>
+<div class="analogy"><span class="lab">类比</span><p>租房时，签一年和签五年的月租往往不同。如果大家都觉得明年房租会大跌，房东就愿意给五年长约更低的月租，否则租客宁可先签一年、明年再续。长期租金低于短期租金，透露的是“大家预期以后会降”。</p></div>
+
+<div class="widget" id="w-curve" aria-labelledby="w2t">
+<h3 id="w2t">图 2　收益率曲线的三种形状</h3>
+<div class="chips" role="group" aria-label="选择曲线形状（教学示意）"><button type="button" class="chip" data-c="2,3.7" aria-pressed="false">正常</button><button type="button" class="chip" data-c="3.9,4" aria-pressed="false">平坦</button><button type="button" class="chip" data-c="5.3,4" aria-pressed="true">倒挂</button></div>
+<div class="chart" id="chart2"></div>
+<ul class="legend"><li><span class="sw d"></span>收益率曲线（各期限国债收益率）</li><li><span class="sw g"></span>3 个月收益率的水平，便于比较</li></ul>
+<div class="controls">
+<div class="ctl"><label for="s3">3 个月收益率（%）</label><output id="s3-value" for="s3"></output><input id="s3" type="range" min="0" max="7" step="0.1" value="5.3" aria-describedby="s3-hint"><span class="hint" id="s3-hint">最短端，0%~7%。主要跟着央行的政策利率走，加息时它最先上去。</span></div>
+<div class="ctl"><label for="l10">10 年收益率（%）</label><output id="l10-value" for="l10"></output><input id="l10" type="range" min="0.5" max="7" step="0.1" value="4" aria-describedby="l10-hint"><span class="hint" id="l10-hint">长端，0.5%~7%。反映对未来多年利率和通胀的预期，加上期限溢价。</span></div>
+</div>
+<dl class="read pairs"><div><dt>2 年收益率</dt><dd id="r-2y"></dd></div><div><dt>30 年收益率</dt><dd id="r-30y"></dd></div><div><dt>10 年减 2 年</dt><dd id="r-s2"></dd></div><div><dt>10 年减 3 个月</dt><dd id="r-s3"></dd></div><div><dt>形状（按 10 年减 3 个月）</dt><dd id="r-shape"></dd></div></dl>
+<p class="verdict" id="verdict2" aria-live="polite"></p>
+<p class="note">数字是教学示意，不是某一天的真实数据。图中只由 3 个月和 10 年两个滑块决定，其余期限按一条平滑曲线插值。横轴各期限等距排列，不按时间比例。形状的划分（利差 0.5 个百分点以上为正常，0 到 0.5 为平坦，负数为倒挂）只是为了讲解方便，没有统一标准。</p>
+</div>
+<p class="prose"><b>正常（向上倾斜）</b>：期限越长利率越高。这是大多数时候的样子，市场预期短期利率大致持平或上升，再加上正的期限溢价。<b>平坦</b>：长短期利率差不多，常出现在央行加息周期的中后段，市场觉得利率已接近顶部。<b>倒挂</b><span class="en"> (inversion)</span>：短期利率高于长期利率。通常是央行为压通胀把短期利率提得很高，而市场预期这样的高利率不会持续，几年后会降下来。</p>
+</section>
+
+<section id="signal">
+<h2>倒挂与衰退：可靠的信号，不是定律</h2>
+<p class="prose">倒挂之所以有名，是因为历史记录很亮眼。纽约联储的 Estrella 和 Trubin 在 2006 年的文章里，用 10 年期国债减 3 个月国库券的利差做了检验：1968 年到文章发表时美国的 6 次衰退，每一次之前的 12 个月里，这个利差的月平均值都至少有 3 个月为负；按月平均计算，1968 年到 2005 年也没有出现过倒挂之后没有衰退的“假信号”。他们还用利差估计 12 个月后陷入衰退的概率。</p>
+<p class="prose">为什么会这样？他们给的解释有两条，彼此并不冲突。一是货币政策：央行加息直接抬高短期利率，长期利率涨得少，曲线变平甚至倒挂；同时高利率本身就在给经济降温。二是预期：投资者预计经济将放缓、通胀会回落、央行迟早降息，这种预期压低了今天的长期利率。还有一种常见说法是，银行多是借短贷长，倒挂压缩了利差收入，可能让它们收紧放贷。</p>
+<p class="prose">但同一篇文章也写明了局限：</p>
+<ol class="qs"><li><b>短暂的倒挂常是假信号。</b>按日看，1968 年到 2005 年有 100 个交易日利差为负，而那些月份的月平均值并没有转负。看日数据或盘中数据容易反应过度，持续的倒挂才更可靠。</li><li><b>选哪个利差会影响结论。</b>10 年减 2 年通常比 10 年减 3 个月更早、更频繁地转负。开头表格里两者的开始和结束日期就不同。</li><li><b>领先时间和深度差异很大。</b>历次衰退前利差的最低点从 −3.51 到 −0.08 个百分点不等。倒挂只说“可能会来”，说不准什么时候来、来得多重。</li><li><b>这是统计关系，不是定律。</b>作者的原话大意是：证据是统计性的，过去的信号再准，也无法保证将来的结果。</li></ol>
+<p class="prose">2022 至 2024 年这一轮就是一个提醒。按日数据，10 年减 3 个月利差持续倒挂两年多，截至本课写作时，NBER 并没有认定新的衰退。一种可能的解释是，这次的高短期利率来自对高通胀的应对，市场预期的“未来降息”可以来自通胀回落，而不一定来自经济衰退。这类解释还在讨论中，本课不下结论。另一个细节是，10 年减 2 年在 2024 年 9 月初转正，就在美联储 9 月首次降息前夕。这与预期理论一致：降息预期升温时，2 年期收益率下降得比 10 年期多，曲线就“翻”了回来。</p>
+<p class="prose">作为对照：2019 年 5 月至 10 月，10 年减 3 个月利差多数交易日为负，2020 年 2 月美国经济见顶并进入衰退。但那次衰退的直接原因是新冠疫情，很难说是曲线“预见”到的。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“国债没有违约风险，所以价格不会跌。”</p><p>没有违约风险不等于没有利率风险。市场收益率上升时，已发行的国债必须降价才卖得出去，期限越长跌得越多。持有到期能拿回面值，中途卖出就要承担价格波动。</p></div>
+<div class="mis"><p class="said">“国债收益率创新高，说明国债更抢手了。”</p><p>正好相反。收益率上升意味着价格下跌，通常是因为有人在卖、或者市场预期利率和通胀更高。债券抢手时价格上涨，收益率反而下降。</p></div>
+<div class="mis"><p class="said">“曲线倒挂了，衰退马上就来。”</p><p>历史上倒挂之后的衰退往往要等一年甚至更久，深度也不一。它是统计上的预警，不是倒计时；2022 至 2024 年的长期倒挂之后，截至本课写作时并没有出现 NBER 认定的衰退。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先判断收益率是升还是降，再看期限长短和曲线两端各自怎么动。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>加息时国债为什么跌，长期的为什么跌得多？</b>旧债的票息是固定的。新债利率更高，旧债只有降价，让买家的到期收益率追平市场，才卖得出去。长期债券的现金流离今天更远，久期更长，同样的收益率上升带来更大的价格下跌，约等于修正久期乘以收益率的变化。</div></li><li><div><b>倒挂是什么，这次为什么会出现？</b>倒挂是短期收益率高于长期收益率。2022 年 3 月起美联储把政策利率上限从 0.25% 提到 5.50%，短期收益率跟着大涨；长期收益率反映的是对多年利率的预期，市场相信高利率不会一直持续，长端涨得少，于是曲线倒挂。</div></li><li><div><b>两年多的倒挂没等来衰退，信号还可信吗？</b>纽约联储研究显示，1968 至 2005 年美国 6 次衰退之前都出现过持续的倒挂，是有分量的预警。但它是统计关系：领先时间和深度差异大，短暂倒挂常是假信号，这一轮又碰上了高通胀后的特殊环境。合理的读法是把它当作提高衰退概率的一条证据，和就业、消费等其他数据一起看，而不是把它当作判决。</div></li></ol>
+<p class="prose">下次看到“收益率曲线倒挂”的新闻，可以依次问：说的是哪两个期限的利差？倒挂持续了多久，按日还是按月？是短端在涨（央行加息），还是长端在跌（预期降息）？其他经济数据怎么说？</p>
+<button type="button" class="chip" id="goChart">回到图 2 的倒挂情景</button>
+</section>
+
+<section id="sources">
+<h2>资料来源</h2>
+<ol class="qs">
+<li>Reuters（Davide Barbuscia，经 Kitco 转载），<a href="https://www.kitco.com/news/off-the-wire/2024-03-21/us-treasury-key-yield-curve-inversion-becomes-longest-record">US Treasury key yield curve inversion becomes the longest on record</a>，2024-03-21；10 年减 2 年利差自 2022 年 7 月初持续倒挂，超过 1978 年 624 天的纪录（德意志银行统计），衰退尚未出现。</li>
+<li>圣路易斯联储 FRED，<a href="https://fred.stlouisfed.org/series/T10Y2Y">10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity (T10Y2Y)</a>，2026-10-14 查阅；开头表格中 10 年减 2 年的日期和数值据此计算。</li>
+<li>圣路易斯联储 FRED，<a href="https://fred.stlouisfed.org/series/T10Y3M">10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity (T10Y3M)</a>，2026-10-14 查阅；10 年减 3 个月的日期和数值，以及 2019 年的倒挂。</li>
+<li>圣路易斯联储 FRED，<a href="https://fred.stlouisfed.org/series/DFEDTARU">Federal Funds Target Range - Upper Limit (DFEDTARU)</a>，2026-10-14 查阅；2022 年 3 月至 2023 年 7 月目标区间上限从 0.25% 升至 5.50%，2024 年 9 月首次下调。</li>
+<li>Arturo Estrella、Mary R. Trubin，纽约联储 Current Issues in Economics and Finance 第 12 卷第 5 期，<a href="https://www.newyorkfed.org/medialibrary/media/research/current_issues/ci12-5.pdf">The Yield Curve as a Leading Indicator: Some Practical Issues</a>，2006 年 7/8 月；1968 年以来 6 次衰退（至 2005 年）前利差均倒挂、按月平均无假信号、日数据假信号、利差最低点差异和“无法保证将来”的局限。</li>
+<li>美国国家经济研究局（NBER），<a href="https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions">US Business Cycle Expansions and Contractions</a>，2026-10-14 查阅；最近的峰值为 2020 年 2 月、谷底为 2020 年 4 月，之后未列出新的峰值。</li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,MINUS='−',TS=[2,10,30],CLS={2:'alternative',10:'d',30:'model'};
+function $(s){return document.querySelector(s);}
+function price(c,y,T){var p=0,t;for(t=1;t<=T;t++){p+=c/Math.pow(1+y/100,t);}return p+100/Math.pow(1+y/100,T);}
+function modDur(c,y,T){var p=price(c,y,T),s=0,t;for(t=1;t<=T;t++){s+=t*c/Math.pow(1+y/100,t);}s+=T*100/Math.pow(1+y/100,T);return s/p/(1+y/100);}
+function pct(n){return C.fmtS(n,1)+'%';}
+function ab(n){return C.fmt(Math.abs(n),1)+'%';}
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function go(id,focus){$(id).scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});$(focus).focus({preventScroll:true});}
+
+/* ---------- 图 1 ---------- */
+var box1=$('#chart1'),st1=null,tan=30;
+function model1(c,y){
+  return TS.map(function(T){var P=price(c,y,T),D=modDur(c,c,T);return {T:T,P:P,chg:P-100,est:-D*(y-c),D:D};});
+}
+function draw1(){
+  box1.replaceChildren();
+  if(!st1){return;}
+  var c=st1.c,y=st1.y,top=100+30*c,ps=top>200?40:20,p1=Math.ceil((top+4)/ps)*ps;
+  var f=C.frame(box1,{id:'bond',q0:0,q1:10,qs:1,p0:0,p1:p1,ps:ps,xt:'市场收益率（%）',yt:'债券价格（元，面值 100）',label:st1.label});
+  var frameRect=f.svg.querySelector('.plotframe'),g=C.el('g',{}),r={q0:0,q1:10,p0:0,p1:p1};
+  f.svg.insertBefore(g,frameRect);
+  g.appendChild(C.el('line',{x1:f.m.l,x2:f.m.l+f.iw,y1:f.y(100),y2:f.y(100),'class':'guide'}));
+  g.appendChild(C.el('line',{x1:f.x(c),x2:f.x(c),y1:f.m.t,y2:f.m.t+f.ih,'class':'guide'}));
+  g.appendChild(C.el('line',{x1:f.x(y),x2:f.x(y),y1:f.m.t,y2:f.m.t+f.ih,'class':'guide'}));
+  TS.forEach(function(T){
+    var d=[],i,x;
+    for(i=0;i<=100;i++){x=i/10;d.push(f.x(x).toFixed(1)+' '+f.y(price(c,x,T)).toFixed(1));}
+    g.appendChild(C.el('path',{d:'M'+d.join('L'),'class':'curve '+CLS[T],'data-t':T}));
+  });
+  var D=modDur(c,c,tan),s=C.clip([0,100*(1+D*c/100)],[10,100*(1-D*(10-c)/100)],r);
+  if(s){g.appendChild(C.el('path',{d:'M'+f.x(s[0][0]).toFixed(1)+' '+f.y(s[0][1]).toFixed(1)+'L'+f.x(s[1][0]).toFixed(1)+' '+f.y(s[1][1]).toFixed(1),'class':'curve ghost '+CLS[tan],'data-role':'tangent'}));}
+  /* 曲线标签：放在左右两端中间隔更大的一侧，再竖直推开 */
+  function ends(x){return TS.map(function(T){return {T:T,py:f.y(price(c,x,T))};}).sort(function(a,b){return a.py-b.py;});}
+  function minGap(a){var m=1e9;for(var i=1;i<a.length;i++){m=Math.min(m,a[i].py-a[i-1].py);}return m;}
+  var L=ends(0.15),R=ends(9.85),useL=minGap(L)>=minGap(R),E=useL?L:R,gap=15,lo=f.m.t+14,hi=f.m.t+f.ih-6,i;
+  E.forEach(function(e){e.ly=e.py-7;});
+  for(i=0;i<E.length;i++){E[i].ly=Math.max(E[i].ly,i?E[i-1].ly+gap:lo);}
+  if(E[E.length-1].ly>hi){E[E.length-1].ly=hi;for(i=E.length-2;i>=0;i--){E[i].ly=Math.min(E[i].ly,E[i+1].ly-gap);}}
+  E.forEach(function(e){
+    f.svg.appendChild(C.el('text',{x:(useL?f.m.l+6:f.m.l+f.iw-6).toFixed(1),y:e.ly.toFixed(1),'text-anchor':useL?'start':'end','class':'curvelab '+CLS[e.T]+' halo'},e.T+' 年'));
+  });
+  f.svg.appendChild(C.el('circle',{cx:f.x(c).toFixed(1),cy:f.y(100).toFixed(1),r:5,'class':'pt base','data-role':'start'}));
+  st1.rows.forEach(function(o){
+    f.svg.appendChild(C.el('circle',{cx:f.x(y).toFixed(2),cy:f.y(o.P).toFixed(2),r:4.5,'class':'pt '+CLS[o.T],'data-t':o.T,'data-p':o.P.toFixed(4)}));
+  });
+  box1.appendChild(f.svg);
+}
+function update1(){
+  var c=+$('#cp').value,y=+$('#yy').value,rows=model1(c,y),dy=y-c;
+  $('#cp-value').textContent=C.fmt(c,1)+'%';$('#cp').setAttribute('aria-valuetext','票面利率 '+C.fmt(c,1)+'%');
+  $('#yy-value').textContent=C.fmt(y,1)+'%';$('#yy').setAttribute('aria-valuetext','市场收益率 '+C.fmt(y,1)+'%');
+  document.querySelectorAll('[data-s]').forEach(function(b){var v=b.dataset.s.split(',').map(Number);b.setAttribute('aria-pressed',String(v[0]===c&&Math.abs(v[1]-y)<1e-9));});
+  document.querySelectorAll('[data-t]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.t===tan));});
+  $('#r-cap').textContent='收益率 '+C.fmt(c,1)+'% → '+C.fmt(y,1)+'%（'+C.fmtS(dy,1)+' 个百分点），起点价格 100 元';
+  var body=$('#r-body');body.replaceChildren();
+  rows.forEach(function(o){
+    var tr=document.createElement('tr');
+    [o.T+' 年（'+C.fmt(o.D,1)+'）',C.fmt(o.P,2),C.fmtS(o.chg,1)+' / '+C.fmtS(o.est,1)].forEach(function(t,k){var td=document.createElement('td');if(k){td.className='num';td.style.whiteSpace='nowrap';}td.textContent=t;tr.appendChild(td);});
+    tr.setAttribute('data-t',o.T);body.appendChild(tr);
+  });
+  var a=rows[0],b=rows[1],z=rows[2],t;
+  if(Math.abs(dy)<1e-9){t='市场收益率等于票面利率 '+C.fmt(c,1)+'%，三只债券都按面值 100 元成交，没有涨跌。拖动收益率滑块，看期限不同的债券反应差多少。';}
+  else{
+    t='收益率'+(dy>0?'上升 ':'下降 ')+C.fmt(Math.abs(dy),1)+' 个百分点，三只债券都'+(dy>0?'跌价':'涨价')+'：2 年期'+(dy>0?'跌 ':'涨 ')+ab(a.chg)+'，10 年期'+ab(b.chg)+'，30 年期'+ab(z.chg)+'。期限越长、久期越长，价格变动越大。';
+    var err=z.chg-z.est;
+    if(Math.abs(err)<0.5){t+='变动不大，久期估算和实际几乎一致（30 年期相差 '+C.fmt(Math.abs(err),1)+' 个百分点）。';}
+    else{t+='30 年期按久期估算应'+(z.est<0?'跌 ':'涨 ')+ab(z.est)+'，实际'+(z.chg<0?'跌 ':'涨 ')+ab(z.chg)+'，'+(dy>0?'少跌':'多涨')+' '+C.fmt(Math.abs(err),1)+' 个百分点：这就是凸性，收益率变动越大，切线近似越不准。';}
+    if(dy>0){t+='如果持有到期且发行人不违约，仍能拿回票息和面值；中途卖出才会实现这笔亏损。';}
+  }
+  $('#verdict').textContent=t;
+  st1={c:c,y:y,rows:rows,label:'图 1：价格随市场收益率变化的曲线。'+t};
+  draw1();
+}
+['cp','yy'].forEach(function(id){$('#'+id).addEventListener('input',update1);});
+document.querySelectorAll('[data-s]').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.s.split(',');$('#cp').value=v[0];$('#yy').value=v[1];update1();});});
+document.querySelectorAll('[data-t]').forEach(function(b){b.addEventListener('click',function(){tan=+b.dataset.t;update1();});});
+C.watch(box1,draw1);update1();
+
+/* ---------- 图 2 ---------- */
+var MAT=[{m:0.25,n:'3个月'},{m:1,n:'1年'},{m:2,n:'2年'},{m:5,n:'5年'},{m:10,n:'10年'},{m:30,n:'30年'}],TAU=3;
+function curve(s,l){
+  var e0=Math.exp(-0.25/TAU),e10=Math.exp(-10/TAU);
+  return MAT.map(function(o){var g=(e0-Math.exp(-o.m/TAU))/(e0-e10);return s+(l-s)*g;});
+}
+function shape(sp){return sp>=0.5?'正常（向上倾斜）':sp>=0?'平坦':sp>-0.3?'轻微倒挂':'倒挂';}
+var box2=$('#chart2'),st2=null;
+function draw2(){
+  box2.replaceChildren();
+  if(!st2){return;}
+  var narrow=box2.clientWidth<440;
+  var f=C.frame(box2,{id:'yc',q0:0,q1:6,qs:1,p0:0,p1:8,ps:narrow?2:1,xt:'剩余期限',yt:'收益率（%）',label:st2.label});
+  Array.prototype.slice.call(f.svg.querySelectorAll('text.tick[text-anchor="middle"]')).forEach(function(e){e.remove();});
+  Array.prototype.slice.call(f.svg.querySelectorAll('line.gridline')).forEach(function(e){if(e.getAttribute('x1')===e.getAttribute('x2')){e.remove();}});
+  var frameRect=f.svg.querySelector('.plotframe'),g=C.el('g',{}),v=st2.v;
+  f.svg.insertBefore(g,frameRect);
+  g.appendChild(C.el('line',{x1:f.m.l,x2:f.m.l+f.iw,y1:f.y(v[0]).toFixed(1),y2:f.y(v[0]).toFixed(1),'class':'guide','data-role':'ref'}));
+  g.appendChild(C.el('path',{d:'M'+v.map(function(r,k){return f.x(k+0.5).toFixed(1)+' '+f.y(r).toFixed(1);}).join('L'),'class':'curve d'}));
+  v.forEach(function(r,k){
+    var cx=f.x(k+0.5),cy=f.y(r),ly=cy-10;
+    if(ly<f.m.t+12){ly=cy+19;}
+    f.svg.appendChild(C.el('circle',{cx:cx.toFixed(2),cy:cy.toFixed(2),r:4.5,'class':'pt','data-m':MAT[k].m,'data-v':r.toFixed(4)}));
+    f.svg.appendChild(C.el('text',{x:cx.toFixed(1),y:ly.toFixed(1),'text-anchor':'middle','class':'vallab halo'},C.fmt(r,2)));
+    f.svg.appendChild(C.el('text',{x:cx.toFixed(1),y:(f.m.t+f.ih+16).toFixed(1),'text-anchor':'middle','class':'tick'},MAT[k].n));
+  });
+  box2.appendChild(f.svg);
+}
+function update2(){
+  var s=+$('#s3').value,l=+$('#l10').value,v=curve(s,l),s2=v[4]-v[2],s3=v[4]-v[0],sh=shape(s3);
+  $('#s3-value').textContent=C.fmt(s,1)+'%';$('#s3').setAttribute('aria-valuetext','3 个月收益率 '+C.fmt(s,1)+'%');
+  $('#l10-value').textContent=C.fmt(l,1)+'%';$('#l10').setAttribute('aria-valuetext','10 年收益率 '+C.fmt(l,1)+'%');
+  document.querySelectorAll('[data-c]').forEach(function(b){var p=b.dataset.c.split(',').map(Number);b.setAttribute('aria-pressed',String(Math.abs(p[0]-s)<1e-9&&Math.abs(p[1]-l)<1e-9));});
+  $('#r-2y').textContent=C.fmt(v[2],2)+'%';
+  $('#r-30y').textContent=C.fmt(v[5],2)+'%';
+  $('#r-s2').textContent=C.fmtS(s2,2)+' 个百分点';
+  $('#r-s3').textContent=C.fmtS(s3,2)+' 个百分点';
+  $('#r-shape').textContent=sh;
+  var t='3 个月 '+C.fmt(s,1)+'%，10 年 '+C.fmt(l,1)+'%，10 年减 3 个月为 '+C.fmtS(s3,2)+' 个百分点，曲线'+sh+'。';
+  if(s3>=0.5){t+='期限越长利率越高，这是最常见的形状：市场预期短期利率大致持平或上升，长期债券还要加上期限溢价。';}
+  else if(s3>=0){t+='长短期利率差不多，市场大致认为当前的短期利率会维持一段时间，常见于加息周期的中后段。';}
+  else{t+='短期利率高于长期利率：市场预期今天的高利率不会持续，未来会降下来，常见于央行大幅加息之后。历史上持续的倒挂常在衰退之前出现'+(s3>-0.3?'，即使是轻微倒挂也算数':'')+'，但领先时间不定，也有过长期倒挂而衰退迟迟未到的情况。';}
+  $('#verdict2').textContent=t;
+  st2={v:v,label:'图 2：收益率曲线，'+t};
+  draw2();
+}
+['s3','l10'].forEach(function(id){$('#'+id).addEventListener('input',update2);});
+document.querySelectorAll('[data-c]').forEach(function(b){b.addEventListener('click',function(){var p=b.dataset.c.split(',');$('#s3').value=p[0];$('#l10').value=p[1];update2();});});
+$('#goChart').addEventListener('click',function(){$('#s3').value=5.3;$('#l10').value=4;update2();go('#w-curve','#s3');});
+C.watch(box2,draw2);update2();
+
+var QUIZ=[
+{q:'小王两年前按面值买了一张 10 年期国债，票面利率 2%。现在同类国债的收益率升到 4%。下面哪种说法对？',o:['国债没有违约风险，所以它现在仍值 100 元','如果现在卖出，价格会低于 100 元；持有到期仍能拿回票息和面值','它的票息会自动提高到 4%','收益率升高说明这张国债更值钱了'],a:1,why:'现在卖会低于 100 元。票息固定为 2%，新债给 4%，旧债必须降价，让买家的到期收益率达到 4%。只要不违约，持有到期仍按约拿回票息和 100 元面值。'},
+{q:'两只票面利率相同的国债，一只 2 年期，一只 30 年期。市场收益率同样上升 1 个百分点，哪只跌得多？',o:['2 年期，因为它快到期了，风险更集中','两只跌得一样多，因为收益率变化相同','两只都不跌，因为票息没变','30 年期，因为它的现金流更远，久期更长'],a:3,why:'30 年期跌得多。久期衡量价格对收益率的敏感度，期限越长、现金流越远，久期越长，同样的收益率变化带来更大的价格变化。'},
+{q:'某债券的修正久期是 8。市场收益率上升 0.5 个百分点，它的价格大约怎样变化？',o:['约下跌 4%','约下跌 0.5%','约下跌 8%','约上涨 4%'],a:0,why:'约下跌 4%。价格变化 ≈ −修正久期 × 收益率变化 = −8 × 0.5 = −4%。收益率变动不大时这个近似很准。'},
+{q:'某天 3 个月国债收益率是 5%，10 年期是 4%。这条收益率曲线最直接地说明了什么？',o:['10 年期国债的违约风险比 3 个月的低','经济已经陷入衰退','市场预期未来几年的短期利率会低于现在','长期投资者不再要求期限溢价，所以这种形状会一直持续'],a:2,why:'市场预期未来短期利率会下降。长期利率约等于预期短期利率的平均值加期限溢价，长端低于短端，说明市场认为今天的高利率不会持续。它不说明经济已经衰退。'},
+{q:'2022 至 2024 年美债收益率曲线倒挂了两年多，截至本课写作时 NBER 并未认定新的衰退。对这个信号最恰当的看法是？',o:['倒挂与衰退毫无关系，以后可以忽略','倒挂是统计上的预警，提高了衰退的可能性，但不保证衰退，也说不准时间','只要倒挂，衰退一定在 12 个月内到来','倒挂越深，衰退一定越早到来'],a:1,why:'它是统计上的预警，不是定律。1968 至 2005 年的 6 次衰退前都出现过持续倒挂，但领先时间和深度差异大，研究者自己也说过去的准确不能保证将来。应该和其他经济数据一起看。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'债券',en:'bond',d:'一张借据：发行人今天借钱，承诺按期付票息、到期归还面值。'},
+{t:'面值',en:'face value',d:'债券到期时归还的本金金额，票息按它的百分比计算。'},
+{t:'票息',en:'coupon',d:'债券每期支付的固定利息，发行时写定，之后不随市场利率变化。'},
+{t:'到期收益率',en:'yield to maturity',d:'按当前价格买入并持有到期，平均每年的回报率；使未来现金流现值之和等于价格的那个利率。与价格反向变动。'},
+{t:'久期',en:'duration',d:'按现值加权的收回现金的平均时间，衡量债券价格对利率的敏感度。期限越长、票息越低，久期越长。'},
+{t:'修正久期',en:'modified duration',d:'久期除以 (1 + 收益率)。价格变化（%）≈ −修正久期 × 收益率变化（百分点）。'},
+{t:'凸性',en:'convexity',d:'价格曲线向下弯曲的性质：收益率大幅变动时，实际价格比久期的直线估算更高，跌得少、涨得多。'},
+{t:'收益率曲线',en:'yield curve',d:'同一发行人不同期限债券的收益率连成的线。长端约等于预期短期利率的平均加期限溢价。'},
+{t:'倒挂',en:'inversion',d:'短期收益率高于长期收益率。常出现在大幅加息之后，历史上持续的倒挂多在衰退前出现，但不是必然。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

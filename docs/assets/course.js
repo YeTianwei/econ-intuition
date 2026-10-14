@@ -272,7 +272,7 @@
         {
           id: 'm12-02', title: '债券与收益率曲线',
           en: 'Bonds and the yield curve',
-          path: 'm12/02-bonds-yield-curve.html', status: 'todo'
+          path: 'm12/02-bonds-yield-curve.html', status: 'done'
         },
         {
           id: 'm12-03', title: '股票：估值与有效市场',

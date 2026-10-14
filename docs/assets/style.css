@@ -381,3 +381,9 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .legend .sw.lr{border-color:var(--ink)}
 .legend .sw.faint{border-top-width:2px;opacity:.5}
 /* m11-04 end */
+
+/* m12-02 start */
+.pt.d{fill:var(--demand)}
+.pt.model{fill:var(--model)}
+.pt.alternative{fill:var(--alternative)}
+/* m12-02 end */
