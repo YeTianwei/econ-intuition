@@ -230,7 +230,7 @@
         {
           id: 'm10-04', title: '恶性通胀与通缩',
           en: 'Hyperinflation and deflation',
-          path: 'm10/04-hyperinflation-deflation.html', status: 'todo'
+          path: 'm10/04-hyperinflation-deflation.html', status: 'done'
         }
       ]
     },

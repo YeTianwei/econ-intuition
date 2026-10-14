@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>恶性通胀与通缩</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m10-04">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>恶性通胀与通缩</h1>
+<p class="sub">Hyperinflation and deflation</p>
+<p class="lede">物价每天翻一倍，钱拿在手里像握着一块正在融化的冰。物价年年往下走，听起来像好事，却可能让欠债的人越还越还不清。两头都危险，危险的方式不同。本课分别拆开它们的机制，再看央行为什么把目标定在 2% 左右，而不是 0。</p>
+<p class="meta">约 22 分钟 · 0 个交互图（4 张静态表） · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m08/02-inflation-cpi.html#basket">CPI 怎样衡量物价</a>、<a href="../m08/02-inflation-cpi.html#converter">名义与实际、通缩的定义</a>、<a href="../m09/01-compounding-growth.html#compounding">复利</a>。</p>
+</header>
+<section id="news">
+<h2>从一段真实历史开始</h2>
+<figure class="headline"><figcaption>数据：Hanke &amp; Krus（2012）世界恶性通胀表；IMF 公告，2009-05-06；CNN，2009-01-16、2009-02-02。链接见文末资料来源</figcaption><blockquote>津巴布韦，2008 年 11 月中旬：一个月内物价上涨约 796 亿%，大约每 24.7 小时翻一倍</blockquote></figure>
+<p class="prose">这是经济学家 Steve Hanke 和 Nicholas Krus 整理的估计。CNN 当时报道，官方公布的通胀率停留在 2008 年 7 月的 2.31 亿%。对 2008 年 8 月至 11 月，Hanke 和 Krus 用同时在哈拉雷和伦敦上市的 Old Mutual 股票价格推算津元的隐含汇率，再按购买力平价折算通胀。按这张表，峰值月份的日通胀率约 98%。</p>
+<p class="prose">国际货币基金组织（IMF）2009 年 5 月的公告给出另一个口径：12 个月 CPI 涨幅估计在 2008 年 9 月达到近 5,000 亿%，2008 年实际 GDP 估计下降约 14%。</p>
+<p class="prose">CNN 2009 年 1 月 16 日报道，津巴布韦储备银行宣布将发行面额 100 万亿津元的钞票，当时一条面包约要 3,000 亿津元。2 月 2 日，央行宣布从货币上一次去掉 12 个零，旧币 1 万亿等于新币 1 元；这是半年内第三次去零。同一时期，代理财政部长已允许所有人使用外币。</p>
+<ol class="qs"><li>钞票的面额为什么会膨胀到“万亿”？最初是谁在多印钱，为什么要印？</li><li>一旦物价开始狂涨，为什么去掉几个零也止不住？</li><li>既然物价涨得太快这么可怕，物价下跌是不是就值得欢迎？央行为什么不干脆把目标定为 0？</li></ol>
+</section>
+<section id="hyper">
+<h2>多快才算恶性通胀</h2>
+<p class="prose">经济学里最常用的门槛来自 Phillip Cagan 1956 年的经典研究：当月度通胀率首次超过 50%，<b>恶性通胀</b><span class="en"> (hyperinflation)</span> 开始；当月度通胀率降到 50% 以下并维持至少一年，前一个月就是它的终点。Fischer、Sahay 和 Végh 2002 年的综述就按这个定义统计各国案例，Hanke 和 Krus 的表也采用同一门槛。</p>
+<p class="prose">50% 听起来不算天文数字，但这是<em>每月</em>的涨幅。用复利算一年：</p>
+<p class="formula">1.5<sup>12</sup> ≈ 129.7，即一年涨约 12,875%</p>
+<p class="prose">也就是说，刚好踩在门槛上的恶性通胀，一年后物价约是原来的 130 倍。历史上最严重的几次远远不止于此。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="三次著名恶性通胀的峰值月份，可横向滚动"><table class="tbl"><caption>峰值月份的物价涨幅。来源：Hanke &amp; Krus（2012），World Hyperinflations；“一个月后物价倍数”由本课按月涨幅换算</caption><thead><tr><th scope="col">地点</th><th scope="col">峰值月份</th><th scope="col" class="num">最高月涨幅</th><th scope="col" class="num">一个月后物价倍数</th><th scope="col" class="num">等价日涨幅</th><th scope="col" class="num">物价翻倍用时</th></tr></thead><tbody>
+<tr><td>匈牙利</td><td>1946&nbsp;年&nbsp;7&nbsp;月</td><td class="num">4.19&nbsp;×&nbsp;10<sup>16</sup>%</td><td class="num">约 4×10<sup>14</sup></td><td class="num">207%</td><td class="num">15.0 小时</td></tr>
+<tr><td>津巴布韦</td><td>2008&nbsp;年&nbsp;11&nbsp;月中旬</td><td class="num">7.96&nbsp;×&nbsp;10<sup>10</sup>%</td><td class="num">约 8 亿</td><td class="num">98.0%</td><td class="num">24.7 小时</td></tr>
+<tr><td>德国</td><td>1923&nbsp;年&nbsp;10&nbsp;月</td><td class="num">29,500%</td><td class="num">约 296</td><td class="num">20.9%</td><td class="num">3.70 天</td></tr>
+</tbody></table></div>
+<p class="prose">魏玛德国 1923 年的例子是许多教科书的标配，但按月峰值它只排在这张表的中段。津巴布韦是 21 世纪的案例，峰值仅次于 1946 年的匈牙利。</p>
+<p class="prose">这种速度下，<a href="../m08/02-inflation-cpi.html#basket">CPI</a> 这种按月采价的统计本身就跟不上了。商家把价格钉住外币来避免损失。CNN 当时报道，连菜贩也更愿意收美元、南非兰特或博茨瓦纳普拉，许多工人要求用外币发工资。</p>
+</section>
+<section id="monetize">
+<h2>源头：用印钞填财政窟窿</h2>
+<p class="prose">普通通胀可以有很多来源。恶性通胀的历史记录却高度集中：Fischer、Sahay 和 Végh 的综述指出，恶性通胀与“印纸币为巨额财政赤字融资”的需要相连，而这些赤字往往由战争、革命、帝国瓦解和新国家建立引起。</p>
+<p class="prose">链条是这样的。政府支出远大于税收，又借不到足够的钱，于是让央行直接或间接买下政府债务、发行新钱来付账。这叫<b>财政赤字货币化</b><span class="en"> (monetization of fiscal deficits)</span>。政府靠发行货币取得的实际资源，叫<b>铸币税</b><span class="en"> (seigniorage)</span>。</p>
+<p class="prose">新钱并没有凭空变出面包和汽油。政府用新钱买走了一部分商品，物价上涨让其他人手里每一元钱能买的东西变少。这等于对持有现金的人征了一笔没有经过立法的税，经济学家叫它<b>通胀税</b><span class="en"> (inflation tax)</span>。它的税基是人们手里的货币，税率就是通胀率。</p>
+<p class="prose">津巴布韦的账本可以印证这条链条。IMF 2009 年的公告估计，2008 年津巴布韦储备银行承担的准财政活动约 11 亿美元，相当于当年 GDP 的 36%，包括选举相关开支、对国企的转移、补贴贷款、补贴农业投入和补贴外汇分配；融资方式包括货币化，以及强制结汇、冻结大部分外币存款等。这些本该由财政预算承担的开支，由央行用新钱和其他手段支付。</p>
+<div class="analogy"><span class="lab">类比</span><p>一锅汤要分给全家人。有人不愿多买菜，就不停往锅里兑水，让每个人碗里看上去还是满的。第一次兑水，大家没察觉；兑得多了，人人都知道汤会越来越淡，于是一拿到汤就赶紧喝掉，再也没人愿意留一碗放着。兑水的人想维持同样的“营养”，只能兑得更多。</p></div>
+<h3>为什么会自我加速：人们逃离货币</h3>
+<p class="prose">恶性通胀里，物价常常涨得比货币供应还快。关键在人们持有货币的意愿。预期钱会快速贬值，持有现金的成本就很高：工资一到手立刻换成商品或外币，商家收到钱当天就花掉。同样一张钞票一天之内转手多次，等于货币流通得更快。</p>
+<p class="prose">Cagan 1956 年研究的正是这一点：通胀预期越高，人们愿意持有的实际货币余额越少。这带来两个后果。其一，即使政府停止加印，现有的钱也会因为转手加速而推高物价。其二，通胀税的税基在缩小，政府要从同样的通胀中榨出同样多的实际资源，就得印得更快。</p>
+<p class="prose">财政这一侧也在恶化。税款从核定到入库有时间差，在每天翻倍的物价下，晚几周收到的税款实际价值所剩无几，赤字因而更大，又要靠印钞补上。</p>
+<h3>怎样才能停下</h3>
+<p class="prose">去掉几个零只是改了记账单位，没有改变印钞的原因。CNN 报道的 2009 年 2 月去零已是半年内的第三次。要停下，必须同时切断两样东西：财政不再依赖印钞，以及人们重新相信新的货币安排。</p>
+<p class="prose">津巴布韦最后的做法是放弃本币。IMF 公告记录，当局正式承认事实上的美元化，转向使用多种硬通货，并在 2009 年初以兰特作为参考货币；IMF 执董支持以多币种体系锚定通胀预期。2009 年 1 至 2 月，以美元计的 CPI 出现下降。代价是本国央行失去了自主发钞这个工具。</p>
+</section>
+<section id="deflation">
+<h2>另一头：物价下跌为什么也危险</h2>
+<p class="prose"><a href="../m08/02-inflation-cpi.html#converter">通缩</a>是物价总水平持续下降。单个商品降价是常事，手机、电视因为技术进步越来越便宜，这不是通缩。危险的是大面积、持续的物价下跌，而且人们开始预期它会继续。</p>
+<h3>通缩螺旋</h3>
+<p class="prose">设想人人都相信明年东西会便宜 3%。能推迟的大件购买，比如买车、装修、扩建厂房，就会往后拖。需求减少，企业卖不动货，只好再降价、减产、压工资或裁员；收入下降的家庭更不敢花钱，物价继续下跌，预期得到“验证”。这种自我强化的循环叫<b>通缩螺旋</b><span class="en"> (deflationary spiral)</span>。</p>
+<p class="prose">利率本来可以打破这个循环，但通缩恰恰让它失灵。借款人真正负担的是<b>实际利率</b><span class="en"> (real interest rate)</span>，也就是扣除通胀后的利率：</p>
+<p class="formula">实际利率 ≈ 名义利率 − 预期通胀率</p>
+<p class="prose">名义利率很难降到明显低于零，因为人们可以改持现金，这个界限叫<b>名义利率下限</b><span class="en"> (lower bound on nominal interest rates)</span>。设名义利率已降到 1%：若预期通胀 2%，实际利率约 −1%，借钱投资很划算；若预期通缩 2%，实际利率约 3%，央行再也降不下去。物价跌得越多，实际借贷成本越高，越抑制投资和消费。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="名义利率相同时不同通胀预期下的实际利率，可横向滚动"><table class="tbl"><caption>教学示意：名义利率都是 1%，只改变预期通胀率</caption><thead><tr><th scope="col">情景</th><th scope="col" class="num">名义利率</th><th scope="col" class="num">预期通胀率</th><th scope="col" class="num">实际利率（约）</th></tr></thead><tbody>
+<tr><td>温和通胀</td><td class="num">1%</td><td class="num">2%</td><td class="num">−1%</td></tr>
+<tr><td>零通胀</td><td class="num">1%</td><td class="num">0%</td><td class="num">1%</td></tr>
+<tr><td>通缩</td><td class="num">1%</td><td class="num">−2%</td><td class="num">3%</td></tr>
+</tbody></table></div>
+<h3>债务通缩：越还越欠</h3>
+<p class="prose">美国经济学家欧文·费雪在大萧条期间的 1933 年发表了一篇论文，提出<b>债务通缩</b><span class="en"> (debt deflation)</span> 理论。他的出发点是：债务按名义金额写死，物价下跌时，每一元未还的债务都变成了更“大”的一元。</p>
+<p class="prose">看一个教学例子。一家小厂欠银行 100 万元，靠卖一种零件还债。零件价格从每件 10 元跌到 8 元，债务一分没少，要还清却得多卖 25% 的零件。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="零件价格下跌时还清 100 万元债务所需的销量，可横向滚动"><table class="tbl"><caption>教学示意：债务名义金额固定为 100 万元</caption><thead><tr><th scope="col">零件价格（元/件）</th><th scope="col" class="num">债务（万元）</th><th scope="col" class="num">还清需卖出（万件）</th><th scope="col" class="num">相对价格 10 元时</th></tr></thead><tbody>
+<tr><td class="num">10</td><td class="num">100</td><td class="num">10.0</td><td class="num">基准</td></tr>
+<tr><td class="num">9</td><td class="num">100</td><td class="num">11.1</td><td class="num">多 11%</td></tr>
+<tr><td class="num">8</td><td class="num">100</td><td class="num">12.5</td><td class="num">多 25%</td></tr>
+</tbody></table></div>
+<p class="prose">一家企业的困境还不是全部。费雪描述的是很多债务人同时还债：为了凑钱，大家贱卖存货和资产（他称为 distress selling，即被迫抛售），银行贷款被还掉后存款货币收缩，物价进一步下跌，企业净值缩水、破产增多，产出和就业下降，人们悲观起来、囤积现金。他把这串后果列成九个环节。</p>
+<p class="prose">最要命的一环在于：每个人减轻债务的努力加在一起，压低了物价，反而让剩下的债务实际更重。费雪称这是大多数大萧条的主要秘密，原话是：“The more the debtors pay, the more they owe.”（债务人还得越多，欠得越多。）</p>
+<p class="prose">所以通缩的伤害不平均。持有现金和债权的人购买力上升，背负固定名义债务的家庭、企业和政府负担加重。当债务普遍较高时，后一种力量可能压过前一种，把一次衰退拖成长期萧条。日本在资产泡沫破裂后经历过漫长的低通胀与通缩，模块 14 的 m14-04 会专门讨论。</p>
+</section>
+<section id="target">
+<h2>为什么目标是 2% 左右，而不是 0</h2>
+<p class="prose">许多央行公开宣布一个数字作为<b>通胀目标</b><span class="en"> (inflation target)</span>。美联储的说法是：联邦公开市场委员会认为，以个人消费支出（PCE）价格指数年度变化衡量的 2% 长期通胀，最符合充分就业和物价稳定的法定目标；当人们可以合理预期通胀保持低而稳定，就能更好地做储蓄、借贷和投资决定。欧洲央行在 2021 年的策略评估后，也把物价稳定定义为中期 2% 的通胀。</p>
+<p class="prose">既然通胀有成本，为什么不瞄准 0？欧洲央行在官方说明中列出了留出正通胀缓冲的理由：</p>
+<ol class="steps">
+<li><div><b>给通缩留安全边际。</b>利率能降的幅度有限，通缩环境下利率工具可能不足以刺激经济，所以对抗通缩比对抗通胀更难。目标定在 0，经济稍遇冲击就会掉进负值区。</div></li>
+<li><div><b>向下工资刚性。</b>人们很难接受名义工资被削减。若某行业需要把实际工资降 2%，在 2% 通胀下只要名义工资不涨就能做到；在零通胀下却必须直接减薪，阻力大，企业可能改为裁员。经济学上把这叫<b>向下工资刚性</b><span class="en"> (downward wage rigidity)</span>。</div></li>
+<li><div><b>物价指数的测量偏差。</b>价格指数可能高估真实通胀，<a href="../m08/02-inflation-cpi.html#bias">CPI 的替代偏差和质量变化</a>就是例子。测出来是 0，真实情况可能已经是轻微通缩。</div></li>
+<li><div><b>货币联盟内部的调整。</b>欧元区各国共用一个利率，个别国家需要相对降价时，平均通胀为正可以避免这些国家长期陷入负通胀。这一条是欧元区特有的考虑。</div></li>
+</ol>
+<p class="prose">欧洲央行还强调目标是对称的：高于和低于 2% 的偏离同样不受欢迎。</p>
+<h3>2% 是不是最优，仍有争论</h3>
+<p class="prose">2% 并不是从某个公式里精确推出来的。主张更低的一方认为，即使温和的通胀也有成本，比如名义税制下的扭曲、对现金持有者的隐性征税，而且物价稳定的字面含义就是不涨。主张更高的一方看到，2008 年金融危机后多国利率很快降到接近零。IMF 研究部的 Blanchard 等人在 2010 年的一篇工作人员论文中提出问题：4% 通胀的净成本是否明显高于 2%？把通胀预期锚定在 4% 是否更难？更高的目标能给降息留下更大空间。</p>
+<p class="prose">反对提高目标的理由是：目标一改，人们可能怀疑以后还会再改，好不容易建立的通胀预期锚就会松动。不同观点背后是对“通胀的日常成本”与“衰退时政策空间”的不同权衡，各国央行至今仍以 2% 左右为主流。</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“政府缺钱，让央行多印点就行了，反正钱是自己的。”</p><p>新钱换不来新的商品。它把购买力从持币者转给政府，等于征通胀税。依赖得越多，人们越逃离货币，税基越小，最终可能失控。</p></div>
+<div class="mis"><p class="said">“物价下跌，大家买东西更便宜，有什么不好？”</p><p>技术进步带来的个别降价是好事。普遍而持续的通缩会让人推迟消费、抬高实际利率、加重名义债务负担，可能形成越跌越萧条的螺旋。</p></div>
+<div class="mis"><p class="said">“恶性通胀时把钞票去掉几个零，问题就解决了。”</p><p>去零只改记账单位。津巴布韦半年里去零三次仍未止住。要停下，财政必须不再靠印钞，人们也要重新信任新的货币安排。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每题先问：谁的购买力在变，谁的负担在变？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>面额为什么膨胀到“万亿”？</b>恶性通胀几乎都源于财政赤字货币化。IMF 估计 2008 年津巴布韦央行的准财政活动约占 GDP 的 36%，融资方式包括货币化。新钱把购买力从持币者转给开支方，物价随之飞涨，旧面额很快不够用。</div></li><li><div><b>为什么去零止不住？</b>人们预期钱会贬值，就逃离货币，花钱更快，物价涨得比印钞还快；通胀税的税基缩小，税收实际价值缩水，政府只能印得更多。去零没有改变这两点，最后津巴布韦放弃本币，改用多种外币，物价才稳定下来。</div></li><li><div><b>物价下跌就好吗？目标为何不是 0？</b>普遍通缩会让人推迟支出，让名义利率接近下限时实际利率反而升高，并按费雪的债务通缩机制加重债务负担。央行把目标定在 2% 左右，是为对抗通缩留出缓冲，同时照顾工资难以下调和物价指数的测量偏差。2% 是否最优仍有争论。</div></li></ol>
+<p class="prose">下次看到“某国通胀失控”或“物价连续下跌”的新闻，先问两件事：政府的赤字靠什么弥补？背负名义债务的人负担是在变轻还是变重？</p>
+</section>
+<section id="sources"><h2>资料来源</h2><ol class="qs">
+<li>Steve H. Hanke、Nicholas Krus，<a href="https://www.cato.org/working-paper/world-hyperinflations">World Hyperinflations</a>，Cato Working Paper No. 8，2012-08-15；本课引用其中的恶性通胀表（匈牙利、津巴布韦、德国的峰值月份、最高月涨幅、日涨幅、翻倍用时）以及津巴布韦数据用 Old Mutual 股价推算的说明。</li>
+<li>Stanley Fischer、Ratna Sahay、Carlos A. Végh，<a href="https://www.nber.org/papers/w8930">Modern Hyper- and High Inflations</a>，NBER Working Paper 8930，2002 年 5 月；本课引用其对 Cagan（1956）恶性通胀定义的转述，以及恶性通胀与印钞弥补巨额财政赤字相关的论述。</li>
+<li>IMF，<a href="https://www.imf.org/external/np/sec/pn/2009/pn0953.htm">IMF Executive Board Concludes 2009 Article IV Consultation with Zimbabwe（PIN No. 09/53）</a>，2009-05-06；本课引用 CPI 涨幅峰值、2008 年实际 GDP 降幅、央行准财政活动规模与融资方式、多币种体系。</li>
+<li>CNN，<a href="https://edition.cnn.com/2009/WORLD/africa/01/16/zimbawe.currency/index.html">Zimbabwe to print first $100 trillion note</a>，2009-01-16；本课引用 100 万亿面额、面包价格、民众改用外币的报道。</li>
+<li>CNN，<a href="https://edition.cnn.com/2009/WORLD/africa/02/02/zimbabwe.dollars/index.html">Zimbabwe removes 12 zeros from currency</a>，2009-02-02；本课引用去掉 12 个零、半年内第三次去零、允许使用外币。</li>
+<li>Irving Fisher，<a href="https://fraser.stlouisfed.org/files/docs/meltzer/fisdeb33.pdf">The Debt-Deflation Theory of Great Depressions</a>，Econometrica 第 1 卷第 4 期，1933 年 10 月（圣路易斯联储 FRASER 存档）；本课概述第 342 页的九个环节，并引用第 344 页的原话。</li>
+<li>美联储理事会，<a href="https://www.federalreserve.gov/faqs/economy_14400.htm">Why does the Federal Reserve aim for inflation of 2 percent over the longer run?</a>，2025-08-22 更新；本课引用 2% 目标及其理由。</li>
+<li>欧洲央行，<a href="https://www.ecb.europa.eu/mopo/strategy/pricestab/html/index.en.html">Two per cent inflation target</a>；本课引用 2021 年策略评估后的 2% 中期目标、留出正通胀缓冲的理由与对称性。</li>
+<li>Olivier Blanchard、Giovanni Dell'Ariccia、Paolo Mauro，<a href="https://www.imf.org/external/pubs/ft/spn/2010/spn1003.PDF">Rethinking Macroeconomic Policy</a>，IMF Staff Position Note SPN/10/03，2010-02-12；本课引用第 11 页关于是否提高通胀目标到 4% 的讨论（论文观点不代表 IMF 官方立场）。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var QUIZ=[
+{q:'某国政府长期赤字，借不到钱，于是由央行买下全部新发国债来支付开支。物价随之快速上涨。持有大量现金的家庭实际上发生了什么？',o:['没有影响，因为他们手里的钞票张数没变','受益，因为货币供应多了，他们更容易赚钱','承担了通胀税：同样的现金能买的东西变少，购买力转给了政府','只有借钱的人受损，持币者不受影响'],a:2,why:'持币者在交通胀税。财政赤字货币化让政府用新钱买走商品，物价上涨使已有现金的购买力下降，相当于对现金持有者征税。'},
+{q:'恶性通胀中，央行印钞速度已经很快，物价却涨得比货币供应还快。最主要的原因是什么？',o:['人们预期钱会贬值而尽快花掉，持有的实际货币减少，钱转手更快','统计局在恶性通胀时故意高报物价','商品产量突然大幅增加','利率太高，企业把成本转嫁给消费者'],a:0,why:'这是逃离货币。通胀预期越高，人们愿意持有的实际货币余额越少，同一张钞票转手更快，于是物价上涨超过货币增长，政府还得印得更多。'},
+{q:'名义利率已降到 1%。经济从预期通胀 2% 转为预期通缩 2%。实际利率大约怎样变化？',o:['不变，仍为 1%','从 3% 降到 −1%','从 1% 升到 2%','从 −1% 升到 3%'],a:3,why:'实际利率约等于名义利率减预期通胀率：1%−2%=−1%，变为 1%−(−2%)=3%。名义利率接近下限时，通缩让实际借贷成本上升，央行难以再刺激。'},
+{q:'按费雪的债务通缩理论，大量负债企业同时贱卖资产还债，最可能出现什么结果？',o:['物价上升，债务实际负担变轻','物价下跌，剩余债务的实际负担反而变重','只影响企业，不影响银行与就业','债务被还清，经济迅速恢复'],a:1,why:'集体抛售压低物价，每一元未还的债务变得更“大”。费雪的说法是债务人还得越多，欠得越多，破产、减产和失业会随之扩散。'},
+{q:'有人主张：“通胀有成本，所以央行最好把通胀目标定为 0。”下面哪项是欧洲央行给出的、支持留出正通胀的理由？',o:['正通胀能让政府靠印钞弥补赤字','2% 通胀能保证经济永不衰退','名义利率能降的幅度有限，正通胀为对抗通缩留出缓冲','零通胀时 CPI 会停止公布'],a:2,why:'利率下限使对抗通缩比对抗通胀更难，目标高于 0 给政策留空间。欧洲央行还提到名义工资难以下调和物价指数的测量偏差。2% 是否最优仍有争论。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'恶性通胀',en:'hyperinflation',d:'按 Cagan 的定义，月度通胀率超过 50% 即进入恶性通胀；50% 按月复利一年约涨 12,875%。'},
+{t:'财政赤字货币化',en:'monetization of fiscal deficits',d:'政府支出缺口由央行发行新钱来弥补。历史上的恶性通胀几乎都与此相连。'},
+{t:'铸币税',en:'seigniorage',d:'政府通过发行货币取得的实际资源。印得越多、人们越不愿持币，同样的通胀能取得的铸币税越少。'},
+{t:'通胀税',en:'inflation tax',d:'通胀使现金购买力下降，相当于对持币者征税；税基是人们持有的货币，税率是通胀率。'},
+{t:'通缩螺旋',en:'deflationary spiral',d:'预期物价下跌，人们推迟支出，需求下降，企业再降价减产，物价继续下跌的自我强化循环。'},
+{t:'债务通缩',en:'debt deflation',d:'费雪 1933 年的理论：集体还债和抛售压低物价，使剩余债务实际更重，债务人还得越多，欠得越多。'},
+{t:'实际利率',en:'real interest rate',d:'约等于名义利率减预期通胀率。名义利率接近下限时，通缩会抬高实际利率。'},
+{t:'通胀目标',en:'inflation target',d:'央行公开宣布的通胀数值，美联储和欧洲央行都是 2%，用来锚定通胀预期。'},
+{t:'向下工资刚性',en:'downward wage rigidity',d:'名义工资很难被削减。温和正通胀让实际工资可以在不减名义工资的情况下下调。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
