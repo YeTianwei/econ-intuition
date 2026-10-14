@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>失业率：谁算失业</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m08-03">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>失业率：谁算失业</h1>
+<p class="sub">Unemployment: who counts as unemployed</p>
+<p class="lede">“没有工作”和“失业”在统计里不是一回事。一个人要被算作失业，除了没工作，还得最近在找工作、有工作就能上岗。弄清这条界线，才能看懂为什么失业率下降有时是好消息，有时只是有人不再找了。</p>
+<p class="meta">约 20 分钟 · 0 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">本课只需要基本的比例计算。讲结构性失业时会回到<a href="../m03/02-price-controls.html#floors">价格下限</a>的图景。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>某市本季度失业率从 10% 降至 6.9%，劳动参与率同期从 60% 降至 58%</blockquote></figure>
+<p class="prose">这座城市和这组数字都是虚构的，专为本课的计算设计。</p>
+<ol class="qs"><li>一个没有工作的人，在什么条件下才会被统计为“失业”？</li><li>失业人数减少了，参与率却也下降了。这期间，没工作的人可能去了哪里？</li><li>失业率最好降到零吗？哪些失业即使在经济很好时也会存在？</li></ol>
+</section>
+
+<section id="definition">
+<h2>谁算失业：三道关卡</h2>
+<p class="prose">失业率不是数出来的“没工作的人”，而是住户抽样调查按统一规则把人分组后算出的比例。第一步，先圈定<b>劳动年龄人口</b><span class="en"> (working-age population)</span>。中国国家统计局和美国劳工统计局（BLS）的调查都从 16 岁及以上人口算起；美国还排除了现役军人和住在监狱、养老院等机构里的人。</p>
+<p class="prose">第二步，看调查参考周内有没有工作。各国普遍采用国际劳工组织（ILO）的做法：为了报酬或经营收入工作了<b>至少 1 小时</b>，就算就业；因休假、临时停工暂时没上班但仍有工作的，也算就业。这条门槛很低，所以“就业”包括了只打零工几个小时的人。</p>
+<p class="prose">第三步，没工作的人还要再过两道关，才算失业。ILO 的标准是：最近一段时间（通常是过去四周或一个月）做过找工作的具体努力，例如投简历、联系招聘机构、为开店办手续；并且如果有合适的工作，现在就能上岗。BLS 的口径是过去四周内积极找过工作、且能够工作，另外把等待原单位召回的临时下岗者也算作失业。国家统计局对调查失业人口的说明也是三个条件同时满足：参考周内没有工作、调查前一段时间找过工作、有合适工作能立即开始。</p>
+<figure class="widget popflow" aria-labelledby="fig1-title">
+<h3 id="fig1-title">图 1　1000 名劳动年龄人口怎样被分组</h3>
+<div class="pf-grid" role="img" aria-label="人口分组流程图：劳动年龄人口 1000 人，分为劳动力 600 人和非劳动力 400 人；劳动力再分为就业 540 人和失业 60 人；非劳动力包括学生、退休者、照料家人者和丧志劳动者。">
+<div class="pf-cell span3"><div class="pf-node"><span class="k">劳动年龄人口</span><span class="n">1000</span><span class="d">16 岁及以上（各国口径略有不同）</span></div></div>
+<div class="pf-cell span3"><div class="pf-fork" style="--stem:50%;--l:33.33%;--r:16.67%"></div></div>
+<div class="pf-cell span2"><div class="pf-node lf"><span class="k">劳动力</span><span class="n">600</span><span class="d">在工作，或在找工作</span></div></div>
+<div class="pf-cell"><div class="pf-node nlf"><span class="k">非劳动力</span><span class="n">400</span><span class="d">没工作也没在找</span></div></div>
+<div class="pf-cell span2"><div class="pf-fork" style="--stem:50%;--l:25%;--r:25%"></div></div>
+<div class="pf-cell"><div class="pf-fork straight"></div></div>
+<div class="pf-cell"><div class="pf-node emp"><span class="k">就业</span><span class="n">540</span><span class="d">参考周内有偿工作至少 1 小时，或暂时休假</span></div></div>
+<div class="pf-cell"><div class="pf-node une"><span class="k">失业</span><span class="n">60</span><span class="d">没工作、近期在找、能马上上岗</span></div></div>
+<div class="pf-cell"><div class="pf-node nlf"><span class="k">包括</span><ul><li>在校学生</li><li>退休者</li><li>照料家人者</li><li class="disc">丧志劳动者</li></ul></div></div>
+</div>
+<ul class="pf-tests" aria-label="被算作失业要同时满足的三个条件">
+<li><b>1　没有工作</b>参考周内有偿工作不足 1 小时，也不是暂时休假。</li>
+<li><b>2　近期在找</b>最近一段时间（ILO、BLS 用四周）做过具体的求职努力。</li>
+<li><b>3　能够上岗</b>如果有合适的工作，现在就能开始。</li>
+</ul>
+<p class="note">人数是教学示意值，不是任何地区的统计数据。三个条件的具体期限各国有差别，这里按 ILO 和 BLS 的四周写法说明。</p>
+</figure>
+<p class="prose">有了分组，两个比率就清楚了。它们的分母不同，这是整课最需要记住的一点。</p>
+<p class="formula">失业率 = 失业人数 ÷ 劳动力 × 100%　（本例 60 ÷ 600 = 10%）</p>
+<p class="prose"><b>失业率</b><span class="en"> (unemployment rate)</span> 的分母是<b>劳动力</b><span class="en"> (labor force)</span>，即就业和失业的人加起来，不是全部人口。它回答的是：想工作并在找的人里，有多少还没找到。</p>
+<p class="formula">劳动参与率 = 劳动力 ÷ 劳动年龄人口 × 100%　（本例 600 ÷ 1000 = 60%）</p>
+<p class="prose"><b>劳动参与率</b><span class="en"> (labor force participation rate)</span> 回答的是：劳动年龄人口里，有多少人在工作或在找工作。剩下的人属于<b>非劳动力</b><span class="en"> (not in the labor force)</span>。学生、退休者、全职照料家人的人通常在这一组，他们没有工作，但不计入失业。</p>
+<div class="analogy"><span class="lab">类比</span><p>热门餐馆门口排队等位。失业率像“排队的人占进店人数的比例”：已经坐下吃饭的算就业，还在排队的算失业。路过却没打算吃的人不在队里，不进分母。如果有人排得不耐烦走了，队伍变短，“排队比例”下降，但坐下吃饭的人一个也没多。</p></div>
+</section>
+
+<section id="leaving">
+<h2>失业率下降的两条路</h2>
+<p class="prose">失业人数减少，只有两条去路：找到工作，转为就业；或者不再找工作，转为非劳动力。两条路都会让失业率下降，含义却相反。</p>
+<p class="prose">后一类人里，有一部分是<b>丧志劳动者</b><span class="en"> (discouraged workers)</span>。BLS 的定义是：想要工作、过去 12 个月找过工作、现在也能工作，但最近四周没有找，原因是觉得找不到合适的工作。因为没过“近期在找”这一关，他们被归入非劳动力，不算失业。</p>
+<figure class="widget popflow" aria-labelledby="fig2-title">
+<h3 id="fig2-title">图 2　同样少了 20 个失业者，两种去向</h3>
+<ul class="pf-bars" aria-label="三种情况下 1000 人的构成条形图">
+<li><span class="lab2"><span>起点</span><span class="mono">失业率 10.0% · 参与率 60.0%</span></span><span class="pf-bar" role="img" aria-label="起点：就业 540，失业 60，非劳动力 400"><span class="e" style="width:54%"></span><span class="u" style="width:6%"></span></span></li>
+<li><span class="lab2"><span>甲：20 人找到工作</span><span class="mono">失业率 6.7% · 参与率 60.0%</span></span><span class="pf-bar" role="img" aria-label="甲：就业 560，失业 40，非劳动力 400"><span class="e" style="width:56%"></span><span class="u" style="width:4%"></span></span></li>
+<li><span class="lab2"><span>乙：20 人不再找工作</span><span class="mono">失业率 6.9% · 参与率 58.0%</span></span><span class="pf-bar" role="img" aria-label="乙：就业 540，失业 40，退出求职 20，其余非劳动力 400"><span class="e" style="width:54%"></span><span class="u" style="width:4%"></span><span class="x" style="width:2%"></span></span></li>
+</ul>
+<ul class="legend"><li><span class="sw pf-e"></span>就业</li><li><span class="sw pf-u"></span>失业</li><li><span class="sw pf-x"></span>退出求职的 20 人</li><li><span class="sw pf-n"></span>其他非劳动力</li></ul>
+<div class="tablewrap" tabindex="0" role="region" aria-label="三种情况的人数和比率，可横向滚动"><table class="tbl">
+<thead><tr><th scope="col">指标</th><th scope="col" class="num">起点</th><th scope="col" class="num">甲：找到工作</th><th scope="col" class="num">乙：不再找</th></tr></thead>
+<tbody>
+<tr><td>就业</td><td class="num">540</td><td class="num">560</td><td class="num">540</td></tr>
+<tr><td>失业</td><td class="num">60</td><td class="num">40</td><td class="num">40</td></tr>
+<tr><td>劳动力</td><td class="num">600</td><td class="num">600</td><td class="num">580</td></tr>
+<tr><td>非劳动力</td><td class="num">400</td><td class="num">400</td><td class="num">420</td></tr>
+<tr class="hl"><td>失业率</td><td class="num">10.0%</td><td class="num">6.7%</td><td class="num">6.9%</td></tr>
+<tr><td>劳动参与率</td><td class="num">60.0%</td><td class="num">60.0%</td><td class="num">58.0%</td></tr>
+<tr><td>就业人口比率</td><td class="num">54.0%</td><td class="num">56.0%</td><td class="num">54.0%</td></tr>
+</tbody></table></div>
+<p class="note">劳动年龄人口在三种情况下都固定为 1000 人，单位为人，比率保留一位小数。数字为教学示意值，对应开头的拟写新闻。</p>
+</figure>
+<p class="prose">乙的计算是 40 ÷ 580 ≈ 6.9%。分子少了 20，分母也少了 20，但分子缩得更狠，比率照样下降。新闻里的组合正是这种情况：失业率下降，参与率从 60% 降到 58%，而在工作的人数一个没变。</p>
+<p class="prose">要区分甲和乙，最直接的是看<b>就业人口比率</b><span class="en"> (employment-population ratio)</span>，即就业人数除以劳动年龄人口。它的分母是全部劳动年龄人口，不受“找不找工作”的分类影响。甲从 54% 升到 56%，乙原地不动。</p>
+<p class="prose">ILO 的统计标准还给出了比失业率更宽的指标。其中一项把<b>潜在劳动力</b><span class="en"> (potential labour force)</span> 加回分子和分母，这一组包括近期没找、但想工作且能上岗的人。如果本例只把这 20 人算作潜在劳动力，乙的这一指标是 (40 + 20) ÷ (580 + 20) = 10%，和起点一样。另有一项把想多干却只能干短时间的人也算进来，因为 1 小时就算就业的门槛会把他们藏在就业里。</p>
+<h3>参与率下降不一定是坏消息</h3>
+<p class="prose">反过来，参与率下降也不能一律读成“大家找不到工作只好放弃”。更多年轻人读研、更多人到年龄退休，都会让参与率下降，而劳动市场本身可能很健康。人口老龄化时，即使每个年龄段的参与习惯不变，退休年龄段的人占比上升，总的参与率也会往下走。所以要看是谁退出了：是丧志者在增加，还是学生和退休者在增加。</p>
+</section>
+
+<section id="types">
+<h2>三种失业：为什么在找、为什么还没找到</h2>
+<p class="prose">统计口径回答“谁算失业”。接下来问“为什么失业”。经济学通常把失业分成三类，它们的成因和对策都不同。</p>
+<p class="prose"><b>摩擦性失业</b><span class="en"> (frictional unemployment)</span> 来自找工作本身需要时间。应届毕业生投简历、员工辞职去找更合适的岗位、随家人搬到新城市，都要花几周或几个月才能和雇主互相找到。信息不完全，匹配就有时间成本。这类失业在经济繁荣时也存在，而且部分是好事：多花点时间找到合适的岗位，往往比随便接受第一份工作产出更高。</p>
+<p class="prose"><b>结构性失业</b><span class="en"> (structural unemployment)</span> 来自求职者和岗位长期对不上。一种是技能或地点不匹配：某个行业整体萎缩，工人的技能在新兴行业用不上，或者岗位在另一座城市。另一种是工资高于让劳动市场出清的水平，例如制度或惯例使工资难以下调，愿意工作的人多于岗位，类似<a href="../m03/02-price-controls.html#floors">价格下限</a>下卖不出去的那部分供给。价格管制一课也提醒过，劳动市场有买方势力和搜索摩擦，这个图景只是基准，不是对具体工资政策的结论。结构性失业通常持续更久，需要培训、迁移或制度调整，而不是等待景气回升。</p>
+<p class="prose"><b>周期性失业</b><span class="en"> (cyclical unemployment)</span> 来自经济整体的起伏。衰退时企业订单减少，整体用工需求下降，许多行业同时裁员、少招人。它随经济恢复而减少。宏观政策讨论最多的就是这一部分。</p>
+<div class="analogy"><span class="lab">类比</span><p>把劳动市场想成搬家后找停车位。刚到时在附近绕几圈才找到空位，是摩擦性的；你开的是大货车，这条街根本没有能停大车的位子，绕多久也没用，是结构性的；整片街区因为办活动临时封路，人人都找不到位子，是周期性的。</p></div>
+</section>
+
+<section id="natural">
+<h2>自然失业率：不是零，也不是固定值</h2>
+<p class="prose">即使经济不衰退也不过热，摩擦性和结构性失业仍然存在。这时的失业率叫<b>自然失业率</b><span class="en"> (natural rate of unemployment)</span>，可以理解为没有周期性失业时的失业率。</p>
+<p class="formula">实际失业率 = 自然失业率 + 周期性失业</p>
+<p class="prose">读这个公式时注意三点。第一，“自然”不代表理想或不可改变。求职平台让匹配更快、职业培训减少技能错配，都可能降低它；人口结构和劳动制度的变化也会让它移动。第二，自然失业率不能直接观测，只能用模型估计，不同机构、不同方法给出的估计可能相差不小。第三，经济过热时实际失业率可以低于自然失业率，周期性失业是负数，这通常伴随工资和物价上涨的压力。后面讲经济波动和通胀的课会接着讨论这一点。</p>
+<p class="prose">所以“失业率降到零”既做不到，也不是合理目标。只要有人换工作、有新人进入劳动市场，就有人处在找工作的过程中。</p>
+</section>
+
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“失业率就是没工作的人占总人口的比例。”</p><p>分母是劳动力，不是总人口；分子只算近期在找、能上岗的人。学生、退休者、丧志劳动者都没工作，但不计入失业。</p></div>
+<div class="mis"><p class="said">“失业率下降，说明找到工作的人变多了。”</p><p>失业者不再找工作、退出劳动力，同样会让失业率下降。要同时看参与率和就业人口比率，才知道是哪一条路。</p></div>
+<div class="mis"><p class="said">“健康的经济应该没有失业。”</p><p>摩擦性和结构性失业在任何时候都存在，自然失业率大于零。部分摩擦性失业还意味着人们在找更合适的岗位。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每题先问：这个人过了三道关中的哪几道？分母是谁？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">试着对每个术语说出它的分子和分母，或者举一个例子。</p><div class="cards" id="cards"></div></section>
+
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>谁算失业？</b>参考周内有偿工作不足 1 小时，近期做过找工作的具体努力，并且有合适工作就能上岗。三条同时满足才算失业。没工作但没在找的人属于非劳动力。</div></li><li><div><b>失业的人去了哪里？</b>按示意数字，失业者从 60 人减到 40 人，劳动力从 600 人降到 580 人，就业人数不变。20 人不是找到了工作，而是不再找工作，失业率因分子缩小而降到 6.9%，参与率降到 58%，就业人口比率停在 54%。要判断他们是丧志劳动者，还是去读书、退休，需要看非劳动力内部的分类数据。</div></li><li><div><b>失业率能降到零吗？</b>不能，也不应追求。找工作需要时间，产业变化会造成技能错配，这两类失业构成了自然失业率。新闻里该关心的是失业率相对于自然失业率的位置，以及下降是靠就业增加还是靠退出求职。</div></li></ol>
+<p class="prose">下次看到“失业率创新低”，可以再找两个数字：劳动参与率和就业人口比率。三者一起看，才知道下降的是排队的人，还是走开的人。</p>
+</section>
+
+<section id="sources"><h2>资料来源</h2>
+<ol class="qs">
+<li>国际劳工组织：<a href="https://www.ilo.org/wcmsp5/groups/public/---dgreports/---stat/documents/normativeinstrument/wcms_230304.pdf">Resolution concerning statistics of work, employment and labour underutilization</a>（第 19 届国际劳工统计学家大会 2013 年通过，第 21 届大会 2023 年修订版）。第 27 段（就业，至少 1 小时）、第 47 段（失业，四周或一个月内求职）、LU1 至 LU4 指标。</li>
+<li>美国劳工统计局：<a href="https://www.bls.gov/cps/definitions.htm">Concepts and Definitions (CPS)</a>。就业、失业、劳动力、劳动参与率、丧志劳动者的定义。</li>
+<li>国家统计局：<a href="https://www.stats.gov.cn/zs/tjws/tjzb/202301/t20230101_1903672.html">什么是调查失业率</a>。16 岁及以上人口的分组，就业与失业人口的判定条件。</li>
+</ol>
+</section>
+
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var QUIZ=[
+{q:'小林大学毕业后在家全职备考研究生，这一周没有工作，也没有投简历。按统计口径，他属于哪一组？',o:['失业，因为他没有工作','就业，因为备考也是一种劳动','非劳动力，因为他近期没有找工作','不在统计范围内，因为他还是学生'],a:2,why:'他属于非劳动力。没有工作只是第一道关，他近期没有求职努力，不满足“在找工作”的条件，所以既不算就业也不算失业。'},
+{q:'阿杰本周在外卖平台送了两个小时的单，其余时间都在投简历找全职工作。统计上他算什么？',o:['就业，因为参考周内有偿工作达到了 1 小时','失业，因为他在积极找全职工作','非劳动力，因为零工不算正式工作','一半就业一半失业'],a:0,why:'他算就业。有偿工作至少 1 小时就算就业，与是否还在找更好的工作无关。这也是为什么 ILO 另设了包含“想多干却只能干短时间”的人的宽口径指标。'},
+{q:'甲、乙两地失业率都下降了 1 个百分点。甲地参与率不变、就业人口比率上升；乙地参与率下降、就业人口比率不变。哪种解读最合理？',o:['两地都是好消息，因为失业率下降幅度相同','乙地更好，因为参与率下降说明人们不需要工作了','两地的失业率口径一定不同，无法比较','甲地主要是失业者找到了工作，乙地主要是有人退出了劳动力'],a:3,why:'甲地是找到工作，乙地是退出劳动力。就业人口比率的分母是全部劳动年龄人口，不受求职分类影响；它上升说明在工作的人占比真的增加了。乙地就业占比没变，失业率下降来自分母和分子同时缩小。'},
+{q:'一位程序员主动辞职，花两个月寻找更合适的岗位；一位胶片冲印技师因行业萎缩，技能在本地找不到对口工作。两人的失业分别属于什么类型？',o:['都是周期性失业','前者是摩擦性失业，后者是结构性失业','前者是结构性失业，后者是摩擦性失业','都不算失业，因为一个是主动辞职，一个是行业问题'],a:1,why:'前者摩擦性，后者结构性。程序员的失业来自匹配需要时间；技师的失业来自技能与岗位长期对不上，不会因为经济回暖自动消失。只要两人都在找工作、能上岗，就都算失业。'},
+{q:'当一个经济体的实际失业率恰好等于自然失业率时，下列哪项最准确？',o:['失业率为零','所有失业都是周期性的','周期性失业约为零，但摩擦性和结构性失业仍然存在','政府应立即刺激经济让失业率继续下降'],a:2,why:'此时周期性失业约为零。自然失业率由摩擦性和结构性失业构成，本身大于零。把失业率压到自然失业率以下，通常伴随工资和物价上涨的压力，是否刺激需要另外权衡。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'失业率',en:'unemployment rate',d:'失业人数除以劳动力。失业者须同时满足：参考周内没有工作、近期在找工作、有合适工作能马上上岗。'},
+{t:'劳动力',en:'labor force',d:'就业人数加失业人数，即在工作或在找工作的人。没工作也没在找的人不在其中。'},
+{t:'劳动参与率',en:'labor force participation rate',d:'劳动力除以劳动年龄人口。会因丧志退出而下降，也会因读书、退休、人口老龄化而下降。'},
+{t:'丧志劳动者',en:'discouraged workers',d:'想工作、能工作、过去一年找过，但因觉得找不到而近期没找的人。统计上属于非劳动力，不算失业。'},
+{t:'就业人口比率',en:'employment-population ratio',d:'就业人数除以劳动年龄人口。分母不受“找不找工作”的分类影响，可用来区分失业率下降的两条路。'},
+{t:'摩擦性失业',en:'frictional unemployment',d:'找工作和招人需要时间造成的失业，如毕业生求职、换工作、搬家。繁荣时也存在。'},
+{t:'结构性失业',en:'structural unemployment',d:'技能、地点与岗位长期不匹配，或工资难以下调到让市场出清的水平造成的失业。持续较久，不随景气自动消失。'},
+{t:'周期性失业',en:'cyclical unemployment',d:'经济衰退时整体用工需求下降造成的失业。实际失业率减去自然失业率；过热时可以为负。'},
+{t:'自然失业率',en:'natural rate of unemployment',d:'没有周期性失业时的失业率，由摩擦性和结构性失业构成。大于零，不能直接观测，会随制度和人口结构变化。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
