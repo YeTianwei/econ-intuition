@@ -344,3 +344,28 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .bar.total{fill:var(--ink)}
 .legend .sw.bar{border-top-width:10px}
 /* m10-03 end */
+
+/* m11-03 start */
+.tm-node{border:1px solid var(--line);border-top:4px solid var(--ink);background:var(--bg);border-radius:4px;padding:8px 12px;line-height:1.6;max-width:34em;margin-inline:auto;text-align:center}
+.tm-node b{display:block}
+.tm-node span{display:block;font-size:13px;color:var(--muted)}
+.tm-down{display:block;width:2px;height:20px;margin:2px auto 10px;background:var(--muted);position:relative}
+.tm-down::after{content:"";position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--muted)}
+.tm-chans{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tm-ch{display:grid;grid-template-columns:7em minmax(0,1fr);gap:4px 14px;border:1px solid var(--line);border-left:4px solid var(--tm-c,var(--ink));border-radius:4px;padding:8px 10px;background:var(--bg)}
+.tm-ch.c1{--tm-c:var(--demand)}
+.tm-ch.c2{--tm-c:var(--supply)}
+.tm-ch.c3{--tm-c:var(--model)}
+.tm-ch.c4{--tm-c:var(--alternative)}
+.tm-ch.c5{--tm-c:var(--loss)}
+.tm-k{font-weight:700;color:var(--tm-c);line-height:1.5}
+.tm-k small{display:block;font-family:var(--font-mono);font-size:11.5px;font-weight:400;color:var(--muted)}
+.tm-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 24px;font-size:14px;line-height:1.6}
+.tm-steps li{position:relative;min-width:0}
+.tm-steps li+li::before{content:"\2192";position:absolute;left:-18px;top:0;color:var(--muted);font-family:var(--font-mono)}
+@media (max-width:620px){.tm-ch{grid-template-columns:1fr}.tm-steps{grid-template-columns:1fr;gap:2px}.tm-steps li+li{padding-left:1.4em}.tm-steps li+li::before{content:"\2193";left:0}}
+.tm-lag{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;list-style:none;margin:16px 0 0;padding:0;font-size:13px;line-height:1.6;color:var(--muted)}
+.tm-lag li{border-top:2px solid var(--muted);padding-top:6px;min-width:0}
+.tm-lag b{display:block;font-size:14px;color:var(--ink)}
+@media (max-width:520px){.tm-lag{grid-template-columns:1fr}}
+/* m11-03 end */

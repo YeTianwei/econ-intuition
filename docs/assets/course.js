@@ -251,7 +251,7 @@
         {
           id: 'm11-03', title: '货币政策如何传导',
           en: 'How monetary policy is transmitted',
-          path: 'm11/03-monetary-policy.html', status: 'todo'
+          path: 'm11/03-monetary-policy.html', status: 'done'
         },
         {
           id: 'm11-04', title: '菲利普斯曲线与通胀预期',

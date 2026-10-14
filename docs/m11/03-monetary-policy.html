@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>货币政策如何传导</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m11-03">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>货币政策如何传导</h1>
+<p class="sub">How monetary policy is transmitted</p>
+<p class="lede">央行宣布的只是一个银行之间隔夜借钱的利率区间。可几个月后，买房的人月供变了，企业推迟了扩产，招聘放缓，物价涨得慢了。这一课沿着这条链子走一遍：利率从哪里出发，分几条路到达家庭和企业，为什么要走那么久，利率降到零以后央行还能做什么。</p>
+<p class="meta">约 22 分钟 · 0 个交互图（1 张静态传导图） · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m10/02-banks-create-money.html#modern">贷款创造存款与央行利率</a>、<a href="../m10/03-causes-of-inflation.html#expectations">通胀预期</a>、<a href="../m10/04-hyperinflation-deflation.html#target">为什么目标是 2%</a>、<a href="../m08/01-gdp.html#expenditure">支出法 C + I + G + NX</a>。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>美联储新闻稿，2022 年 3 月 16 日（美东时间下午 2 点发布）。<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20220316a.htm">原文链接</a></figcaption><blockquote>美联储加息 25 个基点，联邦基金利率目标区间升至 0.25%~0.5%，并预计在接下来的某次会议上开始缩减资产负债表</blockquote></figure>
+<p class="prose">这是联邦公开市场委员会（FOMC）的会后声明。此前两年，这个区间一直是 0~0.25%，那是 2020 年 3 月 15 日疫情冲击时紧急降到的。声明给出的理由是：通胀仍然偏高，反映了与疫情相关的供需失衡、能源价格上涨和更广泛的价格压力；俄罗斯入侵乌克兰可能在近期给通胀增加上行压力。声明还说，委员会预计持续加息是合适的。投票 8 比 1，唯一的反对票来自圣路易斯联储行长布拉德，他主张一次加息 0.5 个百分点。</p>
+<ol class="qs"><li>美联储调的是银行之间借钱的利率。它和普通家庭的房贷、企业的贷款有什么关系？</li><li>这次只加了 0.25 个百分点，可美国 30 年期房贷利率在加息之前的两个多月里已经涨了 0.6 个百分点以上。市场为什么“跑在前面”？</li><li>疫情期间利率已经到零，美联储还做了哪些事？声明里“缩减资产负债表”又是什么意思？</li></ol>
+</section>
+
+<section id="policy-rate">
+<h2>起点：一个隔夜利率和一个计量单位</h2>
+<p class="prose"><b>政策利率</b><span class="en"> (policy rate)</span> 是央行直接设定或引导的那个短期利率，用来表明货币政策的松紧。美联储的政策利率是联邦基金利率：银行之间隔夜拆借准备金的利率。FOMC 公布一个目标区间，再用付给银行准备金的利率等工具，把市场上的实际成交利率引导到区间之内。</p>
+<p class="prose">在<a href="../m10/02-banks-create-money.html#modern">上一模块</a>已经看到，现代央行通常不靠控制准备金的数量，而是靠设定利率来实施政策。银行放贷时要权衡自己的资金成本，政策利率就是这个成本的底座。</p>
+<p class="prose"><b>基点</b><span class="en"> (basis point)</span> 是利率的计量单位，1 个基点等于 0.01 个百分点。加息 25 个基点，就是利率上升 0.25 个百分点，例如从 0.25% 升到 0.5%。它不是“利率上涨 25%”，也不是“上涨 0.25%”：从 0.25% 到 0.5%，按相对变化算其实翻了一倍。新闻用基点，正是为了避免“百分比的百分比”说不清。</p>
+<p class="formula">1 个基点 = 0.01 个百分点；25 个基点 = 0.25 个百分点</p>
+<div class="analogy"><span class="lab">类比</span><p>政策利率像一栋楼的总水阀。央行只拧总阀，不碰任何一户的水龙头。可是总阀一拧，各层的水压都会变，只是离总阀越远、管子越弯，变化来得越慢、越难预料。房贷、企业贷款、汇率和股价，就是楼里不同楼层的水龙头。</p></div>
+</section>
+
+<section id="channels">
+<h2>五条渠道：从总阀到各家水龙头</h2>
+<p class="prose">政策利率的变化经过金融市场和人们的决策，最终影响总支出、就业和物价，这一整套过程叫<b>传导机制</b><span class="en"> (transmission mechanism)</span>。教科书和央行通常把它拆成几条渠道。下图以加息为例，降息时每一步方向相反。</p>
+<figure class="widget" aria-labelledby="fig1-title">
+<h3 id="fig1-title">图 1　加息之后：五条传导渠道</h3>
+<div class="tm-node"><b>政策利率上调</b><span>例如联邦基金利率目标区间上调 25 个基点</span></div>
+<span class="tm-down" aria-hidden="true"></span>
+<ol class="tm-chans" aria-label="五条传导渠道，每条三步">
+<li class="tm-ch c1"><span class="tm-k">1　利率<small>interest rate</small></span><ol class="tm-steps"><li>银行间短期利率随之上行，存款和贷款利率跟着调整</li><li>借钱买房、买车、投资更贵，存钱更有吸引力</li><li>部分消费和投资推迟或取消</li></ol></li>
+<li class="tm-ch c2"><span class="tm-k">2　信贷<small>credit</small></span><ol class="tm-steps"><li>银行资金成本上升，借款人还款负担变重</li><li>银行提高放贷门槛，抵押品价值下降</li><li>依赖贷款的小企业和家庭更难借到钱</li></ol></li>
+<li class="tm-ch c3"><span class="tm-k">3　资产价格<small>asset prices</small></span><ol class="tm-steps"><li>未来收益按更高利率折现，债券价格下跌，股票和房产估值承压</li><li>家庭账面财富缩水，企业发股发债融资更贵</li><li>消费和投资放缓</li></ol></li>
+<li class="tm-ch c4"><span class="tm-k">4　汇率<small>exchange rate</small></span><ol class="tm-steps"><li>本国资产回报相对上升，吸引资金流入</li><li>本币趋于升值，进口变便宜，出口变贵</li><li>净出口减少，进口商品价格回落</li></ol></li>
+<li class="tm-ch c5"><span class="tm-k">5　预期<small>expectations</small></span><ol class="tm-steps"><li>市场据声明和讲话推测未来的利率路径</li><li>长期利率提前变动；人们相信通胀会回落</li><li>工资和定价要求更温和</li></ol></li>
+</ol>
+<span class="tm-down" aria-hidden="true"></span>
+<div class="tm-node"><b>总需求放缓</b><span>消费 C、投资 I、净出口 NX 增长变慢</span></div>
+<span class="tm-down" aria-hidden="true"></span>
+<div class="tm-node"><b>就业和产出增长放缓，通胀压力减轻</b><span>预期渠道还会直接作用于工资和价格</span></div>
+<ul class="tm-lag" aria-label="各环节大致的反应时间">
+<li><b>几分钟到几天</b>债券收益率、股价、汇率、利率预期。声明发布前，市场往往已经部分反应。</li>
+<li><b>几个月</b>贷款利率和审批、买房和设备投资计划、进出口订单。</li>
+<li><b>通常一年左右或更久</b>就业和通胀。各方估计从九个月到两年不等，见下文“政策时滞”。</li>
+</ul>
+<p class="note">这是示意图，箭头表示主要作用方向，不表示各渠道同样重要。各渠道的相对力量因国家、时期和金融结构而异。时间段是粗略的量级，依据见文末资料来源。</p>
+</figure>
+
+<h3>利率渠道：借钱的价格变了</h3>
+<p class="prose">最直接的一条。政策利率上行后，银行的资金成本上升，贷款利率随之上调。买房、买车、企业买设备都常常靠借钱，借款越贵，划算的项目越少。存款利率提高，也让“现在花”相对“以后花”更不划算。这些支出就是<a href="../m08/01-gdp.html#expenditure">支出法</a>里的消费 C 和投资 I。</p>
+<p class="prose">真正影响决策的是扣除通胀后的利率，也就是实际利率：名义利率减去预期通胀。如果通胀预期 5%，名义利率从 3% 升到 4%，实际借款成本仍是负的，刹车效果有限。这也是通胀很高时，央行常常要加息很多次的原因之一。</p>
+
+<h3>信贷渠道：借不借得到，不只看价格</h3>
+<p class="prose">利率渠道问的是“借钱贵不贵”，信贷渠道问的是“借不借得到”。加息让借款人的利息负担变重，抵押的房产和股票贬值，银行看到的违约风险上升，于是提高放贷门槛、压低额度。大公司可以直接发债，受影响较小；小企业和首次买房的家庭主要靠银行贷款，受影响更大。</p>
+
+<h3>资产价格渠道：账面财富和融资成本</h3>
+<p class="prose">债券、股票、房产的价值来自未来的收入。用更高的利率把未来收入折算到今天，算出的价值就更低，所以加息时债券价格通常下跌，股市和房价也承压。账面财富缩水，有人会少花一点；股价下跌让企业发新股筹资更贵，投资也会放缓。债券价格与利率的关系会在金融市场模块细讲。</p>
+
+<h3>汇率渠道：通过进出口</h3>
+<p class="prose">在其他条件不变时，一国利率相对外国上升，持有该国资产的回报变高，资金倾向于流入，本币趋于升值。本币升值让进口商品便宜、出口商品在国外变贵，净出口 NX 减少，进口商品价格直接拉低通胀。对美国这样的大经济体，这条渠道还会外溢：美元升值时，借了美元债的其他国家还款负担加重。</p>
+
+<h3>预期渠道：还没动手，市场先动</h3>
+<p class="prose">房贷和企业债的期限动辄几年，它们的利率取决于人们预期的未来一长串短期利率，而不只是今天这一个。因此，只要央行让市场相信“接下来会持续加息”，长期利率在第一次加息之前就会上去。更深的一层是<a href="../m10/03-causes-of-inflation.html#expectations">通胀预期</a>：如果企业和工人相信央行会把通胀压回 2%，就不会按高通胀去定价和谈工资，央行用较小的代价就能让通胀回落。</p>
+<p class="prose">2022 年的房贷利率就是一个现成的例子。下表是房地美每周调查的美国 30 年期固定利率房贷平均利率。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="2022 年前后美国 30 年期固定利率房贷平均利率，可横向滚动"><table class="tbl" id="mortgage-table"><caption>数据：房地美（Freddie Mac）一级抵押贷款市场调查，经圣路易斯联储 FRED 数据库获取（序列 MORTGAGE30US），2026 年 10 月 14 日下载。</caption><thead><tr><th scope="col">调查周（发布日）</th><th scope="col" class="num">房贷利率</th><th scope="col">同期政策利率</th></tr></thead><tbody>
+<tr><td>2022 年 1 月 6 日</td><td class="num">3.22%</td><td>0~0.25%</td></tr>
+<tr><td>2022 年 3 月 10 日（加息前一周）</td><td class="num">3.85%</td><td>0~0.25%</td></tr>
+<tr class="hl"><td>2022 年 3 月 17 日（加息次日）</td><td class="num">4.16%</td><td>0.25%~0.5%</td></tr>
+<tr><td>2022 年 10 月 27 日（2022 年最高）</td><td class="num">7.08%</td><td>此后又多次加息</td></tr>
+<tr><td>2023 年 7 月 27 日</td><td class="num">6.81%</td><td>5.25%~5.5%（7 月 26 日上调）</td></tr>
+<tr><td>2023 年 10 月 26 日</td><td class="num">7.79%</td><td>5.25%~5.5%（未再变动）</td></tr>
+</tbody></table></div>
+<p class="prose">政策利率还没动，房贷利率已经从 3.22% 涨到 3.85%。美联储 2022 年 1 月 26 日的声明已经写明“预计很快适合上调联邦基金利率目标区间”，市场随即给预期中的整条加息路径定价。反过来，2023 年 7 月之后政策利率不再上调，房贷利率却在 10 月升到 7.79%。长期利率还受通胀前景、风险等许多因素影响，政策利率只是其中一个起点。</p>
+</section>
+
+<section id="lags">
+<h2>政策时滞：今天踩刹车，明年才见效</h2>
+<p class="prose">从政策变化到它对经济产生主要效果之间的延迟，叫<b>政策时滞</b><span class="en"> (policy lag)</span>。圣路易斯联储 2023 年的一篇文章说，“长而多变的时滞”（long and variable lags）这个说法最早由米尔顿·弗里德曼提出，现在央行官员也常用它。“长”是指利率变化要花时间才传到整个经济；“多变”是指每一次花的时间都不一样，难以事先预测。</p>
+<p class="prose">同一篇文章列出了几组估计：弗里德曼在 1960 年的书中整理历史数据，发现货币增速的拐点领先经济拐点，在顶部的领先时间从 6 个月到 29 个月不等；亚特兰大联储行长博斯蒂克 2022 年说，大量研究表明紧缩政策可能要 18 个月到两年或更久才会明显影响通胀；美联储理事沃勒 2023 年则认为，近年的时滞往往只有 9 到 12 个月。英格兰银行研究人员在 2002 年的论文中用英美数据重新检验，也发现货币政策行动对通胀的峰值影响要一年以上才出现。</p>
+<p class="prose">时滞改变了决策方式。等到通胀数据已经回到 2% 才停止加息，往往为时已晚，因为之前的加息还没传导完，经济可能被刹得过头。央行因此要依据预测行事，而预测总有误差。加息太少太晚，通胀可能扎根；加息太多太快，可能把经济推入衰退。两种风险之间的取舍，是每次议息会议争论的核心。</p>
+<div class="analogy"><span class="lab">类比</span><p>在酒店洗澡，水龙头往热拧一下，水要过好几秒才变热。性急的人以为没拧够，再猛拧一把，结果被烫到，又赶紧往冷拧，水温来回摆动。老手的做法是拧一点，等一等，看变化再决定下一步。时滞越长、越不确定，越需要这种耐心，但也越容易被批评“反应太慢”。</p></div>
+</section>
+
+<section id="zlb">
+<h2>利率到零以后：量化宽松与前瞻指引</h2>
+<p class="prose">降息刺激经济有一个下限。人们可以持有利率为零的现金，如果存款利率远低于零，大家会把钱取出来放进保险柜。因此名义利率很难大幅降到零以下，这就是<b>零利率下限</b><span class="en"> (zero lower bound)</span>。有的央行试过略低于零的利率，例如欧洲央行 2014 年 6 月把存款便利利率降到 −0.10%，但能降的空间仍然有限。<a href="../m10/04-hyperinflation-deflation.html#deflation">通缩</a>时这个限制尤其要命：物价在跌，名义利率又降不下去，实际利率反而偏高。</p>
+<p class="prose">美联储两次把政策利率降到下限：2008 年 12 月 16 日目标区间降至 0~0.25%，2020 年 3 月 15 日再次降至 0~0.25%。两次都配合了另外两类工具。</p>
+<p class="prose"><b>量化宽松</b><span class="en"> (quantitative easing)</span> 是央行大规模购买长期国债、抵押贷款支持证券等资产。2008 年 12 月的声明说将购买大量政府机构债和抵押贷款支持证券，以支持房贷和住房市场；2020 年 3 月 15 日的声明宣布在未来几个月至少购买 5000 亿美元国债和 2000 亿美元机构抵押贷款支持证券。央行买入资产，用新增的银行准备金付款。它的主要目的是压低长期利率和房贷利率，相当于跳过已经到底的短期利率，直接去拧更远处的水龙头，同时也会推高资产价格。</p>
+<p class="prose">反向操作叫量化紧缩，俗称“缩表”：让持有的债券到期不再续买，资产负债表逐渐缩小。开场声明里“预计在接下来的某次会议上开始缩减持有的国债、机构债和机构抵押贷款支持证券”，说的就是它。</p>
+<p class="prose"><b>前瞻指引</b><span class="en"> (forward guidance)</span> 是央行公开说明未来的政策打算，借助预期渠道影响长期利率。2011 年 8 月 9 日，美联储在声明中写道，经济状况可能使联邦基金利率“至少到 2013 年年中”保持在极低水平；2020 年 3 月则把维持低利率与经济渡过难关、接近就业和物价目标挂钩，而不是给出日期。前者清楚，但日期一到可能被迫改口；后者灵活，但市场需要自己判断“条件”何时满足。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="三类货币政策工具对比，可横向滚动"><table class="tbl comparison"><thead><tr><th scope="col">工具</th><th scope="col">怎么做</th><th scope="col">主要走哪条渠道</th><th scope="col">常见担忧</th></tr></thead><tbody>
+<tr><td>调整政策利率</td><td>上调或下调短期利率目标</td><td>五条都走，起点是短期利率</td><td>到零附近就难再降</td></tr>
+<tr><td>量化宽松</td><td>大规模买入长期债券等资产</td><td>压低长期利率，推高资产价格</td><td>抬高资产价格可能扩大财富差距；退出时市场可能剧烈波动</td></tr>
+<tr><td>前瞻指引</td><td>公开承诺或说明未来的利率路径</td><td>预期</td><td>情况变了，承诺要么失信，要么束缚手脚</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="independence">
+<h2>为什么让央行独立决定</h2>
+<p class="prose"><b>央行独立性</b><span class="en"> (central bank independence)</span> 指央行在法律授权的目标之内，自主决定利率等政策工具，不需要政府逐次批准。支持的理由主要来自时滞：加息的痛苦（失业上升、资产下跌）来得快且集中，好处（通胀回落）来得慢且分散。面临选举的政治家天然倾向于少加息、多降息。如果人们预料到这一点，通胀预期就会上升，最后得到的是更高的通胀，却没有更多的就业。把决策交给任期长、不随选举更替的机构，是一种让承诺更可信的安排。</p>
+<p class="prose">以美联储为例：理事会 7 名理事由总统提名、参议院确认，完整任期 14 年，每两年有一个任期开始，交错排开；主席等职务另有 4 年任期。理事会的报告把这种地位称为“政府内部的独立”：货币政策决定不需要总统或行政部门批准，但整个体系接受国会监督，目标也由国会通过法律设定。</p>
+<p class="prose">独立性也有批评。一方认为，利率决定影响每个人的就业和财富分配，量化宽松这类工具还会改变资产价格和收入分配，不经选举的技术官员掌握这样大的权力，需要更强的问责和透明度。另一方认为，问责应通过明确的法定目标、公开声明和国会听证来实现，而不是让政府直接决定利率，否则会重新引入短期政治压力。各国的制度安排不同，这种权衡至今仍在讨论。</p>
+</section>
+
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“加息 25 个基点，就是利率涨了 25%。”</p><p>1 个基点是 0.01 个百分点，25 个基点是 0.25 个百分点。从 0.25% 升到 0.5% 才是本次的变化；按相对变化算是翻倍，所以用基点或“百分点”表述更不容易混淆。</p></div>
+<div class="mis"><p class="said">“央行直接决定我的房贷利率，加息那天房贷才会变。”</p><p>央行只设定短期政策利率。房贷利率由银行定价，主要跟随长期利率，而长期利率反映市场对未来整条利率路径的预期。2022 年房贷利率在第一次加息前就已明显上升。</p></div>
+<div class="mis"><p class="said">“加息几个月了通胀还没降，说明加息没用。”</p><p>货币政策有长而多变的时滞，对通胀的主要影响常常要一年左右甚至更久才出现。只看几个月的数据，既不能证明有效，也不能证明无效；同期的供给冲击也会干扰判断。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每题先想：利率从哪里出发，经过哪条渠道，多久之后到达？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">试着对每个术语说出它在传导链上的位置。</p><div class="cards" id="cards"></div></section>
+
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>隔夜利率和房贷有什么关系？</b>联邦基金利率是银行资金成本的底座。它经由利率渠道抬高各类贷款利率，经由信贷渠道收紧放贷门槛，经由资产价格渠道压低房产和股票的估值，经由汇率渠道推高美元。最后汇总为消费、投资和净出口放缓，就业和物价随之降温。</div></li><li><div><b>房贷利率为什么跑在加息前面？</b>30 年期房贷利率跟随长期利率，长期利率反映市场预期的整条利率路径。美联储 2022 年 1 月的声明已预告“很快”加息，市场提前定价，房贷利率从 1 月初的 3.22% 升到加息前一周的 3.85%。这正是预期渠道：央行的“话”在“做”之前就开始起作用。</div></li><li><div><b>利率到零之后做了什么，“缩表”又是什么？</b>2020 年 3 月利率降到 0~0.25% 的下限后，美联储宣布大规模购买国债和抵押贷款支持证券（量化宽松），并用前瞻指引说明低利率会维持到经济渡过难关。2022 年 3 月转向收紧时，除了加息，还预告了缩减这些资产持有量，即量化紧缩。至于这轮加息何时、在多大程度上压低了通胀，要考虑时滞以及同期的供给变化，不能只看一两个月的数据。</div></li></ol>
+<p class="prose">下次看到“央行加息/降息”的新闻，可以按图 1 自问：哪几条渠道在这次最重要？市场之前预期到了多少？效果大概要多久才会显现？</p>
+</section>
+
+<section id="sources"><h2>资料来源</h2><ol class="qs">
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20220316a.htm">Federal Reserve issues FOMC statement</a>，2022 年 3 月 16 日；开场新闻：目标区间升至 0.25%~0.5%、预计开始缩减资产持有量、对通胀和俄乌冲突的表述、8 比 1 的投票结果。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20220126a.htm">Federal Reserve issues FOMC statement</a>，2022 年 1 月 26 日；“预计很快适合上调联邦基金利率目标区间”。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315a.htm">Federal Reserve issues FOMC statement</a>，2020 年 3 月 15 日；目标区间降至 0~0.25%、至少购买 5000 亿美元国债和 2000 亿美元机构抵押贷款支持证券、维持低利率的条件式表述。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20081216b.htm">FOMC statement</a>，2008 年 12 月 16 日；目标区间设为 0~0.25%，并将大量购买政府机构债和抵押贷款支持证券。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20110809a.htm">FOMC statement</a>，2011 年 8 月 9 日；前瞻指引“至少到 2013 年年中”保持极低利率。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20230726a.htm">Federal Reserve issues FOMC statement</a>，2023 年 7 月 26 日；目标区间升至 5.25%~5.5%。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/monetarypolicy/reserve-balances.htm">Interest on Reserve Balances</a>，网页，2026 年 10 月访问；准备金利率是实施货币政策的一项重要工具。</li>
+<li>Freddie Mac，Primary Mortgage Market Survey，经 Federal Reserve Bank of St. Louis FRED 获取：<a href="https://fred.stlouisfed.org/series/MORTGAGE30US">30-Year Fixed Rate Mortgage Average in the United States (MORTGAGE30US)</a>，2026 年 10 月 14 日下载；表中各周房贷利率。</li>
+<li>Bill Dupor（Federal Reserve Bank of St. Louis），<a href="https://www.stlouisfed.org/publications/regional-economist/2023/may/examining-long-variable-lags-monetary-policy">Examining Long and Variable Lags in Monetary Policy</a>，2023 年 5 月 24 日；“长而多变的时滞”出自弗里德曼，以及弗里德曼、博斯蒂克、沃勒的时滞估计。</li>
+<li>Nicoletta Batini、Edward Nelson（Bank of England External MPC Unit），<a href="https://www.bankofengland.co.uk/-/media/boe/files/external-mpc-discussion-paper/2001/the-lag-from-monetary-policy-actions-to-inflation-friedman-revisited">The Lag from Monetary Policy Actions to Inflation: Friedman Revisited</a>，Discussion Paper No. 6，2002 年 1 月；货币政策对通胀的峰值影响要一年以上才出现。</li>
+<li>European Central Bank，<a href="https://www.ecb.europa.eu/press/pr/date/2014/html/pr140605.en.html">Monetary policy decisions</a>，2014 年 6 月 5 日；存款便利利率降至 −0.10%，自 2014 年 6 月 11 日起生效。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/aboutthefed/bios/board/default.htm">Board Members</a>，网页，2026 年 10 月访问；理事由总统提名、参议院确认，任期 14 年，交错开始，主席等职务任期 4 年。</li>
+<li>Board of Governors of the Federal Reserve System，<a href="https://www.federalreserve.gov/boarddocs/rptcongress/gprapr2000_01.htm">GPRA Performance Report 2000–01</a>，2002 年 12 月；“政府内部的独立”、决定无需总统或行政部门批准、接受国会监督。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var QUIZ=[
+{q:'新闻说“央行加息 50 个基点，政策利率从 4.00% 升至 4.50%”。对这次变化描述正确的是哪一项？',o:['利率上涨了 50%','利率上涨了 0.5%，几乎可以忽略','利率上升了 0.5 个百分点，相对原水平约高 12.5%','利率上升了 5 个百分点'],a:2,why:'1 个基点是 0.01 个百分点，50 个基点就是 0.5 个百分点。按相对变化算，0.5 ÷ 4.00 = 12.5%，所以新闻用基点来避免“百分比的百分比”混淆。'},
+{q:'某央行明确暗示“下次会议将开始加息”，但本次没有动利率。随后两周，5 年期贷款利率明显上升。最好的解释是？',o:['预期渠道：长期利率反映市场预期的未来利率路径，提前定价了加息','银行违规提前涨价，与央行无关','汇率渠道：本币贬值推高了贷款利率','这说明政策利率对长期利率没有影响'],a:0,why:'长期利率取决于预期的一串短期利率。央行的表态改变了预期，长期利率在实际加息前就会上行，这正是前瞻指引能起作用的原因。'},
+{q:'加息后，一家大型上市公司和一家街边小餐馆都想借钱扩张。按信贷渠道，谁通常受影响更大？为什么？',o:['大公司，因为它借的钱更多','两者完全一样，因为面对同一个政策利率','大公司，因为股价下跌会让它破产','小餐馆，因为它主要靠银行贷款，银行收紧门槛、抵押品贬值时更难借到钱'],a:3,why:'信贷渠道关注“借不借得到”。大公司可以发债或发股，融资渠道多；小企业依赖银行，银行收紧放贷标准时受冲击更直接。'},
+{q:'一国央行加息后，本币兑主要货币升值。只看汇率渠道，对该国最可能的影响是？',o:['出口增加，进口减少','进口商品变便宜，出口竞争力下降，净出口减少，进口价格拉低通胀','本币升值会推高国内通胀','汇率与国内物价无关'],a:1,why:'本币升值让外国商品折算成本币更便宜、本国商品在国外更贵。净出口减少使总需求放缓，进口价格下降还直接压低通胀。'},
+{q:'政策利率已经降到接近零，经济仍然疲弱、物价下跌。央行最可能采取的组合是？',o:['把政策利率降到 −5%，彻底解决问题','什么也做不了，只能等待','大规模购买长期债券以压低长期利率，同时承诺长时间维持低利率','立即加息，提振市场信心'],a:2,why:'零利率下限使短期利率难以继续大幅下调（人们可以改持现金）。量化宽松直接压低长期利率，前瞻指引借助预期压低未来利率路径，这是 2008 年和 2020 年美联储的做法。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'政策利率',en:'policy rate',d:'央行直接设定或引导的短期利率，表明政策松紧。美联储的政策利率是联邦基金利率，即银行间隔夜拆借准备金的利率。'},
+{t:'基点',en:'basis point',d:'利率的计量单位，1 个基点等于 0.01 个百分点。加息 25 个基点即利率上升 0.25 个百分点。'},
+{t:'传导机制',en:'transmission mechanism',d:'政策利率变化经由利率、信贷、资产价格、汇率和预期等渠道，影响总需求、就业和物价的过程。'},
+{t:'政策时滞',en:'policy lag',d:'从政策调整到主要效果显现的延迟。弗里德曼称之为“长而多变”，对通胀的影响常需一年左右或更久，所以央行要依据预测行事。'},
+{t:'零利率下限',en:'zero lower bound',d:'人们可以持有零利率的现金，名义利率因此难以大幅降到零以下，限制了降息刺激的空间。'},
+{t:'量化宽松',en:'quantitative easing',d:'央行大规模购买长期债券等资产、以新增准备金付款，用来在短期利率到底后压低长期利率。反向操作是量化紧缩（缩表）。'},
+{t:'前瞻指引',en:'forward guidance',d:'央行公开说明未来政策路径，借助预期影响长期利率。可以给出日期，也可以与经济条件挂钩。'},
+{t:'央行独立性',en:'central bank independence',d:'央行在法定目标内自主决定政策工具，无需政府逐次批准。用来抵御短期政治压力、让抗通胀承诺更可信，同时需要问责与透明。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
