@@ -215,7 +215,7 @@
         {
           id: 'm10-01', title: '货币是什么',
           en: 'What is money?',
-          path: 'm10/01-what-is-money.html', status: 'todo'
+          path: 'm10/01-what-is-money.html', status: 'done'
         },
         {
           id: 'm10-02', title: '银行如何创造货币',
