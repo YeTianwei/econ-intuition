@@ -152,7 +152,7 @@
         {
           id: 'm07-01', title: '劳动市场：工资如何决定',
           en: 'Labor markets: how wages are determined',
-          path: 'm07/01-labor-market.html', status: 'todo'
+          path: 'm07/01-labor-market.html', status: 'done'
         },
         {
           id: 'm07-02', title: '人力资本、技术与工资差距',

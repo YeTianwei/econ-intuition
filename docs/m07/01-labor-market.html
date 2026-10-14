@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>劳动市场：工资如何决定</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m07-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>劳动市场：工资如何决定</h1>
+<p class="sub">Labor markets: how wages are determined</p>
+<p class="lede">工资是劳动的价格，但劳动不是普通商品：雇主买的是一小时的产出，工人卖的是一小时的生活。这一课先从两边拆开工资的来源，再用同一张图比较最低工资在两种市场结构下的不同后果，最后看实证研究为什么争论了三十多年。</p>
+<p class="meta">约 22 分钟 · 1 个可调节的图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m02/01-supply-demand.html#model">供给与需求</a>、<a href="../m03/02-price-controls.html#floors">价格下限</a>、<a href="../m04/02-competition-monopoly.html#monopoly">垄断与边际收益</a>。边际决策规则见<a href="../m01/02-marginal-thinking.html#decision">边际思维</a>。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>某市上调最低工资标准，餐馆老板担心用工成本上升，服务员期待涨薪</blockquote></figure>
+<p class="prose">城市、标准和反应均为虚构。先把问题收窄：同一座城市、同一批餐馆和求职者，只改变法定最低工资，其他条件暂时不动。</p>
+<ol class="qs"><li>没有最低工资时，服务员的工资由什么决定？为什么不同岗位的工资差别很大？</li><li>老板的担心和服务员的期待，能不能同时成立？最低工资一定会减少就业吗？</li><li>研究者看同一类数据，为什么会得出相反的结论？</li></ol>
+</section>
+<section id="demand">
+<h2>劳动需求：雇一个人，换来多少产出</h2>
+<p class="prose">餐馆雇服务员，不是因为喜欢付工资，而是因为服务员能帮它卖出更多饭菜。企业对劳动的需求取决于它对产品的需求，所以叫<b>派生需求</b><span class="en"> (derived demand)</span>。顾客少了，餐馆对服务员的需求随之下降，即使服务员的本事没有变。</p>
+<p class="prose">多雇一名工人带来的额外产量，叫劳动的<b>边际产出</b><span class="en"> (marginal product, MP)</span>。店面、灶台和桌子固定时，人越多，每多一人能做的事越少：第一位服务员从无到有，第五位常常只是分担别人的空闲。这就是边际产出递减。</p>
+<p class="prose">把边际产出乘以每份产品给店里带来的净收入，得到<b>边际产出价值</b><span class="en"> (value of marginal product, VMP)</span>，单位是元/小时，可以直接和工资比较。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="餐馆服务员的边际产出示例，可横向滚动"><table class="tbl"><caption>示例：每份饭菜扣除食材后给店里净增 5 元；数字为教学示意</caption><thead><tr><th scope="col">服务员人数</th><th scope="col" class="num">每小时供餐（份）</th><th scope="col" class="num">MP（份）</th><th scope="col" class="num">VMP（元/小时）</th></tr></thead><tbody>
+<tr><td>1</td><td class="num">6</td><td class="num">6</td><td class="num">30</td></tr>
+<tr><td>2</td><td class="num">11</td><td class="num">5</td><td class="num">25</td></tr>
+<tr><td>3</td><td class="num">15</td><td class="num">4</td><td class="num">20</td></tr>
+<tr><td>4</td><td class="num">18</td><td class="num">3</td><td class="num">15</td></tr>
+<tr><td>5</td><td class="num">20</td><td class="num">2</td><td class="num">10</td></tr>
+</tbody></table></div>
+<p class="prose">若市场工资是 20 元/小时，第三位服务员的 VMP 正好 20，第四位只有 15。多雇第四位，店里每小时多付 20，只多收 15，不划算。于是这家店雇 3 人。工资降到 15，它会雇 4 人。</p>
+<p class="formula">企业雇到 VMP = W 为止</p>
+<p class="prose">把每个工资下愿雇的人数连起来，就是劳动需求曲线，它就是 VMP 曲线本身。产品涨价、技术改进或店里添了设备，都会让同样的人数有更高的 VMP，需求曲线外移。这也回答了工资差别的一部分：不同岗位上的人，最后一小时创造的价值不同。</p>
+<div class="analogy"><span class="lab">类比</span><p>几个人合伙包饺子，只有一块案板。第二个人加入，速度几乎翻倍；第五个人挤进来，只能偶尔递一下馅。如果请人要按小时付钱，你会在“多请一人多包几个”刚好抵上时薪的地方停下。</p></div>
+</section>
+<section id="supply">
+<h2>劳动供给：每一小时工作，都放弃了一小时闲暇</h2>
+<p class="prose">对工人来说，一天只有 24 小时。多工作一小时，就少一小时休息、照顾家人、学习或做别的事。工资就是闲暇的机会成本。<b>劳动供给</b><span class="en"> (labor supply)</span> 描述在每个工资下，人们愿意提供多少劳动。</p>
+<p class="prose">工资上涨对一个人的影响有两面。闲暇变贵了，人倾向多工作，这是<b>替代效应</b><span class="en"> (substitution effect)</span>；同样的工时收入更高，人也可能想多买点闲暇，这是<b>收入效应</b><span class="en"> (income effect)</span>。两者方向相反，所以个人工时不一定随工资单调上升。</p>
+<p class="prose">一个地区某个行业的劳动供给更可能向上倾斜：工资高了，原来在家、在读书或在别的行业的人会进来应聘。本课的供给曲线就是这种市场层面的曲线，单位是“愿意按此工资工作的人数”。</p>
+<p class="prose">在竞争市场中，工资停在需求与供给相交处。此时最后一名被雇用者的 VMP 等于工资，也等于把他吸引来所需的工资。工资高，既可能因为这类劳动创造的价值高，也可能因为愿意干的人少。</p>
+</section>
+<section id="monopsony">
+<h2>买方垄断：雇主不只是接受工资</h2>
+<p class="prose">竞争模型假设有很多雇主，任何一家都可以按市场工资雇到想要的人数。现实中，一个小镇可能只有一两家大雇主；换工作要搬家、要重新找、要放弃熟悉的同事。这些都让单个雇主面对一条向上倾斜的供给曲线：想多雇人，就得提高工资。</p>
+<p class="prose">劳动市场中买方有定价能力的情形叫<b>买方垄断</b><span class="en"> (monopsony)</span>。严格的定义是只有一个买方；经济学家也用它泛指雇主有一定工资设定能力的情形，原因可以是雇主少，也可以是工人换工作的摩擦大。</p>
+<h3>多雇一人，代价不止他一个人的工资</h3>
+<p class="prose">设雇主对所有人付同一个工资。按示意供给曲线，雇 50 人要付 20 元/小时，工资总额 1000；雇 51 人要把工资提到 20.2，工资总额 1030.2。第 51 人让成本多出 30.2：新人自己的 20.2，加上给原来 50 人每人加的 0.2。</p>
+<p class="prose">这笔增量叫<b>劳动的边际成本</b><span class="en"> (marginal cost of labor, MCL)</span>。在统一工资下，它高于当前工资，曲线位于供给曲线之上。这和<a href="../m04/02-competition-monopoly.html#monopoly">垄断卖家的边际收益低于价格</a>是镜像关系：一个是卖得越多压低所有单位的价格，一个是雇得越多抬高所有人的工资。</p>
+<p class="formula">S：W = 10 + 0.2L；MCL = 10 + 0.4L；VMP = 40 − 0.2L</p>
+<p class="prose">买方垄断雇主雇到 MCL = VMP 为止：50 人。然后它只需支付供给曲线上让 50 人愿意来的工资 20，而不是 VMP 的 30。与竞争结果（75 人、25 元）相比，就业和工资都更低；最后一名工人创造的价值比工资高 10 元。少雇的那 25 人，本来对双方都有净收益。</p>
+</section>
+<section id="minimum-wage">
+<h2>最低工资：同一个价格下限，两种可能后果</h2>
+<p class="prose"><b>最低工资</b><span class="en"> (minimum wage)</span> 是法律规定雇主必须支付的最低劳动报酬。在中国，2004 年 3 月 1 日起施行的《最低工资规定》要求标准一般分为月标准和小时标准，确定时参考当地最低生活费用、消费价格、平均工资、经济发展水平和就业状况等，同一省内不同地区可以不同（<a href="https://www.gov.cn/gongbao/content/2004/content_62936.htm">中国政府网</a>）。</p>
+<p class="prose">在竞争模型里，它就是劳动市场上的<a href="../m03/02-price-controls.html#floors">价格下限</a>：低于均衡工资时不起作用；高于时，雇主沿需求曲线少雇，愿意工作的人却更多，差额就是求职未果的人。在买方垄断模型里，故事不同，下面的图把两者放在同一组曲线上。</p>
+<div class="widget" id="w-labor" aria-labelledby="w1t">
+<h3 id="w1t">图 1　最低工资：竞争市场与买方垄断</h3>
+<div class="chips" role="group" aria-label="选择市场模型"><button type="button" class="chip" data-mode="comp" aria-pressed="true" aria-controls="chart1">竞争市场</button><button type="button" class="chip" data-mode="mono" aria-pressed="false" aria-controls="chart1">买方垄断</button></div>
+<div class="chips" role="group" aria-label="最低工资示例"><button type="button" class="chip" data-m="18" aria-pressed="false">18：低于垄断工资</button><button type="button" class="chip" data-m="23" aria-pressed="false">23：两者之间</button><button type="button" class="chip" data-m="28" aria-pressed="true">28：高于竞争工资</button><button type="button" class="chip" data-m="35" aria-pressed="false">35：很高</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw d"></span>D：劳动需求 = VMP</li><li><span class="sw s"></span>S：劳动供给</li><li id="lg-mcl" hidden><span class="sw model"></span>MCL：买方垄断者的劳动边际成本（虚线为无最低工资时）</li><li><span class="sw external"></span>最低工资</li><li>A：实际就业与工资；U：该工资下愿意工作的人数；E：竞争基准；M：买方垄断基准</li></ul>
+<div class="controls"><div class="ctl full"><label for="mw">最低工资（元/小时）</label><output id="mw-value" for="mw">28</output><input id="mw" type="range" min="12" max="38" step="1" value="28" aria-describedby="mw-hint"><span class="hint" id="mw-hint">12–38。低于 20 时两种模型都不受约束；竞争工资为 25，买方垄断工资为 20。</span></div></div>
+<dl class="read">
+<div><dt>工资 W（元/小时）</dt><dd><b id="r-w"></b></dd><dd class="delta" id="d-w"></dd></div>
+<div><dt>就业 L（人）</dt><dd><b id="r-l"></b></dd><dd class="delta" id="d-l"></dd></div>
+<div><dt>该工资下愿意工作（人）</dt><dd><b id="r-ls"></b></dd><dd class="delta" id="d-ls"></dd></div>
+<div><dt>求职未果（人）</dt><dd><b id="r-u"></b></dd><dd class="delta" id="d-u"></dd></div>
+<div><dt>最后一名工人的 VMP（元/小时）</dt><dd><b id="r-vmp"></b></dd><dd class="delta" id="d-vmp"></dd></div>
+<div><dt>VMP 与工资之差（元/小时）</dt><dd><b id="r-gap"></b></dd><dd class="delta" id="d-gap"></dd></div>
+<div><dt>工资总额（元/小时）</dt><dd><b id="r-bill"></b></dd><dd class="delta" id="d-bill"></dd></div>
+</dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">教学示意值，不对应任何真实城市。灰色小字是相对同一模型“无最低工资”时的变化。买方垄断者对所有人付同一工资；就业不能超过该工资下愿意工作的人数，也不超过需求。未计工时调整、福利削减、价格转嫁、自动化和长期进入退出。</p>
+</div>
+<h3>买方垄断下，最低工资如何改写边际成本</h3>
+<p class="prose">关键在于：最低工资高于 20 时，雇主在一段范围内不再需要靠加薪招人。设最低工资为 23，按供给曲线，愿意按 23 工作的有 65 人。雇第 1 到第 65 人，每人都只需付 23，也不必给已在岗的人加薪，所以 MCL 在这一段是一条水平线，高度 23。</p>
+<p class="prose">要雇第 66 人，工资必须高于 23，又回到“给所有人加薪”的老规则，MCL 跳回原来那条线，高度约 36。于是 MCL 由三段组成：水平段、竖直跳跃、原 MCL。雇主比较的是 VMP 落在哪一段。</p>
+<p class="formula">最低工资 23：第 65 人的 VMP = 27 &gt; 23，雇；第 66 人的 MCL ≈ 36.2 &gt; VMP，不雇</p>
+<p class="prose">所以雇主雇满 65 人，比没有最低工资时多 15 人，工资从 20 升到 23。最低工资把“多雇一人要给所有人加薪”的那部分成本拿掉了，雇主压低工资的理由随之减弱。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="不同最低工资下两种模型的结果，可横向滚动"><table class="tbl"><caption>同一组曲线下的四个区间（工资：元/小时；就业：人）</caption><thead><tr><th scope="col">最低工资</th><th scope="col" class="num">竞争：W</th><th scope="col" class="num">竞争：L</th><th scope="col" class="num">垄断：W</th><th scope="col" class="num">垄断：L</th><th scope="col">买方垄断下的就业方向</th></tr></thead><tbody>
+<tr><td>18（低于 20）</td><td class="num">25</td><td class="num">75</td><td class="num">20</td><td class="num">50</td><td>不变：不起约束</td></tr>
+<tr><td>23（20～25）</td><td class="num">25</td><td class="num">75</td><td class="num">23</td><td class="num">65</td><td>上升：沿供给曲线</td></tr>
+<tr><td>28（25～30）</td><td class="num">28</td><td class="num">60</td><td class="num">28</td><td class="num">60</td><td>仍高于 50，但已沿需求曲线下降</td></tr>
+<tr><td>35（高于 30）</td><td class="num">35</td><td class="num">25</td><td class="num">35</td><td class="num">25</td><td>低于 50：减少</td></tr>
+</tbody></table></div>
+<p class="prose">读这张表有三点。第一，买方垄断下，就业在最低工资等于竞争工资 25 时最多，为 75 人。第二，最低工资一旦高于竞争工资，两种模型给出相同结果：雇主都沿需求曲线雇到 VMP 等于工资，一部分愿意工作的人找不到岗位。第三，买方垄断模型并不意味着“最低工资越高越好”；在本例中超过 30，就业就低于没有最低工资的时候。</p>
+<ol class="qs"><li>在竞争市场把滑块从 12 拉到 38，记下就业从何时开始下降。切到买方垄断再拉一遍，就业先升后降，找出拐点。</li><li>在买方垄断下停在 23，观察 MCL 的水平段和竖直跳跃落在何处，A 点为什么在跳跃处而不在原 MCL 与 D 的交点。</li><li>停在 28，切换两个模型：A 点相同，但“相对无最低工资的变化”方向相反。哪个基准更接近你所在的劳动市场，是经验问题。</li></ol>
+</section>
+<section id="evidence">
+<h2>实证争议：同一项政策，不同的证据</h2>
+<p class="prose">两种模型都在逻辑上成立，哪一个更接近现实，只能看数据。难点在于：最低工资上调的地区往往经济本来就不同，简单比较前后就业，分不清是政策还是别的因素。研究者常寻找<b>自然实验</b><span class="en"> (natural experiment)</span>：政策只影响一部分地区，用相近的未受影响地区作对照。</p>
+<h3>新泽西与宾夕法尼亚：一场持续多年的争论</h3>
+<p class="prose">1992 年 4 月 1 日，美国新泽西州把最低工资从每小时 4.25 美元提高到 5.05 美元，相邻的宾夕法尼亚州保持 4.25。Card 与 Krueger 在上调前后电话调查了两州 410 家快餐店。他们报告，相对宾州，新泽西快餐店的就业增长了 13%，并认为这一结果挑战了“提高最低工资会减少就业”的预测（<a href="https://www.nber.org/papers/w4509">NBER 工作论文 4509</a>，后发表于 AER 1994 年第 84 卷第 4 期）。</p>
+<p class="prose">Neumark 与 Wascher 改用两州 230 家快餐店的工资单记录重做分析。他们认为电话调查数据的波动过大，并估计这次上调使新泽西就业相对宾州下降约 4.6%，在 5% 水平上显著（<a href="https://www.nber.org/papers/w5224">NBER 工作论文 5224</a>，1995 年）。正式评论发表于 AER 2000 年第 90 卷第 5 期。</p>
+<p class="prose">Card 与 Krueger 在同期回应中使用美国劳工统计局的行政数据，发现新泽西的就业增长与宾州东部相近或略快；他们还把两组数据的差别追溯到某一家加盟商经营的少数门店（<a href="https://www.nber.org/papers/w6386">NBER 工作论文 6386</a>，发表为 AER 2000 年的 Reply）。双方争论的焦点是数据来源、样本代表性和对照组怎么选，而不是谁的逻辑更严密。</p>
+<h3>后来的研究，结论仍有分歧</h3>
+<p class="prose">认为负面影响有限的一方常引用 Cengiz、Dube、Lindner 与 Zipperer 的研究。他们考察美国 1979 年至 2016 年间 138 次州级最低工资上调，比较新最低工资以下消失的岗位与刚好在它之上多出的岗位，发现上调后五年内低工资岗位总数基本不变，但可贸易部门有一些就业下降的迹象（<a href="https://www.nber.org/papers/w25434">NBER 工作论文 25434</a>，后发表于 QJE 2019 年第 134 卷第 3 期）。</p>
+<p class="prose">认为负面影响确实存在的一方常引用两类证据。西雅图在 2015、2016 年把最低工资分别提高到最高 11 和 13 美元，Jardim 等人用华盛顿州行政数据发现，在职工人保住工作的概率没有变化，但工时显著减少，新雇用也减少，经验少的工人受影响最大（<a href="https://www.aeaweb.org/doi/10.1257/pol.20180578">AEJ: Economic Policy 2022</a>）。Neumark 与 Shirley 整理了美国以州和地方差异为依据的已发表研究，报告负的就业估计明显占多数，在青少年、年轻人、低学历和直接受影响的工人中更明显，而低工资行业的研究结果较不一致（<a href="https://www.nber.org/papers/w28388">NBER 工作论文 28388</a>，后发表于 Industrial Relations 2022）。</p>
+<p class="prose">分歧来自几个可以说清的地方：对照组怎么选；看总人数还是工时，看全体低工资岗位还是直接受影响的人；短期还是长期；上调幅度相对当地工资水平有多大。在本课的模型里，这些对应着不同的问题：雇主有多大工资设定能力，最低工资落在哪个区间，以及企业还能从工时、价格和招聘上调整多少。</p>
+<p class="prose">政策讨论也不只看就业人数。支持上调的一方强调低收入者的收入和议价能力，以及买方垄断下就业可能不降反升；反对或主张谨慎的一方强调缺乏经验的工人更难入职、工时可能减少，以及成本可能转嫁给顾客。不同地区、不同幅度的上调，可能落在图中不同的区间。</p>
+</section>
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“工资高低主要取决于工作有多辛苦。”</p><p>需求一侧看的是最后一名工人创造的价值，供给一侧看的是愿意干的人有多少。辛苦会减少愿意干的人从而推高工资，但很辛苦而产出价值低、愿意干的人又多的工作，工资仍可能很低。</p></div>
+<div class="mis"><p class="said">“经济学已经证明最低工资一定减少就业。”</p><p>竞争模型在最低工资高于均衡时预测就业下降；买方垄断模型中，适度的最低工资可以提高就业。哪一个更符合某个市场，取决于数据，而实证研究至今仍有分歧。</p></div>
+<div class="mis"><p class="said">“既然买方垄断下最低工资能增加就业，那就定得越高越好。”</p><p>在买方垄断下，最低工资超过竞争工资后，雇主沿需求曲线减少雇用；在本例中超过 30，就业低于没有最低工资时。有利的区间有上限，而且这个上限在现实中很难准确知道。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先判断：是哪种市场结构？最低工资落在哪个区间？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">试着用“多雇一人带来多少、花掉多少”来解释每个术语。</p><div class="cards" id="cards"></div></section>
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>工资由两边决定。</b>餐馆愿付多少，取决于多雇一名服务员能多卖出多少饭菜的价值；服务员愿接受多少，取决于他们放弃的闲暇和其他工作机会。不同岗位工资差别大，是因为这两边都不同。</div></li><li><div><b>担心和期待可以同时成立。</b>在竞争模型中，最低工资高于市场工资时，在岗服务员时薪上升，同时餐馆少雇人，一部分求职者找不到工作。受益者和受损者可能不是同一群人。</div></li><li><div><b>就业不一定下降。</b>若当地餐馆雇主有压低工资的能力，适度的最低工资让多雇一人不再需要给所有人加薪，就业和工资可能同时上升。上调过多，又会回到沿需求曲线减少雇用的情形。</div></li><li><div><b>看证据时问清楚问题。</b>新泽西的研究与后来的回应说明，数据来源、对照组以及看人数还是工时，都会影响结论。读到“最低工资导致失业”或“没有影响”的报道，先问研究看的是谁、多长时间、上调幅度多大。</div></li></ol>
+<button type="button" class="chip" id="goChart">在图中比较 23 元时的两种模型</button>
+</section>
+<section id="sources">
+<h2>资料来源</h2>
+<ol class="qs">
+<li>《最低工资规定》（劳动和社会保障部令第 21 号），国务院公报 2004 年第 28 号：<a href="https://www.gov.cn/gongbao/content/2004/content_62936.htm">gov.cn</a></li>
+<li>Card, D. &amp; Krueger, A. B. Minimum Wages and Employment: A Case Study of the Fast Food Industry in New Jersey and Pennsylvania. NBER WP 4509 (1993)；AER 84(4), 1994：<a href="https://www.nber.org/papers/w4509">nber.org/papers/w4509</a></li>
+<li>Neumark, D. &amp; Wascher, W. The Effect of New Jersey's Minimum Wage Increase on Fast-Food Employment: A Re-Evaluation Using Payroll Records. NBER WP 5224 (1995)；评论发表于 AER 90(5), 2000：<a href="https://www.nber.org/papers/w5224">nber.org/papers/w5224</a></li>
+<li>Card, D. &amp; Krueger, A. B. A Reanalysis of the Effect of the New Jersey Minimum Wage Increase on the Fast-Food Industry with Representative Payroll Data. NBER WP 6386 (1998)；发表为 AER 90(5), 2000 的 Reply：<a href="https://www.nber.org/papers/w6386">nber.org/papers/w6386</a></li>
+<li>Cengiz, D., Dube, A., Lindner, A. &amp; Zipperer, B. The Effect of Minimum Wages on Low-Wage Jobs. NBER WP 25434 (2019)；QJE 134(3), 2019：<a href="https://www.nber.org/papers/w25434">nber.org/papers/w25434</a></li>
+<li>Jardim, E. 等. Minimum-Wage Increases and Low-Wage Employment: Evidence from Seattle. AEJ: Economic Policy 14(2), 2022：<a href="https://www.aeaweb.org/doi/10.1257/pol.20180578">aeaweb.org</a></li>
+<li>Neumark, D. &amp; Shirley, P. Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States? NBER WP 28388；Industrial Relations 61(4), 2022：<a href="https://www.nber.org/papers/w28388">nber.org/papers/w28388</a></li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts;
+function $(s,r){return (r||document).querySelector(s);}
+var box=$('#chart1'),mode='comp';
+/* 示意曲线：VMP = 40 − 0.2L；S：W = 10 + 0.2L；MCL = 10 + 0.4L */
+function vmp(L){return 40-0.2*L;}
+function sW(L){return 10+0.2*L;}
+function ls(W){return Math.max(0,5*(W-10));}
+function ld(W){return Math.max(0,200-5*W);}
+var BASE={comp:{w:25,l:75},mono:{w:20,l:50}};
+function model(m,md){
+  var w,l;
+  if(md==='comp'){w=Math.max(m,25);l=w>25?ld(w):75;}
+  else if(m<=20){w=20;l=50;}
+  else if(m<=25){w=m;l=ls(m);}
+  else{w=m;l=ld(m);}
+  var s=ls(w);
+  return {w:w,l:l,ls:s,u:s-l,vmp:vmp(l),gap:vmp(l)-w,bill:w*l,binding:md==='comp'?m>25:m>20};
+}
+function stats(m,md){var s=model(m,md),b=model(10,md);return {s:s,b:b};}
+function pt(f,id,L,W,cls){f.svg.appendChild(C.el('circle',{id:id,cx:f.x(L),cy:f.y(W),r:5,'class':cls}));}
+function poly(f,pts,cls,id){
+  var r={q0:0,q1:150,p0:0,p1:50},d='';
+  for(var i=0;i<pts.length-1;i++){var s=C.clip(pts[i],pts[i+1],r);if(s){d+='M'+f.x(s[0][0]).toFixed(1)+' '+f.y(s[0][1]).toFixed(1)+'L'+f.x(s[1][0]).toFixed(1)+' '+f.y(s[1][1]).toFixed(1);}}
+  if(d){var p=C.el('path',{d:d,'class':cls});if(id){p.id=id;}f.svg.appendChild(p);}
+}
+function same(a,b){return Math.abs(a[0]-b[0])<1e-9&&Math.abs(a[1]-b[1])<1e-9;}
+function draw(){
+  if(!box.clientWidth){return;}
+  var m=+$('#mw').value,s=model(m,mode),name=mode==='comp'?'竞争市场':'买方垄断';
+  var f=C.frame(box,{id:'labor',q0:0,q1:150,p0:0,p1:50,qs:25,ps:10,xt:'就业 L（人）',yt:'工资 W（元/小时）',label:name+'模型，最低工资 '+m+' 元/小时：工资 '+s.w.toFixed(1)+' 元/小时，就业 '+s.l.toFixed(1)+' 人，愿意工作 '+s.ls.toFixed(1)+' 人，求职未果 '+s.u.toFixed(1)+' 人。'});
+  var A=[s.l,s.w],E=[75,25],M=[50,20];
+  if(mode==='mono'){
+    var k=ls(m);
+    poly(f,[[0,10],[100,50]],'curve model ghost');
+    poly(f,[[0,m],[k,m],[k,10+0.4*k],[k+(50-(10+0.4*k))/0.4,50]],'curve model','mcl-eff');
+    f.svg.appendChild(C.el('line',{x1:f.x(s.l),x2:f.x(s.l),y1:f.y(s.w),y2:f.y(s.vmp),'class':'guide'}));
+  }
+  poly(f,[[0,m],[150,m]],'curve external','mw-line');
+  f.svg.appendChild(C.pathOf(f,[[0,40],[150,10]],'curve d'));
+  f.svg.appendChild(C.pathOf(f,[[0,10],[150,40]],'curve s'));
+  box.replaceChildren(f.svg);
+  var placed=[];
+  function circ(id,L,W,cls){pt(f,id,L,W,cls);placed.push({x:f.x(L)-6,y:f.y(W)-6,width:12,height:12});}
+  function hit(a,b){return Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>0&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>0;}
+  function place(text,cls,cands){
+    for(var i=0;i<cands.length;i++){
+      var c=cands[i],t=C.el('text',{x:c[0],y:c[1],'text-anchor':c[2],'class':'curvelab '+cls+' halo'},c[3]||text);
+      f.svg.appendChild(t);var bb=t.getBBox(),r={x:bb.x-1,y:bb.y-1,width:bb.width+2,height:bb.height+2};
+      var inside=r.x>=f.m.l&&r.x+r.width<=f.m.l+f.iw&&r.y>=f.m.t&&r.y+r.height<=f.m.t+f.ih;
+      if((inside&&!placed.some(function(b){return hit(r,b);}))||i===cands.length-1){placed.push(r);return;}
+      f.svg.removeChild(t);
+    }
+  }
+  function around(L,W,order){var x=f.x(L),y=f.y(W),all={br:[x+8,y+16,'start'],al:[x-8,y-9,'end'],ar:[x+8,y-9,'start'],bl:[x-8,y+16,'end']};return order.map(function(k){return all[k];});}
+  var hasU=s.u>1e-9,showE=!same(A,E),showM=mode==='mono'&&!same(A,M);
+  if(hasU){circ('pt-U',s.ls,s.w,'pt base');}
+  if(showE){circ('pt-E',75,25,'pt base');}
+  if(showM){circ('pt-M',50,20,'pt base');}
+  circ('pt-A',s.l,s.w,'pt');
+  var al=same(A,E)?'A = E':same(A,M)?'A = M':'A';
+  place(al,'ptlab',around(s.l,s.w,al==='A'?['al','bl','ar','br']:['br','ar','bl','al']));
+  if(showE){place('E','ptlab',around(75,25,['br','ar','bl','al']));}
+  if(showM){place('M','ptlab',around(50,20,['br','bl','ar','al']));}
+  if(hasU){place('U','ptlab',around(s.ls,s.w,['ar','br','al','bl']));}
+  place('最低工资 '+m,'external',[[f.x(0)+6,f.y(m)-7,'start'],[f.x(150)-4,f.y(m)+15,'end'],[f.x(0)+6,f.y(m)+15,'start'],[f.x(150)-4,f.y(m)-7,'end'],[f.x(75),f.y(m)-7,'middle'],[f.x(110),f.y(m)-7,'middle'],[f.x(40),f.y(m)+15,'middle'],[f.x(110),f.y(m)+15,'middle'],[f.x(40),f.y(m)-7,'middle'],[f.x(150)-4,f.y(m)+15,'end',String(m)],[f.x(0)+6,f.y(m)-7,'start',String(m)]]);
+  place('D = VMP','d',[[f.x(100)-6,f.y(20)+16,'end'],[f.x(130)-6,f.y(14)+16,'end'],[f.x(140),f.y(12)-8,'end'],[f.x(60)+6,f.y(28)-8,'start']]);
+  place('S','s',[[f.x(25)-6,f.y(15)-6,'end'],[f.x(125)+6,f.y(35)+16,'start'],[f.x(60)+6,f.y(22)+16,'start']]);
+  if(mode==='mono'){place('MCL','model',[[f.x(92)-8,f.y(46.8),'end'],[f.x(80)+8,f.y(42)+14,'start'],[f.x(60)-8,f.y(34),'end'],[f.x(100)+8,f.y(50)+14,'start'],[f.x(40)+8,f.y(26)+14,'start'],[f.x(30)-8,f.y(22),'end']]);}
+}
+function n1(x){return C.fmt(x,1).replace(/\.0$/,'');}
+function update(){
+  var m=+$('#mw').value,s=model(m,mode),b=BASE[mode],b0=model(10,mode);
+  $('#mw-value').textContent=m;$('#mw').setAttribute('aria-valuetext',m+' 元/小时');
+  ['w','l','ls','u','vmp','gap','bill'].forEach(function(k){$('#r-'+k).textContent=n1(s[k]);var d=s[k]-b0[k];$('#d-'+k).textContent=Math.abs(d)<1e-9?'不变':C.fmtS(d,1).replace(/\.0$/,'');});
+  document.querySelectorAll('[data-mode]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.mode===mode));});$('#lg-mcl').hidden=mode!=='mono';
+  document.querySelectorAll('[data-m]').forEach(function(x){x.setAttribute('aria-pressed',String(+x.dataset.m===m));});
+  var msg,dl=s.l-b.l;
+  if(mode==='comp'){
+    if(!s.binding){msg='最低工资 '+m+' 不高于竞争工资 25，不起约束：工资 25，就业 75 人，最后一名工人的 VMP 等于工资。';}
+    else{msg='最低工资 '+m+' 高于竞争工资 25：雇主沿需求曲线只雇到 VMP = '+m+' 处，共 '+n1(s.l)+' 人，比无最低工资少 '+n1(-dl)+' 人；按此工资愿意工作的有 '+n1(s.ls)+' 人，'+n1(s.u)+' 人求职未果。在岗者每小时多得 '+n1(m-25)+' 元。';}
+  }else{
+    if(m<=20){msg='最低工资 '+m+' 不高于买方垄断工资 20，不起约束：雇主仍按 MCL = VMP 雇 50 人、付 20 元，最后一名工人的 VMP 为 30，比工资高 10 元。';}
+    else if(m<=25){msg='最低工资 '+m+' 介于 20 与 25 之间：雇满 '+n1(s.l)+' 人以内，多雇一人只需付 '+m+' 元，不必给其他人加薪，MCL 在这一段变平。第 '+n1(s.l)+' 人的 VMP 为 '+n1(s.vmp)+'，不低于 '+m+'，雇主雇满所有愿意工作的人：就业比无最低工资多 '+n1(dl)+' 人，工资升 '+n1(m-20)+' 元。';}
+    else{msg='最低工资 '+m+' 高于竞争工资 25：雇主沿需求曲线雇到 VMP = '+m+'，共 '+n1(s.l)+' 人，'+n1(s.u)+' 人求职未果。与买方垄断基准 50 人相比，就业'+(dl>1e-9?'仍多 '+n1(dl)+' 人':dl<-1e-9?'少 '+n1(-dl)+' 人':'持平')+'；此区间的结果与竞争模型相同。';}
+  }
+  $('#verdict').textContent=msg;draw();
+}
+$('#mw').addEventListener('input',update);
+document.querySelectorAll('[data-mode]').forEach(function(x){x.addEventListener('click',function(){mode=x.dataset.mode;update();});});
+document.querySelectorAll('[data-m]').forEach(function(x){x.addEventListener('click',function(){$('#mw').value=x.dataset.m;update();});});
+C.watch(box,draw);
+var QUIZ=[
+{q:'一家餐馆第 3、4 位服务员的边际产出价值分别是 20 和 15 元/小时，市场时薪 18 元。追求利润的餐馆雇几人？',o:['4 人，因为第 4 人的产出仍然为正','3 人，因为第 4 人带来的 15 元低于时薪 18 元','2 人，因为平均每人产出在下降','5 人，人越多总产量越高'],a:1,why:'雇 3 人。只要 VMP 不低于工资就雇；第 4 人多付 18、只多收 15，会降低利润。产出为正或总产量上升都不足以说明值得雇。'},
+{q:'竞争劳动市场的均衡时薪为 25 元，政府把最低工资定为 22 元。就业和工资会怎样？',o:['工资降到 22，雇主省钱多雇人','工资降到 22，就业减少','工资升到 28，因为有了法律保障','都不变：最低工资低于市场工资，不起约束'],a:3,why:'都不变。最低工资是允许的最低报酬，不是指定工资；市场工资 25 本来就高于它。'},
+{q:'一家镇上唯一的大工厂想多雇一人，必须把所有工人的时薪都提高一点。它多雇一人的边际成本与新人的工资相比如何？',o:['更高，因为还要给原有工人加薪','相等，因为只为新人付工资','更低，因为规模越大越省钱','无法比较，因为工资由政府决定'],a:0,why:'更高。统一工资下，多雇一人的成本是新人工资加上原有工人的加薪，所以 MCL 位于供给曲线之上。'},
+{q:'在本课的买方垄断模型中（无最低工资时 50 人、20 元；竞争结果 75 人、25 元），最低工资定为 23 元。结果是？',o:['就业减少，因为工资被强制抬高','就业不变，雇主只是少赚','就业升到 65 人，工资 23 元：多雇一人不必再给所有人加薪','就业升到 75 人，工资 25 元'],a:2,why:'就业升到 65 人。65 人以内 MCL 变成 23 的水平线，第 65 人的 VMP 为 27，仍高于 23；再多雇就要加薪，MCL 跳到约 36，不划算。'},
+{q:'Card 与 Krueger 用电话调查发现新泽西提高最低工资后快餐业就业相对宾州上升，Neumark 与 Wascher 用工资单记录发现下降。哪种理解最恰当？',o:['前者证明最低工资永远不减少就业','分歧主要来自数据来源、样本与对照组，一项研究难以单独定论','后者证明前者造假','两项研究都与理论无关，可以忽略'],a:1,why:'分歧主要在数据与识别。双方在数据可靠性和样本代表性上反复交锋，后续研究结论仍不一致，不能用一项研究替所有地区、所有上调幅度下结论。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){
+    var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.appendChild(n);t.appendChild(document.createTextNode(it.q));
+    var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;
+      b.addEventListener('click',function(){if(q.getAttribute('data-done')){return;}q.setAttribute('data-done','1');var ok=j===it.a;answered++;if(ok){correct++;}
+        btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.insertBefore(tag,x.firstChild);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.insertBefore(tag,x.firstChild);}});
+        why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);
+    });q.appendChild(t);q.appendChild(opts);q.appendChild(why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'派生需求',en:'derived demand',d:'企业对劳动的需求来自对产品的需求。产品卖不动，对工人的需求随之下降。'},
+{t:'边际产出',en:'marginal product',d:'多投入一单位劳动带来的额外产量。其他投入固定时，通常随人数增加而递减。'},
+{t:'边际产出价值',en:'value of marginal product',d:'边际产出乘以每单位产品的价格（或净收入）。竞争雇主雇到它等于工资为止，它就是劳动需求曲线。'},
+{t:'劳动供给',en:'labor supply',d:'各工资下人们愿意提供的劳动量。工资是闲暇的机会成本；市场层面工资越高，进入的人越多。'},
+{t:'最低工资',en:'minimum wage',d:'法定最低劳动报酬，是劳动市场的价格下限。低于市场工资时不起约束。'},
+{t:'买方垄断',en:'monopsony',d:'买方有定价能力的市场。劳动市场中，雇主可把工资压到工人创造的边际价值以下，并少雇人。'},
+{t:'劳动的边际成本',en:'marginal cost of labor',d:'多雇一人使工资总额增加的数额。统一工资下包括给原有工人的加薪，因此高于工资；最低工资可使其在一段内变平。'},
+{t:'自然实验',en:'natural experiment',d:'政策或事件只影响一部分对象，可用相近的未受影响对象作对照估计效果。对照组是否可比，常是争论焦点。'}
+];
+var grid=$('#cards');
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.appendChild(t);b.appendChild(en);b.appendChild(hint);b.appendChild(def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});grid.appendChild(b);});
+$('#goChart').addEventListener('click',function(){$('#mw').value=23;mode='mono';update();var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;$('#w-labor').scrollIntoView({block:'start',behavior:r?'auto':'smooth'});document.querySelector('[data-mode=mono]').focus({preventScroll:true});});
+update();
+})();
+</script>
+</body>
+</html>
