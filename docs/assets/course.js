@@ -204,7 +204,7 @@
         {
           id: 'm09-03', title: '技术、制度与国家贫富',
           en: 'Technology, institutions and the wealth of nations',
-          path: 'm09/03-technology-institutions.html', status: 'todo'
+          path: 'm09/03-technology-institutions.html', status: 'done'
         }
       ]
     },

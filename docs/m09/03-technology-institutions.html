@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>技术、制度与国家贫富</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m09-03">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>技术、制度与国家贫富</h1>
+<p class="sub">Technology, institutions and the wealth of nations</p>
+<p class="lede">资本积累会遇到边际报酬递减，长期增长最终要靠技术进步。可技术不会从天上掉下来：要有人愿意花钱研发，研发成果要能被用起来、传出去。一个国家能不能持续创新，又取决于人们是否相信自己能留住投资和发明的回报。本课从朝鲜半岛的一条分界线讲起。</p>
+<p class="meta">约 22 分钟 · 0 个交互图（2 张静态表） · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m08/01-gdp.html#per-capita">人均 GDP 与购买力平价</a>、<a href="../m03/04-externalities-public-goods.html#public-goods">非竞争性与公共品</a>、<a href="../m03/04-externalities-public-goods.html#externality">外部性</a>。本课讨论的研究结论各有争议，正文分别介绍证据和质疑，不给出唯一答案。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>真实数据：韩国银行（Bank of Korea），2026 年 7 月 31 日，<a href="https://www.bok.or.kr/eng/bbs/E0000634/view.do?nttId=11063397&amp;menuNo=400069">Gross Domestic Product Estimates for North Korea in 2025</a></figcaption><blockquote>韩国央行估计：2025 年朝鲜人均国民总收入 187.3 万韩元，约为韩国的 1/28</blockquote></figure>
+<p class="prose">韩国银行自 1991 年起每年估算一次朝鲜经济。这份新闻稿估计，朝鲜 2025 年实际 GDP 增长 3.5%，名义国民总收入约 48.5 万亿韩元，是韩国的 1/56；人均约 187.3 万韩元，是韩国人均 5,257.0 万韩元的约 1/28。新闻稿第一行就加了注释：这些指标按韩国的价格和增加值率估算，不应与其他国家直接比较。</p>
+<p class="prose">1945 年以前，半岛南北是同一个经济体，说同一种语言，有共同的历史。分治之后，北方实行计划经济，南方走向市场经济。八十年后，人均收入相差二十多倍。</p>
+<ol class="qs"><li>“约为 1/28”这个数字有多可靠？它是按什么口径算出来的？</li><li>同一个民族、同一片半岛，为什么会走出两种结果？这个对比能证明什么，不能证明什么？</li><li>技术是怎么来的？为什么有些国家能持续创新，有些不能？</li></ol>
+</section>
+
+<section id="korea">
+<h2>一条分界线两边的数字</h2>
+<p class="prose">先把新闻稿里的数字摆在一起。<b>国民总收入</b><span class="en"> (gross national income, GNI)</span> 等于 GDP 加上本国居民从国外得到的要素收入净额，可以理解为“本国居民挣到的收入”；人均 GNI 和<a href="../m08/01-gdp.html#per-capita">人均 GDP</a> 一样，用来比较平均生活水平。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="2025 年朝鲜与韩国国民收入估计，可横向滚动"><table class="tbl"><caption>韩国银行 2026 年 7 月 31 日新闻稿表格；韩国 2025 年为初步数。朝鲜数据为韩国银行的估计值。</caption><thead><tr><th scope="col">指标</th><th scope="col" class="num">朝鲜（A）</th><th scope="col" class="num">韩国（B）</th><th scope="col" class="num">B / A</th></tr></thead><tbody>
+<tr><td>名义 GNI（万亿韩元）</td><td class="num">48.5</td><td class="num">2,717.1</td><td class="num">56.0</td></tr>
+<tr><td>人均 GNI（万韩元）</td><td class="num">187.3</td><td class="num">5,257.0</td><td class="num">28.1</td></tr>
+<tr><td>人口（千人）</td><td class="num">25,917</td><td class="num">51,685</td><td class="num">2.0</td></tr>
+<tr><td>2025 年实际 GDP 增长（%）</td><td class="num">3.5</td><td class="num">1.1</td><td class="num">—</td></tr>
+</tbody></table></div>
+<p class="prose">总量差 56 倍，人均差 28 倍，两者不矛盾：韩国人口约是朝鲜的 2 倍，56 ÷ 2 ≈ 28。朝鲜增速 3.5% 高于韩国的 1.1%，但在 28 倍的差距面前，几个百分点的增速差要持续很多年才能明显缩小差距。</p>
+<h3>这个数字有多可靠</h3>
+<p class="prose">朝鲜多年不公布常规的国民账户统计。韩国银行的做法是：从相关机构收集朝鲜各种产品的产量，按联合国国民账户体系（SNA）的框架，用<b>韩国的价格和增加值率</b>给这些产量估值。因此，“1/28”的含义更接近“朝鲜的产量如果按韩国价格计价，相当于韩国的多少”。它既不是按市场汇率换算，也不是国际通行的<a href="../m08/01-gdp.html#per-capita">购买力平价</a>口径，所以新闻稿提醒不要拿它和其他国家的数字排名。</p>
+<p class="prose">不确定性至少来自三处：产量数据本身来自间接渠道，难以核实；两国产品质量不同，同一个名称的“一吨钢”“一台机床”未必等值；两国的生产技术不同，套用韩国的增加值率可能高估或低估。美国韩国经济研究所（KEI）的研究者 Randall Jones 在分析 2024 年数据时写道，这些估计应“有所保留”地看待，也提到有朝鲜问题专家认为韩国银行的估计偏乐观。精确到小数点后一位的数字，不代表误差也只有那么小。</p>
+<p class="prose">即便误差很大，结论的方向很少有人怀疑：两边生活水平差距悬殊。本课关心的是下一个问题：差距从哪里来。</p>
+<h3>为什么常被称为“准自然实验”</h3>
+<p class="prose">比较两个国家的贫富，最大的困难是它们在太多方面都不同：气候、资源、语言、宗教、历史。南北朝鲜在 1945 年以前共享语言和历史，地理上相邻。经济学家 Daron Acemoglu、Simon Johnson 和 James Robinson 在一篇综述（2004 年 NBER 工作论文，后收入《经济增长手册》）中，把朝鲜半岛分治列为说明经济制度重要性的两个“准自然实验”之一：分界线由外部力量划定，划下去之后，两边实行了截然不同的经济制度。</p>
+<p class="prose">但这个实验并不“干净”。分治时两边的起点并不一样：据 Frank、Kim 和 Westphal 1975 年为 NBER 写的韩国经济史，1940 年半岛约 92% 的平均年发电量来自北部电厂，北部生产了约 90% 的金属制品和 83% 的化工产品；南部则集中了大部分纺织、食品加工等轻工业，人口也更多。此后两边还经历了朝鲜战争、分属不同冷战阵营、得到不同来源的外援。这些差别都可能影响结果。所以朝韩对比是支持“制度重要”的有力案例，却不能单独证明差距全部来自制度，更不能告诉我们制度中哪一条最关键。</p>
+</section>
+
+<section id="ideas">
+<h2>技术从哪里来：创意的非竞争性</h2>
+<p class="prose">在索洛模型里，技术进步是模型外给定的：它推动长期增长，模型却不解释它从哪里来。<b>内生增长</b><span class="en"> (endogenous growth)</span> 理论把技术进步放进模型内部，看作企业和研究者在利润激励下有意投资的结果。Paul Romer 1990 年发表在《政治经济学杂志》的论文《内生技术变迁》是这一思路的奠基作之一，他因此获得 2018 年诺贝尔经济学奖，授奖理由是“把技术创新纳入长期宏观经济分析”。</p>
+<p class="prose">关键在于创意和普通商品不同。一吨钢用在这座桥上，就不能同时用在那座楼里；一个电池配方、一段代码、一种排班方法，却可以同时被任意多的人使用，用的人越多并不让它变少。这就是<a href="../m03/04-externalities-public-goods.html#public-goods">非竞争性</a>。Romer 的论文把技术描述为“非竞争、部分排他”的物品：非竞争，是因为创意一旦存在就能被无限复用；<b>部分排他</b><span class="en"> (partial excludability)</span>，是因为专利、商业秘密、技术诀窍能在一段时间内阻止别人免费使用，但阻止不了全部。</p>
+<div class="analogy"><span class="lab">类比</span><p>一家餐馆花两年试出一份招牌菜谱。做每一盘菜都要新的食材和厨师的时间，这部分像普通商品；菜谱本身却不会因为多做一盘而磨损，开第二家、第十家分店都能照着做。菜谱越早被很多店用上，平均到每盘菜的研发成本就越低。可如果菜谱一夜之间人人都会做，最初花两年试菜的人就收不回成本，以后也就没人愿意再试新菜。</p></div>
+<p class="prose">用一个最小的算式表达“创意让规模变得重要”：</p>
+<p class="formula">平均成本 = 研发固定成本 ÷ 产量 + 每件的生产成本</p>
+<p class="prose">示意数字：研发一种电池配方花 1 亿元，之后每块电池生产成本 50 元。产量 1 万块时，平均成本约 10,050 元；产量 100 万块时，降到 150 元。创意的成本只付一次，市场越大，分摊得越薄。这让以创意为基础的生产呈现规模报酬递增。</p>
+<p class="prose">这带来一个难题。如果市场竞争把价格压到每件的生产成本 50 元，研发的 1 亿元就永远收不回来，没人会研发。所以研发者需要一定的定价能力，例如专利保护期内的独家销售。Romer 的模型因此采用垄断竞争而不是完全竞争。可一旦按高于生产成本的价格出售，就会有人因为价格太高而用不上这项本来可以零成本复用的创意。激励发明与推广使用之间存在取舍。</p>
+<p class="prose">Romer 论文摘要列出的几条结论包括：人力资本存量决定增长速度；均衡时投入研究的人力资本太少；融入世界市场会提高增长率；人口多本身不足以带来增长。最后两条提醒我们，重要的是有多少人能接触到、改进并使用创意，而不只是人口的规模。</p>
+</section>
+
+<section id="spillover">
+<h2>研发与知识溢出：为什么市场可能研发太少</h2>
+<p class="prose">企业投资研发，只计算自己能拿到的回报。可研发成果总会部分“漏”出去：工程师跳槽带走经验，论文和专利公开了思路，竞争对手拆解新产品学到做法，后来者在前人基础上做出下一项发明。这种一方的研发让其他人在没有付费的情况下获益，叫<b>知识溢出</b><span class="en"> (knowledge spillover)</span>。它是一种正的<a href="../m03/04-externalities-public-goods.html#externality">外部性</a>。</p>
+<p class="prose">溢出有地理范围。Jaffe、Trajtenberg 和 Henderson 1993 年在《经济学季刊》发表的研究比较了美国专利的引用关系：与相关研究活动原本的地理集中程度相比，一项专利更可能被同一州、同一都市区的后续专利引用；这种本地化随时间消退，但消退得很慢。这为“创新者扎堆”提供了一种解释：离知识源越近，越容易接住溢出。</p>
+<p class="prose">如果社会从研发中得到的回报高于企业自己得到的回报，市场自发的研发投入就可能低于社会最优水平。几项常被引用的估计：</p>
+<ul class="qs">
+<li>Jones 和 Williams（1998，《经济学季刊》）推导出，已有文献估计的研发回报率只是社会回报率的下限；按保守的约 30% 回报率计算，最优研发投入至少是实际投入的 4 倍。</li>
+<li>Bloom、Schankerman 和 Van Reenen（2013，《计量经济学》）用美国企业数据区分了两种相反的效应：技术溢出让别人受益，抢夺市场的效应让对手受损。他们估计前者占主导，研发的社会总回报至少是私人回报的两倍。</li>
+</ul>
+<p class="prose">这些是特定模型和样本下的估计，数值差异很大，但方向一致：研发的好处有相当部分流向了研发者以外的人。</p>
+<h3>怎样补足研发激励：几种工具各有代价</h3>
+<p class="prose">常见的办法有三类。<b>专利</b>给发明者一段时期的独占权，让私人回报更接近社会回报，代价是保护期内价格偏高、后续创新者可能要绕开或付费。<b>研发补贴和税收抵扣</b>直接降低企业研发成本，代价是要用税收支付，且政府难以区分“本来就会做的研发”和“因补贴才做的研发”。<b>公共资助的基础研究</b>（大学、科研机构）针对离市场最远、最难排他的知识，代价是选题和评价难以用市场检验。</p>
+<p class="prose">对专利应该多强，经济学家的看法并不一致。一种观点认为，强保护是持续创新的前提，尤其在药品这类研发昂贵、复制便宜的行业；另一种观点认为，过宽、过长的专利会妨碍后续创新，在软件这类累积式创新中尤其明显。两种看法都承认激励与扩散之间存在取舍，分歧在于不同行业的平衡点在哪里。</p>
+</section>
+
+<section id="institutions">
+<h2>制度：谁能留住投资和发明的回报</h2>
+<p class="prose">知道了创意的经济学，还没回答为什么有些国家创新多。研发、建厂、读书、开店，都是今天付出成本、未来获得回报的投资。一个人愿不愿意投资，取决于他是否相信未来的回报能归自己。</p>
+<p class="prose"><b>制度</b><span class="en"> (institutions)</span> 是约束人们互动的规则：成文的法律、合同和监管，以及谁能制定和改变这些规则。经济制度里最基本的是<b>产权</b><span class="en"> (property rights)</span>，即谁有权使用、排除他人、转让某项资源并获得它的收益；<a href="../m03/04-externalities-public-goods.html#commons">外部性一课</a>讨论过产权怎样影响资源使用。与之配套的是<b>法治</b><span class="en"> (rule of law)</span>：规则事先公开，对掌权者同样适用，纠纷由相对独立的法院按规则裁决，而不是由当权者临时决定。</p>
+<div class="analogy"><span class="lab">类比</span><p>小区里有一片公共菜地。如果规定每户种的菜归自己收，大家会施肥、除草、尝试新品种；如果规定收成由物业统一收走再平均分，或者谁都可能在收获前被临时换地，就很少有人愿意多花力气，更不会冒险试新种子。土地、种子和人都没变，变的是“努力的回报归谁”这条规则。</p></div>
+<p class="prose">Acemoglu、Johnson 和 Robinson 把制度分为两类。<b>包容性制度</b><span class="en"> (inclusive institutions)</span> 保护广泛人群的产权，允许人们自由进入市场、选择职业；<b>汲取性制度</b><span class="en"> (extractive institutions)</span> 让少数掌权者从多数人那里攫取资源。诺贝尔委员会对他们研究的概括是：法治薄弱、制度剥削民众的社会，不会带来增长或向好的变化。三人因“研究制度如何形成并影响繁荣”获得 2024 年诺贝尔经济学奖。</p>
+<h3>他们怎样从数据里分辨因果</h3>
+<p class="prose">只看“制度好的国家更富”说明不了多少：也可能是先富起来的国家才有能力建立好的制度。为了绕开这个反向因果问题，他们在 2001 年《美国经济评论》的论文中利用了殖民时期欧洲定居者的死亡率。逻辑是：在欧洲人死亡率高的地方，殖民者难以定居，更可能建立掠夺资源的汲取性制度；死亡率低的地方，殖民者大批定居，建立了保护自己产权的制度；这些制度延续到今天。他们据此估计制度对人均收入有很大影响，并发现控制制度之后，非洲国家或靠近赤道的国家收入并不更低。</p>
+<p class="prose">2002 年发表在《经济学季刊》的“财富逆转”研究提供了另一条证据：在过去 500 年被欧洲殖民的地区中，1500 年时相对富裕（城市化率高、人口密）的地方，今天反而相对贫穷。地理条件没有变，相对贫富却颠倒了。作者认为这不利于“地理决定贫富”的说法，逆转来自殖民改变了制度。</p>
+<p class="prose">回到朝鲜半岛：按制度解释，分治后南方逐步形成以私有产权和市场为基础的经济，北方实行计划经济，个人和企业很难留住投资和创新的收益。分界线两边最大的不同不是人，而是规则。</p>
+</section>
+
+<section id="debate">
+<h2>地理、文化与争议：不止一种解释</h2>
+<p class="prose">制度解释影响很大，但不是唯一的解释，它本身的证据也受到过挑战。下面分别介绍几种主要观点。</p>
+<h3>地理</h3>
+<p class="prose">一种看法认为，气候、疾病环境、离海岸的远近直接影响生产率。Jeffrey Sachs 2003 年的 NBER 工作论文《制度并非主宰》指出，人均收入与气候带、疾病生态、离海岸距离等地理变量高度相关；他用疟疾传播强度说明，在控制制度质量之后，疟疾仍直接影响人均收入。对立的一方是 Rodrik、Subramanian 和 Trebbi 2004 年的《制度主宰》：他们估计控制制度之后，地理对收入的直接作用最多很弱，但地理会通过影响制度质量间接起作用。两项研究的分歧，部分来自样本、指标和估计方法的选择。</p>
+<h3>文化</h3>
+<p class="prose">另一种看法强调价值观：人们是否信任陌生人、是否尊重他人、是否相信努力能改变命运，会影响合作、储蓄和创业。Guiso、Sapienza 和 Zingales 2006 年的综述指出，文化概念宽泛、难以检验，长期让经济学家却步，但新的数据和方法正在让检验成为可能。Tabellini 2010 年对欧洲各地区的研究，用 19 世纪末的识字率和几个世纪以来的政治制度作为历史来源，发现由历史塑造的那部分文化（信任、尊重他人、相信个人能掌握命运）与今天的地区发展水平强相关。</p>
+<p class="prose">朝韩对比常被用来反驳“文化决定论”：分治前文化相同，结果却天差地别。支持文化作用的人则可以回应：分治八十年，两边的价值观也可能已经被不同的制度重新塑造。文化与制度可能互为因果，Tabellini 的研究本身就把历史上的政治制度当作文化的来源之一。</p>
+<h3>对制度证据的质疑</h3>
+<p class="prose">Albouy 2012 年在《美国经济评论》发表评论，指出 2001 年论文 64 个样本国家中有 36 个的定居者死亡率是借用其他国家的数据，劳工、主教和行军中士兵的死亡率被混在一起；修正这些数据问题后，死亡率与制度指标的关系不再稳健。三位作者在同期刊出的回应中认为，Albouy 的做法丢掉了接近 60% 的样本，而且在限制异常值的影响后，原结论反而更稳健。</p>
+<p class="prose">Glaeser、La Porta、Lopez-de-Silanes 和 Shleifer 2004 年的《制度导致增长吗？》提出另一种次序：常用的制度指标测的多是政策结果而非长期规则；他们的证据显示，人力资本是比制度更基本的增长来源，穷国往往先靠好政策（常常由非民主政府推行）摆脱贫困，之后才改善政治制度。他们恰恰也拿朝韩举例：据 NBER 对该文的摘要介绍，两国在 1950 年都极其贫穷，直到 1980 年前后都处于独裁统治之下，此后韩国开始民主化；作者认为韩国更好的制度是 1950 年后经济增长的结果，而不是原因。同一个案例，两派读出了不同的因果次序。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="国家贫富的几种解释对比，可横向滚动"><table class="tbl"><caption>对几种解释的简要对比；各行列出的是代表性研究，不是全部文献。</caption><thead><tr><th scope="col">解释</th><th scope="col">核心机制</th><th scope="col">代表性证据</th><th scope="col">主要质疑</th></tr></thead><tbody>
+<tr><td>制度</td><td>产权与法治决定人们能否留住投资和创新的回报</td><td>朝韩分治；殖民定居者死亡率；财富逆转</td><td>死亡率数据的可靠性；制度指标可能测的是政策</td></tr>
+<tr><td>地理</td><td>气候、疾病、交通条件直接影响生产率</td><td>疟疾在控制制度后仍影响收入</td><td>控制制度后直接作用较弱；财富逆转</td></tr>
+<tr><td>文化</td><td>信任、价值观影响合作、储蓄与创业</td><td>欧洲地区的历史文化与今天的发展水平</td><td>概念难测；文化可能由制度塑造</td></tr>
+<tr><td>人力资本与政策</td><td>教育积累和具体政策先推动增长，制度随后改善</td><td>跨国回归中人力资本的解释力</td><td>政策本身由谁决定、为何能持续</td></tr>
+</tbody></table></div>
+<p class="prose">这些解释并不互斥。地理可能塑造早期制度，制度可能塑造文化，教育既依赖制度又反过来影响制度。研究的分歧更多在于：哪一个是更深层的原因，哪一个在数量上更重要。读到“某某因素决定国家贫富”的单一结论时，可以先问：用的是哪些国家、哪种指标、怎样处理反向因果。</p>
+</section>
+
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“创意是非竞争的，所以它就是公共品，企业不会去研发。”</p><p>非竞争不等于非排他。专利、商业秘密和先发优势能让研发者在一段时间内拿到回报，所以企业会研发；问题在于溢出让社会回报高于私人回报，市场研发可能偏少，而不是为零。</p></div>
+<div class="mis"><p class="said">“朝韩对比证明了国家贫富完全由制度决定。”</p><p>它是支持制度重要的有力案例，但两边的工业起点、战争损失、外援来源并不相同。一个对比能排除“语言和历史”这类解释，却无法排除所有其他差别，也不能告诉我们制度中哪一条最关键。</p></div>
+<div class="mis"><p class="said">“韩国银行给出了精确到小数的朝鲜数据，所以 1/28 是准确值。”</p><p>这是按韩国价格和增加值率给间接获得的产量估值的结果，新闻稿本身提醒不宜与其他国家直接比较。数字表明差距很大，但误差范围远不止小数点后一位。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每题先问：这是创意本身的性质、激励问题，还是证据能否支持因果？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">试着对每张卡举一个本课以外的例子。</p><div class="cards" id="cards"></div></section>
+
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>“约为 1/28”有多可靠？</b>它是韩国银行把间接获得的朝鲜产量，按韩国价格和增加值率估值后得出的结果，既不是汇率口径也不是国际购买力平价口径，新闻稿本身提醒不宜与其他国家直接比较。产量数据难以核实、产品质量和生产技术不同，都会带来误差。数字说明差距悬殊，具体倍数应当看作有较大误差的估计。</div></li><li><div><b>同一个半岛为什么走出两种结果？</b>制度解释认为，分治后两边最大的差别是规则：南方逐步形成让个人和企业能留住投资与创新回报的产权和市场制度，北方实行计划经济。分界线由外力划定，所以被称为准自然实验。但两边的工业起点、战争、外援不同，这个对比支持“制度重要”，却不能单独证明差距全部来自制度。</div></li><li><div><b>技术从哪里来，为什么有些国家能持续创新？</b>按内生增长理论，技术是有人为了利润投资研发的结果。创意非竞争，市场越大越值钱；部分排他，研发者才能收回成本；知识溢出让社会回报高于私人回报，市场研发可能偏少。持续创新需要两样东西同时存在：能留住回报的产权与法治，以及让知识被广泛使用和改进的开放环境。至于制度、地理、文化和人力资本谁更根本，研究者仍有分歧。</div></li></ol>
+<p class="prose">下次看到“某国为什么富”的解释，可以先问三件事：创意在这里怎样被生产和扩散；投资者是否相信能留住回报；作者用什么办法把原因和结果分开。</p>
+</section>
+
+<section id="sources"><h2>资料来源</h2>
+<ol class="qs">
+<li>Bank of Korea，<a href="https://www.bok.or.kr/eng/bbs/E0000634/view.do?nttId=11063397&amp;menuNo=400069">Gross Domestic Product Estimates for North Korea in 2025</a>，2026 年 7 月 31 日；本课引用了新闻稿中的增长率、名义 GNI、人均 GNI、人口及估算方法说明。</li>
+<li>The Korea Times（Yonhap），<a href="https://www.koreatimes.co.kr/foreignaffairs/northkorea/20260731/n-korean-economy-grows-over-3-for-3rd-consecutive-year-in-2025-bok">N. Korean economy grows over 3% for 3rd consecutive year in 2025: BOK</a>，2026 年 7 月 31 日；媒体对同一新闻稿的报道，用于核对数字。</li>
+<li>Randall S. Jones，Korea Economic Institute of America，<a href="https://keia.org/the-peninsula/what-to-make-of-north-koreas-fastest-economic-growth-since-2016/">What to Make of North Korea’s Fastest Economic Growth Since 2016</a>，2025 年 9 月 12 日；本课引用了其对朝鲜数据不确定性的讨论。</li>
+<li>Charles R. Frank Jr., Kwang Suk Kim, Larry E. Westphal，<a href="https://www.nber.org/chapters/c4063">Economic Growth in South Korea since World War II</a>，NBER，1975 年；本课引用了 1940 年南北发电量和工业产出的分布。</li>
+<li>Paul M. Romer，<a href="https://doi.org/10.1086/261725">Endogenous Technological Change</a>，Journal of Political Economy 98(5, Part 2)，1990 年；本课引用了技术作为非竞争、部分排他物品的设定及摘要中的结论。</li>
+<li>The Royal Swedish Academy of Sciences，<a href="https://www.nobelprize.org/prizes/economic-sciences/2018/press-release/">2018 年诺贝尔经济学奖新闻稿</a>与<a href="https://www.nobelprize.org/prizes/economic-sciences/2024/press-release/">2024 年诺贝尔经济学奖新闻稿</a>；本课引用了授奖理由。</li>
+<li>Adam B. Jaffe, Manuel Trajtenberg, Rebecca Henderson，<a href="https://doi.org/10.2307/2118401">Geographic Localization of Knowledge Spillovers as Evidenced by Patent Citations</a>，Quarterly Journal of Economics 108(3)，1993 年；专利引用的地理本地化。</li>
+<li>Charles I. Jones, John C. Williams，<a href="https://doi.org/10.1162/003355398555856">Measuring the Social Return to R&amp;D</a>，Quarterly Journal of Economics 113(4)，1998 年；最优研发投入至少为实际投入 4 倍的估计。</li>
+<li>Nicholas Bloom, Mark Schankerman, John Van Reenen，<a href="https://doi.org/10.3982/ECTA9466">Identifying Technology Spillovers and Product Market Rivalry</a>，Econometrica 81(4)，2013 年；研发社会回报至少为私人回报两倍的估计。</li>
+<li>Daron Acemoglu, Simon Johnson, James A. Robinson，<a href="https://www.nber.org/papers/w10481">Institutions as the Fundamental Cause of Long-Run Growth</a>，NBER 工作论文 10481，2004 年；把朝鲜半岛分治作为准自然实验。</li>
+<li>Daron Acemoglu, Simon Johnson, James A. Robinson，<a href="https://doi.org/10.1257/aer.91.5.1369">The Colonial Origins of Comparative Development: An Empirical Investigation</a>，American Economic Review 91(5)，2001 年；定居者死亡率与制度。</li>
+<li>Daron Acemoglu, Simon Johnson, James A. Robinson，<a href="https://doi.org/10.1162/003355302320935025">Reversal of Fortune</a>，Quarterly Journal of Economics 117(4)，2002 年；财富逆转。</li>
+<li>David Y. Albouy，<a href="https://doi.org/10.1257/aer.102.6.3059">The Colonial Origins of Comparative Development: An Empirical Investigation: Comment</a>，American Economic Review 102(6)，2012 年；以及三位作者的<a href="https://doi.org/10.1257/aer.102.6.3077">回应</a>，同期；关于死亡率数据的争论。</li>
+<li>Edward L. Glaeser, Rafael La Porta, Florencio Lopez-de-Silanes, Andrei Shleifer，<a href="https://doi.org/10.1023/B:JOEG.0000038933.16398.ed">Do Institutions Cause Growth?</a>，Journal of Economic Growth 9(3)，2004 年；人力资本与政策先行的观点。</li>
+<li>NBER Digest，<a href="https://www.nber.org/digest/dec04/democracy-dictators-and-growth">Democracy, Dictators, and Growth</a>，2004 年 12 月；对 Glaeser 等人论文的摘要介绍，本课引用了其中对朝韩案例的表述。</li>
+<li>Dani Rodrik, Arvind Subramanian, Francesco Trebbi，<a href="https://doi.org/10.1023/B:JOEG.0000031425.72248.85">Institutions Rule</a>，Journal of Economic Growth 9(2)，2004 年；Jeffrey D. Sachs，<a href="https://www.nber.org/papers/w9490">Institutions Don’t Rule: Direct Effects of Geography on Per Capita Income</a>，NBER 工作论文 9490，2003 年；关于地理作用的两种看法。</li>
+<li>Guido Tabellini，<a href="https://doi.org/10.1111/j.1542-4774.2010.tb00537.x">Culture and Institutions: Economic Development in the Regions of Europe</a>，Journal of the European Economic Association 8(4)，2010 年；Luigi Guiso, Paola Sapienza, Luigi Zingales，<a href="https://doi.org/10.1257/jep.20.2.23">Does Culture Affect Economic Outcomes?</a>，Journal of Economic Perspectives 20(2)，2006 年；文化解释。</li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var QUIZ=[
+{q:'一家公司花 1 亿元研发出一种电池配方，之后每块电池生产成本 50 元。关于这个配方，哪种说法最准确？',o:['配方像钢材一样，多一条产线使用就少一份','配方非竞争，所以一定是公共品，企业从一开始就不会研发','配方可同时用于任意多条产线，产量越大，分摊到每块电池的研发成本越低','非竞争意味着创造这个配方本身不需要成本'],a:2,why:'创意的成本只付一次，可以被无限复用，所以规模越大平均成本越低。非竞争不等于非排他，专利和商业秘密能让企业收回部分回报；创意的生产也要花大量资源。'},
+{q:'某城市一家芯片企业的工程师常跳槽到附近企业，带去了研发中积累的经验。从整个社会看，最可能的结论是什么？',o:['企业只计算自己能拿到的回报，没算到溢出给别人的好处，市场研发可能少于社会最优','溢出让企业研发过多，应当征税抑制','溢出纯属损失，应当禁止人员流动','有了专利制度，溢出就完全消失了，不影响研发决策'],a:0,why:'知识溢出是正外部性，社会回报高于私人回报，市场研发可能偏少。专利只能部分排他，经验和思路仍会外溢；限制流动也会妨碍知识扩散。'},
+{q:'有人说：“朝韩分治前文化、语言相同，之后贫富悬殊，这证明了贫富完全由制度决定。”最恰当的评价是？',o:['正确，因为一个对比就足以排除所有其他解释','错误，朝韩对比说明制度毫无作用','正确，因为韩国银行的数字精确到小数，误差可以忽略','它支持制度重要，但两边的工业起点、战争和外援也不同，不能把差距全部归于制度'],a:3,why:'准自然实验排除了语言和早期历史等差别，但分治时北部集中了发电和重工业，此后两边的战争损失和外援来源也不同。它是有力案例，不是单独的完整证明。'},
+{q:'韩国银行估计朝鲜 2025 年人均 GNI 约为韩国的 1/28。下列读法中哪一个最恰当？',o:['可以直接拿它与世界银行公布的其他国家人均收入排名','它是按韩国价格和增加值率给朝鲜产量估值的结果，表明差距悬殊，但不宜与其他国家直接比较','名义 GNI 差 56 倍而人均差 28 倍，前后矛盾，说明数据有误','朝鲜增速 3.5% 高于韩国 1.1%，所以几年内差距就会消失'],a:1,why:'新闻稿本身注明口径不宜跨国直接比较。总量与人均倍数不同是因为韩国人口约为朝鲜的 2 倍；在 28 倍的差距下，两三个百分点的增速差需要很多年才能明显缩小差距。'},
+{q:'一项研究发现控制制度质量后，地理变量对收入的直接作用很弱；另一项研究发现控制制度后，疟疾仍直接影响收入。最合理的理解是？',o:['只要一篇研究结论显著，问题就定论了','制度和地理只能有一个是对的','地理可能通过制度间接起作用，也可能有直接作用，结论受样本、指标和估计方法影响，争议仍在','两项研究都只是相关，不涉及因果，所以都没有价值'],a:2,why:'Rodrik 等人与 Sachs 的分歧部分来自样本和方法选择。各种解释并不互斥，研究争论的是哪个更深层、数量上更重要。两项研究都试图处理因果问题，不能一概否定。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'内生增长',en:'endogenous growth',d:'把技术进步看作研发投资等经济决策的结果，而不是模型外给定。代表作是 Romer 1990 年的《内生技术变迁》。'},
+{t:'非竞争性',en:'non-rivalry',d:'一人使用不减少他人可用的数量。创意可被无限复用，所以市场越大，分摊到每件产品的研发成本越低。'},
+{t:'部分排他',en:'partial excludability',d:'专利、商业秘密等能在一段时间内阻止部分人免费使用创意，但不能完全阻止。这让研发者能收回部分回报。'},
+{t:'知识溢出',en:'knowledge spillover',d:'一方的研发让其他人在不付费的情况下获益，是正外部性。它使研发的社会回报高于私人回报，市场研发可能偏少。'},
+{t:'制度',en:'institutions',d:'约束人们互动的规则，包括法律、合同、监管，以及谁能制定和改变这些规则。它决定投资和创新的回报归谁。'},
+{t:'产权',en:'property rights',d:'使用、排除他人、转让资源并获得收益的权利。产权有保障，人们才愿意为未来回报投资。'},
+{t:'法治',en:'rule of law',d:'规则事先公开、对掌权者同样适用，纠纷按规则裁决而不由当权者临时决定。它让产权保护变得可信。'},
+{t:'包容性与汲取性制度',en:'inclusive vs extractive institutions',d:'前者保护广泛人群的产权与市场进入，后者让少数掌权者攫取多数人的资源。Acemoglu、Johnson、Robinson 的分类。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
