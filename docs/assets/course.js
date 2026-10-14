@@ -282,7 +282,7 @@
         {
           id: 'm12-04', title: '银行挤兑、泡沫与金融危机',
           en: 'Bank runs, bubbles and financial crises',
-          path: 'm12/04-bank-runs-financial-crises.html', status: 'todo'
+          path: 'm12/04-bank-runs-financial-crises.html', status: 'done'
         }
       ]
     },

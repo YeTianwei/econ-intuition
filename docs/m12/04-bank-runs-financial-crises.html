@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>银行挤兑、泡沫与金融危机</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m12-04">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>银行挤兑、泡沫与金融危机</h1>
+<p class="sub">Bank runs, bubbles and financial crises</p>
+<p class="lede">2023 年 3 月，一家资产超过 2000 亿美元的美国银行在两天之内倒下。没有坦克，没有火灾，只有储户在手机上点“转出”。这一课回答两个问题：一家看起来还算健康的银行为什么也会倒闭？资产价格为什么会先涨过头、再一起崩下来？</p>
+<p class="meta">约 25 分钟 · 1 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">需要的背景：银行只留一小部分存款作为准备金（见<a href="../m10/02-banks-create-money.html#reserves">银行如何创造货币</a>），以及博弈中可能存在不止一个均衡（见<a href="../m05/01-nash-equilibrium.html#equilibrium">纳什均衡</a>）。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>彭博社，2023 年 3 月 11 日，经 Fortune 转载；标题为中文翻译。<a href="https://fortune.com/2023/03/11/silicon-valley-bank-run-42-billion-attempted-withdrawals-in-one-day">原文链接</a></figcaption><blockquote>硅谷银行储户和投资者周四试图提走 420 亿美元</blockquote></figure>
+<p class="prose">按监管机构的文件，事情这样发生：</p>
+<ul class="qs">
+<li><b>3 月 8 日</b>：硅谷银行（SVB）的母公司宣布已卖出 210 亿美元可供出售证券，确认税后亏损 18 亿美元，并计划融资 22.5 亿美元补充资本。</li>
+<li><b>3 月 9 日</b>：存款开始飞快流出。FDIC 主席在国会作证时说，当天结束时已有 420 亿美元存款离开银行。加州金融保护与创新局（DFPI）的接管令显示，当天收盘时银行现金余额为负约 9.58 亿美元。</li>
+<li><b>3 月 10 日</b>：DFPI 关闭银行，任命联邦存款保险公司（FDIC）为接管人。按 FDIC 公告，截至 2022 年末该行总资产约 2090 亿美元，存款约 1754 亿美元。美联储的复盘报告说，管理层预计 3 月 10 日还会再流出超过 1000 亿美元，两天合计约占存款的 85%。</li>
+<li><b>3 月 12 日</b>：财政部、美联储和 FDIC 联合宣布启用“系统性风险例外”，储户从 3 月 13 日起可以取用全部存款，包括超过 25 万美元保险额度的部分；股东和部分无担保债权人不受保护。美联储同时推出新的银行定期融资工具。</li>
+</ul>
+<p class="prose">FDIC 的证词还提到，2022 年末 SVB 有 88% 的存款没有存款保险。</p>
+<ol class="qs"><li>一天流出 420 亿美元，SVB 是已经资不抵债，还是一时拿不出现金？这两件事有什么区别？</li><li>一个并不急着用钱的储户，为什么也要赶紧转走存款？</li><li>监管最后保护了所有存款。这样做阻止了什么，又可能带来什么代价？</li></ol>
+</section>
+<section id="mismatch">
+<h2>期限错配：银行天生“借短贷长”</h2>
+<p class="prose">银行的负债主要是存款，储户随时可以取走。银行的资产主要是贷款和债券，期限往往是几年甚至几十年。用随时可能被要求偿还的钱去做长期投资，叫<b>期限错配</b><span class="en"> (maturity mismatch)</span>。</p>
+<p class="prose">期限错配不是银行的失误，而是它存在的理由：储户想要随取随用，企业和买房的人想要长期借款，银行站在中间，把短期的钱变成长期的贷款。代价是，只要足够多的储户同时来取钱，银行手里的现金就不够。</p>
+<p class="prose">这时要分清两种困境。<a href="../m10/02-banks-create-money.html#modern">流动性</a>不足是指资产总值够还债，但一时变不成现金。<b>资不抵债</b><span class="en"> (insolvency)</span> 是指资产总值已经小于负债。两者会互相转化：银行为了凑现金而低价抛售资产，账面损失变成真实损失，原本只是缺现金的银行也可能被卖成资不抵债。</p>
+<p class="prose">SVB 正是两者交织。美联储的复盘报告说，2019 至 2021 年间存款大量涌入，银行把它们主要投向期限较长的证券；2022 年利率快速上升，这些证券的未实现亏损迅速扩大。3 月 8 日的公告把亏损摆上了台面。而据彭博社对 DFPI 接管令的转述，接管令写道银行在 3 月 9 日之前财务状况良好，是挤兑让它陷入困境。两份文件强调的侧面不同，但都说明：在挤兑面前，资产的“账面价值”和“今天能卖多少钱”是两回事。</p>
+<div class="analogy"><span class="lab">类比</span><p>一座电影院有足够的座位和几个安全出口。平时观众散场时一排排走，出口绰绰有余。如果有人喊“着火了”，即使没有火，所有人同时挤向出口也会造成踩踏。出口的宽度就像银行的现金：它是按“正常散场”设计的，不是按“所有人同时离开”设计的。</p></div>
+</section>
+<section id="run">
+<h2>挤兑为什么会自我实现</h2>
+<p class="prose"><b>银行挤兑</b><span class="en"> (bank run)</span> 是大批储户因为担心银行出事而同时取款。关键在于，每个储户的最优选择取决于别人怎么做。</p>
+<ul class="qs">
+<li>如果大家都不急着取，银行的现金够付少数人的日常需要，长期资产到期后还能付利息。这时“等”比“取”好：等到期能多拿一点利息。</li>
+<li>如果很多人去取，银行被迫低价抛售长期资产，留到最后的人可能一分钱都拿不到。这时“取”比“等”好：先到先得。</li>
+</ul>
+<p class="prose">这是一个协调问题，有两个均衡：大家都等的“好均衡”，以及大家都取的“挤兑均衡”。两者都满足纳什均衡的条件：给定别人的做法，没有人想单独改变。这种情况叫<b>多重均衡</b><span class="en"> (multiple equilibria)</span>。落到哪一个，往往取决于大家对别人行为的预期。一则传言如果让足够多的人相信别人会去取钱，它就会变成事实。</p>
+<p class="prose">这个思路来自 Douglas Diamond 和 Philip Dybvig 1983 年的论文《银行挤兑、存款保险与流动性》：活期存款合同能提供流动性，但也带来多重均衡，其中之一就是挤兑。两人与 Ben Bernanke 因银行与金融危机方面的研究获得 2022 年诺贝尔经济学奖。</p>
+<h3>临界点在哪里</h3>
+<p class="prose">下图的设定：每位储户存 1 份钱，提前取回拿 1 份，等到期承诺拿 1.05 份。银行把 L 留作现金，其余投入长期资产，到期价值是投入的 1.1 倍，但临时卖掉只能卖投入的 60%。当提款比例为 w 时，留下来的人能分到多少，取决于银行为了付出 w 卖掉了多少长期资产。令“留下的人人均拿到 1 份”，可以解出临界提款比例：</p>
+<p class="formula">w* = 0.12 + 0.88 × L</p>
+<p class="prose">提款比例低于 w*，等待的人仍能拿回全额，“等”更划算；超过 w*，等待者开始亏钱，所有人都想取。现金比例 L 越高，w* 越高，银行越扛得住。</p>
+<p class="prose">现实中储户并不知道 w* 的确切位置，各自有不同的判断。图中假设：除了一开始就去取钱的人，其余储户各有一个“容忍线”，从 w* 的一半到 w* 均匀分布。最紧张的人看到提款比例达到 w* 的一半就跟着取，最镇定的人坚持到 w* 才取。每一轮，大家看到上一轮的累计提款比例，再决定这一轮取不取。</p>
+<div class="widget" id="w-run" aria-labelledby="w1t">
+<h3 id="w1t">图 1　挤兑模拟：等，还是取？</h3>
+<div class="chips" role="group" aria-label="选择情景"><button type="button" class="chip" data-n="100" data-l="15" data-p="10" aria-pressed="false">传言较少：10% 先取</button><button type="button" class="chip" data-n="100" data-l="15" data-p="20" aria-pressed="true">传言扩散：20% 先取</button><button type="button" class="chip" data-n="100" data-l="45" data-p="20" aria-pressed="false">现金充足：同样 20% 先取</button></div>
+<div class="chips" role="group" aria-label="选择兜底政策"><button type="button" class="chip" data-pol="none" aria-pressed="true">无兜底</button><button type="button" class="chip" data-pol="ins" aria-pressed="false">存款保险</button><button type="button" class="chip" data-pol="lolr" aria-pressed="false">最后贷款人</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw s"></span>下一轮的累计提款比例（给定本轮）</li><li><span class="sw diag"></span>45° 线：两轮相同</li><li><span class="sw cobweb"></span>逐轮路径</li><li><span class="sw g"></span>临界比例 w*</li><li><span class="mk"></span>均衡</li></ul>
+<div class="chart" id="chart2" style="min-height:0"></div>
+<ul class="legend"><li><span class="mk first"></span>一开始就取钱</li><li><span class="mk later"></span>后来跟着取</li><li><span class="mk wait"></span>仍在等待</li></ul>
+<div class="controls">
+<div class="ctl"><label for="nn">储户人数 N（人）</label><output id="nn-value" for="nn"></output><input id="nn" type="range" min="10" max="200" step="10" value="100" aria-describedby="nn-hint"><span class="hint" id="nn-hint">10~200 人；每人存 1 份钱。人数越少，比例只能一格一格地变。</span></div>
+<div class="ctl"><label for="ll">流动资产比例 L（%）</label><output id="ll-value" for="ll"></output><input id="ll" type="range" min="5" max="60" step="1" value="15" aria-describedby="ll-hint"><span class="hint" id="ll-hint">5%~60%；银行把存款中多少留作现金，其余投入长期资产。</span></div>
+<div class="ctl full"><label for="pp">一开始就取钱的比例 p（%）</label><output id="pp-value" for="pp"></output><input id="pp" type="range" min="0" max="50" step="1" value="20" aria-describedby="pp-hint"><span class="hint" id="pp-hint">0%~50%；第 0 轮去取钱的人，包括真正急用钱的和听到传言就跑的。</span></div>
+</div>
+<div class="chips"><button type="button" class="chip" id="step">下一轮</button><button type="button" class="chip" id="toend">走到最后</button><button type="button" class="chip" id="reset">回到第 0 轮</button></div>
+<dl class="read pairs"><div><dt>银行能承受的提款比例 w*</dt><dd id="r-ws"></dd></div><div><dt>引发挤兑的最少初始取款人数</dt><dd id="r-pc"></dd></div><div><dt>当前轮次 / 累计取款</dt><dd id="r-now"></dd></div><div><dt>本设定下的均衡</dt><dd id="r-eq"></dd></div><div><dt>每 100 元存款最终拿回：等待者 / 取款者</dt><dd id="r-pay"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="每一轮的取款情况，可横向滚动"><table class="tbl" id="rounds"><caption>每一轮看到上一轮的累计提款比例后，容忍线已被越过的储户去取钱。超过 6 轮时只列前两轮和最近三轮。</caption><thead><tr><th scope="col">轮次</th><th scope="col" class="num">新增人数</th><th scope="col" class="num">累计占比</th><th scope="col">银行状况</th></tr></thead><tbody></tbody></table></div>
+<p class="note">全部数字为教学示意，不对应 SVB 的真实资产负债表。设定：提前取款拿 1 份，等到期承诺拿 1.05 份；长期资产到期值 1.1 倍，急售只值 60%；挤兑时银行把全部资产变现，按人平均分配（现实中是先到先得，后来者拿得更少）。“最后贷款人”按长期资产面值抵押放贷，年化成本 2%。“存款保险”保证等待者拿到承诺的 1.05 份，银行付不足的部分由保险基金补上。</p>
+</div>
+<h3>三个实验</h3>
+<ol class="qs"><li>选“传言较少”和“传言扩散”来回切换。银行的资产一模一样，只是一开始去取钱的人从 10 人变成 20 人，结局就从安然无恙变成全部挤兑。临界点在 13 人：多 1 个人，结果天差地别。</li><li>选“现金充足”。同样 20% 的人先取，w* 升到约 52%，挤兑不再发生。代价是银行把更多钱放在不生息的现金上，平时赚得更少。</li><li>回到“传言扩散”，再点“存款保险”或“最后贷款人”。挤兑均衡消失了：没有人担心自己排在后面拿不到钱，也就没人跟着跑。把 p 拉到 26% 以上再看存款保险：银行确实亏了，保险基金要掏钱补足。</li></ol>
+</section>
+<section id="backstop">
+<h2>两道防线：存款保险与最后贷款人</h2>
+<p class="prose">既然挤兑来自“怕别人先取”，打断它的办法就是让等待者不再吃亏。</p>
+<p class="prose"><b>存款保险</b><span class="en"> (deposit insurance)</span> 由政府或专门机构保证，银行倒闭时储户仍能拿回一定额度以内的存款。美国的标准额度是每位储户在每家银行 25 万美元。额度内的储户知道自己一定能拿回钱，就没有理由抢跑。SVB 的问题在于 88% 的存款没有保险：按美联储的复盘，它的储户高度集中于科技企业和风险投资圈，单个账户金额往往远超额度。这些储户有充分的理由跑。</p>
+<p class="prose"><b>最后贷款人</b><span class="en"> (lender of last resort)</span> 是指中央银行在恐慌中向暂时缺现金的银行放贷，让它不必贱卖资产。19 世纪英国作家白芝浩在《伦巴第街》中阐述的做法，后人常概括为三条：放贷要充分，利率要高于平时，抵押品要优质。思路是救流动性，不救资不抵债：资产够好的银行能借到钱，资产已经不够的银行借不到。SVB 倒闭后美联储推出的定期融资工具，允许银行以合格证券的面值作抵押借款最长一年，就是在避免银行为了凑现金而亏本卖债。美联储的复盘也指出，SVB 此前没有测试过从央行贴现窗口借款的能力，抵押品和操作安排都没准备好。</p>
+<p class="prose">两道防线都有代价，最主要的是<a href="../m06/02-moral-hazard.html#banks">道德风险</a>：储户确定能拿回钱，就不再费心挑选稳健的银行；银行知道有人兜底，可能更敢冒险。所以存款保险通常有额度上限，并配合资本要求和监管；最后贷款人强调只借给有优质抵押品的银行。</p>
+<h3>SVB 的全额保护：两种看法</h3>
+<p class="prose">支持的一方认为，当时风险正在蔓延：同一天另一家银行 Signature Bank 也被关闭，联合声明对两家银行都启用了例外。如果大额储户相信超额存款会受损，其他有类似储户结构的银行也可能遭遇挤兑。按联合声明和 FDIC 公告，股东和部分无担保债权人没有得到保护，存款保险基金的损失通过向银行业收取特别评估费弥补，而不是由纳税人承担。</p>
+<p class="prose">担忧的一方认为，事后把保护扩大到额度之外，会让市场相信大额存款也有隐性担保，削弱储户对银行的监督。FDIC 在 2023 年 5 月的存款保险改革报告中也把这一点列为核心取舍：把保险扩大到所有存款几乎可以消除挤兑，但道德风险会上升，反而可能增加整个体系的风险。报告倾向于对企业支付账户提高额度的“定向保护”，同时承认如何界定这类账户是难题。特别评估费最终由谁负担，也是争论的一部分。</p>
+</section>
+<section id="leverage">
+<h2>杠杆与去杠杆螺旋</h2>
+<p class="prose">挤兑是负债一侧的危机：钱被突然抽走。资产一侧也有自己的放大器，叫<b>杠杆</b><span class="en"> (leverage)</span>：用借来的钱买资产。常用资产与自有资金之比来衡量，自有资金 10 元、借款 90 元买入 100 元资产，杠杆就是 10 倍。</p>
+<p class="prose">杠杆让收益和损失都按倍数放大。资产价格跌 5%，就是 5 元，全部由 10 元自有资金承担，自有资金少了一半。为了把杠杆降回原来的水平，机构只能卖资产还债。如果很多机构同时这样做，抛售本身又压低价格，价格下跌再逼出新一轮抛售。这个循环叫<b>去杠杆螺旋</b><span class="en"> (deleveraging spiral)</span>。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="去杠杆螺旋的教学示例，可横向滚动"><table class="tbl"><caption>教学示意：一家机构坚持 10 倍杠杆。单位：元。</caption><thead><tr><th scope="col">步骤</th><th scope="col" class="num">资产</th><th scope="col" class="num">借款</th><th scope="col" class="num">自有资金</th><th scope="col" class="num">杠杆</th></tr></thead><tbody>
+<tr><td>开始</td><td class="num">100</td><td class="num">90</td><td class="num">10</td><td class="num">10 倍</td></tr>
+<tr><td>资产价格跌 5%</td><td class="num">95</td><td class="num">90</td><td class="num">5</td><td class="num">19 倍</td></tr>
+<tr><td>卖出 45 元资产还债</td><td class="num">50</td><td class="num">45</td><td class="num">5</td><td class="num">10 倍</td></tr>
+<tr><td>大家都在卖，价格再跌 5%</td><td class="num">47.5</td><td class="num">45</td><td class="num">2.5</td><td class="num">19 倍</td></tr>
+</tbody></table></div>
+<p class="prose">一家机构的困境通过抛售压价、互相借贷和恐慌情绪传给其他机构，最终危及整个金融体系运转的风险，叫<b>系统性风险</b><span class="en"> (systemic risk)</span>。SVB 一案启用的“系统性风险例外”，正是因为监管者判断一家银行的倒闭可能引发连锁挤兑。</p>
+</section>
+<section id="bubbles">
+<h2>泡沫的典型阶段</h2>
+<p class="prose"><b>资产泡沫</b><span class="en"> (asset bubble)</span> 是指资产价格大幅高于用未来收益能合理解释的水平，而人们买入主要是因为预期价格还会涨。泡沫和挤兑有相同的内核：自我实现的预期。大家都相信会涨，买入就推高价格；大家都相信会跌，抛售就压低价格。</p>
+<p class="prose">经济史学家 Kindleberger 在《疯狂、惊恐和崩溃》一书中，借用经济学家 Hyman Minsky 的模型描述信贷推动的繁荣与危机。该书 2023 年第 8 版的章节摘要这样概括：一个“位移”冲击带来新的获利机会，引发投机、信贷扩张和亢奋；随后是财务困境，危机以恐慌和崩溃告终。Minsky 强调信贷供给是顺周期的：繁荣时增加，萧条时减少。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="泡沫的典型阶段，可横向滚动"><table class="tbl comparison"><caption>按 Aliber、Kindleberger、McCauley《疯狂、惊恐和崩溃》第 8 版的概括整理</caption><thead><tr><th scope="col">阶段</th><th scope="col">发生什么</th></tr></thead><tbody>
+<tr><td>位移</td><td>新技术、政策变化或利率下降等冲击，带来新的获利机会。</td></tr>
+<tr><td>投机与信贷扩张</td><td>价格上涨吸引更多买家，银行放贷增加，杠杆上升。</td></tr>
+<tr><td>亢奋</td><td>上涨本身成为买入理由，“这次不一样”的说法流行。</td></tr>
+<tr><td>财务困境</td><td>价格涨不动，先知先觉者获利了结，负债高的人开始吃紧。</td></tr>
+<tr><td>恐慌与崩溃</td><td>抛售、去杠杆和挤兑互相加强，价格急跌，信贷收缩。</td></tr>
+</tbody></table></div>
+<p class="prose">该书作者也承认，各阶段在现实中很难截然分开。更难的是事前判断：价格高可能是泡沫，也可能反映了真实的盈利前景。很多泡沫只有在破裂之后才被普遍承认。</p>
+<div class="analogy"><span class="lab">类比</span><p>抢购网红限量鞋：一开始有人发现转手能赚钱（位移），越来越多人借钱囤货（信贷扩张），价格涨到大家只关心“下周能卖多少”（亢奋）。某天新款上市、几位大玩家悄悄出货（困境），二手价一跳水，借钱囤货的人只好低价甩卖，价格跌得更快（崩溃）。</p></div>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“银行被挤兑，说明它本来就有问题。”</p><p>不一定。期限错配让即使资产不错的银行也拿不出足够现金应付集体取款。挤兑可以自我实现：贱卖资产会把流动性问题变成真实亏损。</p></div>
+<div class="mis"><p class="said">“只要存款保险覆盖所有存款，就一劳永逸了。”</p><p>全额保险几乎能消除挤兑，但储户不再监督银行，银行冒险的激励增加。所以通常设额度，并配合资本要求和监管。</p></div>
+<div class="mis"><p class="said">“泡沫很容易识别，价格涨得快就是泡沫。”</p><p>价格快涨也可能有基本面支撑。泡沫的特征是买入主要靠“还会涨”的预期和不断扩张的借贷，事前很难准确判断。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先问：给定别人会怎么做，这个人取钱还是等更划算？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">把负债一侧（挤兑）和资产一侧（杠杆、泡沫）的放大器放在一起回忆。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>SVB 是资不抵债，还是一时缺现金？</b>两者交织。利率上升让它的长期证券出现大额未实现亏损，这是资产一侧的真问题；但让它在一天之内倒下的，是 420 亿美元的集体取款。期限错配意味着这些证券要么低价卖掉，要么来不及变现。挤兑把账面亏损变成了必须马上兑现的亏损。</div></li><li><div><b>不急用钱的储户为什么也要跑？</b>88% 的存款没有保险。给定别人在转走存款，留下来的人可能拿不回全额，转走才是最优反应。图 1 中，一开始去取钱的人一旦越过临界点，容忍线不同的储户一轮轮跟上，很快所有人都在取。SVB 的储户高度集中在同一个圈子，消息在社交媒体上传得很快，美联储的复盘把这列为取款“高度相关”的原因之一。</div></li><li><div><b>全额保护阻止了什么，代价是什么？</b>它让其他银行的大额储户不必担心排在后面，相当于在图 1 中打开“存款保险”，挤兑均衡消失，以阻止危机蔓延。代价是道德风险：大额储户的监督可能变弱，市场可能预期下次也会有人兜底；损失由银行业的特别评估费承担，最终也可能通过费用转给客户。两种看法的权衡至今仍在讨论。</div></li></ol>
+<p class="prose">下次看到“某银行遭挤兑”的新闻，可以接着问：它的存款中有多少没有保险？储户是否高度集中？资产能不能不打折地快速变现？央行是否提供了抵押借款？</p>
+<button type="button" class="chip" id="goChart">回到图 1 的默认情景</button>
+</section>
+<section id="sources"><h2>资料来源</h2><ol class="qs">
+<li>Board of Governors of the Federal Reserve System（Michael S. Barr），<a href="https://www.federalreserve.gov/publications/files/svb-review-20230428.pdf">Review of the Federal Reserve’s Supervision and Regulation of Silicon Valley Bank</a>，2023-04-28；本课引用了 3 月 8 日的证券出售与融资计划、3 月 9 日超过 400 亿美元流出、预计 3 月 10 日再流出超过 1000 亿美元并约占存款 85%、长期证券与利率风险、取款高度相关、未测试贴现窗口等内容。</li>
+<li>Martin J. Gruenberg（FDIC），<a href="https://www.fdic.gov/news/speeches/2023/spmar2723.html">Recent Bank Failures and the Federal Regulatory Response</a>，美国参议院银行委员会证词，2023-03-27；本课引用了 3 月 9 日 420 亿美元存款流出、88% 存款未受保险、系统性风险认定的程序。</li>
+<li>FDIC，<a href="https://www.fdic.gov/news/press-releases/2023/pr23016.html">FDIC Creates a Deposit Insurance National Bank of Santa Clara to Protect Insured Depositors of Silicon Valley Bank</a>，2023-03-10；本课引用了 DFPI 关闭银行、FDIC 任命为接管人、2022 年末资产约 2090 亿美元和存款约 1754 亿美元、25 万美元额度。</li>
+<li>U.S. Department of the Treasury，<a href="https://home.treasury.gov/news/press-releases/jy1337">Joint Statement by Treasury, Federal Reserve, and FDIC</a>，2023-03-12；本课引用了系统性风险例外、储户自 3 月 13 日起可取用全部存款、股东和部分无担保债权人不受保护、Signature Bank 同样适用。</li>
+<li>FDIC，<a href="https://www.fdic.gov/news/press-releases/2023/pr23019.html">FDIC Acts to Protect All Depositors of the former Silicon Valley Bank</a>，2023-03-13；本课引用了全部存款转入过桥银行、存款保险基金损失通过对银行的特别评估弥补。</li>
+<li>Federal Reserve Board，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20230312a.htm">Federal Reserve Board announces it will make available additional funding to eligible depository institutions</a>，2023-03-12；本课引用了银行定期融资工具最长一年、抵押品按面值计算。</li>
+<li>Austin Weinstein、彭博社（Fortune 转载），<a href="https://fortune.com/2023/03/11/silicon-valley-bank-run-42-billion-attempted-withdrawals-in-one-day">Silicon Valley Bank run: $42 billion in attempted withdrawals in one day</a>，2023-03-11；本课引用了开场标题，以及报道转述的 DFPI 接管令内容：负 9.58 亿美元现金余额、3 月 9 日前财务状况良好。</li>
+<li>FDIC，<a href="https://www.fdic.gov/analysis/options-deposit-insurance-reforms/report/options-deposit-insurance-reform-full.pdf">Options for Deposit Insurance Reform</a>，2023-05-01；本课引用了全额保险与道德风险的取舍、定向保护企业支付账户的建议。</li>
+<li>Douglas W. Diamond、Philip H. Dybvig，<a href="https://minneapolisfed.org/research/quarterly-review/bank-runs-deposit-insurance-and-liquidity">Bank Runs, Deposit Insurance, and Liquidity</a>，Journal of Political Economy 1983 年第 91 卷第 3 期，明尼阿波利斯联储 Quarterly Review 重刊；本课引用了活期存款合同带来多重均衡、其中之一是挤兑的结论。</li>
+<li>NBER，<a href="https://www.nber.org/news/2022-nobel-prize-celebrates-banking-research">2022 Nobel Prize Celebrates Banking Research</a>，2022-10；本课引用了 Bernanke、Diamond、Dybvig 因银行与金融危机研究获奖。</li>
+<li>Robert Z. Aliber、Charles P. Kindleberger、Robert N. McCauley，<a href="https://ideas.repec.org/h/spr/sprchp/978-3-031-16008-0_2.html">The Anatomy of a Typical Crisis</a>，《Manias, Panics, and Crashes》第 8 版，Springer，2023；本课引用了 Minsky 模型的阶段概括和信贷顺周期的观点。</li>
+<li>Stefano Ugolini，<a href="https://halshs.archives-ouvertes.fr/halshs-00844045">Bagehot for Beginners: The Making of Lender of Last Resort Operations in the Mid-Nineteenth Century</a>，2012；本课引用了白芝浩原则常被后人概括为三条这一点。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,R=1.10,H=0.60,PROM=1.05,PEN=1.02,MAXR=60;
+function $(s){return document.querySelector(s);}
+function pct(v,d){return (v*100).toFixed(d==null?1:d).replace(/\.0$/,'')+'%';}
+// 银行能承受的提款比例：等待者人均拿回恰好 1 份时的 w。
+function wstar(L){return Math.min(1,(R*(1-L)+R*L/H-1)/(R/H-1));}
+// 提款比例为 w 时，银行留给等待者的资产价值（每份存款）。返回 null 表示资产已卖光。
+function value(w,L,pol){
+  if(w<=L){return L-w+R*(1-L);}
+  if(pol==='lolr'){return R*(1-L)-PEN*(w-L);}
+  var left=(1-L)-(w-L)/H;return left<0?null:R*left;
+}
+function sim(N,L,p,pol){
+  var ws=wstar(L),k0=Math.round(p*N),M=N-k0,tau=[],j;
+  for(j=0;j<M;j++){tau.push(ws*(0.5+0.5*(j+1)/M));}
+  function next(W){if(pol!=='none'){return k0;}var w=W/N,c=0;for(var i=0;i<M;i++){if(tau[i]<=w+1e-12){c++;}}return k0+c;}
+  var path=[k0],W=k0;
+  for(var t=0;t<MAXR;t++){var n=next(W);if(n===W){break;}path.push(n);W=n;}
+  return {N:N,L:L,p:p,pol:pol,ws:ws,k0:k0,M:M,tau:tau,next:next,path:path,fin:W};
+}
+function critical(N,L){for(var k=0;k<=N;k++){if(sim(N,L,k/N,'none').fin===N){return k;}}return null;}
+function payoff(s,W){
+  var N=s.N,w=W/N,L=s.L,cap=L+H*(1-L);
+  if(W===N){return s.pol==='none'?{wait:null,take:100*Math.min(1,cap),fund:0}:{wait:null,take:100,fund:0};}
+  var v=value(w,L,s.pol),bank=v==null?0:Math.min(PROM,v/(1-w))*100;
+  if(s.pol==='ins'){return {wait:PROM*100,take:100,fund:Math.max(0,PROM*100-bank)};}
+  return {wait:bank,take:w<=cap||s.pol==='lolr'?100:100*cap/w,fund:0};
+}
+function status(s,W){
+  var w=W/s.N,L=s.L;
+  if(W===s.N&&s.pol==='none'){return '资产卖光，倒闭';}
+  if(w<=L){return '现金够付';}
+  if(s.pol==='lolr'){return '向央行借款';}
+  if(w<s.ws){return '贱卖资产，仍够付';}
+  if(s.pol==='ins'){return '亏损，保险补足';}
+  return '等待者将受损';
+}
+var box1=$('#chart1'),box2=$('#chart2'),pol='none',round=null,S=null,PC=null,txt='';
+function params(){return {N:+$('#nn').value,L:+$('#ll').value/100,p:+$('#pp').value/100};}
+function drawMap(){
+  box1.replaceChildren();
+  var f=C.frame(box1,{id:'run',q0:0,q1:100,qs:20,p0:0,p1:100,ps:20,xt:'本轮看到的累计提款比例（%）',yt:'下一轮的累计提款比例（%）',label:''});
+  var X=function(w){return f.x(w*100);},Y=function(w){return f.y(w*100);},N=S.N,svg=f.svg;
+  svg.appendChild(C.el('path',{d:'M'+X(0)+' '+Y(0)+'L'+X(1)+' '+Y(1),'class':'diag'}));
+  if(pol!=='lolr'){svg.appendChild(C.el('path',{d:'M'+X(S.ws).toFixed(1)+' '+Y(0)+'L'+X(S.ws).toFixed(1)+' '+Y(1),'class':'curve s ghost',id:'wsline'}));}
+  // 阶梯函数：下一轮人数 = 先取者 + 容忍线不高于本轮比例的人。
+  var d='M'+X(0)+' '+Y(S.k0/N).toFixed(1),cnt=S.k0;
+  if(pol==='none'){S.tau.forEach(function(t){d+='L'+X(t).toFixed(1)+' '+Y(cnt/N).toFixed(1);cnt++;d+='L'+X(t).toFixed(1)+' '+Y(cnt/N).toFixed(1);});}
+  d+='L'+X(1)+' '+Y(cnt/N).toFixed(1);
+  svg.appendChild(C.el('path',{d:d,'class':'curve s',id:'mapline'}));
+  var pts=S.path.slice(0,round+1),cw='M'+X(pts[0]/N).toFixed(1)+' '+Y(pts[0]/N).toFixed(1);
+  for(var i=1;i<pts.length;i++){cw+='L'+X(pts[i-1]/N).toFixed(1)+' '+Y(pts[i]/N).toFixed(1)+'L'+X(pts[i]/N).toFixed(1)+' '+Y(pts[i]/N).toFixed(1);}
+  if(pts.length>1){svg.appendChild(C.el('path',{d:cw,'class':'cobweb',id:'cobweb'}));}
+  var cur=S.path[round];
+  svg.appendChild(C.el('circle',{cx:X(cur/N).toFixed(1),cy:Y(cur/N).toFixed(1),r:4,'class':'pt base',id:'curpt'}));
+  var labs=[],good=S.fin<N?S.fin:null,bot=f.m.t+f.ih;
+  if(good!=null){
+    var gx=X(good/N),gy=Y(good/N);
+    svg.appendChild(C.el('circle',{cx:gx.toFixed(1),cy:gy.toFixed(1),r:6,'class':'pt',id:'goodpt'}));
+    var left=gx-10-46>=f.m.l;
+    labs.push({t:'好均衡',x:left?gx-10:gx+10,y:gy-10,a:left?'end':'start'});
+  }
+  if(pol==='none'){
+    svg.appendChild(C.el('circle',{cx:X(1),cy:Y(1),r:6,'class':'pt',id:'runpt'}));
+    labs.push({t:'挤兑均衡',x:X(1)-10,y:Y(1)+20,a:'end'});
+  }
+  if(pol!=='lolr'){
+    // w* 标签放在虚线右侧、45° 线与顶边之间，远离好均衡标签。
+    var wl={t:'w*',x:X(S.ws)+5,y:Y((1+S.ws)/2)+4,a:'start'};
+    labs.push(wl);
+  }
+  labs.forEach(function(l){C.label(f,l.t,'ink',l.x.toFixed(1),l.y.toFixed(1),l.a);});
+  box1.appendChild(svg);
+}
+function drawDots(){
+  box2.replaceChildren();
+  var N=S.N,w=Math.max(280,Math.floor(box2.clientWidth)),cols=N<=100?10:20,rows=Math.ceil(N/cols),cell=Math.min(26,(w-8)/cols),h=Math.round(rows*cell+8),x0=(w-cols*cell)/2,W=S.path[round];
+  var svg=C.el('svg',{viewBox:'0 0 '+w+' '+h,width:w,height:h,'class':'plot',role:'img',id:'dots'});
+  for(var i=0;i<N;i++){
+    var c=i%cols,r=Math.floor(i/cols),cls=i<S.k0?'dep first':i<W?'dep later':'dep';
+    svg.appendChild(C.el('circle',{cx:(x0+(c+0.5)*cell).toFixed(1),cy:(4+(r+0.5)*cell).toFixed(1),r:(cell*0.34).toFixed(1),'class':cls}));
+  }
+  svg.setAttribute('aria-label','图 1 储户示意：共 '+N+' 人，第 '+round+' 轮时 '+S.k0+' 人一开始就取钱，'+(W-S.k0)+' 人后来跟着取，'+(N-W)+' 人仍在等待。');
+  box2.appendChild(svg);
+}
+function fmt(v){return v==null?'无人等待':v.toFixed(1);}
+function update(keepRound){
+  var P=params();S=sim(P.N,P.L,P.p,pol);PC=critical(P.N,P.L);
+  var T=S.path.length-1;if(!keepRound||round==null||round>T){round=T;}
+  $('#nn-value').textContent=P.N+' 人';$('#nn').setAttribute('aria-valuetext','储户 '+P.N+' 人');
+  $('#ll-value').textContent=pct(P.L,0);$('#ll').setAttribute('aria-valuetext','流动资产比例 '+pct(P.L,0));
+  $('#pp-value').textContent=pct(P.p,0)+'（'+S.k0+' 人）';$('#pp').setAttribute('aria-valuetext','一开始就取钱 '+pct(P.p,0)+'，'+S.k0+' 人');
+  document.querySelectorAll('[data-n]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.n===P.N&&+b.dataset.l===Math.round(P.L*100)&&+b.dataset.p===Math.round(P.p*100)));});
+  document.querySelectorAll('[data-pol]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.pol===pol));});
+  var N=S.N,W=S.path[round],run=S.fin===N&&pol==='none';
+  $('#r-ws').textContent=pol==='lolr'?'不受限（可抵押借款）':pct(S.ws)+'（约 '+Math.floor(S.ws*N+1e-9)+' 人）';
+  $('#r-pc').textContent=pol!=='none'?'不会挤兑':(PC==null?'不会挤兑':PC+' 人（'+pct(PC/N)+'）');
+  $('#r-now').textContent='第 '+round+' 轮 / '+W+' 人（'+pct(W/N)+'）';
+  var eq;
+  if(pol!=='none'){eq='只有好均衡（'+pct(S.fin/N)+' 取款）';}
+  else if(run){eq='只剩挤兑均衡（100%）';}
+  else{eq='好均衡 '+pct(S.fin/N)+' 与挤兑均衡 100%';}
+  $('#r-eq').textContent=eq;
+  var pf=payoff(S,S.fin);
+  $('#r-pay').textContent=fmt(pf.wait)+' / '+pf.take.toFixed(1)+' 元';
+  var tb=$('#rounds tbody');tb.replaceChildren();
+  function addRow(t){var Wt=S.path[t],tr=document.createElement('tr');[t,t?'+'+(Wt-S.path[t-1]):String(Wt),pct(Wt/N),status(S,Wt)].forEach(function(v,i){var td=document.createElement('td');td.textContent=v;if(i&&i<3){td.className='num';}tr.appendChild(td);});tb.appendChild(tr);}
+  var idx=[];for(var t=0;t<=round;t++){idx.push(t);}
+  if(idx.length<=6){idx.forEach(addRow);}else{idx.slice(0,2).forEach(addRow);var g=document.createElement('tr'),gtd=document.createElement('td');gtd.colSpan=4;gtd.className='note';gtd.textContent='第 2~'+(round-3)+' 轮省略';g.appendChild(gtd);tb.appendChild(g);idx.slice(-3).forEach(addRow);}
+  var fin=round===S.path.length-1;
+  if(pol==='ins'){
+    txt='有存款保险，等待者确定能拿到 105 元，没有人跟着跑，只有一开始的 '+S.k0+' 人取钱。';
+    txt+=pf.fund>0?'但这 '+pct(S.k0/N)+' 已超过银行的承受线 '+pct(S.ws)+'，银行亏损，保险基金每 100 元存款要补 '+pf.fund.toFixed(1)+' 元。':'银行自己付得起，保险基金不用掏钱。';
+  }else if(pol==='lolr'){
+    txt='央行按面值抵押放贷，银行不必贱卖资产，等待者每 100 元仍能拿回 '+fmt(pf.wait)+' 元。没有人有理由跟着跑，只有一开始的 '+S.k0+' 人取钱。';
+  }else if(run){
+    txt=(fin?'':'正在第 '+round+' 轮，挤兑还在蔓延。')+'一开始 '+S.k0+' 人取钱，达到或超过了临界的 '+PC+' 人。最紧张的储户跟着去取，取款比例越过 w* = '+pct(S.ws)+' 后，等待变得不划算，到第 '+(S.path.length-1)+' 轮所有人都取了钱。银行贱卖资产后，平均每 100 元只拿回 '+pf.take.toFixed(1)+' 元。';
+  }else{
+    txt='一开始 '+S.k0+' 人取钱，'+(PC==null?'无论多少人先取都不会挤兑':'低于临界的 '+PC+' 人')+'。没有人的容忍线被越过，其余 '+(N-S.fin)+' 人继续等待，到期每 100 元拿回 '+fmt(pf.wait)+' 元。这是好均衡；但如果大家都相信别人会取，挤兑均衡同样成立。';
+  }
+  $('#verdict').textContent=txt;
+  drawMap();drawDots();
+  var svg=box1.querySelector('svg');if(svg){svg.setAttribute('aria-label','图 1 挤兑动态图：横轴为本轮累计提款比例，纵轴为下一轮累计提款比例。'+txt);}
+  $('#step').disabled=round>=S.path.length-1;$('#toend').disabled=round>=S.path.length-1;$('#reset').disabled=round===0;
+}
+['nn','ll','pp'].forEach(function(id){$('#'+id).addEventListener('input',function(){update(false);});});
+document.querySelectorAll('[data-n]').forEach(function(b){b.addEventListener('click',function(){$('#nn').value=b.dataset.n;$('#ll').value=b.dataset.l;$('#pp').value=b.dataset.p;update(false);});});
+document.querySelectorAll('[data-pol]').forEach(function(b){b.addEventListener('click',function(){pol=b.dataset.pol;update(false);});});
+$('#step').addEventListener('click',function(){round++;update(true);});
+$('#toend').addEventListener('click',function(){round=S.path.length-1;update(true);});
+$('#reset').addEventListener('click',function(){round=0;update(true);});
+$('#goChart').addEventListener('click',function(){$('#nn').value=100;$('#ll').value=15;$('#pp').value=20;pol='none';update(false);$('#w-run').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('#pp').focus({preventScroll:true});});
+C.watch(box1,function(){if(S){drawMap();var svg=box1.querySelector('svg');if(svg){svg.setAttribute('aria-label','图 1 挤兑动态图：'+txt);}}});
+C.watch(box2,function(){if(S){drawDots();}});
+update(false);
+window.__run={sim:sim,critical:critical,payoff:payoff,wstar:wstar,state:function(){return {S:S,round:round,pol:pol,PC:PC};}};
+var QUIZ=[
+{q:'一家银行的贷款质量不错，但大部分是 10 年期贷款。网上传言它要出事，许多储户赶去取钱。最可能发生什么？',o:['银行一定已经资不抵债，传言只是把真相说出来','只要资产质量好，取款再多也不会出事','即使资产不错，也可能因为来不及按合理价格变现而倒下，传言自我实现','银行随时可以按面值卖掉贷款，所以不会有压力'],a:2,why:'可能因为来不及变现而倒下。期限错配让银行无法同时兑付大批储户，贱卖资产又把流动性问题变成真实亏损。'},
+{q:'在图 1 的设定中引入可信的存款保险，等待者确定能拿回承诺的金额。挤兑均衡会怎样？',o:['消失：给定别人去取，等待也不吃亏，没人有理由跟着跑','不变：只要有人取钱，其他人就会跟上','挤兑来得更快，因为储户更放心地取钱','银行从此不会再亏损'],a:0,why:'消失。挤兑的动力是怕排在后面拿不到钱。保险让“等”在任何情况下都不比“取”差。银行仍可能亏损，只是由保险基金承担。'},
+{q:'一家机构用 10 元自有资金加 90 元借款买入 100 元资产。资产价格下跌 5%，自有资金变成多少？',o:['9.5 元：自有资金也跌 5%','9.5 元：只损失 0.5 元','10 元：损失由借款人承担','5 元：5 元损失全部由自有资金承担，少了一半'],a:3,why:'5 元。借款要全额偿还，资产的损失先由自有资金承担。10 倍杠杆把 5% 的资产跌幅放大成 50% 的自有资金损失。'},
+{q:'恐慌中，中央行接受银行的优质资产作抵押，向它们提供贷款。这样做最主要的作用是？',o:['补贴银行股东，让他们不承担损失','让暂时缺现金但资产够好的银行不必贱卖资产，打断挤兑的链条','保证所有银行都不会倒闭','提高银行利润，吸引更多储户'],a:1,why:'打断挤兑链条。最后贷款人解决的是流动性问题；资产已经不够的银行拿不出优质抵押品，也就借不到钱，股东损失并不因此免除。'},
+{q:'某城市房价连涨多年，越来越多人借钱买第二套、第三套房，理由是“房价只会涨”。按 Minsky 和 Kindleberger 的框架，这最接近哪个阶段？',o:['位移：出现新的获利机会','恐慌与崩溃','亢奋：上涨本身成为买入理由，信贷继续扩张','财务困境：先知先觉者开始出逃'],a:2,why:'亢奋。买入的主要理由已经是价格会继续涨，而且越来越依赖借款，这是泡沫后期的典型特征。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'银行挤兑',en:'bank run',d:'大批储户因担心银行出事而同时取款。因为银行只留少量现金，挤兑可以让本来能撑住的银行倒下。'},
+{t:'期限错配',en:'maturity mismatch',d:'用随时可能被取走的短期负债（存款）去支持长期资产（贷款、长期债券）。这是银行的功能，也是挤兑的根源。'},
+{t:'多重均衡',en:'multiple equilibria',d:'同一组条件下存在不止一个纳什均衡。挤兑模型里，“大家都等”和“大家都取”都是均衡，落到哪个取决于预期。'},
+{t:'存款保险',en:'deposit insurance',d:'保证银行倒闭时储户能拿回额度内的存款。消除抢跑的动机，但可能削弱储户对银行的监督。'},
+{t:'最后贷款人',en:'lender of last resort',d:'恐慌中央行以优质资产作抵押向银行放贷，避免贱卖资产。原则常概括为：充分放贷、利率偏高、抵押品优质。'},
+{t:'杠杆',en:'leverage',d:'用借来的钱买资产，常用资产与自有资金之比衡量。杠杆越高，同样的价格变动对自有资金的影响越大。'},
+{t:'去杠杆螺旋',en:'deleveraging spiral',d:'价格下跌迫使高杠杆机构卖资产还债，抛售又压低价格，引发新一轮抛售。'},
+{t:'资产泡沫',en:'asset bubble',d:'资产价格远高于未来收益能解释的水平，买入主要靠价格还会涨的预期，常伴随信贷扩张。'},
+{t:'系统性风险',en:'systemic risk',d:'个别机构的困境通过抛售、借贷关系和恐慌传染，危及整个金融体系运转的风险。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

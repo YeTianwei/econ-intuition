@@ -387,3 +387,16 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .pt.model{fill:var(--model)}
 .pt.alternative{fill:var(--alternative)}
 /* m12-02 end */
+
+/* m12-04 start */
+.dep{fill:var(--surface);stroke:var(--muted);stroke-width:1.5}
+.dep.first{fill:var(--supply);stroke:var(--supply)}
+.dep.later{fill:var(--loss);stroke:var(--loss)}
+.diag{stroke:var(--muted);stroke-width:1.5}
+.cobweb{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-dasharray:4 3}
+.legend .sw.diag{border-color:var(--muted)}
+.legend .sw.cobweb{border-top-style:dashed;border-top-width:2px}
+.legend .mk.first{background:var(--supply)}
+.legend .mk.later{background:var(--loss)}
+.legend .mk.wait{background:var(--surface);border:2px solid var(--muted)}
+/* m12-04 end */
