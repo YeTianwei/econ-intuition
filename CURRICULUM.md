@@ -212,7 +212,7 @@
 - 交互：无（用一张支出构成的图表说明）。
 - 术语：国内生产总值 GDP、名义 nominal、实际 real、GDP 平减指数 GDP deflator、购买力平价 purchasing power parity、同比 year-on-year、环比 quarter-on-quarter
 
-#### m08-02　通胀与 CPI　`待做`
+#### m08-02　通胀与 CPI　`完成`
 - 核心问题：CPI 涨 3%，是不是所有东西都贵了 3%？
 - 学会：CPI 的编制方法（一篮子商品）；核心通胀；CPI 的偏差；名义变量与实际变量的换算。
 - 开场：「核心 CPI 高于预期」让市场下跌。

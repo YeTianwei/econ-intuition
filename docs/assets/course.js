@@ -178,7 +178,7 @@
         {
           id: 'm08-02', title: '通胀与 CPI',
           en: 'Inflation and the CPI',
-          path: 'm08/02-inflation-cpi.html', status: 'todo'
+          path: 'm08/02-inflation-cpi.html', status: 'done'
         },
         {
           id: 'm08-03', title: '失业率：谁算失业',

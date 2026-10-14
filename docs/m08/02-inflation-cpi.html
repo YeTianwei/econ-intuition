@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>通胀与 CPI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m08-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>通胀与 CPI</h1>
+<p class="sub">Inflation and the CPI</p>
+<p class="lede">新闻说“CPI 同比上涨 3%”，你的房租可能没动，手机变便宜了，加油却贵了不少。3% 是一篮子东西的加权平均，不是每样东西的涨幅。读懂这个平均数怎么编出来、漏掉什么，才能回答两个日常问题：工资涨了算不算真涨，二十年前的一块钱今天值多少。</p>
+<p class="meta">约 22 分钟 · 1 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m02/02-more-elasticities.html#cross">替代品与交叉价格弹性</a>。本课会用它解释为什么固定篮子会高估生活成本的上涨。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>某国核心 CPI 同比上涨 3.4%，高于市场预期的 3.1%：股指午后走低，债券收益率上行</blockquote></figure>
+<p class="prose">国家、数字和市场反应均为虚构。设想同一份公告里，整体 CPI 涨幅比上月略低，因为汽油降价；剔除食品和能源后的“核心”涨幅却比预期高。</p>
+<ol class="qs"><li>CPI 涨 3%，是不是所有东西都贵了 3%？你自己的生活成本也涨了 3% 吗？</li><li>为什么要专门看去掉食品和能源的“核心”数字？去掉它们是因为不重要吗？</li><li>涨幅只比预期高 0.3 个百分点，市场为什么会反应？如果你今年加薪 4%，算不算真的涨了？</li></ol>
+</section>
+
+<section id="basket">
+<h2>CPI：给一篮子固定的东西反复标价</h2>
+<p class="prose"><b>通货膨胀</b><span class="en"> (inflation)</span> 指物价总水平持续上涨，同样的钱能买到的东西变少。关键词是“总水平”：鸡蛋涨价本身只是一种商品的相对价格变化，许多商品和服务一起涨才是通胀。</p>
+<p class="prose">要量出“总水平”，统计机构编制<b>消费者价格指数</b><span class="en"> (consumer price index, CPI)</span>。做法是先确定一个代表家庭典型消费的<b>一篮子商品和服务</b><span class="en"> (market basket)</span>，再定期去各地网点采集这些东西的价格，看买下同一个篮子要花的钱怎样变化。</p>
+<p class="formula">CPI = 当期买下篮子的花费 ÷ 基期买下同一篮子的花费 × 100</p>
+<p class="prose">这里的<b>基期</b><span class="en"> (base period)</span> 是被定为 100 的参照时间。CPI 从 100 到 103，表示买同一篮子的花费增加了 3%。指数本身的水平没有意义，有意义的是两个时点之间的变化率。</p>
+<h3>一个四样东西的小篮子</h3>
+<p class="prose">下面是一个虚构家庭每月的篮子。数量固定，只让价格变化：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="虚构家庭篮子的计算，可横向滚动"><table class="tbl"><caption>教学示意：数量不变，比较买下同一篮子的花费</caption><thead><tr><th scope="col">项目</th><th scope="col" class="num">基期花费（元/月）</th><th scope="col" class="num">权重</th><th scope="col" class="num">一年后花费（元/月）</th><th scope="col" class="num">自身涨幅</th></tr></thead><tbody>
+<tr><td>食品</td><td class="num">1,000</td><td class="num">25%</td><td class="num">1,060</td><td class="num">+6%</td></tr>
+<tr><td>房租</td><td class="num">2,000</td><td class="num">50%</td><td class="num">2,060</td><td class="num">+3%</td></tr>
+<tr><td>电子产品</td><td class="num">500</td><td class="num">12.5%</td><td class="num">460</td><td class="num">−8%</td></tr>
+<tr><td>交通</td><td class="num">500</td><td class="num">12.5%</td><td class="num">540</td><td class="num">+8%</td></tr>
+<tr><td><b>合计</b></td><td class="num">4,000</td><td class="num">100%</td><td class="num">4,120</td><td class="num">+3%</td></tr>
+</tbody></table></div>
+<p class="prose">篮子的总花费从 4,000 元变成 4,120 元，CPI 从 100 升到 103。没有一样东西恰好涨 3%：电子产品还降了 8%。3% 是按花费份额加权的平均，房租占一半，所以房租的涨幅影响最大。</p>
+<p class="formula">整体涨幅 = 25%×6% + 50%×3% + 12.5%×(−8%) + 12.5%×8% = 3%</p>
+<p class="prose">这直接回答了开头的第一个问题：CPI 涨 3%，不等于所有东西都贵了 3%。它也不等于“你”的生活成本涨了 3%。不租房的人不受房租影响；一个刚好每月大量买电子产品、几乎不出门的人，个人篮子的涨幅可能更低。统计局给的是代表性家庭的平均，每个人有自己的权重。</p>
+<div class="analogy"><span class="lab">类比</span><p>CPI 像一张固定的“购物清单”，每个月拿着同一张清单去超市结账，比较小票总额。清单上有你从不买的东西，也漏了你常买的东西。小票总额涨了 3%，你自己的那张小票可能涨 1%，也可能涨 6%。</p></div>
+<h3>真实数据里，同一个月各类涨幅差很远</h3>
+<p class="prose">我国国家统计局编制的 CPI 覆盖 8 个大类、268 个基本分类的商品与服务，价格采自约 500 个市县、近 12 万家价格调查点（据 2026 年 9 月 9 日发布稿的附注）。同一份发布稿给出的 2026 年 8 月同比涨跌幅如下：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="2026 年 8 月我国 CPI 各大类同比涨跌幅，可横向滚动"><table class="tbl"><caption>2026 年 8 月全国居民消费价格同比涨跌幅（%）。来源：国家统计局，2026-09-09</caption><thead><tr><th scope="col">分类</th><th scope="col" class="num">同比（%）</th></tr></thead><tbody>
+<tr><td>CPI 总指数</td><td class="num">0.8</td></tr>
+<tr><td>扣除食品和能源的核心 CPI</td><td class="num">1.0</td></tr>
+<tr><td>其中：食品</td><td class="num">−1.4</td></tr>
+<tr><td>其中：交通工具用能源</td><td class="num">8.3</td></tr>
+<tr><td>大类：食品烟酒及在外餐饮</td><td class="num">−0.7</td></tr>
+<tr><td>大类：居住</td><td class="num">−0.3</td></tr>
+<tr><td>大类：交通通信</td><td class="num">2.5</td></tr>
+<tr><td>大类：医疗保健</td><td class="num">2.7</td></tr>
+<tr><td>大类：其他用品及服务</td><td class="num">7.3</td></tr>
+</tbody></table></div>
+<p class="prose">表中只列出部分大类。总指数涨 0.8%，食品在降价，车用能源涨了 8% 以上。平均数把方向相反的变化合在一起，单看总数会掩盖这些结构。统计局在这次发布中也说明，CPI 从 2026 年 1 月起以 2025 年为新基期，调查分类目录、代表规格品、调查网点和分类权数都有调整，以反映居民消费结构的变化：篮子不是永远不变的，只是在两次调整之间固定。</p>
+<h3>PPI：工厂门口的价格</h3>
+<p class="prose"><b>生产者价格指数</b><span class="en"> (producer price index, PPI)</span> 衡量生产者出售产品的价格变化，我国对应的指标是工业生产者出厂价格指数。它的篮子是工业产品，例如煤炭、有色金属，而不是家庭的日常消费。同月我国 PPI 同比上涨 3.8%，与 CPI 的 0.8% 相差很大。</p>
+<p class="prose">PPI 上涨会抬高下游成本，但能否、多快传到消费价格，取决于成本在终端售价中的占比和企业能否提价。两个指数测的是经济链条的不同位置，涨幅不同很正常，不能拿一个去证明另一个“算错了”。</p>
+</section>
+
+<section id="core">
+<h2>核心通胀：去掉最吵的部分，看底下的趋势</h2>
+<p class="prose"><b>核心通胀</b><span class="en"> (core inflation)</span> 常用的口径是扣除食品和能源价格后的 CPI 涨幅。我国统计局按月发布“扣除食品和能源价格的核心 CPI”；美国劳工统计局（BLS）发布的对应指数叫“除食品和能源外的所有项目”（all items less food and energy）。</p>
+<p class="prose">去掉它们不是因为食品和能源不重要，恰恰相反，它们对家庭很重要。原因是它们的价格容易受天气、疫病、国际油价和地缘事件的短期冲击，一个月大涨、几个月后又跌回去。BLS 的说明也是这样写的：一些使用者偏好剔除后的指数，是因为食品和能源价格波动大，他们想关注所谓“核心”或“基础”的通胀。</p>
+<p class="prose">所以核心通胀主要用来判断趋势：涨价是一阵风，还是已经扩散到房租、服务、日用品等更“黏”的价格里。央行制定利率时更关心后者，因为利率影响经济需要时间，对一阵风作出反应可能来不及也没必要。货币政策的机制在后面的模块再讲。</p>
+<h3>为什么“高于预期”才会让市场动</h3>
+<p class="prose">股票和债券价格已经反映了投资者对未来的看法，包括大家预期的通胀。公布值如果等于预期，价格里早就算进去了，通常不需要大动。真正移动价格的是<b>意外</b><span class="en"> (surprise)</span>：实际值与预期之差。</p>
+<p class="prose">核心通胀意外偏高，意味着基础通胀可能比想象的更顽固，市场会提高对央行维持较高利率的判断。较高的利率让未来利润折算到今天更不值钱，也会压低已发行债券的价格、推高收益率。这就是虚构标题里 0.3 个百分点能引发反应的逻辑。它只是一条常见渠道，某一天的涨跌还会受其他消息影响，不能都归到这一个数字上。</p>
+</section>
+
+<section id="converter">
+<h2>名义与实际：把不同年份的钱换成同一种尺子</h2>
+<p class="prose">用当时的钱写出的数字叫<b>名义值</b><span class="en"> (nominal value)</span>；扣除物价变化、换算成某一年购买力的数字叫<b>实际值</b><span class="en"> (real value)</span>。<a href="01-gdp.html#real">上一课</a>用同样的思路区分了名义 GDP 和实际 GDP；工资、价格、存款也都可以分成这两种看法。</p>
+<p class="formula">实际值 = 名义值 ÷ 价格指数 × 100</p>
+<p class="prose">这里价格指数以参照年为 100。直觉很简单：如果物价翻倍，同样的名义工资只能买一半的东西，实际值就减半。按这个公式换算出的工资叫<b>实际工资</b><span class="en"> (real wage)</span>，它衡量的是工资能买到多少东西。</p>
+<p class="prose">涨幅不大时有一个好用的近似：实际增长率 ≈ 名义增长率 − 通胀率。加薪 4%、通胀 3%，实际工资大约涨 1%。通胀高或时间长时近似会出错，应该用除法，下面的换算器就是用除法。</p>
+<p class="prose">如果价格总水平持续下降，叫<b>通缩</b><span class="en"> (deflation)</span>，这时 CPI 同比为负。通缩下名义金额不变的钱能买到更多，但按名义金额固定的债务实际负担会变重；若企业因此推迟投资、压低工资，也会拖累需求。只看“东西便宜了”，不足以判断通缩是好是坏。</p>
+<div class="widget" id="w-real" aria-labelledby="w1t">
+<h3 id="w1t">图 1　实际值换算器：过去的钱，今天值多少</h3>
+<div class="chips" role="group" aria-label="选择年均通胀率情景（教学示意）"><button type="button" class="chip" data-pi="3" aria-pressed="true">温和通胀 3%</button><button type="button" class="chip" data-pi="0" aria-pressed="false">零通胀</button><button type="button" class="chip" data-pi="-1" aria-pressed="false">通缩 −1%</button><button type="button" class="chip" data-pi="15" aria-pressed="false">高通胀 15%</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw s"></span>等值金额：保持当年购买力所需的名义金额</li><li><span class="sw d g"></span>名义不变：一直是当年的金额</li><li>实心点：今天实际的名义金额</li></ul>
+<p class="note input-error" id="inputError" role="status" hidden>两个金额都请输入 1~1,000,000 之间的数字，输入完成前不显示计算结果。</p>
+<div class="controls">
+<div class="ctl"><label for="amount">当年的金额（元）</label><input id="amount" type="number" min="1" max="1000000" step="any" value="2000" aria-describedby="amount-hint"><span class="hint" id="amount-hint">过去某年的价格或月工资，1~1,000,000 元。</span></div>
+<div class="ctl"><label for="today">今天的名义金额（元）</label><input id="today" type="number" min="1" max="1000000" step="any" value="5000" aria-describedby="today-hint"><span class="hint" id="today-hint">同一件东西今天的价格，或今天的月工资，用来比较实际变化。</span></div>
+<div class="ctl"><label for="year">起始年份</label><output id="year-value" for="year"></output><input id="year" type="range" min="1986" max="2025" step="1" value="2006" aria-describedby="year-hint"><span class="hint" id="year-hint">1986~2025 年；“今天”按 2026 年计，跨度 1~40 年。</span></div>
+<div class="ctl"><label for="pi">年均通胀率（%/年）</label><output id="pi-value" for="pi"></output><input id="pi" type="range" min="-5" max="20" step="0.5" value="3" aria-describedby="pi-hint"><span class="hint" id="pi-hint">−5%~20%，每年按同一比率复利；负值表示通缩。</span></div>
+</div>
+<div id="results">
+<dl class="read pairs"><div><dt>相隔年数</dt><dd id="r-n"></dd></div><div><dt>价格水平累计变化</dt><dd id="r-cum"></dd></div><div><dt>当年金额在今天的等值</dt><dd id="r-eq"></dd></div><div><dt>名义金额不变时的购买力</dt><dd id="r-pp"></dd></div><div><dt>今天金额折回当年购买力</dt><dd id="r-back"></dd></div><div><dt>名义变化 / 实际变化</dt><dd id="r-chg"></dd></div></dl>
+</div>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">通胀率、年份和金额都是教学示意，不是任何国家的真实 CPI 序列。真实物价每年涨幅不同，换算时应改用两个年份的实际 CPI：等值金额 = 当年金额 × 今年 CPI ÷ 当年 CPI。本图把每年通胀设为相同，只为看清复利的形状；“今天”固定按 2026 年计。</p>
+</div>
+<h3>三个实验</h3>
+<ol class="qs"><li>默认情景：20 年、每年 3%，价格水平累计涨了约 81%，不是 60%。复利让后面的年份在更高的基数上再涨。把年份拖到 1986 年，40 年后累计涨幅是多少？</li><li>选零通胀，两条线重合，名义变化就是实际变化。再选通缩 −1%：等值金额低于当年金额，今天 5,000 元的实际增幅比名义增幅更大。</li><li>选高通胀 15%，把今天的金额保持 5,000 元。名义上翻了一倍多，实际上却缩水了很多。长期高通胀下，只看名义数字的人最容易误判。</li></ol>
+<p class="prose">一个心算工具：价格翻倍大约需要 70 ÷ 年通胀率（百分数）年。3% 时约 23 年，7% 时约 10 年。它是复利的近似，通胀率越高误差越大。</p>
+</section>
+
+<section id="bias">
+<h2>CPI 的偏差：固定篮子量不准生活成本</h2>
+<p class="prose">CPI 常被当作“生活成本”的指标，但固定篮子的做法会让它和真实的生活成本变化出现系统性差异。教科书通常列出三类，下面依次说明。</p>
+<p class="prose"><b>替代偏差</b><span class="en"> (substitution bias)</span>：苹果涨价时，很多人会多买梨、少买苹果。这正是<a href="../m02/02-more-elasticities.html#cross">替代品</a>的反应。固定篮子假设你仍按原数量买苹果，于是高估了维持同样生活水平所需的花费。</p>
+<p class="prose"><b>质量变化</b><span class="en"> (quality change)</span>：同样 3,000 元的手机，今年的比五年前的快得多。如果只记价格没变，就漏掉了“同样的钱买到更好的东西”；如果新款涨了价，其中一部分可能是质量提升，不全是通胀。统计机构会做质量调整，但很难做得完全。</p>
+<p class="prose"><b>新产品</b><span class="en"> (new products)</span>：一种新东西出现后，要过一段时间才进入篮子。它刚上市、价格下降最快的那段，往往没有被记录。新产品带来的选择增加本身也难以用价格衡量。</p>
+<p class="prose">美国曾专门评估过这些偏差。1996 年 12 月，美国参议院财政委员会设立的 CPI 研究顾问委员会（通称 Boskin 委员会）在最终报告中估计，CPI 每年高估生活成本上涨约 1.1 个百分点，合理区间为 0.8~1.6 个百分点。据美国政府问责署（GAO）2000 年报告对该估计的整理，各部分如下：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="Boskin 委员会 1996 年对 CPI 偏差的估计，可横向滚动"><table class="tbl"><caption>Boskin 委员会 1996 年估计（百分点/年）。来源：GAO/GGD-00-50，2000 年 2 月</caption><thead><tr><th scope="col">偏差来源</th><th scope="col" class="num">估计</th></tr></thead><tbody>
+<tr><td>大类之间的替代（如用租录像带代替看电影）</td><td class="num">0.15</td></tr>
+<tr><td>同类内部的替代（如换买更便宜的苹果品种）</td><td class="num">0.25</td></tr>
+<tr><td>新产品与质量变化</td><td class="num">0.60</td></tr>
+<tr><td>购物渠道变化（如去仓储店代替百货店）</td><td class="num">0.10</td></tr>
+<tr><td><b>合计</b></td><td class="num">1.10</td></tr>
+</tbody></table></div>
+<p class="prose">这些数字是对 1990 年代中期美国 CPI 的估计，不能套用到今天或别的国家。此后 BLS 改了方法：多数基本分类从 1999 年 1 月起使用几何平均公式，能反映同类内部的一部分替代；它还发布允许跨类替代的“链式 CPI”（C-CPI-U）。GAO 在 2000 年征询了四位前委员，他们估计这些调整之后剩余的偏差约为每年 0.73~0.9 个百分点，比 1996 年的估计小，但没有消失。</p>
+<p class="prose">偏差为什么重要：退休金、某些社会保障待遇、合同租金常按 CPI 调整。CPI 每年多算 1 个百分点，20 年下来按它调整的金额就会多出约 22%。反过来，若有人主张“CPI 低估了真实通胀”，也需要拿出同样具体的证据，比如说明哪个分类的权重或质量调整有问题，而不是只凭“我感觉什么都在涨”。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“CPI 涨 3%，就是所有东西都涨了 3%。”</p><p>3% 是按花费份额加权的平均。同一个月里有的东西降价，有的涨很多。你的个人涨幅取决于你自己的篮子。</p></div>
+<div class="mis"><p class="said">“核心 CPI 去掉了食品和能源，说明官方不关心吃饭和加油。”</p><p>核心指标用来看趋势，不是用来代替整体 CPI。食品和能源仍在整体 CPI 里，而且同样公布。剔除是因为它们短期波动大，容易掩盖底层走势。</p></div>
+<div class="mis"><p class="said">“工资比二十年前涨了一倍多，生活肯定好了一倍多。”</p><p>那是名义变化。要除以同期价格水平的变化才是实际变化；价格涨了 81%，名义 2.5 倍只相当于实际增加约 38%。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先分清名义和实际，再想清楚篮子里装的是什么。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>CPI 涨 3%，是不是所有东西都贵了 3%？</b>不是。CPI 比较的是买下同一篮子的花费，3% 是加权平均。真实数据里同一个月食品可以降价、车用能源可以涨 8% 以上。你的生活成本按你自己的篮子算，可能高于也可能低于 3%。</div></li><li><div><b>为什么要看核心？</b>食品和能源受天气、油价等短期冲击影响大。剔除后的核心通胀更能说明涨价是否已扩散到服务、房租等更持久的价格里。这正是标题里整体 CPI 因汽油降价放缓、核心却超预期时，市场更在意后者的原因。</div></li><li><div><b>0.3 个百分点为什么让市场动？</b>价格已经包含了预期，移动价格的是意外。核心通胀意外偏高，市场会上调对利率维持高位的判断，压低股票估值和债券价格。至于加薪 4%：若同期通胀 3%，实际工资大约只涨 1%；若通胀高于 4%，实际工资在下降。</div></li></ol>
+<p class="prose">下次读到通胀新闻，可以依次问：整体还是核心？同比还是环比？和预期差多少？我的篮子和统计篮子差在哪里？比较两个年份的钱时，有没有先换成同一年的购买力？</p>
+<button type="button" class="chip" id="goChart">回到换算器的默认情景</button>
+</section>
+
+<section id="sources">
+<h2>资料来源</h2>
+<ol class="qs">
+<li>国家统计局：<a href="https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202609/t20260909_1965263.html">2026 年 8 月份居民消费价格数据发布稿</a>，2026-09-09（总指数、核心 CPI、分类同比、调查范围、基期轮换）。</li>
+<li>中国新闻网：<a href="https://www.chinanews.com.cn/cj/2026/09-09/10693046.shtml">国家统计局：8 月份 CPI 温和回升 PPI 同比涨幅扩大</a>，2026-09-09（PPI 同比 3.8%）。</li>
+<li>美国劳工统计局：<a href="https://www.bls.gov/cpi/questions-and-answers.htm">Consumer Price Index: Questions and Answers</a>（篮子定义、除食品和能源指数、几何平均公式、C-CPI-U）。</li>
+<li>美国政府问责署：<a href="https://govinfo.gov/content/pkg/GAOREPORTS-GGD-00-50/pdf/GAOREPORTS-GGD-00-50.pdf">Consumer Price Index: Update of Boskin Commission's Estimate of Bias（GAO/GGD-00-50）</a>，2000 年 2 月（Boskin 委员会 1996 年 12 月最终报告的估计与分项）。</li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,MINUS='−',NOW=2026;
+function $(s){return document.querySelector(s);}
+function model(A,W,y0,pi){
+  var n=NOW-y0,g=Math.pow(1+pi/100,n),E=A*g;
+  return {n:n,g:g,E:E,cum:g-1,pp:1/g,back:W/g,nom:W/A-1,real:W/E-1};
+}
+function money(v){
+  var d=Math.abs(v)<100?2:0;
+  return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+}
+function pct(v){
+  var a=Math.abs(v*100),d=a>=1000?0:1,s=a.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+  if(+s.replace(/,/g,'')===0){return '0.0%';}
+  return (v<0?MINUS:'+')+s+'%';
+}
+function piText(pi){return (pi<0?MINUS:'')+Math.abs(pi).toFixed(1)+'%';}
+var UNITS=[{k:1,n:'元'},{k:1e3,n:'千元'},{k:1e4,n:'万元'},{k:1e6,n:'百万元'},{k:1e8,n:'亿元'}];
+function niceStep(max,count){
+  var steps=[0.25,0.5,1,2.5,5],k=1;
+  for(;;){for(var i=0;i<steps.length;i++){var s=steps[i]*k;if(max/s<=count){return s;}}k*=10;}
+}
+var box=$('#chart1'),state=null;
+function read(){
+  var A=$('#amount').valueAsNumber,W=$('#today').valueAsNumber,ok=true;
+  [['amount',A],['today',W]].forEach(function(p){var good=isFinite(p[1])&&p[1]>=1&&p[1]<=1e6;$('#'+p[0]).setAttribute('aria-invalid',String(!good));if(!good){ok=false;}});
+  return ok?{A:A,W:W,y0:+$('#year').value,pi:+$('#pi').value}:null;
+}
+function draw(){
+  box.replaceChildren();
+  if(!state){return;}
+  var p=state.p,s=state.s,max=Math.max(p.A,s.E,p.W),u,top,ys,p1,i;
+  // 选最小的单位，使纵轴最大刻度不超过三位数，窄屏下刻度不压住轴标题。
+  for(i=0;i<UNITS.length;i++){u=UNITS[i];top=max/u.k*1.08;ys=niceStep(top,5);p1=Math.ceil(top/ys)*ys;if(p1<1000){break;}}
+  var w=Math.max(280,Math.floor(box.clientWidth)),xs=[1,2,5,10].filter(function(v){return s.n/v<=(w<440?4:8);})[0];
+  var f=C.frame(box,{id:'real',q0:p.y0,q1:NOW,qs:xs,p0:0,p1:p1,ps:ys,xt:'年份',yt:'金额（'+u.n+'）',label:state.label});
+  var pts=[],t;
+  for(t=0;t<=s.n;t++){pts.push(f.x(p.y0+t).toFixed(1)+' '+f.y(p.A*Math.pow(1+p.pi/100,t)/u.k).toFixed(1));}
+  f.svg.appendChild(C.el('path',{d:'M'+pts.join('L'),'class':'curve s'}));
+  var yA=f.y(p.A/u.k),yE=f.y(s.E/u.k),yW=f.y(p.W/u.k),xR=f.x(NOW),x0=f.x(p.y0);
+  f.svg.appendChild(C.el('path',{d:'M'+x0.toFixed(1)+' '+yA.toFixed(1)+'L'+xR.toFixed(1)+' '+yA.toFixed(1),'class':'curve d ghost'}));
+  f.svg.appendChild(C.el('circle',{cx:x0,cy:yA,r:4.5,'class':'pt base'}));
+  f.svg.appendChild(C.el('circle',{cx:xR,cy:yA,r:4,'class':'pt base'}));
+  f.svg.appendChild(C.el('circle',{cx:xR,cy:yE,r:4.5,'class':'pt base'}));
+  f.svg.appendChild(C.el('circle',{cx:xR,cy:yW,r:5,'class':'pt'}));
+  var labs=[{y:yE,t:'等值 '+money(s.E)+' 元',c:'curvelab s'},{y:yA,t:'名义 '+money(p.A)+' 元',c:'curvelab d'},{y:yW,t:'今天 '+money(p.W)+' 元',c:'ptlab'}];
+  labs.sort(function(a,b){return a.y-b.y;});
+  var gap=16,lo=f.m.t+14,hi=f.m.t+f.ih-6;
+  labs.forEach(function(l){l.ly=l.y-6;});
+  for(i=0;i<labs.length;i++){if(i===0){labs[i].ly=Math.max(labs[i].ly,lo);}else{labs[i].ly=Math.max(labs[i].ly,labs[i-1].ly+gap);}}
+  if(labs[labs.length-1].ly>hi){labs[labs.length-1].ly=hi;for(i=labs.length-2;i>=0;i--){labs[i].ly=Math.min(labs[i].ly,labs[i+1].ly-gap);}}
+  labs.forEach(function(l){f.svg.appendChild(C.el('text',{x:xR-10,y:l.ly.toFixed(1),'text-anchor':'end','class':l.c+' halo'},l.t));});
+  box.appendChild(f.svg);
+}
+function update(){
+  var y=+$('#year').value,pi=+$('#pi').value;
+  $('#year-value').textContent=y+' 年';$('#year').setAttribute('aria-valuetext',y+' 年，距今 '+(NOW-y)+' 年');
+  $('#pi-value').textContent=piText(pi);$('#pi').setAttribute('aria-valuetext','年均通胀率 '+piText(pi));
+  document.querySelectorAll('[data-pi]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.pi===pi));});
+  var p=read();
+  $('#inputError').hidden=!!p;$('#results').hidden=!p;
+  if(!p){state=null;draw();$('#verdict').textContent='金额输入未完成，暂不换算。';return;}
+  var s=model(p.A,p.W,p.y0,p.pi);
+  $('#r-n').textContent=s.n+' 年（'+p.y0+'→'+NOW+'）';
+  $('#r-cum').textContent=pct(s.cum);
+  $('#r-eq').textContent=money(s.E)+' 元';
+  $('#r-pp').textContent='相当于当年 '+money(p.A*s.pp)+' 元';
+  $('#r-back').textContent=money(s.back)+' 元';
+  $('#r-chg').textContent=pct(s.nom)+' / '+pct(s.real);
+  var head='从 '+p.y0+' 到 '+NOW+' 年共 '+s.n+' 年，年均通胀 '+piText(p.pi)+'，';
+  var t;
+  if(p.pi===0){t=head+'价格水平不变，当年的 '+money(p.A)+' 元今天仍然只需要 '+money(p.A)+' 元，两条线重合。名义变化就是实际变化：'+pct(s.nom)+'。';}
+  else{
+    t=head+'价格水平累计'+(s.cum>0?'上涨 ':'下降 ')+pct(Math.abs(s.cum)).replace('+','')+'。当年的 '+money(p.A)+' 元，今天要 '+money(s.E)+' 元才能买到同样多的东西'+(p.pi<0?'（通缩下等值金额变少）':'')+'。';
+    t+='今天的 '+money(p.W)+' 元名义'+(s.nom>=0?'增加 ':'减少 ')+pct(Math.abs(s.nom)).replace('+','')+'，扣除物价变化后实际';
+    var r=s.real;
+    t+=Math.abs(r)<0.0005?'基本持平。':(r>0?'增加 ':'减少 ')+pct(Math.abs(r)).replace('+','')+'。';
+    if(s.nom>0&&r<0){t+='名义上涨、实际下降：涨幅没跑赢物价。';}
+  }
+  $('#verdict').textContent=t;
+  state={p:p,s:s,label:'图 1：'+t};
+  draw();
+}
+['year','pi','amount','today'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+document.querySelectorAll('[data-pi]').forEach(function(b){b.addEventListener('click',function(){$('#pi').value=b.dataset.pi;update();});});
+$('#goChart').addEventListener('click',function(){$('#amount').value=2000;$('#today').value=5000;$('#year').value=2006;$('#pi').value=3;update();$('#w-real').scrollIntoView({block:'start'});$('#pi').focus({preventScroll:true});});
+C.watch(box,draw);update();
+
+var QUIZ=[
+{q:'某月 CPI 同比上涨 2%。小王不租房、不开车，主要支出是食品，而食品同比下降 1%。下面哪个判断最合理？',o:['小王的生活成本一定也涨了 2%','小王的个人涨幅可能低于 2%，CPI 是代表性篮子的加权平均','食品降价说明 CPI 数据算错了','只要 CPI 为正，每一类商品都在涨价'],a:1,why:'个人涨幅取决于自己的篮子。CPI 按代表性家庭的花费份额加权，同一个月有涨有跌，与个人感受不同不代表数据出错。'},
+{q:'2006 年月薪 4,000 元，2026 年月薪 8,000 元，这 20 年价格水平累计上涨 60%。实际工资大约变化多少？',o:['增加 100%','增加 40%','增加 60%','增加 25%'],a:3,why:'约增加 25%。实际变化 = 8,000 ÷ (4,000 × 1.6) − 1 = 25%。名义翻倍要先除以价格水平的变化，不能直接减去 60 个百分点。'},
+{q:'国际油价大跌使整体 CPI 涨幅从 3.0% 降到 2.4%，核心 CPI 却从 2.8% 升到 3.1%。对“通胀是否已经缓解”，哪种解读更稳妥？',o:['基础通胀未必缓解，整体回落主要来自波动大的能源','整体在降，说明通胀压力已经全面消失','核心不含能源，所以这个月核心的变化不重要','两个指标方向相反，说明至少有一个统计错误'],a:0,why:'底层压力可能还在。能源价格容易短期回落或反弹，核心上升说明涨价可能已扩散到更持久的价格里。两个口径方向不同很常见。'},
+{q:'苹果大幅涨价后，许多家庭改买梨。固定篮子的 CPI 会怎样？',o:['准确反映生活成本，因为苹果价格是真实的','低估生活成本上涨，因为梨更便宜','高估维持同样生活水平所需的花费上涨，这叫替代偏差','不受影响，因为 CPI 只看总价不看数量'],a:2,why:'会高估。固定篮子假设家庭仍按原数量买苹果，忽略了换成替代品后实际少花的钱。'},
+{q:'某国 CPI 连续两年同比为负。下面哪项最准确？',o:['这叫通缩；名义金额固定的债务实际负担会变重','这叫通缩；对所有人都只有好处，因为东西变便宜了','只要工资名义不变，实际工资就会下降','这叫核心通胀为负，与整体物价无关'],a:0,why:'这是通缩。价格水平下降使同样的名义金额能买更多，固定名义金额的债务实际更重；名义工资不变时实际工资反而上升。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'通货膨胀',en:'inflation',d:'物价总水平持续上涨，同样的钱能买的东西变少。单一商品涨价是相对价格变化，不等于通胀。'},
+{t:'消费者价格指数 CPI',en:'consumer price index',d:'买下一篮子代表性消费品和服务的花费，相对基期的比值乘以 100。看的是两个时点间的变化率。'},
+{t:'一篮子商品',en:'market basket',d:'CPI 定价的固定清单，按家庭花费份额加权。两次调整之间数量固定，定期更新权重。'},
+{t:'核心通胀',en:'core inflation',d:'常用口径是扣除食品和能源后的 CPI 涨幅。用来判断趋势，不是因为食品和能源不重要。'},
+{t:'生产者价格指数 PPI',en:'producer price index',d:'生产者出售产品的价格变化，我国对应工业生产者出厂价格指数。篮子是工业品，与 CPI 涨幅常不同。'},
+{t:'名义与实际',en:'nominal vs real',d:'名义值用当时的钱计；实际值扣除物价变化，换成某一年的购买力：名义值 ÷ 价格指数 × 100。'},
+{t:'实际工资',en:'real wage',d:'工资能买到多少东西。实际变化 = 今天工资 ÷ (过去工资 × 价格水平变化倍数) − 1。'},
+{t:'通缩',en:'deflation',d:'物价总水平持续下降，CPI 同比为负。现金购买力上升，固定名义金额的债务实际负担变重。'},
+{t:'替代偏差',en:'substitution bias',d:'消费者会转向相对变便宜的替代品，固定篮子忽略这一点，从而高估生活成本的上涨。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
