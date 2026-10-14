@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>银行如何创造货币</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m10-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>银行如何创造货币</h1>
+<p class="sub">How banks create money</p>
+<p class="lede">你手机银行里的余额，绝大部分不是央行印出来的纸币，而是商业银行账本上的一行数字。这行数字从哪里来？最常见的答案是“别人存进来的钱”，但更准确的答案是：很多时候，它是银行发放贷款时一笔一笔记出来的。这一课先走一遍教科书里的存贷循环，再看现代央行为什么说这个故事只对了一半。</p>
+<p class="meta">约 22 分钟 · 1 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">上一课区分了现金和存款，以及 M0、M1、M2 几个口径。这里只需记住一点：我们日常花的钱，大部分以银行存款的形式存在。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>新华社，2025 年 5 月 7 日，经中国政府网转载。<a href="https://www.gov.cn/lianbo/bumen/202505/content_7022721.htm">原文链接</a></figcaption><blockquote>中国人民银行：5 月 8 日起降息，15 日起降准</blockquote></figure>
+<p class="prose">据报道和央行公告，中国人民银行宣布自 2025 年 5 月 15 日起下调金融机构存款准备金率 0.5 个百分点（不含已执行 5% 准备金率的机构），预计向市场提供长期流动性约 1 万亿元，整体存款准备金率平均水平从 6.6% 降到 6.2%。央行《2025 年第四季度中国货币政策执行报告》确认了这次降准和约 1 万亿元的规模。</p>
+<ol class="qs"><li>“释放 1 万亿元流动性”，是不是说市场上的钱一下多了 1 万亿元？</li><li>教科书说准备金率越低，货币乘数越大。降准之后，广义货币会不会按乘数机械地放大？</li><li>如果企业和家庭不想借钱，降准还有用吗？</li></ol>
+</section>
+<section id="reserves">
+<h2>银行只留一小部分，其余可以贷出去</h2>
+<p class="prose">先看银行账本的两边。你存进去的钱，是银行欠你的债，记在负债一边。银行手里持有的贷款、债券和放在央行的钱，是它的资产。银行不会把所有存款都以现金或央行存款的形式锁起来，只留一部分应付取款和转账，这种制度叫<b>部分准备金</b><span class="en"> (fractional reserve)</span>制度。</p>
+<p class="prose">留下的那部分叫准备金，存放在央行的账户上。央行规定的最低比例叫<b>存款准备金率</b><span class="en"> (reserve requirement ratio)</span>，记作 r。银行实际留的准备金超过这个要求的部分，叫<b>超额准备金</b><span class="en"> (excess reserves)</span>。</p>
+<p class="prose">央行直接发行的钱有两种：流通中的现金，以及商业银行在央行的准备金。两者合起来叫<b>基础货币</b><span class="en"> (monetary base)</span>，也叫高能货币。家庭和企业手里的现金加上银行存款，是我们说的<b>广义货币</b><span class="en"> (broad money)</span>，中国常用的口径是 M2。基础货币是央行的负债，存款是商业银行的负债。</p>
+<h3>教科书的存贷循环</h3>
+<p class="prose">教科书这样讲：央行向经济注入 100 元基础货币，拿到钱的人把它存进银行 A。银行 A 留下 r 作为准备金，把剩下的贷给小王。小王拿去付款，收款人又把钱存进银行 B，B 再留一部分、贷出剩下的。每一轮都比上一轮小，但累计起来，存款远多于最初的 100 元。</p>
+<p class="prose">现实中，并非每一轮的钱都回到银行。有人把一部分取成现金放在钱包里，这叫<b>现金漏出</b><span class="en"> (currency drain)</span>。本课用 c 表示公众愿意持有的<b>现金与存款之比</b>：c = 20% 意思是每有 100 元存款，公众还想同时拿着 20 元现金。按这个定义，每一轮到手的新钱里，有 c/(1+c) 留成现金，1/(1+c) 存进银行。</p>
+<p class="formula">每轮缩小比例 q = (1 − r) ÷ (1 + c)<br>广义货币极限 M = B × (1 + c) ÷ (r + c)</p>
+<p class="prose">B 是基础货币。比值 (1 + c) ÷ (r + c) 就是教科书的<b>货币乘数</b><span class="en"> (money multiplier)</span>：广义货币是基础货币的多少倍。r = 10%、c = 0 时乘数是 10；加入 c = 20% 的现金漏出，乘数降到 4。漏出的现金不再回到银行，不能再支持下一轮贷款。</p>
+<p class="prose">另一种常见写法把 c 定义为“每轮被取走的比例”，那样公式会不同。本课只用现金与存款之比，下面的图也用这个定义。</p>
+<div class="analogy"><span class="lab">类比</span><p>回声在山谷里一次次反弹，每次被岩石吸收一部分，声音越来越小，但所有回声加起来比第一声长得多。准备金和现金漏出就是每次被“吸收”的部分：吸收得越多，回声越快消失，累计也越少。</p></div>
+</section>
+<section id="loop">
+<h2>一轮轮走一遍：基础货币如何变成广义货币</h2>
+<p class="prose">下图按教科书的顺序计算。多加了一个滑块“银行贷出比例”：银行把超额准备金贷出去多少。教科书默认是 100%，也就是银行总能找到愿意借钱的人，而且愿意借给他们。把它调低，可以看到即使在教科书的框架里，乘数也取决于银行和借款人的行为。</p>
+<div class="widget" id="w-loop" aria-labelledby="w1t">
+<h3 id="w1t">图 1　存贷循环：100 元基础货币能撑起多少广义货币</h3>
+<div class="chips" role="group" aria-label="选择情景"><button type="button" class="chip" data-r="10" data-c="0" data-l="100" aria-pressed="false">教科书：无现金漏出</button><button type="button" class="chip" data-r="10" data-c="20" data-l="100" aria-pressed="true">加入现金漏出</button><button type="button" class="chip" data-r="10" data-c="20" data-l="50" aria-pressed="false">贷款需求不足</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw model"></span>累计存款</li><li><span class="sw alternative"></span>累计公众持有的现金</li><li><span class="sw s g"></span>广义货币的理论极限</li><li><span class="sw"></span>基础货币 100 元</li></ul>
+<div class="controls">
+<div class="ctl"><label for="rr">存款准备金率 r（%）</label><output id="rr-value" for="rr"></output><input id="rr" type="range" min="1" max="30" step="0.5" value="10" aria-describedby="rr-hint"><span class="hint" id="rr-hint">1%~30%；银行每吸收 100 元存款至少留下的准备金。</span></div>
+<div class="ctl"><label for="cc">现金与存款之比 c（%）</label><output id="cc-value" for="cc"></output><input id="cc" type="range" min="0" max="50" step="1" value="20" aria-describedby="cc-hint"><span class="hint" id="cc-hint">0%~50%；公众每持有 100 元存款，同时想拿着的现金。</span></div>
+<div class="ctl"><label for="ll">银行贷出比例 λ（%）</label><output id="ll-value" for="ll"></output><input id="ll" type="range" min="0" max="100" step="5" value="100" aria-describedby="ll-hint"><span class="hint" id="ll-hint">0%~100%；超额准备金中实际贷出的部分。教科书默认 100%。</span></div>
+</div>
+<div class="chips"><button type="button" class="chip" id="step">下一轮</button><button type="button" class="chip" id="step10">再走 10 轮</button><button type="button" class="chip" id="reset">回到第 0 轮</button></div>
+<dl class="read pairs"><div><dt>已走轮次</dt><dd id="r-round"></dd></div><div><dt>累计广义货币（现金 + 存款）</dt><dd id="r-m"></dd></div><div><dt>理论极限 / 已达到</dt><dd id="r-lim"></dd></div><div><dt>本设定下的乘数 / 教科书公式</dt><dd id="r-mult"></dd></div><div><dt>极限时：现金 / 存款 / 准备金</dt><dd id="r-split"></dd></div><div><dt>若 r 再降 0.5 个百分点，极限变化</dt><dd id="r-cut"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="每一轮的资金去向，可横向滚动"><table class="tbl" id="rounds"><caption>每一轮：到手的新钱 = 现金 + 存款；存款 = 法定准备金 + 未贷出的超额准备金 + 新贷款。新贷款成为下一轮到手的新钱。单位：元。</caption><thead><tr><th scope="col">轮次</th><th scope="col" class="num">到手新钱</th><th scope="col" class="num">留作现金</th><th scope="col" class="num">存入存款</th><th scope="col" class="num">法定准备金</th><th scope="col" class="num">未贷出</th><th scope="col" class="num">新贷款</th></tr></thead><tbody></tbody></table></div>
+<p class="note">全部数字为教学示意，与新闻中的真实金额无关。第 0 轮是央行注入的 100 元基础货币，之后每一轮的“到手新钱”都是上一轮的新贷款。c 是公众持有的现金与存款之比，不是每轮被取走的比例；每轮被取走的比例是 c/(1+c)。理论极限按无穷多轮求和；图中最多显示 30 轮，准备金率很低、漏出很少时 30 轮还远未收敛。</p>
+</div>
+<h3>三个实验</h3>
+<ol class="qs"><li>选“教科书：无现金漏出”，连按“再走 10 轮”。广义货币向 1000 元逼近，乘数是 1/r = 10。这时 100 元基础货币最后全部变成了银行的准备金。</li><li>选“加入现金漏出”。同样的 r，极限降到 400 元。看读数：极限时 100 元基础货币分成了公众手里的现金和银行的准备金两部分，加起来始终是 100。</li><li>选“贷款需求不足”。准备金率和现金习惯都没变，只是银行只贷出一半的超额准备金，乘数从 4 降到 1.6。再试试把 r 调低 0.5 个百分点：贷出比例越低，降准带来的变化越小。</li></ol>
+<p class="prose">最后一个实验已经暗示了问题：乘数不是一个固定的常数，而是取决于人们怎么借、怎么持有现金、银行愿意贷多少。下一节说明，现代央行认为连循环的方向都要倒过来看。</p>
+</section>
+<section id="modern">
+<h2>现代视角：贷款创造存款</h2>
+<p class="prose">英格兰银行 2014 年第一季度季报发表了一篇文章《现代经济中的货币创造》（Money creation in the modern economy）。文章说，现代经济中大部分货币是商业银行发放贷款时创造的，银行既不只是把储户的存款转借出去，也不是把央行货币“乘出”更多贷款和存款。文中给出的数字是：英国当时的广义货币里，银行存款占 97%。</p>
+<h3>一笔贷款发生时，账本上同时多了两行</h3>
+<p class="prose">银行批给小王一笔 100 万元的房贷，并不需要先从别的储户那里把钱拿过来。它在资产一边记“小王欠我 100 万元”，同时在小王的账户里记“我欠小王 100 万元”。存款就此出现，世界上的广义货币多了 100 万元。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="发放贷款时银行资产负债表的变化，可横向滚动"><table class="tbl comparison"><caption>教学示意：银行发放和收回一笔 100 万元贷款</caption><thead><tr><th scope="col">事件</th><th scope="col">资产一边</th><th scope="col">负债一边</th><th scope="col">广义货币</th></tr></thead><tbody>
+<tr><td>发放贷款</td><td>贷款 +100 万元</td><td>小王的存款 +100 万元</td><td>增加 100 万元</td></tr>
+<tr><td>小王付给卖房人</td><td>不变（若卖房人在另一家银行，本行准备金减少，对方银行增加）</td><td>存款从小王转到卖房人</td><td>不变</td></tr>
+<tr><td>小王用存款还清贷款</td><td>贷款 −100 万元</td><td>存款 −100 万元</td><td>减少 100 万元</td></tr>
+</tbody></table></div>
+<p class="prose">还贷则相反：存款和贷款同时消失，货币被“销毁”。所以广义货币的增减，主要看新增贷款和还款哪个多。</p>
+<div class="analogy"><span class="lab">类比</span><p>银行像一个大家都信得过的记账员。你向他借 100 元，他在本子上写两行：“你欠我 100”和“我欠你 100”。第二行就是你的存款，可以拿去付给任何人，因为人人都接受这个记账员的欠条。他不需要先从别人口袋里掏出 100 元。</p></div>
+<h3>那准备金还有什么用？</h3>
+<p class="prose">银行之间转账要用央行的准备金结算，银行也要满足法定准备金要求。英格兰银行的文章指出，正常时期央行通过设定利率实施货币政策，会按这个利率“按需”提供准备金。因此准备金的总量并不直接限制贷款，基础货币更像是贷款增加之后的结果，而不是原因。文章的说法是，乘数论在现实中是“反着”运作的。</p>
+<p class="prose">换句话说，货币乘数是一个<b>事后比率</b>：把某一时点的广义货币除以基础货币，总能算出一个数，但这个数不是一台机器，不会自动把新增的基础货币放大固定倍数。</p>
+<h3>那银行能无限放贷吗？不能</h3>
+<p class="prose">同一篇文章把约束分成三组：银行自身（盈利与风险、监管要求），家庭和企业的行为，以及央行的货币政策。货币政策是最终的约束。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="限制银行创造货币的因素，可横向滚动"><table class="tbl comparison"><thead><tr><th scope="col">约束</th><th scope="col">怎样起作用</th></tr></thead><tbody>
+<tr><td>盈利与风险</td><td>贷款要有利可图。银行要为贷款付出资金成本（例如为留住存款支付利息），还要承担借款人违约的风险。找不到合格的借款人，银行就不会放贷。</td></tr>
+<tr><td>资本与监管</td><td>银行需要足够的<b>资本</b><span class="en"> (bank capital)</span>吸收贷款损失，监管还对资本和流动性提出要求。资本不够，就不能继续扩张贷款。</td></tr>
+<tr><td>家庭和企业的需求</td><td>贷款要有人借。拿到新存款的人也可能用它去还旧债，让货币很快消失。</td></tr>
+<tr><td>央行利率政策</td><td>央行调整利率，影响贷款利率和借款意愿，从而影响新增贷款和货币的数量。</td></tr>
+</tbody></table></div>
+<h3>两种视角各自有什么用</h3>
+<p class="prose">教科书的乘数模型并非毫无用处。它把“现金漏出会减少银行可用的准备金”“准备金要求越高，同样的准备金能支持的存款越少”这些会计关系讲得很直观；在准备金紧张、准备金要求确实约束银行的环境里，它也能提供一个上限的直觉。英格兰银行的文章也承认，乘数理论可以是教科书介绍货币和银行的一种有用方式，只是不能准确描述现实中货币如何被创造。</p>
+<p class="prose">批评者强调的是方向和约束：在央行以利率为目标、按需提供准备金的体系中，银行先判断贷款是否值得做，再去获取准备金。不同国家的制度也不同。英格兰银行的文章说，准备金要求在当今多数发达经济体的货币政策框架中不再重要；而中国人民银行仍把存款准备金率作为常用工具，开场新闻就是一例。</p>
+<p class="prose">降准释放的是<b>流动性</b><span class="en"> (liquidity)</span>：原来被冻结的法定准备金变成银行可以自由使用的资金。央行的报告用的说法是“改善市场流动性结构，保持流动性充裕”。这会降低银行的资金压力和成本，但钱是否最终变成更多的贷款和存款，还要看上面那张表里的约束。</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“银行只是把储户的钱借给别人。”</p><p>发放贷款时，银行同时创造了借款人的存款。存款更多是贷款的结果，而不是贷款的前提。</p></div>
+<div class="mis"><p class="said">“央行定下基础货币，广义货币就是它的固定倍数。”</p><p>乘数是事后算出来的比率，随贷款需求、银行资本、现金持有习惯和利率而变。现代央行通常设定利率，准备金按需供给。</p></div>
+<div class="mis"><p class="said">“降准释放 1 万亿元，M2 就多 1 万亿元，甚至再乘几倍。”</p><p>释放的是银行可用的准备金，属于基础货币内部的结构变化，不直接计入 M2。它能否转化为新贷款，要看有没有人借、银行愿不愿贷。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先问：钱是在谁的账本上多出来的？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">把教科书的循环和现代视角放在一起回忆。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>“释放 1 万亿元流动性”是不是市场上多了 1 万亿元钱？</b>不是。被释放的是银行原先必须留在央行的法定准备金，它们本来就是基础货币，只是从“冻结”变成“可自由使用”。家庭和企业手里的 M2 不会因此立刻增加。作为参照，2025 年末 M2 余额为 340.3 万亿元。</div></li><li><div><b>广义货币会不会按乘数机械放大？</b>教科书公式会给出一个更大的理论极限，图 1 的最后一项读数就是这个算法。但现代视角认为，贷款先由盈利、资本和需求决定，准备金随后按需补足。乘数是事后比率，不是放大器。</div></li><li><div><b>没人想借钱时，降准还有用吗？</b>作用会变小。它仍能降低银行的资金成本、让银行间的流动性更宽裕，这可能通过更低的贷款利率鼓励借款。但如果借款需求不足或银行资本紧张，新增贷款和存款可能远低于乘数公式的预测。在图 1 中把贷出比例调低，就能看到同样降准带来的变化缩小。</div></li></ol>
+<p class="prose">下次看到“释放流动性”的新闻，可以接着问：同期的新增贷款有多少？M2 增速有没有变化？贷款利率降了多少？这些数字比释放的准备金规模更能说明货币是否真的多了。</p>
+<button type="button" class="chip" id="goChart">回到图 1 的默认情景</button>
+</section>
+<section id="sources"><h2>资料来源</h2><ol class="qs">
+<li>中国人民银行，<a href="https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212554653911/index.html">中国人民银行决定下调金融机构存款准备金率</a>，2025-05-07；本课引用了降准幅度、范围和生效日期。</li>
+<li>新华社（中国政府网转载），<a href="https://www.gov.cn/lianbo/bumen/202505/content_7022721.htm">中国人民银行：5月8日起降息，15日起降准</a>，2025-05-07；本课引用了约 1 万亿元长期流动性和平均准备金率从 6.6% 降到 6.2% 的表述。</li>
+<li>中国人民银行货币政策分析小组，<a href="https://www.pbc.gov.cn/goutongjiaoliu/attachDir/2026/02/2026021019001885059.pdf">中国货币政策执行报告（2025 年第四季度）</a>，2026-02-10；本课引用了对这次降准的确认、“改善市场流动性结构”的表述和 2025 年末 M2 余额 340.3 万亿元。</li>
+<li>Michael McLeay, Amar Radia, Ryland Thomas（英格兰银行），<a href="https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy">Money creation in the modern economy</a>，Quarterly Bulletin 2014 Q1，2014-03-14；本课引用了贷款创造存款、准备金按需供给、乘数“反着运作”、三类约束和存款占英国广义货币 97% 等内容。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,B=100,MAXR=30,MINUS='−';
+function $(s){return document.querySelector(s);}
+// r、c、l 都是小数。c 为现金与存款之比；l 为超额准备金中贷出的比例。
+function model(r,c,l){
+  var q=l*(1-r)/(1+c),e=(1-l)*(1-r),rows=[],a=B,cum={m:0,c:0,d:0};
+  for(var k=0;k<=MAXR;k++){
+    var d=a/(1+c),row={k:k,a:a,cash:a-d,dep:d,req:r*d,idle:e*d,loan:l*(1-r)*d};
+    cum.m+=a;cum.c+=row.cash;cum.d+=row.dep;
+    row.cm=cum.m;row.cc=cum.c;row.cd=cum.d;rows.push(row);a=row.loan;
+  }
+  var den=r+c+e,lim=B*(1+c)/den;
+  return {q:q,rows:rows,lim:lim,mult:(1+c)/den,tb:(1+c)/(r+c),limC:B*c/den,limD:B/den,limR:B*(r+e)/den};
+}
+function limitAt(r,c,l){return B*(1+c)/(r+c+(1-l)*(1-r));}
+function f2(n){return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function f1(n){return n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});}
+function pctS(v){return (Math.round(v*10)/10).toFixed(1).replace(/\.0$/,'')+'%';}
+function niceStep(max,count){var steps=[1,2,2.5,5],k=1;for(;;){for(var i=0;i<steps.length;i++){var s=steps[i]*k;if(max/s<=count){return s;}}k*=10;}}
+var box=$('#chart1'),round=5,st=null,P=null;
+function params(){return {r:+$('#rr').value/100,c:+$('#cc').value/100,l:+$('#ll').value/100};}
+function draw(){
+  box.replaceChildren();
+  var w=Math.max(280,Math.floor(box.clientWidth)),u=st.lim*1.1>=1000?1000:1,top=st.lim*1.1/u,ys=niceStep(top,5),p1=Math.ceil(top/ys)*ys;
+  // 极限上千元时纵轴改用千元，避免四五位数刻度在窄屏压住轴标题。
+  var f=C.frame(box,{id:'loop',q0:0,q1:MAXR+1,qs:MAXR+1,p0:0,p1:p1,ps:ys,xt:'轮次',yt:u===1?'累计金额（元）':'累计金额（千元）',label:''}),Y=function(v){return f.y(v/u);};
+  // 去掉 frame 自动生成的横轴刻度，按柱子中心重画。
+  Array.prototype.slice.call(f.svg.querySelectorAll('text.tick')).forEach(function(t){if(t.getAttribute('text-anchor')==='middle'){t.remove();}});
+  var step=w<440?10:5;
+  for(var k=0;k<=MAXR;k+=step){f.svg.appendChild(C.el('text',{x:f.x(k+0.5).toFixed(1),y:f.m.t+f.ih+16,'text-anchor':'middle','class':'tick'},String(k)));}
+  var bw=Math.max(1,(f.x(1)-f.x(0))*0.72),y0=Y(0);
+  st.rows.slice(0,round+1).forEach(function(row){
+    var x=f.x(row.k+0.5)-bw/2,yd=Y(row.cd),ym=Y(row.cm);
+    f.svg.appendChild(C.el('rect',{x:x.toFixed(1),y:yd.toFixed(1),width:bw.toFixed(1),height:Math.max(0,y0-yd).toFixed(1),'class':'bar model','data-k':row.k}));
+    f.svg.appendChild(C.el('rect',{x:x.toFixed(1),y:ym.toFixed(1),width:bw.toFixed(1),height:Math.max(0,yd-ym).toFixed(1),'class':'bar alternative'}));
+  });
+  var yl=Y(st.lim),yb=Y(B),xl=f.m.l,xr=f.m.l+f.iw;
+  f.svg.appendChild(C.el('path',{d:'M'+xl+' '+yb.toFixed(1)+'L'+xr+' '+yb.toFixed(1),'class':'shift'}));
+  f.svg.appendChild(C.el('path',{d:'M'+xl+' '+yl.toFixed(1)+'L'+xr+' '+yl.toFixed(1),'class':'curve s ghost',id:'limline'}));
+  C.label(f,'理论极限 '+f1(st.lim)+' 元','s',xr-6,(yl-7).toFixed(1),'end');
+  box.appendChild(f.svg);
+}
+function update(){
+  P=params();st=model(P.r,P.c,P.l);
+  $('#rr-value').textContent=pctS(P.r*100);$('#rr').setAttribute('aria-valuetext','存款准备金率 '+pctS(P.r*100));
+  $('#cc-value').textContent=pctS(P.c*100);$('#cc').setAttribute('aria-valuetext','现金与存款之比 '+pctS(P.c*100));
+  $('#ll-value').textContent=pctS(P.l*100);$('#ll').setAttribute('aria-valuetext','银行贷出比例 '+pctS(P.l*100));
+  document.querySelectorAll('[data-r]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.r===+$('#rr').value&&+b.dataset.c===+$('#cc').value&&+b.dataset.l===+$('#ll').value));});
+  var row=st.rows[round],reach=row.cm/st.lim*100;
+  $('#r-round').textContent='第 '+round+' 轮（最多 '+MAXR+' 轮）';
+  $('#r-m').textContent=f1(row.cm)+' 元（现金 '+f1(row.cc)+'，存款 '+f1(row.cd)+'）';
+  $('#r-lim').textContent=f1(st.lim)+' 元 / '+f1(reach)+'%';
+  $('#r-mult').textContent=st.mult.toFixed(2)+' / '+st.tb.toFixed(2);
+  $('#r-split').textContent=f1(st.limC)+' / '+f1(st.limD)+' / '+f1(st.limR)+' 元';
+  var cut=limitAt(P.r-0.005,P.c,P.l)-st.lim;
+  $('#r-cut').textContent='+'+f1(cut)+' 元';
+  var tb=$('#rounds tbody');tb.replaceChildren();
+  st.rows.slice(0,round+1).forEach(function(x){var tr=document.createElement('tr');[x.k,f2(x.a),f2(x.cash),f2(x.dep),f2(x.req),f2(x.idle),f2(x.loan)].forEach(function(v,i){var td=document.createElement('td');td.textContent=v;if(i){td.className='num';}tr.appendChild(td);});tb.appendChild(tr);});
+  var t='第 '+round+' 轮后，100 元基础货币累计撑起 '+f1(row.cm)+' 元广义货币，达到理论极限 '+f1(st.lim)+' 元的 '+f1(reach)+'%。每一轮的新钱是上一轮的 '+st.q.toFixed(3)+' 倍。';
+  if(P.l===0){t+='银行一分钱都不贷，乘数等于 1：基础货币没有被放大。';}
+  else if(P.l<1){t+='银行只贷出 '+pctS(P.l*100)+' 的超额准备金，乘数 '+st.mult.toFixed(2)+'，低于教科书公式的 '+st.tb.toFixed(2)+'。';}
+  else if(P.c===0){t+='没有现金漏出，乘数就是 1/r = '+st.mult.toFixed(2)+'，最后 100 元全部成为准备金。';}
+  else{t+='现金漏出让乘数从 1/r = '+(1/P.r).toFixed(2)+' 降到 '+st.mult.toFixed(2)+'。';}
+  if(round===MAXR&&reach<99){t+='30 轮后仍未接近极限：每轮缩小得很慢，要很多轮才收敛。';}
+  $('#verdict').textContent=t;
+  draw();
+  var svg=box.querySelector('svg');if(svg){svg.setAttribute('aria-label','图 1 柱状图：横轴为轮次，纵轴为累计金额。'+t);}
+  $('#step').disabled=round>=MAXR;$('#step10').disabled=round>=MAXR;$('#reset').disabled=round===0;
+}
+['rr','cc','ll'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+document.querySelectorAll('[data-r]').forEach(function(b){b.addEventListener('click',function(){$('#rr').value=b.dataset.r;$('#cc').value=b.dataset.c;$('#ll').value=b.dataset.l;update();});});
+$('#step').addEventListener('click',function(){round=Math.min(MAXR,round+1);update();});
+$('#step10').addEventListener('click',function(){round=Math.min(MAXR,round+10);update();});
+$('#reset').addEventListener('click',function(){round=0;update();});
+$('#goChart').addEventListener('click',function(){$('#rr').value=10;$('#cc').value=20;$('#ll').value=100;round=5;update();$('#w-loop').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('#rr').focus({preventScroll:true});});
+C.watch(box,function(){if(st){draw();var svg=box.querySelector('svg');if(svg){svg.setAttribute('aria-label','图 1 柱状图：'+$('#verdict').textContent);}}});
+update();
+var QUIZ=[
+{q:'准备金率 20%，公众不持有现金（c = 0），银行把超额准备金全部贷出。按教科书的存贷循环，100 元基础货币最多支撑多少广义货币？',o:['120 元：只多了一轮的 20 元','500 元：乘数是 1/0.2 = 5','2000 元：乘数是 20','80 元：每轮都要扣掉 20% 的准备金'],a:1,why:'500 元。无现金漏出时乘数为 1/r。80 元只是第一笔贷款，准备金并没有让货币减少。'},
+{q:'银行批准了一笔 30 万元的购房贷款，钱打进买房人的账户。这一刻，经济中的广义货币怎样变化？',o:['不变：银行只是把别的储户的 30 万元转给了他','减少 30 万元：银行的钱借出去了','不确定：银行必须先从央行借到 30 万元准备金才能放款','增加 30 万元：银行在资产端记贷款，同时在负债端创造了存款'],a:3,why:'增加 30 万元。贷款和存款同时出现，其他储户的存款没有减少。准备金的需要是事后按需补足的。'},
+{q:'央行降准，银行多出 1 万亿元可用准备金。同期企业投资意愿低迷，部分银行资本也偏紧。最合理的预期是？',o:['M2 可能只小幅增加：释放的是准备金，变成贷款还要看需求和资本','M2 必然增加 1 万亿元乘以货币乘数','M2 恰好增加 1 万亿元','M2 一定下降，因为准备金减少了'],a:0,why:'可能只小幅增加。准备金本身不计入 M2，只有新增贷款才会创造存款，而贷款受需求、盈利和资本约束。'},
+{q:'人们担心银行出问题，纷纷把存款取成现金放在家里，准备金率不变。按教科书模型，货币乘数会怎样？',o:['变大：现金也是货币，货币变多了','不变：乘数只取决于准备金率','变小：更多基础货币停在公众手里，不能支持新的贷款','变成零：银行不能再放任何贷款'],a:2,why:'变小。c 上升时 (1+c)/(r+c) 下降。被取出的现金不再回到银行，存贷循环每一轮缩小得更快。'},
+{q:'一家公司用账户里的 50 万元存款提前还清了银行贷款。广义货币怎样变化？',o:['增加 50 万元：银行收回了钱可以再贷','减少 50 万元：存款和贷款同时消失','不变：钱只是从公司转到了银行','减少 50 万元除以准备金率'],a:1,why:'减少 50 万元。还贷与放贷相反，存款被注销，贷款资产也一同消失。银行之后是否再贷，是另一笔新的决策。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'部分准备金',en:'fractional reserve',d:'银行只把存款的一部分留作准备金，其余用于贷款或投资的制度。'},
+{t:'存款准备金率',en:'reserve requirement ratio',d:'央行规定银行至少要按存款的多少比例持有准备金。下调俗称“降准”。'},
+{t:'超额准备金',en:'excess reserves',d:'银行实际持有的准备金中超过法定要求的部分。'},
+{t:'基础货币',en:'monetary base',d:'央行直接发行的货币：流通中的现金加上商业银行在央行的准备金。'},
+{t:'广义货币',en:'broad money',d:'家庭和企业持有的现金与银行存款等，中国常用 M2。大部分是银行存款。'},
+{t:'货币乘数',en:'money multiplier',d:'广义货币与基础货币之比。教科书公式 (1+c)/(r+c)，c 为现金与存款之比。现实中是事后比率，不是固定的放大器。'},
+{t:'现金漏出',en:'currency drain',d:'存贷循环中一部分钱以现金形式留在公众手里，不再回到银行支持新贷款。'},
+{t:'贷款创造存款',en:'loans create deposits',d:'银行发放贷款时同时记下借款人的存款，广义货币随之增加；还贷时存款和贷款一同消失。'},
+{t:'流动性',en:'liquidity',d:'资产能多快、以多低成本变成可用于支付的钱。降准“释放流动性”指银行可自由使用的准备金增加。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

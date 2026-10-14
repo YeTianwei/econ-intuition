@@ -220,7 +220,7 @@
         {
           id: 'm10-02', title: '银行如何创造货币',
           en: 'How banks create money',
-          path: 'm10/02-banks-create-money.html', status: 'todo'
+          path: 'm10/02-banks-create-money.html', status: 'done'
         },
         {
           id: 'm10-03', title: '通胀从哪来',
