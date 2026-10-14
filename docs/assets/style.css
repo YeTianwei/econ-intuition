@@ -153,8 +153,10 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--demand);outline
 .tbl th,.tbl td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:baseline}
 .tbl th{font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
 .tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--font-mono)}
-.tbl td{min-width:5em}
+.tbl td{min-width:5em;font-variant-numeric:tabular-nums}
 .tbl.comparison td{min-width:10em}
+.tbl .ctl{grid-template-columns:minmax(4.5em,1fr) auto;margin:4px 0}
+.tbl .ctl label{white-space:nowrap}
 
 /* misconceptions */
 .mis{display:grid;grid-template-columns:1fr 2fr;gap:6px 28px;padding:16px 0;border-top:1px solid var(--line)}

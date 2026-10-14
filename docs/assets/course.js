@@ -105,7 +105,7 @@
         {
           id: 'm05-01', title: '纳什均衡与囚徒困境',
           en: 'Nash equilibrium and the prisoner\'s dilemma',
-          path: 'm05/01-nash-equilibrium.html', status: 'todo'
+          path: 'm05/01-nash-equilibrium.html', status: 'done'
         },
         {
           id: 'm05-02', title: '重复博弈与合作',

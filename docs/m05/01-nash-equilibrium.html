@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>纳什均衡与囚徒困境</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m05-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>纳什均衡与囚徒困境</h1>
+<p class="sub">Nash equilibrium and the prisoner's dilemma</p>
+<p class="lede">你猜对手会怎么做，对手也在猜你。把这种互相猜测写成四格表，就能发现：一个谁都不愿单独离开的结果，未必是大家最喜欢的结果。问题有时不在于人不够聪明，而在于规则把个人激励指向了哪里。</p>
+<p class="meta">约 20 分钟 · 1 个交互区 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m04/03-oligopoly-price-discrimination.html#oligopoly">寡头的相互依存与卡特尔</a>。本课把上一模块的跟价直觉变成可以逐格核查的模型。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>两家航空公司在同一航线上接连降价，客流没多多少，双方利润却一起缩水</blockquote></figure>
+<p class="prose">以下航空公司、利润与决策都是虚构教学场景。假设两家公司同时决定本期维持原价还是打折，不能在看到对方本期选择后再改票价；旅客需求、成本和航班数量暂时固定。</p>
+<ol class="qs"><li>双方都不喜欢价格战，为什么还会主动降价？</li><li>两家都降价，是否表示这个结果对两家合起来最好，甚至对全社会最好？</li><li>只要领导人更理性、双方先口头承诺，就一定能避免价格战吗？</li></ol>
+</section>
+<section id="matrix">
+<h2>先把“对我有利”写清楚</h2>
+<p class="prose"><b>博弈</b><span class="en"> (game)</span> 是参与者的选择互相影响收益的决策环境。描述它至少要说清：谁参与、各自可以做什么、何时选择、知道什么，以及每种组合的收益。这里不需要真的打游戏，也不要求双方互相仇视。</p>
+<p class="prose"><b>策略</b><span class="en"> (strategy)</span> 是一套行动计划。在这个一次同时行动的模型里，策略只需选“合作 C”或“背叛 D”；它们分别代指维持原价和打折。这只是模型标签，不是在道德上谴责降价，也不是鼓励航空公司合谋。</p>
+<p class="prose"><b>支付矩阵</b><span class="en"> (payoff matrix)</span> 把所有组合列出来。“支付”指结果带来的收益或效用，不一定是给对手的钱。本课用利润指数，数值越大越好。甲选择行、乙选择列，每格先写甲的收益，再写乙的收益，不能把两者顺序读反。</p>
+<p class="prose">基准表的四格为 (3,3)、(0,5)、(5,0)、(1,1)。双方维持原价各赚 3；甲单独打折时甲赚 5、乙赚 0；乙单独打折反过来；双方打折各赚 1。所有数字只代表这个假想利润结构，不代表机票金额，更不是现实行业估计。</p>
+<h3>最优反应：固定别人，只移动自己</h3>
+<p class="prose"><b>最优反应</b><span class="en"> (best response)</span> 是给定对方策略时，自己收益最高的选择。看甲时固定一列，上下比较该列的甲收益；看乙时固定一行，左右比较该行的乙收益。不要让双方同时改策略，那会回答另一个问题。</p>
+<p class="prose">如果乙合作，甲比较合作的 3 与背叛的 5，选背叛；如果乙背叛，甲比较合作的 0 与背叛的 1，还是选背叛。乙面对甲的两种行动也一样。无论对手怎样选都更好的策略，叫<b>严格占优策略</b><span class="en"> (strictly dominant strategy)</span>。若有些情形只是一样好、其他情形更好，则是弱占优，不能混称严格占优。</p>
+<div class="analogy"><span class="lab">类比</span><p>两位室友都可以洗公共厨房，也可以不洗。若自己不洗省下的时间总比自己享受清洁的新增好处大，每个人都可能选择不洗；但两人都洗的整洁生活，又可能比两人都不洗更好。类比成立依赖这些成本收益，不是“室友问题必然都是囚徒困境”。</p></div>
+<div class="widget" id="w-matrix" aria-labelledby="w1t">
+<h3 id="w1t">交互区 1　支付矩阵编辑器</h3>
+<p class="prose">每格输入甲、乙两人的利润指数，允许 −20 到 20 的整数。输入即更新；清空、越界或非整数时暂停计算，并保留最后有效结果。预设只换数字，C / D 的行列顺序始终不变。</p>
+<div class="chips" id="presets" role="group" aria-label="选择支付矩阵">
+<button type="button" class="chip" data-preset="pd" aria-pressed="true">经典囚徒困境</button>
+<button type="button" class="chip" data-preset="coord" aria-pressed="false">协调</button>
+<button type="button" class="chip" data-preset="cycle" aria-pressed="false">无纯均衡</button>
+<button type="button" class="chip" data-preset="equal" aria-pressed="false">全相等</button>
+</div>
+<div class="tablewrap" tabindex="0" role="region" aria-label="支付输入矩阵，可横向滚动">
+<table class="tbl"><caption>编辑支付：单位为利润指数；甲选行，乙选列</caption><thead><tr><th scope="col">甲 / 乙</th><th scope="col">乙合作 C</th><th scope="col">乙背叛 D</th></tr></thead><tbody>
+<tr><th scope="row">甲合作 C</th><td><div class="ctl"><label for="p0">甲 · CC</label><input id="p0" type="number" min="-20" max="20" step="1" value="3" required aria-describedby="input-error"></div><div class="ctl"><label for="p1">乙 · CC</label><input id="p1" type="number" min="-20" max="20" step="1" value="3" required aria-describedby="input-error"></div></td><td><div class="ctl"><label for="p2">甲 · CD</label><input id="p2" type="number" min="-20" max="20" step="1" value="0" required aria-describedby="input-error"></div><div class="ctl"><label for="p3">乙 · CD</label><input id="p3" type="number" min="-20" max="20" step="1" value="5" required aria-describedby="input-error"></div></td></tr>
+<tr><th scope="row">甲背叛 D</th><td><div class="ctl"><label for="p4">甲 · DC</label><input id="p4" type="number" min="-20" max="20" step="1" value="5" required aria-describedby="input-error"></div><div class="ctl"><label for="p5">乙 · DC</label><input id="p5" type="number" min="-20" max="20" step="1" value="0" required aria-describedby="input-error"></div></td><td><div class="ctl"><label for="p6">甲 · DD</label><input id="p6" type="number" min="-20" max="20" step="1" value="1" required aria-describedby="input-error"></div><div class="ctl"><label for="p7">乙 · DD</label><input id="p7" type="number" min="-20" max="20" step="1" value="1" required aria-describedby="input-error"></div></td></tr>
+</tbody></table></div>
+<p id="input-error" class="input-error" role="status" aria-live="polite"></p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="最后有效矩阵的最优反应与纯策略均衡，可横向滚动">
+<table class="tbl" id="result"><caption>最后有效结果：每格 (甲, 乙)，★ 表示该人的最优反应（含并列）；“均衡”表示双方都是最优反应</caption><thead><tr><th scope="col">甲 / 乙</th><th scope="col">乙合作 C</th><th scope="col">乙背叛 D</th></tr></thead><tbody><tr><th scope="row">甲合作 C</th><td id="cell0"></td><td id="cell1"></td></tr><tr><th scope="row">甲背叛 D</th><td id="cell2"></td><td id="cell3"></td></tr></tbody></table>
+</div>
+<dl class="read pairs"><div><dt>纯策略均衡数量</dt><dd id="r-count"></dd></div><div><dt>甲的严格占优策略</dt><dd id="r-a"></dd></div><div><dt>乙的严格占优策略</dt><dd id="r-b"></dd></div><div><dt>囚徒困境结构</dt><dd id="r-pd"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">数字均为教学示意。负数表示亏损指数，合法且不需要截为零。这里只求纯策略均衡，不计算混合策略概率；并列最优全部保留。协调与循环预设中的 C / D 仅为行动代号。</p>
+</div>
+<h3>动手核查，不只看结论</h3>
+<ol class="qs"><li>保持经典预设，遮住乙的数值，独立找出甲的两个最优反应；再交换角色。结果表的星号与你一致吗？</li><li>只把 CC 格甲的 3 改为 6。现在甲还有严格占优策略吗？为什么 DD 仍可能是均衡，却不再是囚徒困境？</li><li>切换协调。分别从 CC 与 DD 出发，只移动一人，记录谁会损失。然后切换全相等，解释为什么四格都能成为均衡。</li></ol>
+</section>
+<section id="equilibrium">
+<h2>稳定，是“单独改不会更好”</h2>
+<p class="prose"><b>纳什均衡</b><span class="en"> (Nash equilibrium)</span> 是各方策略互为最优反应的组合。保持别人不变，没有人能通过单方面改选提高自己的收益。它不是最大总分的同义词，也不表示大家满意、公平或达成了协议。</p>
+<p class="formula">uᵢ(sᵢ*, s₋ᵢ*) ≥ uᵢ(sᵢ, s₋ᵢ*)</p>
+<p class="prose">这行只说：别人保持均衡策略时，参与者 i 的均衡收益不低于自己换任何其他策略的收益。星号是候选均衡，s₋ᵢ 表示其他人的选择。用“≥”而非“&gt;”，所以无差别的改选不破坏均衡。</p>
+<p class="prose">基准表里 DD 的双方收益是 (1,1)。甲若单独转成 C，会从 1 掉到 0；乙单独转成 C 也如此，因此 DD 是均衡。CC 虽然给双方各 3，但任何一方都能趁别人合作从 3 提到 5，因此不是均衡。“一起改都更好”与“单独改就更好”必须分开。</p>
+<p class="prose">编辑器把每次确定选 C 或 D 的均衡称为<b>纯策略均衡</b><span class="en"> (pure-strategy equilibrium)</span>。协调预设有两个：CC 与 DD。对方选 C 时你也愿选 C，对方选 D 时你也愿选 D，所以没有占优策略，但仍然有均衡。占优是很强的条件，不是均衡存在的必要条件。</p>
+<p class="prose">循环预设让甲偏好与乙相同、乙偏好与甲不同。逐格看，每格都有一方愿意改，因此没有纯策略均衡。但<b>混合策略</b><span class="en"> (mixed strategy)</span> 允许按概率随机选择；有限参与者、有限行动的博弈在允许混合策略时至少有一个纳什均衡。这个预设中双方各以一半概率选 C / D，就让对方无法靠固定改选提高期望收益。</p>
+<p class="prose">“存在均衡”也不等于现实过程必然很快到达它。参与者可能信息不足、不断试错、对收益判断不同；有多个均衡时还要解释为何协调到其中一个。均衡是检查策略一致性的工具，不是完整的行为预测器。</p>
+</section>
+<section id="dilemma">
+<h2>囚徒困境到底需要什么结构</h2>
+<p class="prose"><b>囚徒困境</b><span class="en"> (prisoner's dilemma)</span> 的关键是两个条件同时成立：双方都有严格占优的背叛策略；而双方合作又各自严格好于双方背叛。它把个人理性与共同利益的冲突凸显出来。只要有人吃亏，或者只要有冲突，都不能自动套这个名称。</p>
+<p class="prose">对每一方分别记：T 是自己背叛、对方合作的诱惑收益；R 是双方合作的回报；P 是双方背叛的惩罚；S 是自己合作、对方背叛时的收益。甲乙的数值可以不同，但各自都必须满足同样的严格顺序。</p>
+<p class="formula">T &gt; R &gt; P &gt; S</p>
+<p class="prose">T &gt; R 和 P &gt; S 保证背叛严格占优，R &gt; P 保证彼此合作都更好。基准为 5 &gt; 3 &gt; 1 &gt; 0；编辑器逐人检查，不靠四格总分猜测，也不把相等当成严格更好。</p>
+<p class="prose">有的重复博弈教材还加上 2R &gt; T + S，让持续互相合作比轮流占便宜的平均收益更高。这是一个有用的额外条件，不是上面一次博弈结构的必要条件。基准满足它；若只把双方的 T 改为 8，仍有 8 &gt; 3 &gt; 1 &gt; 0，却不再满足额外条件。编辑器把两项判断分开报告。</p>
+<h3>把标签换成价格、广告或军备</h3>
+<p class="prose">在假想广告大战中，C 可以是少投广告，D 是多投。如果单独多投能抢走客户，双方都多投却只是把同一批客户重新分配、增加成本，可能出现类似结构。但如果广告提供了有用信息、扩大总需求，支付关系可能完全不同，必须重填矩阵。</p>
+<p class="prose">军备竞赛也可作条件性的类比：一方担心克制时被另一方超越，于是双方投入更多资源；若相互克制让双方都更安全、更省资源，才可能有相同困境。真实安全问题还涉及不确定威胁、多方参与、不可逆投资，不能用四格表替代具体证据。</p>
+<p class="prose">航空公司共同高利润只是两家公司之间的评价。旅客可能因折扣受益，行业维持高价可能损害消费者。把 CC 叫“合作”不意味着它是社会最优，更不构成维持高价的政策建议。需要回到<a href="../m03/01-surplus-efficiency.html#surplus">买卖双方的剩余</a>，把矩阵外的人也算进去。</p>
+<p class="prose">要改变结果，应问什么能改变偏离收益：可执行的规则、技术上的承诺、可验证的信息，或未来继续往来的价值。空口约定若不改变支付与可行行动，就不消除从 3 变 5 的诱惑。下一课会研究反复相遇怎样把“今天占便宜”变成“明天失去生意”。</p>
+</section>
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“均衡就是总收益最大，理性的人不会选坏结果。”</p><p>均衡只排除有利的单方面偏离。DD 可以稳定，同时被 CC 对双方严格改善；而两家企业利润之和也不等于社会总收益。</p></div>
+<div class="mis"><p class="said">“没有占优策略，就没有纳什均衡。”</p><p>协调博弈没有占优策略，却有两个纯策略均衡。最优反应取决于对方，不妨碍双方在某一组合里互为最优反应。</p></div>
+<div class="mis"><p class="said">“表里没标均衡，说明这个博弈无解。”</p><p>没标出的只是纯策略均衡。允许按概率选行动后，有限博弈仍有混合策略均衡；这与真实参与者是否会找到它是两回事。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每题都先固定对方，再比较自己的收益。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先复述判断方法，再点开核对。</p><div class="cards" id="cards"></div></section>
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>为什么不喜欢价格战还降价？</b>基准矩阵中，别人不降时，自己降能从 3 得到 5；别人降时，跟降能把 0 提到 1。背叛对双方严格占优，所以即使预见双方利润缩小，也有各自的行动理由。现实是否符合这张表，还要核查客流转移与成本。</div></li><li><div><b>共同降价是“最好”吗？</b>对两家企业，DD 的 (1,1) 不如 CC 的 (3,3)，只是没有人愿独自退出 DD。对社会还要计入旅客低价收益、服务质量和资源成本，不能把企业共同利益直接称作全社会利益。</div></li><li><div><b>更理性或先承诺就能解决吗？</b>在不改变规则的一次博弈里，更清楚地理解收益并不会消除偏离诱因。口头承诺本身不改变矩阵。可执行约束或长期关系可能改变激励，但需要另一个模型，并同时考虑竞争政策与消费者利益。</div></li></ol>
+<p class="prose">以后看到“双方明知受损还继续竞争”，先问：这是单方可改善但没行动，还是只有共同改才更好？这一步能避免把结构性困境简单归因于愚蠢。</p>
+<button type="button" class="chip" id="goChart">重放航空公司矩阵</button>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var PRESETS={pd:[3,3,0,5,5,0,1,1],coord:[4,4,0,0,0,0,2,2],cycle:[1,-1,-1,1,-1,1,1,-1],equal:[2,2,2,2,2,2,2,2]};
+function model(v){
+  var best=[],equilibria=[];
+  for(var k=0;k<4;k++){
+    var r=Math.floor(k/2),c=k%2;
+    var a=v[2*k]>=v[2*((1-r)*2+c)],b=v[2*k+1]>=v[2*(r*2+1-c)+1];
+    best.push([a,b]);if(a&&b){equilibria.push(k);}
+  }
+  var ad=v[4]>v[0]&&v[6]>v[2],bd=v[3]>v[1]&&v[7]>v[5];
+  var ac=v[0]>v[4]&&v[2]>v[6],bc=v[1]>v[3]&&v[5]>v[7];
+  var pd=ad&&bd&&v[0]>v[6]&&v[1]>v[7];
+  return {best:best,equilibria:equilibria,a:ad?'D（背叛）':ac?'C（合作）':'无',b:bd?'D（背叛）':bc?'C（合作）':'无',pd:pd,extra:2*v[0]>v[4]+v[2]&&2*v[1]>v[3]+v[5]};
+}
+function update(){
+  var v=[],invalid=[];
+  for(var i=0;i<8;i++){var e=$('#p'+i),n=e.valueAsNumber,ok=e.value!==''&&Number.isInteger(n)&&n>=-20&&n<=20;e.setAttribute('aria-invalid',String(!ok));if(!ok){invalid.push(e.labels[0].textContent);}v.push(n);}
+  $('#input-error').textContent=invalid.length?'计算暂停：'+invalid.join('、')+' 请输入 −20 到 20 的整数。下方仍为最后有效结果。':'';
+  if(invalid.length){return;}
+  var s=model(v),names=['CC','CD','DC','DD'];
+  s.best.forEach(function(br,k){var td=$('#cell'+k);td.textContent='('+v[2*k]+(br[0]?' ★':'')+', '+v[2*k+1]+(br[1]?' ★':'')+')'+(br[0]&&br[1]?' · 均衡':'');td.dataset.equilibrium=String(br[0]&&br[1]);});
+  $('#r-count').textContent=s.equilibria.length+' 个';$('#r-a').textContent=s.a;$('#r-b').textContent=s.b;$('#r-pd').textContent=s.pd?'是':'否';
+  var text=s.equilibria.length?'纯策略均衡：'+s.equilibria.map(function(k){return names[k]+' ('+v[2*k]+', '+v[2*k+1]+')';}).join('；')+'。':'没有纯策略均衡，不等于没有纳什均衡；允许混合策略时有限博弈仍有均衡。';
+  text+=s.pd?'双方背叛严格占优，且相互合作各自更好，满足各自的 T > R > P > S。'+(s.extra?'双方也满足额外条件 2R > T + S。':'至少一方不满足额外条件 2R > T + S，但仍是囚徒困境。'):'不满足“双方背叛严格占优且相互合作各自更好”的囚徒困境条件。';
+  $('#verdict').textContent=text;
+}
+function preset(name){PRESETS[name].forEach(function(v,i){$('#p'+i).value=v;});document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.preset===name));});update();}
+document.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){preset(b.dataset.preset);});});
+for(var i=0;i<8;i++){$('#p'+i).addEventListener('input',function(){document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed','false');});update();});}
+$('#goChart').addEventListener('click',function(){preset('pd');$('#w-matrix').scrollIntoView({block:'start'});});update();
+var QUIZ=[
+{q:'经典矩阵中乙已合作，甲从合作改成背叛，收益从 3 变 5。这说明什么？',o:['CC 已经是纳什均衡','甲在 CC 有单方面偏离的诱因，所以 CC 不是均衡','只要双方总分下降就不允许偏离','乙必须同时改选，甲才能获益'],a:1,why:'CC 不是均衡。固定乙合作，甲单独改变就能提高收益；纳什判断不要求双方一起变，也不最大化总分。'},
+{q:'协调预设里没有严格占优策略，却有 CC 与 DD 两个均衡。原因是什么？',o:['均衡要求的是某一组合互为最优反应，不要求对所有对手行动都占优','只要两人的收益相等就都是均衡','均衡必须选总分最高的一格，DD 不应算','协调博弈不是博弈论研究对象'],a:0,why:'最优反应可以随对手行动变化。占优策略比均衡要求更强；在 CC、DD 各自固定对手后，没有人能靠独自改选获益。'},
+{q:'将对称矩阵改为 T=8、R=3、P=1、S=0，应该怎样判断？',o:['不是囚徒困境，因为 2R 小于 T+S','CC 成为唯一均衡，因为总分为 6','背叛不再严格占优，因为诱惑太大','仍是囚徒困境，但不满足额外的 2R>T+S 条件'],a:3,why:'严格顺序 8>3>1>0 仍成立。2R>T+S 是让长期互相合作优于轮流占便宜的额外条件，不是一次囚徒困境的必要条件。'},
+{q:'一个有限博弈的每个纯策略组合都有人想改选，可以推出什么？',o:['不存在任何纳什均衡','双方都缺乏理性','没有纯策略均衡，但允许混合策略仍有均衡','总收益必然是负数'],a:2,why:'纯策略与混合策略要区分。有限博弈允许随机化时有均衡，纯策略逐格检查找不到，并不推翻这一点。'},
+{q:'航空公司共同维持高价比价格战利润高，足以证明什么？',o:['共同高价必然增加社会总剩余','在设定下企业更喜欢共同高价，但还需另算消费者和社会效果','只要承诺维持高价，偏离诱因自动消失','价格战不可能是理性选择'],a:1,why:'矩阵只计算两家企业的收益。消费者可能受益于折扣；企业共同获利与全社会效率是不同问题，口头承诺也不自动改变支付。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'博弈',en:'game',d:'参与者的选择互相影响收益。建模要交代参与者、行动、时序、信息与收益。'},
+{t:'支付矩阵',en:'payoff matrix',d:'列出所有行动组合及各方收益。本课甲选行、乙选列，每格先甲后乙；支付不必是转给对方的钱。'},
+{t:'最优反应',en:'best response',d:'固定对手策略，比较自己的可选收益。甲在一列里上下比，乙在一行里左右比；并列最高都算。'},
+{t:'占优策略',en:'dominant strategy',d:'不论对方怎么选都更好（严格）或不差且有时更好（弱）的策略。均衡不要求人人有占优策略。'},
+{t:'纳什均衡',en:'Nash equilibrium',d:'策略互为最优反应；固定别人，没有人能靠单独改选提高收益。不等于集体最佳、公平或满意。'},
+{t:'囚徒困境',en:"prisoner's dilemma",d:'双方背叛严格占优，但相互合作各自更好。每一方满足 T>R>P>S；2R>T+S 是另一个额外条件。'},
+{t:'纯策略',en:'pure strategy',d:'确定选一个行动。两个行动各选其一产生四格纯策略组合，可能没有、一个或多个纯策略均衡。'},
+{t:'混合策略',en:'mixed strategy',d:'以概率随机选行动。有限博弈允许混合策略时存在纳什均衡，不能把无纯策略均衡说成无纳什均衡。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
