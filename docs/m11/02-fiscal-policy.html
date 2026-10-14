@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>财政政策、乘数与政府债务</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m11-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>财政政策、乘数与政府债务</h1>
+<p class="sub">Fiscal policy, multipliers and public debt</p>
+<p class="lede">经济下滑时，政府常常会多花钱或减税，希望把需求托起来。支持者说，政府花出去的 1 元会在经济里一轮轮转手，带来不止 1 元的产出；反对者说，钱是借来的，债务越滚越大，迟早要还。这一课把两件事拆开看：多花的钱能放大多少，以及借来的债什么时候会失控。</p>
+<p class="meta">约 24 分钟 · 2 个交互图 · 5 道自测题 · 9 张闪卡</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>某国推出相当于 GDP 3% 的财政刺激计划，国债占 GDP 比重升至 110%，创历史新高</blockquote></figure>
+<p class="prose">报道说，政府计划加大基础设施投资、给低收入家庭发放补贴，并下调部分税率。官员表示，刺激能“撬动数倍的经济增长”。也有评论担心，债务已经高于一年的 GDP，再借下去会把利息负担留给下一代。</p>
+<ol class="qs"><li>政府多花 1 元，经济真的能多出好几元吗？同样规模的减税，效果一样吗？</li><li>“赤字”和“债务”是一回事吗？今年的刺激会让债务率怎样变化？</li><li>债务占 GDP 110% 算不算太高？有没有一个统一的红线？</li></ol>
+</section>
+<section id="fiscal">
+<h2>财政政策：政府能动的两个旋钮</h2>
+<p class="prose">政府通过调整支出和税收来影响经济，叫<b>财政政策</b><span class="en"> (fiscal policy)</span>。它有两个旋钮：一是政府购买，例如修路、采购设备、给公务员发工资；二是税收和转移支付，例如减个人所得税、发放补贴和失业金。</p>
+<p class="prose">回忆 <a href="../m08/01-gdp.html#expenditure">GDP 的支出法</a>：GDP = C + I + G + NX。政府购买 G 直接是 GDP 的一部分。减税和转移支付本身不算进 G，它们先改变家庭手里的钱，再通过消费 C 影响 GDP。这个差别后面会决定两种乘数的大小。</p>
+<p class="prose">经济不景气时，政府增加支出或减税，叫扩张性财政政策；经济过热时，削减支出或加税，叫紧缩性财政政策。本课的问题是：扩张的效果有多大，代价又是什么。</p>
+</section>
+<section id="multiplier">
+<h2>乘数：1 元支出为什么会转好几手</h2>
+<p class="prose">政府花 100 元请施工队修路，这 100 元成了工人和老板的收入。他们拿到钱，会花掉一部分，比如 60 元买菜、吃饭，剩下 40 元存起来。新增收入中被花掉的比例叫<b>边际消费倾向</b><span class="en"> (marginal propensity to consume, MPC)</span>，这里 MPC = 0.6。</p>
+<p class="prose">60 元又成了饭馆和菜贩的收入，他们再花掉其中的 60%，即 36 元。每一轮都比上一轮小，但加起来远超 100 元。最初 1 元支出最终带来的总产出变化，叫<b>乘数</b><span class="en"> (multiplier)</span>。</p>
+<p class="formula">支出乘数 = 1 ÷ (1 − MPC)<br>税收乘数 = −MPC ÷ (1 − MPC)</p>
+<p class="prose">第一行来自等比数列求和：1 + MPC + MPC² + …。MPC = 0.6 时，支出乘数是 2.5。每一轮被存起来的部分 1 − MPC 是“漏出”，漏得越多，乘数越小。MPC 必须小于 1：如果人们把新增收入全部花掉，数列不收敛，简单模型就失去意义。</p>
+<p class="prose">第二行说的是减税。减税 100 元，家庭第一轮只花掉 MPC × 100 = 60 元，另外 40 元在一开始就被存起来了。所以税收乘数比支出乘数少了第一轮，绝对值小 1，负号表示加税会减少产出。由此还能推出：政府同时增支 100 元、增税 100 元，在这个模型里产出仍增加 100 元，这叫平衡预算乘数等于 1。</p>
+<div class="analogy"><span class="lab">类比</span><p>往一个底部漏水的水桶链里倒水。第一只桶接到 100 升，漏掉 40 升，把 60 升倒给下一只桶，下一只再漏掉 40%……所有桶经手的水加起来是 250 升。减税相当于你先把水交给一个人，他自己先截留了 40 升，才开始往桶里倒，所以总量少了第一桶。</p></div>
+<div class="widget" id="w-mult" aria-labelledby="w1t">
+<h3 id="w1t">图 1　乘数：100 元一轮轮转手，最后累计多少</h3>
+<div class="chips" role="group" aria-label="选择政策"><button type="button" class="chip" data-mode="g" aria-pressed="true">政府增加购买 100 元</button><button type="button" class="chip" data-mode="t" aria-pressed="false">减税 100 元</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw bar alternative"></span>当轮新增支出</li><li><span class="sw model"></span>累计产出增加</li><li><span class="sw government g"></span>无穷多轮的极限</li></ul>
+<div class="controls">
+<div class="ctl full"><label for="mpc">边际消费倾向 MPC</label><output id="mpc-v" for="mpc"></output><input id="mpc" type="range" min="0" max="0.95" step="0.05" value="0.6" aria-describedby="mpc-hint"><span class="hint" id="mpc-hint">0~0.95；每多 1 元收入花掉的部分。上限不取 1，否则数列不收敛。</span></div>
+</div>
+<dl class="read pairs"><div><dt>支出乘数 1/(1−MPC)</dt><dd id="r1-g"></dd></div><div><dt>税收乘数 −MPC/(1−MPC)</dt><dd id="r1-t"></dd></div><div><dt>本政策：25 轮后累计 / 极限</dt><dd id="r1-cum"></dd></div><div><dt>本政策：已达到极限的比例</dt><dd id="r1-pct"></dd></div><div><dt>增支 100 同时增税 100</dt><dd id="r1-bb"></dd></div></dl>
+<p class="verdict" id="verdict1" aria-live="polite"></p>
+<p class="note">数字为教学示意。第 0 轮是政府自己的购买；减税时第 0 轮没有支出，家庭从第 1 轮开始花钱。模型是最简单的封闭经济：不考虑进口、利率、价格变化和央行反应，也假设经济有闲置产能，产出能跟着需求增加。图中只画 25 轮，极限按无穷多轮求和。</p>
+</div>
+<h3>现实中的乘数小得多，也更有争议</h3>
+<p class="prose">图 1 在 MPC = 0.6 时给出 2.5，MPC = 0.9 时给出 10。真实世界的估计远没有这么大，而且研究者之间分歧明显。原因是简单模型漏掉了好几条“漏水口”：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="让乘数变小或变大的因素，可横向滚动"><table class="tbl comparison"><thead><tr><th scope="col">因素</th><th scope="col">对乘数的影响</th></tr></thead><tbody>
+<tr><td>开放程度</td><td>新增收入有一部分买了进口商品，需求流到国外。进口占比越高，本国乘数越小。</td></tr>
+<tr><td>挤出效应</td><td>政府多借钱，可能推高利率，压低企业投资和家庭购房，抵消一部分刺激。</td></tr>
+<tr><td>货币政策反应</td><td>如果央行认为刺激会推高通胀而加息，乘数会变小；如果利率已经贴近零、央行不加息，乘数可能更大。</td></tr>
+<tr><td>经济的闲置程度</td><td>衰退中工人和机器闲着，多出的需求更多变成产出；接近满负荷时，更多变成物价上涨。</td></tr>
+<tr><td>人们对未来的预期</td><td>如果家庭预期今天的赤字意味着明天加税，可能把减税的钱存起来，消费反应变弱。</td></tr>
+</tbody></table></div>
+<p class="prose">政府借钱推高利率、从而压低私人支出的现象，叫<b>挤出效应</b><span class="en"> (crowding out)</span>。它有多强，取决于央行怎样应对、资金能否从国外流入，以及经济是不是处在衰退中。</p>
+<p class="prose">实证上的分歧可以分两边看。Valerie Ramey 2019 年在《经济展望杂志》上的综述认为，多数研究给出的平均政府支出乘数落在 0.6 到 1 这个较窄的区间，税收变动乘数在 −2 到 −3 之间，同时指出在一些特定条件下乘数会超出这个范围。按这个区间，政府多花 1 元，产出增加不到 1 元，私人支出被挤出了一部分；而且与简单模型相反，这些估计里税收变动的效果大于支出变动。</p>
+<p class="prose">另一些证据指向衰退时期乘数更大。Olivier Blanchard 和 Daniel Leigh 2013 年的 IMF 工作论文发现，在 2008 年金融危机之后，计划财政紧缩力度越大的发达经济体，实际增长越是低于预测，这种关系在危机初期尤其明显；他们的解读是当时的乘数明显高于预测者隐含假设的水平，后来这种关系减弱，部分可能是因为乘数变小了。支持在衰退中大规模刺激的人常引用这类证据；怀疑刺激效果的人则强调平均估计不到 1、挤出和未来税负。两边的分歧不只是数字，还有对“什么时候、什么条件下”的判断。</p>
+</section>
+<section id="stabilizers">
+<h2>自动稳定器：不用投票就会启动的财政政策</h2>
+<p class="prose">并非所有财政政策都要新立法。经济下滑时，收入减少，所得税自动少收；失业的人增多，失业保险金自动多发。这些安排在衰退时自动给家庭补充收入，在繁荣时自动多收税、少发补贴，叫<b>自动稳定器</b><span class="en"> (automatic stabilizers)</span>。</p>
+<p class="prose">它们对应的是 <a href="../m08/03-unemployment.html#types">周期性失业</a> 一类的波动：不需要等议会辩论，几乎没有决策时滞。代价是，衰退时即使政府什么新措施都不出台，赤字也会自动扩大。看到“赤字扩大”的新闻，先要分清多少是自动稳定器带来的，多少是新出台的刺激。</p>
+</section>
+<section id="debt">
+<h2>赤字与债务：流量和存量</h2>
+<p class="prose">政府一年的支出超过收入的部分，叫<b>财政赤字</b><span class="en"> (fiscal deficit)</span>，它是一年内的流量。历年借款累积下来、尚未偿还的总额，叫<b>政府债务</b><span class="en"> (public debt)</span>，它是某个时点的存量。赤字是往浴缸里放的水，债务是浴缸里的水位。赤字缩小，只是放水变慢，水位仍在上升；只有出现盈余，水位才会下降。</p>
+<p class="prose">赤字还要再分一层。政府支出里有一项是债务利息。把利息支出除去后算出的赤字，叫<b>基本赤字</b><span class="en"> (primary deficit)</span>；为负时就是基本盈余。基本赤字反映的是当年的财政选择，利息反映的是过去欠下的债。</p>
+<h3>债务率的递推：利息让它变大，增长让它变小</h3>
+<p class="prose">比较不同国家或不同年代的债务，通常看债务占 GDP 的比重，即债务率 b。设政府为债务支付的平均名义利率是 r，名义 GDP 增长率是 g，基本赤字占 GDP 的比例是 d，则：</p>
+<p class="formula">b(下一年) = b(今年) × (1 + r) ÷ (1 + g) + d</p>
+<p class="prose">分子 1 + r 表示旧债滚上利息，分母 1 + g 表示 GDP 这个分母也在长大。这里的 g 是名义增长率，包括实际增长和通胀；通胀能稀释旧债的实际负担，与 <a href="../m10/04-hyperinflation-deflation.html#monetize">上一模块讲的赤字货币化</a> 是同一种力量的温和版本。</p>
+<p class="prose">关键在 r − g。如果 r &lt; g，旧债相对 GDP 每年自动缩小一点，只要基本赤字不太大，债务率最终会停在某个水平。如果 r &gt; g，旧债自己就会越滚越大，即使基本收支平衡，债务率也会上升，只有足够的基本盈余才能把它稳住。让债务率保持不变的基本赤字是：</p>
+<p class="formula">稳住债务率的基本赤字 = b × (g − r) ÷ (1 + g)</p>
+<p class="prose">r &gt; g 时右边是负数，意思是需要基本盈余。</p>
+<div class="widget" id="w-debt" aria-labelledby="w2t">
+<h3 id="w2t">图 2　债务路径：未来 30 年债务占 GDP 的比重</h3>
+<div class="chips" role="group" aria-label="选择情景"><button type="button" class="chip" data-b="110" data-d="3" data-r="3" data-g="4" aria-pressed="true">新闻情景：r &lt; g</button><button type="button" class="chip" data-b="110" data-d="3" data-r="5" data-g="3" aria-pressed="false">利率升到增长之上</button><button type="button" class="chip" data-b="110" data-d="-1" data-r="5" data-g="3" aria-pressed="false">高利率下转为基本盈余</button></div>
+<div class="chart" id="chart2"></div>
+<ul class="legend"><li><span class="sw d"></span>债务率路径</li><li><span class="sw g" style="border-color:var(--muted)"></span>起点水平</li></ul>
+<div class="controls">
+<div class="ctl"><label for="b0">初始债务率 b₀（% GDP）</label><output id="b0-v" for="b0"></output><input id="b0" type="range" min="0" max="200" step="5" value="110" aria-describedby="b0-hint"><span class="hint" id="b0-hint">0%~200%；第 0 年政府债务占 GDP 的比重。</span></div>
+<div class="ctl"><label for="dd">基本赤字 d（% GDP）</label><output id="dd-v" for="dd"></output><input id="dd" type="range" min="-4" max="8" step="0.5" value="3" aria-describedby="dd-hint"><span class="hint" id="dd-hint">−4%~8%；不含利息的赤字，每年保持不变。负数表示基本盈余。</span></div>
+<div class="ctl"><label for="rr">平均名义利率 r（%）</label><output id="rr-v" for="rr"></output><input id="rr" type="range" min="0" max="10" step="0.25" value="3" aria-describedby="rr-hint"><span class="hint" id="rr-hint">0%~10%；政府全部债务的平均利率，每年不变。</span></div>
+<div class="ctl"><label for="gg">名义 GDP 增长率 g（%）</label><output id="gg-v" for="gg"></output><input id="gg" type="range" min="0" max="10" step="0.25" value="4" aria-describedby="gg-hint"><span class="hint" id="gg-hint">0%~10%；实际增长加通胀，每年不变。</span></div>
+</div>
+<dl class="read pairs"><div><dt>30 年后债务率</dt><dd id="r2-b30"></dd></div><div><dt>第 1 年债务率变化</dt><dd id="r2-d1"></dd></div><div><dt>r − g</dt><dd id="r2-rg"></dd></div><div><dt>稳住起点债务率所需</dt><dd id="r2-star"></dd></div><div><dt>参数不变时的长期去向</dt><dd id="r2-long"></dd></div></dl>
+<p class="verdict" id="verdict2" aria-live="polite"></p>
+<p class="note">数字为教学示意，不对应任何真实国家。模型假设 r、g、d 30 年不变，r 是全部存量债务的平均利率；现实中利率会随债务水平和市场信心变化，新发行的债按新利率计息，旧债要到期才重新定价，增长也会受财政政策本身影响。债务率为负表示政府持有的金融资产多于债务。</p>
+</div>
+<h3>多高算太高：两种看法</h3>
+<p class="prose">没有一个公认的债务率红线。债务能否持续，取决于未来的利率、增长和政府能否维持所需的基本收支，而不只是今天的数字。</p>
+<p class="prose">一种看法强调 r &lt; g 带来的空间。Blanchard 2019 年在美国经济学会会长演讲的论文中指出，安全利率低于增长率在历史上是常态而非例外；如果未来像过去一样，政府可以不断借新还旧而不必加税，公共债务可能没有财政成本。他同时强调自己不是在主张增加债务，而是希望更全面地讨论债务的代价。</p>
+<p class="prose">另一种看法强调风险。利率不会永远低：如果投资者开始担心债务风险而要求更高的风险溢价，利息负担加重，债务也就真的更危险，形成自我实现的循环，Blanchard 的同一篇文章也承认这种多重均衡的担忧非常重要。此外，即使没有直接的财政成本，债务也可能挤出私人资本积累。主张谨慎的人据此认为，应在利率低时留出余地，而不是把 r &lt; g 当成永久条件。</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“政府每花 1 元，经济就增加 1/(1−MPC) 元，MPC 0.9 时就是 10 元。”</p><p>这是不考虑进口、挤出、央行反应和产能约束的上限。实证估计的平均支出乘数常在 1 上下，而且随经济状态变化。</p></div>
+<div class="mis"><p class="said">“赤字在缩小，所以政府债务在减少。”</p><p>赤字是每年新增的借款，只要还有赤字，债务就在增加。债务率能否下降，还要看 r 和 g。</p></div>
+<div class="mis"><p class="said">“只要不再新增赤字，债务率就不会上升。”</p><p>基本收支平衡时，若 r &gt; g，旧债的利息滚得比 GDP 长得快，债务率仍会上升。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每题先问自己：这是第一轮的支出，还是旧债滚出来的利息？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">乘数和债务递推各有一个关键比例：MPC 和 r − g。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>政府多花 1 元，能多出好几元吗？减税效果一样吗？</b>简单模型里能：MPC 为 0.6 时支出乘数是 2.5，减税乘数是 1.5，因为减税的第一轮有一部分被存起来。但真实乘数还取决于进口、利率、央行是否加息和经济有多少闲置。实证估计分歧较大，平均支出乘数常在 1 上下，深度衰退时可能更大。“撬动数倍增长”是简单模型的说法，需要打折听。</div></li><li><div><b>赤字和债务是一回事吗？</b>不是。刺激扩大的是今年的赤字（流量），它会累加进债务（存量）。在图 2 的新闻情景里，起点 110%，基本赤字 3%，r = 3%、g = 4%，30 年后债务率约 161%；要让债务率稳在 110%，基本赤字最多约 1.06%。</div></li><li><div><b>110% 算不算太高？</b>没有统一红线。若 r 长期低于 g，并且基本赤字可控，较高的债务率也可能稳定下来；若利率升到增长之上，同样的起点会快速攀升，需要基本盈余才能稳住。在图 2 点“利率升到增长之上”对比一下。判断时要问：利率会不会上升，增长能维持多少，政治上能否在必要时转为基本盈余。</div></li></ol>
+<p class="prose">下次看到刺激计划的新闻，可以接着问：钱主要花在购买上还是减税和转移上？经济现在有多少闲置？央行会不会同时加息？政府的平均借款成本和名义增长率谁高？</p>
+<button type="button" class="chip" id="goChart">回到图 2 的新闻情景</button>
+</section>
+<section id="sources"><h2>资料来源</h2><ol class="qs">
+<li>Valerie A. Ramey，<a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.89">Ten Years after the Financial Crisis: What Have We Learned from the Renaissance in Fiscal Research?</a>，Journal of Economic Perspectives 33(2)，2019 年春季；本课引用了平均支出乘数 0.6~1、税收变动乘数 −2~−3 的综述结论。</li>
+<li>Olivier J. Blanchard, Daniel Leigh（IMF），<a href="https://www.imf.org/en/Publications/WP/Issues/2016/12/31/Growth-Forecast-Errors-and-Fiscal-Multipliers-40200">Growth Forecast Errors and Fiscal Multipliers</a>，IMF Working Paper，2013-01-03；本课引用了发达经济体计划紧缩越强、增长越低于预测，以及危机初期乘数明显高于预测者假设的结论。</li>
+<li>Olivier Blanchard，<a href="https://www.aeaweb.org/articles?id=10.1257/aer.109.4.1197">Public Debt and Low Interest Rates</a>，American Economic Review 109(4)，2019 年 4 月；本课引用了安全利率低于增长率在历史上常见、债务可能没有财政成本，以及多重均衡风险的讨论。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,MINUS='−',N=25,T=30;
+function $(s){return document.querySelector(s);}
+function niceStep(max,count){var steps=[1,2,2.5,5],k=0.01;for(;;){for(var i=0;i<steps.length;i++){var s=steps[i]*k;if(max/s<=count){return s;}}k*=10;}}
+function f1(n){return C.fmt(n,1);}
+function f2(n){return C.fmt(n,2);}
+function money(n){return n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});}
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function hit(a,b){return a.l<b.r&&b.l<a.r&&a.t<b.b&&b.t<a.b;}
+function bb(n){var r=n.getBBox();return {l:r.x-1,r:r.x+r.width+1,t:r.y-1,b:r.y+r.height+1};}
+
+/* ---------- 图 1：乘数 ---------- */
+var mode='g',box1=$('#chart1'),st1=null;
+function mult(m){
+  var rows=[],cum=0,k,s;
+  for(k=0;k<=N;k++){
+    s=mode==='g'?100*Math.pow(m,k):(k===0?0:100*Math.pow(m,k));
+    cum+=s;rows.push({k:k,s:s,cum:cum});
+  }
+  var lim=mode==='g'?100/(1-m):100*m/(1-m);
+  return {m:m,rows:rows,lim:lim,kg:1/(1-m),kt:-m/(1-m)};
+}
+function draw1(){
+  box1.replaceChildren();
+  if(!st1){return;}
+  var w=Math.max(280,Math.floor(box1.clientWidth)),top=Math.max(st1.lim,100)*1.15,u=top>=1000?1000:1;
+  var ys=niceStep(top/u,5),p1=Math.ceil(top/u/ys)*ys;
+  var f=C.frame(box1,{id:'mult',q0:0,q1:N+1,qs:N+1,p0:0,p1:p1,ps:ys,xt:'轮次',yt:u===1?'金额（元）':'金额（千元）',label:''});
+  var Y=function(v){return f.y(v/u);};
+  Array.prototype.slice.call(f.svg.querySelectorAll('text.tick')).forEach(function(t){if(t.getAttribute('text-anchor')==='middle'){t.remove();}});
+  var step=w<440?10:5,k;
+  for(k=0;k<=N;k+=step){f.svg.appendChild(C.el('text',{x:f.x(k+0.5).toFixed(1),y:f.m.t+f.ih+16,'text-anchor':'middle','class':'tick'},String(k)));}
+  var bw=Math.max(1,(f.x(1)-f.x(0))*0.7),y0=Y(0),pts=[];
+  st1.rows.forEach(function(r){
+    var x=f.x(r.k+0.5)-bw/2,ys2=Y(r.s);
+    f.svg.appendChild(C.el('rect',{x:x.toFixed(1),y:ys2.toFixed(1),width:bw.toFixed(1),height:Math.max(0,y0-ys2).toFixed(1),'class':'bar alternative','data-k':r.k,'data-v':r.s.toFixed(6)}));
+    pts.push(f.x(r.k+0.5).toFixed(1)+' '+Y(r.cum).toFixed(1));
+  });
+  f.svg.appendChild(C.el('path',{d:'M'+pts.join('L'),'class':'curve model',id:'cumline'}));
+  var yl=Y(st1.lim),xl=f.m.l,xr=f.m.l+f.iw;
+  f.svg.appendChild(C.el('path',{d:'M'+xl+' '+yl.toFixed(1)+'L'+xr+' '+yl.toFixed(1),'class':'curve government ghost',id:'limline','data-v':st1.lim.toFixed(6)}));
+  var ly=yl-7;if(ly<f.m.t+14){ly=yl+16;}
+  C.label(f,'极限 '+money(st1.lim)+' 元','government',xr-6,ly.toFixed(1),'end');
+  box1.appendChild(f.svg);
+}
+function update1(){
+  var m=+$('#mpc').value;st1=mult(m);
+  $('#mpc-v').textContent=m.toFixed(2);$('#mpc').setAttribute('aria-valuetext','边际消费倾向 '+m.toFixed(2));
+  document.querySelectorAll('[data-mode]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.mode===mode));});
+  var last=st1.rows[N].cum,pct=st1.lim>0?last/st1.lim*100:100;
+  $('#r1-g').textContent=f2(st1.kg);
+  $('#r1-t').textContent=f2(st1.kt);
+  $('#r1-cum').textContent=money(last)+' / '+money(st1.lim)+' 元';
+  $('#r1-pct').textContent=f1(pct)+'%';
+  $('#r1-bb').textContent='+'+money(100*(st1.kg+st1.kt))+' 元';
+  var v;
+  if(mode==='g'){
+    v='政府多买 100 元，每轮有 '+f1((1-m)*100)+'% 被存起来。累计产出最终增加 '+money(st1.lim)+' 元，支出乘数 '+f2(st1.kg)+'。';
+  }else{
+    v='减税 100 元，家庭第一轮只花掉 '+money(100*m)+' 元，其余存起来。累计产出最终增加 '+money(st1.lim)+' 元，比同样规模的政府购买少 100 元。';
+  }
+  if(m===0){v+='MPC 为 0 时没人花新增收入，'+(mode==='g'?'只有政府自己的 100 元。':'减税完全没有拉动消费。');}
+  else if(m>=0.85){v+='MPC 接近 1 时乘数急剧变大，25 轮后才走到极限的 '+f1(pct)+'%。现实估计远没有这么大。';}
+  else{v+='25 轮后已走到极限的 '+f1(pct)+'%。';}
+  $('#verdict1').textContent=v;
+  draw1();
+  var svg=box1.querySelector('svg');if(svg){svg.setAttribute('aria-label','图 1 柱状图：横轴为轮次，纵轴为金额。'+v);}
+}
+$('#mpc').addEventListener('input',update1);
+document.querySelectorAll('[data-mode]').forEach(function(b){b.addEventListener('click',function(){mode=b.dataset.mode;update1();});});
+C.watch(box1,function(){if(st1){draw1();var s=box1.querySelector('svg');if(s){s.setAttribute('aria-label','图 1 柱状图：'+$('#verdict1').textContent);}}});
+update1();
+
+/* ---------- 图 2：债务路径 ---------- */
+var box2=$('#chart2'),st2=null;
+function debt(b0,d,r,g){
+  var rho=(1+r/100)/(1+g/100),path=[b0],t;
+  for(t=1;t<=T;t++){path.push(path[t-1]*rho+d);}
+  var star=b0*(g-r)/(100+g);   // 稳住起点债务率的基本赤字（% GDP）
+  return {b0:b0,d:d,r:r,g:g,rho:rho,path:path,star:star,lim:rho<1?d/(1-rho):null};
+}
+function pp(n){return f1(n)+'%';}
+function draw2(){
+  box2.replaceChildren();
+  if(!st2){return;}
+  var el=C.el,P=st2.path;
+  var w=Math.max(280,Math.floor(box2.clientWidth)),h=Math.round(Math.min(400,Math.max(260,w*0.62)));
+  var m={l:62,r:14,t:12,b:44},iw=w-m.l-m.r,ih=h-m.t-m.b;
+  var mx=Math.max.apply(null,P),mn=Math.min.apply(null,P);
+  var span=Math.max(mx,0)-Math.min(mn,0);if(span<20){span=20;}
+  var ys=niceStep(span*1.15,5),lo=mn<0?Math.floor((mn-span*0.08)/ys)*ys:0,hi=Math.ceil((Math.max(mx,0)+span*0.12)/ys)*ys;
+  if(hi-lo<ys*2){hi=lo+ys*2;}
+  var X=function(t){return m.l+t/T*iw;},Y=function(v){return m.t+ih-(v-lo)/(hi-lo)*ih;};
+  var svg=el('svg',{viewBox:'0 0 '+w+' '+h,width:w,height:h,'class':'plot',role:'img','aria-label':st2.label});
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ih,'class':'plotbg'}));
+  var t,v;
+  for(t=0;t<=T;t+=w<440?10:5){svg.appendChild(el('line',{x1:X(t),x2:X(t),y1:m.t,y2:m.t+ih,'class':'gridline'}));svg.appendChild(el('text',{x:X(t),y:m.t+ih+16,'text-anchor':'middle','class':'tick'},String(t)));}
+  for(v=lo;v<=hi+ys*1e-6;v+=ys){var yv=Y(v);svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:yv,y2:yv,'class':'gridline'}));svg.appendChild(el('text',{x:m.l-6,y:yv+4,'text-anchor':'end','class':'tick'},C.fmt(v,ys<1?1:0)+'%'));}
+  if(lo<0){svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:Y(0),y2:Y(0),'class':'shift'}));}
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ih,'class':'plotframe'}));
+  svg.appendChild(el('text',{x:m.l+iw/2,y:h-6,'text-anchor':'middle','class':'axtitle'},'年数（年）'));
+  svg.appendChild(el('text',{transform:'translate(12 '+(m.t+ih/2)+') rotate(-90)','text-anchor':'middle','class':'axtitle'},'政府债务占 GDP（%）'));
+  var yb=Y(st2.b0);
+  svg.appendChild(el('path',{d:'M'+m.l+' '+yb.toFixed(1)+'L'+(m.l+iw)+' '+yb.toFixed(1),'class':'curve ghost',style:'stroke:var(--muted)',id:'baseline'}));
+  var px=P.map(function(b,i){return [X(i),Y(b)];});
+  svg.appendChild(el('path',{d:'M'+px.map(function(q){return q[0].toFixed(1)+' '+q[1].toFixed(1);}).join('L'),'class':'curve d',id:'debtpath'}));
+  svg.appendChild(el('circle',{cx:px[0][0].toFixed(2),cy:px[0][1].toFixed(2),r:4,'class':'pt base',id:'p0'}));
+  svg.appendChild(el('circle',{cx:px[T][0].toFixed(2),cy:px[T][1].toFixed(2),r:4.5,'class':'pt',id:'p30','data-v':P[T].toFixed(6)}));
+  box2.appendChild(svg);
+  var plot={l:m.l+2,r:m.l+iw-2,t:m.t+2,b:m.t+ih-2},boxes=[{l:px[0][0]-5,r:px[0][0]+5,t:px[0][1]-5,b:px[0][1]+5},{l:px[T][0]-5,r:px[T][0]+5,t:px[T][1]-5,b:px[T][1]+5}];
+  function inside(r){return r.l>=plot.l&&r.r<=plot.r&&r.t>=plot.t&&r.b<=plot.b;}
+  function crosses(r){
+    for(var i=0;i<px.length-1;i++){if(C.clip(px[i],px[i+1],{q0:r.l,q1:r.r,p0:r.t,p1:r.b})){return true;}}
+    return C.clip([m.l,yb],[m.l+iw,yb],{q0:r.l,q1:r.r,p0:r.t,p1:r.b})!==null;
+  }
+  function place(txt,cls,ax,ay,cand,role){
+    var n=el('text',{'class':cls+' halo','data-role':role},txt),j,r,pass;
+    svg.appendChild(n);
+    for(pass=0;pass<2;pass++){
+      for(j=0;j<cand.length;j++){
+        n.setAttribute('x',(ax+cand[j][0]).toFixed(1));n.setAttribute('y',(ay+cand[j][1]).toFixed(1));n.setAttribute('text-anchor',cand[j][2]);
+        r=bb(n);
+        if(inside(r)&&!boxes.some(function(b){return hit(r,b);})&&(pass===1||!crosses(r))){boxes.push(r);return true;}
+      }
+    }
+    svg.removeChild(n);return false;
+  }
+  var dys=[-10,18,-26,34,-42,50,-58,66],endC=[],startC=[];
+  dys.forEach(function(dy){endC.push([-8,dy,'end']);endC.push([-40,dy,'end']);startC.push([8,dy,'start']);startC.push([40,dy,'start']);});
+  place('第 30 年 '+pp(P[T]),'curvelab d',px[T][0],px[T][1],endC,'end');
+  place('起点 '+pp(st2.b0),'ptlab',px[0][0],yb,startC,'start');
+}
+function longTxt(s){
+  if(Math.abs(s.rho-1)<1e-12){return s.d===0?'保持在起点':(s.d>0?'每年上升 '+pp(s.d)+'，无上限':'每年下降 '+pp(-s.d));}
+  if(s.rho<1){return '趋向 '+pp(s.lim);}
+  var gap=s.d-s.star;
+  if(Math.abs(gap)<1e-9){return '保持在起点（刚好平衡）';}
+  return gap>0?'持续上升，越来越快':'持续下降，越来越快';
+}
+function update2(){
+  var b0=+$('#b0').value,d=+$('#dd').value,r=+$('#rr').value,g=+$('#gg').value;
+  st2=debt(b0,d,r,g);
+  $('#b0-v').textContent=pp(b0);$('#b0').setAttribute('aria-valuetext','初始债务率 '+pp(b0));
+  $('#dd-v').textContent=(d<0?MINUS:'')+Math.abs(d).toFixed(1)+'%';$('#dd').setAttribute('aria-valuetext',d<0?'基本盈余 '+pp(-d):'基本赤字 '+pp(d));
+  $('#rr-v').textContent=f2(r)+'%';$('#rr').setAttribute('aria-valuetext','利率 '+f2(r)+'%');
+  $('#gg-v').textContent=f2(g)+'%';$('#gg').setAttribute('aria-valuetext','名义增长率 '+f2(g)+'%');
+  document.querySelectorAll('[data-b]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.b===b0&&+b.dataset.d===d&&+b.dataset.r===r&&+b.dataset.g===g));});
+  var P=st2.path,b30=P[T],d1=P[1]-P[0],rg=r-g,star=st2.star;
+  $('#r2-b30').textContent=pp(b30);
+  $('#r2-d1').textContent=C.fmtS(d1,2)+' 个百分点';
+  $('#r2-rg').textContent=C.fmtS(rg,2)+' 个百分点';
+  var starTxt=Math.abs(star)<0.005?'基本收支平衡':(star>0?'基本赤字不超过 '+f2(star)+'%':'基本盈余至少 '+f2(-star)+'%');
+  $('#r2-star').textContent=starTxt;
+  $('#r2-long').textContent=longTxt(st2);
+  var v='r − g = '+C.fmtS(rg,2)+' 个百分点。起点 '+pp(b0)+'，每年'+(d<0?'基本盈余 '+pp(-d):d===0?'基本收支平衡':'基本赤字 '+pp(d))+'，30 年后债务率约 '+pp(b30)+'。';
+  v+='要让债务率稳在起点，需要'+starTxt+'。';
+  if(Math.abs(st2.rho-1)<1e-12){v+='r 等于 g，旧债与 GDP 同速增长，债务率每年的变化正好等于基本赤字。';}
+  else if(st2.rho<1){v+='因为 r < g，旧债相对 GDP 自动缩小；参数不变时债务率最终趋向 '+pp(st2.lim)+'，不会无限增长'+(st2.lim>b30+1?'，但离那个水平还很远':'')+'。';}
+  else{v+='因为 r > g，旧债的利息滚得比 GDP 快；'+(d>star+1e-9?'现有基本收支不够，债务率会加速上升，越晚调整需要的盈余越大。':d<star-1e-9?'基本盈余超过所需，债务率会下降。':'基本收支刚好够稳住债务率。');}
+  $('#verdict2').textContent=v;
+  st2.label='图 2 折线图：横轴为年数，纵轴为债务占 GDP。'+v;
+  draw2();
+}
+['b0','dd','rr','gg'].forEach(function(id){$('#'+id).addEventListener('input',update2);});
+function setSc(b){$('#b0').value=b.dataset.b;$('#dd').value=b.dataset.d;$('#rr').value=b.dataset.r;$('#gg').value=b.dataset.g;update2();}
+document.querySelectorAll('[data-b]').forEach(function(b){b.addEventListener('click',function(){setSc(b);});});
+$('#goChart').addEventListener('click',function(){setSc(document.querySelector('[data-b]'));$('#w-debt').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});$('#b0').focus({preventScroll:true});});
+C.watch(box2,draw2);
+update2();
+
+var QUIZ=[
+{q:'在不考虑进口和利率的简单模型里，MPC = 0.8。政府增加购买 100 亿元，产出最终增加多少？',o:['100 亿元，花多少就增加多少','500 亿元','400 亿元','80 亿元，因为有 20% 被存起来'],a:1,why:'500 亿元。支出乘数是 1 ÷ (1 − 0.8) = 5。400 亿元是同样规模减税的结果，因为减税的第一轮只有 80% 被花掉。'},
+{q:'同样是 100 亿元，为什么简单模型里减税对产出的拉动小于政府购买？',o:['减税的钱最后会被政府收回','减税不计入 GDP，所以完全没有效果','减税会让企业减少生产','减税的第一轮只有 MPC 那部分被花掉，其余一开始就存起来了'],a:3,why:'第一轮有漏出。政府购买的 100 亿元本身就是需求；减税只是让家庭多了收入，按 MPC 花掉一部分，所以少了第一轮，税收乘数的绝对值比支出乘数小 1。'},
+{q:'一个进口占比很高的小国推出刺激，同时央行担心通胀而加息。与简单模型 1/(1−MPC) 相比，实际乘数最可能怎样？',o:['明显更小，因为需求流向进口，加息又挤出私人投资','明显更大，因为加息让储户收入增加','完全相同，因为 MPC 没变','变为负数，刺激一定让产出下降'],a:0,why:'明显更小。进口是额外的漏出，央行加息会压低投资和消费，形成挤出。乘数会变小，但不意味着一定为负。'},
+{q:'某国债务率 100%，平均利率 r = 5%，名义增长率 g = 3%，基本收支平衡。一年后债务率大约是多少？',o:['100%，没有赤字就不会变','约 98%，因为经济在增长','约 101.9%','105%'],a:2,why:'约 101.9%。100% × 1.05 ÷ 1.03 ≈ 101.9%。总赤字里还有利息，r > g 时利息让债务比 GDP 长得快，即使基本收支平衡，债务率也会上升。'},
+{q:'衰退中，政府没有出台新措施，但税收自动减少、失业金自动增加，赤字扩大。这说明什么？',o:['政府财政失控，必须立刻加税','这部分赤字扩大来自自动稳定器，它本身就在缓冲衰退','自动稳定器只在经济繁荣时起作用','赤字扩大一定是因为推出了新的刺激计划'],a:1,why:'这是自动稳定器在起作用。它不需要新立法，衰退时自动给家庭补充收入；繁荣时反过来多收税、少发补贴，赤字自动收窄。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'财政政策',en:'fiscal policy',d:'政府通过调整支出、税收和转移支付影响总需求。扩张时多花钱或减税，紧缩时反过来。'},
+{t:'乘数',en:'multiplier',d:'最初 1 元支出或减税最终带来的产出变化。简单模型中支出乘数 = 1/(1 − MPC)，现实估计要小且有争议。'},
+{t:'边际消费倾向',en:'marginal propensity to consume, MPC',d:'每多 1 元收入中被花掉的部分，介于 0 和 1 之间。MPC 越高，每轮漏出越少，乘数越大。'},
+{t:'税收乘数',en:'tax multiplier',d:'简单模型中为 −MPC/(1 − MPC)。减税第一轮只有一部分被花掉，所以绝对值比支出乘数小 1。'},
+{t:'挤出效应',en:'crowding out',d:'政府增加借款和支出，推高利率或占用资源，使私人投资和消费减少，抵消一部分刺激。'},
+{t:'自动稳定器',en:'automatic stabilizers',d:'所得税、失业保险等随经济自动变化的安排：衰退时少收税、多发钱，繁荣时相反，不需要新立法。'},
+{t:'财政赤字',en:'fiscal deficit',d:'一年内政府支出超过收入的部分，是流量。除去利息支出后叫基本赤字。'},
+{t:'政府债务',en:'public debt',d:'历年赤字累积、尚未偿还的借款总额，是存量。常用占 GDP 的比重衡量。'},
+{t:'r − g',en:'interest-growth differential',d:'政府平均借款利率与名义 GDP 增长率之差。r < g 时旧债相对 GDP 自动缩小；r > g 时需要基本盈余才能稳住债务率。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

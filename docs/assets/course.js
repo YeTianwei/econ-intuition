@@ -246,7 +246,7 @@
         {
           id: 'm11-02', title: '财政政策、乘数与政府债务',
           en: 'Fiscal policy, multipliers and public debt',
-          path: 'm11/02-fiscal-policy.html', status: 'todo'
+          path: 'm11/02-fiscal-policy.html', status: 'done'
         },
         {
           id: 'm11-03', title: '货币政策如何传导',
