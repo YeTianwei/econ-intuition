@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>拍卖与机制设计入门</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m05-03">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>拍卖与机制设计入门</h1>
+<p class="sub">Auctions and mechanism design</p>
+<p class="lede">同一件东西、同一群买家，只改“赢家付多少钱”，最好的出价方式就可能改变。规则不是被动记录偏好，它会影响人们愿意透露多少信息。设计好规则，有时比要求每个人诚实更有效。</p>
+<p class="meta">约 22 分钟 · 1 个交互区 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="01-nash-equilibrium.html#equilibrium">最优反应与纳什均衡</a>、<a href="../m04/04-platforms-network-effects.html">平台的双边市场</a>。本课只模拟一个物品，不把多广告位、多频段的复杂规则冒充成同一个模型。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>某搜索平台测试广告竞价新规则：出价最高者不一定支付自己的报价，广告主该不该“报高一点”？</blockquote></figure>
+<p class="prose">平台和规则调整均为虚构。先把广告展示抽象成一个不可分割的展示机会：谁得到它，向平台付多少。真实广告系统还可能同时安排多个位置、按点击计费、考虑广告质量与预算，本课后半部分会把这些差异放回来。</p>
+<ol class="qs"><li>自己的报价决定输赢，为什么最高报价者却可以支付第二高报价？</li><li>第一价与第二价规则下，是否都该报真实愿付？平台收到的钱会不会总是一样？</li><li>能否把单件拍卖的结论直接用于搜索广告、频谱资源，以及共同价值的标的？</li></ol>
+</section>
+<section id="rules">
+<h2>规则要同时说清分给谁、收多少钱</h2>
+<p class="prose"><b>拍卖</b><span class="en"> (auction)</span> 是通过竞价来分配物品并确定支付的规则。一套规则至少包括允许怎样出价、谁赢、赢家付多少、平局怎么办。只说“价高者得”还没有说完，因为同一个赢家可以面对不同付款规则。</p>
+<p class="prose">竞拍者的<b>估值</b><span class="en"> (valuation)</span> 是得到物品对自己值多少钱，不是自己填写的报价。本课采用<b>私人价值</b><span class="en"> (private values)</span>：每个人知道自己的价值，它不因获知别人的估值而改变。有人很喜欢一张演出海报，有人兴趣一般，即使后来发现对方非常喜欢，你自己的使用价值也不必变化。</p>
+<p class="prose">先用一个标准的充分条件组合：出售单件物品，估值为独立私人价值，竞拍者风险中性、收益是价值减付款，没有预算约束、入场费、串通或对别人输赢的外部偏好。报价密封提交，规则可信地执行，平局按预先固定的编号处理。模拟器展示所有估值是为了教学，竞拍者出价时并不因此知道对手估值。</p>
+<p class="formula">中标效用 u = 估值 v − 支付 p；未中标效用 u = 0</p>
+<p class="prose">这是买方净收益，不是卖方收入。赢得物品但支付高于自己的价值，可以比输掉更差。我们暂时不计卖家保留物品的价值和销售成本，所以页面的“支付”也是卖家收到的钱，不是卖家利润。</p>
+<h3>四种常见规则</h3>
+<div class="tablewrap" tabindex="0" role="region" aria-label="四类拍卖规则比较，可横向滚动"><table class="tbl comparison"><caption>比较单件物品的简化规则；不含保留价、手续费与最小加价单位</caption><thead><tr><th scope="col">规则</th><th scope="col">怎样进行</th><th scope="col">付款与直觉</th></tr></thead><tbody>
+<tr><td><b>英式拍卖</b><span class="en"> (English auction)</span></td><td>价格从低往高升，竞拍者逐渐退出。</td><td>最后留下者赢；理想连续价格下，通常在次高估值者退出附近成交。</td></tr>
+<tr><td><b>荷式拍卖</b><span class="en"> (Dutch auction)</span></td><td>价格从高往低降，最先接受者赢。</td><td>支付自己接受的价格；等一等更便宜，但可能先被别人拿走。</td></tr>
+<tr><td><b>第一价格密封拍卖</b><span class="en"> (first-price sealed-bid auction)</span></td><td>同时密封报价，最高者赢。</td><td>付自己的报价。低报能增加中标后的净收益，也会降低胜率。</td></tr>
+<tr><td><b>第二价格密封拍卖</b><span class="en"> (second-price sealed-bid auction)</span></td><td>同时密封报价，最高者赢。</td><td>付第二高报价，也称<b>维克里拍卖</b><span class="en"> (Vickrey auction)</span>。自己的报价主要决定是否跨过获胜门槛。</td></tr>
+</tbody></table></div>
+<p class="prose">在单件私人价值、没有额外信息流入等理想条件下，英式退出价格与第二价如实报价的直觉相近；荷式决定在哪个价位喊停，与第一价决定提交多少报价相近。但公开出价可能透露信息，实际加价步长、退出规则与保留价也会不同，所以“相近”不意味着现实机制完全可互换。</p>
+<div class="analogy"><span class="lab">类比</span><p>把最高的对手报价想成一道门槛。第二价规则下，跨过门槛才有资格买，而门票价格由别人定。你应该决定“这个门槛低于我的价值时我才进去”，而不是把“进去的意愿”误当成一定要付出的金额。第一价则是你报得越高，自己的门票也越贵。</p></div>
+</section>
+<section id="truth">
+<h2>为什么第二价可以鼓励如实报价</h2>
+<p class="prose">先固定所有对手报价，把其中最高的记为 h。不需要猜每位对手怎样想，只需比较自己的真实价值 v 与这道门槛。若你赢，支付 h；在仍然获胜的范围内，继续抬高自己的报价并不会改变这笔支付。</p>
+<ol class="steps"><li><div><b>v &gt; h：赢是好事。</b>按 v 报价会赢，净收益为 v−h。报得更高依然付 h，没有额外好处；压到 h 以下则可能失去本来有正收益的交易。</div></li><li><div><b>v &lt; h：输是好事。</b>按 v 报价会输，净收益为 0。虚报到 h 以上虽然能赢，却需要支付超过自己价值的钱，净收益为负。</div></li><li><div><b>v = h：赢输净收益都为 0。</b>按预先公布的平局规则决定谁拿到物品，不影响如实报价的净收益比较。</div></li></ol>
+<p class="prose">因此如实报价是<b>弱占优策略</b><span class="en"> (weakly dominant strategy)</span>：固定任意对手报价，如实报价不会比别的报价差，有些情形更好。这里的“弱”很重要，例如 v=80、h=50 时，报 60、80、100 都赢且都付 50，并不是只有报 80 才能得到最高效用。</p>
+<p class="prose">再试一组反例：你值 80，最高对手出 90。虚报 100 会让你以 90 买入，亏 10；如实报 80 则安全退出。第二价不是“无论如何报高都没关系”，而是让如实报价自动筛掉不划算的获胜机会。</p>
+<p class="prose">上面逐个固定 h 的比较不依赖对手估值的概率分布；独立性并非这条弱占优论证本身的必要条件。这里采用独立、风险中性的标准基准，是为后面的收益比较保持一致。关键是自己的价值已知且不随对手信息改变、赢家支付门槛由别人决定，并且没有预算、合谋、外部偏好或额外支付规则破坏这个账本。</p>
+<h3>第一价为什么通常想压价</h3>
+<p class="prose">第一价中，报 v 并获胜会留下零净收益。稍微低报，在仍能赢的情形下可留下正收益；但压得太多又可能输给本来价值更低的人。这不是一个“越低越好”的问题，而是在中标概率与中标后的利润之间做权衡。</p>
+<p class="formula">期望净收益 = 获胜概率 × (v − 自己的报价)</p>
+<p class="prose">这行适用于风险中性、没有入场费的单件第一价基准。最优压价多少取决于对手数、估值分布与对手策略，不存在对所有拍卖都通用的八折。接下来把大家统一打折，只为了隔离付款规则；它不是求解一般的第一价均衡。</p>
+</section>
+<section id="experiment">
+<h2>同一组人，两种支付规则</h2>
+<div class="widget" id="w-auction" aria-labelledby="w1t">
+<h3 id="w1t">交互区 1　单件私人价值拍卖</h3>
+<p class="prose">同一组估值下，第一价人人按统一比例压价，第二价人人如实报。没有保留价、费用和预算约束；最高报价并列时编号小者赢。改变人数沿用同一组前 N 人；只有“换一组估值”才重新生成整组。</p>
+<div class="chips"><button type="button" class="chip" id="resample">换一组估值</button><button type="button" class="chip" id="tie">最高估值并列示例</button></div>
+<div class="controls">
+<div class="ctl"><label for="bidders">竞拍人数 N</label><output id="biddersv" for="bidders"></output><input id="bidders" type="range" min="2" max="8" step="1" value="5"><span class="hint">2–8 人，各买一件的意愿，但本次只出售一件</span></div>
+<div class="ctl"><label for="shade">第一价压价比例</label><output id="shadev" for="shade"></output><input id="shade" type="range" min="0" max="80" step="1" value="20"><span class="hint">0–80%；例如压 20% 就报估值的 80%，第二价仍如实报</span></div>
+</div>
+<p class="note" id="sample" aria-live="polite"></p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="同组竞拍者估值报价与净收益，可横向滚动"><table class="tbl" id="bids"><caption>单位：教学元；所有金额保留两位小数。未中标者不付款，效用为 0。</caption><thead><tr><th scope="col">竞拍者</th><th scope="col" class="num">私人估值</th><th scope="col" class="num">第一价报价</th><th scope="col" class="num">第二价报价</th><th scope="col" class="num">第一价效用</th><th scope="col" class="num">第二价效用</th></tr></thead><tbody></tbody></table></div>
+<dl class="read pairs"><div><dt>第一价赢家</dt><dd id="r-firstWinner"></dd></div><div><dt>第一价支付</dt><dd id="r-firstPay"></dd></div><div><dt>第一价赢家效用</dt><dd id="r-firstUtility"></dd></div><div><dt>第二价赢家</dt><dd id="r-secondWinner"></dd></div><div><dt>第二价支付</dt><dd id="r-secondPay"></dd></div><div><dt>第二价赢家效用</dt><dd id="r-secondUtility"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">估值从 10–100 教学元的整数中独立等概率抽取，数字仅作示意；初始种子 2026，可恢复复现。第一价统一压价不代表一般均衡，且正比例缩放保留了估值排序。因此这里两种规则赢家相同是模型构造的结果，不是任意第一价行为都能有效分配的定理。</p>
+</div>
+<h3>先猜，再动手</h3>
+<ol class="qs"><li>固定一组人，把压价从 0% 拖到 80%。赢家为何不变，第一价的支付与效用如何一减一增？第二价有什么变化？</li><li>点“最高估值并列示例”，把压价设为 0%。前两人都值 80，谁赢、付多少、效用多少？再压 20%，两种支付是否还相等？</li><li>固定压价比例，逐个增加人数。新增估值不超过原第二高时，第二价支付不变；介于最高与次高之间时，原赢家仍赢却要多付。若超过最高，则赢家也会换人。结合表格找出各情形，而不是只记“人多价高”。</li></ol>
+<p class="prose">例如估值为 80、60、40，统一压价 20% 时，第一价报价是 64、48、32，赢家付 64、效用 16；第二价赢家仍是值 80 的人，但付 60、效用 20。若改成压价 40%，第一价支付降到 48，反而低于第二价。没有任何规则要求同一组估值下两种付款相等。</p>
+<p class="prose">同一个赢家拿到同一件物品时，改变支付只是让收益在买卖双方之间重新分配。模拟中胜者效用加卖家收入等于胜者价值。它没有计入真实物品的资源成本、卖家的保留价值或对旁观者的影响，因此不能直接把某个高支付称为“社会效率提高”。</p>
+</section>
+<section id="revenue">
+<h2>收益等价说的是期望，不是逐场价格</h2>
+<p class="prose"><b>收益等价</b><span class="en"> (revenue equivalence)</span> 的直觉是：在一组特定条件下，不同拍卖规则虽然改变了报价与付款方式，但竞争者会相应调整策略，卖家的期望收入可能相同。它把“规则改变”与“行为跟着改变”一起考虑，不是只把付款公式换掉就结束。</p>
+<p class="prose">一个常见的标准版本假设：单件、独立同分布且来自连续分布的私人估值、风险中性、没有预算约束或串通；比较各机制相应的均衡，最高估值者获得物品，即分配规则相同，并让最低估值类型的期望效用相同（通常为零）。保留价、参与条件等也必须可比。</p>
+<p class="prose">在这样的比较里，第一价竞拍者压低报价，第二价竞拍者如实报价却只付别人的门槛，这两种变化可能在期望上相互抵消。收入是对很多可能的估值组合取平均后讨论的，不是要求今天这一次第一价支付等于第二价支付。</p>
+<p class="prose">本页使用离散整数估值和任意统一压价，没有求第一价均衡，也不满足上述连续分布版本的全部条件。即使反复点击换样本，某个压价比例下平均收入不同，也不是收益等价定理被推翻。风险偏好、信息关联、竞拍者差异、预算和规则变动，都可能使收入排序发生变化。</p>
+</section>
+<section id="design">
+<h2>机制设计：反过来设计人们的激励</h2>
+<p class="prose"><b>机制设计</b><span class="en"> (mechanism design)</span> 把问题反过来：不只问人在给定规则下怎么行动，而是问为了实现某个目标，应该怎样安排分配与支付规则。目标可以是把物品交给最看重它的人、提高卖家收入、扩大参与或满足公共约束，这些目标并不总能同时最大化。</p>
+<p class="prose"><b>激励相容</b><span class="en"> (incentive compatible)</span> 意味着按规则如实报告自己的信息符合自身激励。第二价单件私人价值基准给出一种强的例子：即使不知对手怎么报，如实报告也不吃亏。它不是给参与者发一张“请诚实”的表格，而是让多报、少报都不能系统性改善自己的收益。</p>
+<h3>广告位：单件基准不是完整平台</h3>
+<p class="prose">假想平台只有一个相同质量的展示机会，按第二价出售，确实可以套用前面的门槛直觉。但真实广告拍卖不能都概括为简单维克里拍卖：多位置的点击机会不同，平台可能按报价与质量组合排序，收费也可能依据质量调整后的门槛、保留价及其他条件。</p>
+<p class="prose">多位置的“按下一位报价收费”常被称为广义第二价思路，它不等于把单件弱占优结论逐格复制。广告主改变报价，可能换到点击率不同的位置；此时自己的收益是位置、点击概率与单次收费共同决定的。还要问预算怎样跨时段分配、价值是每次展示还是每次点击，不能看到“第二”两个字就宣布如实报价必然占优。</p>
+<h3>频谱：可用一个拟写场景理解约束</h3>
+<p class="prose">假设某地区计划出售两段通信频谱许可。甲运营商单独拿一段用处不大，两段连在一起却很有价值；乙只需要其中一段。若拆成两次单件拍卖，甲可能买到一段却买不到另一段，付款之后无法实现预想的组合价值。</p>
+<p class="prose">设计者需要考虑是否允许组合报价、怎样处理互补性、覆盖义务和竞争集中度。最高的单段报价之和不必对应最有价值的整体分配。这个场景完全为教学拟写，没有声称某次真实频谱拍卖发生过同样结果；它说明单件模型省略了哪些重要问题。</p>
+<h3>共同价值与赢家诅咒</h3>
+<p class="prose"><b>共同价值</b><span class="en"> (common value)</span> 指标的具有各方共享但尚不确定的价值成分，例如未来可开采资源的价值。参与者各自只有带误差的信号，别人的信息会改变自己对物品价值的判断。它不同于“别人更喜欢这张海报，与我无关”的私人价值。</p>
+<p class="prose"><b>赢家诅咒</b><span class="en"> (winner's curse)</span> 是在这样的环境中，赢得竞拍本身可能意味着自己的估计比别人更乐观。如果只把未经修正的信号当真实价值，就容易高估赢下标的时能得到的净收益。它是有条件的信息问题，不是每位赢家都亏钱的定律。</p>
+<p class="prose">第二价付款不会自动解决这个问题：你自己的价值估计会随“我是最高出价者”所透露的信息改变，固定 v 与 h 的私人价值论证不再能原样套用。分析时应先问估值究竟是已知偏好，还是对未知共同价值的估计，再讨论怎样出价。</p>
+</section>
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“第二价付别人的报价，我报无限高最保险。”</p><p>超过真实价值的门槛也可能被你跨过，赢了反而亏损。如实报价能在门槛低于价值时买、高于价值时退出；弱占优不等于随便报都一样好。</p></div>
+<div class="mis"><p class="said">“收益等价保证这一次两种成交价相等。”</p><p>定理比较特定条件与均衡下的期望收入，不比较任意压价规则下的单次样本。本页改一个压价比例就能让第一价支付高于或低于第二价。</p></div>
+<div class="mis"><p class="said">“所有广告和资源拍卖都如实报就行。”</p><p>多位置、质量、组合价值、预算以及共同价值都可能改变激励。先检查实际分配与付款规则，再判断单件私人价值结论还能保留多少。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先写清估值和门槛，再判断是否愿意赢。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">记住规则，也记住结论的边界。</p><div class="cards" id="cards"></div></section>
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>为什么最高报价者可以不付自己的报价？</b>分配与付款是两条规则。简单第二价让最高者赢、按最高对手报价支付。自己的报价决定是否跨过门槛；平台必须事先公开并可靠执行规则，而不是成交后随意减价。</div></li><li><div><b>怎样报价，收入是否一样？</b>单件私人价值基准下，第二价如实报价是弱占优；第一价要权衡胜率与获胜净收益，统一八折不是通用最优。收益等价只在特定均衡与假设下比较期望，不能保证标题中一次竞价的新旧价格相同。</div></li><li><div><b>可以直接用于所有广告和频谱吗？</b>不可以。要核查多位置、质量与收费单位、预算、频段互补性及公共约束。若估值来自未知共同价值的信号，还要考虑中标透露的信息和赢家诅咒，不能把信号直接当已知私人价值。</div></li></ol>
+<p class="prose">模块 5 的三课连起来是同一条思路：先写清每人的激励，再看重复关系怎样改变它，最后思考怎样用规则改变它。一个好的制度分析，应能指出结论靠哪些假设成立，而不是只记一个“聪明策略”。</p>
+<button type="button" class="chip" id="goChart">恢复初始估值与报价</button>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+function sample(seed){
+  var s=seed>>>0,values=[];
+  for(var i=0;i<8;i++){s=(Math.imul(1664525,s)+1013904223)>>>0;values.push(10+Math.floor(s/4294967296*91));}
+  return values;
+}
+function model(values,shade){
+  var bids=values.map(function(v){return v*(100-shade);});
+  var firstOrder=values.map(function(v,i){return i;}).sort(function(a,b){return bids[b]-bids[a]||a-b;});
+  var secondOrder=values.map(function(v,i){return i;}).sort(function(a,b){return values[b]-values[a]||a-b;});
+  var firstWinner=firstOrder[0],secondWinner=secondOrder[0],firstPay=bids[firstWinner],secondPay=100*values[secondOrder[1]];
+  return {bids:bids,firstWinner:firstWinner,secondWinner:secondWinner,firstPay:firstPay,secondPay:secondPay,firstUtility:100*values[firstWinner]-firstPay,secondUtility:100*values[secondWinner]-secondPay,ties:values.filter(function(v){return v===values[secondWinner];}).length};
+}
+var seed=2026,pool=sample(seed),kind='random';
+function money(cents){return (cents/100).toFixed(2);}
+function update(){
+  var n=+$('#bidders').value,shade=+$('#shade').value,values=pool.slice(0,n),s=model(values,shade);
+  $('#biddersv').textContent=n+' 人';$('#shadev').textContent=shade+'%';
+  $('#sample').textContent=(kind==='random'?'随机样本，种子 '+seed:'固定并列样本（前两人估值均为 80）')+'；当前使用前 '+n+' 人，同组比较两种规则。';
+  $('#bids tbody').replaceChildren();values.forEach(function(v,i){var tr=document.createElement('tr');tr.dataset.id=i+1;var cells=['#'+(i+1)+(i===s.firstWinner?'（两种均胜）':''),money(100*v),money(s.bids[i]),money(100*v),money(i===s.firstWinner?s.firstUtility:0),money(i===s.secondWinner?s.secondUtility:0)];cells.forEach(function(text,j){var td=document.createElement('td');td.textContent=text;if(j){td.className='num';}tr.appendChild(td);});$('#bids tbody').appendChild(tr);});
+  ['first','second'].forEach(function(rule){$('#r-'+rule+'Winner').textContent='#'+(s[rule+'Winner']+1);$('#r-'+rule+'Pay').textContent=money(s[rule+'Pay'])+' 教学元';$('#r-'+rule+'Utility').textContent=money(s[rule+'Utility'])+' 教学元';});
+  var gap=s.firstPay-s.secondPay;
+  $('#verdict').textContent='两种规则赢家都是 #'+(s.firstWinner+1)+'，估值 '+money(values[s.firstWinner]*100)+' 教学元。'+(s.ties>1?'最高估值有 '+s.ties+' 人并列，按编号小者优先。':'统一正比例压价没有改变排序。')+'第一价支付 '+money(s.firstPay)+'，第二价支付 '+money(s.secondPay)+' 教学元；本次第一价'+(gap===0?'恰好与第二价相等':(gap>0?'高于':'低于')+'第二价 '+money(Math.abs(gap))+' 教学元')+'。支付差异改变买卖双方的分配，不是收益等价定理的逐场检验。';
+}
+$('#bidders').addEventListener('input',update);$('#shade').addEventListener('input',update);
+$('#resample').addEventListener('click',function(){seed=(seed+1)>>>0;pool=sample(seed);kind='random';update();});
+$('#tie').addEventListener('click',function(){pool=[80,80,60,50,40,30,20,10];kind='tie';update();});
+$('#goChart').addEventListener('click',function(){seed=2026;pool=sample(seed);kind='random';$('#bidders').value=5;$('#shade').value=20;update();$('#w-auction').scrollIntoView({block:'start'});});update();
+var QUIZ=[
+{q:'第二价单件私人价值拍卖中，你值 80，最高对手出价 90。虚报 100 会怎样？',o:['赢了就至少赚 10','仍只付自己的真实价值 80','因为是第二价，所以无需付款','会赢并付 90，效用 −10；如实报 80 则输、效用 0'],a:3,why:'虚报可以造成亏损的胜利。第二价支付最高对手报价，不是自己的真实估值；如实报能避免跨过高于价值的门槛。'},
+{q:'估值 80、60、40，第一价统一压 20%，第二价如实报。结果是什么？',o:['两种赢家相同，第一价付 64、第二价付 60','第一价赢家一定不同，因为压了价','两种都必须付 64，收益等价要求相等','第二价赢家付自己的估值 80'],a:0,why:'共同按 80% 缩放不会改变排序。第一价支付自己的报价 64；第二价支付次高报价 60，单次支付无需相同。'},
+{q:'为什么把第二价如实报价称为弱占优，而不是严格占优？',o:['因为只有对手也诚实才有效','因为它保证卖家收入最大','某些对手报价下，其他报价也有相同效用，但如实报在所有对手报价下都不差','因为真实估值一定不知道'],a:2,why:'弱占优允许相等。例如价值 80、门槛 50 时，报 60 与报 80 都赢且都付 50；但更低或过高的报价在别的门槛下可能吃亏。'},
+{q:'用任意统一压价比例模拟几场，发现两种拍卖平均收入不同。怎样理解？',o:['收益等价已经被推翻','模拟没有求对应均衡，也未满足全部标准假设，不能据此检验收益等价','第二价一定比第一价差','只要再点一次，平均收入必定相同'],a:1,why:'收益等价比较特定假设下、相同分配与边界效用的均衡期望。本页是离散教学样本与人为压价，不是该理论的完整实验。'},
+{q:'竞拍资源开采权时，每人依据有误差的信号估计共同价值。为什么中标后可能失望？',o:['因为任何拍卖的赢家都必然亏损','因为第一价和第二价支付永远相等','因为估值是私人偏好，不能更新','因为赢可能表明自己的估计过于乐观，需考虑中标所透露的信息'],a:3,why:'这是赢家诅咒的机制。共同价值环境下，胜出是有信息的事件；第二价规则也不会自动让未经修正的价值信号变成占优报价。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'拍卖',en:'auction',d:'通过竞价分配物品并确定支付的规则。必须说明谁赢、付多少、平局怎样处理，不能只说价高者得。'},
+{t:'第一价格拍卖',en:'first-price auction',d:'最高报价者获胜并支付自己的报价。风险中性竞拍者权衡获胜概率与中标净收益；统一压价比例不是一般最优策略。'},
+{t:'第二价格 / 维克里拍卖',en:'second-price / Vickrey auction',d:'单件密封报价中最高者赢、付第二高报价。标准私人价值基准下如实报是弱占优，不是所有报价都同样好。'},
+{t:'英式与荷式拍卖',en:'English and Dutch auctions',d:'英式逐渐升价，最后留下者赢；荷式逐渐降价，最先接受者赢。私人价值理想条件下分别与第二价、第一价直觉相近。'},
+{t:'收益等价',en:'revenue equivalence',d:'特定私人价值、风险中性等条件下，相同分配与最低类型效用的均衡可有相同卖家期望收入；不要求单次价格相等。'},
+{t:'机制设计',en:'mechanism design',d:'为了分配、收入或其他目标，反过来设计分配与支付规则，使参与者的自利选择与目标相容。'},
+{t:'激励相容',en:'incentive compatible',d:'如实报告信息符合自己的激励。第二价单件私人价值是一个弱占优意义的例子，多广告位与共同价值不能直接照搬。'},
+{t:'赢家诅咒',en:"winner's curse",d:'共同价值含不确定性时，中标可能说明自己的信号更乐观。忽略这种条件信息易高估净收益，但不是每个赢家都亏。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

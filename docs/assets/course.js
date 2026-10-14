@@ -115,7 +115,7 @@
         {
           id: 'm05-03', title: '拍卖与机制设计入门',
           en: 'Introduction to auctions and mechanism design',
-          path: 'm05/03-auctions-mechanism-design.html', status: 'todo'
+          path: 'm05/03-auctions-mechanism-design.html', status: 'done'
         }
       ]
     },
