@@ -308,7 +308,7 @@
         {
           id: 'm13-04', title: '汇率制度与货币危机',
           en: 'Exchange rate regimes and currency crises',
-          path: 'm13/04-exchange-rate-regimes.html', status: 'todo'
+          path: 'm13/04-exchange-rate-regimes.html', status: 'done'
         }
       ]
     },
