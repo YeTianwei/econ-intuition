@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>总需求与总供给</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m11-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>总需求与总供给</h1>
+<p class="sub">Aggregate demand and aggregate supply</p>
+<p class="lede">经济有时扩张，有时衰退。有的衰退伴随物价下跌，有的却伴随物价飞涨。这一课用两条向下和向上的曲线，加一条竖线，把整个经济画在一张图上：先分清冲击来自想买的一边还是能产的一边，再分清短期和长期，就能解释经济为什么时好时坏，以及为什么有一种衰退特别难治。</p>
+<p class="meta">约 22 分钟 · 1 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m08/01-gdp.html#real">实际 GDP</a>、<a href="../m08/02-inflation-cpi.html#basket">价格水平与 CPI</a>、<a href="../m08/03-unemployment.html#natural">自然失业率</a>、<a href="../m10/03-causes-of-inflation.html#pull-push">需求拉动与成本推动</a>。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>据美联储历史网站（Federal Reserve History）、美国劳工统计局数据（经圣路易斯联储 FRED）和 NBER 整理的标题（不是某家媒体原文），1973~1975 年</figcaption><blockquote>石油禁运后油价近乎翻两番，美国通胀升到两位数，失业率翻了将近一倍</blockquote></figure>
+<p class="prose">1973 年 10 月，阿拉伯产油国宣布对美国实行石油禁运并削减产量。美联储历史网站的文章记录，原油价格从禁运前每桶 2.90 美元涨到 1974 年 1 月的 11.65 美元，接近原来的四倍。随后几年的美国数据如下：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="1973 至 1975 年美国通胀与失业，可横向滚动"><table class="tbl"><caption>美国 CPI 同比涨幅与失业率。来源：BLS 数据（经 FRED），见页末资料来源</caption><thead><tr><th scope="col">月份</th><th scope="col" class="num">CPI 同比（%）</th><th scope="col" class="num">失业率（%）</th><th scope="col">备注</th></tr></thead><tbody>
+<tr><td>1973 年 10 月</td><td class="num">7.8</td><td class="num">4.6</td><td>禁运开始</td></tr>
+<tr><td>1974 年 12 月</td><td class="num">12.3</td><td class="num">7.2</td><td>CPI 同比在这个月达到本轮最高</td></tr>
+<tr><td>1975 年 5 月</td><td class="num">9.5</td><td class="num">9.0</td><td>失业率达到本轮最高</td></tr>
+</tbody></table></div>
+<p class="prose">CPI 同比用未季调的 CPI-U 指数计算，失业率为季调值。美国国家经济研究局（NBER）把这次衰退定在 1973 年 11 月到 1975 年 3 月。1979 年伊朗革命后又来了第二次石油冲击，油价在 1979 年 4 月到 1980 年 4 月间涨了一倍多，美国在 1980 年和 1981~1982 年又经历了两次衰退。物价快涨和失业高企同时出现，后来有了一个专门的名字。</p>
+<ol class="qs"><li><a href="../m10/03-causes-of-inflation.html#pull-push">上一模块</a>说需求拉动的通胀通常伴随就业上升。为什么这一次物价和失业一起往上走？</li><li>面对这种局面，央行应该加息压物价，还是降息保就业？为什么怎么选都难？</li><li>如果政府什么都不做，经济会自己回到原来的状态吗？要多久，靠什么？</li></ol>
+</section>
+
+<section id="ad">
+<h2>总需求：整个经济想买多少</h2>
+<p class="prose">单个市场的供求图，纵轴是一种商品的价格。宏观经济要回答的是另一个问题：整个经济的产出和<a href="../m08/02-inflation-cpi.html#basket">价格水平</a>由什么决定。横轴换成实际产出 Y（实际 GDP），纵轴换成价格水平 P（例如 GDP 平减指数或 CPI）。</p>
+<p class="prose"><b>总需求</b><span class="en"> (aggregate demand, AD)</span> 是在每个价格水平上，家庭、企业、政府和外国买家合计想购买的最终产品和服务，也就是<a href="../m08/01-gdp.html#expenditure">支出法 GDP</a> 的四块：C + I + G + NX。把它画成一条向下倾斜的曲线，有三条常见的理由：</p>
+<ol class="qs"><li><b>财富效应。</b>价格水平越高，同样的存款和现金能买的东西越少，家庭觉得自己更穷，消费减少。</li><li><b>利率效应。</b>价格越高，人们买东西需要的钱越多，对货币的需求上升，利率被推高，借钱买房、投资设备的人减少。</li><li><b>汇率效应。</b>本国价格相对外国上升，本国商品在国际上变贵，出口减少、进口增加。</li></ol>
+<p class="prose">这三条都不是“东西贵了所以少买”的单个市场逻辑。在宏观里，所有价格一起上涨，收入也在名义上上涨；AD 向下倾斜靠的是实际财富、利率和国际比价的变化。</p>
+<p class="prose">价格水平变化，是沿着 AD 曲线移动。价格以外的原因改变了想买的总量，整条 AD 就会移动，这叫<b>需求冲击</b><span class="en"> (demand shock)</span>。家庭对前景变得悲观、企业削减投资、出口市场萎缩，AD 左移；减税、政府扩大支出、央行降息、资产价格上涨，AD 右移。</p>
+</section>
+
+<section id="as">
+<h2>总供给：短期能涨，长期只有一条竖线</h2>
+<p class="prose"><b>总供给</b><span class="en"> (aggregate supply, AS)</span> 是在每个价格水平上，企业愿意并能够生产的产出总量。它要分短期和长期两种情况来画。</p>
+<h3>长期：产出由生产能力决定</h3>
+<p class="prose">一个经济长期能生产多少，取决于劳动力、资本和技术，这是<a href="../m09/02-solow-model.html">经济增长模块</a>讨论的问题。当劳动市场处在<a href="../m08/03-unemployment.html#natural">自然失业率</a>、工厂正常开工时的产出，叫<b>潜在产出</b><span class="en"> (potential output, Y*)</span>。价格水平整体翻一倍，工资、成本和售价也都翻一倍，生产能力不变，产出也不变。所以<b>长期总供给</b><span class="en"> (long-run aggregate supply, LRAS)</span> 是潜在产出处的一条竖线。</p>
+<h3>短期：工资和价格跟不上</h3>
+<p class="prose">短期里情况不同。很多工资按年签订，很多价格是按对未来物价的预期提前定好的。假设劳动合同按“明年物价持平”定了工资，结果需求旺盛、物价上涨了 5%，企业的售价涨了，工资成本却还没涨，多雇人、多生产变得有利可图，产出就会超过潜在水平。反过来，物价意外下跌而工资降不下来，企业会减产裁员。</p>
+<p class="prose">这样画出的<b>短期总供给</b><span class="en"> (short-run aggregate supply, SRAS)</span> 向上倾斜。它的位置由两样东西决定：签合同时人们预期的价格水平 Pᵉ，以及油价、原材料价格这类生产成本。预期价格或成本上升，在每个产出水平上企业都要求更高的价格，SRAS 向上（向左）移动。由成本变化引起的 SRAS 移动叫<b>供给冲击</b><span class="en"> (supply shock)</span>：油价暴涨、大范围歉收、供应链中断是不利的供给冲击，油价大跌是有利的供给冲击。</p>
+<h3>产出缺口</h3>
+<p class="prose">实际产出和潜在产出的差距，用占潜在产出的百分比表示，叫<b>产出缺口</b><span class="en"> (output gap)</span>。</p>
+<p class="formula">产出缺口 = (Y − Y*) ÷ Y* × 100%</p>
+<p class="prose">缺口为负，说明经济在衰退或低迷中，工人和机器有闲置，失业率高于自然失业率；缺口为正，说明经济过热，工厂超负荷运转，失业率低于自然失业率，工资和物价有上涨压力。潜在产出不能直接观测，各机构的缺口估计常有分歧，这一点和自然失业率一样。</p>
+<div class="analogy"><span class="lab">类比</span><p>一家餐馆有 50 个座位，这是它的“潜在产出”。周末客人突然多了，老板可以让员工加班、在门口加几张桌子，一时能接待 60 桌，这是短期。但员工不会一直接受同样的工资加班，很快就会要求加薪，菜价也跟着涨，客流回到 50 桌左右，只是一切都更贵了。要长期多接待客人，只能扩建店面、改进流程，也就是提高潜在产出。</p></div>
+<p class="prose">把三条线放在一起，就是本课的模型。为了能算出确定的数字，图 1 用三条直线，Y* 设为 100，价格水平的起点也设为 100：</p>
+<p class="formula">AD：P = A − Y　　SRAS：P = Pᵉ + z + 0.5 × (Y − 100)　　LRAS：Y = 100</p>
+<p class="prose">A 代表总需求的位置，需求冲击改变 A；z 代表生产成本，供给冲击改变 z；Pᵉ 是工资合同里预期的价格水平。冲击前 A = 200、Pᵉ = 100、z = 0，三条线交于 (100, 100)。短期均衡是 AD 与 SRAS 的交点；长期均衡还要落在 LRAS 上。</p>
+
+<div class="widget" id="w-adas" aria-labelledby="w1t">
+<h3 id="w1t">图 1　需求冲击与供给冲击：短期和长期</h3>
+<div class="chips" role="group" aria-label="选择冲击类型"><button type="button" class="chip" data-mode="supply" aria-pressed="true" aria-controls="chart1">供给冲击（成本变化）</button><button type="button" class="chip" data-mode="demand" aria-pressed="false" aria-controls="chart1">需求冲击（支出变化）</button></div>
+<div class="chips" role="group" aria-label="选择查看阶段"><button type="button" class="chip" data-stage="short" aria-pressed="true" aria-controls="chart1">短期</button><button type="button" class="chip" data-stage="long" aria-pressed="false" aria-controls="chart1">长期</button></div>
+<div class="chips" role="group" aria-label="选择长期调整方式"><button type="button" class="chip" data-adj="self" aria-pressed="true" aria-controls="chart1">长期靠工资和预期调整</button><button type="button" class="chip" data-adj="policy" aria-pressed="false" aria-controls="chart1">长期靠需求政策</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw d"></span>AD 总需求</li><li><span class="sw s"></span>SRAS 短期总供给</li><li><span class="sw model"></span>LRAS 长期总供给</li><li><span class="sw g"></span>虚线：移动前的曲线</li><li>空心点：之前的均衡</li></ul>
+<div class="controls">
+<div class="ctl full"><label for="shock" id="shock-label">成本冲击 z（价格水平点）</label><output id="shock-value" for="shock">+20</output><input id="shock" type="range" min="-30" max="30" step="2" value="20" aria-describedby="shock-hint"><span class="hint" id="shock-hint"></span></div>
+</div>
+<div class="tablewrap" tabindex="0" role="region" aria-label="图 1 读数，可横向滚动"><table class="tbl"><caption>读数：E₀ 为冲击前，潜在产出 Y* = 100</caption><thead><tr><th scope="col">指标</th><th scope="col" class="num">E₀ 起点</th><th scope="col" class="num">E₁ 短期</th><th scope="col" class="num">E₂ 长期</th></tr></thead><tbody>
+<tr><td>产出 Y</td><td class="num" id="r-y0"></td><td class="num" id="r-y1"></td><td class="num" id="r-y2"></td></tr>
+<tr><td>价格水平 P</td><td class="num" id="r-p0"></td><td class="num" id="r-p1"></td><td class="num" id="r-p2"></td></tr>
+<tr><td>产出缺口（%）</td><td class="num" id="r-g0"></td><td class="num" id="r-g1"></td><td class="num" id="r-g2"></td></tr>
+<tr><td>预期价格 + 成本 Pᵉ + z</td><td class="num" id="r-c0"></td><td class="num" id="r-c1"></td><td class="num" id="r-c2"></td></tr>
+<tr><td>总需求位置 A</td><td class="num" id="r-a0"></td><td class="num" id="r-a1"></td><td class="num" id="r-a2"></td></tr>
+</tbody></table></div>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">所有数字都是教学示意，不对应任何国家的真实数据。模型是线性的，AD 斜率为 −1，SRAS 斜率为 0.5；冲击视为持续存在，潜在产出不受冲击影响。“长期”指工资合同和预期有时间重新调整，现实中可能是一两年，也可能更久。</p>
+</div>
+<h3>四个实验</h3>
+<ol class="qs"><li>默认情景是成本上升 20 点，类似一次油价冲击。短期里产出降到 86.67，价格水平升到 113.33：产出缺口约 −13%，同时物价上涨。这就是开头新闻里的组合。</li><li>切到“长期”。如果靠工资和预期调整，失业压低工资、人们下调预期价格，SRAS 一路移回来，经济回到 (100, 100)；代价是一段时间的高失业。改选“长期靠需求政策”，央行和政府扩大需求，产出很快回到 100，但价格水平停在 120，冲击带来的涨价被永久保留。</li><li>切到需求冲击，把滑块拉到 −20，模拟消费和投资突然萎缩：短期产出降到 86.67，价格水平降到 93.33，产出和价格同方向下跌。这时需求政策可以把两者一起拉回 (100, 100)，没有两难。</li><li>需求冲击 +20，看长期：如果不用政策，过热推高工资和预期，SRAS 上移，产出回到 100，价格水平升到 120。长期里多出来的需求只变成了更高的价格。</li></ol>
+</section>
+
+<section id="shocks">
+<h2>两种冲击，两种难度</h2>
+<p class="prose">图 1 的读数可以归纳成一张表。关键差别在于，短期里产出和价格水平是同向变化还是反向变化。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="需求冲击与供给冲击比较，可横向滚动"><table class="tbl comparison"><caption>不利冲击的短期效果与政策处境（模型简化）</caption><thead><tr><th scope="col">比较项</th><th scope="col">需求减少（AD 左移）</th><th scope="col">成本上升（SRAS 上移）</th></tr></thead><tbody>
+<tr><td>产出与就业</td><td>下降</td><td>下降</td></tr>
+<tr><td>价格水平</td><td>下降或涨得更慢</td><td>上升</td></tr>
+<tr><td>扩张需求的政策</td><td>产出和价格一起回到原位</td><td>产出回来，价格更高</td></tr>
+<tr><td>收紧需求的政策</td><td>让衰退更深</td><td>压住价格，衰退更深</td></tr>
+</tbody></table></div>
+<p class="prose">产出下降与高通胀同时出现，叫<b>滞胀</b><span class="en"> (stagflation)</span>，是“停滞”和“通胀”的合成词。它难以应对，是因为央行和政府手里的常规工具主要作用在总需求上，只能左右移动 AD。面对 SRAS 上移，移动 AD 只能在“保产出”和“保物价”之间选一头：</p>
+<ul class="qs"><li><b>迁就冲击。</b>扩张需求，让失业尽快回落。支持者认为，一次性的成本冲击让物价水平跳一次是可以接受的代价，硬压物价会让本已失业的人承担更大损失。</li><li><b>顶住冲击。</b>维持或收紧需求，让价格回落。支持者认为，如果每次成本冲击都被迁就，工人和企业会学会预期物价持续上涨，把它写进下一轮工资和价格，一次性的涨价就会变成<a href="../m10/03-causes-of-inflation.html#expectations">自我维持的通胀</a>。</li></ul>
+<p class="prose">两种思路都有依据，哪一种更合适，取决于冲击是否只发生一次、通胀预期是否稳定、失业的代价有多大。1970 年代美国经历了两次油价冲击，第一次之后通胀就升到了两位数；美联储历史网站的文章把第二次石油冲击后的紧缩政策与随后的严重衰退联系在一起。通胀预期在其中扮演什么角色，是本模块后面讲菲利普斯曲线时的主题。</p>
+<p class="prose">还要记住模型的边界。有些冲击会改变潜在产出本身，例如技术进步让 LRAS 右移，长期失去的产能让 LRAS 左移；这时经济“回到潜在产出”，回到的是一个新的位置。图 1 只处理潜在产出不变的情况。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“AD 向下倾斜，和单个商品的需求曲线是一回事。”</p><p>单个商品涨价，人们改买别的东西。所有价格一起上涨时没有别的可换，AD 向下倾斜靠的是实际财富、利率和汇率的变化。</p></div>
+<div class="mis"><p class="said">“物价涨了，说明经济一定过热。”</p><p>需求冲击让产出和价格同向变化，供给冲击让它们反向变化。物价上涨同时产出下降，问题出在供给一侧，刺激需求不能对症。</p></div>
+<div class="mis"><p class="said">“只要需求够旺，产出就能一直高于潜在水平。”</p><p>短期可以，因为工资和预期跟不上。时间一长，工资和预期追上来，SRAS 上移，产出回到潜在水平，多出的需求只留下更高的价格。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先判断冲击移动的是哪条曲线，再分清你问的是短期还是长期。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>为什么物价和失业一起上升？</b>油价近乎翻两番，是一次大的不利供给冲击：几乎所有企业的成本都上升，在每个产出水平上都要求更高的价格，SRAS 上移。新的短期均衡里产出下降、价格水平上升，失业和通胀同时走高。需求拉动的通胀不会这样，那时产出和价格同向变化。</div></li><li><div><b>为什么怎么选都难？</b>常规政策只能移动 AD。降息保就业，产出回升，但价格水平更高，还可能让人们预期通胀会持续；加息压物价，衰退会更深。哪一边的代价更值得承受，经济学家和决策者有不同看法，取决于预期是否稳定和失业的代价。</div></li><li><div><b>经济会自己回来吗？</b>在模型里会。失业高企压低工资增速，人们下调预期，SRAS 慢慢移回，产出回到潜在水平。但这个过程靠的是一段时间的高失业，现实中可能拖很久；如果冲击反复出现、预期不断上调，就回不到原来的物价。</div></li></ol>
+<p class="prose">下次看到“经济放缓”或“物价上涨”的新闻，可以先问：冲击来自支出一侧还是成本一侧？产出和价格是同向还是反向变化？现在说的是短期，还是工资和预期已经调整之后的长期？</p>
+<button type="button" class="chip" id="goChart">回到图 1 的油价冲击情景</button>
+</section>
+
+<section id="sources"><h2>资料来源</h2><ol class="qs">
+<li>Michael Corbett，Federal Reserve History，<a href="https://www.federalreservehistory.org/essays/oil-shock-of-1973-74">Oil Shock of 1973–74</a>，2013-11-22；禁运于 1973 年 10 月开始，油价从每桶 2.90 美元涨到 1974 年 1 月的 11.65 美元。</li>
+<li>Laurel Graefe，Federal Reserve History，<a href="https://www.federalreservehistory.org/essays/oil-shock-of-1978-79">Oil Shock of 1978–79</a>，2013-11-22；伊朗革命后油价在 1979 年 4 月到 1980 年 4 月间涨了一倍多，紧缩政策与油价冲击一起把经济推入严重衰退。</li>
+<li>美国劳工统计局（BLS），经圣路易斯联储 FRED，<a href="https://fred.stlouisfed.org/series/CPIAUCNS">Consumer Price Index for All Urban Consumers: All Items in U.S. City Average (CPIAUCNS)</a>，2026-10 查询；本课用月度指数计算 1973~1975 年的 CPI 同比涨幅。</li>
+<li>美国劳工统计局（BLS），经圣路易斯联储 FRED，<a href="https://fred.stlouisfed.org/series/UNRATE">Unemployment Rate (UNRATE)</a>，2026-10 查询；1973 年 10 月 4.6%，1975 年 5 月 9.0%。</li>
+<li>美国国家经济研究局（NBER），<a href="https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions">US Business Cycle Expansions and Contractions</a>，2026-10 查询；衰退期 1973 年 11 月至 1975 年 3 月、1980 年 1 月至 7 月、1981 年 7 月至 1982 年 11 月。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts;
+function $(s,r){return (r||document).querySelector(s);}
+var YS=100,B=0.5,A0=200,C0=100,BOX={q0:60,q1:140,p0:60,p1:140};
+var st={mode:'supply',stage:'short',adj:'self'};
+var box=$('#chart1');
+function eq(A,c){var y=(A-c+B*YS)/(1+B);return {y:y,p:A-y};}
+function model(mode,s,adj){
+  var A1=mode==='demand'?A0+s:A0,c1=mode==='supply'?C0+s:C0,A2,c2;
+  if(adj==='self'){A2=A1;c2=A1-YS;}else{A2=c1+YS;c2=c1;}
+  var e0=eq(A0,C0),e1=eq(A1,c1),e2=eq(A2,c2);
+  return {A:[A0,A1,A2],c:[C0,c1,c2],E:[e0,e1,e2]};
+}
+function gap(y){return (y-YS)/YS*100;}
+function f2(n){return C.fmt(n,2);}
+function sig(n,d){return C.fmtS(n,d);}
+/* 标签放置：在候选位置中选第一个不出界、不与已有标签和点重叠的 */
+function placer(f){
+  var boxes=[],L=f.m.l,R=f.m.l+f.iw,T=f.m.t,Bt=f.m.t+f.ih;
+  function fits(b){
+    if(b.x0<L+2||b.x1>R-2||b.y0<T+2||b.y1>Bt-2){return false;}
+    for(var i=0;i<boxes.length;i++){var o=boxes[i];if(b.x0<o.x1+2&&b.x1>o.x0-2&&b.y0<o.y1+2&&b.y1>o.y0-2){return false;}}
+    return true;
+  }
+  function bb(text,x,y,anchor,size){var w=text.length*size*0.66+3,x0=anchor==='start'?x:anchor==='end'?x-w:x-w/2;return {x0:x0,x1:x0+w,y0:y-size*1.0,y1:y+size*0.3};}
+  return {
+    block:function(x,y,r){boxes.push({x0:x-r,x1:x+r,y0:y-r,y1:y+r});},
+    put:function(text,cls,cands,size,optional){
+      size=size||13;
+      for(var i=0;i<cands.length;i++){var c=cands[i],b=bb(text,c[0],c[1],c[2],size);if(fits(b)){boxes.push(b);C.label(f,text,cls,c[0],c[1],c[2]);return true;}}
+      if(optional){return false;}var c0=cands[0];boxes.push(bb(text,c0[0],c0[1],c0[2],size));C.label(f,text,cls,c0[0],c0[1],c0[2]);return false;
+    }
+  };
+}
+/* side：同类曲线中位置最高的标在线上方，最低的标在线下方，避免标签贴到相邻曲线 */
+function curveCands(f,sg,side){
+  var x0=f.x(sg[0][0]),y0=f.y(sg[0][1]),x1=f.x(sg[1][0]),y1=f.y(sg[1][1]),up=[],dn=[];
+  [0.9,0.1,0.78,0.22,0.66,0.34,0.5,0.95,0.05].forEach(function(t){
+    var x=x0+(x1-x0)*t,y=y0+(y1-y0)*t;
+    up.push([x+7,y-7,'start'],[x-7,y-7,'end']);dn.push([x+7,y+15,'start'],[x-7,y+15,'end']);
+  });
+  if(side==='below'){return dn.concat(up);}
+  if(side==='above'){return up.concat(dn);}
+  var out=[];for(var i=0;i<up.length;i+=2){out.push(up[i],up[i+1],dn[i],dn[i+1]);}return out;
+}
+function draw(){
+  if(!box.clientWidth){return;}
+  var s=+$('#shock').value,m=model(st.mode,s,st.adj),E=m.E,lng=st.stage==='long'&&s!==0;
+  var cur=lng?E[2]:E[1];
+  var f=C.frame(box,{id:'adas',q0:BOX.q0,q1:BOX.q1,p0:BOX.p0,p1:BOX.p1,qs:20,ps:20,xt:'实际产出 Y（潜在产出 = 100）',yt:'价格水平 P',label:aria(m,s)});
+  var ad=function(A){return C.clip([BOX.q0,A-BOX.q0],[BOX.q1,A-BOX.q1],BOX);};
+  var sr=function(c){return C.clip([BOX.q0,c+B*(BOX.q0-YS)],[BOX.q1,c+B*(BOX.q1-YS)],BOX);};
+  var lr=[[YS,BOX.p0],[YS,BOX.p1]];
+  var curves=[];/* [id, segment, cls, label, labelcls] */
+  var iA=lng?2:1,ic=lng?2:1;
+  function lev(id,v){return id==='ad'?v-YS:v;}
+  function same(a,b){return Math.abs(a-b)<1e-9;}
+  function nm(arr,i,base){if(i===1){return base+(same(arr[1],arr[0])?'₀':'₁');}if(same(arr[2],arr[1])){return nm(arr,1,base);}return base+'₂';}
+  var adName=nm(m.A,iA,'AD'),srName=nm(m.c,ic,'SRAS');
+  function ghosts(arr,cur,fn,base,cls,lc,id){
+    if(!same(arr[0],arr[cur])){curves.push([id+'0',fn(arr[0]),cls,base+'₀',lc,lev(id,arr[0])]);}
+    if(cur===2&&!same(arr[1],arr[2])&&!same(arr[1],arr[0])){curves.push([id+'1',fn(arr[1]),cls,base+'₁',lc,lev(id,arr[1])]);}
+  }
+  ghosts(m.A,iA,ad,'AD','curve d ghost','d','ad');
+  ghosts(m.c,ic,sr,'SRAS','curve s ghost','s','sr');
+  curves.push(['ad-cur',ad(m.A[iA]),'curve d',adName,'d',lev('ad',m.A[iA])]);
+  curves.push(['sr-cur',sr(m.c[ic]),'curve s',srName,'s',lev('sr',m.c[ic])]);
+  curves.push(['lras',lr,'curve model','LRAS','model',0]);
+  C.guides(f,f.x(cur.y),f.y(cur.p),false);
+  curves.forEach(function(c){if(c[1]){var p=C.pathOf(f,c[1],c[2]);p.id=c[0];f.svg.appendChild(p);}});
+  var P=placer(f),pts=[];
+  if(s===0){pts.push(['e0',E[0],'pt','E₀']);}
+  else if(!lng){pts.push(['e0',E[0],'pt base','E₀'],['e1',E[1],'pt','E₁']);}
+  else{
+    var same=Math.abs(E[2].y-E[0].y)<1e-9&&Math.abs(E[2].p-E[0].p)<1e-9;
+    if(!same){pts.push(['e0',E[0],'pt base','E₀']);}
+    pts.push(['e1',E[1],'pt base','E₁'],['e2',E[2],'pt',same?'E₂ = E₀':'E₂']);
+    C.arrow(f,f.x(E[1].y),f.y(E[1].p),f.x(E[2].y),f.y(E[2].p));
+  }
+  if(lng){(function(){var x0=f.x(E[1].y),y0=f.y(E[1].p),x1=f.x(E[2].y),y1=f.y(E[2].p),n=Math.ceil(Math.sqrt((x1-x0)*(x1-x0)+(y1-y0)*(y1-y0))/6);for(var i=1;i<n;i++){P.block(x0+(x1-x0)*i/n,y0+(y1-y0)*i/n,4);}})();}
+  pts.forEach(function(p){var x=f.x(p[1].y),y=f.y(p[1].p);var c=C.el('circle',{id:p[0]+'-point',cx:x,cy:y,r:5,'class':p[2]});if(p[0]==='e1'&&lng){c.style.opacity='.7';}f.svg.appendChild(c);P.block(x,y,6);});
+  /* 当前均衡点先放、必须标注；相距太近时之前的点可以不标 */
+  pts.slice().reverse().forEach(function(p,i){var x=f.x(p[1].y),y=f.y(p[1].p);P.put(p[3],'ptlab',[[x+9,y-8,'start'],[x+9,y+17,'start'],[x-9,y-8,'end'],[x-9,y+17,'end'],[x+12,y+4,'start'],[x-12,y+4,'end'],[x+14,y-20,'start'],[x-14,y-20,'end'],[x+14,y+29,'start'],[x-14,y+29,'end']],12,i>0);});
+  function sideOf(c){
+    var fam=c[0].slice(0,2),me=c[5],sib=curves.filter(function(o){return o[0].slice(0,2)===fam&&o!==c;});
+    if(!sib.length||fam==='lr'){return '';}
+    var hi=sib.every(function(o){return me>o[5];}),lo=sib.every(function(o){return me<o[5];});
+    return hi?'above':lo?'below':'';
+  }
+  curves.forEach(function(c){if(!c[1]){return;}var cands=c[0]==='lras'?[[f.x(YS)+6,f.m.t+16,'start'],[f.x(YS)-6,f.m.t+16,'end'],[f.x(YS)+6,f.m.t+f.ih-8,'start'],[f.x(YS)-6,f.m.t+f.ih-8,'end'],[f.x(YS)+6,f.m.t+40,'start'],[f.x(YS)-6,f.m.t+40,'end']]:curveCands(f,c[1],sideOf(c));P.put(c[3],c[4],cands,13);});
+  box.replaceChildren(f.svg);
+}
+function aria(m,s){
+  var E=m.E;
+  return 'AD-AS 图。'+(st.mode==='supply'?'供给冲击，成本变化 ':'需求冲击，总需求变化 ')+C.sgnInt(s)+' 点。冲击前产出 100、价格水平 100；短期产出 '+f2(E[1].y)+'、价格水平 '+f2(E[1].p)+'；长期'+(st.adj==='self'?'靠工资和预期调整':'靠需求政策')+'，产出 '+f2(E[2].y)+'、价格水平 '+f2(E[2].p)+'。当前显示'+(st.stage==='short'?'短期':'长期')+'。';
+}
+function verdict(m,s){
+  var E=m.E,g1=gap(E[1].y),dir;
+  if(s===0){return '没有冲击：AD、SRAS 和 LRAS 交于 (100, 100)，产出缺口为 0。拖动滑块制造一次冲击。';}
+  var sup=st.mode==='supply';
+  var t=sup?(s>0?'成本上升 '+s+' 点，SRAS 上移。':'成本下降 '+(-s)+' 点，SRAS 下移。'):(s>0?'总需求增加 '+s+'，AD 右移。':'总需求减少 '+(-s)+'，AD 左移。');
+  t+='短期：产出 '+f2(E[1].y)+'，价格水平 '+f2(E[1].p)+'，产出缺口 '+sig(g1,2)+'%。';
+  if(sup){t+=s>0?'产出下降而物价上升，这是滞胀。':'产出上升而物价下降，是有利的供给冲击。';}
+  else{t+=s>0?'产出和价格一起上升，经济过热。':'产出和价格一起下降，经济陷入衰退。';}
+  if(st.stage==='short'){return t+'切到“长期”看经济怎样回到潜在产出。';}
+  if(st.adj==='self'){
+    dir=m.c[2]>m.c[1]?'上调':'下调';
+    t+='长期（工资和预期调整）：'+(g1<0?'失业高于自然水平，工资和预期价格':'劳动市场偏紧，工资和预期价格')+dir+'，SRAS '+(dir==='上调'?'上移':'下移')+'，直到产出回到 100。价格水平最终为 '+f2(E[2].p)+'。';
+  }else{
+    t+='长期（需求政策）：政策把 AD 移到与 '+(sup?'新的 SRAS':'原来的 SRAS')+' 在 Y = 100 处相交，产出缺口归零，价格水平为 '+f2(E[2].p)+'。';
+    t+=!sup?'需求冲击可以被需求政策直接抵消，产出和价格都回到原位。':s>0?'产出回来了，但冲击造成的涨价被保留下来，这就是不利供给冲击下的两难。':'这里政策收紧需求，产出回到潜在水平，价格水平降得更多；冲击带来的降价被保留下来。';
+  }
+  return t;
+}
+function update(){
+  var inp=$('#shock'),s=+inp.value,m=model(st.mode,s,st.adj),sup=st.mode==='supply';
+  $('#shock-value').textContent=C.sgnInt(s);
+  $('#shock-label').textContent=sup?'成本冲击 z（价格水平点）':'需求冲击 ΔA（产出单位）';
+  $('#shock-hint').textContent=sup?'−30 到 +30。正值表示成本上升（如油价上涨），在每个产出水平上 SRAS 上移这么多；负值表示成本下降。':'−30 到 +30。在任一价格水平上总需求增减这么多（潜在产出为 100）；正值 AD 右移，负值 AD 左移。';
+  inp.setAttribute('aria-valuetext',C.sgnInt(s)+(sup?' 点成本变化':' 单位需求变化'));
+  [0,1,2].forEach(function(i){var e=m.E[i];$('#r-y'+i).textContent=f2(e.y);$('#r-p'+i).textContent=f2(e.p);$('#r-g'+i).textContent=sig(gap(e.y),2);$('#r-c'+i).textContent=f2(m.c[i]);$('#r-a'+i).textContent=f2(m.A[i]);});
+  document.querySelectorAll('[data-mode]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.mode===st.mode));});
+  document.querySelectorAll('[data-stage]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.stage===st.stage));});
+  document.querySelectorAll('[data-adj]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.adj===st.adj));});
+  $('#verdict').textContent=verdict(m,s);
+  draw();
+}
+$('#shock').addEventListener('input',update);
+document.querySelectorAll('[data-mode]').forEach(function(b){b.addEventListener('click',function(){st.mode=b.dataset.mode;update();});});
+document.querySelectorAll('[data-stage]').forEach(function(b){b.addEventListener('click',function(){st.stage=b.dataset.stage;update();});});
+document.querySelectorAll('[data-adj]').forEach(function(b){b.addEventListener('click',function(){st.adj=b.dataset.adj;update();});});
+C.watch(box,draw);
+
+var QUIZ=[
+{q:'某国家庭对就业前景突然变得悲观，普遍削减消费，其他条件不变。短期内产出和价格水平会怎样？',o:['产出下降，价格水平上升','产出和价格水平都不变，因为供给没变','产出下降，价格水平下降或涨得更慢','产出上升，价格水平下降'],a:2,why:'都下降。消费减少是需求冲击，AD 左移，沿着向上倾斜的 SRAS 移到产出更低、价格更低的点。价格上升而产出下降是供给冲击的特征。'},
+{q:'国际油价突然大涨，几乎所有企业的成本都上升。按 AD-AS 模型，短期最可能出现什么？',o:['产出下降，价格水平上升','产出上升，价格水平上升','产出下降，价格水平下降','产出不变，只有油价上涨'],a:0,why:'滞胀。成本上升使 SRAS 上移，与不动的 AD 交在产出更低、价格更高的位置。油价通过各行业的成本传导到整体价格水平，不只影响油价本身。'},
+{q:'政府大规模减税使总需求增加，经济进入过热。如果此后不再出台任何政策，长期结果是什么？',o:['产出永久高于潜在产出','产出和价格水平都回到冲击前','价格水平回到冲击前，产出保持较高','产出回到潜在产出，价格水平比冲击前高'],a:3,why:'只剩更高的价格。过热时工资和预期价格上调，SRAS 上移，直到与新的 AD 在潜在产出处相交。长期产出由生产能力决定，多出的需求变成了价格。'},
+{q:'面对一次不利的供给冲击，央行为什么比面对需求冲击时更为难？',o:['因为供给冲击时利率无法调整','因为调整总需求只能在稳产出和稳物价之间选一头','因为供给冲击不会影响就业','因为供给冲击时 AD 曲线会变成竖线'],a:1,why:'工具只能移 AD。供给冲击让产出和价格反向变化，扩张需求能保产出但推高价格，收紧需求能压价格但加深衰退。需求冲击让两者同向变化，同一个政策可以一起修正。'},
+{q:'某年实际 GDP 为 970，估计的潜在产出为 1000。下列判断哪个对？',o:['产出缺口为 +3%，经济过热','产出缺口为 −30%，经济严重衰退','产出缺口为 −3%，失业率很可能高于自然失业率','无法判断，因为潜在产出不能观测'],a:2,why:'缺口为 −3%。(970 − 1000) ÷ 1000 = −3%，产出低于潜在水平，通常伴随周期性失业。潜在产出确实只能估计，但给定估计值后缺口可以计算，只是要记得结论依赖这个估计。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.appendChild(n);t.appendChild(document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.getAttribute('data-done')){return;}q.setAttribute('data-done','1');var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.insertBefore(tag,x.firstChild);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.insertBefore(tag,x.firstChild);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.appendChild(t);q.appendChild(opts);q.appendChild(why);quizEl.appendChild(q);});
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'总需求',en:'aggregate demand',d:'每个价格水平上，家庭、企业、政府和外国买家合计想购买的最终产品与服务（C + I + G + NX）。因财富、利率和汇率效应向下倾斜。'},
+{t:'总供给',en:'aggregate supply',d:'每个价格水平上，企业愿意并能够生产的产出总量。分短期和长期两种情况。'},
+{t:'短期总供给',en:'short-run aggregate supply',d:'工资和部分价格按预期提前定好时的总供给，向上倾斜。预期价格或生产成本上升会使它上移。'},
+{t:'长期总供给',en:'long-run aggregate supply',d:'工资、价格和预期都充分调整后的总供给，是潜在产出处的一条竖线。由劳动、资本和技术决定。'},
+{t:'潜在产出',en:'potential output',d:'劳动市场处于自然失业率、生产能力正常利用时的产出。不能直接观测，只能估计。'},
+{t:'需求冲击',en:'demand shock',d:'价格以外的原因改变总需求，使 AD 移动。短期内产出和价格水平同向变化。'},
+{t:'供给冲击',en:'supply shock',d:'生产成本或生产条件突然变化，使 SRAS 移动，例如油价暴涨。不利冲击使产出下降、价格上升。'},
+{t:'滞胀',en:'stagflation',d:'产出停滞或下降与高通胀同时出现，典型成因是不利的供给冲击。只调总需求的政策难以兼顾产出和物价。'},
+{t:'产出缺口',en:'output gap',d:'(实际产出 − 潜在产出) ÷ 潜在产出。负缺口对应衰退和周期性失业，正缺口对应过热和通胀压力。'}
+];
+var grid=$('#cards');
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.appendChild(t);b.appendChild(en);b.appendChild(hint);b.appendChild(def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});grid.appendChild(b);});
+$('#goChart').addEventListener('click',function(){st={mode:'supply',stage:'short',adj:'self'};$('#shock').value=20;update();$('#w-adas').scrollIntoView({block:'start'});document.querySelector('[data-mode=supply]').focus({preventScroll:true});});
+update();
+})();
+</script>
+</body>
+</html>

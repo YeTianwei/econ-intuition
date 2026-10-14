@@ -241,7 +241,7 @@
         {
           id: 'm11-01', title: '总需求与总供给',
           en: 'Aggregate demand and aggregate supply',
-          path: 'm11/01-aggregate-demand-supply.html', status: 'todo'
+          path: 'm11/01-aggregate-demand-supply.html', status: 'done'
         },
         {
           id: 'm11-02', title: '财政政策、乘数与政府债务',
