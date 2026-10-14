@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>利率与现值</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m12-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>利率与现值</h1>
+<p class="sub">Interest rates and present value</p>
+<p class="lede">今天的 100 元和一年后的 100 元，不是同一笔钱。今天的钱可以马上用，也可以存起来生出利息；一年后的钱要等，还可能被通胀吃掉一截。利率就是这两种钱之间的换算比例。这一课学会把不同时间的钱换算到同一天来比较，并分清名义利率、实际利率和风险溢价。</p>
+<p class="meta">约 20 分钟 · 1 个交互图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m09/01-compounding-growth.html#compounding">复利</a>、<a href="../m08/02-inflation-cpi.html#converter">名义值与实际值</a>。现值计算就是把复利倒过来算。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>一年期存款利率 2%，物价上涨 3%：把钱存进银行，是赚还是亏？</blockquote></figure>
+<p class="prose">设想你在年初存入 1 万元，年底取出 10,200 元。账户余额确实多了 200 元。可是同一年里，你常买的东西平均贵了 3%，年初 1 万元能买到的一篮子东西，年底要 10,300 元。</p>
+<ol class="qs"><li>存款余额变多了，你的购买力是变多还是变少？差多少？</li><li>银行为什么愿意为你的存款付利息？利率高低由什么决定？</li><li>同样借出 1 万元，借给银行、借给一家小公司、借给一个陌生人，为什么要求的利率不一样？</li></ol>
+</section>
+
+<section id="price">
+<h2>利率：使用钱一段时间的价格</h2>
+<p class="prose"><b>利率</b><span class="en"> (interest rate)</span> 是借用一笔钱一段时间要付的代价，通常按每年的百分比报出。借 100 元一年、利率 5%，到期还 105 元，多出的 5 元是利息。</p>
+<p class="prose">说利率是“钱的价格”，指的是<em>借用</em>钱的价格，不是钱能买多少东西。后者是物价水平决定的购买力，是另一回事。</p>
+<div class="analogy"><span class="lab">类比</span><p>利息像房租。房东把房子让给你住一年，你付租金；存款人把购买力让给别人用一年，对方付利息。房子不会因为出租消失，钱也不会因为借出消失，租金买的是“这段时间归你用”。</p></div>
+<p class="prose">既然是价格，就有供给和需求。手里有闲钱、愿意推迟消费的人提供资金；想买房、办厂、发债的人需要资金。资金供不应求时利率上升，供过于求时利率下降，逻辑与<a href="../m02/01-supply-demand.html#model">普通商品的供求</a>相同。</p>
+<p class="prose">出借人为什么要收这个价？三个原因：一是推迟消费，大多数人更看重眼前的享受；二是放弃了别的用途，钱借给你就不能拿去做别的投资，这是<a href="../m01/01-scarcity-opportunity-cost.html#scarcity">机会成本</a>；三是借出去可能收不回来。前两个原因决定“无风险”的利率，第三个原因带来风险溢价，后面再讲。</p>
+</section>
+
+<section id="present-value">
+<h2>现值：把未来的钱折回今天</h2>
+<p class="prose">利率 3% 时，今天的 100 元一年后变成 103 元，十年后按复利变成 100 × 1.03<sup>10</sup> ≈ 134 元。将来某一天的金额叫<b>终值</b><span class="en"> (future value)</span>。反过来问：十年后的 134 元，今天值多少？答案是 100 元。这个“今天值多少”叫<b>现值</b><span class="en"> (present value)</span>。</p>
+<p class="formula">现值 = 未来金额 ÷ (1 + r)<sup>n</sup></p>
+<p class="prose">r 是每年的<b>贴现率</b><span class="en"> (discount rate)</span>，n 是年数。把未来的钱折算回今天的过程叫<a href="../m05/02-repeated-games.html#future">贴现</a>。这个公式就是复利公式倒过来：复利从今天往后乘，贴现从将来往前除。</p>
+<div class="analogy"><span class="lab">类比</span><p>贴现率像不同日子之间的汇率。把美元换成人民币要乘汇率，把十年后的钱换成今天的钱要除以 (1 + r)<sup>n</sup>。不同日子的钱就像不同币种，换成同一种“今天的钱”之后才能直接相加、比较大小。</p></div>
+<p class="prose">下表是不同贴现率、不同年数下，未来 100 元的现值：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="未来 100 元在不同贴现率和年数下的现值，可横向滚动"><table class="tbl"><caption>按公式计算：未来 100 元的现值（元）</caption><thead><tr><th scope="col">贴现率</th><th scope="col" class="num">1 年后</th><th scope="col" class="num">10 年后</th><th scope="col" class="num">30 年后</th></tr></thead><tbody>
+<tr><td>1%</td><td class="num">99.0</td><td class="num">90.5</td><td class="num">74.2</td></tr>
+<tr><td>3%</td><td class="num">97.1</td><td class="num">74.4</td><td class="num">41.2</td></tr>
+<tr><td>5%</td><td class="num">95.2</td><td class="num">61.4</td><td class="num">23.1</td></tr>
+<tr><td>8%</td><td class="num">92.6</td><td class="num">46.3</td><td class="num">9.9</td></tr>
+</tbody></table></div>
+<p class="prose">两个规律。往右看：越远的钱现值越低。往下看：贴现率越高现值越低，而且年数越长，下降得越厉害。30 年后的 100 元，贴现率从 1% 变成 8%，现值从 74 元跌到不到 10 元。</p>
+<h3>贴现率取多少</h3>
+<p class="prose">贴现率不是随便定的。它应该等于这笔钱的机会成本：如果你今天拿到钱，在风险相近的用途上每年能赚多少。能稳拿 3% 的人，会觉得十年后的 1 万元今天只值约 7,441 元，因为把 7,441 元按 3% 存十年正好变成 1 万元。</p>
+<h3>多笔现金流：逐笔折算再相加</h3>
+<p class="prose">如果未来有好几笔钱，就把每一笔分别折回今天，再加起来。每年年末收到相同金额、共 n 年的一串现金流叫<b>年金</b><span class="en"> (annuity)</span>，它的现值有一个简便公式：</p>
+<p class="formula">年金现值 = 每笔金额 × [1 − (1 + r)<sup>−n</sup>] ÷ r</p>
+<p class="prose">它只是 n 笔现值之和的简写。贴现率为 0 时公式要换成“每笔金额 × n”，因为不打折，现值就是合计金额。房贷月供、养老金、分期领取的奖金，都能用这个思路折成今天的一个数。</p>
+</section>
+
+<section id="calculator">
+<h2>动手算一算：现值计算器</h2>
+<div class="widget" id="w-pv" aria-labelledby="w1t">
+<h3 id="w1t">图 1　现值计算器：未来的钱，今天值多少</h3>
+<div class="chips" role="group" aria-label="选择情景（教学示意）"><button type="button" class="chip" data-sc="tomorrow" aria-pressed="false">1 年后的 100 元</button><button type="button" class="chip" data-sc="ten" aria-pressed="true">10 年后的 1 万元</button><button type="button" class="chip" data-sc="thirty" aria-pressed="false">30 年后的 1 万元</button><button type="button" class="chip" data-sc="annuity" aria-pressed="false">20 年每年 5,000 元</button></div>
+<div class="chips" role="group" aria-label="现金流方式"><button type="button" class="chip" data-mode="single" aria-pressed="true">一笔：第 n 年末一次收到</button><button type="button" class="chip" data-mode="annuity" aria-pressed="false">等额多笔：第 1~n 年每年末各一笔</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw d"></span>现值曲线：其他条件不变，贴现率从 0% 到 15% 时的现值</li><li>实心点：当前贴现率下的现值</li></ul>
+<div class="controls">
+<div class="ctl"><label for="amt">每笔金额</label><output id="amt-v" for="amt"></output><input id="amt" type="range" min="100" max="20000" step="100" value="10000" aria-describedby="amt-h"><span class="hint" id="amt-h">元，100~20,000。一笔模式下是到期收到的金额；多笔模式下是每年收到的金额。</span></div>
+<div class="ctl"><label for="yrs">期限 n</label><output id="yrs-v" for="yrs"></output><input id="yrs" type="range" min="1" max="50" step="1" value="10" aria-describedby="yrs-h"><span class="hint" id="yrs-h">年，1~50。一笔模式下是多少年后收到；多笔模式下是一共收几年。</span></div>
+<div class="ctl"><label for="rate">贴现率 r</label><output id="rate-v" for="rate"></output><input id="rate" type="range" min="0" max="15" step="0.1" value="3" aria-describedby="rate-h"><span class="hint" id="rate-h">%/年，0~15。你拿到钱后在风险相近的用途上每年能赚的收益率。</span></div>
+</div>
+<dl class="read pairs"><div><dt>未来金额合计（不打折）</dt><dd id="r-sum"></dd></div><div><dt>现值</dt><dd id="r-pv"></dd></div><div><dt>现值 ÷ 合计</dt><dd id="r-ratio"></dd></div><div><dt>贴现率再高 1 个百分点时的现值</dt><dd id="r-up"></dd></div></dl>
+<div class="tablewrap" id="breakdown" tabindex="0" role="region" aria-label="多笔现金流逐笔折现，可横向滚动" hidden><table class="tbl"><caption>逐笔折现（期限长时中间各年合并为一行）</caption><thead><tr><th scope="col">哪一笔</th><th scope="col" class="num">收到（元）</th><th scope="col" class="num">现值（元）</th></tr></thead><tbody id="bk-body"></tbody></table></div>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">金额、期限和贴现率都是教学示意。计算假设每年复利一次，贴现率在整个期限内不变；多笔模式下每笔在当年年末收到。计算器不处理违约：收不到钱的可能性应当体现在更高的贴现率里。</p>
+</div>
+<h3>三个实验</h3>
+<ol class="qs"><li>默认情景：10 年后的 1 万元，按 3% 贴现今天值 7,441 元。把贴现率拖到 0，现值变成多少？再拖到 15%，又是多少？</li><li>点“1 年后的 100 元”，曲线几乎是一条斜线，贴现率升 1 个百分点现值只少约 1%。再点“30 年后的 1 万元”，同样升 1 个百分点，现值少约 25%。期限越长，现值对利率越敏感。</li><li>点“20 年每年 5,000 元”，合计 10 万元，按 5% 贴现只值约 6.2 万元。看逐笔折现表：第 1 笔值 4,762 元，第 20 笔只值约 1,884 元。</li></ol>
+</section>
+
+<section id="fisher">
+<h2>名义利率与实际利率：费雪方程</h2>
+<p class="prose">银行挂出来的 2% 是<b>名义利率</b><span class="en"> (nominal interest rate)</span>，按钱的数目计算。存款人真正关心的是一年后能多买多少东西，这是<b>实际利率</b><span class="en"> (real interest rate)</span>。<a href="../m10/04-hyperinflation-deflation.html#deflation">上一模块</a>用过它的近似式，这里把精确式也写出来。</p>
+<p class="prose">一年后，名义金额变为 (1 + 名义利率) 倍，物价变为 (1 + 通胀率) 倍，能买到的东西变为两者之比。这就是<b>费雪方程</b><span class="en"> (Fisher equation)</span>，以经济学家欧文·费雪命名：</p>
+<p class="formula">精确式：1 + 名义利率 = (1 + 实际利率) × (1 + 通胀率)</p>
+<p class="formula">即：实际利率 = (1 + 名义利率) ÷ (1 + 通胀率) − 1</p>
+<p class="formula">近似式：实际利率 ≈ 名义利率 − 通胀率</p>
+<p class="prose">近似式把两个小数的乘积忽略掉了。利率和通胀都只有几个百分点时，这个乘积很小，近似足够用；通胀很高时，误差会变得很大：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="费雪方程精确式与近似式比较，可横向滚动"><table class="tbl"><caption>按公式计算：实际利率的精确值与近似值</caption><thead><tr><th scope="col">名义利率</th><th scope="col" class="num">通胀率</th><th scope="col" class="num">精确式</th><th scope="col" class="num">近似式</th></tr></thead><tbody>
+<tr><td>2%</td><td class="num">3%</td><td class="num">−0.97%</td><td class="num">−1%</td></tr>
+<tr><td>5%</td><td class="num">2%</td><td class="num">2.94%</td><td class="num">3%</td></tr>
+<tr><td>20%</td><td class="num">15%</td><td class="num">4.35%</td><td class="num">5%</td></tr>
+<tr><td>60%</td><td class="num">50%</td><td class="num">6.67%</td><td class="num">10%</td></tr>
+</tbody></table></div>
+<p class="prose">第一行就是开头的问题：名义利率 2%、通胀 3%，实际利率约 −0.97%，存款的购买力缩水了。名义上赚了 200 元，实际上亏了约 97 元的购买力：10,200 ÷ 1.03 ≈ 9,903 元，这是年底余额按年初物价折算的值。</p>
+<h3>事前与事后</h3>
+<p class="prose">签存款或贷款合同时，没人知道这一年的通胀会是多少，双方只能按预期通胀来权衡。用预期通胀算出的叫事前实际利率，决定人们愿不愿意存、愿不愿意借；年底用实际发生的通胀算出的叫事后实际利率，决定谁真正占了便宜。通胀比预期高，借款人得益，存款人吃亏；反之亦然。</p>
+<p class="prose">如果人们预期通胀上升，存款人会要求更高的名义利率来保住实际回报，借款人也愿意付，因为将来还的钱会贬值。所以预期通胀上升时，名义利率往往跟着上升，这叫费雪效应。</p>
+<p class="prose">用于贴现时，口径要一致：现金流按名义金额写，就用名义贴现率；现金流按今天的购买力写，就用实际贴现率。混用会把通胀算两次或漏算。</p>
+</section>
+
+<section id="risk">
+<h2>风险溢价：为什么不同的人借钱利率不同</h2>
+<p class="prose">同样借一年，信誉很好的政府可能只需付 2%，一家小公司要付 7%，网上的个人信用贷款更高。差别主要来自违约风险：借出去的钱可能收不回来。</p>
+<p class="prose">几乎不用担心违约的借款利率叫<b>无风险利率</b><span class="en"> (risk-free rate)</span>，实践中常用信誉很高的本国政府短期债券利率来代表。某笔借款利率高出无风险利率的部分，叫<b>风险溢价</b><span class="en"> (risk premium)</span>。</p>
+<p class="prose">一个简化的算例：无风险利率 2%，某借款人有 3% 的可能完全不还。出借人要让平均回报不低于 2%，必须满足 (1 + 利率) × 97% ≥ 102%，利率至少约 5.15%。其中约 3.15 个百分点只是补偿预期损失。大多数出借人不喜欢结果的不确定，还会再多要一点，所以真实的风险溢价通常高于纯粹按预期损失算出来的数。</p>
+<p class="prose">利率高也可能反过来招来更差的借款人：愿意接受很高利率的人，往往是最需要钱、最可能还不上的人。这是<a href="../m06/01-adverse-selection.html#selection">逆向选择</a>在信贷市场的表现，所以银行不会无限制地靠提高利率来覆盖风险。</p>
+<p class="prose">把三节合起来，一笔借款的名义利率可以粗略拆成三块：</p>
+<p class="formula">名义利率 ≈ 无风险实际利率 + 预期通胀率 + 风险溢价</p>
+<p class="prose">第一块补偿推迟消费和机会成本，第二块补偿购买力的损失，第三块补偿收不回来的可能。期限长短、能不能随时变现也会影响利率，这些留到下一课讲债券时再展开。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“存款利率是正的，我的钱就在增值。”</p><p>名义金额在增加，购买力不一定。名义利率 2%、通胀 3% 时，实际利率约 −0.97%，存一年能买到的东西反而少了。判断赚亏要看实际利率。</p></div>
+<div class="mis"><p class="said">“分 20 年每年领 5 万，合计 100 万，肯定比一次性拿 60 万划算。”</p><p>不同年份的钱不能直接相加。按 5% 贴现，这串钱的现值约 62.3 万元，只略高于 60 万；按 8% 贴现约 49.1 万元，一次性拿更划算。答案取决于你的贴现率。</p></div>
+<div class="mis"><p class="said">“这笔理财年化 12%，银行存款才 2%，当然选理财。”</p><p>高出来的 10 个百分点很大一部分是风险溢价，是对可能亏损的补偿，不是白送的。比较回报时要把风险一起比，不能只看承诺的利率。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先判断该用名义还是实际，再动笔算。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>存款余额变多了，购买力是变多还是变少？</b>变少。按费雪方程精确式，实际利率 = 1.02 ÷ 1.03 − 1 ≈ −0.97%。年底的 10,200 元只相当于年初的约 9,903 元，购买力少了约 97 元。近似式给出 −1%，在这种低通胀情形下足够准。</div></li><li><div><b>银行为什么付利息，利率由什么决定？</b>利率是借用钱一段时间的价格。存款人推迟消费、放弃别的用途，要求得到补偿；银行拿存款去放贷或投资，愿意付这个价。资金的供求、预期通胀和央行政策共同决定利率水平。</div></li><li><div><b>为什么借给不同的人要求的利率不同？</b>违约风险不同。借给信誉很好的机构，接近无风险利率；借给小公司或陌生人，要加上风险溢价来补偿可能收不回的损失和结果的不确定。</div></li></ol>
+<p class="prose">下次看到“利率 X%”，可以先问三件事：这是名义还是实际，同期通胀是多少，比无风险利率高出的部分在补偿什么风险。</p>
+<button type="button" class="chip" id="goChart">回到现值计算器</button>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,MINUS='−',RMAX=15;
+function $(s){return document.querySelector(s);}
+var SC={tomorrow:{mode:'single',amt:100,n:1,r:3},ten:{mode:'single',amt:10000,n:10,r:3},thirty:{mode:'single',amt:10000,n:30,r:3},annuity:{mode:'annuity',amt:5000,n:20,r:5}};
+var mode='single';
+/* 一笔：F/(1+r)^n；多笔：每年末 F，共 n 年 */
+function df(r,t){return 1/Math.pow(1+r/100,t);}
+function pv(mo,F,n,r){
+  if(mo==='single'){return F*df(r,n);}
+  if(r===0){return F*n;}
+  return F*(1-Math.pow(1+r/100,-n))/(r/100);
+}
+function total(mo,F,n){return mo==='single'?F:F*n;}
+function money(v){return v<1000?v.toFixed(2):Math.round(v).toLocaleString('en-US');}
+function pct(v,d){return C.fmt(v,d)+'%';}
+function tick(v){
+  if(v>=1e4){var w=v/1e4;return (Math.abs(w-Math.round(w))<1e-9?String(Math.round(w)):w.toFixed(1))+'万';}
+  return Math.round(v).toLocaleString('en-US');
+}
+function niceStep(max){
+  var raw=max/5,k=Math.pow(10,Math.floor(Math.log10(raw))),st=[1,2,5,10],i;
+  for(i=0;i<st.length;i++){if(st[i]*k>=raw){return st[i]*k;}}
+  return 10*k;
+}
+function read(){return {mo:mode,F:+$('#amt').value,n:+$('#yrs').value,r:+$('#rate').value};}
+var box=$('#chart1'),state=null;
+function draw(){
+  box.replaceChildren();
+  if(!state){return;}
+  var p=state.p,el=C.el;
+  var w=Math.max(280,Math.floor(box.clientWidth)),h=Math.round(Math.min(400,Math.max(260,w*0.62)));
+  var m={l:62,r:16,t:14,b:44},iw=w-m.l-m.r,ih=h-m.t-m.b;
+  var top=total(p.mo,p.F,p.n),st=niceStep(top*1.08),hi=Math.ceil(top*1.08/st)*st;
+  var X=function(r){return m.l+r/RMAX*iw;},Y=function(v){return m.t+ih-v/hi*ih;};
+  var f={m:m,iw:iw,ih:ih};
+  var svg=el('svg',{viewBox:'0 0 '+w+' '+h,width:w,height:h,'class':'plot',role:'img','aria-label':state.label,'data-ymax':String(hi),'data-xmax':String(RMAX)});
+  f.svg=svg;
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ih,'class':'plotbg'}));
+  var r,v;
+  for(r=0;r<=RMAX;r+=3){svg.appendChild(el('line',{x1:X(r),x2:X(r),y1:m.t,y2:m.t+ih,'class':'gridline'}));svg.appendChild(el('text',{x:X(r),y:m.t+ih+16,'text-anchor':'middle','class':'tick'},r+'%'));}
+  for(v=0;v<=hi+st*1e-9;v+=st){var y=Y(v);svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:y,y2:y,'class':'gridline'}));svg.appendChild(el('text',{x:m.l-6,y:y+4,'text-anchor':'end','class':'tick'},tick(v)));}
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ih,'class':'plotframe'}));
+  svg.appendChild(el('text',{x:m.l+iw/2,y:h-6,'text-anchor':'middle','class':'axtitle'},'贴现率 r（%/年）'));
+  svg.appendChild(el('text',{transform:'translate(16 '+(m.t+ih/2)+') rotate(-90)','text-anchor':'middle','class':'axtitle'},'现值（元）'));
+  var px=[],d=[],i;
+  for(i=0;i<=150;i++){r=i/10;px.push([X(r),Y(pv(p.mo,p.F,p.n,r))]);d.push(px[i][0].toFixed(2)+' '+px[i][1].toFixed(2));}
+  svg.appendChild(el('path',{d:'M'+d.join('L'),'class':'curve d','data-role':'pv'}));
+  var cx=X(p.r),cy=Y(state.pv);
+  C.guides(f,cx,cy);
+  svg.appendChild(el('circle',{cx:cx.toFixed(2),cy:cy.toFixed(2),r:5,'class':'pt','data-role':'now','data-r':String(p.r),'data-pv':state.pv.toFixed(6)}));
+  box.appendChild(svg);
+  // 点标签：先找不压曲线、不出界的位置
+  var plot={l:m.l+2,r:m.l+iw-2,t:m.t+2,b:m.t+ih-2};
+  function bb(n){var q=n.getBBox();return {l:q.x-1,r:q.x+q.width+1,t:q.y-1,b:q.y+q.height+1};}
+  function inside(q){return q.l>=plot.l&&q.r<=plot.r&&q.t>=plot.t&&q.b<=plot.b;}
+  function crosses(q){for(var k=0;k<px.length-1;k++){if(C.clip(px[k],px[k+1],{q0:q.l,q1:q.r,p0:q.t,p1:q.b})){return true;}}return false;}
+  var dot={l:cx-6,r:cx+6,t:cy-6,b:cy+6};
+  function hit(a,b){return a.l<b.r&&b.l<a.r&&a.t<b.b&&b.t<a.b;}
+  var n=el('text',{'class':'ptlab halo','data-role':'ptlab'},'现值 '+money(state.pv)+' 元');
+  svg.appendChild(n);
+  var cand=[[10,-12,'start'],[-10,20,'end'],[10,-28,'start'],[-10,36,'end'],[10,22,'start'],[-10,-12,'end'],[0,-16,'middle'],[0,26,'middle'],[10,-44,'start'],[-10,52,'end'],[10,38,'start'],[-10,-28,'end']];
+  var ok=false,j,q,pass;
+  for(pass=0;pass<2&&!ok;pass++){
+    for(j=0;j<cand.length&&!ok;j++){
+      n.setAttribute('x',(cx+cand[j][0]).toFixed(1));n.setAttribute('y',(cy+cand[j][1]).toFixed(1));n.setAttribute('text-anchor',cand[j][2]);
+      q=bb(n);
+      if(inside(q)&&!hit(q,dot)&&(pass===1||!crosses(q))){ok=true;}
+    }
+  }
+  if(!ok){svg.removeChild(n);}
+}
+function rows(p){
+  var out=[],k,s=0;
+  function one(t){return {lab:'第 '+t+' 年末',got:p.F,v:p.F*df(p.r,t)};}
+  if(p.n<=5){for(k=1;k<=p.n;k++){out.push(one(k));}return out;}
+  out.push(one(1));out.push(one(2));
+  for(k=3;k<=p.n-2;k++){s+=p.F*df(p.r,k);}
+  out.push({lab:'第 3~'+(p.n-2)+' 年末（'+(p.n-4)+' 笔合计）',got:p.F*(p.n-4),v:s});
+  out.push(one(p.n-1));out.push(one(p.n));
+  return out;
+}
+function update(){
+  var p=read(),PV=pv(p.mo,p.F,p.n,p.r),T=total(p.mo,p.F,p.n),up=pv(p.mo,p.F,p.n,p.r+1);
+  $('#amt-v').textContent=p.F.toLocaleString('en-US')+' 元';$('#amt').setAttribute('aria-valuetext',p.F.toLocaleString('en-US')+' 元');
+  $('#yrs-v').textContent=p.n+' 年';$('#yrs').setAttribute('aria-valuetext',p.n+' 年');
+  $('#rate-v').textContent=p.r.toFixed(1)+'%';$('#rate').setAttribute('aria-valuetext','每年 '+p.r.toFixed(1)+'%');
+  var sc=null;Object.keys(SC).forEach(function(k){var s=SC[k];if(s.mode===p.mo&&s.amt===p.F&&s.n===p.n&&s.r===p.r){sc=k;}});
+  document.querySelectorAll('[data-sc]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.sc===sc));});
+  document.querySelectorAll('[data-mode]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.mode===p.mo));});
+  var chg=(up/PV-1)*100;
+  $('#r-sum').textContent=money(T)+' 元';
+  $('#r-pv').textContent=money(PV)+' 元';
+  $('#r-ratio').textContent=(PV/T*100).toFixed(1)+'%';
+  $('#r-up').textContent=money(up)+' 元（'+pct(chg,1)+'）';
+  var bk=$('#breakdown'),body=$('#bk-body');
+  body.replaceChildren();
+  if(p.mo==='annuity'){
+    bk.hidden=false;
+    rows(p).concat([{lab:'合计',got:T,v:PV,sum:true}]).forEach(function(o){
+      var tr=document.createElement('tr');if(o.sum){tr.className='hl';}
+      [o.lab,money(o.got),money(o.v)].forEach(function(t,k){var td=document.createElement('td');if(k){td.className='num';}td.textContent=t;tr.appendChild(td);});
+      body.appendChild(tr);
+    });
+  }else{bk.hidden=true;}
+  var what=p.mo==='single'?p.n+' 年后的 '+money(p.F)+' 元':'未来 '+p.n+' 年每年年末 '+money(p.F)+' 元（合计 '+money(T)+' 元）';
+  var t;
+  if(p.r===0){
+    t='贴现率为 0 时，未来的钱和今天的钱一样值钱：'+what+'今天仍值 '+money(PV)+' 元，曲线从这里出发。';
+  }else{
+    t='按每年 '+p.r.toFixed(1)+'% 贴现，'+what+'今天值 '+money(PV)+' 元，是合计的 '+(PV/T*100).toFixed(1)+'%。';
+    if(p.mo==='single'){t+='反过来看，今天把 '+money(PV)+' 元按 '+p.r.toFixed(1)+'% 存 '+p.n+' 年，正好变成 '+money(p.F)+' 元。';}
+    else if(p.n>1){t+='越远的钱折得越多：第 1 笔值 '+money(p.F*df(p.r,1))+' 元，第 '+p.n+' 笔只值 '+money(p.F*df(p.r,p.n))+' 元。';}
+  }
+  t+='贴现率再升 1 个百分点，现值变为 '+money(up)+' 元（'+pct(chg,1)+'）'+(Math.abs(chg)>=10?'，期限长，现值对利率很敏感。':'。');
+  $('#verdict').textContent=t;
+  state={p:p,pv:PV,label:'图 1，现值随贴现率变化的曲线。'+t};
+  draw();
+}
+['amt','yrs','rate'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+function setSc(k){var s=SC[k];mode=s.mode;$('#amt').value=s.amt;$('#yrs').value=s.n;$('#rate').value=s.r;update();}
+document.querySelectorAll('[data-sc]').forEach(function(b){b.addEventListener('click',function(){setSc(b.dataset.sc);});});
+document.querySelectorAll('[data-mode]').forEach(function(b){b.addEventListener('click',function(){mode=b.dataset.mode;update();});});
+$('#goChart').addEventListener('click',function(){setSc('ten');$('#w-pv').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('#rate').focus({preventScroll:true});});
+C.watch(box,draw);update();
+
+var QUIZ=[
+{q:'一年后你将收到 1,100 元。你能稳拿的收益率是每年 10%。这笔钱今天值多少？',o:['990 元，因为 1,100 减去它的 10%','1,000 元','1,100 元，钱数没有变','1,210 元'],a:1,why:'1,000 元。现值 = 1,100 ÷ 1.1 = 1,000，因为今天把 1,000 元按 10% 存一年正好变成 1,100 元。减去 1,100 的 10% 是把除法错当成减法。'},
+{q:'一年期存款名义利率 6%，这一年通胀 4%。按费雪方程精确式，实际利率是多少？',o:['约 10%','正好 2%','约 1.5%','约 1.92%'],a:3,why:'约 1.92%。实际利率 = 1.06 ÷ 1.04 − 1 ≈ 1.92%。近似式给出 2%，低通胀时差得很少；把两者相加得到 10% 是方向弄反了。'},
+{q:'贴现率从 3% 升到 4%。下面三笔钱，哪一笔的现值下降比例最大？',o:['30 年后的 1 万元','1 年后的 1 万元','10 年后的 1 万元','三者下降比例相同，因为利率都只升了 1 个百分点'],a:0,why:'30 年后的 1 万元。它的现值约从 4,120 元降到 3,083 元，跌约 25%；10 年期跌约 9%，1 年期只跌约 1%。贴现率在指数里被乘了 n 次，期限越长越敏感。'},
+{q:'同期政府短期债券利率 3%，某家小公司发行的一年期债券利率 7%。这 4 个百分点的差距，最合理的解释是什么？',o:['小公司付得多，买它的债券一定更划算','政府债券定价错了，利率应该和公司债一样','投资者要求补偿小公司可能还不上钱的风险，即风险溢价','小公司所在地区的通胀率更高'],a:2,why:'是风险溢价。小公司违约的可能性更大，出借人要求更高的利率来补偿预期损失和不确定性。高利率不等于更划算，它是承担风险的价格。'},
+{q:'中奖后可选：一次性领 60 万元，或今后 20 年每年年末领 5 万元。哪种说法正确？',o:['分期合计 100 万元，一定更划算','取决于贴现率：按 5% 算分期现值约 62 万元，略高；按 8% 算约 49 万元，一次性更好','一次性领取总是更好，因为早拿的钱一定更值钱','两者现值相同，因为是同一笔奖金'],a:1,why:'取决于贴现率。分期的现值 = 5 万 × [1 − (1 + r)^−20] ÷ r：r = 5% 时约 62.3 万元，r = 8% 时约 49.1 万元。能把钱投到更高收益用途的人，更适合一次性领取。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'现值',en:'present value',d:'未来一笔钱折算到今天的价值：未来金额 ÷ (1 + r)^n。不同时间的钱要先折成现值才能相加和比较。'},
+{t:'终值',en:'future value',d:'今天的一笔钱按复利滚到将来某一天的金额：今天金额 × (1 + r)^n。现值和终值互为反运算。'},
+{t:'贴现率',en:'discount rate',d:'把未来的钱折回今天时用的每年比率，应等于这笔钱的机会成本，即风险相近的用途上能拿到的收益率。'},
+{t:'年金',en:'annuity',d:'每期金额相同、按固定间隔收付的一串现金流。现值 = 每笔金额 × [1 − (1 + r)^−n] ÷ r。'},
+{t:'名义利率',en:'nominal interest rate',d:'按钱的数目计算的利率，就是银行和合同上写的利率，没有扣除物价变化。'},
+{t:'实际利率',en:'real interest rate',d:'扣除通胀后的利率，衡量购买力的增长。精确式为 (1 + 名义利率) ÷ (1 + 通胀率) − 1。'},
+{t:'费雪方程',en:'Fisher equation',d:'1 + 名义利率 = (1 + 实际利率) × (1 + 通胀率)。近似式为实际利率 ≈ 名义利率 − 通胀率，通胀高时误差大。'},
+{t:'风险溢价',en:'risk premium',d:'有风险的借款或投资的利率高出无风险利率的部分，补偿违约等可能的损失以及结果的不确定。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

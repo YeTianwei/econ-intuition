@@ -267,7 +267,7 @@
         {
           id: 'm12-01', title: '利率与现值',
           en: 'Interest rates and present value',
-          path: 'm12/01-interest-present-value.html', status: 'todo'
+          path: 'm12/01-interest-present-value.html', status: 'done'
         },
         {
           id: 'm12-02', title: '债券与收益率曲线',
