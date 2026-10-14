@@ -173,7 +173,7 @@
         {
           id: 'm08-01', title: 'GDP：在测量什么，漏掉了什么',
           en: 'GDP: what it measures and what it misses',
-          path: 'm08/01-gdp.html', status: 'todo'
+          path: 'm08/01-gdp.html', status: 'done'
         },
         {
           id: 'm08-02', title: '通胀与 CPI',
