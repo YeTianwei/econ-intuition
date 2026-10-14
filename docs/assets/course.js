@@ -225,7 +225,7 @@
         {
           id: 'm10-03', title: '通胀从哪来',
           en: 'Where inflation comes from',
-          path: 'm10/03-causes-of-inflation.html', status: 'todo'
+          path: 'm10/03-causes-of-inflation.html', status: 'done'
         },
         {
           id: 'm10-04', title: '恶性通胀与通缩',

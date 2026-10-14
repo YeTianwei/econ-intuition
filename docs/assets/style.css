@@ -338,3 +338,9 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .solow-pair .lab{margin:0 0 6px}
 .solow-pair .chips{margin-bottom:6px}
 /* m09-02 end */
+
+/* m10-03 start */
+.bar.d{fill:var(--demand)}
+.bar.total{fill:var(--ink)}
+.legend .sw.bar{border-top-width:10px}
+/* m10-03 end */

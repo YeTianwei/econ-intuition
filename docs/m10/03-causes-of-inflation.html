@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>通胀从哪来</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m10-03">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>通胀从哪来</h1>
+<p class="sub">Where inflation comes from</p>
+<p class="lede">一样东西涨价，可能只是它自己缺货。物价总水平年复一年地涨，背后一定有更大的力量：花出去的钱，比能买到的东西增长得更快。这一课从一个简单的等式出发，看钱、产出和花钱的速度怎样决定长期通胀，再看需求、成本和预期怎样在短期里推动物价，以及通胀到底让谁吃亏。</p>
+<p class="meta">约 23 分钟 · 1 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m08/02-inflation-cpi.html#basket">通胀与 CPI</a>（通胀的定义和怎样测量）、<a href="../m08/01-gdp.html#real">名义 GDP 与实际 GDP</a>。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>据美国劳工统计局、欧盟统计局、英国国家统计局的发布稿整理的标题（不是某家媒体原文），2022 年 7 月至 11 月</figcaption><blockquote>美国 9.1%、英国 11.1%，通胀升至约 40 年来最高；欧元区 10.6%，创欧元区纪录</blockquote></figure>
+<p class="prose">疫情后的 2021 年起，许多国家物价加速上涨，到 2022 年先后见顶。三个经济体的官方数字如下（都是与上年同月相比的涨幅）：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="2022 年三个经济体通胀峰值，可横向滚动"><table class="tbl"><caption>本轮通胀的峰值月份。来源见表中机构与页末资料来源</caption><thead><tr><th scope="col">经济体与指标</th><th scope="col">月份</th><th scope="col" class="num">同比（%）</th><th scope="col">与过去比</th></tr></thead><tbody>
+<tr><td>美国 CPI-U（BLS）</td><td>2022 年 6 月</td><td class="num">9.1</td><td>1981 年 11 月以来最大的 12 个月涨幅</td></tr>
+<tr><td>欧元区 HICP（Eurostat）</td><td>2022 年 10 月</td><td class="num">10.6</td><td>欧元区有记录以来最高（快报为 10.7%，后修正）</td></tr>
+<tr><td>英国 CPI（ONS）</td><td>2022 年 10 月</td><td class="num">11.1</td><td>1997 年官方序列开始以来最高；按 ONS 的模拟估计，上一次更高是 1981 年 10 月</td></tr>
+</tbody></table></div>
+<p class="prose">“几十年来最高”要看比较基准。美国和英国都要回溯到 1981 年，约 40 年前。欧元 1999 年才启用，欧元区的“历史最高”只是相对二十多年的记录，不能直接说成“几十年”。英国的官方 CPI 序列从 1997 年才开始，1981 年的比较依靠统计局的模拟估计。</p>
+<ol class="qs"><li>一样东西涨价和物价总水平持续上涨有什么不同？为什么这么多国家几乎同时出现高通胀？</li><li>这一轮通胀是“钱太多”造成的，还是能源和供应链出了问题？</li><li>通胀已经很高了，为什么央行还特别担心它“自己维持下去”？通胀高到底伤害了谁？</li></ol>
+</section>
+
+<section id="quantity">
+<h2>货币数量论：花出去的钱，等于卖出去的东西</h2>
+<p class="prose"><a href="../m08/02-inflation-cpi.html#basket">上一模块</a>把通胀定义为物价总水平持续上涨。要问它从哪来，先看一个记账恒等式。设 M 是经济中的货币量（现金和存款，具体口径在本模块第一课讲），V 是一元钱一年里平均被花几次，P 是物价水平，Y 是实际产出（实际 GDP）：</p>
+<p class="formula">M × V = P × Y</p>
+<p class="prose">右边 P × Y 就是<a href="../m08/01-gdp.html#real">名义 GDP</a>，一年里所有最终产品和服务按当年价格卖了多少钱。左边是同一笔支出从买方看：有多少钱，每元钱转了几手。这个等式叫<b>交换方程</b><span class="en"> (equation of exchange)</span>。其中 V 叫<b>货币流通速度</b><span class="en"> (velocity of money)</span>，它通常不是直接测出来的，而是用 V = 名义 GDP ÷ M 算出来的。</p>
+<p class="prose">只看到这里，它只是恒等式，什么也没解释。加上两条假设，它就变成了一个理论，叫<b>货币数量论</b><span class="en"> (quantity theory of money)</span>：</p>
+<ol class="qs"><li>长期里，实际产出 Y 由劳动、资本和技术决定，与印多少钱无关。</li><li>流通速度 V 由支付习惯和技术决定，变化缓慢、比较稳定。</li></ol>
+<p class="prose">两条都成立时，货币增加只能落到 P 上。把等式写成增长率形式更好用：</p>
+<p class="formula">π ≈ μ + v − y</p>
+<p class="prose">π 是通胀率，μ 是货币增速，v 是流通速度的变化率，y 是实际产出增速，单位都是“%/年”。这是近似式：几个量相乘时，乘积的增长率约等于各自增长率相加，增长率越小越准。准确的写法是 1 + π = (1 + μ)(1 + v) ÷ (1 + y)。下面的图同时给出两种算法，你可以看到数字大时它们差多少。</p>
+<div class="analogy"><span class="lab">类比</span><p>想象一个游乐园只收代币，每天能开的游乐设施场次是固定的（Y）。园方一夜之间把游客手里的代币翻倍，设施并没有变多。只要大家照常把代币花掉（V 不变），每场的“票价”迟早也会翻倍。代币多了，没人变得更能玩。</p></div>
+
+<div class="widget" id="w-qtm" aria-labelledby="w1t">
+<h3 id="w1t">图 1　货币数量论：长期通胀 ≈ 货币增速 + 流通速度变化 − 产出增速</h3>
+<div class="chips" role="group" aria-label="选择情景（教学示意）"><button type="button" class="chip" data-s="5,0,3" aria-pressed="true">稳定：约 2%</button><button type="button" class="chip" data-s="15,0,3" aria-pressed="false">货币快速扩张</button><button type="button" class="chip" data-s="15,-5,3" aria-pressed="false">钱多了但少花</button><button type="button" class="chip" data-s="5,0,-3" aria-pressed="false">产出萎缩</button><button type="button" class="chip" data-s="1,-1,4" aria-pressed="false">产出快于货币</button><button type="button" class="chip" data-s="30,5,-5" aria-pressed="false">钱越多货越少</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw bar model"></span>货币增速 μ</li><li><span class="sw bar alternative"></span>流通速度变化 v</li><li><span class="sw bar d"></span>减去产出增速 y</li><li><span class="sw bar"></span>近似通胀率 π</li><li>虚线：累计到下一根柱子的起点</li></ul>
+<div class="controls">
+<div class="ctl"><label for="mu">货币增速 μ（%/年）</label><output id="mu-value" for="mu"></output><input id="mu" type="range" min="-5" max="30" step="0.5" value="5" aria-describedby="mu-hint"><span class="hint" id="mu-hint">货币量每年增长多少，−5%~30%；负值表示货币量收缩。</span></div>
+<div class="ctl"><label for="vv">流通速度变化率 v（%/年）</label><output id="vv-value" for="vv"></output><input id="vv" type="range" min="-5" max="5" step="0.5" value="0" aria-describedby="vv-hint"><span class="hint" id="vv-hint">每元钱一年被花的次数的变化，−5%~5%；负值表示人们更愿意持有钱、少花。</span></div>
+<div class="ctl full"><label for="yy">实际产出增速 y（%/年）</label><output id="yy-value" for="yy"></output><input id="yy" type="range" min="-5" max="10" step="0.5" value="3" aria-describedby="yy-hint"><span class="hint" id="yy-hint">实际 GDP 每年增长多少，−5%~10%；负值表示能买到的东西在减少。</span></div>
+</div>
+<dl class="read pairs"><div><dt>名义支出增速 μ + v</dt><dd id="r-nom"></dd></div><div><dt>近似通胀率 π ≈ μ + v − y</dt><dd id="r-approx"></dd></div><div><dt>精确通胀率 (1+μ)(1+v)÷(1+y) − 1</dt><dd id="r-exact"></dd></div><div><dt>近似误差</dt><dd id="r-err"></dd></div><div><dt>按精确通胀率持续 10 年，物价水平（今天 = 100）</dt><dd id="r-p10"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">所有数字都是教学示意，不对应任何国家的真实数据。图中柱子按近似式 μ + v − y 叠加，读数表另给精确值。这个关系描述的是多年平均的长期趋势；短期内货币增加可能先推高产出，流通速度也可能大幅波动，不能用它预测下个月的 CPI。</p>
+</div>
+<h3>四个实验</h3>
+<ol class="qs"><li>默认情景：货币每年多 5%，产出多 3%，物价约涨 2%。把货币增速拖到 15%，通胀跟着升到约 12%：在 V 和 Y 不变时，货币增速每多 1 个百分点，长期通胀也多约 1 个百分点。</li><li>选“钱多了但少花”：货币增速同样是 15%，但流通速度每年降 5%，通胀只有约 7%。货币量快速增长，物价不一定同比例上涨，关键看钱有没有被花出去。</li><li>选“产出快于货币”：名义支出几乎不增长，产出每年多 4%，物价每年下降约 4%，这就是通缩。</li><li>选“钱越多货越少”：近似值是 40%，精确值约 43.7%，差了 3 个多百分点。增长率越大，近似式越不准。</li></ol>
+<p class="prose">长期数据支持这个关系的主要方向。明尼阿波利斯联储的研究者 McCandless 和 Weber 在 1995 年考察了 110 个国家 30 年的数据，发现无论用哪种货币口径，货币增速和通胀率都高度相关；而通胀率与实际产出增速基本不相关。这是跨国、几十年平均的规律，不是逐年的精确对应。</p>
+<p class="prose">两条假设在短期里经常不成立。经济不景气时，多出来的货币可能先让闲置的工人和机器开工，抬高 Y 而不是 P。危机中人们和银行倾向于捏紧钱，V 会下降，货币大量增加也未必带来通胀。所以货币数量论最适合回答“为什么有的国家几十年里通胀一直很高”，不太适合解释某一年的通胀。</p>
+</section>
+
+<section id="pull-push">
+<h2>需求拉动与成本推动：短期里谁在推高物价</h2>
+<p class="prose">看短期，经济学家常把通胀的起因分成两类，可以用<a href="../m02/01-supply-demand.html#model">供求模型</a>的直觉理解，只是这里的“市场”换成了整个经济。</p>
+<p class="prose"><b>需求拉动型通胀</b><span class="en"> (demand-pull inflation)</span>：全社会想买的东西增长得比经济能生产的更快。来源可能是减税和政府补贴、宽松的信贷、资产价格上涨让人觉得更富，或者出口突然旺盛。工厂和员工已经满负荷，企业接单接不过来，就会提价。它的典型特征是物价和产出、就业一起上升。</p>
+<p class="prose"><b>成本推动型通胀</b><span class="en"> (cost-push inflation)</span>：生产成本上升，企业在同样的价格下愿意提供的东西变少，于是提价。来源可能是油气价格暴涨、天灾减产、供应链中断，或者工资涨得比生产率快。它的典型特征是物价上升的同时产出下降或停滞，后者让央行左右为难：压物价可能让经济更差，保经济可能让通胀更久。</p>
+<p class="prose">放回图 1 的语言：成本冲击相当于 y 一时变成负数（选“产出萎缩”情景），物价水平会跳上去一截。冲击本身通常是一次性的，油价不会每年都翻倍。它能否变成持续多年的通胀，取决于后面两件事：货币和支出是否继续扩张来“迁就”更高的价格，以及人们是否开始预期物价会一直涨。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="需求拉动与成本推动的比较，可横向滚动"><table class="tbl comparison"><caption>两类通胀的典型特征（教科书式的简化）</caption><thead><tr><th scope="col">比较项</th><th scope="col">需求拉动</th><th scope="col">成本推动</th></tr></thead><tbody>
+<tr><td>起点</td><td>想买的增长快于能生产的</td><td>生产的成本上升</td></tr>
+<tr><td>产出和就业</td><td>通常上升</td><td>通常下降或停滞</td></tr>
+<tr><td>典型例子</td><td>大规模刺激、信贷繁荣</td><td>能源价格冲击、供应链中断</td></tr>
+<tr><td>央行的处境</td><td>收紧政策，方向比较清楚</td><td>稳物价和稳就业互相冲突</td></tr>
+</tbody></table></div>
+<h3>2021~2023 年：不同的解释</h3>
+<p class="prose">现实中两类原因常常同时出现，还会互相放大。对这一轮通胀的成因，研究者有不同的强调，下面分别陈述，不在这里下结论。模块 14 会有专题。</p>
+<p class="prose"><b>强调需求的一方。</b>旧金山联储的几位研究者在 2022 年 3 月的一份经济简报中指出，美国通胀从 2021 年上半年起越来越明显地高于其他发达国家；他们估计，为对冲疫情冲击而推出的财政支持措施，到 2021 年底可能让美国通胀高出约 3 个百分点。他们同时承认，全球供应链问题和疫情下消费结构的变化推高了各国的通胀。</p>
+<p class="prose"><b>强调价格冲击的一方。</b>伯南克和布兰查德 2023 年发表的研究用一个价格、工资和预期的模型分解美国这轮通胀，结论是 2021 和 2022 年的上涨大部分来自直接推高价格（而不是工资）的冲击：大宗商品价格飙升，以及供应链卡顿与需求从服务转向商品造成的部分行业短缺。他们认为财政政策确实有贡献，但主要是通过推高对供给受限的商品的需求；劳动市场过热的影响出现得更晚，却更持久。</p>
+<p class="prose"><b>欧元区的情况。</b>欧洲央行首席经济学家连恩（Philip Lane）2024 年的文章把欧元区的通胀主要归于能源冲击的直接和间接影响，特别是 2022 年俄罗斯入侵乌克兰之后；疫情后的重新开放造成部分行业需求旺盛而供给受限，也起了作用。欧元区的峰值月份，能源是对通胀贡献最大的分项。</p>
+<p class="prose">这些解释并不完全互斥。需求转向商品，碰上供应链卡顿，同一件事从一边看是需求拉动，从另一边看是成本推动。各国的财政规模、能源依赖程度不同，主导因素也可能不同。</p>
+</section>
+
+<section id="expectations">
+<h2>通胀预期：会自我实现的预言</h2>
+<p class="prose"><b>通胀预期</b><span class="en"> (inflation expectations)</span> 是家庭、企业和投资者对未来物价涨幅的判断。它之所以重要，是因为人们会按预期行事，而这些行为本身就会推高物价。</p>
+<ol class="steps"><li><div>工人预计明年物价涨 6%，谈工资时就要求至少涨 6%，否则实际工资会下降。</div></li><li><div>企业预计原料和人工明年都要涨 6%，签合同、定价目表时就先把价格往上调。</div></li><li><div>工资和价格真的都涨了约 6%，预期得到“验证”，下一轮谈判又以它为起点。</div></li></ol>
+<p class="prose">工资推高价格、价格又推高工资的循环叫<b>工资-价格螺旋</b><span class="en"> (wage-price spiral)</span>。在图 1 的语言里，预期还会通过 V 起作用：如果大家相信钱会越来越不值钱，就会尽快把钱花掉，流通速度上升，同样的货币量支撑更快的涨价。</p>
+<p class="prose">反过来，如果人们普遍相信通胀会回到 2% 左右，即使一次油价冲击让物价跳了一下，大家也不会据此调高下一年的工资和价格要求，冲击就更可能逐渐消退。经济学家把这种状态叫<b>预期锚定</b><span class="en"> (anchored expectations)</span>。这就是央行在通胀已经很高时仍然紧张的原因：一旦预期脱锚，把通胀压下来往往需要更高的利率和更长的经济放缓。预期和利率的关系，会在讲宏观政策的模块里细讲。</p>
+<div class="analogy"><span class="lab">类比</span><p>体育场看比赛，前排一个人站起来，后面的人为了看见也得站起来，最后全场都站着，谁也没看得更清楚。只要大家相信别人会坐着，每个人就可以安心坐着；一旦都预计别人要站，就会抢先站起来。</p></div>
+</section>
+
+<section id="costs">
+<h2>通胀的成本：涨价不只是“东西贵了”</h2>
+<p class="prose">如果所有价格和收入每年都正好同步涨 5%，似乎谁也没吃亏。现实中通胀的代价来自三个方面。</p>
+<p class="prose"><b>菜单成本</b><span class="en"> (menu costs)</span>：改价本身要花成本，重印菜单和价签、改系统、和客户重新谈价。通胀越高，改价越频繁。因为改价有成本，不同商品调价的时间先后不一，相对价格会被打乱，价格传达“什么东西更稀缺”的信号变得嘈杂。高通胀下人们还会尽量少持有现金、多跑银行，这类额外的麻烦常被叫作<b>鞋底成本</b><span class="en"> (shoe-leather costs)</span>。</p>
+<p class="prose"><b>再分配</b><span class="en"> (redistribution)</span>：当通胀高于大家签合同时的预期，按名义金额固定的约定就会悄悄转移财富。还款金额固定的借款人，实际负担减轻；放贷人和存款人收回的钱实际价值缩水。工资、养老金如果调整得慢，领取者的<a href="../m08/02-inflation-cpi.html#converter">实际收入</a>会下降。如果通胀被准确预期到，利率和工资合同可以事先把它算进去，这部分再分配就小得多。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="未预期通胀下的赢家和输家，可横向滚动"><table class="tbl comparison"><caption>通胀意外高于预期时，谁更可能受益、谁更可能受损（简化）</caption><thead><tr><th scope="col">更可能受益</th><th scope="col">更可能受损</th></tr></thead><tbody>
+<tr><td>固定利率的借款人（房贷、企业债）</td><td>固定利率的放贷人、债券持有人</td></tr>
+<tr><td>名义债务很多的政府</td><td>持有大量现金和低息存款的人</td></tr>
+<tr><td>价格调得快的卖方</td><td>工资或养老金调整滞后的人</td></tr>
+</tbody></table></div>
+<p class="prose"><b>不确定性</b><span class="en"> (uncertainty)</span>：通胀越高，往往也越不稳定。企业很难判断十年后的成本和售价，长期投资和长期合同变得更冒险；家庭难以规划储蓄和养老。为此人们要花更多精力对冲物价风险，或者干脆少做长期安排。</p>
+<p class="prose">这些成本也解释了为什么多数央行的目标是“低而稳定”的通胀，而不是零。为什么不是零、物价下跌又有什么问题，下一课讲恶性通胀与通缩时再讨论。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“货币多印了 20%，物价就一定涨 20%。”</p><p>只有在流通速度和产出都不变时才成立。产出增长会吸收一部分货币，人们少花钱时 V 下降也会抵消一部分。这个比例关系是长期平均的规律，短期里常常对不上。</p></div>
+<div class="mis"><p class="said">“油价涨了，所以通胀会一直高下去。”</p><p>一次性的成本冲击让物价水平跳一截，通胀率随后会回落。它变成持续通胀，需要支出持续扩张来迁就，或者预期脱锚引发工资价格互相追赶。</p></div>
+<div class="mis"><p class="said">“通胀伤害所有人。”</p><p>意外的通胀主要是再分配：固定利率的借款人受益，放贷人和收入调整慢的人受损。真正让所有人都付代价的是改价成本、相对价格信号变乱和长期计划的不确定性。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先找出钱、产出和花钱速度各自怎样变，再想清楚冲击是一次性的还是持续的。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>一样东西涨价和持续通胀有什么不同？</b>单个商品涨价是相对价格变化。物价总水平长期持续上涨，需要名义支出（M × V）长期快于实际产出增长。至于多国同时出现，各国面对的是一些共同的冲击：疫情打乱了供应链，消费从服务转向商品，2022 年又遇上能源价格飙升；许多国家同期还推出了大规模的财政和货币支持。</div></li><li><div><b>是钱太多还是供给出了问题？</b>研究者的强调不同。有研究估计美国的财政支持到 2021 年底让通胀多出约 3 个百分点；也有研究认为大部分上涨来自大宗商品和行业短缺等直接推高价格的冲击；欧洲央行则把欧元区通胀主要归于能源冲击。需求和供给在这一轮里互相交织，主导因素也因国而异。</div></li><li><div><b>为什么担心通胀“自己维持下去”？伤害了谁？</b>高通胀持续久了，工人和企业会把它写进工资和价格，预期一旦脱锚就会自我实现，压下来的代价更大。通胀的伤害不平均：存款、固定收入和工资调整慢的人受损，固定利率借款人相对受益；所有人都要承担改价和计划上的不确定性。</div></li></ol>
+<p class="prose">下次看到通胀新闻，可以依次问：是一两类商品涨价，还是普遍上涨？名义支出比产出快了多少？冲击是一次性的还是持续的？人们对明年的通胀预期变了没有？</p>
+<button type="button" class="chip" id="goChart">回到图 1 的默认情景</button>
+</section>
+
+<section id="sources">
+<h2>资料来源</h2>
+<ol class="qs">
+<li>美国劳工统计局（BLS），<a href="https://www.bls.gov/news.release/archives/cpi_07132022.htm">Consumer Price Index – June 2022</a>，2022-07-13；CPI-U 同比 9.1%，为 1981 年 11 月以来最大的 12 个月涨幅。</li>
+<li>欧盟统计局（Eurostat），<a href="https://ec.europa.eu/eurostat/documents/2995521/15265521/2-17112022-AP-EN.pdf/">Annual inflation up to 10.6% in the euro area</a>，2022-11-17；欧元区 2022 年 10 月 HICP 同比 10.6%，能源贡献最大。</li>
+<li>Reuters（Euronews 转载），<a href="https://www.euronews.com/2022/11/18/eurozone-economy-inflation">Euro zone Oct y/y inflation revised marginally lower, still record high</a>，2022-11-18；10.6% 由快报 10.7% 修正，仍为纪录高位。</li>
+<li>英国国家统计局（ONS），<a href="https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2022">Consumer price inflation, UK: October 2022</a>，2022-11-16；CPI 同比 11.1%，为 1997 年官方序列开始以来最高，模拟估计上一次更高是 1981 年 10 月。</li>
+<li>Philip R. Lane，ECB Blog，<a href="https://www.ecb.europa.eu/press/blog/date/2024/html/ecb.blog240311~968c707650.en.html">The 2021-2022 inflation surges and monetary policy in the euro area</a>，2024-03-11；欧元区通胀 2022 年 10 月达峰值 10.6%，能源冲击和俄乌战争是主要推手。</li>
+<li>Òscar Jordà 等，FRBSF Economic Letter 2022-07，<a href="https://www.frbsf.org/wp-content/uploads/sites/4/el2022-07.pdf">Why Is U.S. Inflation Higher than in Other Countries?</a>，2022-03-28；财政支持到 2021 年底可能使美国通胀高出约 3 个百分点。</li>
+<li>Ben S. Bernanke、Olivier Blanchard，Brookings，<a href="https://www.brookings.edu/articles/what-caused-the-u-s-pandemic-era-inflation/">What caused the U.S. pandemic-era inflation?</a>，2023-06-13；上涨大部分来自直接推高价格的冲击，劳动市场的影响更持久。</li>
+<li>George T. McCandless、Warren E. Weber，Federal Reserve Bank of Minneapolis Quarterly Review，<a href="https://www.fedinprint.org/item/fedmqr/41523">Some Monetary Facts</a>，1995 年夏季号；110 个国家 30 年数据中货币增速与通胀高度相关。</li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,MINUS='−';
+function $(s){return document.querySelector(s);}
+function model(mu,v,y){
+  var approx=mu+v-y,exact=((1+mu/100)*(1+v/100)/(1+y/100)-1)*100;
+  return {nom:mu+v,nomExact:((1+mu/100)*(1+v/100)-1)*100,approx:approx,exact:exact,err:exact-approx,p10:100*Math.pow(1+exact/100,10)};
+}
+function sp(n){return C.fmtS(n,1)+'%';}
+function ab(n){return C.fmt(Math.abs(n),1)+'%';}
+function num(n){var d=n>=1000?0:1;return n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});}
+var box=$('#chart1'),state=null;
+function draw(){
+  box.replaceChildren();
+  if(!state){return;}
+  var p=state.p,s=state.s;
+  var lv=[0,p.mu,p.mu+p.v,s.approx],lo=Math.min.apply(null,lv),hi=Math.max.apply(null,lv);
+  var span=Math.max(hi-lo,4),pad=span*0.2,a=lo-pad,b=hi+pad,steps=[1,2,5,10,20],st=20,i;
+  for(i=0;i<steps.length;i++){if((b-a)/steps[i]<=6){st=steps[i];break;}}
+  var p0=Math.floor(a/st)*st,p1=Math.ceil(b/st)*st;
+  var f=C.frame(box,{id:'qtm',q0:0,q1:4,qs:1,p0:p0,p1:p1,ps:st,xt:'增长率的构成（前三项相加 = 第四项）',yt:'年增长率（%）',label:state.label});
+  // 横轴是类别，不用数值刻度：去掉竖向网格线和数值刻度文字。
+  Array.prototype.slice.call(f.svg.querySelectorAll('text.tick[text-anchor="middle"]')).forEach(function(e){e.remove();});
+  Array.prototype.slice.call(f.svg.querySelectorAll('line.gridline')).forEach(function(e){if(e.getAttribute('x1')===e.getAttribute('x2')){e.remove();}});
+  var frameRect=f.svg.querySelector('.plotframe');
+  var slot=f.iw/4,bw=Math.min(64,slot*0.55),narrow=f.w<440;
+  var bars=[
+    {from:0,to:p.mu,cls:'bar model',cat:narrow?'货币 μ':'货币增速 μ',val:p.mu},
+    {from:p.mu,to:p.mu+p.v,cls:'bar alternative',cat:narrow?'速度 v':'流通速度 v',val:p.v},
+    {from:p.mu+p.v,to:s.approx,cls:'bar d',cat:narrow?'产出 −y':'产出 −y',val:-p.y},
+    {from:0,to:s.approx,cls:'bar',cat:narrow?'通胀 π':'通胀 π',val:s.approx}
+  ];
+  var g=C.el('g',{});
+  f.svg.insertBefore(g,frameRect);
+  g.appendChild(C.el('line',{x1:f.m.l,x2:f.m.l+f.iw,y1:f.y(0),y2:f.y(0),'class':'eqline'}));
+  bars.forEach(function(bar,k){
+    var cx=f.m.l+slot*(k+0.5),y1=f.y(Math.max(bar.from,bar.to)),y2=f.y(Math.min(bar.from,bar.to)),h=Math.max(y2-y1,1.5);
+    if(y2-y1<1.5){y1=(y1+y2)/2-0.75;}
+    var r=C.el('rect',{x:(cx-bw/2).toFixed(1),y:y1.toFixed(1),width:bw.toFixed(1),height:h.toFixed(1),'class':bar.cls});
+    if(k===3){r.setAttribute('class','bar total');}
+    g.appendChild(r);
+    if(k<3){
+      var lvl=bar.to,nx=f.m.l+slot*(k+1.5)-bw/2;
+      g.appendChild(C.el('line',{x1:(cx+bw/2).toFixed(1),x2:nx.toFixed(1),y1:f.y(lvl).toFixed(1),y2:f.y(lvl).toFixed(1),'class':'guide'}));
+    }
+    var up=bar.to>=bar.from,ly=up?y1-6:y1+h+14;
+    f.svg.appendChild(C.el('text',{x:cx.toFixed(1),y:ly.toFixed(1),'text-anchor':'middle','class':'vallab halo'},sp(bar.val)));
+    f.svg.appendChild(C.el('text',{x:cx.toFixed(1),y:(f.m.t+f.ih+16).toFixed(1),'text-anchor':'middle','class':'tick'},bar.cat));
+  });
+  box.appendChild(f.svg);
+}
+function presetMatch(p){
+  document.querySelectorAll('[data-s]').forEach(function(b){var v=b.dataset.s.split(',').map(Number);b.setAttribute('aria-pressed',String(v[0]===p.mu&&v[1]===p.v&&v[2]===p.y));});
+}
+function update(){
+  var p={mu:+$('#mu').value,v:+$('#vv').value,y:+$('#yy').value},s=model(p.mu,p.v,p.y);
+  $('#mu-value').textContent=sp(p.mu);$('#mu').setAttribute('aria-valuetext','货币增速 '+sp(p.mu));
+  $('#vv-value').textContent=sp(p.v);$('#vv').setAttribute('aria-valuetext','流通速度变化率 '+sp(p.v));
+  $('#yy-value').textContent=sp(p.y);$('#yy').setAttribute('aria-valuetext','实际产出增速 '+sp(p.y));
+  presetMatch(p);
+  $('#r-nom').textContent=sp(s.nom)+'（精确 '+sp(s.nomExact)+'）';
+  $('#r-approx').textContent=sp(s.approx);
+  $('#r-exact').textContent=sp(s.exact);
+  $('#r-err').textContent=C.fmtS(s.err,1)+' 个百分点';
+  $('#r-p10').textContent=num(s.p10);
+  var t='货币量'+(p.mu===0?'不变':'每年'+(p.mu>0?'增加 ':'减少 ')+ab(p.mu))+'，流通速度'+(p.v===0?'不变':'每年'+(p.v>0?'加快 ':'放慢 ')+ab(p.v))+'，名义支出'+(s.nom===0?'基本不变':'每年约'+(s.nom>0?'增加 ':'减少 ')+ab(s.nom))+'。';
+  if(p.y>0){t+='实际产出每年增长 '+ab(p.y)+'，名义支出增长中的这一部分体现为商品和服务变多，而不是涨价。';}
+  else if(p.y<0){t+='实际产出每年萎缩 '+ab(p.y)+'，能买的东西变少，这本身会推高物价。';}
+  else{t+='实际产出不增长。';}
+  if(Math.abs(s.exact)<0.05){t+='物价大致稳定。';}
+  else if(s.exact>0){t+='物价每年约上涨 '+ab(s.exact)+'（近似式给出 '+sp(s.approx)+'）。';}
+  else{t+='名义支出的增长低于产出增长，物价每年约下降 '+ab(s.exact)+'（近似式给出 '+sp(s.approx)+'），这是通缩。';}
+  if(Math.abs(s.err)>=1){t+='数字较大时近似误差达到 '+C.fmt(Math.abs(s.err),1)+' 个百分点，应当用精确公式。';}
+  t+='照此持续 10 年，物价水平从 100 变为 '+num(s.p10)+'。';
+  if(s.exact>=20){t+='这已是很高的通胀，钱的购买力会迅速缩水。';}
+  if(p.mu>=10&&s.exact<p.mu-6){t+='货币增长很快，但流通速度下降或产出增长抵消了大部分。';}
+  $('#verdict').textContent=t;
+  state={p:p,s:s,label:'图 1：'+t};
+  draw();
+}
+['mu','vv','yy'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+document.querySelectorAll('[data-s]').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.s.split(',');$('#mu').value=v[0];$('#vv').value=v[1];$('#yy').value=v[2];update();});});
+$('#goChart').addEventListener('click',function(){$('#mu').value=5;$('#vv').value=0;$('#yy').value=3;update();var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;$('#w-qtm').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});$('#mu').focus({preventScroll:true});});
+C.watch(box,draw);update();
+
+var QUIZ=[
+{q:'某国多年来货币量每年增长 10%，实际产出每年增长 3%，流通速度基本稳定。按货币数量论，长期通胀率大约是多少？',o:['约 13%，货币增速和产出增速都会推高物价','约 10%，货币增加多少物价就涨多少','约 7%，产出增长吸收了一部分新增货币','约 3%，物价跟着产出走'],a:2,why:'约 7%。π ≈ μ + v − y = 10 + 0 − 3。产出增长意味着有更多东西要用钱来买，会吸收一部分货币增长，所以它在式子里是减号。'},
+{q:'危机期间央行让货币量一年增加 20%，但家庭和银行都捏紧钱不花，流通速度下降 15%，实际产出不变。物价最可能怎样？',o:['大约上涨 5%，多出来的钱有很大一部分没有被花掉','大约上涨 20%，货币增加多少物价就涨多少','大约上涨 35%，两种变化叠加','会下降，因为流通速度下降了'],a:0,why:'大约上涨 5%。名义支出 M × V 只增加约 20 − 15 = 5%，产出不变，物价也就涨约 5%。货币量猛增不一定带来同比例的通胀，关键看钱是否被花出去。'},
+{q:'甲、乙两国物价都上涨 6%。甲国同期就业和产出大幅增长；乙国国际油价暴涨，产出下降。下面哪种描述最合理？',o:['两国都是成本推动型通胀，因为物价都在涨','两国都是需求拉动型通胀，因为通胀总是钱太多','只有甲国的物价上涨算通胀','甲国更像需求拉动，乙国更像成本推动'],a:3,why:'甲国更像需求拉动，乙国更像成本推动。需求拉动时物价和产出一起上升；成本推动时物价上升而产出下降，这是区分两者最直接的线索。'},
+{q:'某国工会预计明年通胀 6%，要求加薪 6%；企业预计成本上涨，也提前调高售价。央行为什么最担心这种情况？',o:['工资上涨一定会造成通缩','预期会通过工资和定价变成真实的通胀，还可能互相追赶','预期只是心理活动，不影响实际物价','加薪 6% 说明实际工资一定大幅上升'],a:1,why:'因为预期会自我实现。工资和价格按预期上调后，通胀真的出现，又成为下一轮谈判的起点，形成工资-价格螺旋。预期一旦脱锚，压下通胀的代价更大。'},
+{q:'去年大家都预期通胀 2%，实际却是 8%。下面谁最可能从中受益？',o:['按固定利率存了三年定期存款的人','领取固定金额养老金、尚未调整的退休者','借了固定利率房贷、按原定金额还款的人','购买了固定利率长期债券的投资者'],a:2,why:'固定利率借款人受益。他按名义金额还款，而这些钱的实际价值因意外的高通胀缩水了；存款人、债券持有人和固定收入者正好相反。这就是未预期通胀的再分配效应。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'交换方程',en:'equation of exchange',d:'M × V = P × Y。左边是货币量乘每元钱被花的次数，右边是名义 GDP。本身是恒等式。'},
+{t:'货币数量论',en:'quantity theory of money',d:'假设长期产出由实际因素决定、流通速度稳定，则货币增长最终体现为物价上涨：π ≈ μ + v − y。'},
+{t:'货币流通速度',en:'velocity of money',d:'一元钱一年里平均被花几次，用名义 GDP ÷ 货币量算出。人们更愿意持币时它下降。'},
+{t:'需求拉动型通胀',en:'demand-pull inflation',d:'全社会想买的增长快于能生产的，企业满负荷后提价。典型特征是物价和产出一起上升。'},
+{t:'成本推动型通胀',en:'cost-push inflation',d:'能源、原料或工资等成本上升，企业减产提价。典型特征是物价上升而产出下降或停滞。'},
+{t:'通胀预期',en:'inflation expectations',d:'人们对未来物价涨幅的判断。会通过工资谈判、定价和花钱速度自我实现。'},
+{t:'工资-价格螺旋',en:'wage-price spiral',d:'工资上涨推高价格，价格上涨又引来更高的工资要求，两者互相追赶。'},
+{t:'菜单成本',en:'menu costs',d:'改价本身的成本，如重印价签、改系统、重新谈价。通胀越高改价越频繁，相对价格信号也更乱。'},
+{t:'未预期通胀的再分配',en:'redistribution from unexpected inflation',d:'通胀高于预期时，固定利率借款人受益，放贷人、存款人和收入调整慢的人受损。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
