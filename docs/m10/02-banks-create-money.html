@@ -54,7 +54,7 @@
 <div class="chips"><button type="button" class="chip" id="step">下一轮</button><button type="button" class="chip" id="step10">再走 10 轮</button><button type="button" class="chip" id="reset">回到第 0 轮</button></div>
 <dl class="read pairs"><div><dt>已走轮次</dt><dd id="r-round"></dd></div><div><dt>累计广义货币（现金 + 存款）</dt><dd id="r-m"></dd></div><div><dt>理论极限 / 已达到</dt><dd id="r-lim"></dd></div><div><dt>本设定下的乘数 / 教科书公式</dt><dd id="r-mult"></dd></div><div><dt>极限时：现金 / 存款 / 准备金</dt><dd id="r-split"></dd></div><div><dt>若 r 再降 0.5 个百分点，极限变化</dt><dd id="r-cut"></dd></div></dl>
 <p class="verdict" id="verdict" aria-live="polite"></p>
-<div class="tablewrap" tabindex="0" role="region" aria-label="每一轮的资金去向，可横向滚动"><table class="tbl" id="rounds"><caption>每一轮：到手的新钱 = 现金 + 存款；存款 = 法定准备金 + 未贷出的超额准备金 + 新贷款。新贷款成为下一轮到手的新钱。单位：元。</caption><thead><tr><th scope="col">轮次</th><th scope="col" class="num">到手新钱</th><th scope="col" class="num">留作现金</th><th scope="col" class="num">存入存款</th><th scope="col" class="num">法定准备金</th><th scope="col" class="num">未贷出</th><th scope="col" class="num">新贷款</th></tr></thead><tbody></tbody></table></div>
+<div class="tablewrap" tabindex="0" role="region" aria-label="每一轮的资金去向，可横向滚动"><table class="tbl" id="rounds"><caption>每一轮：到手的新钱 = 现金 + 存款；存款 = 法定准备金 + 未贷出的超额准备金 + 新贷款。新贷款成为下一轮到手的新钱。单位：元。超过 6 轮时只列前两轮和最近三轮。</caption><thead><tr><th scope="col">轮次</th><th scope="col" class="num">到手新钱</th><th scope="col" class="num">留作现金</th><th scope="col" class="num">存入存款</th><th scope="col" class="num">法定准备金</th><th scope="col" class="num">未贷出</th><th scope="col" class="num">新贷款</th></tr></thead><tbody></tbody></table></div>
 <p class="note">全部数字为教学示意，与新闻中的真实金额无关。第 0 轮是央行注入的 100 元基础货币，之后每一轮的“到手新钱”都是上一轮的新贷款。c 是公众持有的现金与存款之比，不是每轮被取走的比例；每轮被取走的比例是 c/(1+c)。理论极限按无穷多轮求和；图中最多显示 30 轮，准备金率很低、漏出很少时 30 轮还远未收敛。</p>
 </div>
 <h3>三个实验</h3>
@@ -170,7 +170,11 @@ function update(){
   var cut=limitAt(P.r-0.005,P.c,P.l)-st.lim;
   $('#r-cut').textContent='+'+f1(cut)+' 元';
   var tb=$('#rounds tbody');tb.replaceChildren();
-  st.rows.slice(0,round+1).forEach(function(x){var tr=document.createElement('tr');[x.k,f2(x.a),f2(x.cash),f2(x.dep),f2(x.req),f2(x.idle),f2(x.loan)].forEach(function(v,i){var td=document.createElement('td');td.textContent=v;if(i){td.className='num';}tr.appendChild(td);});tb.appendChild(tr);});
+  // 只显示前 2 轮和最近 3 轮，中间折叠成一行，避免表格在后几轮变得很长。
+  function addRound(x){var tr=document.createElement('tr');[x.k,f2(x.a),f2(x.cash),f2(x.dep),f2(x.req),f2(x.idle),f2(x.loan)].forEach(function(v,i){var td=document.createElement('td');td.textContent=v;if(i){td.className='num';}tr.appendChild(td);});tb.appendChild(tr);}
+  var shown=st.rows.slice(0,round+1);
+  if(shown.length<=6){shown.forEach(addRound);}
+  else{shown.slice(0,2).forEach(addRound);var gap=document.createElement('tr'),gtd=document.createElement('td');gtd.colSpan=7;gtd.className='note';gtd.textContent='第 2~'+(round-3)+' 轮省略：每轮的新钱都是上一轮的 '+st.q.toFixed(3)+' 倍';gap.appendChild(gtd);tb.appendChild(gap);shown.slice(-3).forEach(addRound);}
   var t='第 '+round+' 轮后，100 元基础货币累计撑起 '+f1(row.cm)+' 元广义货币，达到理论极限 '+f1(st.lim)+' 元的 '+f1(reach)+'%。每一轮的新钱是上一轮的 '+st.q.toFixed(3)+' 倍。';
   if(P.l===0){t+='银行一分钱都不贷，乘数等于 1：基础货币没有被放大。';}
   else if(P.l<1){t+='银行只贷出 '+pctS(P.l*100)+' 的超额准备金，乘数 '+st.mult.toFixed(2)+'，低于教科书公式的 '+st.tb.toFixed(2)+'。';}
