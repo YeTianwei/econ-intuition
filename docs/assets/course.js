@@ -293,7 +293,7 @@
         {
           id: 'm13-01', title: '贸易的收益与关税的代价',
           en: 'Gains from trade and the costs of tariffs',
-          path: 'm13/01-trade-tariffs.html', status: 'todo'
+          path: 'm13/01-trade-tariffs.html', status: 'done'
         },
         {
           id: 'm13-02', title: '汇率由什么决定',

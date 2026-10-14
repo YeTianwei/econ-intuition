@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>贸易的收益与关税的代价</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m13-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>贸易的收益与关税的代价</h1>
+<p class="sub">Gains from trade and the costs of tariffs</p>
+<p class="lede">关税的税单寄给本国进口商，影响却会沿着价格传到国内每一个买家和卖家。本国厂商得到喘息，政府收到一笔钱，消费者付出更多，还有一部分好处谁也没拿到。这一课用一张供需图把这四笔账分开算清，再看谁站在关税的哪一边。</p>
+<p class="meta">约 23 分钟 · 1 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m01/03-comparative-advantage.html#trade">比较优势与交易收益</a>、<a href="../m03/01-surplus-efficiency.html#surplus">消费者剩余与生产者剩余</a>、<a href="../m03/03-tax-incidence.html#welfare">税收收入与无谓损失</a>。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>来源：美国贸易代表办公室（USTR）新闻稿，2018 年 1 月 22 日。标题为本课翻译。<a href="https://ustr.gov/about-us/policy-offices/press-office/press-releases/2018/january/president-trump-approves-relief-us">原文链接</a></figcaption><blockquote>特朗普总统批准对美国洗衣机和太阳能电池制造商的救济措施</blockquote></figure>
+<p class="prose">“救济”的内容是对进口商品加征关税。按 USTR 公布的方案，每年进口的前 120 万台大型家用洗衣机征 20% 关税，超出部分征 50%；第二年降为 18% 和 45%，第三年降为 16% 和 40%。进口太阳能电池和组件第一年征 30%，此后逐年降到 15%，每年前 2.5 吉瓦电池免征。</p>
+<p class="prose">这类措施叫<b>保障措施</b><span class="en"> (safeguard)</span>，依据是美国国际贸易委员会认定进口激增严重损害了国内生产商。洗衣机措施以总统第 9694 号公告发布，刊于 2018 年 1 月 25 日的《联邦公报》，自 2 月 7 日起生效，期限 3 年零 1 天。</p>
+<ol class="qs"><li>加税的是进口洗衣机，为什么美国本土生产的洗衣机也可能涨价？</li><li>厂商得到的好处、政府收到的关税和消费者多付的钱，加起来能相互抵消吗？</li><li>如果其他国家也对美国商品加征关税，又会是谁受损？</li></ol>
+</section>
+<section id="gains">
+<h2>先看不设关税时：开放贸易带来了什么</h2>
+<p class="prose">在<a href="../m01/03-comparative-advantage.html#trade">比较优势</a>一课里，我们看到两个人分工再交换，合计产出更多。放到一个国家的一种商品上，用供需图也能看到同样的<b>交易收益</b><span class="en"> (gains from trade)</span>。</p>
+<p class="prose">先想象一个不和外国做生意的国家。洗衣机的价格和数量由国内供需决定，叫<b>自给均衡</b><span class="en"> (autarky equilibrium)</span>。再打开国门，国际市场上同类商品的成交价叫<b>世界价格</b><span class="en"> (world price)</span>，记作 Pw。</p>
+<p class="prose">本课假设这是一个<b>小国开放经济</b><span class="en"> (small open economy)</span>：它买多买少都不影响世界价格，只能接受 Pw。如果 Pw 低于自给价格，国内买家不会再付更高的价，国内价格降到 Pw。</p>
+<ul class="qs"><li>买家：价格下降，买得更多，消费者剩余增加。</li><li>国内厂商：价格下降，只有成本低于 Pw 的那部分产量还值得生产，生产者剩余减少。</li><li>需求量与国内产量之间的缺口，由进口补上。</li></ul>
+<p class="prose">消费者多得的剩余大于生产者失去的剩余，差额是一块三角形，即开放带来的交易收益。总量上国家变好了，但这份好处并不平均：消费者获益，与进口竞争的生产者受损。后面讲分配时会回到这一点。</p>
+<p class="prose">反过来，如果 Pw 高于自给价格，国内厂商会把一部分产品卖到国外，这个国家就成了出口国。本课的图只讨论进口国，所以世界价格的滑块最高只到自给价格。</p>
+</section>
+<section id="tariff">
+<h2>加一道关税：一笔账拆成四块</h2>
+<p class="prose"><b>关税</b><span class="en"> (tariff)</span> 是对进口商品征收的税。新闻里的 20% 是从价税：按进口价值的一定比例征收。在小国模型里，世界价格不变，进口商品到岸后的国内价格变成 Pw × (1 + t)。</p>
+<p class="formula">国内价格 P = Pw × (1 + t)，但不高于自给价格 Pᴬ</p>
+<p class="prose">关键在于国内厂商也会跟着涨价。买家的选择是含税的进口品或国产品，国产品只要不贵过含税进口价就卖得出去，所以整个国内市场的价格都升到 P。这回答了新闻的第一个问题。</p>
+<div class="analogy"><span class="lab">类比</span><p>宿舍楼规定外卖进门要交 3 元“进门费”，楼下小卖部的泡面马上可以多卖 3 元。同学多付了钱；小卖部多赚了钱；楼管收到进门费；有的同学干脆不吃夜宵了，这份满足谁也没得到；小卖部为了多做生意，还请了一个手慢的帮工，多花的人工也是白白耗掉的。</p></div>
+<p class="prose">把类比里的五方翻译成图上的面积，就是关税的四个福利效应：</p>
+<ol class="qs"><li><b>消费者损失</b>：价格从 Pw 升到 P，消费者剩余减少。这是最大的一块。</li><li><b>生产者获益</b>：国内厂商按更高价格出售，产量也增加，生产者剩余增加。这部分从消费者转移而来。</li><li><b>关税收入</b>：每台进口品收 P − Pw，乘以剩下的进口量。这部分也是转移，进了政府账户。</li><li><b>两块无谓损失</b>：生产侧，一些本可以用 Pw 从国外买到的商品，改由成本更高的国内厂商生产；消费侧，一些愿付高于 Pw 的买家因为涨价不买了。这两块三角形没有转给任何人。</li></ol>
+<p class="formula">消费者损失 = 生产者获益 + 关税收入 + 无谓损失（两块）</p>
+<p class="prose">读法和<a href="../m03/03-tax-incidence.html#welfare">税收无谓损失</a>相同：转移不算社会净损失，消失的交易才算。关税和国内消费税的区别在于楔子只打在进口品上，所以它还额外造成生产侧的那块损失。</p>
+<div class="widget" id="w-tariff" aria-labelledby="w1t">
+<h3 id="w1t">图 1　关税分析器：小国进口一种商品</h3>
+<div class="chips" role="group" aria-label="选择关税税率"><button type="button" class="chip" data-t="0" aria-pressed="false" aria-controls="chart1">自由贸易 0%</button><button type="button" class="chip" data-t="20" aria-pressed="true" aria-controls="chart1">配额内税率 20%</button><button type="button" class="chip" data-t="50" aria-pressed="false" aria-controls="chart1">超额税率 50%</button></div>
+<p class="prose">默认世界价格 50，关税 20%。黑线是世界价格，紫线是含关税的国内价格。实心点是关税下的国内产量和需求量，空心点是自由贸易时的位置，Eᴬ 是自给均衡。</p>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw d"></span>D / 蓝色：消费者剩余</li><li><span class="sw s"></span>S / 橙色：生产者剩余</li><li><span class="sw g"></span>虚线框：生产者获益</li><li><span class="sw government"></span>紫线 P：含关税的国内价格；紫色矩形：关税收入</li><li><span class="sw loss"></span>两块三角形：无谓损失</li><li><span class="sw lr"></span>世界价格 Pw</li></ul>
+<div class="controls">
+<div class="ctl"><label for="pw">世界价格 Pw（百元/台）</label><output id="pw-value" for="pw">50</output><input id="pw" type="range" min="30" max="70" step="2" value="50" aria-describedby="pw-hint"><span class="hint" id="pw-hint">小国只能接受这个价格。上限 70 是自给价格；再高这个国家会变成出口国，不在本图范围内。</span></div>
+<div class="ctl"><label for="rate">关税税率 t（%）</label><output id="rate-value" for="rate">20</output><input id="rate" type="range" min="0" max="100" step="5" value="20" aria-describedby="rate-hint"><span class="hint" id="rate-hint">从价税，按进口价值的百分比征收。税率高到含税价超过自给价格时，进口归零。</span></div>
+</div>
+<dl class="read pairs">
+<div><dt>自给均衡 Pᴬ / Qᴬ</dt><dd>70 百元/台 / 50 万台/年</dd></div>
+<div><dt>国内价格 P（百元/台）</dt><dd id="r-p"></dd></div>
+<div><dt>国内产量 Qs：自由贸易 → 关税后（万台/年）</dt><dd id="r-qs"></dd></div>
+<div><dt>国内需求 Qd：自由贸易 → 关税后（万台/年）</dt><dd id="r-qd"></dd></div>
+<div><dt>进口量 M：自由贸易 → 关税后（万台/年）</dt><dd id="r-m"></dd></div>
+<div><dt>消费者剩余变化 ΔCS</dt><dd id="r-dcs"></dd></div>
+<div><dt>生产者剩余变化 ΔPS</dt><dd id="r-dps"></dd></div>
+<div><dt>关税收入</dt><dd id="r-rev"></dd></div>
+<div><dt>无谓损失：生产侧 / 消费侧</dt><dd id="r-dwl2"></dd></div>
+<div><dt>无谓损失合计</dt><dd id="r-dwl"></dd></div>
+<div><dt>核对：ΔPS + 关税收入 + 无谓损失</dt><dd id="r-check"></dd></div>
+<div><dt>交易收益：自由贸易时 / 关税下保留</dt><dd id="r-gft"></dd></div>
+</dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">数字为教学示意，剩余单位为百万元/年，不是洗衣机市场的估计。需求 Qd = 120 − P，供给 Qs = P − 20，自给均衡 P = 70、Q = 50。假设小国、竞争市场、进口品与国产品完全替代、关税全部转嫁到国内价格，不计征管成本和关税收入的用途。按钮里的 20% 与 50% 借用新闻中的税率；在这个示意市场里 50% 恰好是禁止性的，不代表真实市场如此。</p>
+</div>
+<h3>建议这样拖</h3>
+<ol class="qs"><li>默认 Pw = 50、t = 20%：国内价格 60，进口从 40 降到 20。消费者损失 650，生产者获益 350，关税收入 200，两块无谓损失各 50。350 + 200 + 100 正好等于 650。</li><li>把税率慢慢加到 40%：国内价格 70，进口归零。继续加到 100%，什么都不再变化。这时的关税叫<b>禁止性关税</b><span class="en"> (prohibitive tariff)</span>：政府一分钱关税也收不到，开放带来的 400 交易收益全部消失。</li><li>把世界价格调到 30 再看 20% 的关税：同样的税率，每台的楔子更小，但进口量大得多。把世界价格调到 70：自给价格和世界价格相同，本来就不进口，关税没有任何作用。</li></ol>
+<p class="prose">小税率附近，无谓损失大致随税率的平方增长，与国内税的规律相同。保持 Pw = 50，税率从 10% 翻倍到 20%，两块三角形合计从 25 变成 100。</p>
+</section>
+<section id="quota">
+<h2>配额与关税配额：同样的涨价，钱去了哪里</h2>
+<p class="prose">限制进口还有一种办法：直接规定数量上限，叫进口<b>配额</b><span class="en"> (quota)</span>。如果配额正好设为 20，国内价格同样会升到需求与“国内供给加 20”相交的位置，在本图中也是 60。消费者损失、生产者获益和两块无谓损失都与 20% 关税一样。</p>
+<p class="prose">差别在紫色矩形。征关税时，这块钱交给政府。实行配额时，拿到进口许可的人可以按 Pw 买进、按 P 卖出，差价落到他们手里，常叫配额租金。只有政府把许可拍卖出去，这笔钱才回到公共账户。此外，需求变化时关税下的进口量会随之调整，配额下则由价格吸收变化。</p>
+<p class="prose">新闻中的洗衣机措施是二者的结合，叫<b>关税配额</b><span class="en"> (tariff-rate quota)</span>：配额内征较低税率，超出配额征较高税率。超额税率越接近禁止性，它的效果越接近一个硬性数量上限。</p>
+<p class="prose">用关税、配额等手段限制进口、扶持本国生产者的政策取向，统称<b>保护主义</b><span class="en"> (protectionism)</span>。它的支持者和批评者对同一张图有不同的解读，下一节分开来看。</p>
+</section>
+<section id="distribution">
+<h2>谁付钱，谁得益：实证与争论</h2>
+<h3>关税由谁承担</h3>
+<p class="prose">关税的法定缴纳者是本国进口商。按<a href="../m03/03-tax-incidence.html#elasticity">税收归宿</a>的道理，真正的负担取决于价格怎样调整。在小国模型里，世界价格不变，关税全部体现为国内价格上涨。大国可能不同：如果它的进口需求下降足以压低世界价格，外国出口商就会分担一部分。</p>
+<p class="prose">2018 年美国一系列加征关税后，几项研究检验了这个问题：</p>
+<ul class="qs"><li>Amiti、Redding 和 Weinstein（2019）发现，关税几乎完全转嫁到了美国的进口价格上；他们估计到 2018 年底，关税使美国实际收入每月减少约 14 亿美元。</li><li>Fajgelbaum 等人（2020）同样发现被加税商品的外国出口价格没有下降，即含税价格完全转嫁。他们估计美国买进口品的消费者和企业损失 510 亿美元，约占 GDP 的 0.27%；扣除关税收入和国内生产者获益后，净损失约 72 亿美元，约占 GDP 的 0.04%。</li><li>Flaaen、Hortaçsu 和 Tintelnot（2020）研究了新闻中的洗衣机关税：洗衣机价格上涨近 12%，美国国内品牌也跟着涨价，没有被征税的烘干机也涨了大致相同的幅度。</li></ul>
+<p class="prose">最后一项研究的几组数字很能说明分配：作者估计每年消费者多付略超过 15 亿美元，而每年关税收入只有约 8200 万美元。按报道中归因于该政策的约 1800 个新增岗位计算，扣除关税收入后，平均每个岗位每年让消费者多付超过 81.5 万美元。</p>
+<p class="prose">这几组数字与上面的图一致：消费者损失远大于政府收入，大部分流向了国内生产者或在价格中消失。烘干机涨价则超出了单一市场的图，提醒我们关税的影响会沿着互补品和产业链扩散。</p>
+<h3>支持者怎么看</h3>
+<p class="prose">支持关税的人通常不否认消费者付出代价，而是认为图里没算进去的东西更重要：</p>
+<ul class="qs"><li>贸易冲击的损失集中。Autor、Dorn 和 Hanson（2013）发现，1990~2007 年受中国进口竞争冲击更大的美国地区，失业率更高、劳动参与率和工资更低，政府转移支付明显增加。图里一笔抽象的“生产者剩余”，背后是具体地方的工厂和工人。</li><li>调整需要时间。保障措施本身就设计成临时且逐年递减的，用意是给国内产业一个调整期。</li><li>一些行业涉及国家安全或战略考虑，不完全按价格衡量。</li><li>大国可能通过压低世界价格，让外国出口商承担一部分关税。</li></ul>
+<h3>批评者怎么看</h3>
+<ul class="qs"><li>消费者和下游用户的损失分散在大量人身上，每人不多，总额却大于生产者的获益，所以总剩余下降。</li><li>以每个保住或新增岗位计算，关税常是很昂贵的保护方式。帮助受冲击工人转岗、再培训或提供收入补助，可能用更低的代价达到同样目的。</li><li>2018 年的证据显示外国出口商并没有降价分担，大国压低世界价格的好处在这一轮并未出现。</li></ul>
+<p class="prose">两边对事实的分歧比看上去小，分歧更多在于怎样权衡集中的损失与分散的损失，以及有没有更好的补偿办法。这是价值判断，图只能告诉你各方的账各是多少。</p>
+</section>
+<section id="retaliation">
+<h2>报复性关税与贸易战</h2>
+<p class="prose">一国加征关税后，贸易伙伴常对它的出口商品加征<b>报复性关税</b><span class="en"> (retaliatory tariff)</span>。双方你来我往地加税，就是<b>贸易战</b><span class="en"> (trade war)</span>。</p>
+<p class="prose">报复的伤害落在另一群人身上：发起国的出口商。Fajgelbaum 等人发现，受报复关税影响，共和党票仓县的可贸易部门工人受损最重。2018 年 7 月 24 日，美国农业部宣布最多 120 亿美元的援助计划，用于补偿受报复关税冲击的农户。美国国会研究服务处的报告指出，中国对大豆等美国农产品加征的关税是重要背景。</p>
+<p class="prose">用本课的图看，报复方自己也是在对进口加税，同样承担消费者损失和无谓损失。Amiti 等人指出，实施报复的国家也出现了类似的价格和福利影响。对报复是否明智，有两种看法：</p>
+<ul class="qs"><li>赞成者认为，报复让对方看到加税的代价，可信的报复威胁能阻止进一步加税，或把对方拉回谈判桌。这和<a href="../m05/02-repeated-games.html#strategies">重复博弈中的以牙还牙</a>是同一种逻辑。</li><li>反对者认为，每一轮报复都让双方的消费者和出口商一起受损，容易陷入类似<a href="../m05/01-nash-equilibrium.html#dilemma">囚徒困境</a>的局面：单独看谁都想加税，结果双方都更差。</li></ul>
+<p class="prose">真实的贸易战还牵涉汇率、产业链转移和政治谈判，模块 14 的专题会用具体案例展开。</p>
+</section>
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“关税是外国出口商交的钱。”</p><p>关税由本国进口商缴纳，负担取决于价格怎样调整。小国模型里全部由国内买家承担；2018 年美国关税的几项研究也发现几乎完全转嫁到了美国国内价格。</p></div>
+<div class="mis"><p class="said">“关税只让进口品变贵，买国产货就不受影响。”</p><p>国产品和进口品互相替代，进口品含税价一升，国内厂商也能涨价。洗衣机案例中美国本土品牌同样涨价，生产者获益正是来自这一涨价。</p></div>
+<div class="mis"><p class="said">“开放贸易对国家有好处，所以对每个人都有好处。”</p><p>交易收益是总量为正。与进口竞争的厂商和工人会受损，损失还往往集中在特定地区。要让人人受益，需要获益方实际补偿受损方，这不会自动发生。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先在脑子里画出世界价格线和含税价格线，再作答。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">每张卡试着说出它在图上对应哪条线或哪块面积。</p><div class="cards" id="cards"></div></section>
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>本土洗衣机为什么也涨价。</b>关税抬高了进口品的含税价，国产品只要不贵过它就卖得出去，于是整个国内市场的价格一起上升。这正是生产者获益的来源，也和 Flaaen 等人观察到的本土品牌涨价一致。</div></li><li><div><b>四笔账不会相互抵消。</b>生产者获益和关税收入都是从消费者那里转移过来的，加起来仍少于消费者损失，差额就是两块无谓损失。洗衣机案例里，每年 15 亿美元左右的消费者成本对应约 8200 万美元关税收入，转移给厂商的部分和真正消失的部分合计占了大头。</div></li><li><div><b>保护换来了什么，要看你怎么权衡。</b>工厂扩建和新增岗位是真实的，损失集中的地区也真实存在。支持者看重这些集中的收益和调整期；批评者看重分散在全体买家身上的更大成本和每个岗位的高昂代价。</div></li><li><div><b>报复让受损者换了一批人。</b>贸易伙伴的报复关税打在出口商身上，2018 年美国农户受影响最明显，政府随后拿出最多 120 亿美元援助。报复方自己也承担了加税的代价。报复是可信的谈判筹码，还是升级为双输的贸易战，取决于双方怎样出招。</div></li></ol>
+<button type="button" class="chip" id="goChart">回到图 1 的 20% 关税情景</button>
+</section>
+<section id="sources"><h2>资料来源</h2><ol class="qs">
+<li>美国贸易代表办公室（USTR），<a href="https://ustr.gov/about-us/policy-offices/press-office/press-releases/2018/january/president-trump-approves-relief-us">President Trump Approves Relief for U.S. Washing Machine and Solar Cell Manufacturers</a>，2018-01-22；本课引用了新闻标题、洗衣机和太阳能电池的分年税率、120 万台配额和 2.5 吉瓦免征额，以及国际贸易委员会的损害认定。</li>
+<li>美国《联邦公报》第 83 卷第 17 期，<a href="https://www.govinfo.gov/content/pkg/FR-2018-01-25/html/2018-01604.htm">Proclamation 9694: To Facilitate Positive Adjustment to Competition From Imports of Large Residential Washers</a>，2018-01-25；本课引用了公告编号、2018 年 2 月 7 日生效、期限 3 年零 1 天。</li>
+<li>Aaron Flaaen, Ali Hortaçsu, Felix Tintelnot，<a href="https://www.aeaweb.org/articles?id=10.1257/aer.20190611">The Production Relocation and Price Effects of US Trade Policy: The Case of Washing Machines</a>，American Economic Review 110(7)，2020 年 7 月；洗衣机价格上涨近 12%、烘干机同幅上涨、国内品牌涨价。工作论文版本见 <a href="https://www.nber.org/papers/w25767">NBER w25767</a>（2019 年 4 月），每年 15 亿美元消费者成本、8200 万美元关税收入、约 1800 个岗位和每岗位 81.5 万美元的估计出自其引言。</li>
+<li>美国经济学会，<a href="https://www.aeaweb.org/research/washing-machines-2018-tariffs-effect">Research Highlights 对上述洗衣机研究的介绍</a>，2020-07-31；对应发表版本的同一组数字。</li>
+<li>Mary Amiti, Stephen J. Redding, David E. Weinstein，<a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.4.187">The Impact of the 2018 Tariffs on Prices and Welfare</a>，Journal of Economic Perspectives 33(4)，2019 年秋季；关税完全转嫁到美国国内价格、到 2018 年底实际收入每月减少约 14 亿美元、报复国也受损。</li>
+<li>Pablo D. Fajgelbaum, Pinelopi K. Goldberg, Patrick J. Kennedy, Amit K. Khandelwal，<a href="https://www.nber.org/papers/w25638">The Return to Protectionism</a>，NBER 工作论文 25638（2019 年 3 月，10 月修订；发表于 Quarterly Journal of Economics 2020 年第 135 卷第 1 期）；完全转嫁、510 亿美元与 72 亿美元的损失估计、报复关税对共和党票仓县可贸易部门工人的影响。</li>
+<li>David H. Autor, David Dorn, Gordon H. Hanson，<a href="https://www.aeaweb.org/articles?id=10.1257/aer.103.6.2121">The China Syndrome: Local Labor Market Effects of Import Competition in the United States</a>，American Economic Review 103(6)，2013 年 10 月；进口竞争对美国地方就业、工资和转移支付的影响。</li>
+<li>美国国会研究服务处（CRS），<a href="https://crsreports.congress.gov/product/pdf/R/R45310">Farm Policy: USDA's 2018 Trade Aid Package</a>（R45310），2019-12-05 更新；2018 年 7 月 24 日美国农业部宣布最多 120 亿美元援助及其背景。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,PA=70;
+function $(s,r){return (r||document).querySelector(s);}
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var box=$('#chart1');
+function model(pw,t){
+  var pt=pw*(1+t/100),p=Math.min(pt,PA),dp=p-pw;
+  var qd0=120-pw,qs0=pw-20,qd=120-p,qs=p-20,m0=qd0-qs0,m=qd-qs;
+  var dwlp=dp*(qs-qs0)/2,dwlc=dp*(qd0-qd)/2,gft=(PA-pw)*m0/2;
+  return {pw:pw,t:t,pt:pt,p:p,dp:dp,qd0:qd0,qs0:qs0,qd:qd,qs:qs,m0:m0,m:m,
+    dcs:-dp*(qd+qd0)/2,dps:dp*(qs+qs0)/2,rev:dp*m,dwlp:dwlp,dwlc:dwlc,dwl:dwlp+dwlc,gft:gft,kept:gft-dwlp-dwlc,
+    prohibitive:pw<PA&&t>0&&pt>=PA-1e-9,noTrade:pw>=PA};
+}
+function state(){return model(+$('#pw').value,+$("#rate").value);}
+function f1(x){return C.fmt(x,1);}
+function s1(x){return C.fmtS(x,1);}
+function poly(f,pts,cls,id){var a={points:pts.map(function(p){return f.x(p[0]).toFixed(1)+','+f.y(p[1]).toFixed(1);}).join(' '),'class':cls};if(id){a.id=id;}f.svg.appendChild(C.el('polygon',a));}
+function dot(f,id,q,p,cls){f.svg.appendChild(C.el('circle',{id:id,cx:f.x(q),cy:f.y(p),r:5,'class':cls}));}
+function summary(s){
+  return '世界价格 '+s.pw+' 百元/台，关税 '+s.t+'%，国内价格 '+f1(s.p)+'，进口 '+f1(s.m)+' 万台/年。消费者剩余变化 '+s1(s.dcs)+'，生产者剩余变化 '+s1(s.dps)+'，关税收入 '+f1(s.rev)+'，无谓损失 '+f1(s.dwl)+'。';
+}
+function draw(){
+  if(!box.clientWidth){return;}
+  var s=state(),R={q0:0,q1:120,p0:0,p1:120};
+  var f=C.frame(box,{id:'tariff',q0:0,q1:120,p0:0,p1:120,qs:20,ps:20,xt:'数量 Q（万台/年）',yt:'价格 P（百元/台）',label:'关税分析器。'+summary(s)});
+  poly(f,[[0,120],[0,s.p],[s.qd,s.p]],'cs','area-cs');
+  poly(f,[[0,20],[0,s.p],[s.qs,s.p]],'ps','area-ps');
+  if(s.dp>0){
+    if(s.m>0){poly(f,[[s.qs,s.pw],[s.qd,s.pw],[s.qd,s.p],[s.qs,s.p]],'tax-area','area-rev');}
+    poly(f,[[s.qs0,s.pw],[s.qs,s.pw],[s.qs,s.p]],'dwl','area-dwlp');
+    poly(f,[[s.qd,s.pw],[s.qd0,s.pw],[s.qd,s.p]],'dwl','area-dwlc');
+    poly(f,[[0,s.pw],[s.qs0,s.pw],[s.qs,s.p],[0,s.p]],'transfer-area','area-gain');
+  }
+  f.svg.appendChild(C.pathOf(f,C.clip([0,120],[120,0],R),'curve d'));
+  f.svg.appendChild(C.pathOf(f,C.clip([0,20],[100,120],R),'curve s'));
+  var wl=C.pathOf(f,[[0,s.pw],[120,s.pw]],'curve lr');wl.id='line-pw';f.svg.appendChild(wl);
+  if(s.dp>0){var pl=C.pathOf(f,[[0,s.p],[120,s.p]],'curve government');pl.id='line-p';f.svg.appendChild(pl);}
+  var right=f.m.l+f.iw-4;
+  C.label(f,'D','d',f.x(16)+6,f.y(104)-4,'start');
+  C.label(f,'S','s',f.x(84)-6,f.y(106),'end');
+  C.label(f,'Pw','ink',right,f.y(s.pw)+15,'end');
+  if(s.dp>0){C.label(f,'P','government',right,f.y(s.p)-7,'end');}
+  dot(f,'pt-a',50,PA,'pt base');
+  C.label(f,'Eᴬ','ink',f.x(50),f.y(PA)-10,'middle');
+  if(s.dp>0){dot(f,'pt-qs0',s.qs0,s.pw,'pt base');dot(f,'pt-qd0',s.qd0,s.pw,'pt base');}
+  if(s.m>0){dot(f,'pt-qs',s.qs,s.p,'pt');dot(f,'pt-qd',s.qd,s.p,'pt');}
+  box.replaceChildren(f.svg);
+}
+function update(){
+  var s=state();
+  $('#pw-value').textContent=s.pw;$('#rate-value').textContent=s.t;
+  $('#pw').setAttribute('aria-valuetext',s.pw+' 百元/台');$("#rate").setAttribute('aria-valuetext',s.t+'%');
+  document.querySelectorAll('[data-t]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.t===s.t));});
+  $('#r-p').textContent=f1(s.p)+(s.prohibitive?'（= Pᴬ）':'');
+  $('#r-qs').textContent=f1(s.qs0)+' → '+f1(s.qs);
+  $('#r-qd').textContent=f1(s.qd0)+' → '+f1(s.qd);
+  $('#r-m').textContent=f1(s.m0)+' → '+f1(s.m);
+  $('#r-dcs').textContent=s1(s.dcs);$('#r-dps').textContent=s1(s.dps);$('#r-rev').textContent=f1(s.rev);
+  $('#r-dwl2').textContent=f1(s.dwlp)+' / '+f1(s.dwlc);$('#r-dwl').textContent=f1(s.dwl);
+  $('#r-check').textContent=f1(s.dps+s.rev+s.dwl)+' = |ΔCS|';
+  $('#r-gft').textContent=f1(s.gft)+' / '+f1(s.kept);
+  var msg;
+  if(s.noTrade){msg='世界价格等于自给价格 70，开放后本来就不进口，交易收益为零。关税 '+s.t+'% 不改变任何结果。世界价格再高，这个国家会转为出口国，那是另一张图。';}
+  else if(s.t===0){msg='自由贸易：国内价格等于世界价格 '+s.pw+'，国内生产 '+f1(s.qs0)+'、消费 '+f1(s.qd0)+'，进口 '+f1(s.m0)+' 万台/年。相对自给自足，开放带来 '+f1(s.gft)+' 的交易收益。';}
+  else if(s.prohibitive){msg='禁止性关税：含税价 '+f1(s.pt)+' 已不低于自给价格 70，进口归零，国内价格停在 70。消费者损失 '+f1(-s.dcs)+'，生产者获益 '+f1(s.dps)+'，关税收入为 0，无谓损失 '+f1(s.dwl)+'，开放带来的交易收益全部消失。税率再提高也不会改变结果。';}
+  else{msg='国内价格从 '+s.pw+' 升到 '+f1(s.p)+'，进口从 '+f1(s.m0)+' 降到 '+f1(s.m)+'。消费者损失 '+f1(-s.dcs)+' = 生产者获益 '+f1(s.dps)+' + 关税收入 '+f1(s.rev)+' + 无谓损失 '+f1(s.dwl)+'（生产侧 '+f1(s.dwlp)+'，消费侧 '+f1(s.dwlc)+'）。关税吃掉了 '+(100*s.dwl/s.gft<1?'不到 1%':(100*s.dwl/s.gft).toFixed(0)+'%')+' 的交易收益。';}
+  $('#verdict').textContent=msg;
+  draw();
+}
+["pw","rate"].forEach(function(id){$('#'+id).addEventListener('input',update);});
+document.querySelectorAll('[data-t]').forEach(function(b){b.addEventListener('click',function(){$("#rate").value=b.dataset.t;update();});});
+C.watch(box,draw);
+var QUIZ=[
+{q:'一个小国对进口洗衣机征 20% 关税，国产洗衣机与进口品基本可以互相替代。国产洗衣机的价格最可能怎样？',o:['不变，因为关税只针对进口品','上升到接近含税进口价，因为买家的替代选择变贵了','下降，因为国内厂商要和进口品抢客户','不变，但世界价格会上涨 20%'],a:1,why:'国产品价格会上升。进口品含税价变高后，国产品只要不贵过它就卖得出去，所以国内价格整体升到 Pw × (1 + t)。小国不影响世界价格。'},
+{q:'征关税后，消费者剩余减少 650，生产者剩余增加 350，关税收入 200。社会净损失是多少？',o:['650，消费者的损失就是社会损失','300，消费者损失减去生产者获益','100，转给厂商和政府的部分不算净损失','0，钱都留在了国内'],a:2,why:'净损失是 100。350 转给国内厂商，200 转给政府，剩下的 100 是两块无谓损失：高成本的国内生产，以及因涨价而放弃的购买。'},
+{q:'在图 1 中，世界价格 50，关税已经提高到 50%，进口为零。如果再把关税提高到 80%，会怎样？',o:['关税收入继续增加','国内价格升到 50 × 1.8 = 90','进口变成负数，这个国家开始出口','什么都不变：国内价格停在自给价格，关税收入仍为零'],a:3,why:'什么都不变。含税价超过自给价格后，没有人进口，国内价格由国内供需决定，停在 70。禁止性关税之上再加税只是纸面上的数字。'},
+{q:'政府用进口配额代替关税，把进口量限制在与 20% 关税时相同的 20。与关税相比，最主要的区别是什么？',o:['配额下国内价格更低','原本是关税收入的那块钱，归拿到进口许可的人，除非政府拍卖许可','配额不会产生无谓损失','配额会压低世界价格'],a:1,why:'区别在那块矩形归谁。进口量相同时，价格、消费者损失和无谓损失都相同；关税收入变成了许可持有者的配额租金。'},
+{q:'研究发现，2018 年美国加征关税后，被加税商品的外国出口价格基本没有下降。这最直接说明了什么？',o:['关税负担主要落在美国的进口商和买家身上','外国出口商承担了大部分关税','关税没有影响美国国内价格','美国通过关税获得了净收益'],a:0,why:'负担主要在美国一方。外国出口价不降，含税价格就按关税幅度上升，这正是完全转嫁。大国压低世界价格的好处在这一轮并未出现。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.appendChild(n);t.appendChild(document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.getAttribute('data-done')){return;}q.setAttribute('data-done','1');var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.insertBefore(tag,x.firstChild);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.insertBefore(tag,x.firstChild);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.appendChild(t);q.appendChild(opts);q.appendChild(why);quizEl.appendChild(q);});
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'世界价格',en:'world price',d:'国际市场上一种商品的价格。小国开放经济只能接受它；低于自给价格时进口，高于时出口。'},
+{t:'小国开放经济',en:'small open economy',d:'进出口规模太小、影响不了世界价格的经济体。关税在这里全部体现为国内价格上涨。'},
+{t:'关税',en:'tariff',d:'对进口商品征收的税。国内价格升到 Pw × (1 + t)，国内厂商也随之涨价；进口减少。'},
+{t:'禁止性关税',en:'prohibitive tariff',d:'高到含税价不低于自给价格的关税。进口归零，关税收入为零，开放的交易收益全部消失。'},
+{t:'配额',en:'quota',d:'对进口数量的直接上限。价格和无谓损失可与某个关税相同，但差价归许可持有者，除非许可被拍卖。'},
+{t:'关税配额',en:'tariff-rate quota',d:'配额内征较低税率、超额部分征较高税率的组合。2018 年美国洗衣机保障措施即采用这种形式。'},
+{t:'保护主义',en:'protectionism',d:'用关税、配额等手段限制进口、扶持本国生产者的政策取向。获益集中于受保护行业，成本分散在买家身上。'},
+{t:'报复性关税',en:'retaliatory tariff',d:'贸易伙伴针对一国加税而对其出口品加征的关税。打击发起国的出口商，报复方自身也承担加税的代价。'},
+{t:'贸易战',en:'trade war',d:'两国或多国相互加征关税、不断升级的局面。可能带来谈判筹码，也可能让各方的消费者和出口商一起受损。'}
+];
+var grid=$('#cards');
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.appendChild(t);b.appendChild(en);b.appendChild(hint);b.appendChild(def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});grid.appendChild(b);});
+$('#goChart').addEventListener('click',function(){$('#pw').value=50;$("#rate").value=20;update();$('#w-tariff').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});document.querySelector('[data-t="20"]').focus({preventScroll:true});});
+update();
+})();
+</script>
+</body>
+</html>
