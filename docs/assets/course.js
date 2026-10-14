@@ -157,7 +157,7 @@
         {
           id: 'm07-02', title: '人力资本、技术与工资差距',
           en: 'Human capital, technology and wage differences',
-          path: 'm07/02-human-capital.html', status: 'todo'
+          path: 'm07/02-human-capital.html', status: 'done'
         },
         {
           id: 'm07-03', title: '不平等如何衡量',

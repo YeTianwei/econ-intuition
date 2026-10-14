@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>人力资本、技术与工资差距</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m07-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>人力资本、技术与工资差距</h1>
+<p class="sub">Human capital, technology and wage differences</p>
+<p class="lede">同一座城市里，有人年薪几万，有人年薪几百万。学历、职业、运气都可能有关，但经济学先问一个更具体的问题：这个人提供的劳动，在市场上有多稀缺，又有多少人愿意为它付钱？技术会同时改变这两边。AI 写代码的能力越来越强，正好把这个问题摆到了初级程序员面前。</p>
+<p class="meta">约 22 分钟 · 0 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m02/01-supply-demand.html#model">供给与需求</a>、<a href="../m01/01-scarcity-opportunity-cost.html#scarcity">机会成本</a>、<a href="../m06/03-signaling-screening.html#education">人力资本与信号</a>。本课把工资看成一种价格，拆开它背后的技能、任务和市场规模。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>研究报告概述：Stanford Digital Economy Lab，Brynjolfsson、Chandar、Chen，<a href="https://digitaleconomy.stanford.edu/news/canariesaug26/">2026 年 8 月 12 日更新版</a>。标题为本课转述，不是原文。</figcaption><blockquote>斯坦福研究：AI 暴露度高的职业里，22~25 岁员工的就业比“与低暴露职业同龄人同步增长”应有的水平低约 19%，资深员工没有类似差距</blockquote></figure>
+<p class="prose">这项研究使用美国薪资服务商 ADP 的工资单数据，覆盖每月 350 万到 500 万名全职员工，数据截至 2026 年 6 月。软件开发和客户服务都属于作者所说的高暴露职业；剔除科技公司和计算机类职业后，这一差距依然存在。作者同时写明：整体经济中没有看到大范围的岗位替代；这些是描述性事实，不是 AI 造成影响的因果估计。另一项来自耶鲁大学预算实验室的分析（2025 年 10 月）在 ChatGPT 发布后 33 个月的整体数据中，没有发现可辨认的就业冲击。证据仍在积累，结论有争议。</p>
+<ol class="qs"><li>如果 AI 真的影响了编程岗位，为什么变化首先出现在新人身上，而不是资深工程师？</li><li>论文发现调整主要体现在招聘人数上，而不是基本工资上。用供求的语言，这说明了什么？</li><li>入门岗位变少，会怎样影响一个人积累技能的路径，以及未来的工资差距？</li></ol>
+</section>
+<section id="human-capital">
+<h2>人力资本：一笔要算机会成本的投资</h2>
+<p class="prose">上一模块把<b>人力资本</b><span class="en"> (human capital)</span> 定义为能提高生产能力的知识、技能与经验，并讨论了学历的<a href="../m06/03-signaling-screening.html#education">信号作用</a>。本课把它当作一种投资来看：今天付出成本，换取未来更高的劳动生产率和工资。</p>
+<p class="prose">投资的成本不只是学费。读书或培训期间少挣的工资，往往是更大的一块，这就是<a href="../m01/01-scarcity-opportunity-cost.html#scarcity">机会成本</a>。收益是此后每年多挣的工资，要持续很多年才能收回。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="一项两年培训的成本与回收年限，可横向滚动"><table class="tbl" id="ledger-table"><caption>教学示意：单位万元，忽略贴现和税。直接工作年薪 6；培训两年，每年学费 2。</caption><thead><tr><th scope="col">情景</th><th scope="col" class="num">学费合计</th><th scope="col" class="num">少挣的工资</th><th scope="col" class="num">总成本</th><th scope="col" class="num">培训后年薪</th><th scope="col" class="num">每年多挣</th><th scope="col" class="num">回收年限</th></tr></thead><tbody>
+<tr><td>基准</td><td class="num">4</td><td class="num">12</td><td class="num">16</td><td class="num">8</td><td class="num">2</td><td class="num">8</td></tr>
+<tr><td>技能溢价减半</td><td class="num">4</td><td class="num">12</td><td class="num">16</td><td class="num">7</td><td class="num">1</td><td class="num">16</td></tr>
+<tr><td>技能溢价翻倍</td><td class="num">4</td><td class="num">12</td><td class="num">16</td><td class="num">10</td><td class="num">4</td><td class="num">4</td></tr>
+</tbody></table></div>
+<p class="prose">基准情景中，总成本 16 里有 12 是少挣的工资，学费只占 4。回收年限等于总成本除以每年多挣的部分。若考虑贴现，未来的钱折算到今天更少，实际回收期还会更长。</p>
+<p class="formula">回收年限 ≈ （学费 + 少挣的工资）÷ 每年工资增量</p>
+<p class="prose">这张表说明两件事。第一，人力资本的回报取决于市场愿意为这项技能多付多少，也就是<b>技能溢价</b><span class="en"> (skill premium)</span>。同样的课程，溢价从 2 降到 1，回收期就从 8 年拉长到 16 年。第二，年轻人更愿意投资，因为剩余的工作年限更长；中年转行面对的账本不一样。</p>
+<p class="prose">很多人力资本不是在课堂上形成的，而是在工作中积累的：读懂一个复杂系统、知道哪些需求会变、学会在出错时怎么排查。这类经验很难写成文档，常被称为隐性知识。入门岗位除了付工资，也是新人积累这类技能的地方。</p>
+<div class="analogy"><span class="lab">类比</span><p>学开车。驾校教会你交规和基本操作，这些写在教材上，谁都能学。但在雨夜的陌生路口判断该不该变道，要靠一次次上路积累。如果所有简单路段都交给自动驾驶，新手就少了练习的机会；老司机的判断反而更值钱。</p></div>
+<p class="prose">学历和工资同时较高，并不等于全部差距都来自学到的技能。上一课讨论过，其中可能混有信号作用和入学前的差异。本课接下来关心的是另一个问题：同一项技能的价格，为什么会随时间变化？</p>
+</section>
+<section id="sbtc">
+<h2>技术改变的是对技能的需求</h2>
+<p class="prose">把高技能劳动和低技能劳动看成两个市场。工资差距就是两种劳动的价格差，取决于各自的<a href="../m02/01-supply-demand.html#model">供给与需求</a>。新技术如果更多地提高了高技能劳动者的生产率，企业就更想雇他们，高技能劳动的需求曲线右移。这叫<b>技能偏向型技术进步</b><span class="en"> (skill-biased technological change)</span>。</p>
+<p class="prose">与此同时，读大学、学技能的人越来越多，高技能劳动的供给也在右移。技能溢价最后是上升还是下降，看两边谁移动得更快。经济学家 Goldin 和 Katz 把这种拉锯称为“教育与技术的赛跑”。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="高技能劳动需求与供给变化对技能溢价的影响，可横向滚动"><table class="tbl" id="race-table"><caption>方向判断：只看高技能劳动市场，其他条件不变。</caption><thead><tr><th scope="col">情况</th><th scope="col">需求</th><th scope="col">供给</th><th scope="col">技能溢价</th></tr></thead><tbody>
+<tr><td>技术进步快，教育扩张慢</td><td>大幅右移</td><td>小幅右移</td><td>上升</td></tr>
+<tr><td>技术与教育同步</td><td>右移</td><td>同等右移</td><td>大致不变</td></tr>
+<tr><td>教育扩张快于技术</td><td>小幅右移</td><td>大幅右移</td><td>下降</td></tr>
+</tbody></table></div>
+<p class="prose">“技能”这个词要小心。按学历分高低只是一种近似。Autor、Levy 和 Murnane 在 2003 年的研究中提出从<b>任务</b><span class="en"> (task)</span> 来看：计算机擅长能写成明确规则的例行任务，例如记账、按规程检查；它补充需要判断、沟通和应变的非例行任务。所以计算机普及后，受冲击的不一定是学历最低的人，而是做例行任务最多的那一层。</p>
+<p class="prose">生成式 AI 的特别之处在于，它开始处理过去被认为不能写成规则的认知任务，例如写一段代码、起草一份文件。哪些人受益、哪些人受压，要看它在每项具体任务上是替代人，还是帮助人。</p>
+</section>
+<section id="automation">
+<h2>自动化：替代一部分任务，也可能创造新任务</h2>
+<p class="prose"><b>自动化</b><span class="en"> (automation)</span> 是用机器或软件完成原本由人完成的任务。一个岗位由许多任务组成，自动化通常先拿走其中一部分，而不是一次拿走整个岗位。</p>
+<p class="prose">Acemoglu 和 Restrepo（2019）把技术对劳动的影响分成几股力量。<b>替代效应</b><span class="en"> (displacement effect)</span>：机器接手一些任务，这些任务对人的需求下降。生产率效应：成本下降、产量扩大，其余任务对人的需求可能上升。<b>恢复效应</b><span class="en"> (reinstatement effect)</span>：技术催生新任务，人在这些任务上有优势。净效果取决于几股力量的大小，不能只看第一股。</p>
+<p class="prose">一个常被引用的例子是取款机。Bessen（2015）指出，1988 到 2004 年间，美国城市里一家银行网点平均需要的柜员从 20 人降到 13 人；网点运营变便宜后，城市网点数增加了 43%，柜员总数并没有随取款机普及而下降。这是替代与互补同时发生的例子，不保证每一次技术都会这样收场。</p>
+<p class="prose">回到编程。下表把一个初级程序员的工作拆成几项任务，并假设 AI 在每项上的作用。分类是为教学拟写的示意，不是测量结果。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="初级程序员的任务与 AI 作用示意，可横向滚动"><table class="tbl" id="task-table"><caption>示意分类（为教学拟写，不是测量结果）。</caption><thead><tr><th scope="col">任务</th><th scope="col">规则是否明确</th><th scope="col">AI 更像</th><th scope="col">对谁的需求</th></tr></thead><tbody>
+<tr><td>按规格写简单函数、样板代码</td><td>较明确</td><td>替代</td><td>新人练手的任务变少</td></tr>
+<tr><td>写单元测试、查文档、改格式</td><td>较明确</td><td>替代</td><td>新人练手的任务变少</td></tr>
+<tr><td>判断生成的代码是否正确、安全</td><td>不明确</td><td>互补</td><td>有经验的人更值钱</td></tr>
+<tr><td>理解业务需求、和同事沟通</td><td>不明确</td><td>互补</td><td>有经验的人更值钱</td></tr>
+<tr><td>设计系统结构、对线上故障负责</td><td>不明确</td><td>互补</td><td>有经验的人更值钱</td></tr>
+</tbody></table></div>
+<p class="prose">如果企业过去雇新人，主要就是让他们做前两类任务，那么 AI 一来，新人的需求先下降；而资深工程师用 AI 后每人能完成更多工作，他们的需求可能不降反升。新闻中的论文也提出了类似的可能解释：AI 更容易替代能写成文字的知识，而补充资深员工靠经验积累的隐性知识。论文还发现，下降集中在 AI 主要用于替代人工的职业，在 AI 主要用于辅助工作的职业，就业持平或上升。</p>
+<p class="prose">但互补也可能偏向新人。Brynjolfsson、Li 和 Raymond 研究了 5,172 名客服人员分批使用 AI 助手的情况，发现平均每小时解决的问题数提高 15%，经验少、技能较低的员工在速度和质量上都有提升；最资深、技能最高的员工速度略快，质量略降。作者认为 AI 把能干员工的经验传给了新人，缩小了差距。同一种技术，放在不同任务上，可能扩大差距，也可能缩小差距。</p>
+<h3>价格不动，数量在动</h3>
+<p class="prose">论文的另一个发现是：调整主要体现在年轻人的招聘人数上，而不是基本工资上。这和最简单的供求图不完全一样，后者预测需求下降时工资和就业都下降。一种可能的原因是，企业不愿降低已公布的入门工资，宁可少招人。对求职者来说，这表现为岗位更难找，而不是工资单上的数字变了。</p>
+</section>
+<section id="differentials">
+<h2>不是技能差别的工资差别</h2>
+<p class="prose">两个技能相同的人，工资也可能不同。原因之一是工作本身的好坏不同。一个岗位危险、偏远、要上夜班，雇主就得多付钱才招得到人。这部分额外工资叫<b>补偿性工资差别</b><span class="en"> (compensating differential)</span>，它是在为工作的不愉快付价钱。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="两个技能要求相同的岗位的工资与工作条件，可横向滚动"><table class="tbl" id="comp-table"><caption>教学示意：两岗位对技能要求相同，单位万元/年。</caption><thead><tr><th scope="col">岗位</th><th scope="col">工作条件</th><th scope="col" class="num">年薪</th><th scope="col">差别的来源</th></tr></thead><tbody>
+<tr><td>城市机房运维</td><td>白班、通勤短</td><td class="num">8</td><td>基准</td></tr>
+<tr><td>海上风电运维</td><td>出海、轮班、离家久</td><td class="num">11</td><td>多出的 3 补偿不便与风险</td></tr>
+</tbody></table></div>
+<p class="prose">如果求职者能自由选择、清楚知道两份工作的条件，在边际上就会有人觉得“多 3 万值得”，也有人觉得不值。工资差会调整到让两边都有人去做为止。所以高工资不一定代表更幸福的生活，低工资也可能换来了时间、稳定或兴趣。反过来，若求职者缺乏信息或别无选择，危险岗位也可能拿不到足够的补偿。</p>
+<h3>超级明星：小差距，大收入</h3>
+<p class="prose">另一种差距出现在体育、娱乐、写作、软件这类行业：最好的人比第二好的人只强一点，收入却高出许多倍。Rosen（1981）用两点解释这种<b>超级明星效应</b><span class="en"> (superstar effect)</span>。第一，水平差的人不能完全替代水平好的人：听十场平庸的演唱会，抵不上一场你最喜欢的。第二，技术让一个人能以很低的额外成本服务极大的市场：录音、广播、流媒体让同一份表演可以卖给无数人，这和<a href="../m04/01-costs-economies-of-scale.html#scale">规模经济</a>的道理相通。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="两位歌手在本地市场和全国流媒体市场的收入，可横向滚动"><table class="tbl" id="star-table"><caption>教学示意：歌手甲比乙水平高约 5%；单位万元/年。</caption><thead><tr><th scope="col">市场</th><th scope="col">听众怎样选</th><th scope="col" class="num">甲收入</th><th scope="col" class="num">乙收入</th><th scope="col" class="num">甲是乙的几倍</th></tr></thead><tbody>
+<tr><td>只能现场演出</td><td>各自服务本城观众</td><td class="num">21</td><td class="num">20</td><td class="num">1.05</td></tr>
+<tr><td>全国流媒体</td><td>多数人只听最好的那位</td><td class="num">800</td><td class="num">200</td><td class="num">4</td></tr>
+</tbody></table></div>
+<p class="prose">两人的水平差距没有变，变的是市场范围。当一个人能服务所有人，听众就集中到最好的那一位，微小的领先被放大成巨大的收入差。AI 工具也可能产生类似效果：一个顶尖工程师借助 AI 能完成更多工作，他的产出可以触达更大的市场。</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“AI 会写代码了，程序员这个职业就会消失。”</p><p>岗位是一组任务。AI 先接手其中可写成规则的部分；判断、沟通、负责的部分可能更值钱。净效果要看替代、生产率和新任务几股力量的大小。目前的证据显示变化集中在入门招聘上，整体就业还没有大范围下降。</p></div>
+<div class="mis"><p class="said">“工资高说明这个人更努力、更有能力。”</p><p>工资是市场价格，还反映工作条件（补偿性差别）、市场规模（超级明星效应）和技术对需求的冲击。同样努力的人，在不同的岗位和年代可能拿到很不一样的工资。</p></div>
+<div class="mis"><p class="said">“读书的成本就是学费。”</p><p>读书期间少挣的工资往往比学费更大。忽略这部分机会成本，会高估教育投资的回报，也会误解为什么中年人更少回到学校。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每题都先问：这项技术接手了哪些任务，哪些劳动的需求因此变了？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">试着为每个术语举一个你身边的例子。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>为什么先出现在新人身上？</b>把岗位拆成任务看。新人过去承担的多是规格明确、容易检查的任务，AI 在这些任务上更像替代；资深工程师的判断、沟通和系统责任与 AI 互补。前一类劳动需求下降，后一类需求可能上升。这是一种合理解释，论文本身强调它只是描述性证据，控制学历后差距会缩小，部分趋势在 ChatGPT 之前已经出现。</div></li><li><div><b>招聘人数变、工资不变说明什么？</b>入门劳动的需求在下降，但企业不愿意直接压低入门工资，于是调整落在数量上：少招人。对求职者来说，这意味着岗位更难找。对研究者来说，只看工资数据会低估变化。</div></li><li><div><b>对技能积累和工资差距意味着什么？</b>入门岗位是积累在职人力资本的地方。如果这条阶梯变窄，已经站上去的人技能溢价可能上升，没上去的人更难起步，差距可能扩大。但 AI 也可能像客服研究中那样，把经验传给新人、缩小差距。哪种力量占上风，取决于 AI 被用在什么任务上，以及教育和培训能否跟上，目前还没有定论。</div></li></ol>
+<p class="prose">下次读到“AI 将取代某职业”的说法，可以先列出这个职业的五项主要任务，逐项问：AI 是在替代它，还是在帮做它的人？再问：成本下降后，市场会不会需要更多这样的工作？</p>
+</section>
+<section id="sources"><h2>资料来源</h2>
+<ol class="qs">
+<li>Brynjolfsson, E., Chandar, B., Chen, R. <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recen">Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence</a>. Stanford Digital Economy Lab，2025 年 8 月首发，2026 年 8 月更新；更新说明见<a href="https://digitaleconomy.stanford.edu/news/canariesaug26/">2026 年 8 月 12 日博文</a>。</li>
+<li>Gimbel, M., Kinder, M., Kendall, J., Lee, M. <a href="https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs">Evaluating the Impact of AI on the Labor Market: Current State of Affairs</a>. The Budget Lab at Yale，2025 年 10 月 1 日。</li>
+<li>Brynjolfsson, E., Li, D., Raymond, L. <a href="https://doi.org/10.1093/qje/qjae044">Generative AI at Work</a>. Quarterly Journal of Economics 140(2)，2025。</li>
+<li>Acemoglu, D., Restrepo, P. <a href="https://doi.org/10.1257/jep.33.2.3">Automation and New Tasks: How Technology Displaces and Reinstates Labor</a>. Journal of Economic Perspectives 33(2)，2019。</li>
+<li>Autor, D. <a href="https://doi.org/10.1257/jep.29.3.3">Why Are There Still So Many Jobs? The History and Future of Workplace Automation</a>. Journal of Economic Perspectives 29(3)，2015。</li>
+<li>Autor, D., Levy, F., Murnane, R. <a href="https://ideas.repec.org/a/oup/qjecon/v118y2003i4p1279-1333..html">The Skill Content of Recent Technological Change</a>. Quarterly Journal of Economics 118(4)，2003。</li>
+<li>Bessen, J. <a href="https://www.imf.org/external/pubs/ft/fandd/2015/03/bessen.htm">Toil and Technology</a>. IMF Finance &amp; Development，2015 年 3 月。</li>
+<li>Rosen, S. <a href="https://www.jstor.org/stable/1803469">The Economics of Superstars</a>. American Economic Review 71(5)，1981。</li>
+<li>Acemoglu, D., Autor, D. <a href="https://www.nber.org/papers/w17820">What Does Human Capital Do? A Review of Goldin and Katz's The Race between Education and Technology</a>. NBER Working Paper 17820，2012。</li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var QUIZ=[
+{q:'小林考虑脱产读两年硕士：每年学费 3 万，现在年薪 7 万，毕业后预计年薪 10 万。不考虑贴现，大约几年收回成本？',o:['2 年，因为学费合计只有 6 万','约 6.7 年，因为总成本 20 万，每年多挣 3 万','约 3.3 年，因为毕业后年薪比学费高','永远收不回，因为读书期间没有收入'],a:1,why:'约 6.7 年。总成本是学费 6 万加少挣的工资 14 万，共 20 万；每年多挣 10−7=3 万，20÷3≈6.7。只算学费会低估成本。'},
+{q:'一种新软件大幅提高了数据分析师的产出，同时开设数据专业的大学几乎没有增加。短期内分析师的技能溢价最可能怎样？',o:['上升，因为需求右移明显而供给增加很少','下降，因为软件替代了分析师','不变，因为技能溢价只由学历决定','先降后升，因为软件总会先消灭岗位'],a:0,why:'上升。软件与分析师互补，提高了他们的边际产出，需求右移；供给几乎不动，价格上升。这是技能偏向型技术进步与教育赛跑中技术领先的情形。'},
+{q:'某公司引入 AI 后，资深工程师人数增加，应届生招聘减少，入门工资没变。下面哪种解读最合适？',o:['AI 对所有程序员都是替代，只是资深的人跑得快','入门工资没变，说明需求没变','公司在歧视年轻人，与技术无关','AI 替代了新人常做的任务，补充了资深者的任务，入门需求的下降体现在招聘数量上'],a:3,why:'按任务拆分：新人的规格化任务被替代，资深者的判断任务被补充。企业不愿降入门工资，调整就落在少招人上。工资不变不代表需求不变。'},
+{q:'两份工作技能要求相同。远洋货轮轮机员一年大半时间在海上，年薪比岸上同类岗位高 40%。这个差别主要是什么？',o:['超级明星效应，因为愿意出海的人少而且出色','技能偏向型技术进步','补偿性工资差别，雇主为艰苦和离家的条件付价钱','人力资本差别，出海的人学历更高'],a:2,why:'补偿性工资差别。题设技能相同，多出的工资是在补偿工作条件的不便和风险。超级明星效应需要一个人能服务巨大市场，这里不满足。'},
+{q:'线上课程平台普及后，全国最受欢迎的几位数学老师收入暴涨，而一般老师的收入变化不大。最直接的解释是什么？',o:['名师的人力资本突然大幅增加','补偿性工资差别：线上授课更辛苦','自动化替代了名师的工作','超级明星效应：技术让少数人能低成本服务巨大市场，小的水平差距被放大'],a:3,why:'超级明星效应。名师水平没有突然变化，变的是市场范围：同一节课可以卖给全国学生，学生集中选最好的，收入差被放大。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'人力资本',en:'human capital',d:'提高生产能力的知识、技能与经验。投资成本包括学费和学习期间少挣的工资，回报是未来更高的工资。'},
+{t:'技能溢价',en:'skill premium',d:'高技能劳动比低技能劳动多拿的工资，是两种劳动的相对价格，由各自的供给和需求决定。'},
+{t:'技能偏向型技术进步',en:'skill-biased technological change',d:'更多提高高技能劳动生产率的技术进步，使其需求右移。技能溢价升降还要看教育带来的供给增长。'},
+{t:'任务',en:'task',d:'岗位由多项任务组成。技术通常先接手规则明确的任务，并补充需要判断和沟通的任务。'},
+{t:'自动化',en:'automation',d:'用机器或软件完成原本由人完成的任务。对就业的净效果取决于替代、生产率和新任务几股力量。'},
+{t:'替代效应',en:'displacement effect',d:'机器接手某些任务后，这些任务对人的需求下降。只是自动化影响的一部分。'},
+{t:'恢复效应',en:'reinstatement effect',d:'技术催生人更有优势的新任务，重新增加对劳动的需求。'},
+{t:'补偿性工资差别',en:'compensating differential',d:'为弥补危险、偏远、夜班等不利条件而多付的工资。技能相同的人因此可能拿不同工资。'},
+{t:'超级明星效应',en:'superstar effect',d:'水平差的人难以替代水平好的人，技术又让一人能服务巨大市场，小的水平差距被放大成巨大收入差。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
