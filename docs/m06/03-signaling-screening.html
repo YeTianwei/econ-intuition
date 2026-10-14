@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>信号与筛选</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m06-03">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>信号与筛选</h1>
+<p class="sub">Signaling and screening</p>
+<p class="lede">当别人不知道你的能力，说“我很优秀”通常不够。但花钱、花时间也不自动让一句话可信。真正的问题是：如果你不是这种类型，还愿不愿付出同样代价？反过来，不知道对方类型的人，也可以设计一份菜单，让对方的选择透露信息。</p>
+<p class="meta">约 21 分钟 · 0 个交互图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="01-adverse-selection.html#selection">隐藏类型与逆向选择</a>、<a href="02-moral-hazard.html#agency">委托代理</a>、<a href="../m05/03-auctions-mechanism-design.html#design">机制设计</a>。本课检查“说真话符合激励”怎样变成实际选择。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>企业招聘看重名校学历，求职者追问：文凭证明了已有能力，还是教育真的提高了能力？</blockquote></figure>
+<p class="prose">招聘要求与讨论为虚构，不是对任何学校、公司或毕业生的调查。假设雇主难以在面试当天完整看清学习能力、工作习惯和岗位技能，因此借助可验证的记录判断。</p>
+<ol class="qs"><li>学历与工资同时较高，足以证明教育只是在发证，或只是在提高生产率吗？</li><li>为什么一个有成本的信号仍可能不可信？怎样用两种人的账本检查？</li><li>企业提供不同合同让人自选，与求职者主动展示学历有什么区别？保修和品牌又靠什么可信？</li></ol>
+</section>
+<section id="education">
+<h2>提高能力，和让能力被看见，是两条渠道</h2>
+<p class="prose"><b>人力资本</b><span class="en"> (human capital)</span> 是能够提高生产能力的知识、技能与经验。学习编程、训练实验操作、学会清晰写作，都可能改变一个人真正能完成的工作。即使别人不知道你在哪里学过，这些技能仍然可能提高产出。</p>
+<p class="prose"><b>信号传递</b><span class="en"> (signaling)</span> 则是知情的一方主动采取可观察行动，使不知情的一方更新对其类型的判断。求职者展示课程、作品或学历，卖家主动提供保修，都可能有这个作用。信号不一定是语言，也不一定只靠金钱支付。</p>
+<p class="prose">一段教育可以同时产生两种效果：学习确实提高了能力，完成课程的经历也向雇主表明学习速度或坚持能力。把“有信号作用”说成“没有学到东西”，是把机制分析偷换成价值评判。反过来，教育有实际技能价值，也不排除文凭帮助雇主低成本筛查。</p>
+<p class="prose">如果只观察毕业生平均工资较高，至少还有第三条可能路径：原本能力、资源或家庭支持不同的人选择了不同教育。工资差异同时可能包含学习效果、信息效果与入学前的差异。仅有相关性不能分开这些渠道，也不能据此给某位毕业生贴能力标签。</p>
+<div class="analogy"><span class="lab">类比</span><p>你请人修一台电脑。对方只说“我很会修”，任何人都能重复；若能展示可验证的维修记录，并愿意在明确条件下返修，你就多了判断依据。可信度不在于承诺听起来多响亮，而在于不擅长维修的人能否同样轻松地模仿，以及返修承诺能否兑现。</p></div>
+<h3>昂贵只是线索，不是证明</h3>
+<p class="prose">如果高能力者和低能力者都能花 10 元买同一张“优秀证书”，雇主因此愿意多付 40 元，那么两种人都会买。证书确实有成本，却没有区分能力。若证书贵到两种人都不愿买，也同样不能形成有效区分。</p>
+<p class="prose">在本课的成本型信号模型中，关键方向是不同类型的相对成本或收益不同。要让某种类型发信号，另一种类型不愿模仿，需同时满足两边的激励条件。成本可以是学习时间、放弃收入、完成难度、未来责任或被查出造假的代价；不能只看账面学费。</p>
+<p class="prose">“有成本才可信”在这里是提醒检查模仿代价，不是所有沟通的普遍定理。可直接核验的证据即使上传成本很低，也可能有信息；本课聚焦的是不能直接看见类型、需要靠不同类型选择不同的行动来区分的情况。</p>
+</section>
+<section id="separation">
+<h2>一张学历信号账本：必须两边都算</h2>
+<p class="prose">先刻意排除学习增产，只看纯信号。设求职者有高、低两种岗位生产率，分别创造 100 和 60 教学元的产出；受教育不改变这两个数。两类人知道自己的类型，雇主看不到，只能看到是否完成一项教育要求。类型是本模型中的岗位生产率，不是人的总体价值。</p>
+<p class="prose">候选工资规则是：完成要求者工资 100，未完成者工资 60，工资溢价为 40。完成教育的总成本，高类型为 20，低类型为 60。不受教育的教育成本为零。所有金额都按同一个时期折算，比较工资减教育成本，不能把一次学费与未折算的终身工资直接相减。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="两种类型教育信号的净收益，可横向滚动"><table class="tbl" id="education-table"><caption>教学示意：受教育不改变生产率；工资溢价 40，未受教育工资 60，受教育工资 100。</caption><thead><tr><th scope="col">类型</th><th scope="col" class="num">生产率</th><th scope="col" class="num">教育成本</th><th scope="col" class="num">不读净收益</th><th scope="col" class="num">读后净收益</th><th scope="col">选择</th></tr></thead><tbody>
+<tr data-cost="20"><td>高类型</td><td class="num">100</td><td class="num">20</td><td class="num">60</td><td class="num">80</td><td>受教育</td></tr>
+<tr data-cost="60"><td>低类型</td><td class="num">60</td><td class="num">60</td><td class="num">60</td><td class="num">40</td><td>不受教育</td></tr>
+</tbody></table></div>
+<p class="prose">高类型读后为 100−20=80，高于不读的 60，所以愿意发信号；低类型若模仿只能得 100−60=40，低于不读的 60，所以不模仿。看到“高类型愿读”只完成了一半检查，必须再问“低类型为什么不跟着读”。</p>
+<p class="formula">高类型教育成本 ≤ 工资溢价 ≤ 低类型教育成本</p>
+<p class="prose">本例是 20 &lt; 40 &lt; 60，两边都严格成立。若溢价恰好等于某一类的成本，该类对读或不读无差别；分离可能依赖并列时怎样选择，不能保证严格自选。若两类成本都低于溢价，大家都想拿证，原先“有证就是高类型”的解释就站不住。</p>
+<p class="prose">不同类型选择不同可观察行动，接收方据此识别类型，叫<b>分离均衡</b><span class="en"> (separating equilibrium)</span>。本例中高类型读、低类型不读，雇主看到的类型与工资判断一致：两种工资分别等于相应产出。这里把行动、信念和报酬配在一起检验，不是让雇主永远机械奖励一张已经人人都有的证书。</p>
+<p class="prose">如果两种人采取同一行动，接收方就不能仅凭该行动区分，这叫<b>混同</b><span class="en"> (pooling)</span>。例如两类都买廉价证书，雇主最多依据这群人的平均类型给出判断。现实还可能部分区分，不一定只有“全看懂”与“完全没用”两个结果。</p>
+<h3>给数字做压力测试</h3>
+<ol class="qs"><li>保持成本 20、60，把溢价设为 10。高类型都不值得读，原来的分离机制失去愿意发信号的人。</li><li>把溢价设为 70。低类型也愿意读，模仿破坏了原来的类型识别。雇主不能保持原信念不变。</li><li>恢复溢价 40，却给所有人一项让教育成本各下降 30 的帮助，成本最低截为零。高类型成本为 0、低类型为 30，都愿意读。这只说明纯信号的分离可能变化，不能据此判定现实教育补助有害，因为真实教育也可能增产、改善机会。</li></ol>
+<p class="prose">还要检查<b>参与约束</b><span class="en"> (participation constraint)</span>：接受整套安排是否至少不差于外部机会。本例另设两类人的外部净收益都是 50，则高类型教育后 80、低类型不教育 60，都愿意参加。若高类型外部机会是 90，即使读比不读好，他也会离开这个市场。</p>
+<p class="prose">这和前面的两项<b>激励相容约束</b><span class="en"> (incentive compatibility constraints)</span> 不同。参与约束比较“加入还是离开”；激励约束比较“加入后选自己的方案还是模仿另一类型”。只验一个条件，不能说机制已经可行。</p>
+</section>
+<section id="screening">
+<h2>筛选：不知道类型的人，先设计选项</h2>
+<p class="prose"><b>筛选</b><span class="en"> (screening)</span> 是不知情的一方设计可供选择的合同、测试或菜单，利用不同类型的选择了解对方。信号传递的主动方通常是知情者，例如求职者取得证书；筛选的主动方是不知情者，例如雇主设计岗位任务或薪酬菜单。</p>
+<p class="prose">同一个现实流程可以同时有两种机制：公司要求可核查作品并给出两种岗位合同，求职者则主动展示经历并选择合同。区分不是给整个行业贴唯一标签，而是问当前分析的动作由谁设计、谁掌握隐藏信息。</p>
+<p class="prose">用一个静态服务菜单说明自选。设软件服务商不知道用户需要多少技术支持，提供基础版与专业版。基础版价格 40，专业版价格 80。重支持需求者对两版的总价值分别为 60、110；轻支持需求者分别为 50、60。注意这里的“重、轻”是需求类型，与上一表的生产率类型无关。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="用户对软件菜单的价值与自选净收益，可横向滚动"><table class="tbl" id="menu-table"><caption>单位：教学元/期。净收益为价值减价格；不购买的净收益为 0，忽略切换成本。</caption><thead><tr><th scope="col">类型</th><th scope="col" class="num">基础价值</th><th scope="col" class="num">专业价值</th><th scope="col" class="num">基础净收益</th><th scope="col" class="num">专业净收益</th><th scope="col">选择</th></tr></thead><tbody>
+<tr><td>重支持需求</td><td class="num">60</td><td class="num">110</td><td class="num">20</td><td class="num">30</td><td>专业版</td></tr>
+<tr><td>轻支持需求</td><td class="num">50</td><td class="num">60</td><td class="num">10</td><td class="num">−20</td><td>基础版</td></tr>
+</tbody></table></div>
+<p class="prose">重需求者选专业得到 30，改选基础只有 20；轻需求者选基础得到 10，模仿专业反而是 −20。两边都愿意选择给自己设计的方案，也都优于不购买的 0，因此自选与参与同时通过。服务商没有直接询问“你愿意多付多少”，而是用版本价值的差异让选择透露偏好。</p>
+<p class="prose">如果专业版只贵 5，即价格改成 45，轻需求者买专业也能得 15，超过基础的 10，两类可能都升级。若专业版涨到 100，重需求者买专业只得 10，不如基础的 20，也会降级。菜单只要有两个价，并不保证两种类型各选一种。</p>
+<p class="prose">供给方也有约束。若基础版服务成本为 20、专业版为 50，本例每个实际选择分别留下 20、30 的收入减服务成本，都为正；但这不是利润最大化的证明，也没计固定研发费用。完整机制设计还要比较其他菜单、竞争者与执行成本，不是找到一个能区分的例子就完成最优化。</p>
+<h3>保险菜单能透露风险，也可能牺牲保障</h3>
+<p class="prose">保险公司可以提供“较低保费、高免赔”和“较高保费、低免赔”两种合同。高风险者更可能出险，通常更看重降低出险自付；低风险者可能更愿节省每期保费。若两种类型各选一种，菜单就在筛选。</p>
+<p class="prose">但选择也受财富、风险承受能力和预期医疗需求影响，不能从一份保单直接诊断某个人的风险类型。为阻止高风险者模仿低保费合同，低保费方案可能需要保留较大的自付额，导致低风险者也得不到充分保障。这是信息约束带来的代价，不是菜单设计者漏想到“把所有保费降下来”。</p>
+<p class="prose">而且合同签完之后，自付额还会改变预防行为，又回到<a href="02-moral-hazard.html#ledger">道德风险的账本</a>。一项免赔安排既可能帮助辨认投保前类型，也可能改变投保后行动，评价时要把两条渠道分开。</p>
+</section>
+<section id="warranty">
+<h2>保修与品牌：让模仿真正有代价</h2>
+<p class="prose">好车更少发生故障，因此在保障范围和执行条件相同时，提供同样保修的预期维修成本可能更低。低质量卖家若模仿，会承担更多维修费用。这给了保修成为质量信号的可能性，同时保修也真实转移了买家的部分故障风险。</p>
+<p class="prose">设可靠产品的预期保修成本为 5，不可靠产品为 30，消费者为可兑现保修愿多付 15 教学元。可靠卖家多得 10，不可靠卖家模仿会少得 15，才有区分方向。若两类都只需付 5，或买家愿多付 40，两类都可能跟进，不能仅凭“提供了保修”判定可靠。</p>
+<p class="prose">更关键的前提是<b>合同执行</b><span class="en"> (contract enforcement)</span>。若卖家可以随时关店、不兑现返修，所谓的 30 就不会成为真正成本，两种卖家都能廉价写下承诺。判断要落到保修范围、责任主体、索赔流程、偿付能力和可追责性，而不是只比较保修年限。</p>
+<p class="prose"><b>声誉</b><span class="en"> (reputation)</span> 让一次失信影响以后的生意。品牌可能把跨期交易联系起来：今天节约质量成本，明天损失老客户与新客户的信任。可回看<a href="../m05/02-repeated-games.html#reputation">重复博弈的声誉机制</a>。但若品牌容易换名、评价无法核实或顾客识别不了责任主体，这个未来代价就会减弱。</p>
+<p class="prose">昂贵广告或精美门店也不天然证明质量。它们可能传递“计划长期经营”的信息，也可能只是吸引注意、展示财富或一次性营销。要声称它们能区分质量，仍需解释为什么差卖家难以同样获益地模仿，以及差质量为什么会损害未来收入。</p>
+</section>
+<section id="welfare">
+<h2>对个人值得，不等于全部成本都是社会收益</h2>
+<p class="prose">纯信号表中，高类型花 20 把净收入从 60 提到 80，对他是有利选择。但假设学习完全不提高生产率，那么 20 的时间与资源消耗就不能被叫作新增产出。工资提高部分也可能只是收入重新分配，而不是凭空增加社会价值。</p>
+<p class="prose">信号仍可能有社会作用：帮助把人分配到更合适的岗位、减少雇主试错、恢复被信息阻断的交易。这些收益要与取得和核查信号的成本比较。若只是大家为排在别人前面不断加码同一种门槛，却没改善匹配，可能出现昂贵的竞争。</p>
+<p class="prose">现实教育又同时可能增产、丰富个人生活并拓宽机会，因此不能从纯信号模型直接推出“教育无用”或“取消文凭最好”。作品测试可能更贴近岗位，却也有设计费、准备时间、可比性与作弊问题。制度比较应问怎样以更低的总成本取得更有用的信息，而不是把某种证件简单神化或否定。</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“只要花了钱，信号就可信。”</p><p>需要两边的净收益让一类愿意发、另一类不愿模仿。人人都能花 10 换 40 的回报，即使不免费也无法区分类型。</p></div>
+<div class="mis"><p class="said">“学历有信号作用，就证明教育不提高能力。”</p><p>人力资本与信号可以并存。工资相关性还混入入学前的差异，纯信号账本只是拆机制，不是现实教育效果的估计。</p></div>
+<div class="mis"><p class="said">“给两种合同让人自选，筛选就成功了。”</p><p>必须检查参与和相互模仿的激励。价格太接近或服务差异不合适，两类可能选择同一份合同；看得见选择也不等于看清唯一的个人类型。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">每题都问：谁主动，谁知情，谁会模仿，谁会退出？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">不要只记名称，试着口述一组能区分类型的收益比较。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>学历是在培养还是证明能力？</b>两者可以同时存在，毕业生工资更高还可能反映原有差异。要判断各自贡献，需要能区分学习、证书信息与自我选择的证据，不能只看招聘门槛或工资相关性。</div></li><li><div><b>什么样的成本才支持可信区分？</b>在纯信号表中，高类型成本 20 小于溢价 40，低类型成本 60 大于溢价，才有高类型读、低类型不模仿。还须确认雇主信念与行动一致、双方不选择外部机会。有成本本身不够。</div></li><li><div><b>菜单、保修和品牌是什么机制？</b>求职者主动展示学历是信号，公司设计合同让人自选是筛选，真实流程可包含两者。保修能区分质量要靠不同的预期成本和可执行责任；品牌要靠可追溯的声誉与未来收益，便宜口号不能自动产生可信度。</div></li></ol>
+<p class="prose">下次看到“用某证书证明实力”或“让用户自由选择套餐”，可以先写出两种类型的净收益。若找不到为什么另一种类型不模仿的理由，就还没有解释这项信息机制为何成立。</p>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var QUIZ=[
+{q:'一种证书两类人的成本都为 10，雇主暂时愿多付工资 40。最可能破坏类型识别的是什么？',o:['成本为正，所以两类一定分开','高能力者绝不买廉价证书','只要雇主相信证书，就不必检查行为','两类都愿买，原先“有证就是高类型”的信念不再一致'],a:3,why:'两类都能以 10 换取 40 的溢价，模仿有利。成本是否大于零不是充分条件，必须比较不同类型的相对净收益。'},
+{q:'高低类型教育成本为 20、60，工资溢价 40。为什么能支持表中的分离？',o:['高类型净增 20，低类型若模仿净减 20，两边的激励方向相反','只要高类型愿读就足够，不必管低类型','教育把所有人的生产率提高了 40','成本越高的人必定更愿意读'],a:0,why:'高类型的收益超过成本，低类型的成本超过收益。纯信号设定没有学习增产，还要有与选择一致的工资判断及参与条件。'},
+{q:'软件菜单中重需求者对基础、专业价值为 60、110，价格为 40、80。不买得 0。他会怎样选？',o:['基础版，因为价格更低','不买，因为专业版比基础贵 40','专业版净收益 30，高于基础的 20，也满足参与约束','两版无差别，因为都是同一家提供'],a:2,why:'比较的是价值减价格。重需求者选专业也不愿改选基础；参与约束另比较其净收益 30 与不买的 0。'},
+{q:'企业提出两套工资与任务合同，让知道自己能力的应聘者自选。主要是哪种机制？',o:['一定是道德风险，因为签了合同','筛选，因为不知情企业设计菜单利用选择了解类型','信号，因为所有有成本的行动都只能叫信号','没有信息作用，因为企业没直接询问能力'],a:1,why:'主动设计菜单的是不知情方，属于筛选。应聘者也可能另行主动发信号；分类要看具体动作而不是笼统给行业命名。'},
+{q:'卖家可以低成本关店换名，保修承诺几乎无法追索。这怎样影响保修信号？',o:['承诺越长就一定越可信','保修仍必然区分质量，因为写合同有成本','质量较差者会自动因羞愧拒绝提供保修','削弱模仿的实际代价，不能仅凭保修口号认定质量'],a:3,why:'低质量卖家若无需实际承担维修责任，也能廉价模仿。成本差异要通过履约、偿付能力与可追责性变成真正约束。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'人力资本',en:'human capital',d:'提高生产能力的知识、技能与经验。教育既可能增产，也可能让原有能力被识别，两种渠道不互斥。'},
+{t:'信号传递',en:'signaling',d:'知情者主动采取可观察行动传递类型。本课成本型模型要求不同类型相对成本与回报满足区分条件。'},
+{t:'筛选',en:'screening',d:'不知情者设计菜单或测试，让知情者的自选透露信息。不是只要有两个选项就成功，需检查参与与模仿。'},
+{t:'分离均衡',en:'separating equilibrium',d:'不同类型选择不同可观察行动，接收方据此识别，信念与行动一致，各方没有有利偏离。'},
+{t:'混同',en:'pooling',d:'不同类型采取同一可观察行动，因此不能仅凭该行动区分。例如成本对所有人都很低的证书可能人人购买。'},
+{t:'参与约束',en:'participation constraint',d:'选择机制内的安排，净收益至少不差于外部机会。即使自己的方案比别的方案好，也可能整体选择退出。'},
+{t:'激励相容约束',en:'incentive compatibility constraints',d:'每种类型选择设计给自己的方案，不比模仿其他类型差。要分别比较两边，等号只是无差别而非严格自选。'},
+{t:'合同执行',en:'contract enforcement',d:'让保修、赔付等承诺真正兑现，使模仿成本落地。范围、索赔、偿付与追责缺失时，口号不必有可信度。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

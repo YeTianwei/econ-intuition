@@ -136,7 +136,7 @@
         {
           id: 'm06-03', title: '信号与筛选',
           en: 'Signaling and screening',
-          path: 'm06/03-signaling-screening.html', status: 'todo'
+          path: 'm06/03-signaling-screening.html', status: 'done'
         },
         {
           id: 'm06-04', title: '行为经济学：偏差与助推',
