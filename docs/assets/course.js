@@ -194,7 +194,7 @@
         {
           id: 'm09-01', title: '复利与增长的力量',
           en: 'The power of compounding and growth',
-          path: 'm09/01-compounding-growth.html', status: 'todo'
+          path: 'm09/01-compounding-growth.html', status: 'done'
         },
         {
           id: 'm09-02', title: '索洛模型：资本积累的极限',

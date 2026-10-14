@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>复利与增长的力量</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m09-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>复利与增长的力量</h1>
+<p class="sub">The power of compounding and growth</p>
+<p class="lede">一年 2% 和一年 3% 听起来差不多。可是放到 50 年里，前者让收入变成 2.7 倍，后者变成 4.4 倍。增长是一年一年叠在上一年的基础上的，小差别会滚成大差距。这一课用一个简单的公式和一个心算技巧，看懂为什么有的经济体几十年就换了天地。</p>
+<p class="meta">约 20 分钟 · 1 个交互图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m08/01-gdp.html#real">实际 GDP</a> 与 <a href="../m08/01-gdp.html#per-capita">人均 GDP</a>。本课说的增长，都是扣除物价变化之后、按人头平均的增长。</p>
+</header>
+
+<section id="news">
+<h2>从一组数据开始</h2>
+<figure class="headline"><figcaption>数据：<a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=KR-SG-US">世界银行《世界发展指标》（WDI）</a>，人均 GDP（2015 年不变价美元），2026-10-08 更新</figcaption><blockquote>韩国人均 GDP：1960 年约 1,000 美元，不到美国的十八分之一；2025 年约 37,500 美元，达到美国的 55%</blockquote></figure>
+<p class="prose">这组数字来自世界银行的公开数据库，口径是扣除物价变化后的人均 GDP，按 2015 年的美元计。同一数据库里，新加坡从约 3,600 美元增至约 70,700 美元，已略高于美国。世界银行目前把韩国和新加坡都列为高收入经济体。</p>
+<ol class="qs"><li>韩国的人均 GDP 在 65 年里变成了原来的约 36 倍。平均每年要增长多少，才能做到这一点？</li><li>同期美国平均每年增长约 2%，韩国约 5.7%。年增速只差不到 4 个百分点，为什么最后差出这么多？</li><li>反过来想：一个经济体每年多增长 1 个百分点，有那么重要吗？</li></ol>
+</section>
+
+<section id="compounding">
+<h2>复利：增长在增长之上</h2>
+<p class="prose">比较一国居民的生活水平，常用<b>人均收入</b><span class="en"> (income per capita)</span>：一国一年的收入除以人口。实践中最常用的近似是<a href="../m08/01-gdp.html#per-capita">人均实际 GDP</a>，下面也用它。说“人均收入增长 3%”，指的是扣除物价变化之后，平均每人能买到的东西多了 3%。</p>
+<p class="prose">如果每年都增长 3%，第二年的 3% 是在已经长大的基数上再长 3%。增长本身也会带来增长，这就是<b>复利</b><span class="en"> (compounding)</span>。存款的“利滚利”是同一个道理，只是这里滚的是收入。</p>
+<p class="formula">第 t 年的人均收入 = 起点 × (1 + g)<sup>t</sup></p>
+<p class="prose">g 是年增长率，t 是年数。公式里 g 在指数的底数里，t 在指数上：时间越长，g 的一点差别被乘的次数越多。这种每期按固定比例增长的方式叫<b>指数增长</b><span class="en"> (exponential growth)</span>。</p>
+<div class="analogy"><span class="lab">类比</span><p>把一张纸对折，厚度翻倍；再对折，又翻倍。每次只是“翻一倍”，折到第 10 次已经是原来的 1,024 倍。每次的动作一样，结果越来越惊人，因为每次都是在上一次的结果上翻倍。经济增长慢得多，但道理相同：每年的增长都乘在上一年的结果上。</p></div>
+<p class="prose">下表是按固定增长率滚动 10 年、25 年、50 年后，收入是起点的多少倍：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="不同年增长率下收入是起点的倍数，可横向滚动"><table class="tbl"><caption>按公式计算：收入是起点的倍数</caption><thead><tr><th scope="col">年增长率</th><th scope="col" class="num">10 年后</th><th scope="col" class="num">25 年后</th><th scope="col" class="num">50 年后</th></tr></thead><tbody>
+<tr><td>1%</td><td class="num">1.10</td><td class="num">1.28</td><td class="num">1.64</td></tr>
+<tr><td>2%</td><td class="num">1.22</td><td class="num">1.64</td><td class="num">2.69</td></tr>
+<tr><td>3%</td><td class="num">1.34</td><td class="num">2.09</td><td class="num">4.38</td></tr>
+<tr><td>5%</td><td class="num">1.63</td><td class="num">3.39</td><td class="num">11.47</td></tr>
+<tr><td>7%</td><td class="num">1.97</td><td class="num">5.43</td><td class="num">29.46</td></tr>
+</tbody></table></div>
+<p class="prose">看 10 年那一列，各行差得不多；看 50 年那一列，2% 和 3% 之间差了 1.6 倍，5% 和 7% 之间差了 2.6 倍。如果只按“每年加上起点的 3%”去算，50 年后是 2.5 倍，比复利的 4.38 倍少得多。线性的直觉会系统性地低估长期增长。</p>
+<h3>从两端倒推平均增速</h3>
+<p class="prose">已知起点、终点和年数，可以倒推出“平均每年增长多少”。这叫<b>年均复合增长率</b><span class="en"> (compound annual growth rate, CAGR)</span>：</p>
+<p class="formula">年均增长率 = (终点 ÷ 起点)<sup>1/年数</sup> − 1</p>
+<p class="prose">韩国 1960~2025 年变为 36.1 倍，代入得每年约 5.7%。它是一个“如果每年都一样，应该是多少”的平均数。真实的年增速有快有慢，还有衰退的年份，这个数字把它们抹平了。</p>
+</section>
+
+<section id="rule70">
+<h2>70 法则：心算翻倍时间</h2>
+<p class="prose">算 (1 + g)<sup>t</sup> 需要计算器。有一个够用的心算办法，叫<b>70 法则</b><span class="en"> (rule of 70)</span>：</p>
+<p class="formula">翻倍所需年数 ≈ 70 ÷ 年增长率（百分数）</p>
+<p class="prose">每年 2%，约 35 年翻倍；每年 7%，约 10 年翻倍。<a href="../m08/02-inflation-cpi.html#converter">上一模块</a>用同样的办法估算过物价翻倍的时间，道理一样，因为物价和收入都按复利增长。</p>
+<p class="prose">精确的<b>翻倍时间</b><span class="en"> (doubling time)</span> 是：</p>
+<p class="formula">翻倍时间 = ln 2 ÷ ln(1 + g)</p>
+<p class="prose">ln 2 约等于 0.693，而 g 不大时 ln(1 + g) 约等于 g，于是翻倍时间约等于 0.693 ÷ g，也就是 69.3 ÷ 百分数。取 70 是为了好除。增长率越高，ln(1 + g) 比 g 小得越多，70 法则就越会低估翻倍时间：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="精确翻倍时间与 70 法则、72 法则比较，可横向滚动"><table class="tbl"><caption>翻倍时间（年）：精确值与两种心算近似</caption><thead><tr><th scope="col">年增长率</th><th scope="col" class="num">精确值</th><th scope="col" class="num">70 法则</th><th scope="col" class="num">72 法则</th></tr></thead><tbody>
+<tr><td>1%</td><td class="num">69.7</td><td class="num">70.0</td><td class="num">72.0</td></tr>
+<tr><td>2%</td><td class="num">35.0</td><td class="num">35.0</td><td class="num">36.0</td></tr>
+<tr><td>3%</td><td class="num">23.4</td><td class="num">23.3</td><td class="num">24.0</td></tr>
+<tr><td>5%</td><td class="num">14.2</td><td class="num">14.0</td><td class="num">14.4</td></tr>
+<tr><td>7%</td><td class="num">10.2</td><td class="num">10.0</td><td class="num">10.3</td></tr>
+<tr><td>10%</td><td class="num">7.3</td><td class="num">7.0</td><td class="num">7.2</td></tr>
+</tbody></table></div>
+<p class="prose">增长率在 1%~3% 时 70 法则几乎没有误差；到 10% 时少算约 4%。有人用 72 代替 70，在 5%~10% 一段更准，而且 72 能被 2、3、4、6、8、9、12 整除。两者都是近似，判断“大约多少年”足够了。</p>
+<p class="prose">翻倍时间也能反过来用。韩国 65 年变为 36 倍，36 约是 2 的 5.2 次方，相当于翻了约 5.2 倍，每次约 12.5 年；70 ÷ 12.5 ≈ 5.6%，与上面算出的 5.7% 很接近。这正好回答了开头的第一个问题。</p>
+</section>
+
+<section id="compare">
+<h2>动手比一比：两个经济体的 50 年</h2>
+<div class="widget" id="w-growth" aria-labelledby="w1t">
+<h3 id="w1t">图 1　增长对比器：起点与增速，哪个更要紧</h3>
+<div class="chips" role="group" aria-label="选择情景（教学示意）"><button type="button" class="chip" data-sc="catch" aria-pressed="true">追赶：低起点、高增速</button><button type="button" class="chip" data-sc="gap1" aria-pressed="false">只差 1 个百分点</button><button type="button" class="chip" data-sc="stall" aria-pressed="false">停滞与倒退</button></div>
+<div class="chips" role="group" aria-label="纵轴刻度"><button type="button" class="chip" data-axis="lin" aria-pressed="true">线性纵轴</button><button type="button" class="chip" data-axis="log" aria-pressed="false">对数纵轴</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw d"></span>经济体甲</li><li><span class="sw s"></span>经济体乙</li><li>实心点：第一次翻倍（负增长时为第一次减半）</li><li>空心点：之后每次再翻倍或减半</li></ul>
+<div class="controls">
+<div class="ctl"><label for="ya">甲：起点人均收入</label><output id="ya-v" for="ya"></output><input id="ya" type="range" min="500" max="60000" step="500" value="1000" aria-describedby="ya-h"><span class="hint" id="ya-h">美元/年，扣除物价变化后的水平，500~60,000。</span></div>
+<div class="ctl"><label for="ga">甲：年增长率</label><output id="ga-v" for="ga"></output><input id="ga" type="range" min="-3" max="10" step="0.1" value="5.7" aria-describedby="ga-h"><span class="hint" id="ga-h">人均实际收入每年增长的百分比，−3%~10%，50 年不变。</span></div>
+<div class="ctl"><label for="yb">乙：起点人均收入</label><output id="yb-v" for="yb"></output><input id="yb" type="range" min="500" max="60000" step="500" value="19000" aria-describedby="yb-h"><span class="hint" id="yb-h">美元/年，500~60,000。</span></div>
+<div class="ctl"><label for="gb">乙：年增长率</label><output id="gb-v" for="gb"></output><input id="gb" type="range" min="-3" max="10" step="0.1" value="2" aria-describedby="gb-h"><span class="hint" id="gb-h">−3%~10%，负值表示人均收入逐年下降。</span></div>
+</div>
+<div class="tablewrap" tabindex="0" role="region" aria-label="图 1 读数，可横向滚动"><table class="tbl"><caption>读数</caption><thead><tr><th scope="col"></th><th scope="col" class="num">甲</th><th scope="col" class="num">乙</th></tr></thead><tbody>
+<tr><td>第 50 年人均收入（美元）</td><td class="num" id="r-a50"></td><td class="num" id="r-b50"></td></tr>
+<tr><td>50 年后是起点的几倍</td><td class="num" id="r-am"></td><td class="num" id="r-bm"></td></tr>
+<tr><td>翻倍时间（年，精确值）</td><td class="num" id="r-at"></td><td class="num" id="r-bt"></td></tr>
+<tr><td>70 法则估计（年）</td><td class="num" id="r-a70"></td><td class="num" id="r-b70"></td></tr>
+</tbody></table></div>
+<dl class="read pairs"><div><dt>乙是甲的几倍（起点 → 第 50 年）</dt><dd id="r-gap"></dd></div><div><dt>低起点一方追上所需年数</dt><dd id="r-catch"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">起点和增速都是教学示意。“追赶”情景的起点约为 1960 年韩国与美国人均 GDP 的比例，增速取两国 1960~2025 年的年均增速，但不代表任何国家未来的路径：真实增速每年不同，而且追赶中的经济体通常越接近前沿增长越慢。负增长时标的是减半时间，零增长时不会翻倍。</p>
+</div>
+<h3>三个实验</h3>
+<ol class="qs"><li>默认的追赶情景：甲起点只有乙的约十九分之一，增速快 3.7 个百分点。50 年后差距缩小到约 3.2 倍，按这两个增速还要约 83 年才追上。把甲的增速拖到 8%，追上时间变成多少？</li><li>选“只差 1 个百分点”：两条线起点相同，前 10 年几乎重合，50 年后乙比甲多出约 63%。再把乙调到 4%，差距又会怎样？</li><li>选“停滞与倒退”，再切换到对数纵轴。零增长是一条水平线，每年 −2% 是一条向下的直线，约 34 年收入减半。负增长同样按复利累积。</li></ol>
+</section>
+
+<section id="log-scale">
+<h2>为什么要用对数纵轴看增长</h2>
+<p class="prose">在普通的线性纵轴上，固定增长率的曲线越往后越陡，像是“后来增长加速了”。其实增速一直没变，只是基数越来越大，每年增加的绝对量越来越多。</p>
+<p class="prose"><b>对数刻度</b><span class="en"> (logarithmic scale)</span> 的纵轴上，相邻刻度之间的距离代表相同的倍数，例如从 1,000 到 1 万和从 1 万到 10 万一样高。这时固定增长率是一条直线，斜率就是增长率：线越陡，增长越快；两条线平行，说明增速相同、差距倍数不变。图 1 的空心点在对数纵轴上等距排列，因为每隔一个翻倍时间就上升同样的高度。</p>
+<p class="prose">所以比较不同国家的长期增长，经济学家常用对数纵轴。线性纵轴适合看“绝对多了多少钱”，对数纵轴适合看“增长有多快”。读图时先看清是哪一种。</p>
+<h3>真实数据里的三条路径</h3>
+<p class="prose">下表取自世界银行 WDI 的人均 GDP（2015 年不变价美元）。年均增长率由本课按上面的公式计算：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="韩国、新加坡、美国人均 GDP，可横向滚动"><table class="tbl"><caption>人均 GDP（2015 年不变价美元）。来源：世界银行 WDI，NY.GDP.PCAP.KD，2026-10-08 更新</caption><thead><tr><th scope="col">经济体</th><th scope="col" class="num">1960</th><th scope="col" class="num">1990</th><th scope="col" class="num">2025</th><th scope="col" class="num">2025 ÷ 1960</th><th scope="col" class="num">年均增长</th></tr></thead><tbody>
+<tr><td>韩国</td><td class="num">1,038</td><td class="num">9,673</td><td class="num">37,470</td><td class="num">36.1</td><td class="num">5.7%</td></tr>
+<tr><td>新加坡</td><td class="num">3,612</td><td class="num">23,273</td><td class="num">70,684</td><td class="num">19.6</td><td class="num">4.7%</td></tr>
+<tr><td>美国</td><td class="num">18,992</td><td class="num">39,200</td><td class="num">67,946</td><td class="num">3.6</td><td class="num">2.0%</td></tr>
+</tbody></table></div>
+<p class="prose">三点说明。第一，这是按市场汇率换成美元的不变价数据，不是<a href="../m08/01-gdp.html#per-capita">购买力平价</a>口径；换成 PPP 口径，各国的水平会不同，但“韩国几十年增长了几十倍”的结论不变。第二，世界银行划分收入组别用的是另一个指标：按 Atlas 方法计算的人均国民总收入（GNI）。2027 财年的标准是 2025 年人均 GNI 超过 14,375 美元为高收入，韩国和新加坡都在这一组。第三，年均增长率掩盖了过程：韩国 1960~1990 年平均每年增长约 7.7%，1990~2025 年约 3.9%，越往后越慢。</p>
+<p class="prose">增速为什么会放慢，为什么有的经济体能长期高速增长而有的停滞，是本模块后两课的问题。这一课只回答一件事：只要高增速能维持几十年，复利就足以把低收入变成高收入。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“每年只多 1 个百分点，50 年下来也就多 50%。”</p><p>这是把增长当作每年加同样的数。按复利算，同起点下 3% 比 2% 在 50 年后高约 63%；差距还会随时间继续扩大，100 年后约高 165%。</p></div>
+<div class="mis"><p class="said">“穷国增速比富国高，很快就能追上。”</p><p>要看起点差距有多大。差距 19 倍、增速快 3.7 个百分点，追上仍需约 83 年。起点差 20 倍时，每年快 4 个百分点也要约 78 年。追赶是几代人的事，而且要求高增速一直不掉下来。</p></div>
+<div class="mis"><p class="said">“曲线越往后越陡，说明后来增长加速了。”</p><p>在线性纵轴上，固定增长率的曲线本来就越来越陡，因为基数在变大。判断增速有没有变，要看对数纵轴上的斜率，或者直接算每段时期的年均增长率。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">能用 70 法则心算的，先心算再选。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到数据</h2>
+<ol class="steps"><li><div><b>65 年变为 36 倍，每年要增长多少？</b>约 5.7%。用公式算是 36.1 开 65 次方再减 1；用 70 法则心算是 36 ≈ 2<sup>5.2</sup>，65 年翻了约 5.2 倍，每次约 12.5 年，70 ÷ 12.5 ≈ 5.6%。</div></li><li><div><b>只差不到 4 个百分点，为什么差出这么多？</b>因为差别每年都乘在已经变大的基数上。韩国约 12 年翻一倍，美国约 35 年翻一倍。65 年里韩国翻了 5 倍多，美国不到 2 倍，于是比例从约 1/18 升到 55%。</div></li><li><div><b>每年多 1 个百分点重要吗？</b>重要，而且越长越重要。50 年后多出约 63%，相当于在终点上多出一大截生活水平。不过增速不是想调就能调的：它来自哪里、为什么会放慢，是后面两课要讲的。</div></li></ol>
+<p class="prose">下次看到“年增长 X%”的说法，可以先用 70 ÷ X 估一下翻倍需要几年，再问：这是人均还是总量，实际还是名义，能维持多久？</p>
+<button type="button" class="chip" id="goChart">回到增长对比器的追赶情景</button>
+</section>
+
+<section id="sources">
+<h2>资料来源</h2>
+<ol class="qs">
+<li>世界银行，<a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=KR-SG-US">GDP per capita (constant 2015 US$)（NY.GDP.PCAP.KD）</a>，《世界发展指标》，2026-10-08 更新；本课引用韩国、新加坡、美国 1960、1990、2025 年数值，年均增长率由本课计算。</li>
+<li>世界银行，<a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups">World Bank Country and Lending Groups</a>，2027 财年分类；本课引用高收入组的人均 GNI 标准（Atlas 方法，2025 年超过 14,375 美元）以及韩国、新加坡的所属组别。</li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,MINUS='−',H=50;
+function $(s){return document.querySelector(s);}
+var SC={catch:{ya:1000,ga:5.7,yb:19000,gb:2},gap1:{ya:10000,ga:2,yb:10000,gb:3},stall:{ya:10000,ga:0,yb:10000,gb:-2}};
+var axis='lin';
+function inc(y0,g,t){return y0*Math.pow(1+g/100,t);}
+/* g>0：翻倍时间；g<0：减半时间；g=0：无穷 */
+function dt(g){if(g===0){return Infinity;}return Math.log(g>0?2:0.5)/Math.log(1+g/100);}
+function money(v){return Math.round(v).toLocaleString('en-US');}
+function gTxt(g){return (g<0?MINUS:'')+Math.abs(g).toFixed(1)+'%';}
+function yrs(v){return v.toFixed(1)+' 年';}
+function yr0(v){return v<50.5?v.toFixed(1):v.toFixed(0);}
+function mult(v){return v>=100?v.toFixed(0):v>=10?v.toFixed(1):v.toFixed(2);}
+function tick(v){
+  if(v>=1e4){var w=v/1e4;return (Math.abs(w-Math.round(w))<1e-9?String(Math.round(w)):w.toFixed(1))+'万';}
+  return Math.round(v).toLocaleString('en-US');
+}
+function read(){return {a:{y0:+$('#ya').value,g:+$('#ga').value},b:{y0:+$('#yb').value,g:+$('#gb').value}};}
+function stats(e){
+  var T=dt(e.g),y50=inc(e.y0,e.g,H);
+  return {T:T,r70:e.g>0?70/e.g:Infinity,y50:y50,m:y50/e.y0};
+}
+function gap(p){
+  var a=p.a,b=p.b,lo,hi,loN;
+  if(a.y0<=b.y0){lo=a;hi=b;loN='甲';}else{lo=b;hi=a;loN='乙';}
+  var r0=hi.y0/lo.y0,r50=inc(hi.y0,hi.g,H)/inc(lo.y0,lo.g,H),t=null;
+  if(r0>1&&lo.g>hi.g){t=Math.log(r0)/Math.log((1+lo.g/100)/(1+hi.g/100));}
+  return {r0:r0,r50:r50,t:t,loN:loN,hiN:loN==='甲'?'乙':'甲',same:r0===1};
+}
+function niceLin(max){
+  var raw=max/5,k=Math.pow(10,Math.floor(Math.log10(raw))),st=[1,2,5,10],i;
+  for(i=0;i<st.length;i++){if(st[i]*k>=raw){return st[i]*k;}}
+  return 10*k;
+}
+var box=$('#chart1'),state=null;
+function scale(f,lo,hi,log){
+  var t=f.m.t,ih=f.ih;
+  if(log){var a=Math.log(lo),b=Math.log(hi);return function(v){return t+ih-(Math.log(v)-a)/(b-a)*ih;};}
+  return function(v){return t+ih-(v-lo)/(hi-lo)*ih;};
+}
+function logTicks(lo,hi,maxN){
+  var out=[],k,m,v;
+  for(k=Math.floor(Math.log10(lo))-1;k<=Math.ceil(Math.log10(hi));k++){[1,2,5].forEach(function(m){v=m*Math.pow(10,k);if(v>=lo*0.999&&v<=hi*1.001){out.push(v);}});}
+  if(out.length>maxN){var p=out.filter(function(v){return Math.abs(Math.log10(v)-Math.round(Math.log10(v)))<1e-9;});if(p.length>=2){out=p;}}
+  return out;
+}
+function niceDown(v){var k=Math.pow(10,Math.floor(Math.log10(v))),c=[5,2,1],i;for(i=0;i<3;i++){if(c[i]*k<=v){return c[i]*k;}}return k/2;}
+function niceUp(v){var k=Math.pow(10,Math.floor(Math.log10(v))),c=[1,2,5,10],i;for(i=0;i<4;i++){if(c[i]*k>=v){return c[i]*k;}}return 10*k;}
+function draw(){
+  box.replaceChildren();
+  if(!state){return;}
+  var p=state.p,log=axis==='log',el=C.el;
+  var w=Math.max(280,Math.floor(box.clientWidth)),h=Math.round(Math.min(400,Math.max(260,w*0.62)));
+  var m={l:60,r:14,t:12,b:44},f={m:m,iw:w-m.l-m.r,ih:h-m.t-m.b,w:w,h:h};
+  var vals=[p.a.y0,p.b.y0,inc(p.a.y0,p.a.g,H),inc(p.b.y0,p.b.g,H)];
+  var vmin=Math.min.apply(null,vals),vmax=Math.max.apply(null,vals),lo,hi,ticks=[],st,v;
+  if(log){lo=niceDown(vmin/1.15);hi=niceUp(vmax*1.15);ticks=logTicks(lo,hi,Math.max(4,Math.floor(f.ih/26)));}
+  else{st=niceLin(vmax*1.04);lo=0;hi=Math.ceil(vmax*1.04/st)*st;for(v=0;v<=hi+st*1e-9;v+=st){ticks.push(v);}}
+  var X=function(t){return m.l+t/H*f.iw;},Y=scale(f,lo,hi,log);
+  var svg=el('svg',{viewBox:'0 0 '+w+' '+h,width:w,height:h,'class':'plot',role:'img','aria-label':state.label});
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:f.iw,height:f.ih,'class':'plotbg'}));
+  var t;
+  for(t=0;t<=H;t+=10){svg.appendChild(el('line',{x1:X(t),x2:X(t),y1:m.t,y2:m.t+f.ih,'class':'gridline'}));svg.appendChild(el('text',{x:X(t),y:m.t+f.ih+16,'text-anchor':'middle','class':'tick'},String(t)));}
+  ticks.forEach(function(v){var y=Y(v);svg.appendChild(el('line',{x1:m.l,x2:m.l+f.iw,y1:y,y2:y,'class':'gridline'}));svg.appendChild(el('text',{x:m.l-6,y:y+4,'text-anchor':'end','class':'tick'},tick(v)));});
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:f.iw,height:f.ih,'class':'plotframe'}));
+  svg.appendChild(el('text',{x:m.l+f.iw/2,y:h-6,'text-anchor':'middle','class':'axtitle'},'年数（年）'));
+  svg.appendChild(el('text',{transform:'translate(12 '+(m.t+f.ih/2)+') rotate(-90)','text-anchor':'middle','class':'axtitle'},'人均收入（美元'+(log?'，对数刻度':'')+'）'));
+  var E=[{k:'a',c:'d',n:'甲',e:p.a},{k:'b',c:'s',n:'乙',e:p.b}],pts=[];
+  E.forEach(function(o){
+    var d=[],i;
+    o.px=[];
+    for(i=0;i<=200;i++){t=i*H/200;o.px.push([X(t),Y(inc(o.e.y0,o.e.g,t))]);d.push(o.px[i][0].toFixed(1)+' '+o.px[i][1].toFixed(1));}
+    svg.appendChild(el('path',{d:'M'+d.join('L'),'class':'curve '+o.c,'data-k':o.k}));
+  });
+  box.appendChild(svg);
+  var boxes=[],plot={l:m.l+2,r:m.l+f.iw-2,t:m.t+2,b:m.t+f.ih-2};
+  function hit(a,b){return a.l<b.r&&b.l<a.r&&a.t<b.b&&b.t<a.b;}
+  function bb(n){var r=n.getBBox();return {l:r.x-1,r:r.x+r.width+1,t:r.y-1,b:r.y+r.height+1};}
+  function inside(r){return r.l>=plot.l&&r.r<=plot.r&&r.t>=plot.t&&r.b<=plot.b;}
+  // 终点标签：放在右端点左侧，竖直方向分开
+  function crosses(r){return E.some(function(o){for(var i=0;i<o.px.length-1;i++){if(C.clip(o.px[i],o.px[i+1],{q0:r.l,q1:r.r,p0:r.t,p1:r.b})){return true;}}return false;});}
+  // 曲线下行时标签放在端点下方，避免压线
+  var ends=E.map(function(o){var y=Y(inc(o.e.y0,o.e.g,H));return {o:o,y:y,ly:o.e.g<0?y+16:y-7};});
+  ends.sort(function(a,b){return a.ly-b.ly;});
+  var gapY=17,top=plot.t+13,bot=plot.b-4,i;
+  for(i=0;i<ends.length;i++){ends[i].ly=i===0?Math.max(ends[i].ly,top):Math.max(ends[i].ly,ends[i-1].ly+gapY);}
+  if(ends[ends.length-1].ly>bot){ends[ends.length-1].ly=bot;for(i=ends.length-2;i>=0;i--){ends[i].ly=Math.min(ends[i].ly,ends[i+1].ly-gapY);}}
+  ends.forEach(function(q){
+    var n=el('text',{x:(X(H)-8).toFixed(1),y:q.ly.toFixed(1),'text-anchor':'end','class':'curvelab '+q.o.c+' halo','data-role':'end'},q.o.n+' '+money(inc(q.o.e.y0,q.o.e.g,H)));
+    svg.appendChild(n);boxes.push(bb(n));
+  });
+  // 翻倍（或减半）点
+  var marks=[];
+  E.forEach(function(o){
+    var T=dt(o.e.g),k;
+    if(!isFinite(T)||T>H+1e-9){return;}
+    for(k=1;k*T<=H+1e-9;k++){
+      var tx=k*T,yv=o.e.y0*Math.pow(o.e.g>0?2:0.5,k),cx=X(tx),cy=Y(yv);
+      var c=el('circle',{cx:cx.toFixed(2),cy:cy.toFixed(2),r:k===1?4.5:3,'class':k===1?'pt':'pt base','data-k':o.k,'data-n':k,'data-t':tx.toFixed(4),'data-v':yv.toFixed(4)});
+      svg.appendChild(c);
+      boxes.push({l:cx-5,r:cx+5,t:cy-5,b:cy+5});
+      if(k===1){marks.push({o:o,cx:cx,cy:cy,T:T});}
+    }
+  });
+  var cand=[],dys=[-9,17,-24,32,-40,48,-56,64,-72,80],dxs=[[-8,'end'],[8,'start'],[0,'middle'],[-30,'end'],[30,'start']];
+  dys.forEach(function(dy){dxs.forEach(function(d){cand.push([d[0],dy,d[1]]);});});
+  var same=marks.length===2&&Math.abs(marks[0].T-marks[1].T)<1e-9&&Math.abs(marks[0].cy-marks[1].cy)<24;
+  marks.forEach(function(q,qi){
+    var txt=(same&&qi===0?'甲乙':'')+(q.o.e.g>0?'翻倍 ':'减半 ')+q.T.toFixed(1)+' 年',n=el('text',{'class':(same&&qi===0?'ptlab':'curvelab '+q.o.c)+' halo','data-role':'dbl','data-k':same&&qi===0?'ab':q.o.k},txt),ok=false,j,r;
+    if(same&&qi===1){return;}
+    svg.appendChild(n);
+    // 先找不压曲线的位置，找不到再只要求不与其他标签和点重叠
+    for(var pass=0;pass<2&&!ok;pass++){
+      for(j=0;j<cand.length&&!ok;j++){
+        n.setAttribute('x',(q.cx+cand[j][0]).toFixed(1));n.setAttribute('y',(q.cy+cand[j][1]).toFixed(1));n.setAttribute('text-anchor',cand[j][2]);
+        r=bb(n);
+        if(inside(r)&&!boxes.some(function(b){return hit(r,b);})&&(pass===1||!crosses(r))){ok=true;boxes.push(r);}
+      }
+    }
+    if(!ok){svg.removeChild(n);}
+  });
+}
+function setOut(id,txt){$(id).textContent=txt;}
+function update(){
+  var p=read();
+  [['ya',p.a.y0],['yb',p.b.y0]].forEach(function(x){setOut('#'+x[0]+'-v',money(x[1])+' 美元');$('#'+x[0]).setAttribute('aria-valuetext',money(x[1])+' 美元');});
+  [['ga',p.a.g],['gb',p.b.g]].forEach(function(x){setOut('#'+x[0]+'-v',gTxt(x[1]));$('#'+x[0]).setAttribute('aria-valuetext','每年 '+gTxt(x[1]));});
+  var sc=null;Object.keys(SC).forEach(function(k){var s=SC[k];if(s.ya===p.a.y0&&s.ga===p.a.g&&s.yb===p.b.y0&&s.gb===p.b.g){sc=k;}});
+  document.querySelectorAll('[data-sc]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.sc===sc));});
+  document.querySelectorAll('[data-axis]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.axis===axis));});
+  var A=stats(p.a),B=stats(p.b),G=gap(p);
+  function dTxt(e,s){if(e.g===0){return '不翻倍';}if(e.g<0){return '减半 '+s.T.toFixed(1);}return s.T.toFixed(1);}
+  setOut('#r-a50',money(A.y50));setOut('#r-b50',money(B.y50));
+  setOut('#r-am',mult(A.m));setOut('#r-bm',mult(B.m));
+  setOut('#r-at',dTxt(p.a,A));setOut('#r-bt',dTxt(p.b,B));
+  setOut('#r-a70',p.a.g>0?A.r70.toFixed(1):'不适用');setOut('#r-b70',p.b.g>0?B.r70.toFixed(1):'不适用');
+  setOut('#r-gap',(p.b.y0/p.a.y0).toFixed(2)+' → '+(B.y50/A.y50).toFixed(2));
+  var ct;
+  if(G.same){ct='起点相同';}else if(G.t===null){ct='追不上';}else if(G.t<=H){ct='第 '+G.t.toFixed(1)+' 年';}else{ct='约 '+yr0(G.t)+' 年（超出 50 年）';}
+  setOut('#r-catch',ct);
+  function one(n,e,s){
+    if(e.g===0){return n+'零增长，50 年后仍是 '+money(e.y0)+' 美元，永远不会翻倍。';}
+    if(e.g<0){return n+'每年 '+gTxt(e.g)+'，约 '+yrs(s.T)+'减半，50 年后只剩起点的 '+(s.m*100).toFixed(0)+'%。';}
+    var t=n+'每年 '+gTxt(e.g)+'，约 '+yrs(s.T)+'翻一倍（70 法则估 '+yrs(s.r70)+'），';
+    return t+(s.T>H?'50 年内还翻不了一倍，增至 '+mult(s.m)+' 倍。':'50 年后是起点的 '+mult(s.m)+' 倍。');
+  }
+  var v=one('甲',p.a,A)+one('乙',p.b,B);
+  if(G.same){
+    v+=p.a.g===p.b.g?'两者完全相同。':'起点相同，第 50 年'+(A.y50>B.y50?'甲':'乙')+'是另一方的 '+(Math.max(A.y50,B.y50)/Math.min(A.y50,B.y50)).toFixed(2)+' 倍，差距全部来自增速。';
+  }else{
+    v+='起点'+G.hiN+'是'+G.loN+'的 '+G.r0.toFixed(1)+' 倍，第 50 年';
+    if(G.t!==null&&G.t<=H){v+=G.loN+'已反超，'+G.loN+'约在第 '+G.t.toFixed(1)+' 年追上。';}
+    else{
+      v+='这个倍数变为 '+G.r50.toFixed(1)+'。';
+      v+=G.t!==null?'按这两个增速，'+G.loN+'要约 '+yr0(G.t)+' 年才能追上。':'低起点的'+G.loN+'增速不比'+G.hiN+'快，差距不会缩小。';
+    }
+  }
+  $('#verdict').textContent=v;
+  state={p:p,label:'图 1，'+(axis==='log'?'对数':'线性')+'纵轴：'+v};
+  draw();
+}
+['ya','ga','yb','gb'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+function setSc(k){var s=SC[k];$('#ya').value=s.ya;$('#ga').value=s.ga;$('#yb').value=s.yb;$('#gb').value=s.gb;update();}
+document.querySelectorAll('[data-sc]').forEach(function(b){b.addEventListener('click',function(){setSc(b.dataset.sc);});});
+document.querySelectorAll('[data-axis]').forEach(function(b){b.addEventListener('click',function(){axis=b.dataset.axis;update();});});
+$('#goChart').addEventListener('click',function(){axis='lin';setSc('catch');$('#w-growth').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('#ga').focus({preventScroll:true});});
+C.watch(box,draw);update();
+
+var QUIZ=[
+{q:'某国人均实际收入每年增长 3.5%，并一直保持。大约多少年后人均收入翻一倍？',o:['约 35 年','约 29 年，因为每年增加起点的 3.5%','约 20 年','约 7 年'],a:2,why:'约 20 年。70 ÷ 3.5 = 20，精确值约 20.1 年。按“每年加起点的 3.5%”算要 29 年，那是忽略了复利。'},
+{q:'甲、乙两国起点相同。甲每年增长 2%，乙每年增长 3.5%，都维持 70 年。70 年后乙大约是甲的几倍？',o:['约 2.8 倍','约 1.75 倍，因为 3.5 ÷ 2 = 1.75','约 1.1 倍，因为只差 1.5 个百分点','两国一样，因为起点相同'],a:0,why:'约 2.8 倍。用 70 法则：甲 35 年翻倍，70 年翻 2 次，是 4 倍；乙 20 年翻倍，70 年翻 3.5 次，约 11 倍。11 ÷ 4 ≈ 2.8。'},
+{q:'把一国几十年的人均收入画在对数纵轴上，得到一条近似直线。这说明什么？',o:['人均收入每年增加的金额大致相同','人均收入在这段时间没有增长','人均收入每年翻一倍','人均收入的年增长率大致不变'],a:3,why:'增长率大致不变。对数纵轴上相同的高度代表相同的倍数，直线意味着每年按相同比例增长。每年增加相同金额，在对数纵轴上会是一条越来越平的曲线。'},
+{q:'穷国人均收入 2,000 美元、每年增长 6%；富国 40,000 美元、每年增长 2%。若增速都不变，穷国大约多少年追上富国？',o:['永远追不上，因为富国也在增长','约 78 年','约 20 年，因为差距是 20 倍','约 9.5 年，因为每年多长 4 个百分点'],a:1,why:'约 78 年。差距倍数每年缩小约 (1.06 ÷ 1.02)，要缩小 20 倍需要 ln 20 ÷ ln(1.06/1.02) ≈ 78 年。富国也在增长，但只要穷国更快，差距倍数就在缩小。'},
+{q:'一个经济体的人均实际 GDP 在 65 年里变为原来的约 36 倍。它的年均增长率最接近多少？',o:['约 55%，因为 35 ÷ 65 ≈ 0.54','约 0.55%','约 5.7%','约 36%'],a:2,why:'约 5.7%。36 约是 2 的 5.2 次方，65 年翻了约 5.2 倍，每次约 12.5 年，70 ÷ 12.5 ≈ 5.6%；精确计算为 5.7%。用总涨幅除以年数忽略了复利。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'复利',en:'compounding',d:'每期的增长都加在已经长大的基数上，下一期在新基数上继续增长。时间越长，增长率的小差别被放得越大。'},
+{t:'指数增长',en:'exponential growth',d:'每期按固定比例增长：第 t 年 = 起点 × (1 + g)^t。线性纵轴上越来越陡，对数纵轴上是直线。'},
+{t:'人均收入',en:'income per capita',d:'一国收入除以人口，常用人均实际 GDP 近似。比较生活水平和长期增长时用它，而不用总量。'},
+{t:'70 法则',en:'rule of 70',d:'翻倍年数 ≈ 70 ÷ 年增长率（百分数）。来自 ln 2 ≈ 0.693；增长率越高越会低估翻倍时间。'},
+{t:'翻倍时间',en:'doubling time',d:'按固定增长率翻一倍所需的年数，精确值为 ln 2 ÷ ln(1 + g)。每隔这么多年就再翻一倍。'},
+{t:'年均复合增长率',en:'compound annual growth rate, CAGR',d:'(终点 ÷ 起点)^(1/年数) − 1。假设每年增速相同时的平均增速，会抹平中间的起伏。'},
+{t:'对数刻度',en:'logarithmic scale',d:'相同的纵向距离代表相同的倍数。固定增长率是直线，斜率表示增速，适合比较长期增长。'},
+{t:'追赶',en:'catch-up',d:'低收入经济体增速高于高收入经济体时，两者的差距倍数逐年缩小。起点差距大时，追上可能需要几代人。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
