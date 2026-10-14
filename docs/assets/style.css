@@ -263,3 +263,22 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .curvelab.external{fill:var(--external)}
 .legend .sw.external{border-color:var(--external);border-top-style:dashed}
 .optimum-point{fill:var(--surface);stroke:var(--external);stroke-width:3}
+
+/* m06-04 start */
+.exp-q{margin:0 0 14px}
+.exp-q legend{padding:0;margin-bottom:6px;font-weight:500;line-height:1.7}
+.exp-q .chips{margin-bottom:0}
+.rowband{fill:var(--demand-soft)}
+.rowlab{font-family:var(--font-mono);font-size:12px;fill:var(--muted)}
+.rowlab.sel{fill:var(--ink);font-weight:500}
+.groupline{stroke:var(--line);stroke-width:1.5}
+.gamble{stroke:var(--ink);stroke-width:1.5;stroke-dasharray:3 3}
+.dot{fill:var(--ink);stroke:var(--surface);stroke-width:2}
+.dot.half{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.evtick{stroke:var(--demand);stroke-width:2.5}
+.legend .mk{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--ink);margin-right:6px;vertical-align:middle}
+.legend .mk.half{background:var(--surface);border:2px solid var(--ink)}
+.legend .mk.band{width:20px;border-radius:2px;background:var(--demand-soft)}
+.legend .sw.ev{border-color:var(--demand)}
+.sources li{overflow-wrap:anywhere}
+/* m06-04 end */

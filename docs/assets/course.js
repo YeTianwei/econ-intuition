@@ -141,7 +141,7 @@
         {
           id: 'm06-04', title: '行为经济学：偏差与助推',
           en: 'Behavioral economics: biases and nudges',
-          path: 'm06/04-behavioral-economics.html', status: 'todo'
+          path: 'm06/04-behavioral-economics.html', status: 'done'
         }
       ]
     },

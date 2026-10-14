@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>行为经济学：偏差与助推</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m06-04">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>行为经济学：偏差与助推</h1>
+<p class="sub">Behavioral economics: biases and nudges</p>
+<p class="lede">前面的模型假设人会把所有选项算清楚，再挑最好的那个。可是同一笔钱，说成“得到”还是“没失去”，很多人会作出不同选择；同一份养老计划，只是把“不填表”的后果换了一下，参与的人就多了一倍多。这一课放松“完全理性”的假设，看看偏差从哪里来，以及利用它们的政策为什么有争议。</p>
+<p class="meta">约 22 分钟 · 1 个交互图 · 5 道自测题 · 10 张闪卡</p>
+<p class="prose">前置：<a href="../m01/02-marginal-thinking.html#margin">边际思维</a>、<a href="../m01/02-marginal-thinking.html#sunk-cost">沉没成本谬误</a>、<a href="03-signaling-screening.html#screening">筛选与选项设计</a>。本课不推翻这些工具，而是检查人在什么地方会系统地偏离它们。</p>
+</header>
+<section id="news">
+<h2>从一项真实研究开始</h2>
+<figure class="headline"><figcaption>根据真实研究概括的标题。来源：Madrian &amp; Shea，《经济学季刊》2001 年第 116 卷第 4 期（NBER 工作论文 7682，2000 年 5 月）。<a href="https://www.nber.org/papers/w7682">原文链接</a></figcaption><blockquote>美国一家大公司把养老储蓄计划改为新员工“默认加入、可随时退出”，入职 3~15 个月员工的参与率从 37% 升到 86%</blockquote></figure>
+<p class="prose">401(k) 是美国雇主提供的养老储蓄账户，员工从工资里拿出一部分存进去。这家公司在 1998 年 4 月 1 日之前，员工要主动报名才能参加；之后入职的新员工被自动加入，默认把工资的 3% 存进货币市场基金，不想参加可以随时退出，也可以改比例和基金。</p>
+<p class="prose">作者比较了两批员工在相同的入职时长时的参与率：改革前一年入职的一批是 37%，改革后入职的一批是 86%。论文强调，计划的经济条件，例如公司配款，并没有因此改变。同时改变的“入职即可参加”，作者另做比较，认为它的作用很小。</p>
+<ol class="qs"><li>报名只需要填一张表，配款和收益都没变。为什么“不填表时会发生什么”能让参与率多出近一半人？</li><li>自动加入的员工大多停在 3% 和货币市场基金上。这说明默认选项“帮了”他们，还是“绑住”了他们？</li><li>政府或公司有意设计默认选项去影响人的选择，是聪明的政策，还是越界的操控？</li></ol>
+</section>
+<section id="bias">
+<h2>偏差不是随机的犯错，而是有规律的偏离</h2>
+<p class="prose"><b>行为经济学</b><span class="en"> (behavioral economics)</span> 把心理学对人如何判断、如何选择的发现带进经济分析。它不认为人很笨，也不放弃“人对激励有反应”。它关心的是：人在哪些情境下会<b>系统地</b>偏离标准模型，而且偏离方向可以预测。</p>
+<p class="prose">标准模型的一个默认前提是：选项一样、结果一样，选择就该一样。描述方式、谁先开口、哪个选项预先勾好，都不应改变决定。行为经济学的很多实验恰恰在检验这一点：只改说法、不改结果，看人的选择会不会变。</p>
+<p class="prose">如果偏离只是随机误差，大量的人加总后会相互抵消，市场和政策分析几乎不受影响。真正要紧的是同方向的偏差：大多数人都更怕损失、都容易拖延、都被同一个数字牵着走。这样的偏差加总后不会消失，会改变储蓄率、价格和政策效果。</p>
+<div class="analogy"><span class="lab">类比</span><p>一把偏重的秤，每次称都多出 50 克。称一千次再取平均，误差不会变小，平均值照样多出 50 克。行为经济学关心的就是这类“偏重的秤”：只要知道它往哪边偏，就能预测结果，也能设计办法校正。</p></div>
+</section>
+<section id="loss">
+<h2>损失厌恶：同样的 500 元，失去比得到更疼</h2>
+<p class="prose">人评价结果时，常常不看最终有多少钱，而是看相对某个<b>参照点</b><span class="en"> (reference point)</span> 是得还是失。参照点可以是现在手里的钱、原本的预期，也可以是别人刚告诉你的数字。</p>
+<p class="prose"><b>损失厌恶</b><span class="en"> (loss aversion)</span> 指同样大小的损失，带来的感受比同样大小的收益更强。丢了 500 元的难受，往往超过捡到 500 元的高兴。用最简单的写法：</p>
+<p class="formula">感受值 = 收益 x（x ≥ 0）；感受值 = λ × 损失 x（x &lt; 0），λ &gt; 1</p>
+<p class="prose">λ 是损失厌恶系数，表示损失要乘上的权重。一项汇总 1992~2017 年间 150 篇文章、607 个估计值的元分析，给出的平均值约为 1.96，95% 区间约为 1.82~2.10（Brown 等，2024）。这是许多研究的平均，不代表每个人在每个场合都是这个数。</p>
+<p class="prose">由此可以推出一个可检验的预测。抛硬币，正面赢 w 元、反面输 L 元。只有当 0.5w − 0.5λL &gt; 0，也就是 w &gt; λL 时，损失厌恶的人才会接受。若 λ 约为 2，赢 150、输 100 这种期望值为正的赌局也会被拒绝。</p>
+<p class="prose">同一套结果换一种说法，叫<b>框架效应</b><span class="en"> (framing effect)</span>：把结果描述成收益还是损失，会改变人的选择。下面的小实验让你自己检验。三道题里，每题两个选项的期望值完全相同；第 1、2 题的最终结果也完全相同，只是说法不同。</p>
+<div class="widget" id="w-exp" aria-labelledby="w1t">
+<h3 id="w1t">图 1　损失厌恶小实验：同样的结果，不同的说法</h3>
+<p class="prose" id="exp-intro">凭第一感觉作答，没有对错。金额是假想的，不会真的支付。</p>
+<fieldset class="exp-q"><legend><span class="qn">1</span>收益框架：你先得到 <span data-amt="2"></span> 元。再选一项：</legend><div class="chips"><button type="button" class="chip" data-q="0" data-k="A" aria-pressed="false">A　确定再得 <span data-amt="1"></span> 元</button><button type="button" class="chip" data-q="0" data-k="B" aria-pressed="false">B　抛硬币：正面再得 <span data-amt="2"></span> 元，反面不再得</button></div></fieldset>
+<fieldset class="exp-q"><legend><span class="qn">2</span>损失框架：你先得到 <span data-amt="4"></span> 元。再选一项：</legend><div class="chips"><button type="button" class="chip" data-q="1" data-k="C" aria-pressed="false">C　确定被扣 <span data-amt="1"></span> 元</button><button type="button" class="chip" data-q="1" data-k="D" aria-pressed="false">D　抛硬币：正面被扣 <span data-amt="2"></span> 元，反面不扣</button></div></fieldset>
+<fieldset class="exp-q"><legend><span class="qn">3</span>得失各半：不另给钱。有人邀你抛一次硬币：</legend><div class="chips"><button type="button" class="chip" data-q="2" data-k="E" aria-pressed="false">E　接受：正面赢 <span data-amt="1"></span> 元，反面输 <span data-amt="1"></span> 元</button><button type="button" class="chip" data-q="2" data-k="F" aria-pressed="false">F　不参加</button></div></fieldset>
+<div class="chart" id="exp-chart"></div>
+<ul class="legend"><li><span class="mk"></span>确定的结果</li><li><span class="mk half"></span>50% 机会的结果</li><li><span class="sw ev"></span>期望值</li><li><span class="mk band"></span>你的选择</li></ul>
+<div class="controls"><div class="ctl full"><label for="stake">金额单位 u（元）</label><output id="stake-value" for="stake"></output><input id="stake" type="range" min="100" max="5000" step="100" value="500" aria-describedby="stake-hint"><span class="hint" id="stake-hint">100–5000 元。所有金额按 u 等比例缩放，已作的选择保留；可以换个金额重新想一想。</span></div></div>
+<dl class="read pairs"><div><dt>第 1 题（收益框架）</dt><dd id="r-q1"></dd></div><div><dt>第 2 题（损失框架）</dt><dd id="r-q2"></dd></div><div><dt>第 3 题（得失各半）</dt><dd id="r-q3"></dd></div><div><dt>第 1、2 题各选项的期望值</dt><dd id="r-ev12"></dd></div><div><dt>第 3 题两个选项的期望值</dt><dd id="r-ev3"></dd></div><div><dt>第 1、2 题前后对照</dt><dd id="r-pattern"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<div class="chips" role="group" aria-label="查看其他选择组合"><button type="button" class="chip" data-preset="ADF" aria-pressed="false">看示例：随框架翻转</button><button type="button" class="chip" data-preset="ACF" aria-pressed="false">看示例：前后一致求稳</button><button type="button" class="chip" id="exp-reset">清空重答</button></div>
+<p class="note">金额为教学用的假想数字。横轴是相对实验开始前多拿到的钱；第 1 题的“先得 2u”与第 2 题的“先得 4u”已计入。你的选择只保存在本页内存中，不上传、不写入浏览器存储，刷新页面即清空。单次假想选择不能测出一个人的 λ，只用来体会框架的作用。</p>
+</div>
+<p class="prose">把第 1、2 题算到底：A 和 C 都是确定拿到 3u；B 和 D 都是一半机会拿到 2u、一半机会拿到 4u。只看最终结果的人，应当在两题中作出同样的选择，A 配 C，或 B 配 D。</p>
+<p class="prose">在收益框架里选稳妥，在损失框架里选赌一把，是框架效应的典型表现。损失厌恶解释了后半段：确定扣钱是一个必然的损失，赌一把至少有一半机会完全不亏，所以很多人宁愿冒险。参照点从“先得 2u”换成“先得 4u”，同样的结果就从“多得”变成了“少亏”。</p>
+<p class="prose">第 3 题要小心解读。拒绝期望值为零的赌局，符合损失厌恶，也符合标准模型里普通的风险规避。只有在赌注很小、赢面明显更大（例如赢 150、输 100）时仍然拒绝，才更难用普通风险规避解释，因为小额输赢对一个人的总财富几乎没有影响。</p>
+</section>
+<section id="anchoring">
+<h2>锚定、现时偏好与心理账户</h2>
+<h3>锚定：先看到的数字，会拉着判断走</h3>
+<p class="prose"><b>锚定</b><span class="en"> (anchoring)</span> 是估计一个数时，从一个起始数字出发调整，而调整往往不够，结果偏向起点。商品先标“原价 3999 元”再标“现价 1999 元”，原价就成了锚；谈判中先报的价格，也常常成为后面讨论的中心。</p>
+<p class="prose">开场研究的作者也用锚定解释部分现象：改革前员工最常见的缴费比例是 6%，那是拿满公司配款的点；改革后最常见的变成默认的 3%。连那些主动改过设置的新员工，也比老员工更常停在 3% 或货币市场基金上。作者认为，这里既有锚定，也有员工把默认当成公司建议的作用。</p>
+<h3>现时偏好：计划时很耐心，事到眼前就推迟</h3>
+<p class="prose"><b>现时偏好</b><span class="en"> (present bias)</span> 指人对“现在”给予特别高的权重。下面是一个示意：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="现时偏好的示意选择，可横向滚动"><table class="tbl"><caption>假想选择，用于说明偏好反转；两行的差别都是“多等 7 天、多得 20 元”。</caption><thead><tr><th scope="col">情景</th><th scope="col">较早</th><th scope="col">较晚</th><th scope="col">现时偏好者可能的选择</th></tr></thead><tbody>
+<tr><td>今天就要决定</td><td>今天拿 100 元</td><td>7 天后拿 120 元</td><td>拿今天的 100</td></tr>
+<tr><td>一年前就要决定</td><td>52 周后拿 100 元</td><td>53 周后拿 120 元</td><td>多等一周拿 120</td></tr>
+</tbody></table></div>
+<p class="prose">如果每天的耐心程度一样，两行的选择应当一致，因为都是多等 7 天换 20 元。现时偏好让人在远期计划里很耐心，到了眼前又改主意。下个月开始存钱、明天开始锻炼、下周再填养老报名表，都是同一个结构。默认加入恰好绕开了“明天再说”：不行动也会开始储蓄。</p>
+<h3>心理账户：钱本来可以互换，人却给它贴标签</h3>
+<p class="prose"><b>心理账户</b><span class="en"> (mental accounting)</span> 指人把钱按来源或用途分进不同的“账户”，在账户之间不愿挪用。工资里的 1000 元舍不得花，年终奖里的 1000 元却很快花掉；一边背着高息信用卡债，一边保留一笔低息的“教育基金”不动。</p>
+<p class="prose">在标准模型里，钱可以互相替代，1000 元就是 1000 元。心理账户有时能帮人自我约束，例如专款专用防止乱花；有时也会让人付出更高的利息成本。它和<a href="../m01/02-marginal-thinking.html#sunk-cost">沉没成本谬误</a>一样，都是让与未来决策无关的分类左右了决策。</p>
+</section>
+<section id="nudge">
+<h2>默认选项与助推：保留选择，改变“不选”的后果</h2>
+<p class="prose"><b>默认选项</b><span class="en"> (default option)</span> 是一个人什么都不做时自动得到的结果。开场研究里，改革前的默认是“不参加”，改革后是“3%、货币市场基金”。默认的力量至少有三个来源，论文都讨论过：</p>
+<ol class="qs"><li><b>拖延与惯性。</b>报名要比较缴费比例和九只基金，决策越复杂，人越容易推迟。现时偏好让推迟一再发生。</li><li><b>隐含建议。</b>员工可能把公司设定的默认当成“推荐方案”。</li><li><b>锚定。</b>默认的 3% 成了思考缴费比例的起点。</li></ol>
+<p class="prose">损失厌恶也可能参与其中：一旦参照点变成“已经在存”，退出就像放弃一样东西。这一条是本课的推断，论文没有直接检验。</p>
+<p class="prose">Thaler 与 Sunstein 在 2008 年出版的《助推》一书中提出<b>选择架构</b><span class="en"> (choice architecture)</span>：任何决策都发生在某种设计好的情境里，选项的顺序、默认、表述都在影响选择。<b>助推</b><span class="en"> (nudge)</span> 是选择架构中以可预测的方式改变行为、但不禁止任何选项的设计；它必须容易避开、成本低。把水果放在食堂与视线齐平的位置是助推，禁止卖垃圾食品就不是。</p>
+<h3>同一个默认，有收获也有代价</h3>
+<p class="prose">论文同时记录了两面。收获是参与率大幅上升，而且不同人群之间的差距缩小：改革前一批员工中，白人与黑人员工的参与率相差 21 个百分点；改革后一批中，差距缩小到 7 个百分点。</p>
+<p class="prose">代价是很多人停在默认上不动。自动加入的一批员工中，61% 完全保持默认，即 3% 的缴费比例、全部投入货币市场基金；改革前入职的员工里，这样选的人只有约 1%。缴费比例的分布也从 6% 及以上移向恰好 3%。对一部分本来会主动多存、多配股票的人来说，默认可能让他们存得更少、投资更保守。</p>
+<h3>围绕助推的不同看法</h3>
+<div class="tablewrap" tabindex="0" role="region" aria-label="助推争议中的不同观点，可横向滚动"><table class="tbl comparison"><thead><tr><th scope="col">问题</th><th scope="col">支持者的理由</th><th scope="col">批评者的理由</th></tr></thead><tbody>
+<tr><td>是否干预了自由</td><td>选项一个没少，退出只需一张表；而且任何表格总有一个默认，不存在完全“中立”的设计，不如选一个对多数人更好的。</td><td>正因为人会停在默认上，设计者实际上替很多人作了决定。“随时可以退出”在形式上成立，对拖延的人未必真有意义。</td></tr>
+<tr><td>谁知道什么对你好</td><td>如果一个人冷静计划时本来就想多存钱，只是一再拖延，默认加入是在帮他兑现自己的长期计划。</td><td>人的处境差别很大。急需现金或背着高息债务的人，多存一点不一定更好；统一默认可能适合平均人而不适合个人。</td></tr>
+<tr><td>设计者是否可信</td><td>公开、透明、以当事人利益为目标的默认，可以接受公众检验。</td><td>同样的手法也被用于默认勾选续费、捆绑销售。设计者的利益不一定与当事人一致，需要规则约束谁能设默认、怎么设。</td></tr>
+<tr><td>与其他政策相比</td><td>成本低、见效快，不需要大幅补贴或强制。</td><td>可能分散对强制储蓄、提高配款、金融教育或收入本身等更根本问题的注意；也有人主张让每个人“主动选择”，不设默认。</td></tr>
+</tbody></table></div>
+<p class="prose">这些分歧不全是事实之争，也涉及价值判断：你更看重结果，还是更看重“由本人亲自选择”。评估一项具体的助推，可以问四个问题：默认对多数人是否合适，退出是否真的容易，信息是否公开，设计者能否从中获利。</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“行为经济学证明人不理性，经济学模型都没用了。”</p><p>行为经济学研究的是有规律、可预测的偏离，并把参照点、现时偏好等加进模型。很多场景下，人对价格和激励的反应仍然符合标准模型。</p></div>
+<div class="mis"><p class="said">“损失厌恶就是不敢冒险。”</p><p>损失厌恶围绕参照点，让人在损失框架里反而愿意赌一把，例如实验第 2 题选 D。普通的风险规避看最终财富，不会因为说法改变而改变选择。</p></div>
+<div class="mis"><p class="said">“助推不限制任何选择，所以没有成本，越多越好。”</p><p>默认可能不适合具体的人，开场研究中很多人停在偏低的 3% 和货币市场基金上；同样的手法也能被利益不一致的设计者使用。要逐项看默认内容、退出难度和透明度。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先问：选项和结果变了没有？如果没变，是什么让选择变了？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">每张卡试着举一个自己生活里的例子。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>为什么改默认能让参与率从 37% 升到 86%？</b>报名需要比较缴费比例和多只基金，复杂的决定容易被一再推迟，这是现时偏好与惯性；员工还可能把默认当成公司的建议。默认加入后，不行动的结果从“不存”变成“存 3%”，拖延的人也开始储蓄。标准模型里填一张表的成本很小，难以解释这么大的变化。</div></li><li><div><b>默认是帮了员工，还是绑住了员工？</b>两者都有证据。参与率提高、群体差距缩小是收益；61% 的新员工停在 3% 和货币市场基金上，缴费比例从 6% 及以上移向 3%，对一部分人是代价。默认的内容和默认的存在同样重要。</div></li><li><div><b>设计默认是聪明的政策还是越界？</b>支持者认为选项没有减少、总要有一个默认，不如设一个对多数人更好的；批评者担心设计者替人作决定、默认不适合个人、手法可能被滥用。可以用四个问题检验：默认对多数人是否合适、退出是否容易、信息是否公开、设计者是否获利。结论取决于你如何权衡结果与自主选择。</div></li></ol>
+<p class="prose">下次看到“默认勾选”“限时优惠”“原价划掉”，可以先问：如果换一种说法，我的选择会变吗？如果会，就值得停下来，按最终结果再算一遍。</p>
+<button type="button" class="chip" id="goChart">回到图 1，重新作答</button>
+</section>
+<section id="sources"><h2>资料来源</h2>
+<ol class="qs sources">
+<li>Madrian, B. C., &amp; Shea, D. F. (2001). The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior. <i>Quarterly Journal of Economics</i>, 116(4), 1149–1187. 工作论文版本：NBER Working Paper 7682（2000 年 5 月），<a href="https://www.nber.org/papers/w7682">https://www.nber.org/papers/w7682</a>。本课所引 37%、86%、61%、约 1%、3% 默认比例、群体差距等数字均出自该文。</li>
+<li>Brown, A. L., Imai, T., Vieider, F. M., &amp; Camerer, C. F. (2024). Meta-analysis of Empirical Estimates of Loss Aversion. <i>Journal of Economic Literature</i>, 62(2), 485–516. <a href="https://www.aeaweb.org/doi/10.1257/jel.20221698">https://www.aeaweb.org/doi/10.1257/jel.20221698</a></li>
+<li>London, R. (2008 年 10 月 10 日). Intelligent design. Harvard Law Today（介绍 Thaler 与 Sunstein《助推》一书及其对助推与选择架构的定义）。<a href="https://hls.harvard.edu/today/intelligent-design/">https://hls.harvard.edu/today/intelligent-design/</a></li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
+var C=window.Charts,el=C.el;
+function yuan(n){return C.fmt(n,0);}
+/* 每个选项：相对实验开始前多拿到的钱，单位 u；[倍数, 概率] */
+var OPTS={
+  A:{q:0,out:[[3,1]],txt:function(u){return 'A 确定再得 '+yuan(u)+' 元';}},
+  B:{q:0,out:[[2,.5],[4,.5]],txt:function(u){return 'B 抛硬币再得 '+yuan(2*u)+' 或 0 元';}},
+  C:{q:1,out:[[3,1]],txt:function(u){return 'C 确定被扣 '+yuan(u)+' 元';}},
+  D:{q:1,out:[[2,.5],[4,.5]],txt:function(u){return 'D 抛硬币被扣 '+yuan(2*u)+' 或 0 元';}},
+  E:{q:2,out:[[-1,.5],[1,.5]],txt:function(u){return 'E 接受，赢或输 '+yuan(u)+' 元';}},
+  F:{q:2,out:[[0,1]],txt:function(){return 'F 不参加';}}
+};
+var ORDER=['A','B','C','D','E','F'];
+function ev(k){return OPTS[k].out.reduce(function(s,o){return s+o[0]*o[1];},0);}
+var choice=[null,null,null];
+var box=$('#exp-chart');
+function stake(){return +$('#stake').value;}
+function pattern(){
+  var a=choice[0],b=choice[1];
+  if(!a||!b){return {key:'wait',label:'待完成'};}
+  if(a==='A'&&b==='D'){return {key:'AD',label:'翻转：收益求稳，损失冒险'};}
+  if(a==='B'&&b==='C'){return {key:'BC',label:'翻转：收益冒险，损失求稳'};}
+  if(a==='A'&&b==='C'){return {key:'AC',label:'一致：两题都求稳'};}
+  return {key:'BD',label:'一致：两题都冒险'};
+}
+function verdictText(u){
+  var p=pattern(),n=choice.filter(Boolean).length,t='';
+  var s3=yuan(3*u),s2=yuan(2*u),s4=yuan(4*u),s1=yuan(u);
+  if(n===0){return '还没有作答。先凭第一感觉选完三道题。图上已经可以看到：A 与 C 的结果都是确定多拿 '+s3+' 元，B 与 D 都是一半机会多拿 '+s2+' 元、一半机会多拿 '+s4+' 元。';}
+  if(p.key==='wait'){t='第 1、2 题还缺一题，两题都选完才能判断说法是否改变了你的选择。';}
+  else if(p.key==='AD'){t='你在第 1 题选了确定的 A，第 2 题选了赌一把的 D。两题最终结果完全相同：A 与 C 都是确定多拿 '+s3+' 元，B 与 D 都是一半机会 '+s2+' 元、一半机会 '+s4+' 元。只换了说法，你就从求稳变成冒险。这是框架效应的典型模式：参照点从“先得 '+s2+' 元”变成“先得 '+s4+' 元”，确定被扣 '+s1+' 元成了必然的损失，损失厌恶让赌一把显得更可取。';}
+  else if(p.key==='BC'){t='你在第 1 题选了赌一把的 B，第 2 题选了确定的 C。两题最终结果完全相同，你的选择仍随说法改变，但方向与损失厌恶预测的相反：收益框架里冒险，损失框架里求稳。说法影响了你，只是不能用损失厌恶来解释。';}
+  else if(p.key==='AC'){t='你两题都选了确定的结果（A 与 C），都是确定多拿 '+s3+' 元。你按最终结果作答，没有被得失说法带动；在这个金额下偏向稳妥，符合标准模型里的风险规避。';}
+  else{t='你两题都选了赌一把（B 与 D），结果都是一半机会多拿 '+s2+' 元、一半机会多拿 '+s4+' 元。你按最终结果作答，没有被得失说法带动；在这个金额下不排斥风险。';}
+  if(choice[2]==='F'){t+='第 3 题你拒绝了期望值为 0 的抛硬币。这与损失厌恶一致：若输 '+s1+' 元的难受超过赢 '+s1+' 元的高兴，这个赌局的感受值为负。但普通的风险规避也会拒绝它，单凭这一题无法区分两种解释。';}
+  else if(choice[2]==='E'){t+='第 3 题你接受了期望值为 0 的抛硬币，在这个金额下没有表现出损失厌恶。';}
+  else{t+='第 3 题还没有作答。';}
+  return t;
+}
+function ariaText(u){
+  var picks=choice.filter(Boolean);
+  return '图 1：六个选项相对实验开始前多拿到的钱。A 与 C 确定多拿 '+yuan(3*u)+' 元；B 与 D 各一半机会多拿 '+yuan(2*u)+' 或 '+yuan(4*u)+' 元，期望值都是 '+yuan(3*u)+' 元；E 一半机会多拿 '+yuan(u)+' 元、一半机会少 '+yuan(u)+' 元，F 不变，期望值都是 0。'+(picks.length?'你的选择：'+picks.join('、')+'。':'尚未作答。');
+}
+function draw(){
+  var u=stake(),w=Math.max(280,Math.floor(box.clientWidth));
+  var m={l:w<440?44:52,r:16,t:8,b:44},rowH=34,h=m.t+ORDER.length*rowH+m.b,iw=w-m.l-m.r;
+  function x(k){return m.l+(k+1)/5*iw;}
+  var svg=el('svg',{viewBox:'0 0 '+w+' '+h,width:w,height:h,'class':'plot',role:'img','aria-label':ariaText(u)});
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ORDER.length*rowH,'class':'plotbg'}));
+  ORDER.forEach(function(k,i){
+    if(choice[OPTS[k].q]===k){svg.appendChild(el('rect',{x:m.l,y:m.t+i*rowH+3,width:iw,height:rowH-6,'class':'rowband'}));}
+  });
+  for(var j=-1;j<=4;j++){
+    var X=x(j);
+    svg.appendChild(el('line',{x1:X,x2:X,y1:m.t,y2:m.t+ORDER.length*rowH,'class':'gridline'}));
+    svg.appendChild(el('text',{x:X,y:m.t+ORDER.length*rowH+16,'text-anchor':'middle','class':'tick'},yuan(j*u)));
+  }
+  [2,4].forEach(function(i){svg.appendChild(el('line',{x1:m.l,x2:m.l+iw,y1:m.t+i*rowH,y2:m.t+i*rowH,'class':'groupline'}));});
+  svg.appendChild(el('rect',{x:m.l,y:m.t,width:iw,height:ORDER.length*rowH,'class':'plotframe'}));
+  ORDER.forEach(function(k,i){
+    var cy=m.t+(i+.5)*rowH,sel=choice[OPTS[k].q]===k,o=OPTS[k].out;
+    svg.appendChild(el('text',{x:m.l-8,y:cy+4,'text-anchor':'end','class':'rowlab'+(sel?' sel':'')},'题'+(OPTS[k].q+1)+' '+k));
+    if(o.length===2){svg.appendChild(el('line',{x1:x(o[0][0]),x2:x(o[1][0]),y1:cy,y2:cy,'class':'gamble'}));}
+    svg.appendChild(el('line',{x1:x(ev(k)),x2:x(ev(k)),y1:cy-12,y2:cy+12,'class':'evtick','data-ev':String(ev(k)*u)}));
+    o.forEach(function(p){svg.appendChild(el('circle',{cx:x(p[0]),cy:cy,r:6,'class':'dot'+(p[1]<1?' half':''),'data-k':k,'data-v':String(p[0]*u)}));});
+  });
+  svg.appendChild(el('text',{x:m.l+iw/2,y:h-6,'text-anchor':'middle','class':'axtitle'},'相对实验开始前多拿到的钱（元）'));
+  box.replaceChildren(svg);
+}
+function update(){
+  var u=stake();
+  $('#stake-value').textContent=yuan(u)+' 元';$('#stake').setAttribute('aria-valuetext',yuan(u)+' 元');
+  $$('[data-amt]').forEach(function(s){s.textContent=yuan(+s.dataset.amt*u);});
+  $$('[data-q]').forEach(function(b){b.setAttribute('aria-pressed',String(choice[+b.dataset.q]===b.dataset.k));});
+  $$('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed',String(choice.join('')===b.dataset.preset));});
+  ['r-q1','r-q2','r-q3'].forEach(function(id,i){$('#'+id).textContent=choice[i]?OPTS[choice[i]].txt(u):'未选';});
+  $('#r-ev12').textContent='都是多拿 '+yuan(3*u)+' 元';
+  $('#r-ev3').textContent='都是 0 元';
+  $('#r-pattern').textContent=pattern().label;
+  $('#verdict').textContent=verdictText(u);
+  draw();
+}
+$$('[data-q]').forEach(function(b){b.addEventListener('click',function(){choice[+b.dataset.q]=b.dataset.k;update();});});
+$$('[data-preset]').forEach(function(b){b.addEventListener('click',function(){choice=b.dataset.preset.split('');update();});});
+$('#exp-reset').addEventListener('click',function(){choice=[null,null,null];update();});
+$('#stake').addEventListener('input',update);
+$('#goChart').addEventListener('click',function(){choice=[null,null,null];update();$('#w-exp').scrollIntoView({block:'start'});$('#w-exp [data-q]').focus({preventScroll:true});});
+C.watch(box,draw);update();
+
+var QUIZ=[
+{q:'某公司把养老计划从“主动报名”改为“默认加入、可随时退出”，配款和收益都不变，参与率大幅上升。标准模型最难解释的是什么？',o:['员工收入提高了，所以储蓄更多','选项与激励几乎没变，只改了“不行动”的后果，行为却大变','默认加入等于强制储蓄，员工无法退出','员工都算清楚了，发现默认方案恰好最优'],a:1,why:'难点在于选择集合和经济激励几乎不变。填一张表的成本很小，标准模型预测参与率不该因此大变；拖延、惯性和把默认当建议能解释这一变化。'},
+{q:'商家把“现在购买可省 200 元”改成“现在不买，你将损失 200 元优惠”，金额和条件都一样，购买的人变多。最贴切的解释是？',o:['锚定：200 元成为估价的起点','现时偏好：人偏爱现在消费','心理账户：优惠被放进单独的账户','框架效应：同一笔钱被说成损失，借助了损失厌恶'],a:3,why:'结果没变，只是把收益说成损失。损失带来的感受更强，所以这种说法更能推动行动。'},
+{q:'小李一月时计划“下个月起每月存 1000 元”，到了二月又推到三月，期间收入和利率都没变。哪种解释最贴切？',o:['现时偏好：远期计划时耐心，事到眼前更看重当下','损失厌恶：存钱就是损失，所以永远不存','理性调整：他得到了新信息','锚定：1000 元这个数字让他犹豫'],a:0,why:'条件没变，计划却在临近时反复推迟，这是现时偏好的典型结构：计划未来时很耐心，到了眼前又更看重当下。'},
+{q:'二手平台先显示“原价 3999 元”，再标“现价 1999 元”，买家觉得很划算。哪项最准确？',o:['原价一定是商品的真实成本，所以现价确实便宜','这是损失厌恶，因为买家怕失去 2000 元','先看到的 3999 成了锚，即使它与商品现在的价值无关，也会拉高买家的估计','理性的买家只看现价，所以原价不会有任何影响'],a:2,why:'这是锚定。原价可能与当前价值关系不大，但它成了判断的起点，买家以此衡量“省了多少”。'},
+{q:'某视频平台把“自动续费”设为默认勾选，取消要进入三层菜单。按本课的框架，哪项评价最恰当？',o:['既然可以取消，它就一定是对用户有利的助推','默认的力量设计者都能用，要看默认符合谁的利益、退出是否容易、信息是否透明','凡是默认选项都是操纵，应当全部禁止','默认选项只影响不理性的人，对大多数人无所谓'],a:1,why:'默认可以服务当事人，也可以服务设计者。退出越难、信息越不透明、设计者获利越多，就越难称为对用户有利的助推。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'行为经济学',en:'behavioral economics',d:'把心理学关于判断与选择的发现带入经济分析，研究人在哪些情境下系统地、可预测地偏离标准模型。'},
+{t:'参照点',en:'reference point',d:'人评价得失时用的比较基准，可以是现状、预期或刚听到的数字。同一结果相对不同参照点，可以是收益也可以是损失。'},
+{t:'损失厌恶',en:'loss aversion',d:'同样大小的损失比收益感受更强。元分析的平均损失厌恶系数约为 1.96，但个人与场合差异很大。'},
+{t:'框架效应',en:'framing effect',d:'结果不变，只改变描述方式（得或失），选择就随之改变。实验中 A 配 D 是典型表现。'},
+{t:'锚定',en:'anchoring',d:'估计时从起始数字出发调整且调整不足，结果偏向起点。原价标签、首次报价、默认缴费比例都可能成为锚。'},
+{t:'现时偏好',en:'present bias',d:'对“现在”给予特别高的权重，远期计划耐心、临近时改主意，导致拖延和偏好反转。'},
+{t:'心理账户',en:'mental accounting',d:'按来源或用途给钱贴标签、分账户管理，即使钱本可互换。可帮助自律，也可能带来额外成本。'},
+{t:'默认选项',en:'default option',d:'什么都不做时自动得到的结果。通过惯性、隐含建议和锚定影响选择。'},
+{t:'选择架构',en:'choice architecture',d:'决策所处的情境设计：选项顺序、表述、默认等。任何决策都有某种选择架构，不存在完全中立的设计。'},
+{t:'助推',en:'nudge',d:'以可预测方式改变行为、但不禁止选项、容易且低成本避开的选择架构设计。其正当性与适用范围仍有争议。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
