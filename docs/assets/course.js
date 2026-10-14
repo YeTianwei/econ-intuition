@@ -94,7 +94,7 @@
         {
           id: 'm04-04', title: '平台、网络效应与零边际成本',
           en: 'Platforms, network effects and zero marginal cost',
-          path: 'm04/04-platforms-network-effects.html', status: 'todo'
+          path: 'm04/04-platforms-network-effects.html', status: 'done'
         }
       ]
     },
