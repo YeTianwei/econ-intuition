@@ -365,7 +365,7 @@
 - 交互：外汇市场。调整两国利差、通胀差和风险情绪，看汇率方向和幅度。
 - 术语：汇率 exchange rate、升值 appreciation、贬值 depreciation、实际汇率 real exchange rate、利率平价 interest rate parity、购买力平价 purchasing power parity
 
-#### m13-03　国际收支与资本流动　`待做`
+#### m13-03　国际收支与资本流动　`完成`
 - 核心问题：贸易逆差一定是坏事吗？
 - 学会：经常账户与资本和金融账户；储蓄 − 投资 = 经常账户余额；资本流动的好处与风险；「热钱」。
 - 开场：某国贸易逆差扩大，成为政治议题。

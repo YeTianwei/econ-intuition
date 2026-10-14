@@ -303,7 +303,7 @@
         {
           id: 'm13-03', title: '国际收支与资本流动',
           en: 'Balance of payments and capital flows',
-          path: 'm13/03-balance-of-payments.html', status: 'todo'
+          path: 'm13/03-balance-of-payments.html', status: 'done'
         },
         {
           id: 'm13-04', title: '汇率制度与货币危机',
