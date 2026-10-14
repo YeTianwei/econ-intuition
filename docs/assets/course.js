@@ -199,7 +199,7 @@
         {
           id: 'm09-02', title: '索洛模型：资本积累的极限',
           en: 'The Solow model: limits to capital accumulation',
-          path: 'm09/02-solow-model.html', status: 'todo'
+          path: 'm09/02-solow-model.html', status: 'done'
         },
         {
           id: 'm09-03', title: '技术、制度与国家贫富',

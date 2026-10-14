@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>索洛模型：资本积累的极限</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m09-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>索洛模型：资本积累的极限</h1>
+<p class="sub">The Solow model: limits to capital accumulation</p>
+<p class="lede">多建工厂、多修道路、多买机器，经济就会长得更快。这在起步阶段往往成立。可是投资率不变，增速却会一年年降下来。问题不在于投资失效了，而在于每多一台机器带来的产出越来越少，旧机器又在不断磨损。</p>
+<p class="meta">约 22 分钟 · 1 个交互图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m08/01-gdp.html#expenditure">支出法中的投资 I</a>、<a href="../m08/01-gdp.html#real">实际 GDP</a>、<a href="../m08/01-gdp.html#per-capita">人均 GDP</a>，以及<a href="../m01/02-marginal-thinking.html#margin">边际思维</a>。本课所说的增长都指人均实际产出的增长。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>投资率连续多年保持在三成以上，某经济体人均增速却从两位数逐年回落</blockquote></figure>
+<p class="prose">新闻中的经济体和数字均为虚构。设想一个起步时机器、厂房和道路都很少的经济体，它把收入的很大一部分用于投资。头几年增长很快，之后增速逐渐放缓，而投资占比并没有下降。</p>
+<ol class="qs"><li>投资率没有降低，增速为什么会放缓？</li><li>如果把投资率再提高一些，能把增速永久拉回高位吗？</li><li>增速放缓本身说明经济出了问题吗？长期增长最终靠什么？</li></ol>
+</section>
+
+<section id="production">
+<h2>生产函数：机器越多，每台机器越不值钱</h2>
+<p class="prose"><b>生产函数</b><span class="en"> (production function)</span> 描述投入和产出之间的技术关系：给定资本 K 和劳动 L，最多能生产多少产出 Y。资本指机器、厂房、道路等用来生产的耐用品，不是银行存款。</p>
+<p class="prose">比较国家的生活水平，看的是人均量。把总量除以劳动者人数，得到每个劳动者拥有的资本 k 和产出 y。本课用一个常见的示意写法：</p>
+<p class="formula">y = k^α，教学中取 α = 1/3</p>
+<p class="prose">α 小于 1，意思是资本翻倍时，产出增加不到一倍。这就是<b>边际报酬递减</b><span class="en"> (diminishing returns)</span>：在劳动和技术不变时，每多投入一单位资本，新增的产出越来越少。它是边际思维在生产上的应用。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="边际报酬递减示意表，可横向滚动"><table class="tbl"><caption>按 y = k^(1/3) 计算的示意数字，单位为教学单位。</caption><thead><tr><th scope="col" class="num">每人资本 k</th><th scope="col" class="num">每人产出 y</th><th scope="col" class="num">新增资本</th><th scope="col" class="num">新增产出</th><th scope="col" class="num">每单位新增资本的产出</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="num">1.000</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr><td class="num">2</td><td class="num">1.260</td><td class="num">1</td><td class="num">0.260</td><td class="num">0.260</td></tr>
+<tr><td class="num">4</td><td class="num">1.587</td><td class="num">2</td><td class="num">0.327</td><td class="num">0.164</td></tr>
+<tr><td class="num">8</td><td class="num">2.000</td><td class="num">4</td><td class="num">0.413</td><td class="num">0.103</td></tr>
+<tr><td class="num">16</td><td class="num">2.520</td><td class="num">8</td><td class="num">0.520</td><td class="num">0.065</td></tr>
+</tbody></table></div>
+<p class="prose">每人资本从 1 增加到 16，产出只增加到原来的 2.5 倍。最后一栏一路下降：同样一单位新机器，在资本稀缺时作用很大，在资本充裕时作用很小。</p>
+<div class="analogy"><span class="lab">类比</span><p>一个外卖骑手原来步行送餐，给他一辆电动车，送单量会大增。再给他第二辆，只能在第一辆充电时换着用，多送不了几单。给到第三辆，几乎没有用处。人没有变多、送餐的方法也没有改进，再多的车也只能停在那里。</p></div>
+</section>
+
+<section id="steady-state">
+<h2>储蓄、折旧和稳态</h2>
+<p class="prose">资本从哪里来？在最简单的设定里，经济把产出的一个固定比例 s 用于投资，s 叫<b>储蓄率</b><span class="en"> (saving rate)</span>，这里储蓄全部转为投资。资本同时在流失：机器会磨损、老化，每年损失比例为 δ 的<b>折旧</b><span class="en"> (depreciation)</span>。人口按比例 n 增长时，新来的劳动者也需要配备资本，否则每人资本会被摊薄。</p>
+<p class="formula">每人资本的变化：Δk = s·f(k) − (n + δ)·k</p>
+<p class="prose">前一项是新增投资，后一项是维持每人资本不变所需的投资，叫<b>持平投资</b><span class="en"> (break-even investment)</span>。新增投资多于持平投资，每人资本就上升；少于持平投资，就下降。</p>
+<p class="prose">关键在于两项的形状不同。持平投资随 k 同比例上升，是一条直线。新增投资是产出的固定比例，产出受边际报酬递减约束，所以这条曲线越来越平。资本少时，曲线在直线上方，资本积累很快；资本越多，两者差距越小，最终相交。</p>
+<p class="prose">交点就是<b>稳态</b><span class="en"> (steady state)</span>：新增投资恰好补上折旧和人口摊薄，每人资本和每人产出都不再变化。从下方出发的经济会向它靠近，从上方出发的经济也会回落到它。越接近稳态，每年能补的差距越小，增速也就越低。</p>
+<div class="analogy"><span class="lab">类比</span><p>一个底部有漏洞的浴缸，水越深，漏得越快。水龙头的流量固定时，开始水位上升很快，之后越来越慢，最后进水等于漏水，水位停住。开大水龙头（提高储蓄率）会让水位停在更高处，但水位不会因此一直上涨下去。</p></div>
+<p class="prose">所以在没有技术进步时，提高储蓄率带来的是更高的稳态<em>水平</em>，加上一段时间的较快增长，而不是永久更高的增长率。这正是标题里的「资本积累的极限」。</p>
+</section>
+
+<section id="technology">
+<h2>技术进步：唯一能一直往上推的力量</h2>
+<p class="prose">如果稳态时每人产出不再增长，现实中人均收入为什么能持续上升上百年？索洛模型的回答是技术进步。设劳动效率 A 每年以 g 的比例提高，一个劳动者能顶过去更多人的工作。把 A·L 叫作<b>有效劳动</b><span class="en"> (effective labor)</span>，把资本和产出都按每单位有效劳动来计，记作 k̃ 和 ỹ。</p>
+<p class="formula">Δk̃ = s·f(k̃) − (n + g + δ)·k̃</p>
+<p class="formula">稳态：k̃* = (s / (n + g + δ))^(1/(1−α))，ỹ* = (k̃*)^α</p>
+<p class="prose">形式和前面一样，只是持平投资多了 g：有效劳动增长得更快，要维持每单位有效劳动的资本不变，需要更多投资。稳态公式说明，储蓄率越高、人口增长和折旧越慢，稳态越高。</p>
+<p class="prose">要分清两件事。按有效劳动计，经济在稳态停住，k̃ 和 ỹ 都不变。但每个劳动者的产出等于 A × ỹ，A 每年增长 g，所以<b>人均产出长期以 g 的速度增长</b>，总产出以 n + g 的速度增长。这条各变量按固定速度一起增长的路径叫<b>平衡增长路径</b><span class="en"> (balanced growth path)</span>。储蓄率、人口增长率只影响这条路径的高低，长期增长率只由 g 决定。</p>
+<p class="prose">现实中，产出增长里不能由资本和劳动投入增加解释的部分，常用<b>全要素生产率</b><span class="en"> (total factor productivity, TFP)</span> 来度量。它衡量同样的投入能生产多少，包括技术、管理和资源配置的效率。在本课的写法里，全要素生产率等于 A 的 1 − α 次方，两者同向变化。索洛 1957 年的研究用这种方法分解美国的增长，发现每年的增长只有一小部分能由劳动和资本投入增加来解释。</p>
+
+<div class="widget" id="w-solow" aria-labelledby="w1t">
+<h3 id="w1t">图 1　索洛模型：从起点走向稳态</h3>
+<div class="chips" role="group" aria-label="情景"><button type="button" class="chip" data-p="30,5,1,2,20" aria-pressed="true">高投资追赶</button><button type="button" class="chip" data-p="30,5,1,2,35" aria-pressed="false">储蓄率从 15% 提到 30%</button><button type="button" class="chip" data-p="20,5,1,2,185" aria-pressed="false">储蓄率从 30% 降到 20%</button><button type="button" class="chip" data-p="30,5,1,0,20" aria-pressed="false">没有技术进步</button></div>
+<div class="solow-pair">
+<div><p class="lab">左：投资与持平投资（按有效劳动计）</p><div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw model"></span>新增投资 s·f(k̃)</li><li><span class="sw alternative"></span>持平投资 (n+g+δ)k̃</li><li><span class="mk"></span>稳态 E；小点为每 10 年的位置</li></ul></div>
+<div><p class="lab">右：随时间的路径（100 年）</p>
+<div class="chips" role="group" aria-label="右图显示内容"><button type="button" class="chip" data-view="growth" aria-pressed="true">人均产出增长率</button><button type="button" class="chip" data-view="level" aria-pressed="false">k̃、ỹ 占稳态的 %</button></div>
+<div class="chart" id="chart2"></div>
+<ul class="legend" id="legend2"></ul></div>
+</div>
+<div class="controls">
+<div class="ctl"><label for="s">储蓄率 s（%）</label><output id="s-value" for="s"></output><input id="s" type="range" min="10" max="50" step="1" value="30" aria-describedby="s-hint"><span class="hint" id="s-hint">产出中用于投资的比例，10%–50%。</span></div>
+<div class="ctl"><label for="d">折旧率 δ（%/年）</label><output id="d-value" for="d"></output><input id="d" type="range" min="2" max="8" step="0.5" value="5" aria-describedby="d-hint"><span class="hint" id="d-hint">每年磨损掉的资本比例，2%–8%。</span></div>
+<div class="ctl"><label for="n">人口增长率 n（%/年）</label><output id="n-value" for="n"></output><input id="n" type="range" min="0" max="3" step="0.5" value="1" aria-describedby="n-hint"><span class="hint" id="n-hint">劳动者人数每年增长的比例，0%–3%。</span></div>
+<div class="ctl"><label for="g">技术增长率 g（%/年）</label><output id="g-value" for="g"></output><input id="g" type="range" min="0" max="3" step="0.5" value="2" aria-describedby="g-hint"><span class="hint" id="g-hint">劳动效率 A 每年提高的比例，0%–3%。</span></div>
+<div class="ctl full"><label for="k0">起点资本 k̃₀（占稳态的 %）</label><output id="k0-value" for="k0"></output><input id="k0" type="range" min="10" max="200" step="5" value="20" aria-describedby="k0-hint"><span class="hint" id="k0-hint">第 0 年每单位有效劳动的资本，用当前参数下稳态 k̃* 的百分比表示，10%–200%。</span></div>
+</div>
+<dl class="read pairs">
+<div><dt>持平投资率 n + g + δ</dt><dd id="r-m"></dd></div>
+<div><dt>稳态资本 k̃* / 稳态产出 ỹ*</dt><dd id="r-ss"></dd></div>
+<div><dt>起点 k̃₀ / ỹ₀</dt><dd id="r-k0"></dd></div>
+<div><dt>第 1 年人均产出增长率</dt><dd id="r-g1"></dd></div>
+<div><dt>第 20 年人均产出增长率</dt><dd id="r-g20"></dd></div>
+<div><dt>长期人均产出增长率</dt><dd id="r-glong"></dd></div>
+<div><dt>ỹ 与稳态的差距缩小一半</dt><dd id="r-half"></dd></div>
+<div><dt>第 100 年人均产出（第 0 年 = 100）</dt><dd id="r-idx"></dd></div>
+<div><dt>稳态每单位有效劳动的消费 (1 − s)ỹ*</dt><dd id="r-cs"></dd></div>
+</dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">全部数字为教学示意：ỹ = k̃^(1/3)，以年为步长，按 k̃ₜ₊₁ = k̃ₜ + s·k̃ₜ^(1/3) − (n+g+δ)·k̃ₜ 逐年计算，人均产出等于 A·ỹ，A 每年乘以 (1 + g)。坐标轴随参数自动缩放。「储蓄率从 15% 提到 30%」的起点约为新稳态的 35%，「从 30% 降到 20%」约为 184%，即原稳态的位置，滑块取最近的 5% 档。模型没有考虑人力资本、资源约束、开放经济和经济周期。</p>
+</div>
+
+<h3>四个实验</h3>
+<ol class="qs"><li>默认情景下，看右图增长率从第 1 年的高位一路下滑，最终贴近 g。左图的小点越来越密，说明越接近 E，每 10 年走过的距离越短。</li><li>把储蓄率从 30% 拉到 45%：稳态 k̃*、ỹ* 的读数上升，但右图的增长路径一点没变。起点是按稳态的比例设定的，而增速只取决于离稳态有多远。要看提高储蓄率带来的过渡增长，选「储蓄率从 15% 提到 30%」：经济从旧稳态出发，头几年增速高于 g，然后回落，长期仍等于 g。</li><li>选「储蓄率从 30% 降到 20%」：资本高于新稳态，新增投资补不上持平投资，k̃ 逐年下降，人均增长率在几十年里都低于 g，再慢慢回升。</li><li>选「没有技术进步」，再切到右图的增长率：人均增长最终降到零。随后只拖动 g，看稳态 ỹ* 略有下降，长期增长率却随 g 上升。</li></ol>
+</section>
+
+<section id="convergence">
+<h2>趋同：穷的追富的，但有条件</h2>
+<p class="prose">边际报酬递减带来一个推论：资本越少的地方，新增资本的回报越高，增长越快。如果两个经济体的储蓄率、人口增长、折旧和技术都一样，只是起点不同，穷的那个会增长得更快，两者的差距逐渐缩小，最终收敛到同一个稳态。这叫<b>趋同</b><span class="en"> (convergence)</span>。</p>
+<p class="prose">关键是「其他条件都一样」。模型预测的是<b>条件趋同</b><span class="en"> (conditional convergence)</span>：每个经济体趋向自己的稳态。储蓄率低、人口增长快的穷国，稳态本身就低，它离自己的稳态可能并不远，增速也就不一定快。所以不能简单地用「穷国是否比富国增长快」来检验这个模型，要先比较各自的稳态。</p>
+<p class="prose">在图 1 里，起点 k̃₀ 就是「离稳态有多远」。把它从 20% 拖到 80%，第 1 年增长率明显变低，长期增长率不变。两个经济体参数相同、起点不同，最后会走到同一个 ỹ*，人均产出的长期增速也都是 g。</p>
+<h3>模型留下的问题</h3>
+<p class="prose">索洛模型把长期增长归结为技术进步，但 g 在模型里是给定的，没有解释技术从哪里来，也没有解释为什么各国技术水平差别这么大。模型中的资本也只有实物资本；把教育和技能形成的<a href="../m07/02-human-capital.html#human-capital">人力资本</a>算进来，资本的作用会更大，但仍然面临边际报酬递减。下一课讨论创意、研发和制度如何决定技术进步。</p>
+<p class="prose">提高储蓄率是不是好政策，模型本身也不给统一答案。支持者看到的是更高的稳态收入和一段较快的追赶期；反对者会指出，多储蓄意味着当下少消费，而稳态消费 (1 − s)ỹ* 并不随储蓄率一直上升。在本图的示意设定下，s 约为 33% 时稳态消费最高，超过之后再多储蓄反而降低稳态消费。这个具体数值依赖 α = 1/3 的假设，现实中还要看投资效率和当代人与后代人之间如何取舍。</p>
+</section>
+
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“投资率越高，经济增长率就会永远越高。”</p><p>更高的储蓄率提高稳态的收入水平，并带来一段较快的过渡增长。到达新稳态后，人均增长率回到 g。投资改变的是高度，不是长期坡度。</p></div>
+<div class="mis"><p class="said">“增速放缓，说明这个经济体出了问题。”</p><p>接近稳态时增速放缓是边际报酬递减的正常结果。它既不能证明经济出了问题，也不能证明一切正常。要判断，得比较当前水平离稳态多远，以及技术进步有没有变慢。</p></div>
+<div class="mis"><p class="said">“到了稳态，经济就不再增长。”</p><p>停住的是按有效劳动计的 k̃ 和 ỹ。只要技术在进步，人均产出仍按 g 增长，总产出按 n + g 增长。只有 g = 0 时，人均产出才会停止增长。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先判断变化影响的是稳态水平，还是长期增长率。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">回忆时把每个概念放回左图的两条线上。</p><div class="cards" id="cards"></div></section>
+
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>投资率不变，增速为什么放缓？</b>起步时资本稀缺，每单位新资本带来的产出很高，新增投资远大于持平投资。资本积累起来后，边际报酬递减让新增投资的增幅变小，折旧和人口摊薄所需的投资却随资本同比例增加。差距缩小，增速随之下降。</div></li><li><div><b>再提高投资率能永久拉回增速吗？</b>不能。更高的储蓄率把稳态抬高，带来一段新的较快增长，然后增速再次回落。在索洛模型中，长期人均增长率只取决于技术进步的速度 g。而且多储蓄要以少消费为代价，是否值得需要另外权衡。</div></li><li><div><b>放缓是坏消息吗？长期靠什么？</b>放缓本身可能只是接近稳态的正常过程。真正决定长期生活水平增长的是技术和效率，也就是全要素生产率能否持续提高。读到这类新闻，可以追问：增长主要来自资本投入，还是来自生产率？生产率的增速有没有变化？</div></li></ol>
+<p class="prose">这条虚构新闻里的经济体，和图 1 默认情景很像：起点资本只有稳态的 20%，头几年增速很高，二三十年后逐渐接近技术进步的速度。</p>
+<button type="button" class="chip" id="goChart">回到图 1 的默认情景</button>
+</section>
+
+<section id="sources"><h2>资料来源</h2><ol class="qs"><li>The Royal Swedish Academy of Sciences，<a href="https://www.nobelprize.org/prizes/economic-sciences/1987/press-release/">The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel 1987: Press release</a>，1987 年 10 月 21 日；本课引用其对索洛 1956 年增长模型（储蓄率只影响收入水平、长期增长由技术进步决定）和 1957 年增长核算研究（年度增长只有一小部分能由劳动和资本投入增加解释）的概述。</li></ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,AL=1/3,T=100,view='growth';
+function $(s){return document.querySelector(s);}
+var box1=$('#chart1'),box2=$('#chart2');
+var SC=[[.2,.1],[.3,.1],[.4,.1],[.5,.1],[.6,.2],[.8,.2],[1,.2],[1.2,.2],[1.5,.5],[2,.5],[2.5,.5],[3,.5],[4,1],[5,1],[6,1],[8,2],[10,2],[12,2],[15,5],[20,5],[25,5],[30,5],[40,10],[50,10],[60,10],[80,20],[100,20],[120,20],[150,50],[200,50],[250,50],[300,50],[400,100],[500,100],[600,100],[800,200],[1000,200]];
+function nice(v){for(var i=0;i<SC.length;i++){if(SC[i][0]>=v-1e-9){return SC[i];}}return SC[SC.length-1];}
+function params(){return {s:+$('#s').value/100,d:+$('#d').value/100,n:+$('#n').value/100,g:+$('#g').value/100,r:+$('#k0').value/100};}
+function model(p){
+  var m=p.n+p.g+p.d,ks=Math.pow(p.s/m,1/(1-AL)),ys=Math.pow(ks,AL),k=[p.r*ks],t;
+  for(t=0;t<T;t++){k.push(k[t]+p.s*Math.pow(k[t],AL)-m*k[t]);}
+  var y=k.map(function(v){return Math.pow(v,AL);}),gr=[null];
+  for(t=1;t<=T;t++){gr.push(((1+p.g)*y[t]/y[t-1]-1)*100);}
+  var gap0=Math.abs(y[0]-ys),half=null;
+  if(gap0>1e-9){for(t=1;t<=T;t++){if(Math.abs(y[t]-ys)<=0.5*gap0){half=t;break;}}}
+  return {m:m,ks:ks,ys:ys,k:k,y:y,gr:gr,half:half,atSS:gap0<=1e-9,idx:100*Math.pow(1+p.g,T)*y[T]/y[0],cs:(1-p.s)*ys};
+}
+function pct(v,d){return C.fmt(v,d)+'%';}
+function fixTicks(f){f.svg.querySelectorAll('text.tick').forEach(function(t){var v=+t.textContent;t.textContent=(v<-1e-9?'−':'')+String(+Math.abs(v).toFixed(6));});}
+function line(f,pts,cls,id){var d=pts.map(function(q,i){return (i?'L':'M')+f.x(q[0]).toFixed(1)+' '+f.y(q[1]).toFixed(1);}).join('');var e=C.el('path',{d:d,'class':cls});if(id){e.setAttribute('id',id);}f.svg.appendChild(e);return e;}
+function hline(f,v,id){var e=C.el('line',{x1:f.m.l,x2:f.m.l+f.iw,y1:f.y(v),y2:f.y(v),'class':'guide'});if(id){e.setAttribute('id',id);}f.svg.appendChild(e);}
+function draw1(p,r){
+  if(!box1.clientWidth){return;}
+  var k0=r.k[0],X=nice(Math.max(1.8*r.ks,1.15*k0)),Y=nice(r.m*X[0]),XM=X[0];
+  var f=C.frame(box1,{id:'solow1',q0:0,q1:XM,p0:0,p1:Y[0],qs:X[1],ps:Y[1],xt:'按有效劳动计的资本 k̃',yt:'每单位有效劳动的投资',label:aria1(p,r)});
+  fixTicks(f);
+  C.guides(f,f.x(r.ks),f.y(r.m*r.ks),false);
+  var sf=[],i;for(i=0;i<=160;i++){var kk=XM*i/160;sf.push([kk,p.s*Math.pow(kk,AL)]);}
+  line(f,sf,'curve model','sf-curve');line(f,[[0,0],[XM,r.m*XM]],'curve alternative','be-line');
+  for(i=10;i<T;i+=10){f.svg.appendChild(C.el('circle',{cx:f.x(r.k[i]),cy:f.y(p.s*Math.pow(r.k[i],AL)),r:3,'class':'dot path-dot'}));}
+  if(!r.atSS){
+    var x0=f.x(k0);
+    f.svg.appendChild(C.el('line',{x1:x0,x2:x0,y1:f.y(p.s*Math.pow(k0,AL)),y2:f.m.t+f.ih,'class':'guide'}));
+    C.arrow(f,x0,f.y(r.m*k0),x0,f.y(p.s*Math.pow(k0,AL)));
+    f.svg.appendChild(C.el('circle',{id:'k0-point',cx:x0,cy:f.y(p.s*Math.pow(k0,AL)),r:5,'class':'pt base'}));
+    C.label(f,'k̃₀','ptlab',x0,f.m.t+f.ih-6,'middle');
+  }
+  f.svg.appendChild(C.el('circle',{id:'E-point',cx:f.x(r.ks),cy:f.y(r.m*r.ks),r:5,'class':'pt'}));
+  C.label(f,'E','ptlab',f.x(r.ks)-10,f.y(r.m*r.ks)-10,'end');
+  var kl=Math.min(XM,0.92*Y[0]/r.m)*0.8;
+  C.label(f,'(n+g+δ)k̃','alternative',f.x(kl)-6,f.y(r.m*kl),'end');
+  C.label(f,'s·f(k̃)','model',f.m.l+f.iw-4,f.y(p.s*Math.pow(XM,AL))+18,'end');
+  box1.replaceChildren(f.svg);
+}
+function placeRef(f,text,v,series){
+  var top=f.m.t,bot=f.m.t+f.ih,L=f.m.l,R=f.m.l+f.iw,y0=f.y(v),w=text.length*7.5+6,best=null;
+  [[R-4,'end',16],[R-4,'end',-7],[L+6,'start',-7],[L+6,'start',16],[(L+R)/2,'middle',-7],[(L+R)/2,'middle',16]].forEach(function(c){
+    var yb=y0+c[2];if(yb-11<top||yb+2>bot){return;}
+    var x0=c[1]==='end'?c[0]-w:c[1]==='start'?c[0]:c[0]-w/2,x1=x0+w,d=1e9;
+    series.forEach(function(pts){pts.forEach(function(q){var X=f.x(q[0]);if(X>=x0-4&&X<=x1+4){var Y=f.y(q[1]);d=Math.min(d,Math.max(yb-11-Y,Y-(yb+2),0)+(Y>=yb-11&&Y<=yb+2?-100:0));}});});
+    if(!best||d>best.d){best={x:c[0],a:c[1],y:yb,d:d};}
+  });
+  C.label(f,text,'ptlab',best.x,best.y,best.a);
+}
+function draw2(p,r){
+  if(!box2.clientWidth){return;}
+  var f,t;
+  if(view==='level'){
+    var hi=Math.max(r.k[0],r.ks)/r.ks*100,Y=hi>110?[240,40]:[120,20];
+    f=C.frame(box2,{id:'solow2',q0:0,q1:T,p0:0,p1:Y[0],qs:20,ps:Y[1],xt:'年份',yt:'占稳态的 %',label:aria2(p,r)});
+    fixTicks(f);hline(f,100,'ref-line');
+    var kp=[],yp=[];for(t=0;t<=T;t++){kp.push([t,r.k[t]/r.ks*100]);yp.push([t,r.y[t]/r.ys*100]);}
+    line(f,kp,'curve alternative','k-path');line(f,yp,'curve model','y-path');
+    placeRef(f,'稳态 = 100%',100,[kp,yp]);
+    $('#legend2').innerHTML='<li><span class="sw model"></span>ỹ / ỹ*</li><li><span class="sw alternative"></span>k̃ / k̃*</li><li><span class="sw g"></span>稳态</li>';
+  }else{
+    var gs=r.gr.slice(1),mx=Math.max.apply(null,gs.concat([p.g*100])),mn=Math.min.apply(null,gs.concat([0])),st,p1;
+    if(mx<=4){st=1;}else if(mx<=10){st=2;}else{st=5;}
+    p1=Math.max(st,Math.ceil(mx*1.04/st)*st);var p0=mn<0?-Math.ceil(-mn/st)*st:0;
+    f=C.frame(box2,{id:'solow2',q0:0,q1:T,p0:p0,p1:p1,qs:20,ps:st,xt:'年份',yt:'人均产出增长率 %/年',label:aria2(p,r)});
+    fixTicks(f);hline(f,p.g*100,'ref-line');
+    var gp=[];for(t=1;t<=T;t++){gp.push([t,r.gr[t]]);}
+    line(f,gp,'curve model','g-path');
+    placeRef(f,'g = '+pct(p.g*100,1),p.g*100,[gp]);
+    $('#legend2').innerHTML='<li><span class="sw model"></span>人均产出增长率</li><li><span class="sw g"></span>技术增长率 g</li>';
+  }
+  box2.replaceChildren(f.svg);
+}
+function aria1(p,r){return '图 1 左：新增投资曲线与持平投资直线相交于稳态 E，k̃* = '+r.ks.toFixed(2)+'，每单位有效劳动的投资 '+(r.m*r.ks).toFixed(2)+'。起点 k̃₀ = '+r.k[0].toFixed(2)+'，'+(r.atSS?'已在稳态。':(r.k[0]<r.ks?'在稳态左侧，资本逐年增加。':'在稳态右侧，资本逐年减少。'));}
+function aria2(p,r){return view==='level'?'图 1 右：k̃ 与 ỹ 占各自稳态的百分比，第 0 年分别为 '+(r.k[0]/r.ks*100).toFixed(1)+'% 和 '+(r.y[0]/r.ys*100).toFixed(1)+'%，第 100 年分别为 '+(r.k[T]/r.ks*100).toFixed(1)+'% 和 '+(r.y[T]/r.ys*100).toFixed(1)+'%。':'图 1 右：人均产出增长率，第 1 年 '+pct(r.gr[1],2)+'，第 20 年 '+pct(r.gr[20],2)+'，第 100 年 '+pct(r.gr[T],2)+'，长期趋向 g = '+pct(p.g*100,1)+'。';}
+function update(){
+  var p=params(),r=model(p);
+  $('#s-value').textContent=Math.round(p.s*100)+'%';$('#d-value').textContent=pct(p.d*100,1);$('#n-value').textContent=pct(p.n*100,1);$('#g-value').textContent=pct(p.g*100,1);$('#k0-value').textContent=Math.round(p.r*100)+'%';
+  $('#s').setAttribute('aria-valuetext','储蓄率 '+Math.round(p.s*100)+'%');$('#d').setAttribute('aria-valuetext','折旧率每年 '+pct(p.d*100,1));$('#n').setAttribute('aria-valuetext','人口增长率每年 '+pct(p.n*100,1));$('#g').setAttribute('aria-valuetext','技术增长率每年 '+pct(p.g*100,1));$('#k0').setAttribute('aria-valuetext','起点资本为稳态的 '+Math.round(p.r*100)+'%');
+  $('#r-m').textContent=pct(r.m*100,1)+'/年';
+  $('#r-ss').textContent=r.ks.toFixed(2)+' / '+r.ys.toFixed(2);
+  $('#r-k0').textContent=r.k[0].toFixed(2)+' / '+r.y[0].toFixed(2);
+  $('#r-g1').textContent=pct(r.gr[1],2);$('#r-g20').textContent=pct(r.gr[20],2);$('#r-glong').textContent=pct(p.g*100,1)+'（= g）';
+  $('#r-half').textContent=r.atSS?'已在稳态':(r.half===null?'超过 100 年':'约 '+r.half+' 年');
+  $('#r-idx').textContent=r.idx.toFixed(0);
+  $('#r-cs').textContent=r.cs.toFixed(2);
+  var cur=['s','d','n','g','k0'].map(function(id){return +$('#'+id).value;}).join(',');
+  document.querySelectorAll('[data-p]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.p===cur));});
+  document.querySelectorAll('[data-view]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.view===view));});
+  var msg='储蓄率 '+Math.round(p.s*100)+'%，持平投资率 n + g + δ = '+pct(r.m*100,1)+'，稳态 k̃* = '+r.ks.toFixed(2)+'，ỹ* = '+r.ys.toFixed(2)+'。';
+  if(r.atSS){msg+='经济已在稳态：k̃ 和 ỹ 不变，人均产出每年增长 '+pct(p.g*100,1)+'，全部来自技术进步。';}
+  else if(r.k[0]<r.ks){msg+='起点资本只有稳态的 '+Math.round(p.r*100)+'%，新增投资多于持平投资。人均产出第 1 年增长 '+pct(r.gr[1],2)+'，第 20 年降到 '+pct(r.gr[20],2)+'，之后继续向 g = '+pct(p.g*100,1)+' 靠近。';}
+  else{msg+='起点资本是稳态的 '+Math.round(p.r*100)+'%，新增投资补不上持平投资，k̃ 逐年下降。人均产出第 1 年增长 '+pct(r.gr[1],2)+'，低于 g，之后逐渐回升到 g = '+pct(p.g*100,1)+'。';}
+  msg+=p.g>0?'按有效劳动计的产出最终停在 ỹ*，人均产出长期仍以每年 '+pct(p.g*100,1)+' 增长。':'没有技术进步，到达稳态后人均产出不再增长。';
+  if(!r.atSS&&r.half===null){msg+='参数下收敛很慢，100 年内差距还没有缩小一半。';}
+  $('#verdict').textContent=msg;
+  draw1(p,r);draw2(p,r);
+}
+['s','d','n','g','k0'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+document.querySelectorAll('[data-p]').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.p.split(',');['s','d','n','g','k0'].forEach(function(id,i){$('#'+id).value=v[i];});update();});});
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){view=b.dataset.view;update();});});
+C.watch(box1,function(){var p=params();draw1(p,model(p));});C.watch(box2,function(){var p=params();draw2(p,model(p));});
+$('#goChart').addEventListener('click',function(){var v=[30,5,1,2,20];['s','d','n','g','k0'].forEach(function(id,i){$('#'+id).value=v[i];});view='growth';update();$('#w-solow').scrollIntoView({block:'start'});$('#s').focus({preventScroll:true});});
+update();
+
+var QUIZ=[
+{q:'一个处于稳态的经济体把储蓄率从 20% 提高到 30%，其他参数不变。按索洛模型，长期会怎样？',o:['人均产出增长率永久提高约 10 个百分点','人均产出水平更高；过渡期增长加快，长期增长率仍等于 g','人均产出水平不变，因为多储蓄就是少消费','资本会一直增加，直到边际报酬变为零'],a:1,why:'储蓄率影响稳态水平，不影响长期增长率。提高储蓄率后，经济向更高的稳态移动，这段时间增长加快；到达后人均增长率回到 g。'},
+{q:'A、B 两国的储蓄率、人口增长、折旧和技术进步完全相同，A 的有效劳动人均资本只有 B 的四分之一。模型预测什么？',o:['B 增长更快，因为富国有更多钱投资','两国增长率相同，因为储蓄率相同','A 的稳态更低，所以永远追不上 B','A 在一段时间内增长更快，两国最终趋向同一个稳态'],a:3,why:'参数相同则稳态相同。A 离稳态更远，新增资本回报更高，增长更快，这是条件趋同。'},
+{q:'一国人口增长率从 1% 升到 2%，其他条件不变。稳态时会怎样？',o:['k̃* 和 ỹ* 下降，人均产出的长期增长率仍为 g','k̃* 和 ỹ* 上升，因为劳动者更多','人均产出的长期增长率下降 1 个百分点','什么都不变，人口只影响总产出'],a:0,why:'人口增长更快，资本被更多新劳动者摊薄，持平投资直线变陡，稳态降低。长期人均增长率只由 g 决定。'},
+{q:'某经济体已在平衡增长路径上，技术增长率 g = 2%。它的按有效劳动计的产出 ỹ 和人均产出接下来如何变化？',o:['两者都不变，因为已经到了稳态','ỹ 每年增长 2%，人均产出不变','ỹ 不变，人均产出每年增长约 2%','两者都每年增长 2%'],a:2,why:'稳态指按有效劳动计的量不变。人均产出等于 A × ỹ，A 每年增长 2%，所以人均产出每年增长约 2%。'},
+{q:'某经济体实际产出年增长 4%。按收入份额加权后，资本和劳动投入的增加合计解释了 1.5 个百分点。剩下的 2.5 个百分点在增长核算中通常归为什么？',o:['资本的边际报酬递减','全要素生产率的增长，包括技术和效率的变化，也可能混有测量误差','人口增长率','折旧率的下降'],a:1,why:'不能由投入增加解释的部分就是全要素生产率增长。它是一个残差，除了技术进步，也包含配置效率变化和测量误差。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'生产函数',en:'production function',d:'投入（资本、劳动）与最大产出之间的技术关系。本课示意为 y = k^(1/3)。'},
+{t:'边际报酬递减',en:'diminishing returns',d:'其他投入不变时，每多一单位资本带来的新增产出越来越少。它让资本积累的效果逐步减弱。'},
+{t:'持平投资',en:'break-even investment',d:'维持每单位有效劳动资本不变所需的投资，等于 (n + g + δ)k̃，用来弥补折旧和摊薄。'},
+{t:'稳态',en:'steady state',d:'新增投资恰好等于持平投资，按有效劳动计的资本和产出不再变化的状态。'},
+{t:'平衡增长路径',en:'balanced growth path',d:'到达稳态后，人均产出以 g、总产出以 n + g 的固定速度增长的路径。储蓄率只影响它的高低。'},
+{t:'趋同',en:'convergence',d:'离稳态越远增长越快，因而落后者逐渐追上领先者的趋势。'},
+{t:'条件趋同',en:'conditional convergence',d:'每个经济体趋向由自身储蓄、人口和技术决定的稳态。参数不同，稳态不同，穷国不一定增长更快。'},
+{t:'全要素生产率',en:'total factor productivity, TFP',d:'同样的资本和劳动能生产多少的总体效率。增长核算中常作为不能由投入增加解释的残差来度量。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
