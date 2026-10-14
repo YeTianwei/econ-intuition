@@ -94,6 +94,8 @@ section{margin-top:64px}
 .chip{font:inherit;font-size:14px;line-height:1.5;padding:5px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
 .chip:hover{background:var(--grid)}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:disabled{opacity:.55;cursor:not-allowed}
+.widget fieldset{border:0;padding:0;margin:0 0 16px;min-width:0}
 button:focus-visible,input:focus-visible{outline:2px solid var(--demand);outline-offset:2px}
 .chart{min-height:250px}
 .plot{display:block;max-width:100%}

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>重复博弈与合作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m05-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>重复博弈与合作</h1>
+<p class="sub">Repeated games and cooperation</p>
+<p class="lede">如果明天还要见面，今天占便宜可能很贵。长期关系能改变个人的账本，让合作不只依靠善意。但惩罚过重、噪声太大，或者人人知道最后一轮是哪天，也可能让合作瓦解。</p>
+<p class="meta">约 22 分钟 · 1 个交互区 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="01-nash-equilibrium.html#dilemma">囚徒困境与支付结构</a>。本课仍用 T=5、R=3、P=1、S=0，不重新定义一次博弈的均衡。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>街边小店宁愿重做一份餐也要留住熟客，景区新店却被投诉“一次生意做完就不管”</blockquote></figure>
+<p class="prose">两家店与投诉均为虚构，并非对街边店或景区商家的统计结论。假设服务质量不容易写进完整合同，小店可以认真服务，也可以节省眼前成本；顾客会决定是否回来，是否向别人推荐。</p>
+<ol class="qs"><li>同样想赚钱，为什么重复见面的可能性会改变服务选择？</li><li>“被坑一次就永不再来”和“下次表现好就原谅”，哪一种更能支持合作？</li><li>游客很少重访，是否意味着景区商家就没有长期激励，评分榜第一的策略又能否直接照搬？</li></ol>
+</section>
+<section id="future">
+<h2>今天的一轮，不再是全部账本</h2>
+<p class="prose"><b>重复博弈</b><span class="en"> (repeated game)</span> 是同一种阶段博弈反复进行，参与者可以根据过去的行为选择今天的行动。一次行动仍可能同时发生，但今天的选择会影响明天面对什么。因此，一整套策略不仅写“合作或背叛”，还要写遇到不同历史时怎么办。</p>
+<p class="prose">在上一课的囚徒困境里，对方今天合作时，我背叛可以拿 5 而不是 3。若只看今天，诱惑明确。若背叛会让对方从明天起不再合作，我损失的就不是一个抽象的道德评价，而是一串未来合作收益。这是长期关系可能自我维持的原因。</p>
+<p class="prose"><b>贴现</b><span class="en"> (discounting)</span> 把未来收益换算成今天看重的程度。用 δ 表示下一轮收益相对本轮的权重，0 ≤ δ &lt; 1。δ 越大，未来越重要；它不是“损失百分比”，也不是百分数利率本身。δ 接近零时，只看眼前的行为更容易出现。</p>
+<p class="formula">总价值 = 今天收益 + δ × 下一轮收益 + δ² × 再下一轮收益 + …</p>
+<p class="prose">如果每轮关系继续的概率是 q，而在确定继续时对下一轮的时间权重是 β，可以把有效 δ 理解成 qβ。即使两个人都很有耐心，只要再次相遇几乎不可能，眼前背叛的长期代价也会变小。这是“不耐心”与“没有未来”两条不同路径。</p>
+<div class="analogy"><span class="lab">类比</span><p>你和邻居长期轮流代收快递。一次把自己的麻烦推给对方很省事，但若因此失去以后每周的帮助，今天省的时间就不划算。若对方明天搬走，或者你根本不知道谁把快递弄丢，原来的互助约定就更难靠自己维持。</p></div>
+<h3>冷酷策略：一次偏离，永久结束合作</h3>
+<p class="prose"><b>冷酷策略</b><span class="en"> (grim trigger)</span> 先合作；只要发现对方有过一次背叛，以后永远背叛。先假定没有误操作，历史完全可见，双方都使用这个策略，而且关系没有一个大家确定的最后期限。</p>
+<p class="formula">持续合作：R / (1 − δ)；现在背叛：T + δP / (1 − δ)</p>
+<p class="prose">左边是一直接受每轮 R，右边是今天拿 T、以后只能拿 P。这里的无限和只是给两条未来路径记总账，不要求读者推导级数。只要合作路径不比背叛差，眼前的诱惑就被未来损失抵消。</p>
+<p class="formula">合作可维持的条件：δ ≥ (T − R) / (T − P) = (5 − 3) / (5 − 1) = 0.5</p>
+<p class="prose">δ=0.6 时，持续合作价值 7.5，立刻背叛价值 6.5，合作划算；δ=0.4 时分别是 5 和约 5.67，背叛更有利；恰好 0.5 时两者都是 6，合作是最优反应之一，并不是严格更好。</p>
+<p class="prose">这不是“只要 δ 大就必然合作”的预言。它说明在上述假设下，双方冷酷策略能支撑合作均衡。双方一直背叛也仍能成为均衡。惩罚还必须可信：在被触发后的相互背叛阶段，单方面改为合作只会得到更低的 S，所以继续背叛符合此模型的激励。现实中是否能识别违约、能否承受长期断交，都要另查。</p>
+</section>
+<section id="strategies">
+<h2>让策略像小程序一样明确</h2>
+<p class="prose"><b>以牙还牙</b><span class="en"> (tit-for-tat, TFT)</span> 第一轮合作，从第二轮起复制对方上一轮的行动。它会对背叛作出回应，但对方重新合作后，下一轮也重新合作。与冷酷策略不同，它不把一段糟糕历史永久锁死。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="五种策略规则，可横向滚动"><table class="tbl comparison"><caption>每轮双方先独立决定意图，再同时执行；这里不允许偷看对手本轮行动</caption><thead><tr><th scope="col">策略</th><th scope="col">规则</th><th scope="col">优点与弱点</th></tr></thead><tbody>
+<tr><td>总合作</td><td>每轮都打算 C。</td><td>可与合作伙伴保持高分，但不能威慑持续背叛。</td></tr>
+<tr><td>总背叛</td><td>每轮都打算 D。</td><td>能占总合作的便宜，但相互背叛只拿 1。</td></tr>
+<tr><td>以牙还牙 TFT</td><td>首轮 C，以后复制对手上轮实际行动。</td><td>回应及时，能够原谅；误操作可能引发轮流报复。</td></tr>
+<tr><td>冷酷</td><td>首轮 C，只要对手历史上有 D，以后永远 D。</td><td>威慑强，但很难从一次误会中恢复。</td></tr>
+<tr><td>随机</td><td>每轮独立以 50% 概率打算 C，否则 D。</td><td>不根据历史调整，作为不可预测的比较基线，不等于聪明。</td></tr>
+</tbody></table></div>
+<p class="prose">注意“意图”和“执行”不同。本课<b>噪声</b><span class="en"> (noise)</span> 只指执行翻转：以概率 ε 把本来选的 C 执行成 D，或把 D 执行成 C。双方随后准确看到实际行动。这里没有观察错误，不把“做错”与“看错”混合解释。</p>
+<p class="prose">想象两个 TFT 原本一直合作，某轮甲误执行 D、乙执行 C。下一轮甲复制乙的 C，乙复制甲的 D；再下一轮角色反转，可能在 DC、CD 之间轮流报复。策略并不记得“我刚才只是失误”，也不推测对方本意，所以一次小事故可以产生一长串后果。</p>
+<p class="prose">两个冷酷策略面对一次误背叛，可能更彻底地落入长期 DD。现实中的解释机会、核实程序、有限惩罚或有条件宽容，可能帮助恢复合作；但过分宽容又可能被故意利用。并不存在脱离误差环境和对手构成的万能严厉程度。</p>
+<div class="widget" id="w-tournament" aria-labelledby="w1t">
+<h3 id="w1t">交互区 1　重复策略锦标赛</h3>
+<p class="prose">至少勾选两种。每对策略打两场、交换位置，不与自己对战；每场清空历史。修改后点击运行。排名按每回合平均收益，选手数变多不会仅因多打几场就虚增分数。</p>
+<fieldset><legend>参赛策略</legend>
+<label class="check"><input type="checkbox" name="strategy" value="0" checked><span>总合作</span></label>
+<label class="check"><input type="checkbox" name="strategy" value="1" checked><span>总背叛</span></label>
+<label class="check"><input type="checkbox" name="strategy" value="2" checked><span>以牙还牙 TFT</span></label>
+<label class="check"><input type="checkbox" name="strategy" value="3" checked><span>冷酷</span></label>
+<label class="check"><input type="checkbox" name="strategy" value="4" checked><span>随机</span></label>
+</fieldset>
+<div class="controls">
+<div class="ctl"><label for="rounds">每场轮数</label><output id="roundsv" for="rounds"></output><input id="rounds" type="range" min="1" max="200" step="1" value="60"><span class="hint">1–200 轮；策略不使用“还剩几轮”信息</span></div>
+<div class="ctl"><label for="noise">执行翻转概率 ε</label><output id="noisev" for="noise"></output><input id="noise" type="range" min="0" max="30" step="1" value="2"><span class="hint">每人每轮独立，0–30%；双方准确观察实际行动</span></div>
+</div>
+<div class="chips"><button type="button" class="chip" id="run">运行循环赛</button><button type="button" class="chip" id="resample">换种子并运行</button></div>
+<p class="note" id="pending" role="status" aria-live="polite"></p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="上次完成的循环赛排名，可横向滚动"><table class="tbl" id="ranking"><caption>排名：相同未舍入平均分并列；合作率统计实际行动</caption><thead><tr><th scope="col">名次</th><th scope="col">策略</th><th scope="col" class="num">平均分/回合</th><th scope="col" class="num">合作率</th><th scope="col" class="num">总回合</th></tr></thead><tbody></tbody></table></div>
+<div class="tablewrap" tabindex="0" role="region" aria-label="每对策略比赛账本，可横向滚动"><table class="tbl" id="pairs"><caption>双场汇总：每对均经历 2 × 每场轮数个回合，分数为各自每回合平均收益</caption><thead><tr><th scope="col">对阵</th><th scope="col" class="num">前者平均分</th><th scope="col" class="num">后者平均分</th></tr></thead><tbody></tbody></table></div>
+<dl class="read pairs"><div><dt>上次运行种子</dt><dd id="r-seed"></dd></div><div><dt>上次轮数 / 噪声</dt><dd id="r-settings"></dd></div><div><dt>比赛场数</dt><dd id="r-matches"></dd></div><div><dt>全体实际合作率</dt><dd id="r-coop"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">支付指数固定为 CC=(3,3)、CD=(0,5)、DC=(5,0)、DD=(1,1)，均为教学示意。初始种子 2026；相同种子与设置得到相同结果，换种子不改支付。这里用有限样本、不贴现的平均分比较固定程序，不是在求无限重复博弈的均衡，也不是普适最优策略证明。</p>
+</div>
+<h3>用三轮实验读懂排名</h3>
+<ol class="qs"><li>只选总合作和总背叛，噪声归零。无论轮数多长，前者每回合 0、后者 5。延长关系本身不会让一个完全不回应的程序学会惩罚。</li><li>只选 TFT 和冷酷，噪声归零。每轮都合作，各得 3。把噪声提高，再换几次种子，检查一次翻转能否破坏高分。</li><li>选全体，把轮数从 1 提到 200。首轮的占便宜被更多后续回合摊薄，但合作伙伴和对手的构成也会改变排名。每次只改一个变量，才知道分数变化来自哪里。</li></ol>
+<p class="prose">排名高不等于每场都赢对手。合作型策略可能与伙伴一起拿高分，即使没有压过伙伴；总背叛能在某些对阵里胜出，却在与报复型策略长期相处时反复拿低分。目标是自己的长期收益，不是“每一局都让别人更惨”。</p>
+<p class="prose">归一化消除了场次数量的机械影响，却没有消除对手构成的影响。把总合作加入参赛池，可能提高总背叛的平均分；移除某个可剥削的对手，排名又会改变。因此应该连同策略名单、轮数、噪声与种子报告结果，而不能只截图第一名。</p>
+</section>
+<section id="horizon">
+<h2>已知最后一轮，和“不知道哪天结束”不同</h2>
+<p class="prose">如果双方知道关系恰好在第 100 轮结束，阶段博弈是有唯一均衡 DD 的囚徒困境，并且完全理性、收益结构和这些理性判断都是共同知识，那么最后一轮没有未来惩罚，双方会背叛。这叫从终点往前看的<b>逆向归纳</b><span class="en"> (backward induction)</span>。</p>
+<p class="prose">既然第 100 轮必然背叛，第 99 轮的背叛也不再损失最后一轮合作；同样的推理逐轮往前，可以得到每轮背叛。这一结论依赖严格的已知有限终点、一次博弈结构和信息理性假设，不应简化为“只要人生有限，就不可能合作”。</p>
+<p class="prose">如果不知道最后一轮是哪天，今天之后仍可能继续，就没有一个确定的最后合作回合可供倒推。冷酷策略的贴现条件适用于无限或这种不确定终止的环境。即使合同期限明确，对其他顾客的声誉影响也可能超出合同本身，真正相关的未来未必在纸面到期日结束。</p>
+<p class="prose">锦标赛虽然设了轮数，却没有给策略编写末轮背叛或向前倒推的逻辑。它运行的是表中固定的小程序。因此 200 轮后看到合作，既不反驳逆向归纳，也不证明有限理性必然合作。它是在问“这些规则碰在一起会发生什么”，不是“所有可行策略中的理性解是什么”。</p>
+</section>
+<section id="reputation">
+<h2>声誉不仅是惩罚，也是在传递信息</h2>
+<p class="prose"><b>声誉</b><span class="en"> (reputation)</span> 是别人根据过去行为形成的判断。它不仅让老顾客惩罚差服务，也让新顾客更愿意信任、预付、推荐或继续交易。一个人可能不会再来，但他的可靠评价会影响下一位顾客，未来收益仍然存在。</p>
+<p class="prose">回到小店，认真处理投诉可以传递“愿意负责”的信息，减少新顾客的担心。稳定提供质量也能让双方少花监督与验收成本。这些是合作创造的收益，不只是“怕被报复”。但评价难核实、店名可随时更换或好评易伪造时，声誉约束可能减弱。</p>
+<p class="prose">观察到熟客店服务好，也不能直接断言因果。店铺位置、客群、价格、成本、员工培训、合同保障都可能不同；顾客还可能因为服务好才变成常客。要检验重复交易的作用，需要区分“重复带来好服务”和“好服务带来重复”。</p>
+<p class="prose">最后，合作的评价仍要看旁观者。邻居互助、商家认真服务可能创造共同价值；竞争者长期维持高价的合作却可能损害消费者。重复博弈解释合作怎样稳定，不自动替合作的目的背书，可结合<a href="../m04/03-oligopoly-price-discrimination.html#antitrust">反垄断中的竞争分析</a>理解。</p>
+</section>
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“只要多来往，自私的人一定会合作。”</p><p>未来要足够重要、偏离要能识别、惩罚要可信，而且仍可能停留在互相背叛的均衡。次数多不等于合作被保证。</p></div>
+<div class="mis"><p class="said">“TFT 永远最好，冷酷越狠越有效。”</p><p>排名依赖对手、样本与噪声。TFT 可能互相报复，冷酷可能把误操作当永久决裂的理由。严厉与宽容都有代价。</p></div>
+<div class="mis"><p class="said">“游客不回来，商家就没有声誉激励。”</p><p>信息能传给未来顾客，品牌和评价可以连接不同时点的交易。声誉还传递质量与可靠性，不只是让老顾客惩罚商家。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">留意时间范围、历史信息和策略的具体规则。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">把条件和结论一起记住。</p><div class="cards" id="cards"></div></section>
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>为什么同样逐利却服务不同？</b>重做一份餐增加今天成本，却可能保住一串未来收益。若关系延续概率和未来权重更高，这笔投入更值得。标题只是线索，不能排除价格、成本和顾客自我选择等解释。</div></li><li><div><b>永不原谅还是有条件恢复？</b>冷酷能让故意背叛代价很大，但误操作也可能永久终止好关系。TFT 可以响应与原谅，却会在噪声下轮流报复。应结合错误频率、可验证性、恢复合作收益决定规则，而不是凭一次模拟选永远最优。</div></li><li><div><b>游客不重访就没有长期约束吗？</b>不一定。可靠评价、推荐和品牌把服务传递给下一位顾客，仍能创造长期激励。排名第一也只能说明特定策略池、轮数、执行误差与种子下得分最高，不是对所有店铺的经营建议。</div></li></ol>
+<p class="prose">分析长期合作时，依次问：未来有多重要？违约能否观察？回应是否可信？误会如何修复？信息能否传给新伙伴？这些比“大家应该更善良”更接近可检验的机制。</p>
+<button type="button" class="chip" id="goChart">恢复基准锦标赛</button>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var NAMES=['总合作','总背叛','以牙还牙 TFT','冷酷','随机'];
+function random(seed){
+  var s=seed>>>0;
+  return function(){s=(Math.imul(1664525,s)+1013904223)>>>0;return s/4294967296;};
+}
+function action(id,opponent,coin){
+  if(id===0){return 0;}if(id===1){return 1;}
+  if(id===2){return opponent.length?opponent[opponent.length-1]:0;}
+  if(id===3){return opponent.includes(1)?1:0;}
+  return coin<0.5?0:1;
+}
+function play(a,b,rounds,noise,seed){
+  var ra=random(seed+1009*(a+1)),rb=random(seed+1009*(b+1)),ha=[],hb=[],sa=0,sb=0,ca=0,cb=0,pay=[[3,0],[5,1]];
+  for(var t=0;t<rounds;t++){
+    var ia=action(a,hb,ra()),ib=action(b,ha,rb());
+    var xa=ra()<noise?1-ia:ia,xb=rb()<noise?1-ib:ib;
+    sa+=pay[xa][xb];sb+=pay[xb][xa];ca+=xa===0?1:0;cb+=xb===0?1:0;
+    ha.push(xa);hb.push(xb);
+  }
+  return {sa:sa,sb:sb,ca:ca,cb:cb,ha:ha,hb:hb};
+}
+function model(ids,rounds,noise,seed){
+  ids=ids.slice().sort(function(a,b){return a-b;});
+  var rows=ids.map(function(id){return {id:id,score:0,cooperation:0,turns:2*(ids.length-1)*rounds};}),pairs=[];
+  for(var i=0;i<ids.length;i++){for(var j=i+1;j<ids.length;j++){
+    var base=(seed+ids[i]*100003+ids[j]*10007)>>>0;
+    var x=play(ids[i],ids[j],rounds,noise,base),y=play(ids[j],ids[i],rounds,noise,(base+7919)>>>0);
+    var sa=x.sa+y.sb,sb=x.sb+y.sa;
+    rows[i].score+=sa;rows[j].score+=sb;rows[i].cooperation+=x.ca+y.cb;rows[j].cooperation+=x.cb+y.ca;
+    pairs.push({a:ids[i],b:ids[j],sa:sa,sb:sb,turns:2*rounds});
+  }}
+  rows.sort(function(a,b){return b.score-a.score||a.id-b.id;});
+  rows.forEach(function(r,i){r.rank=i&&r.score===rows[i-1].score?rows[i-1].rank:i+1;r.average=r.score/r.turns;});
+  var totalCoop=rows.reduce(function(n,r){return n+r.cooperation;},0),turns=rows.reduce(function(n,r){return n+r.turns;},0);
+  return {rows:rows,pairs:pairs,matches:ids.length*(ids.length-1),cooperation:totalCoop/turns};
+}
+var seed=2026;
+function selected(){return Array.from(document.querySelectorAll('[name=strategy]:checked'),function(e){return +e.value;});}
+function changed(){
+  $('#roundsv').textContent=$('#rounds').value+' 轮';$('#noisev').textContent=$('#noise').value+'%';
+  var invalid=selected().length<2;$('#run').disabled=invalid;$('#resample').disabled=invalid;
+  $('#pending').textContent=invalid?'至少选择两种策略；不能运行，下方保留上次完成的结果。':'设置已改变，点击运行后更新；下方为上次完成的结果。';
+}
+function row(values,id){var tr=document.createElement('tr');if(id!==undefined){tr.dataset.id=id;}values.forEach(function(v,i){var td=document.createElement('td');td.textContent=v;if(i>0){td.className='num';}tr.appendChild(td);});return tr;}
+function run(){
+  var ids=selected();if(ids.length<2){changed();return;}
+  var rounds=+$('#rounds').value,noise=+$('#noise').value/100,s=model(ids,rounds,noise,seed);
+  $('#ranking tbody').replaceChildren();s.rows.forEach(function(r){var tr=row([r.rank,NAMES[r.id],r.average.toFixed(3),(100*r.cooperation/r.turns).toFixed(1)+'%',r.turns],r.id);tr.children[1].className='';$('#ranking tbody').appendChild(tr);});
+  $('#pairs tbody').replaceChildren();s.pairs.forEach(function(p){$('#pairs tbody').appendChild(row([NAMES[p.a]+' / '+NAMES[p.b],(p.sa/p.turns).toFixed(3),(p.sb/p.turns).toFixed(3)]));});
+  $('#r-seed').textContent=seed;$('#r-settings').textContent=rounds+' 轮 / '+(noise*100).toFixed(0)+'%';$('#r-matches').textContent=s.matches+' 场';$('#r-coop').textContent=(100*s.cooperation).toFixed(1)+'%';
+  var leaders=s.rows.filter(function(r){return r.rank===1;}).map(function(r){return NAMES[r.id];});
+  $('#verdict').textContent='本次第一名'+(leaders.length>1?'（并列）':'')+'：'+leaders.join('、')+'，平均 '+s.rows[0].average.toFixed(3)+' 分/回合。全体实际合作率 '+(100*s.cooperation).toFixed(1)+'%。'+(noise?'执行翻转可能引发回应与持续报复；换种子可检查样本差异。':'无执行误差，差异来自策略与对手构成。')+'此排名不是普适最优证明，平均分不代表贴现均衡。';
+  $('#pending').textContent='已运行：'+ids.length+' 种策略，种子 '+seed+'。相同设置可重复核对。';
+}
+$('#rounds').addEventListener('input',changed);$('#noise').addEventListener('input',changed);document.querySelectorAll('[name=strategy]').forEach(function(e){e.addEventListener('change',changed);});
+$('#run').addEventListener('click',run);$('#resample').addEventListener('click',function(){seed=(seed+1)>>>0;run();});
+function reset(){seed=2026;document.querySelectorAll('[name=strategy]').forEach(function(e){e.checked=true;});$('#rounds').value=60;$('#noise').value=2;changed();run();}
+$('#goChart').addEventListener('click',function(){reset();$('#w-tournament').scrollIntoView({block:'start'});});reset();
+var QUIZ=[
+{q:'无噪声、无限重复、T=5、R=3、P=1，双方使用冷酷策略。δ=0.6 时怎样比较？',o:['现在背叛必然最好，因为 5>3','双方必然合作，不存在别的均衡','持续合作价值 7.5，大于现在背叛的 6.5，但合作不是唯一可能均衡','不能计算，因为不知道下一轮是哪天'],a:2,why:'未来损失超过眼前诱惑。δ=0.6 高于门槛 0.5，冷酷合作可维持，但一直背叛也能构成均衡，不代表合作必然发生。'},
+{q:'两个 TFT 遇到甲单次误执行 D、乙执行 C。下一轮没有误差时会怎样？',o:['甲选 C、乙选 D，因为各自复制对方上一轮实际行动','双方永久 D，这是 TFT 的定义','乙读到甲本轮意图 C，所以双方 C','甲自动解释失误，乙无条件原谅'],a:0,why:'TFT 只复制上轮实际行动，不读取本轮选择或意图。一次翻转可能造成交替报复，不像冷酷那样按整段历史永久触发。'},
+{q:'已知恰好 100 轮、阶段博弈唯一均衡为 DD，完全理性且为共同知识。逆向归纳说明什么？',o:['前 99 轮必合作，最后一轮背叛','只要轮数够多，有限和不确定终止完全相同','TFT 在所有可选策略里必然最优','从末轮背叛向前推，可得到每轮背叛；结论依赖这些假设'],a:3,why:'已知终点切断末轮的未来奖惩，再向前逐轮传递。固定程序锦标赛没有倒推逻辑，不能用其合作结果反驳这个有条件的理论结论。'},
+{q:'游客不会再到这家店，但会留下可信评价并推荐给别人。商家还有长期激励吗？',o:['没有，因为必须是同一位顾客回来','有，声誉可以影响未来的新顾客，并传递可靠性信息','只有降价时才有，与服务无关','一定有足够强的激励，保证永不出错'],a:1,why:'未来关系可通过信息连接。声誉不只依赖老顾客的惩罚，也让新顾客信任；但影响是否足够强还取决于评价可信度等条件。'},
+{q:'某策略在锦标赛里平均分第一，能推出什么？',o:['它在所有对手组合和噪声水平下都最好','它已经证明无限重复博弈只有一个均衡','它在这次名单、轮数、噪声与种子下表现最好，还需检查稳健性','它必定每一场都击败了对手'],a:2,why:'模拟排名是条件性的。平均分便于比较场次，却不消除对手构成与随机样本的影响；高分也可能来自与合作伙伴共同获益。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'重复博弈',en:'repeated game',d:'阶段博弈反复进行，策略可依赖过去历史。今天的行动改变未来面对的回应，不能只算本轮收益。'},
+{t:'以牙还牙',en:'tit-for-tat',d:'第一轮合作，以后复制对手上一轮实际行动。可回应、可原谅，但执行噪声可能引发交替报复。'},
+{t:'冷酷策略',en:'grim trigger',d:'先合作，对方一旦有过背叛就永久背叛。威慑强，但可能因一次误会失去未来合作。'},
+{t:'贴现',en:'discounting',d:'把未来收益按今天的权重计算。δ 越大未来越重要；不确定延续时，有效权重也包含关系继续的概率。'},
+{t:'合作门槛',en:'cooperation threshold',d:'无噪声无限重复的冷酷策略下，δ≥(T−R)/(T−P) 可支撑合作。是有条件的均衡可能性，不保证合作发生。'},
+{t:'逆向归纳',en:'backward induction',d:'从已知最后一轮向前推。有限囚徒困境中的每轮背叛结论依赖唯一阶段均衡、理性和共同知识等假设。'},
+{t:'声誉',en:'reputation',d:'他人根据过去行为形成的判断。既能约束机会主义，也能传递质量与可信度，连接未来的新伙伴。'},
+{t:'执行噪声',en:'implementation noise',d:'本课指以概率把原本行动翻转，随后双方准确看到实际行动。它不是观察错误，也不表示策略主动改变规则。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

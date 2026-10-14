@@ -110,7 +110,7 @@
         {
           id: 'm05-02', title: '重复博弈与合作',
           en: 'Repeated games and cooperation',
-          path: 'm05/02-repeated-games.html', status: 'todo'
+          path: 'm05/02-repeated-games.html', status: 'done'
         },
         {
           id: 'm05-03', title: '拍卖与机制设计入门',
