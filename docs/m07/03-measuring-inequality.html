@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>不平等如何衡量</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m07-03">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>不平等如何衡量</h1>
+<p class="sub">Measuring inequality</p>
+<p class="lede">“贫富差距扩大”“收入差距缩小”，这类句子背后总有一个具体的数字。最常见的是基尼系数。它从哪里来？0.468 和 0.385 差在哪里？同一个国家，按收入算、按财富算、按税前算、按税后算，为什么会得到不同的答案？这一课把一个数字拆回到它的原材料：一群人，按收入从低到高排成一队。</p>
+<p class="meta">约 20 分钟 · 1 个交互图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m03/01-surplus-efficiency.html#fairness">效率不替你决定公平</a>、<a href="../m03/03-tax-incidence.html#welfare">税收的无谓损失</a>。前者提醒我们，分配是效率之外的另一个问题；本课回答它的第一步：怎样把“分配有多不均”量出来。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>来源：国家统计局网站，国家统计局局长宁吉喆在国新办《中国的全面小康》白皮书新闻发布会上答记者问，发布会 2021 年 9 月 28 日。<a href="https://www.stats.gov.cn/xxgk/jd/zcjd/202109/t20210930_1822661.html">原文链接</a></figcaption><blockquote>“全国居民人均可支配收入基尼系数在2008年达到最高点0.491后，2009年至今呈现波动下降态势，2020年降至0.468，累计下降0.023。”</blockquote></figure>
+<p class="prose">同一次答问还提到：在世界银行数据库中，2016 年中国按消费计算的基尼系数为 0.385，比当年按收入计算的 0.465 低 0.080。两个数字都超过了常被引用的 0.4，又彼此相差不小。</p>
+<ol class="qs"><li>0.468 是怎么算出来的？0 和 1 分别代表什么样的社会？</li><li>为什么同一年、同一个国家，按收入和按消费算出的基尼系数不一样？按财富算又会怎样？</li><li>交税和领取补助之后，这个数字会怎样变化？变化多少才算“合适”，数字能回答吗？</li></ol>
+</section>
+<section id="lorenz">
+<h2>把所有人排成一队，看收入怎样累积</h2>
+<p class="prose">想象把全国居民按人均收入从低到高排成一队。从队尾最穷的人开始往前数，每数过一部分人，就把他们的收入加起来，看占全部收入的百分之几。横轴是“已经数过的人口占比”，纵轴是“这些人拿到的收入占比”，画出来的线就是<b>洛伦兹曲线</b><span class="en"> (Lorenz curve)</span>。</p>
+<p class="prose">如果人人收入相同，最穷的 20% 人拿 20% 收入，最穷的 60% 人拿 60% 收入，曲线就是一条从左下到右上的对角线，叫完全平等线。现实中，排在前面的低收入者拿到的份额小于人口占比，曲线就向右下方凹下去。凹得越深，差距越大。</p>
+<p class="prose">曲线只会向上走，而且越往右越陡：队伍是按收入从低到高排的，后面每一段人的平均收入不会低于前面。这就是下面交互图要求“份额从低到高排序”的原因，它不是额外的规定，而是排序方式本身决定的。</p>
+<p class="prose"><b>基尼系数</b><span class="en"> (Gini coefficient)</span> 把这张图压缩成一个数：完全平等线与洛伦兹曲线之间的面积 A，占完全平等线下方整个三角形面积的比例。三角形面积是 0.5，所以：</p>
+<p class="formula">G = A ÷ (A + B) = 1 − 2B，B 为洛伦兹曲线下方的面积</p>
+<p class="prose">G = 0 表示人人收入相同；G 接近 1 表示几乎全部收入归一个人。它衡量的是相对差距：所有人收入同时翻倍，份额不变，曲线不变，基尼系数也不变。</p>
+<div class="analogy"><span class="lab">类比</span><p>一个 5 人宿舍凑钱点外卖，总共 100 元。如果每人出 20 元，按出钱从少到多排队，累计出资就是 20、40、60、80、100，画出来是一条直线。如果有人只出 5 元，有人出 45 元，前几个人累计得很慢，最后一人一下子补齐，线就往下凹。基尼系数量的就是“凹进去多少”，它不管外卖总共多贵。</p></div>
+<h3>只有五个数时，怎样算面积</h3>
+<p class="prose">统计公报常公布<b>五等份收入分组</b><span class="en"> (income quintiles)</span>：国家统计局把所有调查户按人均收入排序，平均分成五等份，给出每组的人均可支配收入。如果每组人数相同，用每组平均收入除以五组之和，就得到每组的收入份额 s₁ 到 s₅。把累计份额 L₁ 到 L₅ 连成折线，曲线下方是五个梯形，每个宽 0.2：</p>
+<p class="formula">B = 0.2 × [(L₀ + L₁) + (L₁ + L₂) + … + (L₄ + L₅)] ÷ 2，L₀ = 0，L₅ = 1；G = 1 − 2B</p>
+<p class="prose">梯形公式把每组内部当成人人收入相同。真实的曲线在每一段里还会继续往下弯，折线把这部分差距抹平了。所以同一份数据，用五个分组算出的基尼系数会低于用每户个体数据算出的值。下图里最极端的情况“全部收入归最高组”，算出来也只有 0.8，不是 1。</p>
+</section>
+<section id="experiment">
+<h2>动手：调五个份额，看曲线和基尼系数</h2>
+<p class="prose">默认情景用的是国家统计局《2025 年国民经济和社会发展统计公报》的五等份分组：低收入组人均可支配收入 10150 元，中间偏下组 22702 元，中间组 35536 元，中间偏上组 55586 元，高收入组 103778 元。按每组人数相同折算，份额约为 4.5%、10.0%、15.6%、24.4%、45.5%。</p>
+<div class="widget" id="w-lorenz" aria-labelledby="w1t">
+<h3 id="w1t">图 1　洛伦兹曲线：五个收入组的份额</h3>
+<div class="chips" role="group" aria-label="份额情景"><button type="button" class="chip" data-preset="nbs" aria-pressed="true">2025 公报分组（近似）</button><button type="button" class="chip" data-preset="equal" aria-pressed="false">完全平等</button><button type="button" class="chip" data-preset="market" aria-pressed="false">示意：税前市场收入</button><button type="button" class="chip" data-preset="disposable" aria-pressed="false">示意：税后可支配收入</button><button type="button" class="chip" data-preset="extreme" aria-pressed="false">极端不平等</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw"></span>完全平等线</li><li><span class="sw model"></span>洛伦兹曲线（五组折线）</li><li><span class="sw gap"></span>面积 A：基尼系数 = A ÷ 0.5</li><li><span class="sw alternative g"></span>对比线（固定后显示）</li></ul>
+<p class="prose">联动规则：前四组的份额由你拖动，最高组自动等于 100% 减去前四组之和，所以总和始终是 100%。每组不能低于它前一组，也不能高到把后一组或最高组挤得比自己还低。拖到边界时滑块会停住，下方提示显示当前可调范围。</p>
+<div class="controls">
+<div class="ctl"><label for="s1">低收入组份额（%）</label><output id="s1-value" for="s1"></output><input id="s1" type="range" min="0" max="50" step="0.1" value="4.5" aria-describedby="s1-hint"><span class="hint" id="s1-hint"></span></div>
+<div class="ctl"><label for="s2">中间偏下组份额（%）</label><output id="s2-value" for="s2"></output><input id="s2" type="range" min="0" max="50" step="0.1" value="10" aria-describedby="s2-hint"><span class="hint" id="s2-hint"></span></div>
+<div class="ctl"><label for="s3">中间组份额（%）</label><output id="s3-value" for="s3"></output><input id="s3" type="range" min="0" max="50" step="0.1" value="15.6" aria-describedby="s3-hint"><span class="hint" id="s3-hint"></span></div>
+<div class="ctl"><label for="s4">中间偏上组份额（%）</label><output id="s4-value" for="s4"></output><input id="s4" type="range" min="0" max="50" step="0.1" value="24.4" aria-describedby="s4-hint"><span class="hint" id="s4-hint"></span></div>
+<div class="ctl full"><span class="lab-static" id="s5-label">高收入组份额（%，自动）</span><output id="s5-value"></output><span class="hint">= 100% − 前四组之和；始终不低于中间偏上组。</span></div>
+</div>
+<div class="chips"><button type="button" class="chip" id="pin">把当前曲线固定为对比线</button><button type="button" class="chip" id="unpin" disabled>清除对比线</button></div>
+<div class="tablewrap" tabindex="0" role="region" aria-label="五组份额与累计份额，可横向滚动"><table class="tbl" id="groups"><caption>每组人数各占 20%。“相对全体平均”= 该组份额 ÷ 20%。</caption><thead><tr><th scope="col">组</th><th scope="col" class="num">累计人口（%）</th><th scope="col" class="num">收入份额（%）</th><th scope="col" class="num">累计收入（%）</th><th scope="col" class="num">相对全体平均（倍）</th></tr></thead><tbody></tbody></table></div>
+<dl class="read pairs"><div><dt>基尼系数（五组折线）</dt><dd id="r-gini"></dd></div><div><dt>最高组份额 ÷ 最低组份额</dt><dd id="r-ratio"></dd></div><div><dt>最低 40% 人口的收入份额</dt><dd id="r-bottom"></dd></div><div><dt>对比线基尼系数 / 当前减对比</dt><dd id="r-pin"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">公报数字之外都是教学示意。统计局的五等份是户数相等，不是人数相等：公报五组人均收入的简单平均为 45550 元，高于全国人均 43377 元，说明低收入组的人数更多。这里按每组 20% 人口折算份额，并四舍五入到 0.1 个百分点，只是近似。基尼系数用五组折线下的梯形面积计算，把每组内部视为收入相同，会低估用更细数据算出的值：公报分组算得约 0.39，低于统计局公布的 0.468（2020 年）。两者年份不同，差距不全是分组造成的，但方向一致。两个“示意”情景是为说明再分配编的数字，假设税前税后各组排序不变。</p>
+</div>
+<h3>四个实验</h3>
+<ol class="qs"><li>点“完全平等”，再点“极端不平等”。基尼系数为什么最大只到 0.80？如果把人口分成 100 组，最大值会是多少？</li><li>回到公报分组，把低收入组份额提高 1 个百分点。差额从哪里来？基尼系数下降了多少？</li><li>点“示意：税前市场收入”，固定为对比线，再点“示意：税后可支配收入”。两条线之间的距离，在哪一组最大？</li><li>试着让基尼系数保持大致不变，同时提高最低组份额。你需要怎样调整中间几组？</li></ol>
+<p class="prose">第四个实验说明基尼系数的一个局限：它是整条曲线的面积汇总，两条形状不同、甚至相交的曲线可以有相同的基尼系数。例如份额为 7、9、14、22、48 和 5、10、16、23、46 的两个分布，五组折线算出的基尼系数都是 0.380，但前者最穷的 20% 多拿 2 个百分点。关心底层的人，通常还会同时看最低组份额或最高组与最低组之比。</p>
+</section>
+<section id="measure">
+<h2>量什么：收入、消费还是财富</h2>
+<p class="prose">基尼系数是一把尺，量的对象可以不同。<b>可支配收入</b><span class="en"> (disposable income)</span> 是居民交税、缴社保之后，加上领取的各种补助，能自由支配的收入。统计局开场的 0.468 就是按人均可支配收入计算的。</p>
+<p class="prose">消费通常比收入平稳。收入一年高一年低的人，会用储蓄和借贷把花销拉平，所以按消费算的差距一般更小。开场答问中，2016 年消费基尼 0.385、收入基尼 0.465，就是这个方向。</p>
+<p class="prose">财富则是另一回事。收入是一年里流进来的钱，是流量；<b>净财富</b><span class="en"> (net wealth)</span> 是某一时点拥有的房产、存款、股票等资产减去负债，是存量。财富由多年储蓄、资产增值和继承累积而成，差距通常比收入大得多。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="收入与财富集中度对比，可横向滚动"><table class="tbl comparison"><caption>OECD 28 个成员国平均，数据约为 2015 年前后</caption><thead><tr><th scope="col">指标</th><th scope="col" class="num">最高 10% 所占份额</th><th scope="col">补充</th></tr></thead><tbody>
+<tr><td>家庭净财富</td><td class="num">52%</td><td>财富最少的 60% 家庭合计只占略多于 12%</td></tr>
+<tr><td>收入</td><td class="num">24%</td><td>按收入排序的最高 10% 人口</td></tr>
+</tbody></table></div>
+<p class="prose">来源是 OECD 统计工作论文 2018/01（Balestra 与 Tonkin），论文据此概括为“财富集中程度约为收入不平等的两倍”。收入相同的两个人，财富可以天差地别：刚工作、租房、还在还助学贷款的年轻医生，收入可能高于一位有自住房、没有工资的退休教师，财富却可能少得多。</p>
+<p class="prose">所以看到“差距扩大”或“缩小”，先问三件事：量的是收入、消费还是财富；以个人、家庭还是人均为单位；是税前还是税后。三个问题的答案不同，结论可以相反。</p>
+</section>
+<section id="redistribution">
+<h2>税前与税后：再分配改变的是哪条曲线</h2>
+<p class="prose">经济学常区分两种收入。<b>市场收入</b><span class="en"> (market income)</span> 是工资、经营所得、利息租金等在市场上挣到的钱，此时还没有交税，也没有领补助。可支配收入则是在它的基础上减去个人所得税和社保缴费，再加上养老金、低保、失业救济等。</p>
+<p class="prose"><b>转移支付</b><span class="en"> (transfer payment)</span> 是政府把钱或等价物直接付给个人或家庭，而不换取当期的商品或劳务，例如养老金、失业救济、低保金。政府通过税收和转移支付改变各群体最终所得的过程，叫<b>再分配</b><span class="en"> (redistribution)</span>。</p>
+<p class="prose">用图 1 的两个示意情景看：税前份额 2、7、14、24、53，基尼系数 0.476；税后 5、10.5、16、23.5、45，基尼系数 0.372，下降约 22%。低收入组的份额主要靠转移支付抬高，高收入组的份额主要因税收下降。</p>
+<p class="prose">真实数据中，OECD 2018 年的一份经济政策报告估计，对劳动年龄人口而言，税收和现金转移平均使基尼系数下降略多于 25%，约 11 个基尼点（按 0 到 100 计）；各国差别很大，从爱尔兰的约 40% 到智利的约 5%。报告举例：日本与挪威的市场收入基尼都在 38 点左右，可支配收入基尼却分别约为 32 和 27 点。数据为 2014 年前后，日本为 2012 年。</p>
+<div class="analogy"><span class="lab">类比</span><p>班级聚餐，每人点菜的价钱差别很大，这是“税前”。结账时大家约定：点得多的多分摊一些，再从班费里给几位手头紧的同学补贴一点，这是“税后”。最终每人实际花的钱差距变小了，但菜单本身没变，点菜时的差距也还在。</p></div>
+<h3>再分配多少，数字回答不了</h3>
+<p class="prose">基尼系数说明税后差距比税前小了多少，却不说明这种缩小值不值得。支持更多再分配的一方常提出：收入对低收入者更急需，同样一元钱带来的改善更大；差距过大可能影响机会平等和社会信任。反对或主张谨慎的一方常提出：税收会改变工作、储蓄和投资的激励，产生<a href="../m03/03-tax-incidence.html#welfare">无谓损失</a>；福利领取条件设计不当，可能削弱多挣钱的激励；政府执行也有成本。</p>
+<p class="prose">这些论点哪一方在多大程度上成立，取决于具体税种、补助方式和实证证据，本课不替你下结论。能做的是先把账算清：比较前后两条洛伦兹曲线，同时估计再分配带来的效率代价，然后再讨论取舍。</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“基尼系数超过 0.4 就是警戒线，社会一定会出问题。”</p><p>0.4 是流传很广的经验参照，不是理论推出的临界点。同一个数字可以来自不同的分布形状、不同的口径（收入或消费、个人或家庭），后果也取决于流动性、公共服务等很多其他条件。</p></div>
+<div class="mis"><p class="said">“基尼系数下降，说明穷人变富了。”</p><p>基尼系数只看相对份额。人人收入都减少 10%，基尼不变；高收入者收入大跌而低收入者不变，基尼也会下降。要知道生活水平，还需看各组的实际收入。</p></div>
+<div class="mis"><p class="said">“收入差距不大，财富差距也不会大。”</p><p>收入是流量，财富是多年累积的存量，还受资产价格和继承影响。OECD 国家平均来看，最富 10% 家庭的净财富份额（52%）约是最高 10% 收入份额（24%）的两倍。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先问量的是什么，再问曲线怎样变。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">术语和它的口径一起记。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>0.468 怎么来的？</b>把居民按人均可支配收入从低到高排序，画出洛伦兹曲线，计算它与完全平等线之间的面积占三角形的比例。0 是人人相同，越接近 1 越集中。用五组公报数据折算只得到约 0.39，部分原因是分组抹掉了组内差距，五组算法天然偏低。</div></li><li><div><b>为什么收入与消费、财富不同？</b>消费被储蓄和借贷平滑，差距较小，所以 2016 年消费基尼 0.385 低于收入基尼 0.465。财富是累积的存量，差距通常大得多。一个基尼系数只有说明了量什么、以谁为单位、税前还是税后，才能和另一个比较。</div></li><li><div><b>税和补助会怎样改变它？</b>个人所得税压低高收入组份额，转移支付抬高低收入组份额，可支配收入的洛伦兹曲线比市场收入的更靠近对角线。OECD 估计平均能使基尼下降约四分之一，各国差别很大。下降多少才合适，要同时权衡公平目标与激励、执行成本，数字本身不回答。</div></li></ol>
+<p class="prose">下次读到“差距扩大”的报道，可以追问：哪一年、哪个口径、谁算的？和哪一年比？穷的那一端实际收入是怎样变的？</p>
+<button type="button" class="chip" id="goChart">回到图 1，恢复公报分组</button>
+</section>
+<section id="sources"><h2>资料来源</h2>
+<ol class="qs">
+<li>国家统计局：《中国的全面小康》白皮书新闻发布会答记者问（2021 年 9 月 28 日发布会）。<a href="https://www.stats.gov.cn/xxgk/jd/zcjd/202109/t20210930_1822661.html">stats.gov.cn</a></li>
+<li>国家统计局：统计知识常见问题解读“十五、住户调查”（五等份分组方法）。<a href="https://www.stats.gov.cn/hd/cjwtjd/202302/t20230207_1902268.html">stats.gov.cn</a></li>
+<li>国家统计局：《中华人民共和国 2025 年国民经济和社会发展统计公报》，2026 年 2 月 28 日。<a href="https://www.stats.gov.cn/sj/zxfbhjd/202602/t20260228_1962662.html">stats.gov.cn</a></li>
+<li>OECD (2018), Income Redistribution across OECD Countries: Main Findings and Policy Implications, OECD Economic Policy Paper No. 23, September 2018. <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/02/income-redistribution-across-oecd-countries_f2d12a2b/3b63e61c-en.pdf">oecd.org (PDF)</a></li>
+<li>Balestra, C. and R. Tonkin (2018), Inequalities in Household Wealth across OECD Countries, OECD Statistics Working Papers 2018/01. <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/inequalities-in-household-wealth-across-oecd-countries_a91f464f/7e1bf673-en.pdf">oecd.org (PDF)</a></li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts;
+function $(s){return document.querySelector(s);}
+var box=$('#chart1'),NAMES=['低收入组','中间偏下组','中间组','中间偏上组','高收入组'];
+// 份额以 0.1 个百分点为单位存成整数，总和恒为 1000，避免浮点误差。
+var PRESETS={nbs:[45,100,156,244],equal:[200,200,200,200],market:[20,70,140,240],disposable:[50,105,160,235],extreme:[0,0,0,0]};
+var t=PRESETS.nbs.slice(),pinned=null,lastMsg='';
+function full(a){return a.concat([1000-a[0]-a[1]-a[2]-a[3]]);}
+function model(a){
+  var s=full(a),cum=[0],twice=0;
+  for(var i=0;i<5;i++){cum.push(cum[i]+s[i]);twice+=cum[i]+cum[i+1];}
+  // B = 0.2 × Σ(L_{i-1}+L_i)/2，L 以千分之一计；G = 1 − 2B = (5000 − Σ)/5000
+  return {s:s,cum:cum,gini:(5000-twice)/5000};
+}
+function bounds(k){
+  var s=full(t),lo=k?s[k-1]:0,hi=k<3?Math.min(s[k+1],s[k]+s[4]-s[3]):s[3]+Math.floor((s[4]-s[3])/2);
+  return [lo,hi];
+}
+function pct(v){return (v/10).toFixed(1);}
+function gtxt(g){return g.toFixed(3);}
+function draw(){
+  if(!box.clientWidth){return;}
+  var m=model(t);
+  var f=C.frame(box,{id:'lorenz',q0:0,q1:100,p0:0,p1:100,qs:20,ps:20,xt:'人口累计份额（%，从最低收入组起）',yt:'收入累计份额（%）',label:aria(m)});
+  var pts=m.cum.map(function(c,i){return [f.x(i*20),f.y(c/10)];});
+  var poly=pts.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1);});
+  f.svg.appendChild(C.el('polygon',{points:poly.join(' ')+' '+f.x(0).toFixed(1)+','+f.y(0).toFixed(1),'class':'gap-area'}));
+  f.svg.appendChild(C.el('line',{x1:f.x(0),y1:f.y(0),x2:f.x(100),y2:f.y(100),'class':'eqline'}));
+  if(pinned){var pm=model(pinned);f.svg.appendChild(C.el('polyline',{points:pm.cum.map(function(c,i){return f.x(i*20).toFixed(1)+','+f.y(c/10).toFixed(1);}).join(' '),'class':'curve ghost alternative',id:'pin-path'}));}
+  f.svg.appendChild(C.el('polyline',{points:poly.join(' '),'class':'curve model',id:'lorenz-path'}));
+  pts.forEach(function(p){f.svg.appendChild(C.el('circle',{cx:p[0],cy:p[1],r:4,'class':'pt'}));});
+  C.label(f,'完全平等线','ptlab',f.x(40)-8,f.y(40)-10,'end');
+  box.replaceChildren(f.svg);
+}
+function aria(m){return '洛伦兹曲线：五组收入份额依次为 '+m.s.map(pct).join('%、')+'%，基尼系数 '+gtxt(m.gini)+'。'+(pinned?'对比线基尼系数 '+gtxt(model(pinned).gini)+'。':'');}
+function update(){
+  var m=model(t);
+  for(var k=0;k<4;k++){var inp=$('#s'+(k+1)),b=bounds(k);inp.value=pct(t[k]);$('#s'+(k+1)+'-value').textContent=pct(t[k]);inp.setAttribute('aria-valuetext',pct(t[k])+'%，可调范围 '+pct(b[0])+'% 至 '+pct(b[1])+'%');$('#s'+(k+1)+'-hint').textContent='当前可调范围 '+pct(b[0])+'–'+pct(b[1])+'%。'+(k===0?'下限 0：份额不能为负。':'下限是'+NAMES[k-1]+'的份额。');}
+  $('#s5-value').textContent=pct(m.s[4]);
+  var rows=$('#groups tbody');rows.replaceChildren();
+  m.s.forEach(function(v,i){var tr=document.createElement('tr');[NAMES[i],String((i+1)*20),pct(v),pct(m.cum[i+1]),(v/200).toFixed(2)].forEach(function(x,j){var td=document.createElement('td');td.textContent=x;if(j){td.className='num';}tr.appendChild(td);});rows.appendChild(tr);});
+  $('#r-gini').textContent=gtxt(m.gini);
+  $('#r-ratio').textContent=m.s[0]===0?'无法计算（最低组份额为 0）':(m.s[4]/m.s[0]).toFixed(1)+' 倍';
+  $('#r-bottom').textContent=pct(m.cum[2])+'%';
+  var pm=pinned?model(pinned):null;
+  $('#r-pin').textContent=pm?gtxt(pm.gini)+' / '+C.fmtS(m.gini-pm.gini,3):'未固定';
+  var key=null;Object.keys(PRESETS).forEach(function(p){if(PRESETS[p].every(function(v,i){return v===t[i];})){key=p;}});
+  document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.preset===key));});
+  var msg='基尼系数 '+gtxt(m.gini)+'（五组折线）。';
+  if(m.gini===0){msg+='五组份额都是 20%，洛伦兹曲线与完全平等线重合，面积 A 为零。';}
+  else if(m.s[4]===1000){msg+='全部收入归最高组，这是五组数据能表示的最大值 0.800。真实的极端情况下组内也不均，个体基尼会接近 1。';}
+  else{msg+='最低 20% 人口拿到 '+pct(m.s[0])+'% 的收入，最高 20% 拿到 '+pct(m.s[4])+'%'+(m.s[0]?'，是前者的 '+(m.s[4]/m.s[0]).toFixed(1)+' 倍':'')+'。最低 40% 合计 '+pct(m.cum[2])+'%。';}
+  if(pm){var d=m.gini-pm.gini;msg+=Math.abs(d)<0.0005?'与对比线的基尼系数相同。':'比对比线'+(d<0?'低 ':'高 ')+Math.abs(d).toFixed(3)+'。';}
+  if(lastMsg){msg+=lastMsg;}
+  $('#verdict').textContent=msg;
+  var svg=box.querySelector('svg');if(svg){svg.setAttribute('aria-label',aria(m));}
+  $('#unpin').disabled=!pinned;
+  draw();
+}
+for(var k=0;k<4;k++){(function(k){$('#s'+(k+1)).addEventListener('input',function(e){
+  var want=Math.round(+e.target.value*10),b=bounds(k),v=Math.min(b[1],Math.max(b[0],want));
+  lastMsg=want>b[1]?NAMES[k]+'已到上限：再提高会让'+(k<3&&b[1]===full(t)[k+1]?NAMES[k+1]+'低于它':'高收入组低于中间偏上组')+'。':want<b[0]?NAMES[k]+'已到下限：'+(k?'不能低于'+NAMES[k-1]:'份额不能为负')+'。':'';
+  t[k]=v;update();
+});})(k);}
+document.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){t=PRESETS[b.dataset.preset].slice();lastMsg='';update();});});
+$('#pin').addEventListener('click',function(){pinned=t.slice();lastMsg='';update();});
+$('#unpin').addEventListener('click',function(){pinned=null;lastMsg='';update();$('#pin').focus();});
+C.watch(box,draw);
+$('#goChart').addEventListener('click',function(){t=PRESETS.nbs.slice();pinned=null;lastMsg='';update();$('#w-lorenz').scrollIntoView({block:'start'});$('#s1').focus({preventScroll:true});});
+update();
+var QUIZ=[
+{q:'某国所有居民的收入在一年里同时增长 10%，其他都不变。按收入计算的基尼系数会怎样？',o:['下降，因为低收入者收入也提高了','上升，因为高收入者增加的绝对金额更多','不变，因为每组的收入份额都没变，洛伦兹曲线不动','无法判断，要看物价'],a:2,why:'不变。基尼系数只取决于相对份额。人人同比例增长，份额与曲线都不变。绝对差额扩大是另一个问题，需要用其他指标衡量。'},
+{q:'某国收入基尼系数为 0.32，同时最富 10% 家庭持有一半以上的净财富。这两个事实矛盾吗？',o:['不矛盾：财富是多年累积的存量，还受资产价格和继承影响，通常比收入集中得多','矛盾：收入差距小，财富差距必然也小','矛盾：二者之一必定统计错误','不矛盾，因为财富不能计算基尼系数'],a:0,why:'不矛盾。OECD 平均数据中，最富 10% 家庭的净财富份额约 52%，最高 10% 的收入份额约 24%。财富同样可以算基尼系数，只是量的对象不同。'},
+{q:'某国市场收入基尼 0.48，可支配收入基尼 0.37。下列哪种解读最恰当？',o:['市场本身没有收入差距，差距都来自税制','说明税率应该再提高，直到基尼降到 0','说明再分配一定损害了经济效率','税收和转移支付使基尼下降约 0.11（约 23%），但这本身不回答再分配是否过多或过少'],a:3,why:'数字只量出再分配缩小了多少差距。是否值得，还要权衡激励变化、执行成本和公平目标，不同观点各有依据。'},
+{q:'用统计公报的五组平均收入算出基尼约 0.39，而统计局公布的个体口径基尼更高。最主要的原因是？',o:['统计局把物价因素算了进去','五组折线把每组内部当作收入相同，抹掉了组内差距','公报只统计城镇居民','五组算法会高估差距'],a:1,why:'分组数据会低估。梯形公式在每组内部画直线，真实曲线在组内还会继续下弯，这部分面积被漏掉了。此外两个数字年份也不同。'},
+{q:'A 国五组份额为 7、9、14、22、48，B 国为 5、10、16、23、46，两国五组基尼都是 0.380。能说两国分配状况一样吗？',o:['能，基尼相同就说明分配相同','能，因为最高组份额差不多','不能，两条洛伦兹曲线相交，A 国最穷 20% 的份额更高，但中间几组更低','不能，因为 A 国基尼其实更高'],a:2,why:'不能。基尼是整条曲线的面积汇总，形状不同的曲线可以面积相同。关心底层时，还应看最低组份额等指标。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var tx=document.createElement('p');tx.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);tx.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(tx,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'洛伦兹曲线',en:'Lorenz curve',d:'把人口按收入从低到高排序，横轴为累计人口份额、纵轴为累计收入份额画出的曲线。越向下凹，差距越大。'},
+{t:'基尼系数',en:'Gini coefficient',d:'完全平等线与洛伦兹曲线之间的面积占整个三角形的比例。0 为完全平等，越接近 1 越集中。只反映相对份额。'},
+{t:'五等份收入分组',en:'income quintiles',d:'按收入排序后切成人数相同的五组。用分组数据算基尼会抹掉组内差距，低估个体层面的基尼。'},
+{t:'可支配收入',en:'disposable income',d:'交税和社保缴费之后、加上各种转移收入，居民可以自由支配的收入。统计局公布的居民基尼系数按它计算。'},
+{t:'市场收入',en:'market income',d:'工资、经营所得、财产收入等税前、未领补助的收入。与可支配收入的差别就是再分配的作用。'},
+{t:'净财富',en:'net wealth',d:'某一时点的资产减负债，是存量。OECD 平均最富 10% 家庭约持有 52%，比收入集中得多。'},
+{t:'再分配',en:'redistribution',d:'政府通过税收和转移支付改变各群体最终所得。量它的效果可比较税前、税后两条洛伦兹曲线。'},
+{t:'转移支付',en:'transfer payment',d:'政府直接付给个人或家庭、不换取当期商品或劳务的款项，例如养老金、失业救济、低保金。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var tt=document.createElement('span');tt.className='t';tt.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(tt,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

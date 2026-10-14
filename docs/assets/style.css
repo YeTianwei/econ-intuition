@@ -282,3 +282,10 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .legend .sw.ev{border-color:var(--demand)}
 .sources li{overflow-wrap:anywhere}
 /* m06-04 end */
+
+/* m07-03 start */
+.gap-area{fill:var(--model);fill-opacity:.14}
+.eqline{stroke:var(--ink);stroke-width:1.5}
+.legend .sw.gap{height:10px;border-top:0;background:var(--model);opacity:.3;border-radius:2px}
+.ctl .lab-static{font-size:15px;font-weight:500}
+/* m07-03 end */

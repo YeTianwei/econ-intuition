@@ -162,7 +162,7 @@
         {
           id: 'm07-03', title: '不平等如何衡量',
           en: 'Measuring inequality',
-          path: 'm07/03-measuring-inequality.html', status: 'todo'
+          path: 'm07/03-measuring-inequality.html', status: 'done'
         }
       ]
     },
