@@ -277,7 +277,7 @@
         {
           id: 'm12-03', title: '股票：估值与有效市场',
           en: 'Stocks: valuation and efficient markets',
-          path: 'm12/03-stocks-efficient-markets.html', status: 'todo'
+          path: 'm12/03-stocks-efficient-markets.html', status: 'done'
         },
         {
           id: 'm12-04', title: '银行挤兑、泡沫与金融危机',

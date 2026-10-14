@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>股票：估值与有效市场</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m12-03">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>股票：估值与有效市场</h1>
+<p class="sub">Stocks: valuation and efficient markets</p>
+<p class="lede">买一股股票，买到的是公司未来利润里的一小份。股价因此取决于两件事：大家预期利润能长多快，以及要用多高的回报率把未来的钱折回今天。这一课用一个最简单的估值公式，看清高市盈率背后的假设有多脆弱；再看为什么在竞争激烈的市场里，想靠挑股票稳定赢过大盘这么难，以及经济学家在这个问题上还在争论什么。</p>
+<p class="meta">约 22 分钟 · 1 个交互图 · 5 道自测题 · 9 张闪卡</p>
+<p class="prose">前置：<a href="../m09/01-compounding-growth.html#compounding">复利</a>（增长在增长之上）、<a href="../m06/04-behavioral-economics.html#bias">行为偏差</a>。本模块第一课讲的现值和贴现，这里会直接用到。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>某科技公司股价一年涨了两倍，市盈率超过 100 倍：分析师吵成两派，一派说是泡沫，一派说“增长配得上”</blockquote></figure>
+<p class="prose">市盈率 100 倍，粗略地说，是按今天的利润算，股价相当于公司 100 年的盈利。认为是泡沫的人说，没有哪家公司值得提前付 100 年的钱；认为合理的人说，这家公司的利润会高速增长很多年，今天的利润只是起点。</p>
+<ol class="qs"><li>股价到底由什么决定？市盈率 100 倍意味着市场在押注什么？</li><li>同一家公司，为什么增长预期或利率稍微一变，股价就可能大起大落？</li><li>如果能看出这是泡沫，为什么价格还没跌？普通人能不能靠判断这类事情稳定地赢过市场？</li></ol>
+</section>
+
+<section id="claim">
+<h2>股票：对未来利润的一份索取权</h2>
+<p class="prose"><b>股票</b><span class="en"> (stock)</span> 是公司所有权的一份。持有它，你就有权分享公司在付完工资、货款、利息和税之后剩下的利润。这份利润有两个去向：一部分以<b>股利</b><span class="en"> (dividend)</span> 的形式发给股东，另一部分留在公司里再投资，用来扩大生产，换取未来更多的利润。</p>
+<p class="prose">所以股票的价值不在于今天这张凭证本身，而在于它将来能带给股东多少现金。按本模块第一课的现值思路，把未来每一年归股东的现金折算成今天的钱再加总，就是股票的理论价值。折算用的贴现率在这里叫<b>要求回报率</b><span class="en"> (required rate of return)</span>：投资者愿意持有这只股票所要求的年回报，大致等于无风险利率加上一份风险溢价。股票比存款和国债风险大，要求的回报也更高。</p>
+<div class="analogy"><span class="lab">类比</span><p>买股票像买下一棵果树的一部分。果树今年结多少果子，只是参考；你真正关心的是它往后几十年每年能结多少，以及你愿意为“明年才能吃到的果子”打多少折。果树长得越快，或者你越有耐心（折扣越小），这棵树今天就越值钱。</p></div>
+</section>
+
+<section id="ddm">
+<h2>股利贴现模型：一个公式看懂估值</h2>
+<p class="prose">把“股价等于未来股利的现值之和”写成模型，就是<b>股利贴现模型</b><span class="en"> (dividend discount model)</span>。如果再假设股利从明年起每年按固定的速度增长，并且永远持续，加总的结果可以化成一个很短的公式，叫 <b>Gordon 增长模型</b><span class="en"> (Gordon growth model)</span>：</p>
+<p class="formula">P = D₁ ÷ (r − g)</p>
+<p class="prose">P 是今天的理论股价，D₁ 是明年每股股利，r 是要求回报率，g 是股利的长期年增长率。公式说的是：价格等于明年的股利，除以“要求回报率减增长率”这个差。</p>
+<p class="prose">换个角度更好记。把公式变形成 r = D₁ ÷ P + g：投资者要求的总回报 r，一部分来自股利收益率 D₁ ÷ P，另一部分来自股利（以及股价）每年增长的 g。增长越快，靠股利拿到的部分就可以越少，于是愿意出的价格越高。</p>
+<p class="prose">这个公式只在 g 小于 r 时有意义。g 越接近 r，分母越小，价格越大；g 等于 r 时价格变成无穷大；g 大于 r 时公式给出负数。这不是说股票真的值无穷多钱，而是说“股利永远比要求回报率增长得还快”这个假设本身不可能成立：任何公司都不可能永远比整个经济增长得更快。</p>
+<h3>市盈率：价格是盈利的多少倍</h3>
+<p class="prose">新闻里更常见的指标是<b>市盈率</b><span class="en"> (price-to-earnings ratio, P/E)</span>，即股价除以每股盈利。公司通常只把一部分利润作为股利发出去，发出去的比例叫派息率。设明年每股盈利为 E₁，派息率为 b，那么 D₁ = b × E₁，代入公式就得到：</p>
+<p class="formula">P ÷ E₁ = b ÷ (r − g)</p>
+<p class="prose">这样算出来的是“预期市盈率”，用明年的盈利做分母；新闻中常见的是用过去一年盈利计算的市盈率，两者在高增长公司身上可能差得不少。公式告诉我们，市盈率高可能有三个原因：派息率高、要求回报率低，或者市场预期的增长率高。它们都通过 r − g 这个差起作用。</p>
+
+<div class="widget" id="w-ddm" aria-labelledby="w1t">
+<h3 id="w1t">图 1　估值器：Gordon 增长模型 P = D₁ ÷ (r − g)</h3>
+<div class="chips" role="group" aria-label="选择情景（教学示意）"><button type="button" class="chip" data-s="0.5,50,9,8.5" aria-pressed="true">新闻：市盈率 100 倍</button><button type="button" class="chip" data-s="0.5,50,9,7.5" aria-pressed="false">增长预期下调 1 点</button><button type="button" class="chip" data-s="0.5,50,10,8.5" aria-pressed="false">要求回报率上调 1 点</button><button type="button" class="chip" data-s="2,60,8,2" aria-pressed="false">成熟公司</button><button type="button" class="chip" data-s="2,80,9,-2" aria-pressed="false">萎缩行业</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw model"></span>理论价格随 g 变化的曲线（其他参数不变）</li><li><span class="sw band"></span>g ≥ r：模型不适用</li><li><span class="mk"></span>当前 g 对应的价格</li><li><span class="mk half"></span>g 低 1 点、高 1 点时的价格</li></ul>
+<div class="controls">
+<div class="ctl"><label for="dv">明年每股股利 D₁（元）</label><output id="dv-value" for="dv"></output><input id="dv" type="range" min="0.2" max="3" step="0.1" value="0.5" aria-describedby="dv-hint"><span class="hint" id="dv-hint">公司明年预计发给每股多少现金，0.2~3 元。</span></div>
+<div class="ctl"><label for="pay">派息率 b（%）</label><output id="pay-value" for="pay"></output><input id="pay" type="range" min="20" max="100" step="5" value="50" aria-describedby="pay-hint"><span class="hint" id="pay-hint">盈利中拿来分红的比例，20%~100%；只用来把股利换算成盈利，不影响价格。</span></div>
+<div class="ctl"><label for="rr">要求回报率 r（%/年）</label><output id="rr-value" for="rr"></output><input id="rr" type="range" min="4" max="12" step="0.5" value="9" aria-describedby="rr-hint"><span class="hint" id="rr-hint">投资者持有这只股票要求的年回报，4%~12%；利率或风险上升时提高。</span></div>
+<div class="ctl"><label for="gg">股利长期增长率 g（%/年）</label><output id="gg-value" for="gg"></output><input id="gg" type="range" min="-4" max="11.5" step="0.5" value="8.5" aria-describedby="gg-hint"><span class="hint" id="gg-hint">股利每年增长多少并永远持续，−4%~11.5%；必须低于 r，否则模型不适用。</span></div>
+</div>
+<dl class="read pairs"><div><dt>明年每股盈利 E₁ = D₁ ÷ b</dt><dd id="r-eps"></dd></div><div><dt>理论价格 P = D₁ ÷ (r − g)</dt><dd id="r-p"></dd></div><div><dt>市盈率 P ÷ E₁ = b ÷ (r − g)</dt><dd id="r-pe"></dd></div><div><dt>股利收益率 D₁ ÷ P = r − g</dt><dd id="r-dy"></dd></div><div><dt>g 低 1 个百分点时的价格</dt><dd id="r-down"></dd></div><div><dt>g 高 1 个百分点时的价格</dt><dd id="r-up"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">所有数字都是教学示意，不对应任何真实公司。模型假设股利从明年起按固定的 g 永远增长；现实中的高增长公司通常先高速增长若干年再放缓，这里的 g 可以理解为把这条路径压缩成的一个“平均长期增长率”。派息率只用来把股利换算成盈利、计算市盈率；现实中派息率和增长率是相关的（少分红、多再投资才能长得快），这里为了演示把它们分开调。纵轴范围会随价格自动放大。</p>
+</div>
+<h3>四个实验</h3>
+<ol class="qs"><li>默认情景对应新闻：要求回报率 9%，增长率 8.5%，r − g 只有 0.5%，价格 100 元，市盈率 100 倍。在这个模型里，100 倍的市盈率等于押注“这家公司的股利能几乎和要求回报率一样快地永远增长”。</li><li>选“增长预期下调 1 点”：g 从 8.5% 降到 7.5%，r − g 从 0.5% 变成 1.5%，价格从 100 元跌到约 33 元，少了三分之二。公司今年的利润一分没变，变的只是对遥远未来的预期。</li><li>选“要求回报率上调 1 点”：效果和增长率下调 1 点完全一样，因为价格只取决于 r − g。利率上升或者市场变得更怕风险，高估值股票往往跌得最多，原因就在这里。</li><li>选“成熟公司”：r − g 为 6%，市盈率只有 10 倍，同样 1 个百分点的变化只让价格变动一到两成。把 g 拖向 r，看曲线在接近竖线时怎样急剧向上：越靠近竖线，估值对增长假设越敏感。</li></ol>
+<p class="prose">这就是高市盈率的双面性。它可能是合理的：如果利润确实能高速增长很多年，今天付高价是值得的。它也可能是危险的：价格建立在一个很小的 r − g 上，对增长率和利率的任何一点修正都极度敏感。估值公式本身无法告诉你哪一种判断对，它只能把每种判断背后隐含的假设摆到台面上。</p>
+</section>
+
+<section id="emh">
+<h2>有效市场假说：信息会多快进入价格</h2>
+<p class="prose">如果股价由未来利润决定，那么谁更会预测利润，谁就能赚钱？问题在于，股市里有成千上万的投资者和分析师在做同一件事。某只股票看起来便宜，会有人买入，价格随之上涨，直到不再明显便宜为止。竞争会把容易发现的机会很快消耗掉。</p>
+<p class="prose">芝加哥大学的 Eugene Fama 在 1970 年的综述中，把“价格总是充分反映可得信息”的市场称为有效市场，这一观点被称为<b>有效市场假说</b><span class="en"> (efficient market hypothesis, EMH)</span>。他按“哪些信息已经反映在价格里”把检验分成三类，后来就成了这个假说的三种形式：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="有效市场假说的三种形式，可横向滚动"><table class="tbl"><caption>三种形式（据 Fama 1970 的分类）</caption><thead><tr><th scope="col">形式</th><th scope="col">价格已反映</th><th scope="col">若成立则无效</th></tr></thead><tbody>
+<tr><td>弱式</td><td>过去的价格和成交量</td><td>看图找走势</td></tr>
+<tr><td>半强式</td><td>全部公开信息</td><td>研究财报和新闻</td></tr>
+<tr><td>强式</td><td>全部信息，含内幕</td><td>利用内幕消息</td></tr>
+</tbody></table></div>
+<p class="prose">三种形式一个比一个强。很少有人相信强式成立：如果内部人提前知道的未公开消息都没法带来超额收益，各国就不必立法禁止内幕交易了。争论主要集中在弱式和半强式上。</p>
+<p class="prose">有效市场假说的核心推论是：只有“新”信息才会推动价格，而新信息按定义是无法提前知道的，有时好、有时坏。所以短期价格变动很难预测，看上去像随机游走。它并不是说价格永远“正确”，而是说凭公开信息很难稳定地找到被错估的股票并从中获利。</p>
+<div class="analogy"><span class="lab">类比</span><p>经济学课堂上有个老笑话：教授看见地上有张一百元，学生要去捡，教授说“别捡了，如果是真的，早就被别人捡走了”。笑话夸张了，地上偶尔真有钱；但在人来人往的闹市，钱在地上躺不了多久。股市就是人流最密的闹市之一。</p></div>
+</section>
+
+<section id="index">
+<h2>指数基金：为什么“平均”很难被打败</h2>
+<p class="prose"><b>指数基金</b><span class="en"> (index fund)</span> 不挑股票，只按某个市场指数（例如美国的标普 500 指数）的构成被动持有，目标是复制指数的表现。与之相对的主动基金由基金经理挑选股票，希望赢过指数。</p>
+<p class="prose">先看一个算术。全体投资者合起来，持有的就是整个市场。在扣除费用之前，所有主动投资者的平均收益只能等于市场收益：有人跑赢，就一定有人跑输。主动基金的管理费和交易成本通常高于指数基金，扣费以后，主动投资者作为一个整体必然落后于指数。这个结论不需要假设市场有效，只需要会做加减法。</p>
+<p class="prose">再看数据。标普道琼斯指数公司每半年发布一次 SPIVA 报告，统计美国主动基金跑输对应指数的比例。报告计入了期间被清盘或合并的基金，以免只看“活下来的”基金而高估主动管理，所用基金收益已扣除费用。数据截至 2025 年底，美国大盘股主动基金与标普 500 指数相比：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="SPIVA 美国大盘股主动基金跑输标普 500 的比例，可横向滚动"><table class="tbl"><caption>美国大盘股主动基金中跑输标普 500 的比例（按绝对收益，截至 2025-12-31）。来源：SPIVA U.S. Scorecard Year-End 2025</caption><thead><tr><th scope="col">统计期</th><th scope="col" class="num">跑输比例（%）</th></tr></thead><tbody>
+<tr><td>1 年（2025 年）</td><td class="num">79</td></tr>
+<tr><td>5 年</td><td class="num">89</td></tr>
+<tr><td>10 年</td><td class="num">86</td></tr>
+<tr><td>15 年</td><td class="num">90</td></tr>
+<tr><td>20 年</td><td class="num">93</td></tr>
+</tbody></table></div>
+<p class="prose">时间越长，跑输的比例大体越高。报告还显示，20 年前存在的 760 只大盘股主动基金，到期末只有约 35% 还在运作，其余已被清盘或合并。短期结果则波动很大：2024 年大盘股基金跑输的比例是 65%；2025 年美国小盘股主动基金中只有约 41% 跑输对应指数，多数跑赢了。所以“主动基金必然跑输”并不准确，准确的说法是：事先挑出能长期跑赢的那一小部分基金非常难。</p>
+<p class="prose">这些证据与有效市场假说相符，但并不能单独证明它。主动基金跑输也可能是因为费用太高，而不是机会不存在。它对普通投资者的含义却比较明确：低成本、分散地持有整个市场，是一个很难被大多数人长期打败的基准。指数基金并不保证赚钱，市场整体下跌时它也会跟着跌。</p>
+</section>
+
+<section id="debate">
+<h2>争议：市场到底有多有效</h2>
+<p class="prose">2013 年的诺贝尔经济学奖同时授予了 Eugene Fama、Lars Peter Hansen 和 Robert Shiller，表彰他们对资产价格的实证分析。获奖者在这个问题上观点并不一致，瑞典皇家科学院的获奖公告把这种张力概括为：几天或几周内的股价和债券价格无法预测，但未来三到五年的大致走向却有可能预见。下面分别陈述两种主要看法，不在这里下结论。</p>
+<p class="prose"><b>支持市场基本有效的一方。</b>Fama 及其合作者从 1960 年代起的研究表明，股价在短期内极难预测，新信息会非常快地反映到价格中。诺贝尔公告提到，这些发现改变了市场实践，世界各地指数基金的出现就是一个突出的例子。对长期可预测性，这一方的解释是：投资者在风险特别高的时期要求更高的回报，价格因此先低后高，这是对承担风险的补偿，而不是市场犯错。Hansen 发展的统计方法常被用来检验这类理性定价理论。</p>
+<p class="prose"><b>认为市场常常偏离基本面的一方。</b>Shiller 在 1980 年代初发现，股价的波动远大于公司股利的波动，而且价格相对股利偏高时，此后往往会回落，偏低时往往会回升。按 Gordon 公式，价格应当主要随股利预期而动，波动大这么多很难只用新信息解释。<b>行为金融学</b><span class="en"> (behavioral finance)</span> 把这类现象归于投资者的<a href="../m06/04-behavioral-economics.html#bias">系统性偏差</a>，例如过度自信、追涨杀跌，再加上“套利的限制”：即使聪明的投资者看出价格偏高，借钱受限、做空有成本和风险，他们也未必能把价格压回去。在这种看法下，<b>泡沫</b><span class="en"> (bubble)</span>，即价格持续远高于基本面价值，是可能出现的。泡沫怎样形成和破裂，本模块最后一课再讲。</p>
+<p class="prose">还有一个折中的视角。Grossman 和 Stiglitz 在 1980 年指出，价格不可能“完全”有效：如果价格已经反映了一切，就没有人愿意花钱去收集和分析信息，而没人分析，价格也就无法反映信息。合理的推论是，市场有效到这样的程度，使得分析信息的收益刚好够补偿分析的成本，留给普通投资者的机会很少。</p>
+<p class="prose">两种看法在一个实际问题上有交集：即使市场存在泡沫和错误定价，事先判断它何时破裂、并从中稳定获利，仍然非常难。“价格可能是错的”和“你能稳定地赚到这个错的钱”是两回事。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“市盈率高就是泡沫，市盈率低就是便宜。”</p><p>市盈率反映的是市场对增长率和风险的判断。高增长或低利率环境下，高市盈率可能合理；利润正在萎缩的公司，市盈率低也可能并不便宜。要问的是：这个市盈率隐含了多高的增长，这个增长靠不靠得住。</p></div>
+<div class="mis"><p class="said">“市场有效，就说明股价总是对的，不会有泡沫。”</p><p>有效市场假说的核心主张是价格难以预测、难以靠公开信息稳定获利，并不保证价格等于真实价值。股价是否会长期偏离基本面，正是经济学家仍在争论的问题。</p></div>
+<div class="mis"><p class="said">“指数基金只能拿到平均收益，是平庸的选择。”</p><p>扣费之前，主动投资者整体只能拿到市场平均；扣费之后，他们整体落后于指数。长期数据中大多数主动基金跑输指数。指数基金的“平均”其实排在多数主动基金前面，但它不保证不亏钱。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">算估值时先看 r − g 这个差，判断有效市场的问题时先问：这条信息是不是已经公开了。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>股价由什么决定？100 倍市盈率押注的是什么？</b>股价是未来归股东的现金按要求回报率折现后的总和。按 Gordon 模型，市盈率等于派息率 ÷ (r − g)。派息率 50% 时，100 倍市盈率意味着 r − g 只有 0.5%，也就是市场相信这家公司的增长率能长期贴近投资者要求的回报率。</div></li><li><div><b>为什么增长预期或利率一变，股价就大起大落？</b>因为价格与 r − g 成反比。差值越小，同样 1 个百分点的修正造成的价格变化越大：在图 1 的新闻情景里，增长率下调 1 点或者要求回报率上调 1 点，理论价格都会跌去约三分之二。高估值股票对消息和利率特别敏感，不一定说明市场疯了，而是数学使然。</div></li><li><div><b>如果是泡沫，为什么价格还没跌？能不能靠判断稳定赚钱？</b>两派对此有分歧：一派认为价格已经反映了公开的信息和风险，另一派认为投资者偏差和套利限制可能让价格长期偏离。但即使价格偏高，判断何时回落、并从中稳定获利依然很难。长期数据中约九成美国大盘股主动基金跑输标普 500，对多数人而言，低成本的指数基金是一个很难打败的基准。</div></li></ol>
+<p class="prose">下次看到“某股估值过高”的新闻，可以依次问：它的市盈率隐含了多高的长期增长？如果增长率或利率变动 1 个百分点，价格会变多少？说它被高估的人，掌握了什么别人还不知道的信息？</p>
+<button type="button" class="chip" id="goChart">回到图 1 的新闻情景</button>
+</section>
+
+<section id="sources">
+<h2>资料来源</h2>
+<ol class="qs">
+<li>S&amp;P Dow Jones Indices（Anu R. Ganti 等），<a href="https://www.spglobal.com/spdji/en/spiva/article/spiva-us-year-end-2025/">SPIVA U.S. Scorecard Year-End 2025</a>，数据截至 2025-12-31；大盘股主动基金跑输标普 500 的比例（1、5、10、15、20 年），20 年期的基金存续率，2024 年和小盘股的对比，以及收益扣除费用、计入已清盘基金的口径说明。</li>
+<li>Eugene F. Fama，<a href="https://doi.org/10.1111/j.1540-6261.1970.tb00518.x">Efficient Capital Markets: A Review of Theory and Empirical Work</a>，The Journal of Finance，1970 年 5 月；有效市场的定义，以及弱式、半强式、强式三类检验的划分。</li>
+<li>瑞典皇家科学院，<a href="https://www.nobelprize.org/prizes/economic-sciences/2013/press-release/">The Prize in Economic Sciences 2013 – Press release</a>，2013-10-14；Fama、Hansen、Shiller 获奖，短期不可预测而长期大致可预见的表述，Shiller 关于股价波动大于股利的发现，以及理性定价与行为金融两种解释。</li>
+<li>Sanford J. Grossman、Joseph E. Stiglitz，<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=228054">On the Impossibility of Informationally Efficient Markets</a>，American Economic Review，1980 年 6 月；价格不可能完全反映信息，否则无人有动力收集信息。</li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,MINUS='−';
+function $(s){return document.querySelector(s);}
+var G0=-4,G1=12,YS=[20,50,100,200,500,1000];
+function price(D,r,g){return D/((r-g)/100);}
+function model(D,b,r,g){
+  var s={valid:g<r,eps:D/(b/100)};
+  if(!s.valid){return s;}
+  s.p=price(D,r,g);s.pe=s.p/s.eps;s.dy=r-g;
+  s.down=price(D,r,g-1);
+  s.up=(g+1<r)?price(D,r,g+1):null;
+  return s;
+}
+function pct(n){return C.fmt(n,1)+'%';}
+function dp(n){return n<10?2:1;}
+function yuan(n){return C.fmt(n,dp(n))+' 元';}
+function chg(a,b){return C.fmtS((b/a-1)*100,0)+'%';}
+var box=$('#chart1'),state=null;
+function pickY(p){for(var i=0;i<YS.length;i++){if(YS[i]>=p*1.25){return YS[i];}}return YS[YS.length-1];}
+function draw(){
+  box.replaceChildren();
+  if(!state){return;}
+  var p=state.p,s=state.s;
+  var ref=s.valid?s.p:price(p.D,p.r,p.r-1);
+  var ymax=pickY(ref);
+  var f=C.frame(box,{id:'ddm',q0:G0,q1:G1,qs:2,p0:0,p1:ymax,ps:ymax/5,xt:'股利长期增长率 g（%/年）',yt:'理论价格 P（元）',label:state.label});
+  Array.prototype.slice.call(f.svg.querySelectorAll('text.tick')).forEach(function(e){e.textContent=e.textContent.replace('-',MINUS);});
+  var frameRect=f.svg.querySelector('.plotframe'),g=C.el('g',{});
+  f.svg.insertBefore(g,frameRect);
+  var xr=f.x(p.r),top=f.m.t,bot=f.m.t+f.ih,right=f.m.l+f.iw;
+  if(xr<right){g.appendChild(C.el('rect',{x:xr.toFixed(1),y:top,width:(right-xr).toFixed(1),height:f.ih,'class':'phase'}));}
+  g.appendChild(C.el('line',{x1:xr.toFixed(1),x2:xr.toFixed(1),y1:top,y2:bot,'class':'guide'}));
+  var gEnd=p.r-100*p.D/ymax,n=160,d='',i,gv;
+  for(i=0;i<=n;i++){gv=G0+(gEnd-G0)*i/n;d+=(i?'L':'M')+f.x(gv).toFixed(1)+' '+f.y(price(p.D,p.r,gv)).toFixed(1);}
+  g.appendChild(C.el('path',{d:d,'class':'curve model'}));
+  var lab='g = r',narrow=f.w<440,lw=narrow?40:46;
+  if(xr+6+lw<right){f.svg.appendChild(C.el('text',{x:(xr+6).toFixed(1),y:top+15,'text-anchor':'start','class':'ptlab halo'},lab));}
+  else{f.svg.appendChild(C.el('text',{x:(xr-6).toFixed(1),y:top+15,'text-anchor':'end','class':'ptlab halo'},lab));}
+  if(s.valid){
+    var X=f.x(p.g),Y=f.y(s.p);
+    C.guides(f,X,Y,true);
+    if(p.g-1>=G0){g.appendChild(C.el('circle',{cx:f.x(p.g-1).toFixed(1),cy:f.y(s.down).toFixed(1),r:4,'class':'pt base'}));}
+    if(s.up!==null&&s.up<=ymax){g.appendChild(C.el('circle',{cx:f.x(p.g+1).toFixed(1),cy:f.y(s.up).toFixed(1),r:4,'class':'pt base'}));}
+    f.svg.appendChild(C.el('circle',{cx:X.toFixed(1),cy:Y.toFixed(1),r:5.5,'class':'pt'}));
+    var t='P = '+C.fmt(s.p,dp(s.p));
+    if(X-f.m.l>110){f.svg.appendChild(C.el('text',{x:(X-10).toFixed(1),y:(Y-10).toFixed(1),'text-anchor':'end','class':'ptlab halo'},t));}
+    else{f.svg.appendChild(C.el('text',{x:(X+10).toFixed(1),y:(Y-10).toFixed(1),'text-anchor':'start','class':'ptlab halo'},t));}
+  }
+  box.appendChild(f.svg);
+}
+function presetMatch(p){
+  document.querySelectorAll('[data-s]').forEach(function(b){var v=b.dataset.s.split(',').map(Number);b.setAttribute('aria-pressed',String(v[0]===p.D&&v[1]===p.b&&v[2]===p.r&&v[3]===p.g));});
+}
+function update(){
+  var p={D:+$('#dv').value,b:+$('#pay').value,r:+$('#rr').value,g:+$('#gg').value},s=model(p.D,p.b,p.r,p.g);
+  $('#dv-value').textContent=C.fmt(p.D,1)+' 元';$('#dv').setAttribute('aria-valuetext','明年每股股利 '+C.fmt(p.D,1)+' 元');
+  $('#pay-value').textContent=p.b+'%';$('#pay').setAttribute('aria-valuetext','派息率 '+p.b+'%');
+  $('#rr-value').textContent=pct(p.r);$('#rr').setAttribute('aria-valuetext','要求回报率 '+pct(p.r));
+  $('#gg-value').textContent=pct(p.g);$('#gg').setAttribute('aria-valuetext','股利长期增长率 '+pct(p.g)+(s.valid?'':'，不低于要求回报率，模型不适用'));
+  presetMatch(p);
+  $('#r-eps').textContent=C.fmt(s.eps,2)+' 元';
+  var t;
+  if(!s.valid){
+    ['r-p','r-pe','r-dy','r-down','r-up'].forEach(function(id){$('#'+id).textContent='不适用（g ≥ r）';});
+    t='增长率 g = '+pct(p.g)+' 不低于要求回报率 r = '+pct(p.r)+'，公式的分母 r − g 为零或负数，给不出有意义的价格。这相当于假设股利永远比投资者要求的回报增长得还快，没有公司能做到。请把 g 调到 r 以下，或者调高 r。';
+  }else{
+    $('#r-p').textContent=yuan(s.p);
+    $('#r-pe').textContent=C.fmt(s.pe,dp(s.pe))+' 倍';
+    $('#r-dy').textContent=pct(s.dy);
+    $('#r-down').textContent=yuan(s.down)+'（'+chg(s.p,s.down)+'）';
+    $('#r-up').textContent=s.up===null?'不适用（g + 1 ≥ r）':yuan(s.up)+'（'+chg(s.p,s.up)+'）';
+    t='r − g = '+pct(s.dy)+'，理论价格 '+yuan(s.p)+'，每股盈利 '+C.fmt(s.eps,2)+' 元，市盈率 '+C.fmt(s.pe,dp(s.pe))+' 倍。';
+    if(p.g<0){t+='股利每年萎缩 '+pct(-p.g)+'，股票仍有正的价值，因为未来的股利虽然越来越少，但一直是正的。';}
+    t+='增长率下调 1 个百分点，价格变为 '+yuan(s.down)+'（'+chg(s.p,s.down)+'）';
+    if(s.up===null){t+='；上调 1 个百分点则 g 达到或超过 r，模型不再适用。';}
+    else{t+='；上调 1 个百分点，价格变为 '+yuan(s.up)+'（'+chg(s.p,s.up)+'）。';}
+    if(s.dy<=1){t+='r − g 很小，价格几乎完全建立在“长期高速增长”这一个假设上，对增长和利率的修正极度敏感。';}
+    else if(s.dy>=5){t+='r − g 较大，估值主要来自眼前的股利，对增长假设不太敏感。';}
+    if(s.pe>=50){t+='市盈率 '+C.fmt(s.pe,0)+' 倍是否合理，取决于这么高的长期增长能否兑现。';}
+  }
+  $('#verdict').textContent=t;
+  state={p:p,s:s,label:'图 1：价格随增长率变化的曲线。'+t};
+  draw();
+}
+['dv','pay','rr','gg'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+document.querySelectorAll('[data-s]').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.s.split(',');$('#dv').value=v[0];$('#pay').value=v[1];$('#rr').value=v[2];$('#gg').value=v[3];update();});});
+$('#goChart').addEventListener('click',function(){$('#dv').value=0.5;$('#pay').value=50;$('#rr').value=9;$('#gg').value=8.5;update();var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;$('#w-ddm').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});$('#gg').focus({preventScroll:true});});
+C.watch(box,draw);update();
+
+var QUIZ=[
+{q:'某公司明年预计每股派 2 元股利，此后股利每年增长 4%，投资者对它要求 8% 的年回报。按 Gordon 增长模型，理论股价是多少？',o:['25 元，用 2 ÷ 8%','50 元，用 2 ÷ (8% − 4%)','约 16.7 元，用 2 ÷ (8% + 4%)','无法估计，因为没人知道公司能活多久'],a:1,why:'50 元。P = D₁ ÷ (r − g) = 2 ÷ 0.04。增长会让未来股利越来越多，所以分母是 r 减去 g，而不是加上 g；只用 r 相当于假设股利永不增长。'},
+{q:'一只股票的要求回报率是 9%，市场原先预期它的长期增长率为 8.5%。一份研究报告让大家把增长预期下调到 7.5%，其他不变。按 Gordon 模型，理论价格会怎样？',o:['跌约 1%，增长率只变了 1 个百分点','跌约 12%，与增长率的相对降幅相同','基本不变，公司今年的利润没有变化','跌约三分之二，因为 r − g 从 0.5% 变成 1.5%'],a:3,why:'跌约三分之二。价格与 r − g 成反比，差值从 0.5% 变成 1.5%，价格变为原来的三分之一。r − g 越小，估值对增长假设越敏感。'},
+{q:'央行加息，无风险利率上升，投资者对股票的要求回报率随之提高，公司的股利和增长预期都不变。股票的理论价格会怎样？',o:['下跌，要求回报率上升让未来股利折算到今天更不值钱','上涨，加息说明经济向好','不变，利率只影响债券，不影响股票','只有不分红的公司会受影响'],a:0,why:'下跌。r 上升使 r − g 变大，同样的未来股利现值更低。高增长、高市盈率的股票 r − g 本来就小，受加息的冲击往往最大。'},
+{q:'某公司上午发布财报，利润大增，远超预期。你中午读到新闻后买入，希望赚到这条好消息带来的涨幅。如果市场是半强式有效的，最可能的结果是？',o:['一定能赚到超额收益，因为利润大增是确定的好消息','只要比别人读得更仔细，就能稳定赚钱','这条公开消息已经很快反映在股价里，你很难再靠它获得超额收益','股价根本不会对财报做出反应'],a:2,why:'很难再获利。半强式有效意味着公开信息会迅速进入价格，财报公布后价格多半已经上涨到位。市场有效并不是说价格不动，而是说你看到消息时，别人也看到了。'},
+{q:'朋友说：“去年有只主动基金比指数多赚了 30%，说明请人挑股票比买指数基金强。”下面哪种回应最有根据？',o:['每年总有一部分基金跑赢，但长期看多数主动基金扣费后跑输指数，一年的成绩说明不了稳定的能力','主动基金一定跑输，那只基金肯定有问题','指数基金不会亏钱，所以永远比主动基金好','只要每年都买上一年最好的基金，就能稳定跑赢'],a:0,why:'第一个回应最有根据。数千只基金里总有人某一年大幅跑赢，但 SPIVA 数据显示约九成美国大盘股主动基金在 15~20 年里跑输标普 500。指数基金同样会随市场下跌，它的优势是费用低、难以被长期打败。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'股票',en:'stock',d:'公司所有权的一份，持有者分享公司付完各项成本和税之后的利润，以股利或再投资的形式实现。'},
+{t:'要求回报率',en:'required rate of return',d:'投资者愿意持有某项资产所要求的年回报，约等于无风险利率加风险溢价，是给股票估值时用的贴现率。'},
+{t:'股利贴现模型',en:'dividend discount model',d:'股价等于未来各期股利的现值之和。'},
+{t:'Gordon 增长模型',en:'Gordon growth model',d:'股利按固定速度 g 永远增长时的股利贴现模型：P = D₁ ÷ (r − g)，只在 g < r 时有意义。'},
+{t:'市盈率',en:'price-to-earnings ratio',d:'股价除以每股盈利。在 Gordon 模型里等于派息率 ÷ (r − g)，高低取决于增长预期和要求回报率。'},
+{t:'有效市场假说',en:'efficient market hypothesis',d:'价格充分反映可得信息，因此难以凭这些信息稳定获得超额收益。按信息范围分弱式、半强式、强式。'},
+{t:'指数基金',en:'index fund',d:'被动复制某个市场指数的基金，不挑股票、费用低。长期看多数主动基金扣费后跑输它。'},
+{t:'行为金融学',en:'behavioral finance',d:'用投资者的系统性偏差和套利限制解释价格偏离基本面、泡沫等现象的研究方向。'},
+{t:'泡沫',en:'bubble',d:'资产价格持续远高于由未来现金流支撑的基本面价值。事前很难确认，事后才容易看清。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
