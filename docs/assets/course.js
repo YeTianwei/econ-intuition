@@ -256,7 +256,7 @@
         {
           id: 'm11-04', title: '菲利普斯曲线与通胀预期',
           en: 'The Phillips curve and inflation expectations',
-          path: 'm11/04-phillips-curve.html', status: 'todo'
+          path: 'm11/04-phillips-curve.html', status: 'done'
         }
       ]
     },

@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>菲利普斯曲线与通胀预期</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m11-04">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>菲利普斯曲线与通胀预期</h1>
+<p class="sub">The Phillips curve and inflation expectations</p>
+<p class="lede">失业少一点，物价就涨快一点，这个交换在短期里常常成立。可如果央行想一直用多一点通胀换少一点失业，人们很快会把通胀算进预期，交换的价码就会越涨越高。这一课从菲利普斯曲线出发，看预期怎样让它上移，为什么长期里它是一条竖线，以及央行为什么把“预期锚定”挂在嘴边。</p>
+<p class="meta">约 22 分钟 · 2 个交互图 · 5 道自测题 · 10 张闪卡</p>
+<p class="prose">前置：<a href="../m08/03-unemployment.html#natural">自然失业率</a>、<a href="../m10/03-causes-of-inflation.html#expectations">通胀预期与工资-价格螺旋</a>。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>央行官员：就业市场依然偏紧，但长期通胀预期保持锚定，政策将确保通胀回到 2% 目标</blockquote></figure>
+<p class="prose">这类表态在各国央行的讲话和会后声明里反复出现。失业率很低是好消息，央行却不打算借机让它更低；通胀还没完全回落，央行强调的又是人们“相信什么”。</p>
+<ol class="qs"><li>低失业和低通胀能不能兼得？央行为什么不顺势把失业率再压低一点？</li><li>“通胀预期保持锚定”是什么意思，为什么值得反复强调？</li><li>如果预期脱锚了会怎样？历史上付过什么代价？</li></ol>
+</section>
+
+<section id="tradeoff">
+<h2>短期的交换：失业少一点，通胀高一点</h2>
+<p class="prose">1958 年，经济学家菲利普斯（A. W. Phillips）用英国 1861~1957 年的数据发现：失业率低的年份，货币工资涨得快；失业率高的年份，工资涨得慢甚至下降。后来人们把工资换成物价，失业率与通胀率之间的这种反向关系就叫<b>菲利普斯曲线</b><span class="en"> (Phillips curve)</span>。</p>
+<p class="prose">背后的直觉不复杂。需求旺盛时，企业抢着招人，失业率下降；工人议价能力变强，工资涨得快；企业又把成本转嫁到价格上。需求疲软时反过来。所以在一段时间里，失业率和通胀率像跷跷板的两头。描述这种短期关系的曲线叫<b>短期菲利普斯曲线</b><span class="en"> (short-run Phillips curve)</span>，它向右下方倾斜。</p>
+<p class="prose">1960 年代的美国数据看起来正是如此。1961 年失业率 6.7%、通胀 1.1%；到 1969 年失业率降到 3.5%，通胀升到 5.5%（年平均，见本课后面的表）。如果这条曲线固定不动，它就像一张菜单：政策制定者可以挑一个组合，用多几个点的通胀，买少几个点的失业。</p>
+<p class="prose">问题在于“固定不动”这个假设。美联储历史网站的文章回顾，菲尔普斯（Edmund Phelps，1967）和弗里德曼（Milton Friedman，1968）当时就提出警告：工人和企业会学会预期通胀，曲线会随之上移，想维持同样低的失业需要越来越高的通胀。</p>
+</section>
+
+<section id="augmented">
+<h2>预期增强的菲利普斯曲线</h2>
+<p class="prose">两人的论点可以写成一个式子，叫<b>预期增强的菲利普斯曲线</b><span class="en"> (expectations-augmented Phillips curve)</span>：</p>
+<p class="formula">π = πᵉ − β × (u − uₙ)</p>
+<p class="prose">π 是今年的通胀率，πᵉ 是人们事先预期的通胀率，u 是失业率，uₙ 是<a href="../m08/03-unemployment.html#natural">自然失业率</a>，β 是一个正数，表示失业率每低于自然率 1 个点，通胀比预期高多少。式子说的是：失业率等于自然失业率时，通胀就等于预期；只有失业率偏离自然率，通胀才会偏离预期。</p>
+<p class="prose">关键在于 πᵉ 从哪来。最简单的假设是人们照着去年过日子：今年预期的通胀就是去年实际的通胀，πᵉₜ = πₜ₋₁。这叫<b>适应性预期</b><span class="en"> (adaptive expectations)</span>。工资合同参照去年的物价涨幅来谈，就是这种预期的样子。<a href="../m10/03-causes-of-inflation.html#expectations">上一模块</a>讲过，预期会通过工资和定价自我实现。</p>
+<p class="prose">把两条放在一起：央行第一年把失业率压到自然率以下，通胀比预期高一截。第二年人们把这一截算进预期，曲线整体上移；失业率要继续低，通胀就要在新预期之上再高一截。每过一年，曲线上移一次。下面的图让你逐年看这个过程。</p>
+<div class="analogy"><span class="lab">类比</span><p>一个总迟到的人把闹钟调快 10 分钟，头几天真的早到了。过了一阵，他心里自动把闹钟减去 10 分钟，又开始迟到。想再早到，只能调快 20 分钟、30 分钟。靠“骗”自己换来的好处，在被看穿之后就消失了，想维持就得骗得越来越多。</p></div>
+
+<div class="widget" id="w-path" aria-labelledby="w1t">
+<h3 id="w1t">图 1　把失业率压在自然率以下：通胀逐年怎样走</h3>
+<div class="chips" role="group" aria-label="选择情景（教学示意）"><button type="button" class="chip" data-s="4,8,5,0,0.5,0" aria-pressed="true">适应性预期：压低失业 8 年</button><button type="button" class="chip" data-s="5,8,5,0,0.5,0" aria-pressed="false">目标 = 自然失业率</button><button type="button" class="chip" data-s="4,8,5,0,0.5,0.5" aria-pressed="false">预期部分锚定</button><button type="button" class="chip" data-s="4,8,5,0,0.5,1" aria-pressed="false">预期完全锚定</button><button type="button" class="chip" data-s="4,8,7,4,0.5,0" aria-pressed="false">之后紧缩 4 年</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw s"></span>实际通胀 π</li><li><span class="sw d g"></span>预期通胀 πᵉ</li><li><span class="sw g"></span>锚 2% 与图 2 所选年份</li><li><span class="sw band"></span>失业率低于自然率的年份</li><li><span class="sw band tight"></span>失业率高于自然率的年份</li></ul>
+<div class="controls">
+<div class="ctl"><label for="u1">压低阶段的失业率目标（%）</label><output id="u1-value" for="u1"></output><input id="u1" type="range" min="3" max="7" step="0.5" value="4" aria-describedby="u1-hint"><span class="hint" id="u1-hint">央行在第 1 年起想维持的失业率，3%~7%。自然失业率固定为 5%。</span></div>
+<div class="ctl"><label for="nn">压低阶段持续（年）</label><output id="nn-value" for="nn"></output><input id="nn" type="range" min="1" max="10" step="1" value="8" aria-describedby="nn-hint"><span class="hint" id="nn-hint">第 1 年到第 N 年维持上面的目标，1~10 年。</span></div>
+<div class="ctl"><label for="u2">随后阶段的失业率（%）</label><output id="u2-value" for="u2"></output><input id="u2" type="range" min="3" max="9" step="0.5" value="5" aria-describedby="u2-hint"><span class="hint" id="u2-hint">压低阶段之后的失业率，3%~9%。高于 5% 表示主动紧缩。</span></div>
+<div class="ctl"><label for="mm">随后阶段持续（年）</label><output id="mm-value" for="mm"></output><input id="mm" type="range" min="0" max="6" step="1" value="0" aria-describedby="mm-hint"><span class="hint" id="mm-hint">0~6 年。之后失业率回到自然失业率 5%，一直模拟到第 20 年。</span></div>
+<div class="ctl"><label for="bb">敏感度 β</label><output id="bb-value" for="bb"></output><input id="bb" type="range" min="0.2" max="1" step="0.1" value="0.5" aria-describedby="bb-hint"><span class="hint" id="bb-hint">失业率每低于自然率 1 个点，通胀比预期高几个点，0.2~1.0。</span></div>
+<div class="ctl"><label for="th">预期锚定程度 θ</label><output id="th-value" for="th"></output><input id="th" type="range" min="0" max="1" step="0.1" value="0" aria-describedby="th-hint"><span class="hint" id="th-hint">πᵉ = θ × 2% + (1 − θ) × 去年通胀。0 是纯适应性预期，1 是完全锚定在 2%。</span></div>
+</div>
+<dl class="read pairs"><div><dt>第 N 年（压低阶段结束）通胀</dt><dd id="r-n"></dd></div><div><dt>第 20 年通胀</dt><dd id="r-end"></dd></div><div><dt>最高通胀</dt><dd id="r-max"></dd></div><div><dt>失业低于自然率的累计</dt><dd id="r-below"></dd></div><div><dt>紧缩阶段：通胀降幅与牺牲率</dt><dd id="r-sac"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<p class="note">所有数字都是教学示意，不对应任何国家的真实数据。模型：起点（第 0 年）通胀和预期都是 2%，自然失业率固定为 5%，每年按 πᵉₜ = θ × 2% + (1 − θ) × πₜ₋₁、πₜ = πᵉₜ − β(uₜ − 5) 递推。为了看清预期的作用，这里假设央行能把失业率精确地定在目标上，也没有油价之类的供给冲击。“点·年”是每年失业率偏离自然率的百分点相加。</p>
+</div>
+<h3>四个实验</h3>
+<ol class="qs"><li>默认情景：失业率比自然率低 1 个点，β = 0.5，每年通胀比上一年高 0.5 个点，8 年后从 2% 升到 6%。想维持同样的低失业，通胀必须一直加速。</li><li>选“目标 = 自然失业率”：通胀和预期一直相等，停在 2%。这是检验模型的基准，也是“长期垂直”的起点。</li><li>回到默认情景看第 9 年以后：失业率回到 5%，通胀不再上升，却停在 6%，不会自己回到 2%。低失业的好处已经过去，更高的通胀留了下来。</li><li>选“之后紧缩 4 年”：失业率比自然率高 2 个点、持续 4 年，通胀才从 6% 降回 2%。累计 8 个“点·年”的额外失业，换来 4 个点的降通胀。</li></ol>
+</section>
+
+<section id="long-run">
+<h2>长期里，曲线是一条竖线</h2>
+<p class="prose">把图 1 的过程画到“失业率-通胀”平面上。每一年都有一条自己的短期曲线，位置由当年的预期决定：预期高 1 个点，整条曲线就高 1 个点。经济在当年那条曲线上取一个点。</p>
+<p class="prose">长期里，预期会追上实际，π = πᵉ。代回公式，只剩 u = uₙ：无论通胀稳定在 2% 还是 10%，长期失业率都回到自然失业率。所有这些长期组合连起来是一条竖在自然失业率上的直线，叫<b>长期菲利普斯曲线</b><span class="en"> (long-run Phillips curve)</span>。长期里，通胀和失业之间没有可以利用的交换。</p>
+<p class="prose">在这个模型里，失业率低于自然率会让通胀不断加速，所以自然失业率也被叫作<b>非加速通胀失业率</b><span class="en"> (NAIRU，non-accelerating inflation rate of unemployment)</span>。现实中它和自然失业率一样不能直接观测，只能估计，估计值会随时间变化。</p>
+
+<div class="widget" id="w-plane" aria-labelledby="w2t">
+<h3 id="w2t">图 2　失业率-通胀平面：短期曲线逐年上移</h3>
+<div class="chart" id="chart2"></div>
+<ul class="legend"><li><span class="sw d"></span>所选年份的短期菲利普斯曲线</li><li><span class="sw d faint"></span>其他年份的短期曲线</li><li><span class="sw lr"></span>长期菲利普斯曲线（u = 5%）</li><li><span class="mk"></span>各年的（失业率，通胀）组合</li></ul>
+<div class="controls">
+<div class="ctl full"><label for="yr">查看第几年</label><output id="yr-value" for="yr"></output><input id="yr" type="range" min="0" max="20" step="1" value="8" aria-describedby="yr-hint"><span class="hint" id="yr-hint">0~20 年。情景和参数沿用图 1；拖动看曲线怎样一年年移动。</span></div>
+</div>
+<dl class="read pairs"><div><dt>这一年的预期通胀 πᵉ</dt><dd id="r2-pe"></dd></div><div><dt>失业率 u</dt><dd id="r2-u"></dd></div><div><dt>实际通胀 π</dt><dd id="r2-pi"></dd></div><div><dt>短期曲线比第 0 年上移</dt><dd id="r2-shift"></dd></div></dl>
+<p class="verdict" id="verdict2" aria-live="polite"></p>
+<p class="note">示意数字，参数和图 1 相同。每条短期曲线的斜率都是 −β，只有高度不同；所有曲线都在 u = 5% 处与“通胀 = 当年预期”相交。</p>
+</div>
+<p class="prose">拖动图 2 的年份：压低阶段里，点在 u = 4% 这条竖线上一年年往上爬，每一年都落在一条更高的短期曲线上。回到 5% 之后，点停在长期曲线上，高度就是当时的预期。</p>
+</section>
+
+<section id="anchoring">
+<h2>预期锚定为什么重要</h2>
+<p class="prose">适应性预期只看过去。另一种假设是<b>理性预期</b><span class="en"> (rational expectations)</span>：人们利用手上所有的信息，包括央行的政策规则，来判断未来的通胀，不会年复一年犯同一个方向的错误。如果央行有系统地追求低于自然率的失业，人们会预见到它带来的通胀，并直接把它算进工资和价格，结果是通胀更高，失业却压不下来。</p>
+<p class="prose">现实大概介于两者之间。图 1 的 θ 衡量人们有多相信央行会把通胀拉回 2%，也就是<a href="../m10/03-causes-of-inflation.html#expectations">预期锚定</a>的程度。θ 越大，今年的意外通胀越少地滚进明年的预期。把 θ 调到 0.5 或 1 再看：</p>
+<ol class="qs"><li><b>冲击不会滚雪球。</b>同样压低失业 8 年，完全锚定时通胀只升到 2.5% 就停住，回到自然失业率后立即回到 2%。部分锚定时，通胀上升越来越慢，之后也会逐步回落。</li><li><b>降通胀更便宜。</b><b>牺牲率</b><span class="en"> (sacrifice ratio)</span> 是通胀每降 1 个点需要付出的额外失业（点·年）。在“之后紧缩 4 年”情景里，纯适应性预期下它等于 1/β = 2：预期只会跟着实际通胀走，只能靠失业把它一点点“教”下来。把 θ 调高再看默认情景：失业率回到 5% 之后，通胀被锚拉回 2%，几乎不需要额外的失业。</li><li><b>锚定是一种资产，不能透支。</b>模型里的 θ 是固定的，现实中它取决于央行过去的表现。央行一再利用锚定去换低失业，人们迟早会改变看法，θ 就会下降。这就是央行重视<b>可信度</b><span class="en"> (credibility)</span> 的原因：说到做到，预期才会锚在目标上。</li></ol>
+<p class="prose">所以开头那条新闻里的两句话是连在一起的：预期还锚定着，央行才有余地；为了让它继续锚定，央行要表态并最终做到把通胀拉回目标，而不是趁机再压低失业。</p>
+</section>
+
+<section id="history">
+<h2>1970 年代和沃尔克时期的教训</h2>
+<p class="prose">美国的经历几乎按图 1 的剧本走了一遍，只是现实更复杂。下表是美国的年平均数据：</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="美国 1961 至 1985 年失业率、通胀与联邦基金利率，可横向滚动"><table class="tbl"><caption>美国年平均数据（%），本课据 FRED 月度数据计算</caption><thead><tr><th scope="col">年份</th><th scope="col" class="num">失业率</th><th scope="col" class="num">CPI 通胀</th><th scope="col" class="num">联邦基金利率</th><th scope="col">阶段</th></tr></thead><tbody>
+<tr><td>1961</td><td class="num">6.7</td><td class="num">1.1</td><td class="num">2.0</td><td>沿着短期曲线向左上走</td></tr>
+<tr><td>1965</td><td class="num">4.5</td><td class="num">1.6</td><td class="num">4.1</td><td></td></tr>
+<tr><td>1969</td><td class="num">3.5</td><td class="num">5.5</td><td class="num">8.2</td><td>失业很低，通胀抬头</td></tr>
+<tr><td>1974</td><td class="num">5.6</td><td class="num">11.1</td><td class="num">10.5</td><td>第一次石油危机</td></tr>
+<tr><td>1975</td><td class="num">8.5</td><td class="num">9.1</td><td class="num">5.8</td><td>高失业与高通胀并存</td></tr>
+<tr><td>1979</td><td class="num">5.9</td><td class="num">11.3</td><td class="num">11.2</td><td>第二次石油危机；沃尔克 8 月上任</td></tr>
+<tr><td>1980</td><td class="num">7.2</td><td class="num">13.5</td><td class="num">13.4</td><td>通胀见顶</td></tr>
+<tr><td>1981</td><td class="num">7.6</td><td class="num">10.3</td><td class="num">16.4</td><td>利率见顶</td></tr>
+<tr><td>1982</td><td class="num">9.7</td><td class="num">6.1</td><td class="num">12.3</td><td>深度衰退</td></tr>
+<tr><td>1983</td><td class="num">9.6</td><td class="num">3.2</td><td class="num">9.1</td><td>通胀回落</td></tr>
+<tr><td>1985</td><td class="num">7.2</td><td class="num">3.5</td><td class="num">8.1</td><td></td></tr>
+</tbody></table></div>
+<p class="note">数据：失业率 UNRATE、CPI-U 未季调 CPIAUCNS（均来自 BLS）、有效联邦基金利率 FEDFUNDS（美联储），经 FRED 于 2026-10-14 下载；通胀为年平均 CPI 相对上年的涨幅。“阶段”一栏为本课的概括。</p>
+<p class="prose"><b>1970 年代：曲线上移。</b>1960 年代末失业率已经很低，通胀逐步抬头并被写进预期。1973 年 10 月开始的石油禁运让油价翻了两番，1979 年伊朗革命后的第二次危机又让油价涨到约三倍（据美联储历史网站）。供给冲击和上升的预期一起把短期曲线往上推，1975 年失业率 8.5%、通胀 9.1%，高失业和高通胀同时出现。菜单式的交换不见了，菲尔普斯和弗里德曼的警告应验了。</p>
+<p class="prose"><b>沃尔克时期：用衰退把预期拉下来。</b>沃尔克（Paul Volcker）1979 年 8 月出任美联储主席时，CPI 同比涨幅已超过 11%；1980 年 3 月达到 14.8%。美联储转向控制准备金和货币增长，任由利率大幅上升：有效联邦基金利率的月平均值在 1981 年 6 月达到 19.1%，美联储历史网站的说法是“接近 20%”。1981 年 7 月到 1982 年 11 月经济陷入衰退，失业率在 1982 年 11 月和 12 月达到 10.8%；到衰退结束时通胀已降到 5% 以下，1983 年全年平均 3.2%。</p>
+<p class="prose">这正是图 1 “之后紧缩”情景的现实版：多年积累的通胀预期，要用一段失业高于自然率的时期才能降下来。美联储历史网站的文章总结这段经历时指出：公众预期在政策和经济表现的互动中起着重要作用；明确的数字通胀目标只要可信，就能为货币政策重新提供一个锚。</p>
+<p class="prose">对这段历史也有不同的解读。一种看法强调货币政策在 1970 年代过于迁就，让预期一步步上移；另一种看法强调石油冲击超出了货币政策的控制范围，美联储历史网站的文章也承认能源价格造成的通胀“很大程度上不受货币政策控制”。还有人讨论，如果紧缩从一开始就更可信，衰退的代价能否小一些。这些问题至今仍有争论，本课不下结论。</p>
+</section>
+
+<section id="mistakes">
+<h2>三个常见误解</h2>
+<div class="mis"><p class="said">“失业率越低越好，央行应该一直往下压。”</p><p>短期内可以用更高的通胀换来更低的失业，但只要人们把通胀算进预期，维持低于自然率的失业就需要不断加速的通胀。长期失业率回到自然率，留下的只是更高的通胀。降低自然失业率要靠改善匹配、培训等结构性办法。</p></div>
+<div class="mis"><p class="said">“1970 年代高失业和高通胀同时出现，说明菲利普斯曲线根本不存在。”</p><p>短期的反向关系仍然存在，只是曲线的位置会随预期和供给冲击移动。1970 年代是整条曲线上移，而不是关系消失。固定不动的“菜单”才是错的。</p></div>
+<div class="mis"><p class="said">“只要失业率回到正常，通胀自然会降回来。”</p><p>在适应性预期下，失业率回到自然率只会让通胀停止上升，停在已经达到的高度。要让它降下来，要么经历一段失业高于自然率的时期，要么让预期重新锚定到目标上。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先找出失业率和自然失业率的差，再想清楚人们的预期从哪来。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">先回忆释义，再点开核对。</p><div class="cards" id="cards"></div></section>
+
+<section id="back">
+<h2>回到新闻</h2>
+<ol class="steps"><li><div><b>低失业和低通胀能不能兼得？</b>短期内两者有交换：失业率低于自然率，通胀会高于预期。长期里预期会追上来，失业率回到自然失业率，交换消失。央行不顺势把失业率压到自然率以下，是因为那样只能换来暂时的好处，留下更高、而且可能不断加速的通胀。</div></li><li><div><b>“预期保持锚定”是什么意思？</b>即使眼下通胀偏高，人们仍相信它会回到 2% 左右，因此不会把今年的高通胀原样写进明年的工资和价格。在图 1 里这对应较大的 θ：冲击不滚雪球，把通胀拉回目标的代价也更小。央行反复强调它，是因为锚定建立在可信度上，需要不断用言行维护。</div></li><li><div><b>预期脱锚会怎样？</b>1970 年代的美国给出了答案：预期一步步上移，加上石油冲击，高通胀和高失业同时出现；1980 年 CPI 通胀年平均 13.5%。沃尔克时期利率一度接近 20%，失业率在 1982 年底升到 10.8%，才把通胀和预期压回去。新闻里的央行官员正是想避免重走这条路。</div></li></ol>
+<p class="prose">下次看到央行谈“预期”，可以依次问：失业率相对自然失业率在哪？调查和市场显示的长期通胀预期变了没有？央行过去说到做到了吗？</p>
+<button type="button" class="chip" id="goChart">回到图 1 的默认情景</button>
+</section>
+
+<section id="sources">
+<h2>资料来源</h2>
+<ol class="qs">
+<li>Michael Bryan，Federal Reserve History，<a href="https://www.federalreservehistory.org/essays/great-inflation">The Great Inflation: 1965–1982</a>，2013-11-22；菲尔普斯（1967）和弗里德曼（1968）关于曲线上移的警告、两次石油危机、沃尔克 1979 年上任时通胀超过 11%、能源通胀很大程度上不受货币政策控制、可信的数字目标为预期提供锚。</li>
+<li>Tim Sablik，Federal Reserve History，<a href="https://www.federalreservehistory.org/essays/recession-of-1981-82">Recession of 1981–82</a>，2013-11-22；衰退起止时间（1981 年 7 月至 1982 年 11 月）、联邦基金利率“接近 20%”。</li>
+<li>美国劳工统计局（BLS），经 FRED 发布，<a href="https://fred.stlouisfed.org/series/UNRATE">Unemployment Rate (UNRATE)</a>，2026-10-14 访问；失业率年平均值和 1982 年 11 月、12 月的 10.8% 峰值。</li>
+<li>美国劳工统计局（BLS），经 FRED 发布，<a href="https://fred.stlouisfed.org/series/CPIAUCNS">CPI for All Urban Consumers, Not Seasonally Adjusted (CPIAUCNS)</a>，2026-10-14 访问；本课据此计算年平均通胀（1980 年 13.5%）和 1980 年 3 月的同比 14.8%。</li>
+<li>美联储理事会，经 FRED 发布，<a href="https://fred.stlouisfed.org/series/FEDFUNDS">Federal Funds Effective Rate (FEDFUNDS)</a>，2026-10-14 访问；年平均值和 1981 年 6 月的月平均峰值 19.1%。</li>
+<li>A. W. Phillips，Economica 25(100)，<a href="https://www.jstor.org/stable/2550759">The Relation between Unemployment and the Rate of Change of Money Wage Rates in the United Kingdom, 1861–1957</a>，1958 年 11 月；菲利普斯曲线的原始研究。</li>
+</ol>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,UN=5,PSTAR=2,T=20;
+function $(s){return document.querySelector(s);}
+function pc(n){return C.fmt(n,1)+'%';}
+function pts(n){return C.fmt(n,1)+' 个点';}
+function sim(p){
+  var pi=[PSTAR],pe=[PSTAR],u=[UN],t,ut,e;
+  for(t=1;t<=T;t++){
+    ut=t<=p.n?p.u1:(t<=p.n+p.m?p.u2:UN);
+    e=p.th*PSTAR+(1-p.th)*pi[t-1];
+    pe.push(e);u.push(ut);pi.push(e-p.b*(ut-UN));
+  }
+  var below=0,above=0,mx=0;
+  for(t=1;t<=T;t++){below+=Math.max(UN-u[t],0);above+=Math.max(u[t]-UN,0);if(pi[t]>pi[mx]+1e-9){mx=t;}}
+  var tight=p.m>0&&p.u2>UN,dis=tight?pi[p.n]-pi[p.n+p.m]:0;
+  return {pi:pi,pe:pe,u:u,below:below,above:above,mx:mx,tight:tight,dis:dis,sac:tight&&p.th===0&&dis>1e-9?(p.m*(p.u2-UN))/dis:null};
+}
+function yRange(s){
+  var v=s.pi.concat(s.pe,[0,PSTAR]),lo=Math.min.apply(null,v),hi=Math.max.apply(null,v);
+  var span=Math.max(hi-lo,4),pad=span*0.15,a=lo-pad,b=hi+pad,steps=[1,2,5,10,20],st=20,i;
+  for(i=0;i<steps.length;i++){if((b-a)/steps[i]<=6){st=steps[i];break;}}
+  return {p0:Math.floor(a/st)*st,p1:Math.ceil(b/st)*st,ps:st};
+}
+function pathD(f,xs,ys){var d='',i;for(i=0;i<xs.length;i++){d+=(i?'L':'M')+f.x(xs[i]).toFixed(1)+' '+f.y(ys[i]).toFixed(1);}return d;}
+var box1=$('#chart1'),box2=$('#chart2'),P=null,S=null,label1='',label2='';
+function draw1(){
+  box1.replaceChildren();if(!S){return;}
+  var yr=yRange(S),narrow=box1.clientWidth<440;
+  var f=C.frame(box1,{id:'pc1',q0:0,q1:T,qs:narrow?4:2,p0:yr.p0,p1:yr.p1,ps:yr.ps,xt:'年份（第 0 年为起点）',yt:'通胀率（%）',label:label1});
+  var fr=f.svg.querySelector('.plotframe'),g=C.el('g',{});f.svg.insertBefore(g,fr);
+  function band(a,b,cls){g.appendChild(C.el('rect',{x:f.x(a).toFixed(1),y:f.m.t,width:(f.x(b)-f.x(a)).toFixed(1),height:f.ih,'class':cls}));}
+  if(P.u1!==UN){band(0.5,P.n+0.5,P.u1<UN?'phase':'phase tight');}
+  if(P.m>0&&P.u2!==UN){band(P.n+0.5,P.n+P.m+0.5,P.u2<UN?'phase':'phase tight');}
+  g.appendChild(C.el('line',{x1:f.m.l,x2:f.m.l+f.iw,y1:f.y(PSTAR).toFixed(1),y2:f.y(PSTAR).toFixed(1),'class':'guide'}));
+  var yv=+$('#yr').value;
+  g.appendChild(C.el('line',{x1:f.x(yv).toFixed(1),x2:f.x(yv).toFixed(1),y1:f.m.t,y2:f.m.t+f.ih,'class':'guide'}));
+  var xs=[],t;for(t=0;t<=T;t++){xs.push(t);}
+  f.svg.appendChild(C.el('path',{d:pathD(f,xs,S.pe),'class':'curve d ghost'}));
+  f.svg.appendChild(C.el('path',{d:pathD(f,xs,S.pi),'class':'curve s'}));
+  for(t=0;t<=T;t++){f.svg.appendChild(C.el('circle',{cx:f.x(t).toFixed(1),cy:f.y(S.pi[t]).toFixed(1),r:t===yv?5:2.75,'class':t===yv?'pt':'dot'}));}
+  box1.appendChild(f.svg);
+}
+function boxOf(t){var b=t.getBBox();return {l:b.x,r:b.x+b.width,t:b.y,b:b.y+b.height};}
+function hit(a,b){return a.l<b.r&&b.l<a.r&&a.t<b.b&&b.t<a.b;}
+function place(f,text,cls,cands,taken){
+  var best=null,i,c,el,bb,ok;
+  for(i=0;i<cands.length;i++){
+    c=cands[i];el=C.el('text',{x:c[0].toFixed(1),y:c[1].toFixed(1),'text-anchor':c[2],'class':cls+' halo'},text);
+    f.svg.appendChild(el);bb=boxOf(el);
+    ok=bb.l>=f.m.l+1&&bb.r<=f.m.l+f.iw-1&&bb.t>=f.m.t+1&&bb.b<=f.m.t+f.ih-1&&!taken.some(function(x){return hit(x,bb);});
+    if(ok){taken.push(bb);return el;}
+    f.svg.removeChild(el);
+  }
+  c=cands[0];el=C.el('text',{x:c[0].toFixed(1),y:c[1].toFixed(1),'text-anchor':c[2],'class':cls+' halo'},text);f.svg.appendChild(el);taken.push(boxOf(el));return el;
+}
+function draw2(){
+  box2.replaceChildren();if(!S){return;}
+  var yr=yRange(S),yv=+$('#yr').value;
+  var f=C.frame(box2,{id:'pc2',q0:2,q1:10,qs:1,p0:yr.p0,p1:yr.p1,ps:yr.ps,xt:'失业率 u（%）',yt:'通胀率 π（%）',label:label2});
+  var r={q0:2,q1:10,p0:yr.p0,p1:yr.p1},seen={},t,s;
+  function srpc(pe){return C.seg(function(p){return UN+(pe-p)/P.b;},r);}
+  for(t=0;t<=T;t++){var k=S.pe[t].toFixed(4);if(seen[k]||t===yv){continue;}seen[k]=1;s=srpc(S.pe[t]);if(s){f.svg.appendChild(C.pathOf(f,s,'curve d faint'));}}
+  f.svg.appendChild(C.el('line',{x1:f.x(UN),x2:f.x(UN),y1:f.m.t,y2:f.m.t+f.ih,'class':'curve lr'}));
+  var sel=srpc(S.pe[yv]);if(sel){f.svg.appendChild(C.pathOf(f,sel,'curve d'));}
+  for(t=0;t<=T;t++){if(t!==yv){f.svg.appendChild(C.el('circle',{cx:f.x(S.u[t]).toFixed(1),cy:f.y(S.pi[t]).toFixed(1),r:3,'class':'dot'}));}}
+  var px=f.x(S.u[yv]),py=f.y(S.pi[yv]);
+  C.guides(f,px,py,true);
+  f.svg.appendChild(C.el('circle',{cx:px.toFixed(1),cy:py.toFixed(1),r:5.5,'class':'pt'}));
+  box2.appendChild(f.svg);
+  var taken=[{l:px-7,r:px+7,t:py-7,b:py+7}];
+  place(f,'第 '+yv+' 年','ptlab',[[px+10,py-8,'start'],[px-10,py-8,'end'],[px+10,py+17,'start'],[px-10,py+17,'end']],taken);
+  if(sel){
+    var c=[],fr=[0.1,0.9,0.25,0.75,0.4,0.6],i,x,y;
+    for(i=0;i<fr.length;i++){x=f.x(sel[0][0]+(sel[1][0]-sel[0][0])*fr[i]);y=f.y(sel[0][1]+(sel[1][1]-sel[0][1])*fr[i]);c.push([x+6,y-8,'start'],[x-6,y+16,'end']);}
+    place(f,'短期·第 '+yv+' 年','curvelab d',c,taken);
+  }
+  var lx=f.x(UN);
+  place(f,'长期','curvelab ink',[[lx+6,f.m.t+16,'start'],[lx-6,f.m.t+16,'end'],[lx+6,f.m.t+f.ih-8,'start'],[lx-6,f.m.t+f.ih-8,'end'],[lx+6,f.m.t+f.ih/2,'start'],[lx-6,f.m.t+f.ih/2,'end']],taken);
+}
+function presetMatch(){
+  document.querySelectorAll('[data-s]').forEach(function(b){var v=b.dataset.s.split(',').map(Number);b.setAttribute('aria-pressed',String(v[0]===P.u1&&v[1]===P.n&&v[2]===P.u2&&v[3]===P.m&&Math.abs(v[4]-P.b)<1e-9&&Math.abs(v[5]-P.th)<1e-9));});
+}
+function verdict1(){
+  var t='',g=UN-P.u1,n=P.n,th=P.th,last=P.n+P.m;
+  if(g===0){t='前 '+n+' 年失业率等于自然失业率 5%，实际通胀一直等于预期，停在 '+pc(S.pi[n])+'。';}
+  else if(g>0){
+    t='前 '+n+' 年把失业率压在 '+pc(P.u1)+'，比自然失业率低 '+pts(g)+'。';
+    if(th===0){t+='每年通胀都比上一年高 '+pts(P.b*g)+'，到第 '+n+' 年升到 '+pc(S.pi[n])+'：想维持同样低的失业，通胀必须越涨越快。';}
+    else if(th===1){t+='预期完全锚定在 2%，通胀只升到 '+pc(S.pi[n])+' 就停住，不再加速。';}
+    else{t+='预期部分锚定，通胀逐年上升但越来越慢，到第 '+n+' 年为 '+pc(S.pi[n])+'；若一直持续，会趋近 '+pc(PSTAR+P.b*g/th)+'。';}
+  }else{
+    t='前 '+n+' 年失业率为 '+pc(P.u1)+'，比自然失业率高 '+pts(-g)+'，通胀低于预期，到第 '+n+' 年为 '+pc(S.pi[n])+'。';
+  }
+  if(P.m>0&&P.u2!==UN){t+='随后 '+P.m+' 年失业率为 '+pc(P.u2)+'，'+(P.u2>UN?'通胀被压低，':'通胀被推高，')+'第 '+last+' 年为 '+pc(S.pi[last])+'。';}
+  t+='此后失业率回到自然失业率 5%';
+  var start=S.pi[last],end=S.pi[T];
+  if(th===0){t+='，通胀不再变化，停在 '+pc(end)+'。'+(Math.abs(end-PSTAR)>=0.05?'失业率回到了原处，通胀却回不到起点的 2%。':'');}
+  else if(Math.abs(start-PSTAR)<0.05){t+='，通胀保持在 '+pc(end)+'。';}
+  else{t+='，预期被拉回 2% 的锚，通胀'+(th===1?'立即':'逐步')+'回到目标附近，第 20 年为 '+pc(end)+'。';}
+  if(S.sac!==null){t+='紧缩阶段每降 1 个点通胀，要付出 '+C.fmt(S.sac,1)+' 个点·年的额外失业。';}
+  return t;
+}
+function update(){
+  P={u1:+$('#u1').value,n:+$('#nn').value,u2:+$('#u2').value,m:+$('#mm').value,b:+$('#bb').value,th:+$('#th').value};
+  S=sim(P);
+  $('#u1-value').textContent=pc(P.u1);$('#u1').setAttribute('aria-valuetext','失业率目标 '+pc(P.u1));
+  $('#nn-value').textContent=P.n+' 年';$('#nn').setAttribute('aria-valuetext',P.n+' 年');
+  $('#u2-value').textContent=pc(P.u2);$('#u2').setAttribute('aria-valuetext','随后阶段失业率 '+pc(P.u2));
+  $('#mm-value').textContent=P.m+' 年';$('#mm').setAttribute('aria-valuetext',P.m+' 年');
+  $('#bb-value').textContent=C.fmt(P.b,1);$('#bb').setAttribute('aria-valuetext','敏感度 '+C.fmt(P.b,1));
+  $('#th-value').textContent=C.fmt(P.th,1);$('#th').setAttribute('aria-valuetext','锚定程度 '+C.fmt(P.th,1));
+  presetMatch();
+  $('#r-n').textContent=pc(S.pi[P.n])+'（第 '+P.n+' 年）';
+  $('#r-end').textContent=pc(S.pi[T]);
+  $('#r-max').textContent=pc(S.pi[S.mx])+'（第 '+S.mx+' 年）';
+  $('#r-below').textContent=C.fmt(S.below,1)+' 点·年';
+  $('#r-sac').textContent=!S.tight?'未设置紧缩阶段':(S.sac!==null?'降 '+pts(S.dis)+'，牺牲率 '+C.fmt(S.sac,1):'降 '+pts(S.dis)+'（θ > 0 时部分回落来自锚的拉动，不计牺牲率）');
+  var t1=verdict1();$('#verdict').textContent=t1;label1='图 1：'+t1;
+  update2();
+}
+function update2(){
+  var y=+$('#yr').value,pe=S.pe[y],pi=S.pi[y],u=S.u[y],sh=pe-PSTAR;
+  $('#yr-value').textContent='第 '+y+' 年';$('#yr').setAttribute('aria-valuetext','第 '+y+' 年');
+  $('#r2-pe').textContent=pc(pe);$('#r2-u').textContent=pc(u);$('#r2-pi').textContent=pc(pi);
+  $('#r2-shift').textContent=C.fmtS(sh,1)+' 个点';
+  var t='第 '+y+' 年：人们预期通胀 '+pc(pe)+'，这一年的短期曲线'+(Math.abs(sh)<0.05?'和第 0 年的曲线重合':'比第 0 年的曲线'+(sh>0?'高 ':'低 ')+pts(Math.abs(sh)))+'。失业率 '+pc(u)+'，通胀 '+pc(pi)+'。';
+  var gap=pi-pe;
+  if(u<UN){t+='失业率低于自然率，通胀比预期高 '+pts(gap)+'。'+(P.th<1?'下一年的预期会因此上调，曲线继续上移。':'预期完全锚定，下一年的曲线不会因此上移。');}
+  else if(u>UN){t+='失业率高于自然率，通胀比预期低 '+pts(-gap)+'。'+(P.th<1?'下一年的预期会因此下调，曲线下移。':'预期完全锚定，曲线不会因此下移。');}
+  else{t+='失业率等于自然率，点落在长期曲线上，通胀等于预期。';}
+  $('#verdict2').textContent=t;label2='图 2：'+t;
+  draw1();draw2();
+}
+['u1','nn','u2','mm','bb','th'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+$('#yr').addEventListener('input',update2);
+function apply(v){$('#u1').value=v[0];$('#nn').value=v[1];$('#u2').value=v[2];$('#mm').value=v[3];$('#bb').value=v[4];$('#th').value=v[5];$('#yr').value=v[1];update();}
+document.querySelectorAll('[data-s]').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.s.split(','));});});
+$('#goChart').addEventListener('click',function(){apply(['4','8','5','0','0.5','0']);var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;$('#w-path').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});$('#u1').focus({preventScroll:true});});
+C.watch(box1,draw1);C.watch(box2,draw2);update();
+
+var QUIZ=[
+{q:'自然失业率 5%，β = 0.5，人们按去年的通胀形成预期。去年通胀 3%，今年央行把失业率维持在 4%。今年通胀大约是多少？',o:['3%，失业率不变时通胀也不变','3.5%，比预期高 0.5 个点','2.5%，失业率低时通胀会下降','4%，通胀等于失业率'],a:1,why:'约 3.5%。今年预期 πᵉ = 3%，失业率比自然率低 1 个点，通胀比预期高 β × 1 = 0.5 个点。明年预期又会升到 3.5%，失业率继续保持 4% 的话通胀会到 4%。'},
+{q:'某国央行多年来坚持把失业率压在自然率以下，人们的预期随实际通胀调整。长期最可能出现什么结果？',o:['失业率永久降低，代价是一次性的、较高但稳定的通胀','通胀稳定在较高水平，失业率可以一直保持很低','只要愿意接受高通胀，失业率想多低都能长期维持','通胀越涨越快，维持低失业需要不断加速的通胀'],a:3,why:'通胀会不断加速。每年的意外通胀都被写进下一年的预期，短期曲线一年年上移；要让失业率一直低于自然率，通胀必须每年都比预期更高。这就是“非加速通胀失业率”这个名字的由来。'},
+{q:'一次油价冲击让甲、乙两国今年通胀都升到 5%。甲国的预期牢牢锚定在 2%，乙国人们按去年通胀形成预期。明年两国失业率都等于自然率，也没有新的冲击。明年通胀最可能是：',o:['甲国约 2%，乙国约 5%','两国都约 2%','两国都约 5%','甲国约 5%，乙国约 2%'],a:0,why:'甲国约 2%，乙国约 5%。失业率等于自然率时，通胀等于预期。甲国预期仍是 2%，冲击不会滚进明年；乙国预期变成了 5%，通胀就停在 5%，要降下来还得付出代价。'},
+{q:'通胀和预期都已稳定在 8%。央行想在两年内把通胀降到 2%，人们按去年通胀形成预期，β = 0.5，自然失业率 5%。这两年失业率大约要保持在多少？',o:['5%，宣布新目标就够了','约 6.5%，每年高出自然率 1.5 个点','约 11%，每年高出自然率 6 个点','约 8%，每年高出自然率 3 个点'],a:2,why:'约 11%。两年降 6 个点，每年要降 3 个点；每年失业率需高出自然率 3 ÷ 0.5 = 6 个点。总代价 12 个点·年，牺牲率为 2，即 1/β。在纯适应性预期下，宣布目标不会改变预期，所以第一项不成立。'},
+{q:'央行官员为什么反复强调“长期通胀预期保持锚定”？',o:['锚定后，央行就能长期把失业率压在自然率以下','锚定的预期让暂时的冲击不会滚成持续通胀，降通胀的代价也更小','预期只影响金融市场的价格，与工资和物价无关','预期锚定意味着通胀每年都正好等于 2%'],a:1,why:'因为锚定让冲击不滚雪球。人们相信通胀会回到目标，就不会把今年的高通胀写进明年的工资和价格；即使要紧缩，所需的额外失业也更少。锚定靠可信度维持，被反复利用就会松动，所以第一项不对。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'菲利普斯曲线',en:'Phillips curve',d:'失业率与通胀率（最初是工资增速）之间的反向关系。失业率低的时期，通胀往往较高。'},
+{t:'短期菲利普斯曲线',en:'short-run Phillips curve',d:'在预期给定时，失业率与通胀的反向关系，向右下方倾斜。预期变化时整条曲线上下移动。'},
+{t:'预期增强的菲利普斯曲线',en:'expectations-augmented Phillips curve',d:'π = πᵉ − β(u − uₙ)。失业率等于自然率时通胀等于预期；失业率低于自然率时通胀高于预期。'},
+{t:'适应性预期',en:'adaptive expectations',d:'根据过去的通胀形成预期，最简单的形式是今年预期等于去年实际。会让意外通胀逐年滚进预期。'},
+{t:'长期菲利普斯曲线',en:'long-run Phillips curve',d:'预期追上实际之后，失业率回到自然率，与通胀水平无关，所以是一条竖在自然失业率上的直线。'},
+{t:'非加速通胀失业率',en:'NAIRU',d:'使通胀既不加速也不减速的失业率。失业率持续低于它，通胀会不断上升。不能直接观测，只能估计。'},
+{t:'理性预期',en:'rational expectations',d:'人们利用所有可得信息（包括政策规则）形成预期，不会系统性地犯同一方向的错误。'},
+{t:'预期锚定',en:'anchored expectations',d:'即使短期通胀偏离，人们仍相信它会回到目标，不把暂时的通胀写进未来的工资和价格。'},
+{t:'可信度',en:'credibility',d:'公众相信央行会说到做到的程度。可信度高，预期更容易锚定在目标上，降通胀的代价更小。'},
+{t:'牺牲率',en:'sacrifice ratio',d:'通胀每降低 1 个百分点所需付出的额外失业（或产出损失）。纯适应性预期的简单模型里等于 1/β；紧缩越可信、预期调整越快，代价可能越小。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

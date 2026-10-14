@@ -369,3 +369,15 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .tm-lag b{display:block;font-size:14px;color:var(--ink)}
 @media (max-width:520px){.tm-lag{grid-template-columns:1fr}}
 /* m11-03 end */
+
+/* m11-04 start */
+.phase{fill:var(--supply-soft)}
+.phase.tight{fill:var(--demand-soft)}
+.curve.faint{stroke-width:1.25;opacity:.4}
+.curve.lr{stroke:var(--ink);stroke-width:2.25}
+.curvelab.ink{fill:var(--ink)}
+.legend .sw.band{border-top-width:10px;border-color:var(--supply-soft)}
+.legend .sw.band.tight{border-color:var(--demand-soft)}
+.legend .sw.lr{border-color:var(--ink)}
+.legend .sw.faint{border-top-width:2px;opacity:.5}
+/* m11-04 end */
