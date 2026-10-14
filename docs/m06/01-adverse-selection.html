@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>逆向选择：柠檬市场</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m06-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>逆向选择：柠檬市场</h1>
+<p class="sub">Adverse selection: the market for lemons</p>
+<p class="lede">一辆好车的主人知道它保养得好，买家却只听见一句“车况很好”。如果所有人都这么说，买家该付多少钱？问题不只是买家可能吃亏：好卖家也可能因为无法证明自己，干脆不卖了。于是，谨慎的报价会反过来改变市场里剩下的商品。</p>
+<p class="meta">约 22 分钟 · 1 个交互区 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m03/01-surplus-efficiency.html#fairness">市场效率的信息前提</a>、<a href="../m05/03-auctions-mechanism-design.html#design">机制设计与激励相容</a>。这次不再假定买卖双方都知道商品质量。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>二手车平台推出付费检测认证：好车卖家盼卖出好价，买家追问“谁来为漏检负责”</blockquote></figure>
+<p class="prose">平台、认证和反应均为虚构。设想车辆外观看起来相似，但发动机磨损、事故维修和保养情况不同。卖家比陌生买家更了解自己的车，买家无法在成交前低成本地查清一切。</p>
+<ol class="qs"><li>为什么买家按平均车况出价，反而可能让平均车况越来越差？</li><li>好车退出后，市场必然消失吗？低价本身能否把好车重新吸引回来？</li><li>检测、保修以及保险市场中的强制参保，分别解决什么，又留下什么代价？</li></ol>
+</section>
+<section id="selection">
+<h2>不是谁都不知道，而是一方知道得更多</h2>
+<p class="prose"><b>信息不对称</b><span class="en"> (asymmetric information)</span> 指交易双方掌握的信息不同，并且这些差异影响决策。如果双方都不知道明年油价，只是共同面对不确定性；若卖家知道变速箱有暗伤、买家不知道，才有这里要研究的信息差。</p>
+<p class="prose"><b>逆向选择</b><span class="en"> (adverse selection)</span> 是交易前难以观察的类型差异，通过参与或退出改变了交易人群的组成。类型可以是车的质量，也可以是投保人的风险。这里“逆向”不是指价格反着走，而是统一交易条件更容易留下对另一方不利的类型。</p>
+<p class="prose"><b>柠檬市场</b><span class="en"> (market for lemons)</span> 用二手车说明这种机制：“柠檬”是有缺陷商品的比喻，不是柠檬水果市场。好车、差车原本就不同；本课不研究买家买完后把车开坏，也不假定所有卖家都说谎。即使每个人都按自己的信息理性选择，信息无法验证也会造成问题。</p>
+<h3>平均值可以高估差车，同时低估好车</h3>
+<p class="prose">先用两辆车算一笔账。质量分别是 40 和 100 点，卖家最低愿收金额分别为 32 和 80 教学元。这个最低愿收金额叫<b>保留价值</b><span class="en"> (reservation value)</span>：继续自己使用、留作备用或在别处出售的最好替代价值。它不等于当年的买车价，也不是检测机构估的市价。</p>
+<p class="prose">假设买方知道具体质量时，每质量点愿付 1.1 教学元。如果能分辨两辆车，就分别愿付 44 和 110，都高于卖家的保留价值，双方有交易空间。但买家不知道个体质量，只知道两辆的平均质量是 70，便统一报 77。</p>
+<p class="prose">77 已经高于平均保留价值 56，却仍低于好车主的 80。好车主拒绝，差车主愿卖。买家若据此重新判断，剩下车的平均质量变成 40，报价降至 44。市场没有消失，却错过了好车本来可以创造的交易收益。这正是为什么“报价高于平均成本”不能保证每一个卖家留下。</p>
+<div class="analogy"><span class="lab">类比</span><p>毕业时全班按一个价出售旧笔记本电脑。你知道自己的电池刚换过、从未进水，但买家无法验证，只愿付“普通旧电脑”的价。你选择留下当备用机；急着处理故障机的人更愿意卖。买家看到的挂牌样本就不再代表全班电脑的质量，不能一直沿用退出前的平均值。</p></div>
+<h3>一条反馈链，而不是单次砍价</h3>
+<p class="prose">统一报价偏低 → 高保留价值卖家退出 → 留下的平均质量下降 → 买方报价再降。这条链可以持续几轮。关键不是“便宜货一定坏”，而是卖家选择是否参加，改变了买家报价所依据的样本。即使最初质量分布很好，也不能假定退出之后仍然一样。</p>
+<p class="prose">把它和<a href="../m03/01-surplus-efficiency.html#surplus">交易总剩余</a>连接起来：若高质量车对买家的价值大于车主继续使用的价值，交易消失就是潜在净收益没能实现。买家只是少付款、卖家只是少收款则属于分配；有益交易根本没发生，才是这里的效率损失。</p>
+</section>
+<section id="experiment">
+<h2>逐轮重算：谁还愿意留下</h2>
+<p class="prose">下面固定抽取 24 辆车，质量为 20–100 的整数。你作为读者能看到每辆车的质量，用来核查模型；模型里的买家不能按车辆编号识别质量，只能按当前存量的平均质量统一报价。卖家则知道自己的质量，保留价值固定为质量的 80%。</p>
+<p class="formula">报价 P = 买方估值倍率 × (1 − 信息折价) × 当前平均质量</p>
+<p class="prose">倍率的单位为教学元/质量点。信息折价表示买家在平均价值基础上额外打折的教学假设，可以代表未建模的质量不确定性顾虑，不是逆向选择必需的条件。即使折价为零，只要统一报价不能满足高质量卖家的保留价值，仍可能发生退出。</p>
+<p class="formula">卖家留下的条件：P ≥ 0.8 × 自己的质量</p>
+<p class="prose">等号时约定留下。每点一次“下一轮”，先让不满足条件的卖家退出，再对余下车辆重算均价。中途报价只是更新中的报价，不代表这些车都已成交。已经退出的车本次不返回；报价只会不升，因此没有遗漏一个因后续涨价而重新愿卖的人。调整参数则从完整的同一批车重新开始。</p>
+<p class="prose">如果剩下的每位卖家都接受按当前均质计算的报价，再执行同一规则也不会改变存量，这叫<b>固定点</b><span class="en"> (fixed point)</span>。另一个终点是空市场：没有车辆就没有可计算的平均质量，必须停止，而不是把价格硬写成零再继续算。</p>
+<div class="widget" id="w-lemons" aria-labelledby="w1t">
+<h3 id="w1t">图 1　柠檬市场：固定样本的逐轮账本</h3>
+<div class="chips" role="group" aria-label="同一批车辆的买方估值情景"><button type="button" class="chip" data-m="110" data-d="0" aria-pressed="true">部分退出</button><button type="button" class="chip" data-m="200" data-d="0" aria-pressed="false">全部可留</button><button type="button" class="chip" data-m="60" data-d="50" aria-pressed="false">崩溃</button></div>
+<div class="controls">
+<div class="ctl"><label for="multiplier">买方估值倍率（教学元/质量点）</label><output id="multiplier-value" for="multiplier"></output><input id="multiplier" type="range" min="60" max="200" step="5" value="110" aria-describedby="multiplier-hint"><span class="hint" id="multiplier-hint">0.60–2.00；滑块整数除以 100，卖方保留比不变。</span></div>
+<div class="ctl"><label for="discount">信息折价（%）</label><output id="discount-value" for="discount"></output><input id="discount" type="range" min="0" max="50" step="1" value="0" aria-describedby="discount-hint"><span class="hint" id="discount-hint">0–50%；只改变统一报价，不向买家揭示个体车况。</span></div>
+</div>
+<div class="chips"><button type="button" class="chip" id="step">下一轮</button><button type="button" class="chip" id="finish">运行至终点</button><button type="button" class="chip" id="replay">同参数重放初始</button></div>
+<div class="tablewrap" tabindex="0" role="region" id="trajectory-region" aria-label="车辆存量与报价轨迹，可横向滚动"><table class="tbl" id="trajectory"><caption>每行是该轮退出完成后的存量；第 0 轮为原始全样本。“将退”是按该行报价下一轮会退出的数量。</caption><thead><tr><th scope="col">轮次</th><th scope="col" class="num">存量（辆）</th><th scope="col" class="num">均质（点）</th><th scope="col" class="num">报价（教学元）</th><th scope="col" class="num">将退（辆）</th></tr></thead><tbody></tbody></table></div>
+<dl class="read pairs"><div><dt>固定随机种子 / 初始存量</dt><dd>2026 / 24 辆</dd></div><div><dt>当前轮次</dt><dd id="r-round"></dd></div><div><dt>仍在市场 / 累计退出</dt><dd id="r-count"></dd></div><div><dt>当前平均质量</dt><dd id="r-quality"></dd></div><div><dt>当前统一报价</dt><dd id="r-price"></dd></div><div><dt>过程状态</dt><dd id="r-status"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="读者可见的车辆质量核查表，买家不能按个体质量报价，可横向滚动"><table class="tbl" id="cars"><caption>核查表：固定编号；质量与保留价值不随轮次变化。留下不等于此轮已成交。</caption><thead><tr><th scope="col">车辆</th><th scope="col" class="num">质量（点）</th><th scope="col" class="num">保留价值（教学元）</th><th scope="col">当前存量</th></tr></thead><tbody></tbody></table></div>
+<p class="note">全部数字为教学示意。用固定种子的单条伪随机流抽样，各情景使用完全相同的车。买家数量足够、按平均价值报价，无搜索费、新进入和卖家议价。空市场显示“无报价 / 无平均质量”，不把空集平均值当作零。最多 24 次退出轮即结束；固定点只是这套退出规则下的稳定，不是现实市场必然达到的唯一均衡。</p>
+</div>
+<h3>三个实验，区分萎缩、稳定与崩溃</h3>
+<ol class="qs"><li>默认情景先点下一轮。找到退出的高质量车，比较它的保留价值与上一行报价。再运行至终点：剩下的每辆车都愿意接受最终报价吗？“均价高于平均保留价值”与“所有人愿卖”是否相同？</li><li>选全部可留。这里买方估值足够高，初始统一价就覆盖所有卖家的保留价值，状态直接是固定点。看见信息不对称，不等于必然出现市场崩溃。</li><li>选崩溃，运行至终点。有效倍率为 0.30，低于卖方 0.80 的保留比；任何非空样本总有最高质量车不愿卖，直到空集。然后把折价归零、倍率设为 1.10，同一批车能否重新形成部分稳定市场？</li></ol>
+<p class="prose">第三种情景还降低了买方对车的有效价值，所以它不能把全部交易减少都归于信息不对称。要隔离纯粹的信息损失，应固定双方价值，比较“可以验证个体质量”和“只能按均质报价”。默认的 1.10 对 0.80 就给出了这种有益交易可能被信息阻断的例子。</p>
+</section>
+<section id="insurance">
+<h2>保险里的“坏类型”，是对保险人更昂贵的风险</h2>
+<p class="prose">把车辆质量换成投保前已知的风险。设低风险者损失概率为 2%，高风险者为 10%，两类人数一样，出险都损失 1000 元。这里只作示意，假设风险在签约后不变、投保人知道自己的类型，保险人分不清。忽略管理费时，混合池的平均赔付是每人 60 元。</p>
+<p class="prose">如果低风险者最多愿付 30 元，高风险者最多愿付 120 元，统一保费 60 会让低风险者退出。剩下的都是高风险者，预期赔付升为每人 100 元，原来的 60 就不再够用。调到 100 后高风险者仍愿保，形成较小的市场，而不是必然无人参保。</p>
+<p class="prose">这里最高愿付保费不是直接等于预期损失：人们可能愿为减少不确定性额外付款。我们明确给出 30 与 120，才能判断参与，而不能仅凭“低风险平均只损失 20”就断言所有低风险者都会退出。若他们很重视保障、或有雇主补贴，退出路径会不同。</p>
+<p class="prose">“高风险”也不是品行评价。年龄、疾病史和职业环境可能影响风险，却不一定由个人选择。区分风险虽然可能改善定价信息，也可能让最需要保障的人负担不起。效率、隐私和风险共担目标需要分开讨论。</p>
+<h3>三种工具，改变的不是同一件事</h3>
+<div class="tablewrap" tabindex="0" role="region" aria-label="逆向选择对策与成本，可横向滚动"><table class="tbl comparison"><thead><tr><th scope="col">工具</th><th scope="col">作用渠道</th><th scope="col">需要核查的限制</th></tr></thead><tbody>
+<tr><td><b>认证</b><span class="en"> (certification)</span></td><td>让可验证的检测结果区分车况，好车不必与差车共用一个价格。</td><td>检测费、漏检、检测方与平台的利益冲突；一张证书未覆盖所有未来故障。</td></tr>
+<tr><td><b>保修</b><span class="en"> (warranty)</span></td><td>卖家承担部分未来故障支出，也可能让好车更容易证明可靠。</td><td>除外条款、维修时限、索赔成本与卖家偿付能力；承诺必须能够兑现。</td></tr>
+<tr><td><b>强制保险</b><span class="en"> (mandatory insurance)</span></td><td>扩大或维持风险池，阻止低风险者单纯因混合费率退出。</td><td>没有让保险人突然知道个体风险；需执行、补贴与可负担性安排，也限制不参保的选择。</td></tr>
+</tbody></table></div>
+<p class="prose">认证可能让好卖家多收钱，但不一定每笔检测都值得。若验证成本高于恢复交易的净收益，昂贵认证本身就可能吞掉收益。保修也不是免费风险消失，预计维修成本会进入价格；若劣质卖家能随时关店换名，纸面上写同样的保修不能使它可信。可联系<a href="../m05/02-repeated-games.html#reputation">声誉与未来收益</a>理解。</p>
+<p class="prose">支持强制参保的一方可以强调风险池稳定与普遍保障；反对者可以强调低风险者承担的转移、个人选择和执行成本。它能缓解退出反馈，却不自动降低医疗或维修的真实资源成本，也不替代对保障范围和资金来源的讨论。下一课会问：即使投保前类型完全一样，签约后行动改变又会带来什么问题？</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“报价高于平均保留价值，好车就一定愿卖。”</p><p>平均数掩盖个体门槛。两车例子报价 77 高于平均 56，却低于好车主的 80。好车退出又会改变下一轮的平均值。</p></div>
+<div class="mis"><p class="said">“信息不对称一定让市场完全消失。”</p><p>可能全留、部分稳定或崩溃，取决于价值、分布与制度。最终非空固定点要求剩下的每位卖家都愿意接受基于剩下质量的报价。</p></div>
+<div class="mis"><p class="said">“认证和强制保险都只是让信息变透明。”</p><p>认证主要改善可验证信息；强制保险主要改变参与和风险池。二者都可能有益，也都有成本，不能当成免费且万能的同一种工具。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先找交易前谁知道类型，再检查参与条件。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">把反馈链和适用条件一起回忆。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>平均报价为什么使均质下降？</b>买家分不清车，统一价可能低于好车主的保留价值。好车退出改变参与样本，继续按原平均出价就不再合理。平台需要证明检测结果确实能区分质量，而不是仅让页面更好看。</div></li><li><div><b>退出一定走向消失吗？</b>不一定。若最后一批低质量车仍有足够的交易空间，就会稳定；若初始价足够高也可全部留下。对既有样本继续降价通常不能召回高保留价值车，要恢复这些交易，应改变可验证信息或保障等条件。</div></li><li><div><b>三种补救各解决什么？</b>检测提供可核查的质量信息，保修转移部分故障责任并可能传递质量，强制参保改变风险池的参与。应逐项问准确率、责任兑现、费用和分配，而不是看到认证章或参保率就宣布问题解决。</div></li></ol>
+<p class="prose">这条虚构新闻最值得追加的问题是：谁支付检测费？误判由谁承担？认证车与未认证车的样本构成怎样变化？只有把价格、质量和退出者一起观察，才不容易把“留下来的平均值”当成原市场的全貌。</p>
+<button type="button" class="chip" id="goChart">恢复默认样本，重看退出链</button>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+function sample(seed){
+  var s=seed>>>0,values=[];
+  for(var i=0;i<24;i++){
+    s=(s+0x6D2B79F5)>>>0;
+    var t=Math.imul(s^(s>>>15),s|1);t^=t+Math.imul(t^(t>>>7),t|61);
+    values.push(20+Math.floor(((t^(t>>>14))>>>0)/4294967296*81));
+  }
+  return values;
+}
+function model(pool,ids,m,d){
+  if(!ids.length){return {ids:[],next:[],quality:null,price:null,exits:0,status:'空市场'};}
+  var sum=ids.reduce(function(n,i){return n+pool[i];},0),n=ids.length;
+  // 比较整数乘积，避免显示舍入或浮点误差改变恰好等于保留价值的判定。
+  var next=ids.filter(function(i){return m*(100-d)*sum>=pool[i]*8000*n;});
+  return {ids:ids.slice(),next:next,quality:sum/n,price:m*(100-d)*sum/(10000*n),exits:n-next.length,status:next.length===n?'固定点':'待退出'};
+}
+// 仅显示时四舍五入到分；微小容差消除二进制表示在半分处的偏差，不参与退出判断。
+function money(n){return (Math.round(n*100+1e-8)/100).toFixed(2);}
+var pool=sample(2026),history=[];
+function addRow(target,cells){var tr=document.createElement('tr');cells.forEach(function(text,i){var td=document.createElement('td');td.textContent=text;if(i){td.className='num';}tr.appendChild(td);});target.appendChild(tr);}
+function render(){
+  var s=history[history.length-1],round=history.length-1;
+  $('#trajectory tbody').replaceChildren();history.forEach(function(h,i){addRow($('#trajectory tbody'),[i,h.ids.length,h.quality===null?'—':h.quality.toFixed(2),h.price===null?'—':money(h.price),h.exits]);});
+  $('#cars tbody').replaceChildren();pool.forEach(function(q,i){addRow($('#cars tbody'),['#'+(i+1),q,(0.8*q).toFixed(2),s.ids.includes(i)?'留下':'退出']);});
+  $('#r-round').textContent=round+' 轮';$('#r-count').textContent=s.ids.length+' / '+(pool.length-s.ids.length)+' 辆';
+  $('#r-quality').textContent=s.quality===null?'无平均质量':s.quality.toFixed(2)+' 点';$('#r-price').textContent=s.price===null?'无报价':money(s.price)+' 教学元';$('#r-status').textContent=s.status;
+  var text='第 '+round+' 轮，存量 '+s.ids.length+' 辆，累计退出 '+(pool.length-s.ids.length)+' 辆。';
+  text+=s.status==='空市场'?'市场已空，停止计算，不对空集取平均。':('平均质量 '+s.quality.toFixed(2)+' 点，统一报价 '+money(s.price)+' 教学元。'+(s.exits?'下一轮将有 '+s.exits+' 辆退出；这是中途报价，不是最终成交结果。':'达到固定点：剩下的每辆车都接受当前报价，再算一轮也不会改变存量。'));
+  $('#verdict').textContent=text;$('#trajectory-region').setAttribute('aria-label','图 1 轨迹：'+text+' 可横向滚动。');
+  $('#step').disabled=s.status!=='待退出';$('#finish').disabled=s.status!=='待退出';
+}
+function reset(){
+  var m=+$('#multiplier').value,d=+$('#discount').value;
+  $('#multiplier-value').textContent=(m/100).toFixed(2);$('#multiplier').setAttribute('aria-valuetext',(m/100).toFixed(2)+' 教学元/质量点');$('#discount-value').textContent=d+'%';$('#discount').setAttribute('aria-valuetext',d+'%');
+  document.querySelectorAll('[data-m]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.m===m&&+b.dataset.d===d));});
+  history=[model(pool,pool.map(function(q,i){return i;}),m,d)];render();
+}
+function step(){var s=history[history.length-1];if(s.status!=='待退出'){return;}history.push(model(pool,s.next,+$('#multiplier').value,+$('#discount').value));render();}
+$('#step').addEventListener('click',step);$('#finish').addEventListener('click',function(){while(history[history.length-1].status==='待退出'){step();}});$('#replay').addEventListener('click',reset);
+['multiplier','discount'].forEach(function(id){$('#'+id).addEventListener('input',reset);});
+document.querySelectorAll('[data-m]').forEach(function(b){b.addEventListener('click',function(){$('#multiplier').value=b.dataset.m;$('#discount').value=b.dataset.d;reset();});});
+$('#goChart').addEventListener('click',function(){$('#multiplier').value=110;$('#discount').value=0;reset();$('#w-lemons').scrollIntoView({block:'start'});$('#multiplier').focus({preventScroll:true});});reset();
+var QUIZ=[
+{q:'两辆车保留价值为 32 与 80，统一报价 77，高于平均保留价值 56。谁愿卖？',o:['两人都愿意，因为报价高于平均值','两人都不愿意，因为买家不知道质量','只有保留价值 32 的卖家愿意，平均值不能代替个体门槛','只有好车主愿意，因为能证明自己质量更高'],a:2,why:'只有低保留价值卖家愿意。77 低于另一人的 80；若好车退出，买方还须按剩下的质量重算报价。'},
+{q:'保险人看不到投保前的风险类型，统一保费上升后低风险者退出。最直接的机制是什么？',o:['逆向选择，参与样本变得更高风险','签约后所有人减少预防努力','风险池缩小必定使每个人的出险概率提高','保费是转移，所以退出不会影响保险人赔付预算'],a:0,why:'这是交易前隐类型导致的选择。低风险者退出提高剩余池的平均预期赔付，不要求每个个体改变风险或努力。'},
+{q:'运行退出模拟后仍有 8 辆车，且每辆的保留价值都不高于基于这 8 辆的报价。下一轮怎样？',o:['必定再退一辆，直到归零','按最初 24 辆的均质涨价','车辆虽然留下，但没有任何稳定含义','存量不变，达到该退出规则下的固定点'],a:3,why:'没有人还需要退出，平均质量和报价也不再改变。信息不对称可以导致部分市场稳定，不是机械地每轮全退。'},
+{q:'平台认证价格昂贵，且不承担漏检责任。仅凭推出认证服务可以判断什么？',o:['逆向选择一定消失','还不能判断净改善，要查准确性、可信度和检测成本','只要好车标价提高，总剩余一定增加','认证不能影响信息，只能转移收入'],a:1,why:'认证可能改善信息，但净收益取决于恢复的交易、信息质量与实际资源成本。名称和高价本身不证明有效。'},
+{q:'强制高低风险者都加入同一保险池，最直接改变的是什么？',o:['让保险人免费获得每个人的真实风险','让高风险者的出险概率立刻降低','限制退出、维持混合风险池，同时带来可负担性与选择权问题','使赔付资金不再需要由任何人承担'],a:2,why:'它首先改变参与，而不是自动揭示风险或消除损失。低风险者可能承担交叉补贴，还需讨论执行和补贴资金。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'信息不对称',en:'asymmetric information',d:'一方掌握另一方不知道的、影响交易的信息。双方共同面对不确定性不必然是信息不对称。'},
+{t:'逆向选择',en:'adverse selection',d:'交易前隐藏的类型差异通过参与或退出改变交易群体组成，例如统一价使好车退出。'},
+{t:'柠檬市场',en:'market for lemons',d:'买家不能识别个体质量、按平均质量报价，好车可能退出，均质下降又压低报价的市场。'},
+{t:'保留价值',en:'reservation value',d:'卖家不成交时的最好替代价值，决定最低愿收金额。不能用平均值替代每个卖家的门槛。'},
+{t:'固定点',en:'fixed point',d:'在本课退出规则下，存量不再改变。非空时所有剩余卖家都接受按该存量均质计算的报价。'},
+{t:'认证',en:'certification',d:'用可验证的检测改善质量信息。价值取决于准确性、独立性与责任安排，还须扣除检测成本。'},
+{t:'保修',en:'warranty',d:'承担约定范围的后续故障责任。可减轻买家担心并传递质量，但需要偿付能力与合同执行。'},
+{t:'强制保险',en:'mandatory insurance',d:'通过约束退出维持风险池，不自动揭示风险类型。需权衡保障、交叉补贴、执行成本与选择权。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

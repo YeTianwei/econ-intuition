@@ -126,7 +126,7 @@
         {
           id: 'm06-01', title: '逆向选择：柠檬市场',
           en: 'Adverse selection: the market for lemons',
-          path: 'm06/01-adverse-selection.html', status: 'todo'
+          path: 'm06/01-adverse-selection.html', status: 'done'
         },
         {
           id: 'm06-02', title: '道德风险与委托代理',
