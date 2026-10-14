@@ -131,7 +131,7 @@
         {
           id: 'm06-02', title: '道德风险与委托代理',
           en: 'Moral hazard and the principal-agent problem',
-          path: 'm06/02-moral-hazard.html', status: 'todo'
+          path: 'm06/02-moral-hazard.html', status: 'done'
         },
         {
           id: 'm06-03', title: '信号与筛选',

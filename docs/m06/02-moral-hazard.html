@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>道德风险与委托代理</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m06-02">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>道德风险与委托代理</h1>
+<p class="sub">Moral hazard and the principal-agent problem</p>
+<p class="lede">如果损失有人分担，人还会像原来一样努力预防吗？如果老板看不到工作过程，只能看到销售额，奖金又会把员工引向哪里？这一课不猜测谁的品行，而是把行动、后果和付款责任放进同一本账。</p>
+<p class="meta">约 20 分钟 · 0 个交互图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="01-adverse-selection.html#selection">交易前的隐藏类型</a>、<a href="../m05/01-nash-equilibrium.html#matrix">最优反应</a>、<a href="../m03/01-surplus-efficiency.html#surplus">收益转移与总剩余</a>。本课把视线从“谁来交易”移到“签约以后做什么”。</p>
+</header>
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>示例标题（为教学拟写，不是真实报道）</figcaption><blockquote>一家大型银行获紧急支持，监管者追问：如果市场相信“大而不能倒”，下一次谁来约束风险？</blockquote></figure>
+<p class="prose">银行、支持措施与讨论均为虚构。本课只设想：部分资金提供者预计严重亏损时会得到外部保护，因此可能减少监督。没有断言任何真实银行得到过无条件承诺，也不把所有救助都解释为银行故意冒险的结果。</p>
+<ol class="qs"><li>未来可能获救的预期，怎样影响今天的风险选择？观察到一次救助，能证明这条因果链吗？</li><li>为什么要求保险客户或银行股东承担一部分损失，有时能改善激励，却又不是越多越好？</li><li>把员工收入绑在业绩或股价上，能否彻底消除委托人与代理人的分歧？</li></ol>
+</section>
+<section id="hidden-action">
+<h2>签约后，行动变得难以观察</h2>
+<p class="prose"><b>道德风险</b><span class="en"> (moral hazard)</span> 指保障或合同改变了行动者承担的后果，而其行动又难被另一方观察或写进可执行合同，从而改变行为激励。名称容易误导：这里不是道德谴责，更不需要先证明有人故意作恶。</p>
+<p class="prose">想象投保人可以花时间检查水管，降低漏水概率。保险公司看到的是房屋是否进水，却无法每天验证检查是否认真。投保后房主仍要付检查的时间成本，但漏水的部分财务损失由保险人承担，预防的私人收益便可能下降。</p>
+<p class="prose">道德风险也不意味着行动者会完全不小心。即使财物损失全赔，受伤、停业、处理索赔的麻烦以及对家人的担心都可能由本人承担，仍会支持预防。能观察到行为变化有多大，需要证据；理论只告诉我们哪一项边际收益变了。</p>
+<p class="prose">与上一课的区别在时序和信息内容：投保前已知道自己的房屋更容易漏水，却没有告诉保险人，是隐藏类型；投保后减少检查，是隐藏行动。一次实际合同可能同时有两者。若只是天气随机导致赔付变多，而行为没变，就不能仅凭赔付增加判定道德风险。</p>
+<div class="analogy"><span class="lab">类比</span><p>合租时水费由所有人平摊。你关紧水龙头要多走几步，省下的水费却只拿回自己的那一小份，节水的私人回报可能变小。这不要求室友突然变坏；但如果大家能看见漏水、共同约定检查并执行，激励也可能恢复。平摊风险与鼓励节约，是两件需要一起设计的事。</p></div>
+<h3>“看不到努力”不等于“看不到结果”</h3>
+<p class="prose">合同常常能核实结果，却不能从结果唯一还原行动。认真检查也可能漏水，不检查也可能没出事。若只要出险就罚，就把天气、材料缺陷等运气风险一并压给投保人；若只要没有出险就认定认真，也可能奖励了侥幸。</p>
+<p class="prose">因此，改善信息和改变付款责任是两种不同工具。可验证的检查记录可能减少信息差，但要付监督成本，还可能引入隐私问题或伪造记录。损失自付无需观察每次检查，却会削弱保险原本提供的保障。制度通常在两类工具之间组合，而不是选一个口号。</p>
+</section>
+<section id="ledger">
+<h2>同一个人、同一种损失，算两种努力</h2>
+<p class="prose">以下全部为教学示意，不是现实保险费率。假设不检查时出险概率 20%，认真检查后为 5%；每次损失固定 1000 教学元，认真检查耗费相当于 60 教学元的时间，不检查的努力成本为零。概率和损失在每一行合同中都相同，变的只有本人出险时自付多少。</p>
+<p class="formula">个人预期成本 = 出险概率 × 出险时自付额 + 努力成本</p>
+<p class="prose">保费在同一份合同内不随不可观察的本次努力变化，因此比较两种行动时可以暂时省略。不同合同的保费一般不同，不能把这张表直接用作“哪份保险最便宜”的排名。我们暂用预期金额判断行动，尚未纳入个人对风险波动的厌恶。</p>
+<p class="prose">表中的<b>免赔额</b><span class="en"> (deductible)</span> 是先由本人承担的一段损失；<b>共保</b><span class="en"> (coinsurance)</span> 则按比例分担，本课比例指投保人自付。先比较同一损失下的激励，后面再比较它们对不同损失规模的保障。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="相同损失与概率下的保险激励账本，可横向滚动"><table class="tbl" id="ledger-table"><caption>金额单位：教学元；每次出险总损失 1000。认真检查的 60 已加在“检查”列中。</caption><thead><tr><th scope="col">合同</th><th scope="col" class="num">出险自付</th><th scope="col" class="num">不检查：20%</th><th scope="col" class="num">检查：5% + 努力</th><th scope="col">按预期成本选择</th></tr></thead><tbody>
+<tr data-retention="1000"><td>不投保</td><td class="num">1000</td><td class="num">200</td><td class="num">110</td><td>检查</td></tr>
+<tr data-retention="0"><td>全额赔付</td><td class="num">0</td><td class="num">0</td><td class="num">60</td><td>不检查</td></tr>
+<tr data-retention="300"><td>免赔额 300</td><td class="num">300</td><td class="num">60</td><td class="num">75</td><td>不检查</td></tr>
+<tr data-retention="500"><td>免赔额 500</td><td class="num">500</td><td class="num">100</td><td class="num">85</td><td>检查</td></tr>
+<tr data-retention="200"><td>本人共保 20%</td><td class="num">200</td><td class="num">40</td><td class="num">70</td><td>不检查</td></tr>
+<tr data-retention="500"><td>本人共保 50%</td><td class="num">500</td><td class="num">100</td><td class="num">85</td><td>检查</td></tr>
+</tbody></table></div>
+<p class="note">这是静态账本，不是精算报价。省略保费、非财务损失、理赔费用和风险偏好，只比较同一合同下的预期私人支出。表中共保比例均指投保人自付比例，不是保险人赔付比例。</p>
+<h3>检查为何在某些合同里划算</h3>
+<p class="prose">先遮住最后一列自己算。不投保时，检查把预期损失从 200 降至 50，省 150，却只花 60，所以个人预期总成本从 200 降至 110。全额赔付时，省下的赔款归保险人，而 60 的努力仍由本人支付；在这个刻意简化的账本里，不检查成为最优反应。</p>
+<p class="formula">检查的私人预期收益 = (20% − 5%) × 出险自付额</p>
+<p class="prose">自付 300 时只省 45，低于努力成本 60；自付 500 时省 75，高于 60。精确门槛是自付 400，两个行动的私人预期成本都为 80，检查只是同样好的选择之一，不能声称一定会检查。合同稍微让人承担一点损失，不保证激励就足够。</p>
+<p class="prose">再看总资源账。不检查的预期损失是 200；检查后的预期损失 50 加努力 60，共 110，节省 90。保险赔付是谁付给谁的转移，不能再加一次当作新的社会损失。免赔额从零提高后，保险人少赔的钱也不全是效率收益，其中一部分只是把同一笔损失移回本人。</p>
+<p class="prose">在免赔额 500 且检查的那一行，个人预期承担损失 25，保险人预期赔 25，两者相加仍是 50，再加努力 60 才是 110。把这三项拆开，才能区分行为改善带来的损失减少，与合同单纯改变的风险分担。</p>
+</section>
+<section id="contracts">
+<h2>激励要改，保险也不能被改没了</h2>
+<p class="prose"><b>免赔额</b><span class="en"> (deductible)</span> 是每次约定损失中先由本人承担的一段。例如免赔 500、损失 1000，本人付 500、保险人付 500；若损失只有 200，本人最多付这次损失 200，不是还要多交 300。</p>
+<p class="prose"><b>共保</b><span class="en"> (coinsurance)</span> 在这里指按比例分担损失。本人共保 20% 时，损失 1000 自付 200，损失 200 自付 40。它与免赔额在不同损失规模下很不一样。表里免赔 500 与共保 50% 数字相同，仅因为损失被固定为 1000。</p>
+<p class="prose">两者都让预防的收益更多回到本人，也让本人面对更大的支出波动。如果全部损失重新由本人承担，激励可能很强，但保险的风险分担功能也消失了。对储蓄少、承受能力弱的人，高免赔还可能使必要的维修或治疗被拖延，不只是减少不必要支出。</p>
+<p class="prose">一种合理的设计思路是先问：行动确实能改变哪些风险，改变多少？能否通过低成本的防护措施、核查记录或事前补助来改善行动？对无法控制的灾害风险，把更多责任压给个人未必增加预防，只会增加波动。责任、可控制性和保障目标应该对应。</p>
+<h3>“有保险”也可能支持有价值的尝试</h3>
+<p class="prose">保障降低坏结果的负担，既可能鼓励不必要冒险，也可能让人愿意创业、试用新技术或接受有风险但有价值的机会。不能把所有风险承担增加都叫作社会损失。仍要比较新增活动的真实收益、损失和第三方影响。</p>
+<p class="prose">所以这一课的任务不是推出“少保险最好”，而是识别隐藏行动怎样改变合同效果。良好的保障有价值，良好的激励也有价值；真正困难的是在看不到全部行动时，让两种价值尽量兼容。</p>
+</section>
+<section id="agency">
+<h2>委托代理：别人替你行动，却有自己的账本</h2>
+<p class="prose"><b>委托代理问题</b><span class="en"> (principal-agent problem)</span> 出现在一方请另一方代为行动，而双方目标不完全相同、信息或控制能力又不对称的关系中。请人办事的是<b>委托人</b><span class="en"> (principal)</span>，实际采取行动的是<b>代理人</b><span class="en"> (agent)</span>。股东与经理、雇主与员工、客户与维修商都可以有这种关系。</p>
+<p class="prose">目标不同不必是敌对。股东重视长期回报，经理还关心任期、声誉、工作强度和失业风险；客户重视修好设备，维修商还关心工时与零件利润。把代理人假设成没有自己利益的工具，就看不到合同为什么重要。</p>
+<p class="prose"><b>激励合同</b><span class="en"> (incentive contract)</span> 让报酬或责任随可核查结果改变，试图把代理人的最优反应引向委托人的目标。代理人愿不愿接受合同也很重要：高强度奖金若伴随过大风险，可能需要更高的平均报酬作为补偿。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="激励合同及副作用，可横向滚动"><table class="tbl comparison"><thead><tr><th scope="col">办法</th><th scope="col">想改善什么</th><th scope="col">可能把人推向哪里</th></tr></thead><tbody>
+<tr><td><b>绩效工资</b><span class="en"> (performance pay)</span></td><td>让可衡量产出增加时本人也获益，减轻固定工资下的少努力诱因。</td><td>只奖销售额可能牺牲回款、质量和售后；结果含运气时，收入波动也变大。</td></tr>
+<tr><td><b>股权激励</b><span class="en"> (equity compensation)</span></td><td>让经理分享公司价值变化，关心不容易逐项考核的长期成果。</td><td>短期兑现可能诱发抬高短期指标；财富集中于本公司又让本人承担额外风险。</td></tr>
+<tr><td>核查与长期评价</td><td>结合质量、客户留存、审计和延期兑现，减少只看一项指标的盲区。</td><td>核查消耗资源，主观评价可能偏袒；延后报酬也可能降低透明度和吸引力。</td></tr>
+</tbody></table></div>
+<h3>可测量，不代表就是最终目标</h3>
+<p class="prose">设客服只按处理工单数量拿奖金。快速关闭容易的问题、把难题转给别人，可能比真正解决问题更赚钱。统计里的处理量上升，不必意味着服务更好。这里不是奖励太少，而是奖励的指标偏离了目标。</p>
+<p class="prose">改成只奖满意度也不一定完美：员工可能挑选容易给好评的客户，或花过多时间安抚少数人而拖慢响应。多项任务争夺同一份时间，强奖最容易数的那一项，会挤出不好数但重要的工作。指标应结合质量核查和任务结构，不是无限增加考核表就能解决。</p>
+<p class="prose">股权同样不能把一切分歧归零。股票受整体市场波动影响，经理并不能控制全部变化；若为了早点兑现而削减维护、培训与研发，短期账面利润可能提高，长期价值却受损。延长持有期可以改善时间范围匹配，但也让员工更难分散自己的收入和财富风险。</p>
+<p class="prose">此外，股东与社会也不是同一个委托人。即使经理完全按股东利益行动，仍可能把污染或金融损失转给第三方。一个解决了公司内部激励的合同，不自动解决<a href="../m03/04-externalities-public-goods.html">外部性</a>。必须把“替谁着想”说完整。</p>
+</section>
+<section id="banks">
+<h2>“大而不能倒”：事后救急与事前激励</h2>
+<p class="prose"><b>大而不能倒</b><span class="en"> (too big to fail)</span> 描述一种担忧：某机构失败可能波及支付、信贷与其他机构，公共部门因而难以承诺任其无序倒闭。它不是指银行物理上不会倒，也不是每个投资者都一定得到补偿。</p>
+<p class="prose">在本课的条件性设定里，若资金提供者相信坏结果会被外部兜底，便可能不再按风险要求足够高的利息或监督。管理者面对较便宜的资金、又能保留上行收益时，可能选择更高风险。链条是“救助预期 → 损失承担或监督改变 → 行动改变”，每一环都需要成立。</p>
+<p class="prose">观察到银行被救，并不能证明它事前因为预期救助而冒险。也可能有未预料的资产损失、流动性冲击或政策临时改变。要支持因果解释，需要知道事前的预期、融资条件和风险选择，而不是用事后的救助倒推所有人的动机。</p>
+<p class="prose">事后支持有时旨在阻止连锁损失，不能仅因存在激励副作用就宣布一定不该支持。可以同时讨论维持关键服务、让股东承担损失、限制管理层奖励、提高资本缓冲以及可执行的处置规则。这些安排各有执行和资金成本，也可能影响信贷供给。</p>
+<p class="prose">最难的是可信度：嘴上说“不救”，事后却总无法承受后果，承诺未必改变预期；相反，保护支付服务也不必等于保护原股东和经理的所有利益。把被保护的对象、条件与损失顺序分清，才有可能兼顾稳定和激励。</p>
+</section>
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“道德风险就是投保人变坏了。”</p><p>这是合同下隐藏行动与后果分担的问题，不是心理诊断。行为也可能不变；赔付增加本身不能排除运气或原有类型差异。</p></div>
+<div class="mis"><p class="said">“免赔额越高越好，最好让本人全担。”</p><p>更多自付可能加强预防，也削弱保障、加大波动。账本里的不投保确实鼓励检查，却不能证明它对风险承受能力有限的人最好。</p></div>
+<div class="mis"><p class="said">“奖金绑业绩、经理拿股票，就与委托人完全一致。”</p><p>业绩含噪声，指标会被针对性优化，兑现期限也影响行为。收入与财富风险更集中；即便股东目标被实现，也未必符合第三方利益。</p></div>
+</section>
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先分清类型、行动与运气，再算谁承担边际后果。</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">每种对策同时回忆一个收益与一个代价。</p><div class="cards" id="cards"></div></section>
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>救助预期怎样改变冒险？</b>在设定中，外部保护可能减弱资金提供者的监督，或降低行动者的下行负担，从而改变风险选择。一次救助只证明事后发生了支持，不能单独证明事前的动机与因果链。</div></li><li><div><b>承担损失为何有用但不是越多越好？</b>自付使预防收益回到本人，正如自付 500 时检查能省 75、超过努力成本 60。但更高责任也增加风险和资金压力；银行情形还要考虑无序失败的第三方损害。可以区分保关键服务与保所有投资者利益。</div></li><li><div><b>绩效与股权能完全对齐目标吗？</b>不能。它们把部分收益与行动联系起来，却无法消除不可观察任务、运气、刷指标与短期兑现问题。需要结合可控性、核查、时间范围和风险分担设计，并核算制度本身的成本。</div></li></ol>
+<p class="prose">从保险到公司，再到银行，通用问题是：谁行动，谁能看到，谁得到收益，谁承担损失？把这四件事写清楚，比对人贴上“自私”或“负责”的标签更有解释力。</p>
+</section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s){return document.querySelector(s);}
+var QUIZ=[
+{q:'签约前房主知道旧管道更易漏水；投保后又减少检查。应怎样区分？',o:['两者都是道德风险，因为最后都可能赔钱','前者是隐藏类型引发的逆向选择问题，后者是隐藏行动的道德风险问题','前者是道德风险，后者是逆向选择','只要房主没有说谎，两种信息问题都不存在'],a:1,why:'按时序与信息内容区分。投保前风险差异影响参与，投保后检查努力影响出险概率；实际合同可同时包含两者。'},
+{q:'表中检查把概率从 20% 降至 5%，努力成本 60。若每次出险自付恰好 400，按预期金额如何选？',o:['一定不检查，因为保险仍赔 600','一定检查，因为自付额大于努力成本','检查能把个人总成本降到零','两种行动成本都是 80，检查只是并列最优，不能保证发生'],a:3,why:'不检查为 0.20×400=80，检查为 0.05×400+60=80。要比较减少的预期自付，而不是整笔自付额与努力成本。'},
+{q:'客服按结单数量拿奖金后，结单变多，未解决问题的复开工单也变多。最贴近哪种解释？',o:['代理人优化了被奖励的指标，但指标没有完整代表服务目标','奖金已经证明服务效率和质量同时提高','应该把所有工资改成固定工资，永不考核','工单是可观测结果，因此不存在信息问题'],a:0,why:'指标改善不必等于目标改善。只奖励数量可能挤出解决难题与质量，需结合核查，而不是仅凭计数评价效果。'},
+{q:'只知道某银行危机后获救，能推出它事前因预期获救而故意冒险吗？',o:['能，否则救助没有必要','能，只要银行规模大','不能，还需事前预期、融资条件和行动变化的证据','不能，因为救助预期绝不可能影响行为'],a:2,why:'不能由事后结果单独识别事前因果。道德风险是可能机制，不是对所有被救机构动机的事实判断。'},
+{q:'企业要求员工很大比例的财富长期持有本公司股票。除了激励改善，还应关注什么？',o:['股价完全由员工努力决定，所以无需担心运气','收入和财富风险集中，以及兑现期与长期任务是否匹配','股权让代理人与社会利益必然一致','只要股票下跌，就证明员工减少了努力'],a:1,why:'同一公司决定工资与财富，员工更难分散风险；股价还含市场噪声。股权合同需要权衡激励强度、时间范围与风险承担。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'道德风险',en:'moral hazard',d:'保障或合同改变后果分担，而行动难以观察或签约，从而改变行动激励。不是道德谴责，也不能只凭坏结果认定。'},
+{t:'委托代理问题',en:'principal-agent problem',d:'委托人请代理人行动，双方目标不完全相同且信息或控制能力不对称。先问谁行动、谁观察、谁得益、谁担损失。'},
+{t:'激励合同',en:'incentive contract',d:'把报酬或责任与可核查的结果相连，引导行动。要兼顾参与意愿、风险分担、噪声与可测指标的局限。'},
+{t:'免赔额',en:'deductible',d:'约定由本人先承担的一段损失，不超过实际损失。可加强预防激励，也会削弱保障并增加财务波动。'},
+{t:'共保',en:'coinsurance',d:'按比例分担损失。本课比例指本人自付；与免赔额对不同规模损失的覆盖不同。'},
+{t:'绩效工资',en:'performance pay',d:'报酬随可衡量产出变化。可能鼓励努力，也可能奖励刷指标、挤出不易测量的工作并让员工承担运气风险。'},
+{t:'股权激励',en:'equity compensation',d:'让员工或经理分享公司价值变化。要注意兑现期限、短期行为、市场噪声与财富集中，不能保证完全对齐目标。'},
+{t:'大而不能倒',en:'too big to fail',d:'机构无序失败可能有连锁损害，使不救助承诺难以可信。保护关键服务不必等于保护所有股东和管理者。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>
