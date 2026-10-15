@@ -319,7 +319,7 @@
         {
           id: 'm14-01', title: '2008 年全球金融危机',
           en: 'The global financial crisis of 2008',
-          path: 'm14/01-global-financial-crisis.html', status: 'todo'
+          path: 'm14/01-global-financial-crisis.html', status: 'done'
         },
         {
           id: 'm14-02', title: '2021~2023 年的通胀与加息',

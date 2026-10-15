@@ -451,3 +451,16 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .tri-cases th[scope="row"]{font-family:var(--font-body);font-size:15px;font-weight:500;letter-spacing:0;color:var(--ink);white-space:normal;width:42%}
 .tri-cases th .en{display:block;font-size:13px;font-weight:400;line-height:1.6;margin-top:2px}
 /* m13-04 end */
+
+/* m14-01 start */
+.lev-neg{fill:var(--loss-soft)}
+.zeroline{stroke:var(--ink);stroke-width:1.5}
+.curve.ref{stroke:var(--muted);stroke-width:2;stroke-dasharray:6 5}
+.curvelab.muted{fill:var(--muted)}
+.curvelab.loss{fill:var(--loss)}
+.pt.loss{fill:var(--loss)}
+.legend .sw.ref{border-color:var(--muted);border-top-style:dashed;border-top-width:2px}
+.legend .sw.negband{border-color:var(--loss-soft);border-top-width:10px}
+.legend .mk.zero{background:var(--loss)}
+#cmp td{white-space:nowrap}
+/* m14-01 end */
