@@ -334,7 +334,7 @@
         {
           id: 'm14-04', title: '日本「失去的三十年」',
           en: 'Japan: the lost thirty years',
-          path: 'm14/04-japan-lost-decades.html', status: 'todo'
+          path: 'm14/04-japan-lost-decades.html', status: 'done'
         }
       ]
     }

@@ -485,3 +485,18 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .tt-axis{stroke:var(--muted);stroke-width:1}
 .tt-tl td:first-child{white-space:nowrap;font-family:var(--font-mono);font-size:13px}
 /* m14-03 end */
+
+/* m14-04 start */
+.jp-fig{margin:24px 0;max-width:40em}
+.jp-fig svg{display:block;width:100%;height:auto}
+.jp-fig figcaption{font-size:14px;line-height:1.7;color:var(--muted);margin-top:8px}
+.jp-bar{fill:var(--demand)}
+.jp-bar.peak{fill:var(--supply)}
+.jp-bar.low{fill:var(--loss)}
+.jp-val{font-family:var(--font-mono);font-size:13px;fill:var(--ink)}
+.jp-yr{font-family:var(--font-mono);font-size:13px;fill:var(--ink)}
+.jp-tick{font-family:var(--font-mono);font-size:12px;fill:var(--muted)}
+.jp-date{font-family:var(--font-body);font-size:12px;fill:var(--muted)}
+.jp-guide{stroke:var(--muted);stroke-width:1;stroke-dasharray:4 4}
+.jp-axis{stroke:var(--muted);stroke-width:1}
+/* m14-04 end */
