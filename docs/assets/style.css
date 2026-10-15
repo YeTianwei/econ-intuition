@@ -477,3 +477,11 @@ a:focus-visible{outline:2px solid var(--demand);outline-offset:3px}
 .pt.s{fill:var(--supply)}
 .ts-tag{font-family:var(--font-body);font-weight:500}
 /* m14-02 end */
+
+/* m14-03 start */
+.tt-svg{display:block;width:100%;max-width:560px;height:auto}
+.tt-lab{font-family:var(--font-body);font-size:15px;font-weight:500;fill:var(--ink)}
+.tt-val{font-family:var(--font-mono);font-size:13px;fill:var(--ink)}
+.tt-axis{stroke:var(--muted);stroke-width:1}
+.tt-tl td:first-child{white-space:nowrap;font-family:var(--font-mono);font-size:13px}
+/* m14-03 end */

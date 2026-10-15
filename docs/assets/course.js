@@ -329,7 +329,7 @@
         {
           id: 'm14-03', title: '关税与贸易摩擦',
           en: 'Tariffs and trade tensions',
-          path: 'm14/03-tariffs-trade-tensions.html', status: 'todo'
+          path: 'm14/03-tariffs-trade-tensions.html', status: 'done'
         },
         {
           id: 'm14-04', title: '日本「失去的三十年」',
