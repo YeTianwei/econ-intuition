@@ -324,7 +324,7 @@
         {
           id: 'm14-02', title: '2021~2023 年的通胀与加息',
           en: 'Inflation and interest rate hikes in 2021–2023',
-          path: 'm14/02-inflation-rate-hikes.html', status: 'todo'
+          path: 'm14/02-inflation-rate-hikes.html', status: 'done'
         },
         {
           id: 'm14-03', title: '关税与贸易摩擦',
