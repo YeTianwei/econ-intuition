@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2008 年全球金融危机</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-lesson="m14-01">
+<main class="page">
+<nav class="modules" aria-label="课程模块"></nav>
+<header>
+<h1>2008 年全球金融危机</h1>
+<p class="sub">The global financial crisis of 2008</p>
+<p class="lede">美国房价从 2006 年中的高点到 2009 年中平均跌了约三成。一个房地产市场的回落，怎么会让华尔街的大投行接连倒下、让美国失业率翻一倍？这一课按时间线重走这场危机，再把前面学过的杠杆、挤兑、道德风险、货币政策和财政政策逐一套上去。</p>
+<p class="meta">约 25 分钟 · 1 个交互图 · 5 道自测题 · 8 张闪卡</p>
+<p class="prose">前置：<a href="../m12/04-bank-runs-financial-crises.html#leverage">杠杆与去杠杆螺旋</a>、<a href="../m12/04-bank-runs-financial-crises.html#run">挤兑</a>、<a href="../m06/02-moral-hazard.html#banks">大而不能倒</a>、<a href="../m11/03-monetary-policy.html#zlb">零利率下限与量化宽松</a>、<a href="../m11/02-fiscal-policy.html#multiplier">乘数</a>。</p>
+</header>
+
+<section id="news">
+<h2>从一条新闻开始</h2>
+<figure class="headline"><figcaption>《纽约时报》，Andrew Ross Sorkin，2008 年 9 月 14 日（网络版）；标题为中文翻译。<a href="https://www.nytimes.com/2008/09/15/business/15lehman.html">原文链接</a></figcaption><blockquote>雷曼申请破产，美林被出售</blockquote></figure>
+<p class="prose">报道说，美林同意以约 500 亿美元卖给美国银行，雷曼则在找不到买家之后申请破产。按雷曼向美国证监会提交的 8-K 文件，雷曼兄弟控股公司于 2008 年 9 月 15 日向纽约南区破产法院提交第 11 章破产申请。美联社据法院文件报道，截至 2008 年 5 月 31 日，雷曼合并资产 6390 亿美元、负债 6130 亿美元，是美国历史上规模最大的破产申请。</p>
+<ol class="qs"><li>全美房价平均只跌了约三成，为什么足以让资产 6000 多亿美元的投行资不抵债？</li><li>雷曼是投行，不靠吸收存款过日子，它又是被谁“挤兑”的？</li><li>政府让雷曼倒下，第二天却救了保险公司 AIG，此后又把利率降到零、推出大规模刺激。这些做法该怎么评价？</li></ol>
+</section>
+
+<section id="timeline">
+<h2>时间线</h2>
+<p class="prose">2000 年代中期，美国向信用记录较差、收入证明不足的借款人发放的<b>次级抵押贷款</b><span class="en"> (subprime mortgage)</span> 快速增长。按金融危机调查委员会（FCIC）的统计，2006 年发放了 6000 亿美元次级贷款，占当年全部按揭发放额的 23.5%，其中大部分被证券化。<b>证券化</b><span class="en"> (securitization)</span> 是把成千上万笔贷款打包，按偿付顺序切成不同档次的债券卖给投资者。房价上涨时一切顺利：借款人还不起，还可以卖房或再融资。</p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="2007 至 2010 年危机时间线，可横向滚动"><table class="tbl comparison"><caption>来源见文末资料来源。</caption><thead><tr><th scope="col">日期</th><th scope="col">事件</th></tr></thead><tbody>
+<tr><td>2006 年中</td><td>全美房价见顶，此后三年平均下跌约 30%（美联储历史网站）。</td></tr>
+<tr><td>2007-08-09</td><td>法国巴黎银行宣布暂停计算三只基金的净值并暂停申购赎回（8 月 7 日起生效），理由是美国证券化市场部分领域的流动性消失，资产已无法公允估值。银行间市场随即紧张。</td></tr>
+<tr><td>2007-12</td><td>美国经济衰退开始（NBER 事后认定）。</td></tr>
+<tr><td>2008-03-16</td><td>摩根大通同意收购贝尔斯登。美联储授权纽约联储放贷给新设的 Maiden Lane 公司，买下贝尔斯登约 300 亿美元流动性较差的资产。</td></tr>
+<tr><td>2008-09-07</td><td>联邦住房金融局把房利美、房地美置于<b>政府接管</b><span class="en"> (conservatorship)</span> 之下。两家担保的抵押贷款证券和债务合计 5.4 万亿美元。</td></tr>
+<tr><td>2008-09-15</td><td>雷曼申请破产；美林同意卖给美国银行。</td></tr>
+<tr><td>2008-09-16</td><td>美联储授权向 AIG 提供最多 850 亿美元贷款，政府获得 79.9% 股权。同日，持有 7.85 亿美元雷曼债务的货币市场基金 Reserve Primary Fund 把这批资产计为零，每份净值跌到 0.97 美元。</td></tr>
+<tr><td>2008-09-19</td><td>财政部推出货币市场基金临时担保计划。</td></tr>
+<tr><td>2008-10-03</td><td>《紧急经济稳定法》签署，授权财政部动用最多 7000 亿美元购买或担保问题资产（TARP）。</td></tr>
+<tr><td>2008-11-25</td><td>美联储宣布购买最多 1000 亿美元房利美等机构的债券和 5000 亿美元机构抵押贷款证券。</td></tr>
+<tr><td>2008-12-16</td><td>联邦基金利率目标区间降到 0~0.25%。</td></tr>
+<tr><td>2009-02-17</td><td>《美国复苏与再投资法》（ARRA）签署。</td></tr>
+<tr><td>2009-03-18</td><td>美联储把抵押贷款证券购买上限提高到 1.25 万亿美元、机构债提高到 2000 亿美元，并在六个月内购买最多 3000 亿美元长期国债。</td></tr>
+<tr><td>2009-06</td><td>衰退结束（NBER 于 2010 年 9 月 20 日宣布），历时 18 个月。</td></tr>
+<tr><td>2009-10</td><td>失业率达到峰值 10.0%。</td></tr>
+<tr><td>2010-07-21</td><td>《多德-弗兰克法》签署，其中把 TARP 授权额度从 7000 亿美元减到 4750 亿美元。</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="data">
+<h2>关键数据</h2>
+<div class="tablewrap" tabindex="0" role="region" aria-label="危机关键数据，可横向滚动"><table class="tbl"><caption>只列能找到原始出处的数字；各项来源见文末。</caption><thead><tr><th scope="col">指标</th><th scope="col" class="num">数值</th><th scope="col">说明</th></tr></thead><tbody>
+<tr><td>次级贷款发放额（2006）</td><td class="num">6000 亿美元</td><td>占全部按揭发放 23.5%（FCIC）</td></tr>
+<tr><td>主要投行杠杆（2007）</td><td class="num">最高约 40 倍</td><td>FCIC：按一种衡量方式，五大投行每 40 美元资产只有 1 美元资本</td></tr>
+<tr><td>房价跌幅</td><td class="num">约 −30%</td><td>2006 年中高点至 2009 年中</td></tr>
+<tr><td>标普 500 跌幅</td><td class="num">−57%</td><td>2007 年 10 月高点至 2009 年 3 月低点</td></tr>
+<tr><td>实际 GDP 跌幅</td><td class="num">−4.3%</td><td>2007Q4 至 2009Q2，按 2013 年 10 月的数据</td></tr>
+<tr><td>失业率</td><td class="num">5.0% → 10.0%</td><td>2007 年 12 月至 2009 年 10 月（BLS）</td></tr>
+<tr><td>联邦基金利率目标</td><td class="num">0~0.25%</td><td>2008 年 12 月 16 日起</td></tr>
+<tr><td>美联储总资产（2008 年末）</td><td class="num">2.25 万亿美元</td><td>比一年前增加 1.33 万亿美元</td></tr>
+<tr><td>TARP 实际拨付</td><td class="num">4434 亿美元</td><td>财政部称截至 2022 年 11 月 30 日已收回 96% 以上</td></tr>
+<tr><td>ARRA 对赤字的影响</td><td class="num">7870 亿 → 近 8400 亿美元</td><td>2009~2019 年合计；前者为立法时 CBO 估计，后者为 2015 年估计</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="principles">
+<h2>用到的原理</h2>
+<h3>1. 杠杆：为什么跌三成会变成亏光</h3>
+<p class="prose"><a href="../m12/04-bank-runs-financial-crises.html#leverage">杠杆</a>是资产与自有资金之比。借款要全额还，资产的损失先由自有资金承担，所以：</p>
+<p class="formula">自有资金损失率 = 杠杆 × 资产跌幅；亏光所需跌幅 = 1 ÷ 杠杆</p>
+<p class="prose">首付 20% 的购房者杠杆是 5 倍，房价跌 20% 就把首付亏光。FCIC 说主要投行的杠杆按一种衡量方式最高达 40 比 1，资产跌不到 3% 就足以亏光资本。下图让你自己找这个“清零点”。</p>
+<div class="widget" id="w-lev" aria-labelledby="w1t">
+<h3 id="w1t">图 1　杠杆把下跌放大多少倍</h3>
+<div class="chips" role="group" aria-label="选择情景"><button type="button" class="chip" data-l="1" data-d="30" aria-pressed="false">不加杠杆：房价跌 30%</button><button type="button" class="chip" data-l="5" data-d="30" aria-pressed="true">首付 20%（5 倍）：房价跌 30%</button><button type="button" class="chip" data-l="40" data-d="3" aria-pressed="false">投行 40 倍：资产跌 3%</button></div>
+<div class="chart" id="chart1"></div>
+<ul class="legend"><li><span class="sw model"></span>当前杠杆：剩余自有资金</li><li><span class="sw ref"></span>不加杠杆（1 倍）</li><li><span class="sw negband"></span>资不抵债区</li><li><span class="mk"></span>当前点</li><li><span class="mk zero"></span>清零点</li></ul>
+<div class="controls">
+<div class="ctl"><label for="lv">杠杆（倍）</label><output id="lv-value" for="lv"></output><input id="lv" type="range" min="1" max="40" step="1" value="5" aria-describedby="lv-hint"><span class="hint" id="lv-hint">1~40 倍；资产 ÷ 自有资金。5 倍相当于首付 20%。</span></div>
+<div class="ctl"><label for="dp">资产价格跌幅（%）</label><output id="dp-value" for="dp"></output><input id="dp" type="range" min="0" max="30" step="0.5" value="30" aria-describedby="dp-hint"><span class="hint" id="dp-hint">0%~30%；买入后资产价格下跌的幅度。</span></div>
+</div>
+<dl class="read pairs"><div><dt>每 100 元自有资金：资产 / 借款</dt><dd id="r-ab"></dd></div><div><dt>自有资金损失率</dt><dd id="r-loss"></dd></div><div><dt>剩余自有资金</dt><dd id="r-eq"></dd></div><div><dt>把自有资金亏光所需跌幅</dt><dd id="r-zero"></dd></div><div><dt>下跌后的杠杆</dt><dd id="r-lev"></dd></div><div><dt>恢复原杠杆需卖出的资产</dt><dd id="r-sell"></dd></div></dl>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<div class="tablewrap" tabindex="0" role="region" aria-label="同样跌幅下不同杠杆的对比，可横向滚动"><table class="tbl" id="cmp"><caption id="cmp-cap"></caption><thead><tr><th scope="col" class="num">杠杆</th><th scope="col" class="num">亏光所需跌幅</th><th scope="col" class="num">剩余自有资金</th><th scope="col">状态</th></tr></thead><tbody></tbody></table></div>
+<p class="note">计算为教学示意：只看一次性价格下跌，不计利息、费用和税。40 倍取自 FCIC 对 2007 年五大投行的描述，5 倍是首付 20% 的算术结果，并非某个具体机构或家庭的数据。“资不抵债”时的缺口在无人救助时由债权人承担；这里不区分贷款有无追索权。</p>
+</div>
+<p class="prose">两个规律。第一，清零点就是 1 ÷ 杠杆：杠杆从 5 倍加到 40 倍，能承受的跌幅从 20% 缩到 2.5%。第二，亏损后杠杆会自动升高，要恢复原杠杆，每亏 1 元就得卖出“杠杆 − 1”元资产。40 倍的机构亏 1 元要卖 39 元。许多机构同时卖，价格再跌，就进入<a href="../m12/04-bank-runs-financial-crises.html#leverage">去杠杆螺旋</a>。</p>
+
+<h3>2. 影子银行与回购挤兑</h3>
+<p class="prose">投行、货币市场基金这类机构做着和银行相似的期限转换，却没有存款保险，也不能直接找央行借钱，统称<b>影子银行</b><span class="en"> (shadow banking)</span>。投行的主要短期资金来源之一是<b>回购协议</b><span class="en"> (repurchase agreement, repo)</span>：把债券押给对方借钱，通常隔夜或几天到期，到期再续。借款比抵押品价值少的部分叫<b>折扣率</b><span class="en"> (haircut)</span>。折扣率 2% 意味着最多能撑 50 倍杠杆，升到 20% 就只能撑 5 倍。</p>
+<p class="prose">Gorton 和 Metrick 2012 年发表的研究认为，人们怀疑抵押品（尤其是证券化产品）能否卖得掉之后，回购折扣率大幅上升，这相当于对投行的挤兑：债权人不必排队取款，只要不再续借或要求更多抵押。这就是<a href="../m12/04-bank-runs-financial-crises.html#mismatch">期限错配</a>加上<a href="../m12/04-bank-runs-financial-crises.html#run">挤兑</a>的逻辑，只是换了一身衣服。也有研究者认为他们的折扣率数据只覆盖结构化证券，低估了以国债为主的三方回购市场的稳定性。</p>
+<div class="analogy"><span class="lab">类比</span><p>你把一块表押在当铺，当铺按估价的九成借钱给你，每天重新估价、每天续借。某天当铺说：最近表不好卖，只能借五成。你手里没有现金补差额，只好把表卖掉，而这一天所有人都在卖表。回购折扣率上升就是当铺“改成五成”。</p></div>
+<p class="prose"><b>货币市场基金</b><span class="en"> (money market fund)</span> 承诺每份净值稳定在 1 美元，投资者把它当活期存款用。Reserve Primary Fund 因雷曼债务“跌破 1 美元”后，投资者纷纷赎回各类货币基金，而这些基金正是企业短期借款的大买家。财政部的担保和美联储的紧急贷款，扮演的是<a href="../m12/04-bank-runs-financial-crises.html#backstop">存款保险与最后贷款人</a>的角色，只是覆盖到了原本不在保护范围内的机构。</p>
+
+<h3>3. 激励：发起-分销与大而不能倒</h3>
+<p class="prose">在<b>发起-分销模式</b><span class="en"> (originate-to-distribute)</span> 下，放贷机构发放贷款后很快卖出去，按笔数和规模挣钱，违约风险随证券转给了远方的投资者。这是<a href="../m06/02-moral-hazard.html#agency">委托代理</a>问题：投资者委托一串中介筛选借款人，而每个中介的报酬都不取决于贷款最终是否还上。FCIC 多数报告把按揭标准崩塌、证券化链条和评级机构失误列为危机的重要原因。</p>
+<p class="prose">另一层是<a href="../m06/02-moral-hazard.html#banks">大而不能倒</a>。贝尔斯登获得救助，雷曼没有，AIG 又获得救助。救与不救都有理由，但市场很难提前判断规则。FCIC 多数报告的结论之一是，政府对危机准备不足，前后不一致的应对加剧了不确定和恐慌。</p>
+
+<h3>4. 货币政策：降到零以后</h3>
+<p class="prose">联邦基金利率降到 0~0.25% 以后，短期利率已无法再降，这就是<a href="../m11/03-monetary-policy.html#zlb">零利率下限</a>。美联储转向购买抵押贷款证券、机构债和长期国债，压低房贷利率和长期利率，同时作为最后贷款人向各类机构放贷。2008 年末美联储总资产达到 2.25 万亿美元，一年增加 1.33 万亿美元；美联储说增加主要来自对存款机构等的贷款、与外国央行的货币互换和为救助设立的特殊目的公司所持资产。</p>
+
+<h3>5. 财政政策：刺激与稳定器</h3>
+<p class="prose">ARRA 包括政府支出、对州政府的援助和减税。按<a href="../m11/02-fiscal-policy.html#multiplier">乘数</a>的逻辑，在利率已到零、大量工人和机器闲置时，财政支出被挤出的部分较少，乘数可能较大。同时，失业保险金增加、税收减少等<a href="../m11/02-fiscal-policy.html#stabilizers">自动稳定器</a>也在不经新立法的情况下扩大赤字。</p>
+</section>
+
+<section id="debate">
+<h2>争议与不同观点</h2>
+<h3>危机的主因是什么</h3>
+<p class="prose">FCIC 在 2011 年 1 月发布报告，委员会内部并不一致。多数报告认为危机本可避免，主要原因是金融监管失灵（包括美联储没有设定审慎的按揭标准）、公司治理和风险管理失败、过度借贷与不透明，并认为房利美、房地美不是危机的主要原因。三位共和党委员的异议意见列出十个相互关联的原因，强调全球信贷泡沫和房地产泡沫、非传统按揭、评级与证券化以及风险集中，认为这不只是美国监管的问题。委员 Peter Wallison 单独提出异议，认为政府住房政策是主要原因。</p>
+<p class="prose">关于货币政策，John Taylor 在 2009 年的 NBER 工作论文中认为，2003~2005 年联邦基金利率明显低于按 1990 年代规则推算的水平，助长了房地产繁荣。时任美联储主席伯南克在 2010 年 1 月的演讲中反驳：当时的政策与宏观条件相符，房贷月供下降主要来自新型按揭和放贷标准下滑，应对泡沫更合适的工具是监管而不是利率。</p>
+<h3>该不该救</h3>
+<p class="prose">支持的一方以美联储的 AIG 声明为代表：无序倒闭会加剧本已脆弱的金融市场，推高借贷成本，损害经济。担忧的一方认为，救助让大型机构的债权人预期下次还有人兜底，降低他们监督风险的动力，即<a href="../m06/02-moral-hazard.html#banks">道德风险</a>。财政部的数字显示 TARP 拨付的资金大部分已经收回。但收回本金不等于没有成本：危机时风险由政府承担，救助预期改变了什么，都不在这笔账里。</p>
+<h3>财政刺激够不够、值不值</h3>
+<p class="prose">CBO 对 ARRA 效果给出的区间很宽：据其估计，效果最强的 2010 年，实际 GDP 被提高 0.7%~4.1%（CRFB 对 CBO 报告的整理）。区间宽本身就说明乘数的不确定。一方认为在零利率和大规模失业下刺激力度还不够大，依据是衰退时乘数更大的研究；另一方强调多数研究的平均支出乘数不到 1，且刺激增加了债务。两边的实证依据见<a href="../m11/02-fiscal-policy.html#multiplier">财政政策一课</a>。</p>
+<h3>量化宽松有没有用</h3>
+<p class="prose">纽约联储研究人员 Gagnon 等人 2011 年发表的研究认为，资产购买压低了多种长期利率，包括没有被直接购买的证券，主要通过降低风险溢价起作用。疑问在于：长期利率下降能在多大程度上转化为就业和产出？推高资产价格是否扩大了财富差距？退出时会不会引起市场动荡？这些担忧在<a href="../m11/03-monetary-policy.html#zlb">货币政策一课</a>中已有讨论。</p>
+</section>
+
+<section id="lessons">
+<h2>学到了什么</h2>
+<ul class="qs">
+<li>杠杆决定了系统的“厚度”：同样跌 3%，1 倍杠杆是小亏，40 倍杠杆就是破产。</li>
+<li>挤兑不只发生在银行门口。靠短期融资持有长期资产的机构，都可能在债权人不再续借的那一天倒下。</li>
+<li>激励链条越长，越要问：谁在承担最终的风险？他有没有能力和动力去核查？</li>
+<li>危机中央行和财政部扮演最后贷款人和需求兜底人，代价是道德风险和政府债务。如何评估代价，至今仍有分歧。</li>
+</ul>
+</section>
+
+<section id="mistakes"><h2>三个常见误解</h2>
+<div class="mis"><p class="said">“房价跌了三成，损失也就是房子价值的三成。”</p><p>损失首先落到自有资金上，杠杆把它放大。首付 20% 的人跌 20% 就亏光；再加上抛售和挤兑，损失还会传给根本没买房的机构。</p></div>
+<div class="mis"><p class="said">“雷曼不是商业银行，不靠储户，谈不上挤兑。”</p><p>它靠回购和短期票据融资。债权人不再续借、提高折扣率，效果和储户排队取款一样。</p></div>
+<div class="mis"><p class="said">“TARP 花掉了纳税人 7000 亿美元。”</p><p>7000 亿是授权上限，后来减到 4750 亿；实际拨付约 4434 亿，财政部称已收回 96% 以上。但这不等于救助没有代价：风险当时由政府承担，道德风险也不会出现在账面上。</p></div>
+</section>
+
+<section id="quiz-sec"><h2>自测</h2><p class="prose">先问：损失最先落到谁头上？他的钱是短期借来的吗？</p><div id="quiz"></div><div class="scorebar"><p id="score" aria-live="polite"></p><button type="button" class="chip" id="redo">重做</button></div></section>
+<section id="cards-sec"><h2>闪卡</h2><p class="prose">把资产一侧（杠杆、证券化）和负债一侧（回购、货币基金）的概念对照着记。</p><div class="cards" id="cards"></div></section>
+
+<section id="back"><h2>回到新闻</h2>
+<ol class="steps"><li><div><b>跌三成为什么能压垮投行？</b>杠杆。投行的杠杆最高约 40 倍，资产跌 2.5% 就亏光资本；它持有的又不是房子本身，而是次级贷款打包而成的证券，房价下跌、违约上升时，这些证券的跌幅和不确定性都比房价大。在图 1 里把杠杆拉到 40，再把跌幅从 0 慢慢拉高，看自有资金多快穿过零线。</div></li><li><div><b>谁在挤兑雷曼？</b>回购市场和短期票据的债权人。他们担心抵押品的价值，提高折扣率或干脆不再续借，雷曼只能贱卖资产或找买家。找不到买家，9 月 15 日就申请了破产。随后 Reserve Primary Fund 跌破 1 美元，又引发对货币基金的挤兑。</div></li><li><div><b>救与不救怎么评价？</b>支持救助的理由是阻止连锁倒闭，美联储对 AIG 的声明说的正是这一点；反对或担忧的理由是道德风险和规则不一致，FCIC 多数报告也批评了前后不一的应对。零利率、量化宽松和 ARRA 是在需求崩塌时的兜底，它们的效果和代价至今仍有争论。本课把各方依据摆在一起，判断留给你。</div></li></ol>
+<button type="button" class="chip" id="goChart">在图 1 中看 40 倍投行</button>
+</section>
+
+<section id="sources"><h2>资料来源</h2><ol class="qs sources">
+<li>Andrew Ross Sorkin，《纽约时报》，<a href="https://www.nytimes.com/2008/09/15/business/15lehman.html">Lehman Files for Bankruptcy; Merrill Is Sold</a>，2008-09-14；开场标题，美林约 500 亿美元卖给美国银行。</li>
+<li>Lehman Brothers Holdings，<a href="https://www.sec.gov/Archives/edgar/data/806085/000110465908059632/a08-22764_48k.htm">Form 8-K</a>，2008-09；9 月 15 日在纽约南区破产法院申请第 11 章破产。</li>
+<li>NBC News / 美联社，<a href="https://www.nbcnews.com/news/amp/wbna26716880">Lehman files for bankruptcy, to sell units</a>，2008-09-15；资产 6390 亿、负债 6130 亿美元（截至 2008-05-31）。</li>
+<li>FCIC，<a href="https://fcic-static.law.stanford.edu/cdn_media/fcic-reports/fcic_final_report_conclusions.pdf">Conclusions of the Financial Crisis Inquiry Commission</a>，2011-01；投行杠杆最高 40 比 1，多数报告的各项结论与两份异议意见。</li>
+<li>FCIC，<a href="https://fcic.law.stanford.edu/resource/graphics">Graphics</a>；2006 年次级贷款 6000 亿美元、占 23.5%、大部分被证券化。</li>
+<li>BNP Paribas，<a href="https://group.bnpparibas/en/press-release/bnp-paribas-investment-partners-temporaly-suspends-calculation-net-asset-funds-parvest-dynamic-abs-bnp-paribas-abs-euribor-bnp-paribas-abs-eonia">暂停三只基金净值计算的公告</a>，2007-08-09；暂停估值与申赎及原因。</li>
+<li>Federal Reserve Board，<a href="https://www.federalreserve.gov/newsevents/reform_bearstearns.htm">Bear Stearns, JPMorgan Chase, and Maiden Lane LLC</a>；3 月 16 日的贷款授权与约 300 亿美元资产。</li>
+<li>FHFA，<a href="https://www.fhfa.gov/news/statement/statement-of-fhfa-director-james-b.-lockhart-at-news-conference-announcing-conservatorship-of-fannie">Lockhart 宣布接管两房的声明</a>，2008-09-07；接管与 5.4 万亿美元。</li>
+<li>Federal Reserve Board，<a href="https://www.federalreserve.gov/newsevents/pressreleases/other20080916a.htm">关于 AIG 的新闻稿</a>，2008-09-16；850 亿美元、79.9% 股权、救助理由。</li>
+<li>U.S. SEC，<a href="https://www.sec.gov/news/press/2009/2009-104.htm">关于 Reserve Primary Fund 的起诉新闻稿</a>，2009-05；9 月 16 日跌破 1 美元、7.85 亿美元雷曼证券。</li>
+<li>U.S. Treasury，<a href="https://home.treasury.gov/news/press-releases/hp1161">新闻稿 hp1161</a>，2008-09；货币市场基金担保计划于 9 月 19 日首次宣布。</li>
+<li>U.S. Treasury，<a href="https://home.treasury.gov/data/troubled-assets-relief-program/about-tarp">About TARP</a> 与 <a href="https://home.treasury.gov/system/files/266/17.-OFS-FY-2024-BIB.pdf">OFS FY 2024 预算文件</a>；EESA、7000 亿与 4750 亿美元额度、截至 2022-11-30 拨付 4434 亿并收回 96% 以上。</li>
+<li>Federal Reserve Board，FOMC 声明 <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20081216b.htm">2008-12-16</a>、<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20090318a.htm">2009-03-18</a> 与 <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20081125b.htm">2008-11-25 公告</a>；利率区间与资产购买规模。</li>
+<li>Federal Reserve Board，<a href="https://www.federalreserve.gov/newsevents/pressreleases/other20090423a.htm">2008 年度财务报表新闻稿</a>，2009-04-23；总资产 2.25 万亿美元及增加原因。</li>
+<li>Robert Rich，<a href="https://www.federalreservehistory.org/essays/great-recession-of-200709">The Great Recession</a>，美联储历史网站；房价、标普 500 与实际 GDP 跌幅。</li>
+<li>NBER，<a href="https://www.nber.org/news/business-cycle-dating-committee-announcement-september-20-2010">Business Cycle Dating Committee Announcement</a>，2010-09-20；衰退起止与 18 个月。</li>
+<li>BLS，<a href="https://www.bls.gov/spotlight/2012/recession/">The Recession of 2007–2009</a>，2012-02；失业率 5.0% 与峰值 10.0%。</li>
+<li>CBO，<a href="https://www.cbo.gov/publication/49958">ARRA 影响估计（2014 年）</a>，2015-02；7870 亿与近 8400 亿美元。CRFB，<a href="https://www.crfb.org/blogs/cbo-closes-book-2009-stimulus">CBO Closes the Book on the 2009 Stimulus</a>；2010 年 GDP 效应区间。</li>
+<li>Social Security Administration，<a href="https://www.ssa.gov/legislation/legis_bulletin_021709.html">Legislative Bulletin 111-13</a>；ARRA 于 2009-02-17 签署。</li>
+<li>Gary Gorton、Andrew Metrick，<a href="https://www.nber.org/papers/w15223">Securitized Banking and the Run on Repo</a>，JFE 2012；回购挤兑。ICMA，<a href="https://www.icmagroup.org/assets/documents/Maket-Practice/Regulatory-Policy/Repo-Markets/Comotto%20-%20repo%20haircuts%20April%202.pdf">Comotto 关于回购折扣率的评论</a>；对数据范围的批评。</li>
+<li>John B. Taylor，<a href="https://www.nber.org/papers/w14631">NBER WP 14631</a>，2009-01；货币过松的论点。Ben S. Bernanke，<a href="https://www.federalreserve.gov/newsevents/speech/bernanke20100103a.htm">Monetary Policy and the Housing Bubble</a>，2010-01-03；反驳观点。</li>
+<li>Joseph Gagnon 等，<a href="https://www.newyorkfed.org/research/staff_reports/sr441.html">纽约联储工作人员报告 441</a>，IJCB 2011；资产购买压低长期利率。</li>
+</ol></section>
+<nav class="next" aria-label="课程上下课"></nav>
+</main>
+<script src="../assets/charts.js"></script>
+<script src="../assets/course.js"></script>
+<script>
+(function(){
+'use strict';
+var C=window.Charts,LEVS=[1,5,10,20,30,40],box=$('#chart1'),txt='';
+function $(s){return document.querySelector(s);}
+function r9(v){return Math.round(v*1e9)/1e9;}
+function pc(v,d){var s=Math.abs(v*100).toFixed(d==null?1:d).replace(/\.0$/,'');return (v<0&&+s!==0?'−':'')+s+'%';}
+function yuan(v){var s=Math.abs(v).toFixed(1).replace(/\.0$/,'');return (v<0&&+s!==0?'−':'')+s+' 元';}
+// 每 1 元自有资金：资产 L、借款 L−1；价格跌 d 后自有资金 1−L·d。
+function model(L,d){
+  var E=r9(1-L*d),m={L:L,d:d,loss:r9(L*d),E:E,zero:1/L,A:L*(1-d),B:L-1};
+  m.lev=E>0?L*(1-d)/E:null;
+  m.sell=E>0?r9(L*d*(L-1)):null;
+  m.sellShare=E>0?r9(d*(L-1)/(1-d)):null;
+  m.gap=E<0?-E:0;
+  return m;
+}
+function params(){return {L:+$('#lv').value,d:+$('#dp').value/100};}
+function draw(m){
+  box.replaceChildren();
+  var f=C.frame(box,{id:'lev',q0:0,q1:30,qs:5,p0:-100,p1:100,ps:50,xt:'资产价格跌幅（%）',yt:'剩余自有资金（%）',label:''}),svg=f.svg,X=function(d){return f.x(d*100);},Y=function(e){return f.y(e*100);};
+  svg.appendChild(C.el('rect',{x:f.m.l,y:Y(0),width:f.iw,height:Y(-1)-Y(0),'class':'lev-neg'}));
+  svg.appendChild(C.el('line',{x1:f.m.l,x2:f.m.l+f.iw,y1:Y(0),y2:Y(0),'class':'zeroline'}));
+  function end(L){var e=1-L*0.3;return e>=-1?[0.3,e]:[2/L,-1];}
+  if(m.L>1){var r=end(1);svg.appendChild(C.el('path',{d:'M'+X(0)+' '+Y(1)+'L'+X(r[0])+' '+Y(r[1]),'class':'curve ref'}));}
+  var e=end(m.L);
+  svg.appendChild(C.el('path',{d:'M'+X(0)+' '+Y(1)+'L'+X(e[0]).toFixed(1)+' '+Y(e[1]).toFixed(1),'class':'curve model',id:'levline'}));
+  var labs=[],pts=[];
+  if(m.zero<=0.3+1e-9){var zx=X(m.zero),zy=Y(0);svg.appendChild(C.el('circle',{cx:zx.toFixed(1),cy:zy.toFixed(1),r:5,'class':'pt loss',id:'zeropt'}));pts.push([zx,zy]);
+    labs.push({t:'跌 '+pc(m.zero)+' 清零',c:'loss',cand:[[zx+8,zy-8,'start'],[zx-8,zy-8,'end'],[zx+8,zy+18,'start'],[zx-8,zy+18,'end']]});}
+  var off=m.E<-1,cx=X(m.d),cy=Y(Math.max(m.E,-1));
+  svg.appendChild(C.el('circle',{cx:cx.toFixed(1),cy:cy.toFixed(1),r:6,'class':'pt',id:'curpt'}));pts.push([cx,cy]);
+  var ct=m.E<0?'资不抵债 '+pc(m.E,0)+(off?'（图外）':''):m.E===0?'正好亏光':'剩 '+pc(m.E);
+  labs.push({t:ct,c:'ink',cand:[[cx-10,cy-10,'end'],[cx+10,cy-10,'start'],[cx-10,cy+20,'end'],[cx+10,cy+20,'start'],[cx-10,cy-30,'end'],[cx+10,cy-30,'start']]});
+  var lx=X(e[0]),ly=Y(e[1]);
+  labs.push({t:m.L+' 倍',c:'model',cand:e[1]>-1?[[lx-4,ly-10,'end'],[lx-4,ly+18,'end']]:[[lx+8,ly-8,'start'],[lx+8,ly-26,'start'],[lx-8,ly-8,'end']]});
+  if(m.L>1){labs.push({t:'不加杠杆',c:'muted',cand:[[X(0.3)-4,Y(0.7)-10,'end'],[X(0.3)-4,Y(0.7)+18,'end']]});}
+  labs.push({t:'资不抵债区',c:'loss',cand:[[f.m.l+f.iw-6,Y(-1)-8,'end'],[f.m.l+f.iw-6,Y(-0.5),'end'],[f.m.l+6,Y(-1)-8,'start'],[f.m.l+f.iw-6,Y(-0.25),'end'],[f.m.l+6,Y(-0.5),'start']]});
+  box.appendChild(svg);
+  var placed=[],L0=f.m.l,R0=f.m.l+f.iw,T0=f.m.t,B0=f.m.t+f.ih;
+  function hit(a,b){return a.x<b.x+b.width&&b.x<a.x+a.width&&a.y<b.y+b.height&&b.y<a.y+a.height;}
+  labs.forEach(function(l){
+    var node=C.el('text',{'class':'curvelab '+l.c+' halo'},l.t);svg.appendChild(node);
+    for(var i=0;i<l.cand.length;i++){
+      var c=l.cand[i];node.setAttribute('x',c[0].toFixed(1));node.setAttribute('y',c[1].toFixed(1));node.setAttribute('text-anchor',c[2]);
+      var b=node.getBBox(),bb={x:b.x-2,y:b.y-1,width:b.width+4,height:b.height+2};
+      var ok=bb.x>=L0&&bb.x+bb.width<=R0&&bb.y>=T0&&bb.y+bb.height<=B0&&!placed.some(function(p){return hit(bb,p);})&&!pts.some(function(p){return hit(bb,{x:p[0]-6,y:p[1]-6,width:12,height:12});});
+      if(ok){placed.push(bb);return;}
+    }
+    svg.removeChild(node);
+  });
+}
+function update(){
+  var P=params(),m=model(P.L,P.d);
+  $('#lv-value').textContent=m.L+' 倍';$('#lv').setAttribute('aria-valuetext','杠杆 '+m.L+' 倍');
+  $('#dp-value').textContent=pc(m.d);$('#dp').setAttribute('aria-valuetext','价格下跌 '+pc(m.d));
+  document.querySelectorAll('[data-l]').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.l===m.L&&+b.dataset.d===Math.round(m.d*1000)/10));});
+  $('#r-ab').textContent=yuan(100*m.L)+' / '+yuan(100*m.B);
+  $('#r-loss').textContent=m.loss>1?pc(m.loss,0)+'（本金亏光）':pc(m.loss);
+  $('#r-eq').textContent=m.E>0?yuan(100*m.E):m.E===0?'0 元（正好亏光）':yuan(100*m.E)+'（资不抵债）';
+  $('#r-zero').textContent=m.L===1?'100%（不会亏到负数）':pc(m.zero);
+  $('#r-lev').textContent=m.lev==null?'无法计算：自有资金已为零或负':m.lev.toFixed(1).replace(/\.0$/,'')+' 倍';
+  $('#r-sell').textContent=m.L===1?'不需要：没有借款':m.sell==null?'卖资产也救不回：需补充资本':m.sell===0?'不需要':yuan(100*m.sell)+'（占剩余资产 '+pc(m.sellShare)+'）';
+  if(m.L===1){txt='没有借款：资产跌 '+pc(m.d)+'，自有资金也只跌 '+pc(m.d)+'，还剩 '+yuan(100*m.E)+'。永远不会资不抵债，也不会被迫卖出。';}
+  else if(m.E>0){txt=m.L+' 倍杠杆下，资产跌 '+pc(m.d)+'，自有资金损失 '+m.L+' × '+pc(m.d)+' = '+pc(m.loss)+'，每 100 元只剩 '+yuan(100*m.E)+'。'+(m.d>0?'杠杆升到 '+m.lev.toFixed(1).replace(/\.0$/,'')+' 倍；要恢复 '+m.L+' 倍，需卖出 '+yuan(100*m.sell)+' 资产，即每亏 1 元卖 '+(m.L-1)+' 元。大家同时这样卖，价格会再跌。':'')+(m.zero<=0.3?'跌到 '+pc(m.zero)+' 就会亏光。':'');}
+  else if(m.E===0){txt=m.L+' 倍杠杆下，资产跌 '+pc(m.d)+' 正好把自有资金亏光，清零点就是 1 ÷ '+m.L+' = '+pc(m.zero)+'。再跌一点就资不抵债。';}
+  else{txt='资不抵债：'+m.L+' 倍杠杆只能承受 '+pc(m.zero)+' 的下跌，现在跌了 '+pc(m.d)+'。每 100 元自有资金背后的资产只值 '+yuan(100*m.A)+'，不够偿还 '+yuan(100*m.B)+' 借款；本金全部亏光，另外 '+yuan(100*m.gap)+' 的缺口在无人救助时由债权人承担。';}
+  $('#verdict').textContent=txt;
+  var rows=LEVS.slice();if(rows.indexOf(m.L)<0){rows.push(m.L);rows.sort(function(a,b){return a-b;});}
+  $('#cmp-cap').textContent='同样跌 '+pc(m.d)+' 时，不同杠杆每 100 元自有资金还剩多少。加粗行为当前杠杆。';
+  var tb=$('#cmp tbody');tb.replaceChildren();
+  rows.forEach(function(L){var q=model(L,m.d),tr=document.createElement('tr');if(L===m.L){tr.className='hl';}
+    [L+' 倍',L===1?'100%':pc(q.zero),yuan(100*q.E),L===1||q.E>0?'仍有本金':q.E===0?'正好亏光':'资不抵债'].forEach(function(v,i){var td=document.createElement('td');td.textContent=v;if(i<3){td.className='num';}tr.appendChild(td);});tb.appendChild(tr);});
+  draw(m);
+  var svg=box.querySelector('svg');if(svg){svg.setAttribute('aria-label','图 1 杠杆与剩余自有资金：横轴为资产价格跌幅，纵轴为剩余自有资金占原本金的比例。'+txt);}
+}
+['lv','dp'].forEach(function(id){$('#'+id).addEventListener('input',update);});
+document.querySelectorAll('[data-l]').forEach(function(b){b.addEventListener('click',function(){$('#lv').value=b.dataset.l;$('#dp').value=b.dataset.d;update();});});
+$('#goChart').addEventListener('click',function(){$('#lv').value=40;$('#dp').value=3;update();$('#w-lev').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('#dp').focus({preventScroll:true});});
+C.watch(box,function(){update();});
+update();
+window.__lev={model:model};
+var QUIZ=[
+{q:'一家投行用 25 倍杠杆持有证券。证券价格下跌 4%，它的自有资金会怎样？',o:['只损失 4%，和证券跌幅一样','损失 25%，因为杠杆是 25 倍','正好全部亏光：25 × 4% = 100%','不受影响，损失由借钱给它的人承担'],a:2,why:'正好亏光。借款要全额偿还，损失先落在自有资金上，损失率 = 杠杆 × 跌幅；25 倍杠杆的清零点就是 1/25 = 4%。'},
+{q:'回购市场上，某类抵押品的折扣率从 2% 升到 10%。完全依靠回购融资持有这类资产的机构，最可能要做什么？',o:['卖出资产或补充资本：可承受的杠杆从 50 倍降到 10 倍','什么都不用做，折扣率只影响新借款人','借更多钱，因为抵押品更值钱了','把资产转成现金存进银行就能拿到存款保险'],a:0,why:'卖资产或补资本。折扣率 h 意味着每 1 元资产最多借 1−h 元，最高杠杆是 1/h。折扣率上升等于债权人抽回一部分资金，这就是回购挤兑。'},
+{q:'一家按揭公司放贷后立刻把贷款卖给证券化机构，按发放笔数拿手续费。最可能出现什么问题？',o:['它会更仔细地审核借款人，因为声誉很重要','借款人违约率会自动下降','证券投资者承担的风险变小','它审核借款人的动力变弱，因为违约损失主要落在买证券的人身上'],a:3,why:'审核动力变弱。这是发起-分销模式下的委托代理问题：中介的报酬不取决于贷款最终是否还上，风险转给了远方的投资者。'},
+{q:'政策利率已经降到 0~0.25%，央行还想压低房贷利率。下面哪项最接近 2008~2009 年美联储的做法？',o:['把利率继续大幅降到 −5%','大规模购买抵押贷款证券和长期国债','直接给每户家庭寄支票','提高存款准备金率'],a:1,why:'大规模购买资产，即量化宽松。零利率下限让短期利率难以再降，央行转而直接压低长期利率和房贷利率。给家庭寄钱属于财政政策。'},
+{q:'2008 年 9 月 16 日，一只货币市场基金每份净值跌到 0.97 美元。随后大批投资者赎回其他货币基金。这最接近哪种机制？',o:['通货膨胀：钱变得不值钱','财政乘数：一笔支出转了好几手','挤兑：怕自己排在后面拿不到 1 美元，先赎回最安全','汇率贬值：美元对外币下跌'],a:2,why:'挤兑。货币基金像活期存款，却没有存款保险。一旦有基金跌破 1 美元，先赎回的人能拿到全额，等待者可能受损，于是大家抢着赎回。'}
+];
+var quizEl=$('#quiz'),answered=0,correct=0;
+function score(){$('#score').textContent='已完成 '+answered+'/'+QUIZ.length+'，答对 '+correct+' 题';}
+function buildQuiz(){
+  quizEl.textContent='';answered=0;correct=0;score();
+  QUIZ.forEach(function(it,i){var q=document.createElement('div');q.className='q';var t=document.createElement('p');t.className='qtext';var n=document.createElement('span');n.className='qn';n.textContent=String(i+1);t.append(n,document.createTextNode(it.q));var opts=document.createElement('div'),why=document.createElement('p'),btns=[];why.className='why';why.hidden=true;why.setAttribute('aria-live','polite');
+    it.o.forEach(function(text,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=text;b.addEventListener('click',function(){if(q.dataset.done){return;}q.dataset.done='1';var ok=j===it.a;answered++;if(ok){correct++;}btns.forEach(function(x,k){x.disabled=true;var tag=document.createElement('span');tag.className='tag';if(k===it.a){x.classList.add('right');tag.textContent='正确';x.prepend(tag);}else if(k===j){x.classList.add('wrong');tag.textContent='你的选择';x.prepend(tag);}});why.textContent=(ok?'答对了。':'再想想。')+it.why;why.hidden=false;score();});btns.push(b);opts.appendChild(b);});q.append(t,opts,why);quizEl.appendChild(q);
+  });
+}
+$('#redo').addEventListener('click',buildQuiz);buildQuiz();
+var CARDS=[
+{t:'次级抵押贷款',en:'subprime mortgage',d:'发放给信用记录较差或收入证明不足的借款人的住房贷款，违约风险较高。2006 年美国发放约 6000 亿美元。'},
+{t:'证券化',en:'securitization',d:'把大量贷款打包，按偿付顺序切成不同档次的债券卖给投资者。分散了风险，也拉长了激励链条。'},
+{t:'发起-分销模式',en:'originate-to-distribute',d:'放贷后很快把贷款卖出去，靠发放规模挣钱。违约风险转给证券持有人，放贷方审核的动力可能变弱。'},
+{t:'影子银行',en:'shadow banking',d:'在银行体系之外做期限转换的机构，如投行、货币市场基金。没有存款保险，危机前也不能直接向央行借款。'},
+{t:'回购协议',en:'repurchase agreement (repo)',d:'把债券押给对方借短期资金，到期按约定价格赎回。投行用它为长期资产融资，需要不断续借。'},
+{t:'折扣率',en:'haircut',d:'回购借款少于抵押品价值的比例。折扣率 h 意味着最高杠杆 1/h；折扣率上升等于债权人抽回资金。'},
+{t:'跌破 1 美元',en:'breaking the buck',d:'货币市场基金每份净值跌到 1 美元以下。2008 年 9 月 16 日 Reserve Primary Fund 跌到 0.97 美元，引发货币基金挤兑。'},
+{t:'问题资产救助计划',en:'Troubled Asset Relief Program (TARP)',d:'2008 年 10 月《紧急经济稳定法》授权的救助计划，上限 7000 亿美元，后减到 4750 亿美元。'}
+];
+CARDS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='card';b.setAttribute('aria-expanded','false');var t=document.createElement('span');t.className='t';t.textContent=c.t;var en=document.createElement('span');en.className='en';en.textContent=c.en;var hint=document.createElement('span');hint.className='hint';hint.textContent='点击查看释义';var def=document.createElement('span');def.className='def';def.textContent=c.d;def.hidden=true;b.append(t,en,hint,def);b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));def.hidden=open;hint.hidden=!open;});$('#cards').appendChild(b);});
+})();
+</script>
+</body>
+</html>

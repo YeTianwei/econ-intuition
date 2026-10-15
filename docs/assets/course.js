@@ -319,22 +319,22 @@
         {
           id: 'm14-01', title: '2008 年全球金融危机',
           en: 'The global financial crisis of 2008',
-          path: 'm14/01-global-financial-crisis.html', status: 'todo'
+          path: 'm14/01-global-financial-crisis.html', status: 'done'
         },
         {
           id: 'm14-02', title: '2021~2023 年的通胀与加息',
           en: 'Inflation and interest rate hikes in 2021–2023',
-          path: 'm14/02-inflation-rate-hikes.html', status: 'todo'
+          path: 'm14/02-inflation-rate-hikes.html', status: 'done'
         },
         {
           id: 'm14-03', title: '关税与贸易摩擦',
           en: 'Tariffs and trade tensions',
-          path: 'm14/03-tariffs-trade-tensions.html', status: 'todo'
+          path: 'm14/03-tariffs-trade-tensions.html', status: 'done'
         },
         {
           id: 'm14-04', title: '日本「失去的三十年」',
           en: 'Japan: the lost thirty years',
-          path: 'm14/04-japan-lost-decades.html', status: 'todo'
+          path: 'm14/04-japan-lost-decades.html', status: 'done'
         }
       ]
     }
