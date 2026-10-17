@@ -65,8 +65,8 @@
 <label class="check"><input type="checkbox" name="strategy" value="4" checked><span>随机</span></label>
 </fieldset>
 <div class="controls">
-<div class="ctl"><label for="rounds">每场轮数</label><output id="roundsv" for="rounds"></output><input id="rounds" type="range" min="1" max="200" step="1" value="60"><span class="hint">1–200 轮；策略不使用“还剩几轮”信息</span></div>
-<div class="ctl"><label for="noise">执行翻转概率 ε</label><output id="noisev" for="noise"></output><input id="noise" type="range" min="0" max="30" step="1" value="2"><span class="hint">每人每轮独立，0–30%；双方准确观察实际行动</span></div>
+<div class="ctl"><label for="rounds">每场轮数</label><output id="roundsv" for="rounds"></output><input id="rounds" type="range" min="1" max="200" step="1" value="60" aria-describedby="rounds-hint"><span class="hint" id="rounds-hint">1–200 轮；策略不使用“还剩几轮”信息</span></div>
+<div class="ctl"><label for="noise">执行翻转概率 ε</label><output id="noisev" for="noise"></output><input id="noise" type="range" min="0" max="30" step="1" value="2" aria-describedby="noise-hint"><span class="hint" id="noise-hint">每人每轮独立，0–30%；双方准确观察实际行动</span></div>
 </div>
 <div class="chips"><button type="button" class="chip" id="run">运行循环赛</button><button type="button" class="chip" id="resample">换种子并运行</button></div>
 <p class="note" id="pending" role="status" aria-live="polite"></p>

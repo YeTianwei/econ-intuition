@@ -61,8 +61,8 @@
 <p class="prose">同一组估值下，第一价人人按统一比例压价，第二价人人如实报。没有保留价、费用和预算约束；最高报价并列时编号小者赢。改变人数沿用同一组前 N 人；只有“换一组估值”才重新生成整组。</p>
 <div class="chips"><button type="button" class="chip" id="resample">换一组估值</button><button type="button" class="chip" id="tie">最高估值并列示例</button></div>
 <div class="controls">
-<div class="ctl"><label for="bidders">竞拍人数 N</label><output id="biddersv" for="bidders"></output><input id="bidders" type="range" min="2" max="8" step="1" value="5"><span class="hint">2–8 人，各买一件的意愿，但本次只出售一件</span></div>
-<div class="ctl"><label for="shade">第一价压价比例</label><output id="shadev" for="shade"></output><input id="shade" type="range" min="0" max="80" step="1" value="20"><span class="hint">0–80%；例如压 20% 就报估值的 80%，第二价仍如实报</span></div>
+<div class="ctl"><label for="bidders">竞拍人数 N</label><output id="biddersv" for="bidders"></output><input id="bidders" type="range" min="2" max="8" step="1" value="5" aria-describedby="bidders-hint"><span class="hint" id="bidders-hint">2–8 人，各买一件的意愿，但本次只出售一件</span></div>
+<div class="ctl"><label for="shade">第一价压价比例</label><output id="shadev" for="shade"></output><input id="shade" type="range" min="0" max="80" step="1" value="20" aria-describedby="shade-hint"><span class="hint" id="shade-hint">0–80%；例如压 20% 就报估值的 80%，第二价仍如实报</span></div>
 </div>
 <p class="note" id="sample" aria-live="polite"></p>
 <div class="tablewrap" tabindex="0" role="region" aria-label="同组竞拍者估值报价与净收益，可横向滚动"><table class="tbl" id="bids"><caption>单位：教学元；所有金额保留两位小数。未中标者不付款，效用为 0。</caption><thead><tr><th scope="col">竞拍者</th><th scope="col" class="num">私人估值</th><th scope="col" class="num">第一价报价</th><th scope="col" class="num">第二价报价</th><th scope="col" class="num">第一价效用</th><th scope="col" class="num">第二价效用</th></tr></thead><tbody></tbody></table></div>
