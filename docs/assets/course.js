@@ -346,6 +346,12 @@
     }) ? 'done' : 'todo';
   });
 
+  // 'm02-01' → '2.1'，内部 ID 保持不变，只改显示
+  function lessonCode(id) {
+    var parts = id.slice(1).split('-');
+    return Number(parts[0]) + '.' + Number(parts[1]);
+  }
+
   function element(tag, className, text) {
     var node = document.createElement(tag);
     if (className) node.className = className;
@@ -399,7 +405,7 @@
 
   function neighborEntry(lesson, label, relation) {
     if (!lesson) return element('span', '', label + '：暂无已完成的课程');
-    var link = element('a', '', label + '：' + lesson.id + '　' + lesson.title);
+    var link = element('a', '', label + '：' + lessonCode(lesson.id) + '　' + lesson.title);
     link.setAttribute('href', relativePrefix() + lesson.path);
     link.setAttribute('rel', relation);
     return link;
@@ -477,7 +483,7 @@
           item.id = lesson.id;
           var entry = element(done ? 'a' : 'span');
           if (done) entry.setAttribute('href', prefix + lesson.path);
-          entry.appendChild(element('span', 'mono', lesson.id));
+          entry.appendChild(element('span', 'mono', lessonCode(lesson.id)));
           entry.appendChild(document.createTextNode('　' + lesson.title));
           item.appendChild(entry);
           item.appendChild(document.createTextNode(' '));
