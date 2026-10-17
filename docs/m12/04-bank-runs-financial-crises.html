@@ -21,7 +21,7 @@
 </header>
 <section id="news">
 <h2>从一条新闻开始</h2>
-<figure class="headline"><figcaption>彭博社，2023 年 3 月 11 日，经 Fortune 转载；标题为中文翻译。<a href="https://fortune.com/2023/03/11/silicon-valley-bank-run-42-billion-attempted-withdrawals-in-one-day">原文链接</a></figcaption><blockquote>硅谷银行储户和投资者周四试图提走 420 亿美元</blockquote></figure>
+<figure class="headline"><figcaption>彭博社，2023 年 3 月 11 日，经 Fortune 转载；标题为中文翻译。<a href="https://fortune.com/2023/03/11/silicon-valley-bank-run-42-billion-attempted-withdrawals-in-one-day">原文链接</a></figcaption><blockquote>一天 420 亿美元：硅谷银行挤兑是十多年来最大的一次</blockquote></figure>
 <p class="prose">按监管机构的文件，事情这样发生：</p>
 <ul class="qs">
 <li><b>3 月 8 日</b>：硅谷银行（SVB）的母公司宣布已卖出 210 亿美元可供出售证券，确认税后亏损 18 亿美元，并计划融资 22.5 亿美元补充资本。</li>
@@ -131,7 +131,7 @@
 <li>U.S. Department of the Treasury，<a href="https://home.treasury.gov/news/press-releases/jy1337">Joint Statement by Treasury, Federal Reserve, and FDIC</a>，2023-03-12；本课引用了系统性风险例外、储户自 3 月 13 日起可取用全部存款、股东和部分无担保债权人不受保护、Signature Bank 同样适用。</li>
 <li>FDIC，<a href="https://www.fdic.gov/news/press-releases/2023/pr23019.html">FDIC Acts to Protect All Depositors of the former Silicon Valley Bank</a>，2023-03-13；本课引用了全部存款转入过桥银行、存款保险基金损失通过对银行的特别评估弥补。</li>
 <li>Federal Reserve Board，<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20230312a.htm">Federal Reserve Board announces it will make available additional funding to eligible depository institutions</a>，2023-03-12；本课引用了银行定期融资工具最长一年、抵押品按面值计算。</li>
-<li>Austin Weinstein、彭博社（Fortune 转载），<a href="https://fortune.com/2023/03/11/silicon-valley-bank-run-42-billion-attempted-withdrawals-in-one-day">Silicon Valley Bank run: $42 billion in attempted withdrawals in one day</a>，2023-03-11；本课引用了开场标题，以及报道转述的 DFPI 接管令内容：负 9.58 亿美元现金余额、3 月 9 日前财务状况良好。</li>
+<li>Austin Weinstein、彭博社（Fortune 转载），<a href="https://fortune.com/2023/03/11/silicon-valley-bank-run-42-billion-attempted-withdrawals-in-one-day">$42 billion in one day: SVB bank run biggest in more than a decade</a>，2023-03-11；本课引用了开场标题，以及报道转述的 DFPI 接管令内容：负 9.58 亿美元现金余额、3 月 9 日前财务状况良好。</li>
 <li>FDIC，<a href="https://www.fdic.gov/analysis/options-deposit-insurance-reforms/report/options-deposit-insurance-reform-full.pdf">Options for Deposit Insurance Reform</a>，2023-05-01；本课引用了全额保险与道德风险的取舍、定向保护企业支付账户的建议。</li>
 <li>Douglas W. Diamond、Philip H. Dybvig，<a href="https://minneapolisfed.org/research/quarterly-review/bank-runs-deposit-insurance-and-liquidity">Bank Runs, Deposit Insurance, and Liquidity</a>，Journal of Political Economy 1983 年第 91 卷第 3 期，明尼阿波利斯联储 Quarterly Review 重刊；本课引用了活期存款合同带来多重均衡、其中之一是挤兑的结论。</li>
 <li>NBER，<a href="https://www.nber.org/news/2022-nobel-prize-celebrates-banking-research">2022 Nobel Prize Celebrates Banking Research</a>，2022-10；本课引用了 Bernanke、Diamond、Dybvig 因银行与金融危机研究获奖。</li>
@@ -177,7 +177,7 @@ function status(s,W){
   if(W===s.N&&s.pol==='none'){return '资产卖光，倒闭';}
   if(w<=L){return '现金够付';}
   if(s.pol==='lolr'){return '向央行借款';}
-  if(w<s.ws){return '贱卖资产，仍够付';}
+  if(w<s.ws){return '贱卖资产，仍够付本金';}
   if(s.pol==='ins'){return '亏损，保险补足';}
   return '等待者将受损';
 }
@@ -256,7 +256,7 @@ function update(keepRound){
   var fin=round===S.path.length-1;
   if(pol==='ins'){
     txt='有存款保险，等待者确定能拿到 105 元，没有人跟着跑，只有一开始的 '+S.k0+' 人取钱。';
-    txt+=pf.fund>0?'但这 '+pct(S.k0/N)+' 已超过银行的承受线 '+pct(S.ws)+'，银行亏损，保险基金每 100 元存款要补 '+pf.fund.toFixed(1)+' 元。':'银行自己付得起，保险基金不用掏钱。';
+    txt+=pf.fund>0?(S.k0/N>=S.ws?'但这 '+pct(S.k0/N)+' 已超过银行的承受线 '+pct(S.ws)+'，银行亏损，':'但银行贱卖资产后付不足承诺的 105 元，')+'保险基金每 100 元存款要补 '+pf.fund.toFixed(1)+' 元。':'银行自己付得起，保险基金不用掏钱。';
   }else if(pol==='lolr'){
     txt='央行按面值抵押放贷，银行不必贱卖资产，等待者每 100 元仍能拿回 '+fmt(pf.wait)+' 元。没有人有理由跟着跑，只有一开始的 '+S.k0+' 人取钱。';
   }else if(run){

@@ -23,7 +23,7 @@
 <section id="news">
 <h2>从一条新闻开始</h2>
 <figure class="headline"><figcaption>综合路透社报道（2024 年 8 月 6 日，<a href="https://www.investing.com/news/economy-news/japans-april-yenbuying-intervention-sets-new-daily-record-3558243">原文转载</a>）与日本财务省外汇干预统计（<a href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/2024_2Qe.html">2024 年 4~6 月</a>）</figcaption><blockquote>日元兑美元一度跌至 160.245，为 34 年来最弱；日本当局 4 月 29 日单日动用 5.92 万亿日元入市买入日元</blockquote></figure>
-<p class="prose">日本财务省决定外汇干预，由日本银行代为操作，干预金额按季度公开。它的统计显示，2024 年 4 月 29 日卖出美元、买入日元 5.92 万亿日元，5 月 1 日又买入 3.87 万亿日元。路透社报道，这两次干预让日元从 160.245 的 34 年低点回升了约 5%。</p>
+<p class="prose">日本财务省决定<b>外汇干预</b><span class="en"> (foreign exchange intervention)</span>，由日本银行代为操作，干预金额按季度公开。它的统计显示，2024 年 4 月 29 日卖出美元、买入日元 5.92 万亿日元，5 月 1 日又买入 3.87 万亿日元。路透社报道，这两次干预让日元从 160.245 的 34 年低点回升了约 5%。</p>
 <p class="prose">这不是孤立的一次。下表把几次干预和美联储 H.10 统计的纽约中午汇率放在一起。数字越大，表示 1 美元能换的日元越多，也就是日元越弱。</p>
 <div class="tablewrap" tabindex="0" role="region" aria-label="2022 年以来美元兑日元与日本买入日元干预，可横向滚动"><table class="tbl"><caption>汇率：美联储 H.10 纽约中午买入价，经 FRED 获取（序列 DEXJPUS），2026 年 10 月 14 日下载。干预金额：日本财务省外汇干预统计。</caption><thead><tr><th scope="col">日期</th><th scope="col" class="num">日元/美元</th><th scope="col">日本当局的操作</th></tr></thead><tbody>
 <tr><td>2022 年 1 月 3 日</td><td class="num">115.27</td><td>无</td></tr>
@@ -96,7 +96,7 @@
 <p class="note">教学示意模型，不是日元汇率的预测。外汇供求都画成直线：美元供给 Q = (E − 40)/2，美元需求 Q = (170 + 2s − E)/2，其中需求移动量 s = 9 × 利差 + 5 × 情绪档位，因此 E = 105 + s。现实中利差也会让供给左移（外国人少买日本资产），这里合并成需求一侧的移动。PPP₁₀ = 100 × (1 − 通胀差/100)¹⁰，用“汇率每年变动约等于通胀差”的相对购买力平价近似；今天的 PPP 设为 100 也是示意值。日本当局的干预相当于向市场额外供给美元（S 右移），本图没有画出。数量单位为示意的十亿美元/天。</p>
 </div>
 <h3>先试三件事</h3>
-<ol class="qs"><li>默认利差 5.25、情绪中性：E = 152.25，比基准 105 高 47.25 日元。美元升值 45%，日元贬值 31%，1 万日元只能换约 65.7 美元。</li><li>点“利差收窄”：利差降到 2.5，E 回到 127.5。日元并没有回到 105，只要还有利差，美元资产就更有吸引力。</li><li>点“避险情绪急升”：利差不变，情绪拨到最左，E 降到 142.25。利差没变，日元却升值了约 6.6%，这就是套息交易平仓的直觉。</li></ol>
+<ol class="qs"><li>默认利差 5.25、情绪中性：E = 152.25，比基准 105 高 47.25 日元。美元升值 45%，日元贬值 31%，1 万日元只能换约 65.7 美元。</li><li>点“利差收窄”：利差降到 2.5，E 回到 127.5。日元并没有回到 105，只要还有利差，美元资产就更有吸引力。</li><li>点“避险情绪急升”：利差不变，情绪拨到最左，E 降到 142.25。利差没变，日元却升值了约 7%（152.25/142.25 − 1），这就是套息交易平仓的直觉。</li></ol>
 </section>
 
 <section id="ppp">
@@ -104,7 +104,7 @@
 <p class="prose">短期的推力来自金融市场，长期的拉力来自商品。<a href="../m08/01-gdp.html#per-capita">人均 GDP 一课</a>用过<b>购买力平价</b><span class="en"> (purchasing power parity, PPP)</span> 来换算生活水平，这里把它当作汇率理论：如果同一件商品能自由跨国运输，它在两国的价格换成同一种货币后应当相同，否则就有人低买高卖。</p>
 <p class="formula">PPP 汇率 = 日本价格（日元）/ 美国价格（美元）</p>
 <h3>巨无霸指数</h3>
-<p class="prose">《经济学人》用麦当劳巨无霸做了一个简单版本，叫巨无霸指数。按它公开数据库中标注为 2026 年 7 月的一期（数据仓库于 2026 年 8 月 4 日更新），日本一个巨无霸 500 日元，美国 6.22 美元，取数时的市场汇率为 162.135 日元/美元。</p>
+<p class="prose">《经济学人》用麦当劳巨无霸做了一个简单版本，叫<b>巨无霸指数</b><span class="en"> (Big Mac index)</span>。按它公开数据库中标注为 2026 年 7 月的一期（数据仓库于 2026 年 8 月 4 日更新），日本一个巨无霸 500 日元，美国 6.22 美元，取数时的市场汇率为 162.135 日元/美元。</p>
 <div class="tablewrap" tabindex="0" role="region" aria-label="巨无霸指数计算步骤，可横向滚动"><table class="tbl"><caption>数据：《经济学人》巨无霸指数公开数据（big-mac-data，2026 年 7 月一期）；计算为本课所做。</caption><thead><tr><th scope="col">步骤</th><th scope="col" class="num">结果</th></tr></thead><tbody>
 <tr><td>隐含的 PPP 汇率：500 / 6.22</td><td class="num">80.4 日元/美元</td></tr>
 <tr><td>日本巨无霸按市场汇率折美元：500 / 162.135</td><td class="num">3.08 美元</td></tr>
